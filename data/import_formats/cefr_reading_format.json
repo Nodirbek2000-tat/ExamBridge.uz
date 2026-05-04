@@ -1,0 +1,103 @@
+{
+  "_comment": "CEFR Reading Import — POST /api/import/cefr/ with type: reading",
+
+  "type": "reading",
+  "level": "B2",
+  "title": "B2 Reading Practice 1",
+  "time_limit": 20,
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "is_mock": false,
+
+  "passage": {
+    "title": "The Impact of Social Media",
+    "content": "Social media has transformed the way people communicate...\n\nParagraph A: Origins of social media\nParagraph B: Benefits of connectivity\nParagraph C: Drawbacks and concerns",
+    "passage_number": 1,
+    "is_standalone": true
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TFNG",
+      "_comment_type": "TRUE/FALSE/NOT GIVEN — correct_answer: TRUE | FALSE | NOT GIVEN",
+      "content": "Social media has had no effect on personal relationships.",
+      "correct_answer": "FALSE",
+      "explanation": "The passage clearly states social media has transformed communication.",
+      "group_instruction": "Questions 1-3: Do the statements agree with the information in the passage? TRUE, FALSE or NOT GIVEN."
+    },
+    {
+      "number": 2,
+      "question_type": "YNNG",
+      "_comment_type": "YES/NO/NOT GIVEN — based on writer's opinion. correct_answer: YES | NO | NOT GIVEN",
+      "content": "The author believes social media should be banned.",
+      "correct_answer": "NOT GIVEN",
+      "explanation": "The author does not express this opinion anywhere.",
+      "group_instruction": "Questions 2-4: Do the statements agree with the views of the writer? YES, NO or NOT GIVEN."
+    },
+    {
+      "number": 3,
+      "question_type": "MCQ",
+      "_comment_type": "Multiple Choice — correct_answer is the option letter: A, B, C or D",
+      "content": "What is the main advantage of social media according to the passage?",
+      "correct_answer": "C",
+      "explanation": "Paragraph B mentions instant communication as the main advantage.",
+      "group_instruction": "Questions 3-5: Choose the correct letter A, B, C or D.",
+      "choices": [
+        {"option": "A", "text": "Reduces work hours"},
+        {"option": "B", "text": "Improves mental health"},
+        {"option": "C", "text": "Enables instant communication"},
+        {"option": "D", "text": "Increases academic performance"}
+      ]
+    },
+    {
+      "number": 4,
+      "question_type": "MULTI",
+      "_comment_type": "Multiple Select — correct_answer: pipe-separated e.g. B|D, max_selections = how many to choose",
+      "content": "Which TWO negative effects of social media are mentioned in the passage?",
+      "correct_answer": "B|D",
+      "max_selections": 2,
+      "explanation": "The passage mentions anxiety (B) and reduced attention span (D).",
+      "group_instruction": "Questions 4-5: Choose TWO letters A-E.",
+      "choices": [
+        {"option": "A", "text": "Increased loneliness"},
+        {"option": "B", "text": "Anxiety and stress"},
+        {"option": "C", "text": "Poor academic results"},
+        {"option": "D", "text": "Reduced attention span"},
+        {"option": "E", "text": "Loss of language skills"}
+      ]
+    },
+    {
+      "number": 5,
+      "question_type": "GAP",
+      "_comment_type": "Gap Fill — correct_answer is the missing word(s). No choices needed.",
+      "content": "Social media was first introduced in the ___ century.",
+      "correct_answer": "21st",
+      "explanation": "The text states the 21st century.",
+      "group_instruction": "Questions 5-7: Complete the sentences. NO MORE THAN TWO WORDS."
+    },
+    {
+      "number": 6,
+      "question_type": "MATCH",
+      "_comment_type": "Matching Headings — correct_answer is the heading option (i, ii, iii...)",
+      "content": "Paragraph A",
+      "correct_answer": "ii",
+      "explanation": "Paragraph A discusses the origins of social media.",
+      "group_instruction": "Questions 6-8: Choose the correct heading for each paragraph from the list below.",
+      "choices": [
+        {"option": "i", "text": "The drawbacks of social media"},
+        {"option": "ii", "text": "The origins of social media"},
+        {"option": "iii", "text": "Benefits for businesses"},
+        {"option": "iv", "text": "Future of social platforms"}
+      ]
+    },
+    {
+      "number": 7,
+      "question_type": "SHORT",
+      "_comment_type": "Short Answer — answer in own words, usually 1-3 words. No choices needed.",
+      "content": "According to the passage, what do young people use social media for most?",
+      "correct_answer": "communication",
+      "explanation": "The passage states communication is the primary use.",
+      "group_instruction": "Questions 7-8: Answer the questions. NO MORE THAN TWO WORDS."
+    }
+  ]
+}

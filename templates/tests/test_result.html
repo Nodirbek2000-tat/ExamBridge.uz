@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% block title %}Score Report — {{ result.total_score }}{% endblock %}
+
+{% block content %}
+<!-- Score Hero -->
+<div class="result-hero">
+  <div class="container">
+    <div class="text-xs text-dim mb-8" style="text-transform:uppercase; letter-spacing:1px;">
+      {{ test }}
+    </div>
+    <div class="total-score">{{ result.total_score }}</div>
+    <div class="score-label">Total SAT Score</div>
+
+    <div class="score-breakdown">
+      <div class="score-part math">
+        <div class="score-part-value">{{ result.math_score }}</div>
+        <div class="score-part-label">Math</div>
+        <div class="text-xs text-dim" style="margin-top:6px;">Raw: {{ result.math_raw }}/44</div>
+      </div>
+      <div class="score-part english">
+        <div class="score-part-value">{{ result.english_score }}</div>
+        <div class="score-part-label">Reading & Writing</div>
+        <div class="text-xs text-dim" style="margin-top:6px;">Raw: {{ result.english_raw }}/54</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:12px; justify-content:center; margin-top:28px; flex-wrap:wrap;">
+      <a href="/tests/result/{{ attempt.id }}/review/" class="btn btn-primary">
+        <i class="fas fa-search"></i> Review Answers
+      </a>
+      <a href="/tests/" class="btn btn-secondary">
+        <i class="fas fa-file-alt"></i> More Tests
+      </a>
+      <a href="/dashboard/" class="btn btn-ghost">
+        <i class="fas fa-chart-line"></i> Dashboard
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Detailed Breakdown -->
+<div class="container section-sm">
+  <div class="grid-2" style="gap:24px; align-items:start;">
+
+    <!-- Module breakdown -->
+    <div>
+      <h3 style="margin-bottom:16px;">Module Breakdown</h3>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+
+        <!-- Math M1 -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div>
+              <div style="font-weight:700;">Math — Module 1</div>
+              <div class="text-xs text-dim">{{ result.math_m1_correct }}/22 correct</div>
+            </div>
+            <span class="badge badge-blue">{{ result.math_m1_correct }}/22</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:{% widthratio result.math_m1_correct 22 100 %}%;"></div>
+          </div>
+        </div>
+
+        <!-- Math M2 -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div>
+              <div style="font-weight:700;">Math — Module 2</div>
+              <div class="text-xs text-dim">{{ result.math_m2_correct }}/22 correct</div>
+            </div>
+            <span class="badge badge-blue">{{ result.math_m2_correct }}/22</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:{% widthratio result.math_m2_correct 22 100 %}%;"></div>
+          </div>
+        </div>
+
+        <!-- English M1 -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div>
+              <div style="font-weight:700;">Reading & Writing — Module 1</div>
+              <div class="text-xs text-dim">{{ result.english_m1_correct }}/27 correct</div>
+            </div>
+            <span class="badge badge-green">{{ result.english_m1_correct }}/27</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill green" style="width:{% widthratio result.english_m1_correct 27 100 %}%;"></div>
+          </div>
+        </div>
+
+        <!-- English M2 -->
+        <div class="card" style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <div>
+              <div style="font-weight:700;">Reading & Writing — Module 2</div>
+              <div class="text-xs text-dim">{{ result.english_m2_correct }}/27 correct</div>
+            </div>
+            <span class="badge badge-green">{{ result.english_m2_correct }}/27</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill green" style="width:{% widthratio result.english_m2_correct 27 100 %}%;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AI Analysis -->
+    <div>
+      <h3 style="margin-bottom:16px;">AI Analysis <span class="badge badge-purple">AI</span></h3>
+
+      {% if result.ai_analysis %}
+      <div class="card" style="padding:20px; margin-bottom:16px;">
+        <h4 style="margin-bottom:12px; color:var(--text-muted); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px;">Recommendations</h4>
+        <p style="font-size:0.9rem; line-height:1.7;">{{ result.ai_analysis.recommendations }}</p>
+      </div>
+
+      {% if result.ai_analysis.weak_areas %}
+      <div class="card" style="padding:20px; margin-bottom:16px; border-color:var(--red-bg);">
+        <h4 style="margin-bottom:12px; color:var(--red);">Areas to Improve</h4>
+        {% for area in result.ai_analysis.weak_areas %}
+        <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px; font-size:0.875rem;">
+          <i class="fas fa-arrow-up" style="color:var(--red); width:14px;"></i> {{ area }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if result.ai_analysis.university_suggestions %}
+      <div class="card" style="padding:20px;">
+        <h4 style="margin-bottom:12px; color:var(--purple);">University Suggestions</h4>
+        {% for uni in result.ai_analysis.university_suggestions %}
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border); font-size:0.875rem;">
+          <span>{{ uni.name }}</span>
+          <span class="badge {% if uni.chance == 'safety' %}badge-green{% elif uni.chance == 'match' %}badge-yellow{% else %}badge-red{% endif %}">
+            {{ uni.chance|title }}
+          </span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% else %}
+      <div class="card text-center" style="padding:32px;">
+        <div style="font-size:2rem; margin-bottom:12px;">🤖</div>
+        <h4 style="margin-bottom:8px;">AI Analysis</h4>
+        <p class="text-sm">AI analysis is being generated. Check back in a moment.</p>
+        {% if user.is_premium %}
+        <button class="btn btn-secondary btn-sm mt-16" onclick="requestAI()">
+          <i class="fas fa-sync"></i> Generate Analysis
+        </button>
+        {% else %}
+        <a href="/pricing/" class="btn btn-secondary btn-sm mt-16">
+          <i class="fas fa-crown"></i> Upgrade for AI Analysis
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <!-- Test info -->
+  <div style="margin-top:32px; padding:20px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg); display:flex; gap:24px; flex-wrap:wrap;">
+    <div><span class="text-dim text-sm">Test:</span> <strong>{{ test }}</strong></div>
+    <div><span class="text-dim text-sm">Completed:</span> <strong>{{ attempt.finished_at|date:"M d, Y · g:i A" }}</strong></div>
+    <div><span class="text-dim text-sm">Time Taken:</span>
+      <strong>
+        {% with duration=attempt.finished_at|timeuntil:attempt.started_at %}
+        {{ attempt.started_at|timesince:attempt.finished_at }}
+        {% endwith %}
+      </strong>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+async function requestAI() {
+  const btn = event.target;
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Generating...';
+  try {
+    const res = await post('/tests/result/{{ attempt.id }}/ai-analysis/', {});
+    if (res.success) location.reload();
+    else { btn.disabled = false; btn.innerHTML = '<i class="fas fa-sync"></i> Try Again'; }
+  } catch(e) {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-sync"></i> Try Again';
+  }
+}
+</script>
+{% endblock %}

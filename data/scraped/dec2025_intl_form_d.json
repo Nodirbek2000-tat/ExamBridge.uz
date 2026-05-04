@@ -1,0 +1,1114 @@
+{
+  "test_type": "SAT",
+  "year": 2025,
+  "month": 12,
+  "form": "D",
+  "is_international": true,
+  "sections": [
+    {
+      "section_type": "MATH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The function h is defined by h(x) =100 x -80.What is the value of h(x) when x =4?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 480 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 320 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 184 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 24 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The length of a stony coral colony was estimated to be 210 centimeters at the beginning of a study. The length of this coral colony was estimated to increase at a rate of 8 centimeters per year. What was the estimated length.in centimeters,of this coral colony 10 years after the study began?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 80 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 218 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 290 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "2,100",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "What value of p is the solution to the equation 8 p -9 p =8?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ -8 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ −\\dfrac{1}{8} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{1}{8} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 8 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In a soccer league, each team earns 1 point for each game the team plays that ends in a draw and 3 points for each game the team wins. A certain team in this league has earned 46 points. Which equation represents this situation,where d represents the number of games this team has played that ended in a draw and w represents the number of games this team has won?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{d}{3}+w=46 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ d+\\dfrac{w}{3}=46 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 3d+w=46 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ d+3w+46 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "For the function f the table shows four values of x and their corresponding values of f(x) Which of the following could describe this function?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-D-Math-M1-Q6.png",
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Decreasing exponential",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Increasing exponential",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Decreasing linear",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Increasing linear",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Which of the following equations is the most appropriate exponential model for the data shown in the scatterplot ?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-D-Math-M1-Q7-300x87.png",
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ y=43\\left(1.04\\right)^{−x} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ y=43\\left(1.04\\right)^x $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ y= -43\\left(1.04\\right)^{x} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ y=43\\left(1.04\\right)^x $ $ y=−43(1.04)^{−x} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The predicted population of a city x years after 1982, where x ≤10, can be modeled by the function f ( x )=47,000(1.04) x . Which of the following is the best interpretation of the statement &#8220; f (6) is approximately equal to 59,470&#8243; in this context?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "6 years after 1982, the predicted population of the city is approximately 59,470 people.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "6 years after 1982, the population of the city is predicted to decrease by approximately 59,470 people.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Every 6 years after 1982, the population of the city is predicted to decrease by approximately 59,470 people.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Every 6 years after 1982, the population of the city is predicted to increase by approximately 59,470 people.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Triangle ABC is similar to triangle XYZ, where A, B ,and C correspond to X , Y ,and Z , respectively. In triangle ABC , the length of $ \\overline{AB} $ is 130 and the length of $ \\overline{BC} $ is 650. In triangle XYZ ,the length of $ \\overline{YZ} $ is 70.What is the length of $ \\overline{XY} $ ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 14 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 70 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 144 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 182 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Which expression is equivalent to $ 2(x-\\dfrac{9}{2})(x+8) $ ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 2x^{2}-72 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 2x^2+7x−72 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 2x-x−36 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ x^{2}+7x−36 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The table shows several values of x and their corresponding values of f(x) for the polynomialfunction f . Which of the following could define f ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ f(x)=x^3 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ f(x)=x^{3}-23 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ f(x)=x^3+23 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ f(x)=\\left(x-23\\right)^{3} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If $ \\dfrac{48}{x}=4x $ ,what is the value of 4 x 2 ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 4 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 12 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 48 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 192 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A researcher is designing a study to investigate the average number of hours students at a high school spend reading per day. The researcher will report an estimated average number of hours students at the high school spend reading per day with an associated margin of error. The researcher is considering using a random sample of either 115 or 230 students from the high school. Which of the following would be the most likely effect of using the larger random sample compared to the smaller random sample？",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "The reported margin of error would be lower.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The reported margin of error would be higher.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "The reported average number of hours would be lower.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "The reported average number of hours would be higher.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ 4x^{2}-5x-5=0 $ What is the greatest solution to the given equation?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{5}{8}-\\dfrac{}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{5}{8}+\\dfrac{}{8} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{5}{4}-\\dfrac{}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{5}{4}+\\dfrac{}{4} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "x y -34 0 -17 t + 23 0 t + 46 For a linear relationship between x and y , the table gives three values of x and their corresponding values of y , where t is a constant. Which equation represents this relationship?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ y=−2x+t+23 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ y=2x+t+23 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ y=−\\dfrac{23}{17}x+t+46 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ y=\\dfrac{23}{17}x+t+46 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The circle shown has its center at (0,0). What is the value of k ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 6 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 7 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 8 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\sqrt{60} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "For two acute angles X and Y , the measure of angle Y is 24 and $ \\dfrac{\\s\\i\\nX}{\\c\\o\\sY}=1 $ .What is the measure, in degrees, of angle X?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 24 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 45 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 66 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 69 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A right rectangular prism has a height of 24 inches. The length of the prism&#8217;s base is x inches, which is 10 inches more than the width of the prism&#8217;s base. Which function V gives the volume of the prism, in cubic inches,in terms of the length of the prism&#8217;s base?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\left(V(x)=x(x+24\\right)(x+10) $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ V(x)=x(x+24\\right)(x-10) $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ V(x)=24x(x+10) $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ V(x)=24x(x-10) $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The weight of each object in two groups, A and B.was recorded. The histograms represent the distributions of weight in grams, for the objects in groups A and B. The mean weight of the objects in group A is equal to 2.9, and the mean weight of the objects in group B is equal to 7.9. Which of the following statements about the standard deviations of weight for the objects in these two groups is true?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-D-Math-M1-Q22-300x161.png",
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "The standard deviation of weight for the objects in group A is less than the standard deviation of weight for the objects in group B.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The standard deviation of weight for the objects in group A is equal to the standard deviation of weight for the objects in group B.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "The standard deviation of weight for the objects in group A is greater than the standard deviation of weight for the objects in group B.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "There is not enough information to compare the standard deviations of weight for the objects in these two groups.",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Darrel has a blanket with an area of 110 square inches (in 2 ). Darrel plans to enlarge the blanket by sewing on pieces of fabric, where each piece would increase the blanket area by 64 in 2 . Which equation gives the blanket&#8217;s total area, y, in square inches, after Darrel sews on x of these pieces of fabric?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ y= 64x $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ y= 64+ 110x $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ y=110 + 64x $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ y = 174x $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "y=4x 5x-3y=-14 The solution, to the given system of equations is ( x, y ). What is the value of x + y ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 4 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 6 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 8 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 10 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If 2(5 x )=6, what is the value of 5 x ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{4}{3} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{5}{3} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 3 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 4 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If $ =8 $ ​​​​​​​, what is the value of ( x -5)?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 8 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 59 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 64 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 128 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The function h is defined by h ( x ) = 7 x + 14. The graph of y = h ( x ) in the xy- plane has an x -intercept at ( a ,0) and a y -intercept at (0, b ), where a and b are constants. What is the value of a + b ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 12 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 14 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 16 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 21 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The function $ f\\left(t\\right)=40,000\\left(20\\right)^{\\dfrac{x}{410}} $ gives the number of bacteria in a population t minutes after an initial observation. Howmuch time, in minutes, does it take for the number of bacteria in the population to double?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 2 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 410 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 820 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "40,000",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Which expression is equivalent to $ \\dfrac{3x\\left(x-8\\right)-9\\left(x-8\\right)}{2x-16} $ ,where x &gt; 8?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{x -8}{2} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{3x -9}{2} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{3x^{2}-9x-16}{2x-16} $ $ \\dfrac{x\\ -8}{2} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{3x^{2}-9x−96}{2x-16} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Angle upper U is a right angle. The measure of angle upper V is 25° The length of side upper u upper V is 76. Note: Figure not drawn to scale. Triangle TUV is dilated by a scale factor of $ \\dfrac{1}{2} $ , to obtain triangle T&#8217;U&#8217;V&#8217; (not shown). where T coresponds to T&#8217; and U corresponds to U&#8217;. What is the measure. in degrees, of angle V&#8217; ?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-D-Math-M2-Q10.png",
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 25 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 65 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 12.5 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 32.5 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Line p is defined by 2 y + 8 x = 11. Line r is perpendicular to line p in the xy -plane. What is the slope of line r ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ -4 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ −\\dfrac{1}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{1}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 4 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A figure has an area of 3,168 square inches. What is the area, in square feet, of this figure? (1 foot = 12 inches)",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 22 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 56.3 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 264 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "675.4",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "At a hotel, guests used the pool for a total of t hours in March. At the same hotel, quests used the pool for 3.49 t hours in April. What is the percent increase in the number of hours quests used the pool from March to April?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "2.49%",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "3.49%",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "249%",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "349%",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "g ( x ) = $ \\dfrac{x^{2}-x-a}{x^{3}-x-b} $ The function g is defined by the given equation, where a and b are constants. In the xy -plane, the graph of y = g ( x ) passes through the point (0,43), and g (-43) = 0. What is the value of b ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 44 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 43 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ -43 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ -44 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A right circular cone has a volume of 4,800π cubic centimeters and the area of its base is 1,600π square centimeters. What is the slant height, in centimeters, of this cone?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 3 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 9 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 40 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 41 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ \\dfrac{1}{4xy}+xyz=\\dfrac{1}{3yz} $ In the given equation. x , y , and z are positive numbers. Which expression is equivalent to y ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{4x-3z}{12x^{2}z^{2}} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{}{12x^{2}z^{2}} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{1}{4xz^{2}-4x^{2}8} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\sqrt{\\dfrac{1}{3xz-4x^2-z}} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In triangle XYZ , the measure of angle X is 90°. Point W lies on segment YZ , and segment WX is perpendicular to segment YZ . The length of segment WY is 612, and the length of segment WX is 459, What is the value of tan Z ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{4}{3} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{4}{5} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{3}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{3}{5} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "38 ( x &#8211; n ) = 38 y + 38 n One of the equations in a system of two linear equations is given; where n is a positive constant: The system has no solution Which equation could be the second equation in this system?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 4x &#8211; 4y = 4n $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 4x + 4y = 8n $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 4x + 4y = 8n $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 4x + 4y =4n $",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

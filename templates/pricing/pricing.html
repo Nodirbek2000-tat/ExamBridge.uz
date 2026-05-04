@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block title %}Pricing — SATBridge{% endblock %}
+
+{% block content %}
+<div class="section">
+  <div class="container">
+    <div class="text-center mb-32">
+      <h1>Simple, honest pricing</h1>
+      <p style="margin-top:10px; font-size:1rem;">Start free. Upgrade when you need more.</p>
+    </div>
+
+    <!-- Static pricing grid (matches home page) -->
+    <div class="grid-3" style="gap:16px; max-width:860px; margin:0 auto 56px;">
+
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="text-xs text-light fw-700" style="text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Free</div>
+        <div class="pricing-price">$0 <span style="font-size:0.9rem; color:var(--text-muted);">/ month</span></div>
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-top:6px; margin-bottom:20px;">Get started with no commitment.</p>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 3 full tests per month</li>
+          <li><span class="check">✓</span> Score report (400–1600)</li>
+          <li><span class="check">✓</span> Answer review</li>
+          <li><span class="check">✓</span> Save questions</li>
+          <li><span class="x" style="color:var(--text-light);">—</span> AI analysis</li>
+          <li><span class="x" style="color:var(--text-light);">—</span> Full test history</li>
+          <li><span class="x" style="color:var(--text-light);">—</span> University finder</li>
+        </ul>
+        {% if user.is_authenticated %}
+          {% if not user.is_premium %}
+          <div class="btn btn-secondary w-full" style="text-align:center; padding:10px; border-radius:999px; font-weight:700; font-size:0.875rem;">Current plan</div>
+          {% else %}
+          <a href="/auth/profile/" class="btn btn-ghost w-full">View profile</a>
+          {% endif %}
+        {% else %}
+        <a href="/auth/register/" class="btn btn-secondary w-full">Get started free</a>
+        {% endif %}
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card featured">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <div class="text-xs fw-700" style="text-transform:uppercase; letter-spacing:1px; color:var(--green-dark);">Pro</div>
+          <span class="badge badge-green">Most popular</span>
+        </div>
+        <div class="pricing-price">$12 <span style="font-size:0.9rem; color:var(--text-muted);">/ month</span></div>
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-top:6px; margin-bottom:20px;">Everything you need to hit your target score.</p>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited tests</li>
+          <li><span class="check">✓</span> Score report & review</li>
+          <li><span class="check">✓</span> AI score analysis</li>
+          <li><span class="check">✓</span> University finder</li>
+          <li><span class="check">✓</span> Full test history</li>
+          <li><span class="check">✓</span> Saved questions</li>
+          <li><span class="check">✓</span> Vocabulary builder</li>
+        </ul>
+        {% if user.is_authenticated %}
+          {% if user.is_premium %}
+          <div class="btn btn-primary w-full" style="text-align:center; padding:10px; border-radius:999px; font-weight:700; font-size:0.875rem; cursor:default;">Active ✓</div>
+          {% else %}
+          <form method="POST" action="/pricing/subscribe/PRO/">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary w-full">Upgrade to Pro</button>
+          </form>
+          {% endif %}
+        {% else %}
+        <a href="/auth/register/?next=/pricing/" class="btn btn-primary w-full">Start free trial</a>
+        {% endif %}
+      </div>
+
+      <!-- Annual -->
+      <div class="pricing-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <div class="text-xs fw-700 text-light" style="text-transform:uppercase; letter-spacing:1px;">Annual</div>
+          <span class="badge badge-yellow">Save 33%</span>
+        </div>
+        <div class="pricing-price">$8 <span style="font-size:0.9rem; color:var(--text-muted);">/ month</span></div>
+        <p style="font-size:0.82rem; color:var(--green-dark); margin-top:6px; margin-bottom:20px;">Billed $96/year — best value.</p>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Pro</li>
+          <li><span class="check">✓</span> Priority support</li>
+          <li><span class="check">✓</span> Early test access</li>
+          <li><span class="check">✓</span> Vocabulary builder</li>
+          <li><span class="check">✓</span> Courses access</li>
+        </ul>
+        {% if user.is_authenticated %}
+        <form method="POST" action="/pricing/subscribe/PREMIUM/">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-secondary w-full">Get Annual</button>
+        </form>
+        {% else %}
+        <a href="/auth/register/?next=/pricing/" class="btn btn-secondary w-full">Get Annual</a>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <div style="max-width:600px; margin:0 auto;">
+      <h3 style="text-align:center; margin-bottom:24px; font-size:1.1rem;">Frequently asked</h3>
+      <div style="display:flex; flex-direction:column; gap:0;">
+        {% for q, a in faq %}
+        <details style="border-bottom:1px solid var(--border); padding:14px 0;">
+          <summary style="cursor:pointer; font-weight:700; font-size:0.9rem; list-style:none; display:flex; justify-content:space-between;">
+            {{ q }} <span style="color:var(--text-light);">+</span>
+          </summary>
+          <p style="margin-top:10px; font-size:0.875rem; padding-right:16px;">{{ a }}</p>
+        </details>
+        {% empty %}
+        {% with faq_items="Can I cancel anytime?,Yes — cancel anytime with no fees.|Are the tests identical to the real SAT?,Our tests follow the exact same format, timing, and question types as the Digital SAT.|What's included in the free plan?,3 full-length tests per month with full score reports and answer review.|How does AI analysis work?,After completing a test, our AI reviews your answers and identifies weak areas with personalized recommendations." %}
+        {% for item in faq_items|split:"," %}
+        {% endfor %}
+        {% endwith %}
+        <details style="border-bottom:1px solid var(--border); padding:14px 0;">
+          <summary style="cursor:pointer; font-weight:700; font-size:0.9rem; list-style:none; display:flex; justify-content:space-between;">
+            Can I cancel anytime? <span style="color:var(--text-light);">+</span>
+          </summary>
+          <p style="margin-top:10px; font-size:0.875rem;">Yes — cancel anytime with no fees or penalties.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--border); padding:14px 0;">
+          <summary style="cursor:pointer; font-weight:700; font-size:0.9rem; list-style:none; display:flex; justify-content:space-between;">
+            Are the tests identical to the real SAT? <span style="color:var(--text-light);">+</span>
+          </summary>
+          <p style="margin-top:10px; font-size:0.875rem;">Our tests follow the exact same format, timing (35 min Math, 32 min English per module), and scoring as the Digital SAT.</p>
+        </details>
+        <details style="border-bottom:1px solid var(--border); padding:14px 0;">
+          <summary style="cursor:pointer; font-weight:700; font-size:0.9rem; list-style:none; display:flex; justify-content:space-between;">
+            What's included in the free plan? <span style="color:var(--text-light);">+</span>
+          </summary>
+          <p style="margin-top:10px; font-size:0.875rem;">3 full tests per month with complete score reports and answer review. No credit card required.</p>
+        </details>
+        <details style="padding:14px 0;">
+          <summary style="cursor:pointer; font-weight:700; font-size:0.9rem; list-style:none; display:flex; justify-content:space-between;">
+            How does AI analysis work? <span style="color:var(--text-light);">+</span>
+          </summary>
+          <p style="margin-top:10px; font-size:0.875rem;">After each test, AI reviews your answers and identifies weak skill areas with specific recommendations and university suggestions based on your score.</p>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

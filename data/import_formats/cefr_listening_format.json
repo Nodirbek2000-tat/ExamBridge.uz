@@ -1,0 +1,86 @@
+{
+  "_comment": "CEFR Listening Import — POST /api/import/cefr/ with type: listening",
+
+  "type": "listening",
+  "level": "B1",
+  "title": "B1 Listening Practice 1",
+  "time_limit": 25,
+  "is_premium": false,
+  "is_mock": false,
+
+  "section": {
+    "title": "A phone conversation about a job interview",
+    "section_number": 1,
+    "audio_url": "https://example.com/audio/b1_listen1.mp3",
+    "transcript": "A: Hello, can I speak to [1]?\nB: Speaking. What's this about?\nA: I'm calling about your [2] application.\nB: Oh yes, when is the interview?\nA: It's on [3] at [4] o'clock.\nB: Great. What should I [5]?",
+    "_comment_transcript": "Use [1], [2], [N] markers to show where each answer appears in the audio.",
+    "is_standalone": true
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "GAP",
+      "_comment_type": "Gap Fill — text with ___ blank, correct_answer fills it. No choices needed.",
+      "content": "The caller asks to speak to ___.",
+      "correct_answer": "Mr Thompson",
+      "explanation": "The name is mentioned at the start of the recording.",
+      "group_instruction": "Questions 1-3: Complete the notes. NO MORE THAN THREE WORDS."
+    },
+    {
+      "number": 2,
+      "question_type": "GAP",
+      "content": "The call is about a ___ application.",
+      "correct_answer": "job",
+      "explanation": "The caller says 'job application'.",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "MCQ",
+      "_comment_type": "Multiple Choice — correct_answer is the option letter: A, B or C",
+      "content": "What is the caller confirming?",
+      "correct_answer": "B",
+      "explanation": "The caller is confirming an interview date.",
+      "group_instruction": "Questions 3-4: Choose the correct letter A, B or C.",
+      "choices": [
+        {"option": "A", "text": "A meeting room booking"},
+        {"option": "B", "text": "An interview date"},
+        {"option": "C", "text": "A job offer acceptance"}
+      ]
+    },
+    {
+      "number": 4,
+      "question_type": "TABLE",
+      "_comment_type": "Table/Form Completion — fill in a table cell. No choices needed.",
+      "content": "Interview day: ___",
+      "correct_answer": "Monday",
+      "explanation": "Monday is stated clearly in the conversation.",
+      "group_instruction": "Questions 4-5: Complete the booking form. ONE WORD."
+    },
+    {
+      "number": 5,
+      "question_type": "MULTI",
+      "_comment_type": "Multiple Select — correct_answer: pipe-separated e.g. A|C, max_selections = how many",
+      "content": "Which TWO things does the caller tell the candidate to bring?",
+      "correct_answer": "A|C",
+      "max_selections": 2,
+      "explanation": "Passport (A) and certificates (C) are mentioned.",
+      "group_instruction": "Questions 5-6: Choose TWO letters A-D.",
+      "choices": [
+        {"option": "A", "text": "Passport"},
+        {"option": "B", "text": "Bank statement"},
+        {"option": "C", "text": "Certificates"},
+        {"option": "D", "text": "Reference letter"}
+      ]
+    },
+    {
+      "number": 6,
+      "question_type": "SHORT",
+      "_comment_type": "Short Answer — answer from listening, usually 1-3 words. No choices needed.",
+      "content": "What does the interviewer ask the candidate to bring?",
+      "correct_answer": "documents",
+      "explanation": "The caller says 'bring your documents'.",
+      "group_instruction": "Questions 6: Answer. ONE WORD."
+    }
+  ]
+}

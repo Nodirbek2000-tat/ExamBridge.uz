@@ -1,0 +1,86 @@
+<!-- Question number + bookmark -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+  <div class="question-number">Question {{ question.number }}</div>
+  <button class="bookmark-btn {% if question.id in bookmarked_ids %}active{% endif %}"
+          data-qid="{{ question.id }}">
+    <i class="fas fa-bookmark"></i>
+    <span>Mark for Review</span>
+  </button>
+</div>
+
+<!-- Question content (HTML + LaTeX) -->
+<div class="question-content" ondragstart="return false;" oncopy="return false;">
+  {{ question.content|safe }}
+</div>
+
+<!-- Image if any -->
+{% if question.image %}
+<div style="margin: 12px 0;">
+  <img src="{{ question.image.url }}" alt="Question image"
+       style="max-width:100%; border-radius:8px; border:1px solid var(--border);"
+       ondragstart="return false;">
+</div>
+{% endif %}
+
+<!-- Table if any -->
+{% if question.table_data %}
+<div style="overflow-x:auto; margin:12px 0;">
+  <table class="question-table" id="table-{{ question.id }}">
+    <!-- Rendered by JS below -->
+  </table>
+</div>
+<script>
+(function(){
+  const data = {{ question.table_data|safe }};
+  const tbl = document.getElementById('table-{{ question.id }}');
+  if (!tbl || !data) return;
+  data.forEach((row, i) => {
+    const tr = document.createElement('tr');
+    row.forEach(cell => {
+      const td = document.createElement(i === 0 ? 'th' : 'td');
+      td.innerHTML = cell;
+      tr.appendChild(td);
+    });
+    tbl.appendChild(tr);
+  });
+  if (window.MathJax) MathJax.typesetPromise([tbl]);
+})();
+</script>
+{% endif %}
+
+<!-- MCQ choices -->
+{% if question.question_type == 'MCQ' %}
+<div class="choices-list">
+  {% for choice in question.choices.all %}
+  <div class="choice-item" data-option="{{ choice.option }}" data-qid="{{ question.id }}">
+    <div class="choice-letter">{{ choice.option }}</div>
+    <div class="choice-text">
+      {{ choice.text|safe }}
+      {% if choice.image %}
+      <img src="{{ choice.image.url }}" style="max-width:200px; margin-top:8px; display:block;"
+           ondragstart="return false;">
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- Student-produced response (INPUT) -->
+{% if question.question_type == 'INPUT' %}
+<div class="input-answer-wrap">
+  <div class="input-answer-label">
+    <i class="fas fa-pencil-alt" style="color:var(--text-dim);"></i>
+    Enter your answer below. Accepted formats: integer, decimal, or fraction (e.g., 3/4)
+  </div>
+  <input
+    type="text"
+    class="input-answer"
+    placeholder="Your answer..."
+    data-qid="{{ question.id }}"
+    maxlength="20"
+    autocomplete="off"
+    autocorrect="off"
+    spellcheck="false">
+</div>
+{% endif %}

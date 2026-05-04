@@ -1,0 +1,215 @@
+{% extends 'panel/base.html' %}
+{% block title %}Savollar banki{% endblock %}
+{% block page_title %}Savollar banki{% endblock %}
+{% block breadcrumb %}SATBridge / Admin / Savollar banki{% endblock %}
+
+{% block topbar_actions %}
+  <a href="/panel/questions/import/" class="btn btn-primary btn-sm"><i class="fas fa-file-import"></i> JSON import</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- Filter -->
+<div class="card">
+  <div class="card-body">
+    <form method="GET" style="display:flex; gap:10px; flex-wrap:wrap; align-items:flex-end;">
+      <div class="search-input-wrap" style="flex:2; min-width:200px;">
+        <i class="fas fa-search"></i>
+        <input type="text" name="q" value="{{ q_search }}" placeholder="Savol matnini qidiring..." class="form-control search-input">
+      </div>
+      <div style="min-width:140px;">
+        <select name="subject" class="form-control">
+          <option value="">Barcha fanlar</option>
+          {% for val, label in subjects %}
+          <option value="{{ val }}" {% if subject == val %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div style="min-width:120px;">
+        <select name="difficulty" class="form-control">
+          <option value="">Barcha daraja</option>
+          {% for val, label in difficulties %}
+          <option value="{{ val }}" {% if difficulty == val %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div style="min-width:100px;">
+        <select name="year" class="form-control">
+          <option value="">Barcha yil</option>
+          {% for y in years %}
+          <option value="{{ y }}" {% if year_filter == y|stringformat:"s" %}selected{% endif %}>{{ y }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div style="min-width:160px;">
+        <select name="topic" class="form-control">
+          <option value="">Barcha mavzular</option>
+          {% for t in topics %}
+          <option value="{{ t }}" {% if topic == t %}selected{% endif %}>{{ t|truncatechars:30 }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary"><i class="fas fa-filter"></i> Filter</button>
+      {% if subject or difficulty or topic or year_filter or q_search %}
+      <a href="/panel/questions/" class="btn btn-outline"><i class="fas fa-times"></i></a>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+<!-- Questions Table -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">
+      <i class="fas fa-question-circle" style="color:var(--green); margin-right:6px;"></i>
+      Savollar — {{ page_obj.paginator.count }} ta
+    </span>
+    <div style="display:flex; gap:8px;">
+      <span class="badge badge-green">{{ total_bank_questions }} jami</span>
+      <a href="/panel/questions/import/" class="btn btn-primary btn-xs"><i class="fas fa-plus"></i> Import</a>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Savol</th>
+          <th>Fan</th>
+          <th>Mavzu</th>
+          <th>Qiyinlik</th>
+          <th>Yil</th>
+          <th>To'g'ri javob</th>
+          <th>Rasm</th>
+          <th>Sana</th>
+          <th>Amal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for q in page_obj %}
+        <tr>
+          <td style="color:var(--text-muted); font-size:0.75rem;">{{ q.id }}</td>
+          <td style="max-width:300px;">
+            <div style="font-size:0.82rem; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:280px;" title="{{ q.content }}">
+              {{ q.content|truncatechars:80 }}
+            </div>
+          </td>
+          <td>
+            {% if q.subject == 'Matematika' %}
+            <span class="badge badge-blue">Matematika</span>
+            {% elif q.subject == 'Ingliz tili' %}
+            <span class="badge badge-indigo">Ingliz tili</span>
+            {% else %}
+            <span class="badge badge-gray">{{ q.subject }}</span>
+            {% endif %}
+          </td>
+          <td style="font-size:0.78rem; color:var(--text-muted); max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ q.topic }}</td>
+          <td>
+            {% if q.difficulty == 'easy' %}<span class="badge badge-green">Oson</span>
+            {% elif q.difficulty == 'medium' %}<span class="badge badge-yellow">O'rta</span>
+            {% else %}<span class="badge badge-red">Qiyin</span>{% endif %}
+          </td>
+          <td style="color:var(--text-muted);">{{ q.year|default:"—" }}</td>
+          <td><span class="badge badge-green" style="font-size:0.8rem; font-weight:800;">{{ q.correct_answer }}</span></td>
+          <td>
+            {% if q.image %}
+            <span class="badge badge-blue"><i class="fas fa-image"></i> Bor</span>
+            {% else %}
+            <span style="color:var(--text-muted); font-size:0.75rem;">Yo'q</span>
+            {% endif %}
+          </td>
+          <td style="color:var(--text-muted); font-size:0.75rem; white-space:nowrap;">{{ q.created_at|date:"d M" }}</td>
+          <td>
+            <div style="display:flex; gap:4px;">
+              <button class="btn btn-outline btn-xs" onclick="previewQuestion({{ q.id }}, `{{ q.content|escapejs }}`, `{{ q.choice_a|escapejs }}`, `{{ q.choice_b|escapejs }}`, `{{ q.choice_c|escapejs }}`, `{{ q.choice_d|escapejs }}`, '{{ q.correct_answer }}', `{{ q.explanation|escapejs }}`)" title="Ko'rish">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="btn btn-red btn-xs" onclick="deleteQuestion({{ q.id }})" title="O'chirish">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="10">
+            <div class="empty-state">
+              <div class="empty-state-icon">❓</div>
+              <p>Savol topilmadi. <a href="/panel/questions/import/" style="color:var(--green);">JSON import qiling</a></p>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Pagination -->
+{% if page_obj.has_other_pages %}
+<div class="pagination">
+  {% if page_obj.has_previous %}
+  <a href="?page={{ page_obj.previous_page_number }}&subject={{ subject }}&difficulty={{ difficulty }}" class="page-btn"><i class="fas fa-chevron-left"></i></a>
+  {% else %}<span class="page-btn disabled"><i class="fas fa-chevron-left"></i></span>{% endif %}
+  {% for num in page_obj.paginator.page_range %}
+    {% if num == page_obj.number %}<span class="page-btn active">{{ num }}</span>
+    {% elif num >= page_obj.number|add:'-3' and num <= page_obj.number|add:'3' %}
+    <a href="?page={{ num }}&subject={{ subject }}&difficulty={{ difficulty }}" class="page-btn">{{ num }}</a>
+    {% endif %}
+  {% endfor %}
+  {% if page_obj.has_next %}
+  <a href="?page={{ page_obj.next_page_number }}&subject={{ subject }}&difficulty={{ difficulty }}" class="page-btn"><i class="fas fa-chevron-right"></i></a>
+  {% else %}<span class="page-btn disabled"><i class="fas fa-chevron-right"></i></span>{% endif %}
+</div>
+{% endif %}
+
+<!-- Preview Modal -->
+<div class="modal-overlay" id="previewModal">
+  <div class="modal" style="max-width:640px;">
+    <div class="modal-header">
+      <div class="modal-title">Savol ko'rinishi</div>
+      <button class="modal-close" onclick="closeModal('previewModal')">&times;</button>
+    </div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function previewQuestion(id, content, a, b, c, d, correct, explanation) {
+  document.getElementById('modalContent').innerHTML = `
+    <div style="margin-bottom:16px; padding:14px; background:#f8fafc; border-radius:8px; line-height:1.6; font-size:0.88rem;">${content}</div>
+    <div style="display:grid; gap:8px;">
+      ${['A','B','C','D'].map((opt, i) => {
+        const text = [a,b,c,d][i];
+        const isCorrect = opt === correct;
+        return `<div style="display:flex; align-items:flex-start; gap:10px; padding:10px 12px; border-radius:8px; border:2px solid ${isCorrect ? '#32C992' : '#e8eaf0'}; background:${isCorrect ? '#e8faf3' : '#fff'};">
+          <span style="width:24px; height:24px; border-radius:6px; background:${isCorrect ? '#32C992' : '#e8eaf0'}; color:${isCorrect ? '#fff' : '#64748b'}; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.78rem; flex-shrink:0;">${opt}</span>
+          <span style="font-size:0.85rem;">${text}</span>
+        </div>`;
+      }).join('')}
+    </div>
+    ${explanation ? `<div style="margin-top:14px; padding:12px; background:#fffbeb; border-radius:8px; font-size:0.82rem; border-left:3px solid #f59e0b;"><strong>Izoh:</strong> ${explanation}</div>` : ''}
+  `;
+  document.getElementById('previewModal').classList.add('open');
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+function deleteQuestion(id) {
+  if (!confirm('Bu savolni o\'chirishni tasdiqlaysizmi?')) return;
+  csrfFetch(`/panel/questions/${id}/delete/`, { method: 'POST' })
+    .then(r => r.json())
+    .then(() => location.reload())
+    .catch(e => alert('Xato: ' + e.message));
+}
+
+document.getElementById('previewModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal('previewModal');
+});
+</script>
+{% endblock %}

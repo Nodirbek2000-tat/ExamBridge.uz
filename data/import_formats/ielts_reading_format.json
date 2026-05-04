@@ -1,0 +1,138 @@
+{
+  "_comment": "IELTS Reading Import Format — POST /api/import/ielts/reading/",
+
+  "mode": "standalone",
+  "passage": {
+    "title": "The History of Coffee",
+    "content": "Coffee was first discovered in Ethiopia...\n\nParagraph A: ...\nParagraph B: ...",
+    "passage_number": 1,
+    "difficulty": "MEDIUM",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TFNG",
+      "_comment_type": "TRUE/FALSE/NOT GIVEN — correct_answer: TRUE | FALSE | NOT GIVEN",
+      "content": "Coffee was originally discovered in Brazil.",
+      "correct_answer": "FALSE",
+      "explanation": "The passage states coffee was discovered in Ethiopia.",
+      "group_instruction": "Questions 1-4: Do the following statements agree with the information in the text? Write TRUE, FALSE or NOT GIVEN."
+    },
+    {
+      "number": 2,
+      "question_type": "YNNG",
+      "_comment_type": "YES/NO/NOT GIVEN — correct_answer: YES | NO | NOT GIVEN",
+      "content": "The author believes coffee consumption is beneficial.",
+      "correct_answer": "YES",
+      "explanation": "The author clearly states...",
+      "group_instruction": "Questions 2-5: Do the following statements agree with the views of the writer? Write YES, NO or NOT GIVEN."
+    },
+    {
+      "number": 3,
+      "question_type": "MCQ",
+      "_comment_type": "Multiple Choice — correct_answer is the option letter e.g. A",
+      "content": "What is the main purpose of the passage?",
+      "correct_answer": "B",
+      "explanation": "The passage mainly focuses on...",
+      "group_instruction": "Questions 3-6: Choose the correct letter A, B, C or D.",
+      "choices": [
+        {"option": "A", "text": "To describe the economic impact of coffee"},
+        {"option": "B", "text": "To trace the historical origins of coffee"},
+        {"option": "C", "text": "To compare coffee varieties"},
+        {"option": "D", "text": "To argue for coffee's health benefits"}
+      ]
+    },
+    {
+      "number": 4,
+      "question_type": "MULTI",
+      "_comment_type": "Multiple Select — correct_answer: pipe-separated e.g. A|C|E, max_selections = how many to choose",
+      "content": "Which THREE of the following are mentioned in the passage?",
+      "correct_answer": "A|C|E",
+      "max_selections": 3,
+      "explanation": "Options A, C and E are directly mentioned.",
+      "group_instruction": "Questions 4-6: Choose THREE letters from A-G.",
+      "choices": [
+        {"option": "A", "text": "Ethiopia as the origin"},
+        {"option": "B", "text": "Coffee plants grow only in cold climates"},
+        {"option": "C", "text": "The spread of coffee to Arabia"},
+        {"option": "D", "text": "Coffee was banned in the 18th century"},
+        {"option": "E", "text": "Coffee houses became social centres"},
+        {"option": "F", "text": "Brazil now produces 90% of the world's coffee"},
+        {"option": "G", "text": "Coffee has no medicinal properties"}
+      ]
+    },
+    {
+      "number": 5,
+      "question_type": "MATCH",
+      "_comment_type": "Matching Headings — correct_answer is the heading option letter e.g. vi",
+      "content": "Paragraph A",
+      "correct_answer": "iii",
+      "explanation": "Paragraph A discusses...",
+      "group_instruction": "Questions 5-9: Choose the correct heading for each paragraph from the list below.",
+      "choices": [
+        {"option": "i", "text": "The global spread of coffee"},
+        {"option": "ii", "text": "Health benefits discovered"},
+        {"option": "iii", "text": "The Ethiopian origins of coffee"},
+        {"option": "iv", "text": "Modern coffee production"},
+        {"option": "v", "text": "Coffee in popular culture"},
+        {"option": "vi", "text": "Economic importance of coffee trade"}
+      ]
+    },
+    {
+      "number": 6,
+      "question_type": "MINFO",
+      "_comment_type": "Matching Information — match statement to paragraph letter A-F",
+      "content": "A description of how coffee spreads to new regions",
+      "correct_answer": "C",
+      "explanation": "Paragraph C describes...",
+      "group_instruction": "Questions 6-10: Which paragraph contains the following information? Write the correct letter A-F.",
+      "choices": [
+        {"option": "A", "text": "Paragraph A"},
+        {"option": "B", "text": "Paragraph B"},
+        {"option": "C", "text": "Paragraph C"},
+        {"option": "D", "text": "Paragraph D"},
+        {"option": "E", "text": "Paragraph E"},
+        {"option": "F", "text": "Paragraph F"}
+      ]
+    },
+    {
+      "number": 7,
+      "question_type": "GAP",
+      "_comment_type": "Gap Filling — correct_answer is the missing word(s)",
+      "content": "Coffee was first cultivated in ___ around the 9th century.",
+      "correct_answer": "Ethiopia",
+      "explanation": "The text states it was cultivated in Ethiopia.",
+      "group_instruction": "Questions 7-12: Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage."
+    },
+    {
+      "number": 8,
+      "question_type": "TABLE",
+      "_comment_type": "Table/Summary Completion — fill in blank in a table cell",
+      "content": "Country of origin: ___",
+      "correct_answer": "Ethiopia",
+      "explanation": "Ethiopia is stated as the country of origin.",
+      "group_instruction": "Questions 8-12: Complete the table below. Choose NO MORE THAN ONE WORD from the passage."
+    },
+    {
+      "number": 9,
+      "question_type": "SENT",
+      "_comment_type": "Sentence Completion",
+      "content": "Coffee houses originally served as ___ as well as places to drink coffee.",
+      "correct_answer": "social centres",
+      "explanation": "The passage mentions social centres.",
+      "group_instruction": "Questions 9-13: Complete each sentence with the correct ending."
+    },
+    {
+      "number": 10,
+      "question_type": "SHORT",
+      "_comment_type": "Short Answer — answer in own words (no more than X words)",
+      "content": "Where was coffee first discovered?",
+      "correct_answer": "Ethiopia",
+      "explanation": "Ethiopia is mentioned in paragraph 1.",
+      "group_instruction": "Questions 10-14: Answer the questions below. Choose NO MORE THAN TWO WORDS from the passage."
+    }
+  ]
+}

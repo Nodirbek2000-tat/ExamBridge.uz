@@ -1,0 +1,1375 @@
+{
+  "test_type": "SAT",
+  "year": 2024,
+  "month": 12,
+  "form": "A",
+  "is_international": false,
+  "sections": [
+    {
+      "section_type": "MATH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Julia purchased 800 feet of fencing. She used 60% of this fencing to surround a vegetable garden. How many feet of fencing did Julia use to surround the vegetable garden?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 12 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 30 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 480 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 740 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Which expression is equivalent to $ 13\\left(x^2-7\\right) $ ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 13x^2-91 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 13x^2-20 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 13x^2-7 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 13x^2+6 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "1, 4, 7, 10, 33 What is the mean of the data shown?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 7 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 11 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 17 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 33 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A sleep study consisted of 59 participants, of which 53 participants each had an average ofmore than 120 minutes of rapid eye movement (REM) sleep per night. If a participant from this sleep study is selected at random, what is the probability of selecting a participant that had an average of more than l20 minutes of REM sleep per night?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{53}{100} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{59}{100} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{53}{59} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{59}{53} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A soccer team&#8217;s goal is to earn at least $1,320 by selling coupon books. The team earns $12 from selling each coupon book. Which of the following inequalities describes all possible values for the number of coupon books, n, the team can sell to meet the goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ n+12\\le1,320 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ n+12\\ge1,320 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 12n\\le1,320 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 12n\\ge1,320 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ 2.5c+5d=60 $ The given equation describes the relationship between the number of cats, c, and the number of dogs, d, that can be cared for at a pet care business during a wveek. If the business cares for l2 dogs during a week, how many cats can it care for during this week?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 0 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 5 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 30 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 60 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ -\\left(3x-7\\right)^2=p+17 $ ​​​​​​​ In the given equation, p is an integer constant. The equation has no real solution. What is the least possible walue of p?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ -18 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ -17 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ -16 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ -15 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "For the triangles shown, triangle ABC is dilated by a scale factor of 5 to obtain triangle XYZ , where d= 19, what is the measure, in degrees, of angle X?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2024-US-Form-A-Math-M1-Q9.png",
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 12 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 55 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 60 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 65 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "What is the y-intercept of the graph of y = 16 x+3 in the xy-plane?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ (0,4,096) $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ (0,0) $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ (0,16) $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ (0,3) $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The area of triangle ABC is 220 square centimeters. What is the height h, in centimeters, of this triangle?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2024-US-Form-A-Math-M1-Q11.png",
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 10 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 22 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 44 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 88 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In the right triangle shown, the value of tan x° is $ \\dfrac{c}{39} $ ​​​​​​​ . What is the value of c?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2024-US-Form-A-Math-M1-Q12.png",
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 79 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 40 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 39 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 1 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The graph of the polynomial function f in the xy-plane, where y= f(x), has x-intercepts of (-5,0) and (6, 0). Which of the following must be true?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ f\\left(0\\right)=-5 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ f\\left(6\\right)=-5 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ f(-5\\right)= 0 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ f(-5\\right)= 6 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ \\dfrac{5}{4}x+2y=17\\ \\ \\dfrac{3}{4}x+2y=15 $ $ \\dfrac{5}{4}x+2y=17\\ \\ \\dfrac{3}{4}x+2y=15 $ The solution to the given system of equations is (x, y). What is the value of $ \\dfrac{11}{4}x+6y $ ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 4 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 6 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 32 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 47 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The function h is defined by h(x)=14(2) -x + 7. What is the value of h(3)?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{42}{4}\\dfrac{}{} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{42}{4}\\dfrac{35}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ -77 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ -105 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ 5x+8y=9 $ $ ​​​​​​​15x+24y=27 $ For each real number r, which of the following points lies on the graph of each equation in the xy-plane for the given system?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\left(r,-\\dfrac{5r}{8}+\\dfrac{9}{8}\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\left(-\\dfrac{5r}{8}+\\dfrac{9}{8},r\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\left(-\\dfrac{5r}{8}+9,\\dfrac{5r}{8}+27\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\left(\\dfrac{r}{3}+9,-\\dfrac{r}{3}+27\\right) $",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "ENGLISH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 32,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The National Heritage Fellowship was created to honor exceptional folk and traditional artists in the United States. One artist who received the fellowship is Navajo (Diné) basket weaver Mary Holiday Black. Black was chosen for her lifetime _________ the arts. Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "contributions to",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "doubts about",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "imitations of",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "misunderstandings of",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The following text is from Kenneth Grahame&#8217;s 1908 novel The Wind in the Willows . The Mole is returning home after a visit to Mr Badger&#8217;s house. As he hurried along, eagerly anticipating the moment when he would be at home again among the things he knew and liked, the Mole saw clearly that he was an animal of tilled field and hedge-row, linked to the ploughed furrow, the frequented pasture, the lane of evening lingerings, the cultivated garden-plot. As used in the text, what does the word &#8220;anticipating&#8221; most nearly mean?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Describing",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Getting ahead of",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Looking forward to",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Instructing",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The Fly River delta is a remarkably _______ landscape: it is a constantly evolving network of channels and strips of land that change in size and shape as the river deposits new sedimentary particles where the river meets the waters of the Gulf of Papua. Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "mutable",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "habitable",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "secluded",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "homogeneous",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Though few critics consider Vasily Grossman&#8217;s novel Stalingrad —which focuses on the experience of the Soviet Union in the early years of World War II—to be as well as his later book Everything Flows , some compliment it despite the damage _________ Soviet censors: Luke Harding in The Guardian called the novel &#8220;a work of lyrical art.&#8221; Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "concealed from",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "bestowed on",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "allocated to",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "wrought by",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A microgenre is a specialized genre consisting of a comparatively small number of stylistically similar artists. The microgenre of electronic music known as hyperpop emerged in the 2010s, with American singer Dorian Electra as an early exponent. Their combination of lush synthesizer arrangements and propulsive beats with vocals electronically shifted in pitch below their natural range exemplifies the hyperpop sound. More recently, Japanese-British recording artist Rina Sawayama has contributed to the microgenre by incorporating pop melodies into hyperpop songs. Which choice best describes the function of the underlined sentence in the text as a whole?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "It anticipates an objection to the text&#8217;s endorsement of hyperpop.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "It notes an exception to the text&#8217;s description of hyperpop.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "It defines a term used in the text&#8217;s discussion of hyperpop.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "It states that the text&#8217;s intended audience mainly consists of hyperpop fans.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Cuttlefish and toads see in three dimensions (3D) by combining two images in their brains, one from each eye. This produces a sense of depth, helping the animals judge how close or far away an object is. Researchers have investigated 3D vision in praying mantises as well. In one study, Vivek Nityananda and his team fitted mantises&#8217; faces with two different color filters, one covering each eye, much like the filters in 3D glasses once worn at movies . By observing the mantises&#8217; reaction to projected images, the team confirmed that mantises do indeed have 3D vision, but it&#8217;s unlike that of other animals. Which choice best states the function of the underlined portion in the text as a whole?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "It identifies a potential problem that the researchers faced while studying the praying mantises.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "It offers a comparison meant to aid understanding of the praying mantis study.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "It emphasizes a difference between the research on praying mantis vision and research on other animals&#8217; vision.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "It describes an earlier use of a tool the researchers used in the praying mantis study.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Text 1 The island of Grande Terre split from the former supercontinent Gondwana around 80 million years ago, carrying Gondwanan species from a variety of clades with it. The island was periodically submerged until 37 million years ago, but some researchers suggest that its current biota includes species from clades predating the split that took refuge on islands near Grande Terre during submergence events and then returned. Text 2 Thomas R. Buckley et al. found that the crown age—the age of the most recent common ancestor of all species in the clade (i.e., the clade&#8217;s founder)—of Grande Terre&#8217;s clade of stick insects is 41.1 million years, which is among the oldest clade crown ages of species inhabiting the island today. Nearly all of Grande Terre&#8217;s living species belong to clades that originated much more recently: for example, the crown age of the island&#8217;s clade of Goodeniaceae plants is 2.0 million years. Based on the texts, the author of Text 2 would most likely agree with which statement about the “Gondwanan species&#8221; discussed in Text 1?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Most of them began recolonizing Grande Terre from nearby islands around 2.0 million years ago.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Clades to which they belong originated no earlier than 41.1 million years ago.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Few if any of them were members of a clade that includes species currently inhabiting Grande Terre.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Although most of them have living descendants on Grande Terre, the stick insects and Goodeniaceae plants do not.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Text 1 According to a study by a conservation group representing 11 tribal nations in the Great Lakes region, the northern wild rice ( manoomin in the Ojibwe language) will have significantly worse outcomes over the next 50 years if temperatures increase as much as some models suggest. By contrast, the white-tailed deer ( waawaashkeshi in Ojibwe) should be able to withstand the highest predicted warming without much harm and so likely won&#8217;t require the conservation efforts that the northern wild rice will. Text 2 US government agencies involved in conservation are unfortunately not able to address every possible threat to natural resources. They must use the best information available to decide which species are most threatened and therefore most in need of conservation efforts. Based on the texts, both authors would most likely agree with which statement?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "State, federal, and tribal groups involved in natural-resource management in the Great Lakes region should immediately begin conservation programs for both the northern wild rice and white-tailed deer.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Agencies involved in natural-resource management in the Great Lakes region should focus their conservation efforts more on the northern wild rice than on the white-tailed deer.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "A collaborative approach is necessary to keep temperatures in the Great Lakes region from increasing to the highest predicted levels.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Conservation efforts focused on the northern wild rice are more likely to be successful if they incorporate state and federal agency resources with the knowledge of tribal groups in those efforts.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The following text is from Julia Alvarez&#8217;s 2000 novel In the Name of Salomé . Salomé, a poet, is hosting guests in the front parlor of her family home, and Ramona is her sister. A salon is a social gathering for the exploration of intellectual ideas. It was evening when the two men got up to leave. Tia Ana had already come into the room several times to see if these guests had departed yet. The front parlor had always been her special province, as she used it for her little school. Now, every evening, it turned into Salomé&#8217;s salon, as Ramona called it, and it was never in order for its transformation back to a classroom the following morning. ©2000 by Julia Alvarez Based on the text, what most likely motivates Tia Ana&#8217;s behavior during Salomé&#8217;s salon?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "She considers the guests to be uninteresting and is trying to convince them to leave.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "She is impatient to share her plans to start a new school with the guests and hopes they will support her.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "She is anxious for the gathering to disperse so that she can ready the space for her own needs.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "She is frustrated because she needs assistance elsewhere in the house, but Salomé is unavailable while entertaining the guests.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Studies of the population density of cougars ( Puma concolor ) have yielded a range of results, which may in part reflect differences in the effectiveness of the methods that researchers have used in their studies. If, for example, the use of clustered camera trapping and GPS tracking of collars tends to lead to underestimates of cougar population density, that may explain why the study by ___________ Which choice most effectively uses data from the table to complete the example?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2024-US-Form-A-English-M1-Q10.png",
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "P. Ian Ross and Martin G. Jalkotzy reported a maximum density of 4.70 individuals per 100 square kilometers, while the study by Richard Beausoleil et al., which used biopsy darting, reported a lower maximum density.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Sean M. Murphy et al. reported a maximum density of only 1.65 individuals per 100 square kilometers, lower than that reported by several other studies.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Richard A. Beausoleil et al. required a study area of 7,939 square kilometers, while the study by Sean M. Murphy et al. required a study area of 4,329 square kilometers.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Lindsey N. Rich et al. reported a maximum density of 6.50 individuals per 100 square kilometers, higher than that reported by several other studies.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Researchers Carolina Laura Morales and Anna Traveset gathered data about flowering plants growing alongside each other in various locations. In each case, the researchers identified one plant as a “target species” and a nearby plant as a “neighboring species.” The researchers then calculated a value to show how the neighboring species affected pollinator visits to the target species. A negative effect value indicates that the neighboring species had a harmful effect on the target species. Based on the table, two neighboring species that had a harmful effect on target species are the _________ Which choice most effectively uses data from the table to complete the statement?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2024-US-Form-A-English-M1-Q11.png",
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "prickly pear and the Canadian wood betony.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "leafy spurge and the prickly pear.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "leafy spurge and the sticky catchfly.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Canadian wood betony and the sticky catchfly.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A Pair of Silk Stockings is an 1897 short story written by Kate Chopin. In the story, Mrs. Sommers attends a play, which she experiences as a temporary escape from the circumstances of her daily life: ______ Which quotation from &#8220;A Pair of Silk Stockings&#8221; most effectively illustrates the claim?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "&#8220;The play was over, the music ceased, the crowd filed out. It was like a dream ended,&#8221;",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "&#8220;But there were vacant seats here and there, and into one of them she was ushered, between brilliantly dressed women who had gone there to kill time and eat candy and display their gaudy attire.&#8221;",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "“It was a little later when she entered the theatre, the play had begun and the house seemed to her to be packed,&#8221;",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "&#8220;When she entered [the restaurant] her appearance created no surprise, no consternation, as she had half feared it might.&#8221;",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Hypothesizing that lullabies, characterized by their slow tempos, are universally calming to infants, Constance M. Bainbridge and colleagues played a lullaby sung in the Western Nahuatl language and a non-lullaby sung in the Serbian language to a group of infants. The team found that the infants&#8217; heart rates and pupil size both decreased more during the lullaby than during the non-lullaby. Since a decrease in heart rate is associated with relaxation, the team concluded that the lullaby relaxed the infants. However, noting that reduced heart rate can also be associated with increased attention, one critic argues that instead, the lullaby simply attracted the infants&#8217; attention. Which finding, if true, would most directly weaken the critic&#8217;s claim?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Parents of infants in the study preferred the Western Nahuatl lullaby over the Serbian non-lullaby.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Infants in the study had never heard the Western Nahuatl lullaby before.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "More frequent blinking has also been found to be a reliable indication of attention.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Pupil size typically increases when a stimulus captures a person&#8217;s attention.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "High-entropy alloys (HEAs) have been observed to have greater fracture toughness—greater resistance to crack propagation—than conventional alloys. It has been proposed that fracture toughness increases with the proportion of an HEA consisting of cobalt, but data on HEAs compiled by engineer Xuesong Fan show that this is not the case; for example, ______ Which choice most effectively uses data from the table to complete the text?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2024-US-Form-A-English-M1-Q14.png",
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "cobalt constitutes the same proportion of HEA 7 as it does of HEA 95.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "cobalt constitutes a higher proportion of HEA 15 than it does of HEA 7.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "cobalt constitutes a substantial proportion of HEA 15 but does not constitute any of HEA 51.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "cobalt constitutes a different proportion of HEA 25 than it does of HEA 7.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The olona shrub is one of many forest plant species native to Oahu (a Hawaiian island) that are at risk of extinction. The survival of most of these species in the wild largely depends on birds eating their fruits and then dropping the seeds in different locations. Although Oahu&#8217;s native fruit-eating birds have all gone extinct, the common waxbill and other fruit-eating bird species have been brought to the island and are now common there. Studies confirm that these non-native birds are spreading plant seeds on Oahu, suggesting that the birds ______ Which choice most logically completes the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "are dropping higher numbers of native forest plant seeds around the island than native bird species did in the past.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "show significantly more interest in eating the fruits of native forest plants than in eating the fruits of non-native ones.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "may be necessary for the continued survival of vulnerable forest plant species, such as the olona shrub.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "may also engage in other activities that affect the ability of olona shrubs and other vulnerable forest plants to continue to spread to new areas.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The human body has three types of muscle ______ cardiac, and skeletal. The levator anguli oris is a skeletal muscle—of which the body contains more than six hundred—and it helps with raising the corners of the mouth. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "tissue and smooth,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "tissue: smooth,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "tissue smooth,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "tissue. Smooth",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Alabama resident Benjamin S. Turner, sworn in as a member of the US House of Representatives in 1871, was one of the nearly two thousand African _________ during the decade following the Civil War. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Americans&#8217; who won elections&#8217;",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Americans who won election&#8217;s",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "American&#8217;s who won elections",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Americans who won elections",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The term &#8220;retroflex&#8221; derives from Latin and means &#8220;bent back,&#8221; an apt description for the branch of consonants—retroflex consonants—pronounced with the tongue curling up and back in the mouth. In many languages, including English, these consonants are _______ in some dialects of Mandarin, however, four such consonants (&#8220;ch,&#8221; &#8220;sh,&#8221; &#8220;zh,&#8221; and &#8220;r&#8221;) are relatively common. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "rare,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "rare",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "rare;",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "rare and",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 19,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The programming languages COBOL, developed by Grace Hopper in ______ developed by Rich Hickey in 2007, are all routinely translated into executable code by tools known as compilers. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "1959, Java developed by James Gosling in 1995; and Clojure",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "1959, Java; developed by James Gosling in 1995; and Clojure,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "1959; Java, developed by James Gosling in 1995, and Clojure,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "1959; Java, developed by James Gosling in 1995; and Clojure,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 20,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Proto-Kru is a protolanguage, or a hypothesized ancestral language, of all the Kru languages (thirty-eight languages that, because ______ are descendants of Proto-Kru, can provide information about the protolanguage&#8217;s structure). Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "its",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "they&#8217;re",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "their",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "it&#8217;s",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 21,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Though Middle English was widely spoken in fourteenth-century England, the English language was rarely employed in literature until poet Geoffrey Chaucer pioneered its literary use. ______ his manuscripts contain the first documented uses of over 2,000 English words—like the word &#8220;digestion&#8221; in his 1395 poem &#8220;The Squire&#8217;s Tale&#8221;—which led a contemporary to dub him “the first finder of our fair language.&#8221; Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "However,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Besides,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "In fact,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "On the contrary,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 22,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In skateboarding, the 900—a trick in which the skateboarder spins two and a half times in midair—is so rare that every successful execution of it is a historic occasion. ________ ever since Mitchie Brusco and Tas Pappas performed their 900s (in 2011 and 2014, respectively), fans have revered them as titans of the sport. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "In conclusion,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "By comparison,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "For this reason,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Regardless,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 23,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Visually distinguishing the common raven ( Corvus corax ) from the Chihuahuan raven ( Corvus cryptoleucus ) can confound even seasoned bird watchers. ______ the two species share similarities that—at times—make the birds appear virtually identical. Size, though, remains a differentiating feature: the common raven tends to be larger. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Instead,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Moreover,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Indeed,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Thus,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 24,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: Elizabeth Catlett (1915-2012) was a celebrated African American artist. She is best known for creating sculptures and prints that explore the Black experience. Mahalia is a 2002 sculpture by Catlett. Paulina is a 2009 print by Catlett. The student wants to provide an example of one of Catlett&#8217;s sculptures. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "The sculpture Mahalia was created by celebrated artist Elizabeth Catlett in 2002.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Elizabeth Catlett, a celebrated artist, was born in 1915.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "The print Paulina was created by celebrated artist Elizabeth Catlett in 2009.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Artist Elizabeth Catlett is best known for creating sculptures and prints that explore the Black experience.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 25,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: Lighthouses send out crucial light signals to help ships and other watercraft navigate at night. Before automation, lighthouses were run by lighthouse keepers. Kate Walker was the lighthouse keeper at Robbins Reef Light in New York. She held this position from 1894 to 1919. Georgiana C. Brumfield was the lighthouse keeper at Turkey Point Light in Maryland. She held this position from 1895 to 1919. The student wants to emphasize a similarity between Kate Walker and Georgiana C. Brumfield. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Lighthouse keepers during the late nineteenth and early twentieth centuries were crucial to ensuring safe navigation for watercraft.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "From 1894 to 1919, the nighttime waters of New York were more navigable thanks to Kate Walker.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Kate Walker and Georgiana C. Brumfield were both lighthouse keepers during the late nineteenth and early twentieth centuries.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Kate Walker and Georgiana C. Brumfield spent their careers as lighthouse keepers in different lighthouses.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 26,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: The University of Oslo in Oslo, Norway, is home to a Foucault pendulum. The pendulum consists of a weighted ball that swings at the end of a roughly 14-meter-long cable. Like all Foucault pendulums, it dangles from a fixed point that ensures the swing path of the pendulum doesn&#8217;t change. To an observer, the swing path of a Foucault pendulum appears to change over time because Earth rotates beneath it. Foucault pendulums are used as a simple way to provide evidence of Earth&#8217;s rotation. Which choice most effectively uses information from the given sentences to specify the length of the Foucault pendulum&#8217;s cable?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "With a swing path that appears to change over time, a Foucault pendulum provides evidence of Earth&#8217;s rotation.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The Foucault pendulum at the University of Oslo consists of a weighted ball and a cable.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Although the swing path of a Foucault pendulum doesn&#8217;t actually change, it appears to change due to Earth rotating beneath the pendulum.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "The Foucault pendulum at the University of Oslo in Oslo, Norway, includes a cable that is roughly 14 meters long.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 27,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: Mauritania is a country in North Africa. A high percentage of Mauritania&#8217;s population (39.9 percent) is under fifteen years old. It has the thirty-fourth-largest under-fifteen population in the world. Roughly 40 percent of Africa&#8217;s population is under fifteen years old—the highest of any continent. According to the United Nations (UN), Africa&#8217;s &#8220;high number of young people is an opportunity for the continent&#8217;s growth—but only if these new generations are fully empowered to realise their best potential.” The student wants to emphasize the global rank of Mauritania&#8217;s youth population. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "With 39.9 percent of its population under fifteen years of age, Mauritania has the thirty-fourth highest population for that age range in the world.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Africa&#8217;s high population of young people is due in part to the high percentage of young people in Mauritania.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Making up roughly 40 percent of the continent&#8217;s total population, Africa&#8217;s under-fifteen population offers “an opportunity for the continent&#8217;s growth,” according to the UN.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "&#8220;Only if these new generations are fully empowered to realise their best potential,&#8221; says the UN, will Africa&#8217;s high percentage of young people lead to the continent&#8217;s growth.",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

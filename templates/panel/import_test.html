@@ -1,0 +1,188 @@
+{% extends 'panel/base.html' %}
+{% block title %}Test Import{% endblock %}
+{% block page_title %}To'liq SAT Test Import{% endblock %}
+{% block breadcrumb %}SATBridge / Admin / Testlar / Import{% endblock %}
+
+{% block content %}
+<div class="two-col">
+
+  <!-- Upload Form -->
+  <div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title"><i class="fas fa-upload" style="color:var(--green); margin-right:6px;"></i>JSON fayl yuklash</span>
+      </div>
+      <div class="card-body">
+        <div id="importAlert" style="display:none;"></div>
+
+        <div class="form-group">
+          <label class="form-label">JSON fayl tanlang</label>
+          <input type="file" id="jsonFile" accept=".json" class="form-control" onchange="previewFile(this)">
+        </div>
+
+        <div id="previewSection" style="display:none;">
+          <div class="form-group">
+            <label class="form-label">Yoki JSON text kiriting</label>
+            <textarea id="jsonText" class="form-control" rows="12" placeholder='{"test_type": "SAT", "year": 2025, ...}'></textarea>
+          </div>
+        </div>
+        {% if not previewSection %}
+        <div class="form-group">
+          <label class="form-label">Yoki JSON text kiriting</label>
+          <textarea id="jsonText" class="form-control" rows="10" placeholder='{"test_type": "SAT", "year": 2025, "month": 3, "form": "A", "sections": [...]}'></textarea>
+        </div>
+        {% endif %}
+
+        <button onclick="importTest()" class="btn btn-primary" style="width:100%;">
+          <i class="fas fa-upload"></i> Import qilish
+        </button>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div id="resultCard" style="display:none;" class="card">
+      <div class="card-header"><span class="card-title">Natija</span></div>
+      <div class="card-body" id="resultBody"></div>
+    </div>
+  </div>
+
+  <!-- Format Reference -->
+  <div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title"><i class="fas fa-code" style="color:var(--indigo); margin-right:6px;"></i>JSON format namunasi</span>
+      </div>
+      <div class="card-body">
+        <pre class="code-block">{
+  "test_type": "SAT",
+  "year": 2025,
+  "month": 3,
+  "form": "A",
+  "is_international": false,
+  "sections": [
+    {
+      "section_type": "MATH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "content": "What is 2+2? \\(2+2=?\\)",
+              "difficulty": "EASY",
+              "correct_answer": "A",
+              "explanation": "Basic addition",
+              "choices": [
+                {"option": "A", "text": "4"},
+                {"option": "B", "text": "3"},
+                {"option": "C", "text": "5"},
+                {"option": "D", "text": "6"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "ENGLISH",
+      "modules": [...]
+    }
+  ]
+}</pre>
+
+        <hr class="divider">
+        <div style="font-size:0.8rem; color:var(--text-muted);">
+          <strong>Maydonlar:</strong><br>
+          <code>test_type</code>: SAT yoki PSAT<br>
+          <code>month</code>: 1-12 (sonlar bilan)<br>
+          <code>section_type</code>: MATH yoki ENGLISH<br>
+          <code>question_type</code>: MCQ yoki INPUT<br>
+          <code>difficulty</code>: EASY, MEDIUM, HARD<br>
+          <code>passage</code>: Ingliz tili uchun (optional)
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function previewFile(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('jsonText').value = e.target.result;
+    };
+    reader.readAsText(input.files[0]);
+  }
+}
+
+function importTest() {
+  const text = document.getElementById('jsonText').value.trim();
+  if (!text) {
+    showAlert('error', 'JSON kiriting!');
+    return;
+  }
+
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch(e) {
+    showAlert('error', 'Noto\'g\'ri JSON: ' + e.message);
+    return;
+  }
+
+  const btn = event.target;
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Import qilinmoqda...';
+
+  csrfFetch('/panel/tests/import/', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(r => r.json())
+  .then(res => {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-upload"></i> Import qilish';
+
+    if (res.success) {
+      showAlert('success', `Muvaffaqiyatli! Test ID: ${res.test_id} | ${res.questions} ta savol`);
+      showResult(res);
+    } else {
+      showAlert('error', res.error || 'Xato yuz berdi');
+    }
+  })
+  .catch(e => {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-upload"></i> Import qilish';
+    showAlert('error', 'Server xatosi: ' + e.message);
+  });
+}
+
+function showAlert(type, msg) {
+  const el = document.getElementById('importAlert');
+  el.className = `alert alert-${type}`;
+  el.innerHTML = `<i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle"></i> ${msg}`;
+  el.style.display = 'flex';
+  setTimeout(() => el.style.display = 'none', 6000);
+}
+
+function showResult(res) {
+  const card = document.getElementById('resultCard');
+  const body = document.getElementById('resultBody');
+  body.innerHTML = `
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+      <div><div style="font-size:0.75rem; color:var(--text-muted);">Test ID</div><div style="font-size:1.5rem; font-weight:800;">${res.test_id}</div></div>
+      <div><div style="font-size:0.75rem; color:var(--text-muted);">Savollar</div><div style="font-size:1.5rem; font-weight:800; color:var(--green);">${res.questions}</div></div>
+      <div><div style="font-size:0.75rem; color:var(--text-muted);">Holat</div><div style="font-size:1.5rem; font-weight:800;">${res.created ? 'Yangi' : 'Yangilandi'}</div></div>
+    </div>
+    <a href="/panel/tests/" class="btn btn-outline" style="margin-top:12px;"><i class="fas fa-list"></i> Testlar ro'yxatiga</a>
+  `;
+  card.style.display = 'block';
+}
+</script>
+{% endblock %}

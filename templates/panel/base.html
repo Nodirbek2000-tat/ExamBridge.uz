@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Panel{% endblock %} — SATBridge Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #32C992;
+      --green-dark: #25a876;
+      --green-light: #e8faf3;
+      --sidebar-bg: #0f1117;
+      --sidebar-hover: #1a1f2e;
+      --sidebar-active: #32C992;
+      --sidebar-text: #94a3b8;
+      --sidebar-text-active: #fff;
+      --bg: #f7f8fc;
+      --card: #fff;
+      --border: #e8eaf0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --red: #ef4444;
+      --yellow: #f59e0b;
+      --blue: #3b82f6;
+      --indigo: #6366f1;
+      --font: 'Manrope', sans-serif;
+    }
+    html, body { height: 100%; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); display: flex; }
+
+    /* ── SIDEBAR ── */
+    .panel-sidebar {
+      width: 240px; min-height: 100vh; background: var(--sidebar-bg);
+      display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0;
+      z-index: 100; overflow-y: auto;
+    }
+    .sidebar-logo {
+      padding: 20px 20px 16px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .sidebar-logo-mark {
+      width: 32px; height: 32px; background: var(--green); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sidebar-logo-mark svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2; }
+    .sidebar-logo-name { font-size: 0.95rem; font-weight: 700; color: #fff; }
+    .sidebar-logo-sub { font-size: 0.65rem; color: var(--green); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .sidebar-nav { padding: 12px 10px; flex: 1; }
+    .sidebar-section-label {
+      font-size: 0.6rem; font-weight: 700; color: rgba(255,255,255,0.25);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 12px 10px 6px;
+    }
+    .sidebar-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; text-decoration: none;
+      color: var(--sidebar-text); font-size: 0.85rem; font-weight: 500;
+      transition: background 0.15s, color 0.15s; margin-bottom: 2px;
+    }
+    .sidebar-link i { width: 16px; text-align: center; font-size: 0.8rem; }
+    .sidebar-link:hover { background: var(--sidebar-hover); color: #fff; }
+    .sidebar-link.active { background: rgba(50,201,146,0.15); color: var(--green); }
+    .sidebar-link .badge-count {
+      margin-left: auto; background: rgba(255,255,255,0.1);
+      color: #fff; font-size: 0.65rem; font-weight: 700;
+      padding: 1px 6px; border-radius: 20px; min-width: 20px; text-align: center;
+    }
+
+    .sidebar-footer {
+      padding: 14px 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .sidebar-user { display: flex; align-items: center; gap: 10px; padding: 6px 10px; }
+    .sidebar-user-avatar {
+      width: 30px; height: 30px; background: var(--green); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: #fff;
+    }
+    .sidebar-user-info { flex: 1; overflow: hidden; }
+    .sidebar-user-name { font-size: 0.8rem; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sidebar-user-role { font-size: 0.65rem; color: var(--green); }
+    .sidebar-link.danger:hover { background: rgba(239,68,68,0.15); color: var(--red); }
+
+    /* ── MAIN ── */
+    .panel-main {
+      margin-left: 240px; flex: 1; min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
+    .panel-topbar {
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: 0 28px; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 50;
+    }
+    .topbar-title { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+    .topbar-breadcrumb { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .topbar-actions { display: flex; align-items: center; gap: 12px; }
+    .topbar-badge {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--green-light); color: var(--green-dark);
+      font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+    }
+    .panel-body { padding: 24px 28px; flex: 1; }
+
+    /* ── STATS CARDS ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .stat-card-header { display: flex; align-items: center; justify-content: space-between; }
+    .stat-card-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+    }
+    .icon-green { background: var(--green-light); color: var(--green-dark); }
+    .icon-blue { background: #eff6ff; color: var(--blue); }
+    .icon-yellow { background: #fffbeb; color: var(--yellow); }
+    .icon-red { background: #fef2f2; color: var(--red); }
+    .icon-indigo { background: #eef2ff; color: var(--indigo); }
+    .stat-card-trend { font-size: 0.7rem; font-weight: 600; color: var(--green-dark); }
+    .stat-card-trend.down { color: var(--red); }
+    .stat-card-value { font-size: 1.8rem; font-weight: 800; color: var(--text); line-height: 1; }
+    .stat-card-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin-bottom: 20px;
+    }
+    .card-header {
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .card-title { font-size: 0.9rem; font-weight: 700; }
+    .card-body { padding: 20px; }
+
+    /* ── TABLE ── */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th {
+      font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 10px 14px; text-align: left;
+      border-bottom: 1px solid var(--border); white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f8fafc; }
+    tbody td { padding: 11px 14px; font-size: 0.83rem; }
+
+    /* ── BADGES ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;
+    }
+    .badge-green { background: var(--green-light); color: var(--green-dark); }
+    .badge-red { background: #fef2f2; color: var(--red); }
+    .badge-yellow { background: #fffbeb; color: #b45309; }
+    .badge-blue { background: #eff6ff; color: var(--blue); }
+    .badge-indigo { background: #eef2ff; color: var(--indigo); }
+    .badge-gray { background: #f1f5f9; color: #64748b; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; border: none; font-family: var(--font); transition: all 0.15s;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn-outline:hover { background: #f1f5f9; }
+    .btn-red { background: #fef2f2; color: var(--red); border: 1px solid #fecaca; }
+    .btn-red:hover { background: #fee2e2; }
+    .btn-sm { padding: 4px 10px; font-size: 0.75rem; }
+    .btn-xs { padding: 3px 8px; font-size: 0.7rem; }
+
+    /* ── FORMS ── */
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 6px; }
+    .form-control {
+      width: 100%; padding: 9px 12px; border: 1px solid var(--border);
+      border-radius: 8px; font-family: var(--font); font-size: 0.85rem;
+      background: #fff; color: var(--text); outline: none;
+      transition: border 0.15s;
+    }
+    .form-control:focus { border-color: var(--green); }
+    select.form-control { cursor: pointer; }
+    textarea.form-control { resize: vertical; min-height: 80px; }
+
+    /* ── SEARCH BAR ── */
+    .search-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .search-input-wrap { position: relative; flex: 1; min-width: 200px; }
+    .search-input-wrap i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem; }
+    .search-input { padding-left: 32px !important; }
+
+    /* ── PAGINATION ── */
+    .pagination { display: flex; align-items: center; gap: 6px; margin-top: 16px; justify-content: center; }
+    .page-btn {
+      width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+      border-radius: 8px; font-size: 0.82rem; font-weight: 600; text-decoration: none;
+      color: var(--text); border: 1px solid var(--border); transition: all 0.15s;
+    }
+    .page-btn:hover, .page-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
+    .page-btn.disabled { opacity: 0.4; pointer-events: none; }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+      z-index: 1000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.2s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--card); border-radius: 16px; width: 100%; max-width: 560px;
+      max-height: 85vh; overflow-y: auto; padding: 24px;
+      transform: translateY(16px); transition: transform 0.2s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .modal-title { font-size: 1rem; font-weight: 700; }
+    .modal-close { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 1.2rem; }
+
+    /* ── CODE BLOCK ── */
+    .code-block {
+      background: #0f1117; color: #a8ff78; padding: 14px 16px;
+      border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.78rem;
+      overflow-x: auto; line-height: 1.6; white-space: pre;
+    }
+
+    /* ── TOGGLE SWITCH ── */
+    .toggle-switch { position: relative; display: inline-block; width: 36px; height: 20px; }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute; cursor: pointer; inset: 0;
+      background: #cbd5e1; border-radius: 20px; transition: 0.2s;
+    }
+    .toggle-slider:before {
+      content: ''; position: absolute;
+      width: 14px; height: 14px; background: #fff; border-radius: 50%;
+      left: 3px; bottom: 3px; transition: 0.2s;
+    }
+    .toggle-switch input:checked + .toggle-slider { background: var(--green); }
+    .toggle-switch input:checked + .toggle-slider:before { transform: translateX(16px); }
+
+    /* ── ALERT ── */
+    .alert { padding: 10px 14px; border-radius: 8px; font-size: 0.83rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .alert-success { background: var(--green-light); color: var(--green-dark); }
+    .alert-error { background: #fef2f2; color: var(--red); }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+
+    /* ── TWO COL ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── CHART CONTAINER ── */
+    .chart-container { position: relative; height: 200px; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state { text-align: center; padding: 48px 20px; color: var(--text-muted); }
+    .empty-state-icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  </style>
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="panel-sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <div>
+      <div class="sidebar-logo-name">SATBridge</div>
+      <div class="sidebar-logo-sub">Admin Panel</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">Asosiy</div>
+    <a href="/panel/" class="sidebar-link {% if request.resolver_match.url_name == 'panel_dashboard' %}active{% endif %}">
+      <i class="fas fa-th-large"></i> Dashboard
+    </a>
+    <a href="/panel/analytics/" class="sidebar-link {% if request.resolver_match.url_name == 'panel_analytics' %}active{% endif %}">
+      <i class="fas fa-chart-bar"></i> Analytics
+    </a>
+
+    <div class="sidebar-section-label">Boshqaruv</div>
+    <a href="/panel/users/" class="sidebar-link {% if 'panel_users' in request.resolver_match.url_name %}active{% endif %}">
+      <i class="fas fa-users"></i> Foydalanuvchilar
+      <span class="badge-count">{{ total_users }}</span>
+    </a>
+    <a href="/panel/tests/" class="sidebar-link {% if 'panel_tests' in request.resolver_match.url_name %}active{% endif %}">
+      <i class="fas fa-file-alt"></i> Testlar
+      <span class="badge-count">{{ total_tests }}</span>
+    </a>
+    <a href="/panel/questions/" class="sidebar-link {% if 'panel_questions' in request.resolver_match.url_name %}active{% endif %}">
+      <i class="fas fa-question-circle"></i> Savollar banki
+      <span class="badge-count">{{ total_bank_questions }}</span>
+    </a>
+
+    <div class="sidebar-section-label">Import</div>
+    <a href="/panel/tests/import/" class="sidebar-link {% if request.resolver_match.url_name == 'panel_import_test' %}active{% endif %}">
+      <i class="fas fa-upload"></i> Test import
+    </a>
+    <a href="/panel/questions/import/" class="sidebar-link {% if request.resolver_match.url_name == 'panel_import_questions' %}active{% endif %}">
+      <i class="fas fa-file-import"></i> Savol import
+    </a>
+
+    <div class="sidebar-section-label">Tizim</div>
+    <a href="/" class="sidebar-link" target="_blank">
+      <i class="fas fa-external-link-alt"></i> Sayt
+    </a>
+    <a href="/admin/" class="sidebar-link" target="_blank">
+      <i class="fas fa-cog"></i> Django admin
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">{{ request.user.full_name|first|upper }}</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name">{{ request.user.full_name }}</div>
+        <div class="sidebar-user-role">{% if request.user.is_superuser %}Superadmin{% else %}Staff{% endif %}</div>
+      </div>
+    </div>
+    <a href="/auth/logout/" class="sidebar-link danger" style="margin-top:4px;">
+      <i class="fas fa-sign-out-alt"></i> Chiqish
+    </a>
+  </div>
+</aside>
+
+<!-- Main -->
+<div class="panel-main">
+  <header class="panel-topbar">
+    <div>
+      <div class="topbar-title">{% block page_title %}Dashboard{% endblock %}</div>
+      <div class="topbar-breadcrumb">{% block breadcrumb %}SATBridge / Admin{% endblock %}</div>
+    </div>
+    <div class="topbar-actions">
+      <div class="topbar-badge"><i class="fas fa-circle" style="font-size:0.5rem;"></i> Online</div>
+      {% block topbar_actions %}{% endblock %}
+    </div>
+  </header>
+
+  <main class="panel-body">
+    {% if messages %}
+    {% for msg in messages %}
+    <div class="alert alert-{% if msg.tags == 'error' %}error{% else %}success{% endif %}">
+      <i class="fas fa-{% if msg.tags == 'error' %}exclamation-circle{% else %}check-circle{% endif %}"></i>
+      {{ msg }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% block content %}{% endblock %}
+  </main>
+</div>
+
+<script>
+function getCookie(name) {
+  let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return v ? v[2] : null;
+}
+function csrfFetch(url, opts={}) {
+  return fetch(url, {
+    ...opts,
+    headers: { 'X-CSRFToken': getCookie('csrftoken'), 'Content-Type': 'application/json', ...(opts.headers||{}) }
+  });
+}
+</script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

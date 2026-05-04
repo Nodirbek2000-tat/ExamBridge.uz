@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}{{ test }} — SAT+{% endblock %}
+
+{% block content %}
+<div class="container-md section-sm">
+
+  <a href="/tests/" class="btn btn-ghost btn-sm mb-24" style="display:inline-flex;">
+    <i class="fas fa-arrow-left"></i> Back to Tests
+  </a>
+
+  <div class="card" style="padding:40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:32px;">
+      <div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+          <span class="badge badge-blue">{{ test.test_type }}</span>
+          {% if test.is_international %}<span class="badge badge-purple">International</span>
+          {% else %}<span class="badge badge-green">United States</span>{% endif %}
+          {% if test.is_premium %}<span class="badge badge-yellow"><i class="fas fa-crown"></i> Pro</span>{% endif %}
+        </div>
+        <h1 style="font-size:1.8rem;">{{ test }}</h1>
+        <p style="margin-top:8px;">Complete full-length Digital SAT mock test with adaptive scoring.</p>
+      </div>
+    </div>
+
+    <!-- Test info grid -->
+    <div class="grid-2" style="gap:16px; margin-bottom:32px;">
+      <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
+        <div class="text-xs text-dim mb-8" style="text-transform:uppercase; letter-spacing:1px; font-weight:700;">
+          <i class="fas fa-square-root-alt" style="color:var(--blue-light);"></i> Math Section
+        </div>
+        <div style="font-size:1.5rem; font-weight:800; color:var(--blue-light); margin-bottom:4px;">44 questions</div>
+        <div class="text-sm text-muted">Module 1: 22 questions · 35 min</div>
+        <div class="text-sm text-muted">Module 2: 22 questions · 35 min</div>
+        <div class="text-xs text-dim mt-8"><i class="fas fa-calculator"></i> Desmos calculator available</div>
+      </div>
+      <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px;">
+        <div class="text-xs text-dim mb-8" style="text-transform:uppercase; letter-spacing:1px; font-weight:700;">
+          <i class="fas fa-book-open" style="color:var(--green);"></i> Reading & Writing
+        </div>
+        <div style="font-size:1.5rem; font-weight:800; color:var(--green); margin-bottom:4px;">54 questions</div>
+        <div class="text-sm text-muted">Module 1: 27 questions · 32 min</div>
+        <div class="text-sm text-muted">Module 2: 27 questions · 32 min</div>
+        <div class="text-xs text-dim mt-8"><i class="fas fa-highlighter"></i> Highlighting & annotation tools</div>
+      </div>
+    </div>
+
+    <!-- Total time -->
+    <div style="background:var(--bg-hover); border-radius:var(--radius); padding:16px; display:flex; gap:24px; flex-wrap:wrap; margin-bottom:32px;">
+      <div><span class="text-dim text-sm">Total Time:</span> <strong>2 hours 14 minutes</strong></div>
+      <div><span class="text-dim text-sm">Total Questions:</span> <strong>98</strong></div>
+      <div><span class="text-dim text-sm">Score Range:</span> <strong>400 – 1600</strong></div>
+      <div><span class="text-dim text-sm">Format:</span> <strong>Adaptive (Module 1 → Module 2)</strong></div>
+    </div>
+
+    <!-- Important notes -->
+    <div style="background:rgba(245,158,11,0.06); border:1px solid rgba(245,158,11,0.2); border-radius:var(--radius); padding:16px; margin-bottom:32px;">
+      <div style="font-weight:700; color:var(--yellow); margin-bottom:8px; font-size:0.9rem;">
+        <i class="fas fa-exclamation-circle"></i> Before you start
+      </div>
+      <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
+        <li class="text-sm text-muted"><i class="fas fa-check" style="color:var(--yellow); width:14px;"></i> Find a quiet place with no interruptions</li>
+        <li class="text-sm text-muted"><i class="fas fa-check" style="color:var(--yellow); width:14px;"></i> Each module has a separate timer — it does not carry over</li>
+        <li class="text-sm text-muted"><i class="fas fa-check" style="color:var(--yellow); width:14px;"></i> You cannot go back after submitting a module</li>
+        <li class="text-sm text-muted"><i class="fas fa-check" style="color:var(--yellow); width:14px;"></i> A 10-minute break is available between sections</li>
+        <li class="text-sm text-muted"><i class="fas fa-check" style="color:var(--yellow); width:14px;"></i> Your progress is saved automatically</li>
+      </ul>
+    </div>
+
+    {% if existing_attempt %}
+    <div class="alert alert-warning" style="margin-bottom:20px;">
+      <i class="fas fa-info-circle"></i>
+      You have an unfinished attempt from {{ existing_attempt.started_at|date:"M d, Y" }}.
+      Starting a new test will abandon it.
+    </div>
+    {% endif %}
+
+    <form method="POST" action="/tests/{{ test.id }}/start/" id="startForm">
+      {% csrf_token %}
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button type="button" class="btn btn-primary btn-lg" onclick="confirmStart()">
+          <i class="fas fa-play"></i>
+          {% if existing_attempt %}Start New Attempt{% else %}Start Test{% endif %}
+        </button>
+        {% if existing_attempt %}
+        <a href="/tests/attempt/{{ existing_attempt.id }}/" class="btn btn-secondary btn-lg">
+          <i class="fas fa-redo"></i> Continue Previous
+        </a>
+        {% endif %}
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Start confirmation modal -->
+<div class="modal-overlay hidden" id="startModal">
+  <div class="modal-box">
+    <div class="modal-icon">🚀</div>
+    <h2 class="modal-title">Ready to begin?</h2>
+    <p class="modal-text">
+      You are about to start a <strong>full-length Digital SAT practice test</strong>.
+      Make sure you have <strong>2 hours and 14 minutes</strong> available.
+      <br><br>
+      Your timer will begin as soon as you click <strong>Start Test</strong>.
+    </p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">Not yet</button>
+      <button class="btn btn-primary" onclick="document.getElementById('startForm').submit()">
+        <i class="fas fa-play"></i> Start Test
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function confirmStart() {
+  document.getElementById('startModal').classList.remove('hidden');
+}
+function closeModal() {
+  document.getElementById('startModal').classList.add('hidden');
+}
+</script>
+{% endblock %}

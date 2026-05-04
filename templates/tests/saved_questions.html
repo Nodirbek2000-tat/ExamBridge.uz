@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block title %}Saved Questions — SATBridge{% endblock %}
+
+{% block content %}
+<div class="sidebar-layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Navigation</div>
+      <a href="/tests/" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+        Tests
+      </a>
+      <a href="/tests/saved/" class="sidebar-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+        Saved
+      </a>
+      <a href="/universities/" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        University Finder
+      </a>
+      <a href="/vocabulary/" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        Vocabulary
+      </a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Summary</div>
+      <div class="progress-panel">
+        <div class="progress-stat">
+          <span class="progress-stat-label">Total saved</span>
+          <span class="progress-stat-val">{{ saved_questions|length }}</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="sidebar-content">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Saved Questions</h1>
+        <p class="page-sub">Questions you bookmarked during tests</p>
+      </div>
+    </div>
+
+    <div style="padding:20px 28px;">
+
+      {% if not saved_questions %}
+      <div style="text-align:center; padding:80px 20px; color:var(--text-muted);">
+        <div style="font-size:2.5rem; margin-bottom:12px;">🔖</div>
+        <div style="font-weight:700; font-size:1rem; margin-bottom:8px;">No saved questions yet</div>
+        <p style="font-size:0.875rem;">Bookmark questions during a test by clicking the bookmark icon.</p>
+        <a href="/tests/" class="btn btn-primary" style="margin-top:20px; display:inline-block;">Take a test</a>
+      </div>
+
+      {% else %}
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {% for sq in saved_questions %}
+        <div class="card card-body" style="padding:20px;" id="saved-{{ sq.id }}">
+          <!-- Header -->
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              {% with mod=sq.question.module %}
+              <span class="badge {% if mod.section.section_type == 'MATH' %}badge-indigo{% else %}badge-green{% endif %}" style="font-size:0.7rem;">
+                {{ mod.section.section_type }}
+              </span>
+              <span class="badge" style="background:var(--bg-soft); color:var(--text-muted); font-size:0.7rem;">
+                Module {{ mod.module_number }}
+              </span>
+              <span class="text-xs text-light">Q{{ sq.question.number }}</span>
+              {% with test=mod.section.test %}
+              {% if test %}
+              <span class="text-xs text-light">· {{ test.year }} {{ test.get_month_display }}</span>
+              {% endif %}
+              {% endwith %}
+              {% endwith %}
+
+              {% if sq.question.difficulty %}
+              <span class="badge
+                {% if sq.question.difficulty == 'hard' %}badge-red
+                {% elif sq.question.difficulty == 'medium' %}badge-yellow
+                {% else %}badge-green{% endif %}"
+                style="font-size:0.65rem;">
+                {{ sq.question.difficulty|capfirst }}
+              </span>
+              {% endif %}
+            </div>
+
+            <button class="btn btn-ghost btn-sm" onclick="removeQuestion({{ sq.id }}, {{ sq.question.id }})"
+              style="color:var(--text-muted); font-size:0.75rem;">
+              Remove
+            </button>
+          </div>
+
+          <!-- Passage (if English) -->
+          {% if sq.question.passage %}
+          <div style="background:var(--bg-soft); border-left:3px solid var(--border); border-radius:8px; padding:12px 16px; margin-bottom:14px; font-size:0.82rem; color:var(--text-muted); max-height:120px; overflow:hidden; position:relative;" id="passage-{{ sq.id }}">
+            {{ sq.question.passage|safe }}
+            <div style="position:absolute; bottom:0; left:0; right:0; height:40px; background:linear-gradient(transparent, var(--bg-soft));"></div>
+          </div>
+          <button class="btn btn-ghost btn-sm" style="font-size:0.75rem; margin-bottom:12px;" onclick="expandPassage({{ sq.id }})">
+            Show full passage ↓
+          </button>
+          {% endif %}
+
+          <!-- Question content -->
+          <div style="font-size:0.9rem; margin-bottom:14px; line-height:1.6;">
+            {{ sq.question.content|safe }}
+          </div>
+
+          <!-- Choices -->
+          {% if sq.question.q_type == 'MCQ' %}
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            {% for choice in sq.question.choices.all %}
+            <div style="display:flex; gap:10px; align-items:flex-start; padding:10px 12px; border-radius:8px;
+              background:{% if choice.option == sq.question.correct_answer %}rgba(50,201,146,0.1){% else %}var(--bg-soft){% endif %};
+              border:1px solid {% if choice.option == sq.question.correct_answer %}var(--green){% else %}var(--border){% endif %};">
+              <span style="font-weight:700; font-size:0.85rem; color:{% if choice.option == sq.question.correct_answer %}var(--green-dark){% else %}var(--text-muted){% endif %}; flex-shrink:0;">
+                {{ choice.option }}
+              </span>
+              <span style="font-size:0.875rem;">{{ choice.text|safe }}</span>
+              {% if choice.option == sq.question.correct_answer %}
+              <span style="margin-left:auto; color:var(--green-dark); font-size:0.75rem; font-weight:700; flex-shrink:0;">✓ Correct</span>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <!-- INPUT type -->
+          <div style="padding:10px 14px; background:rgba(50,201,146,0.1); border:1px solid var(--green); border-radius:8px; display:inline-flex; gap:8px; align-items:center;">
+            <span style="font-size:0.8rem; color:var(--text-muted);">Correct answer:</span>
+            <span style="font-weight:700; color:var(--green-dark);">{{ sq.question.correct_answer }}</span>
+          </div>
+          {% endif %}
+
+          <!-- Note -->
+          {% if sq.note %}
+          <div style="margin-top:12px; padding:10px 12px; background:var(--bg-soft); border-radius:8px; font-size:0.82rem; color:var(--text-muted);">
+            <span style="font-weight:600;">Note: </span>{{ sq.note }}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<script>
+function removeQuestion(savedId, questionId) {
+  if (!confirm('Remove this question from saved?')) return;
+  fetch(`/tests/question/${questionId}/save/`, {
+    method: 'POST',
+    headers: {'X-CSRFToken': getCsrfToken(), 'Content-Type': 'application/json'}
+  }).then(r => r.json()).then(data => {
+    document.getElementById(`saved-${savedId}`)?.remove();
+  });
+}
+
+function expandPassage(savedId) {
+  const el = document.getElementById(`passage-${savedId}`);
+  if (el) {
+    el.style.maxHeight = 'none';
+    const gradient = el.querySelector('div[style*="linear-gradient"]');
+    if (gradient) gradient.remove();
+    event.target.remove();
+  }
+}
+
+function getCsrfToken() {
+  return document.cookie.split(';').map(c => c.trim()).find(c => c.startsWith('csrftoken='))?.split('=')[1] || '';
+}
+</script>
+{% endblock %}

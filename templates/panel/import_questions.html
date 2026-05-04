@@ -1,0 +1,194 @@
+{% extends 'panel/base.html' %}
+{% block title %}Savol Import{% endblock %}
+{% block page_title %}Savollar banki — JSON Import{% endblock %}
+{% block breadcrumb %}SATBridge / Admin / Savollar / Import{% endblock %}
+
+{% block content %}
+<div class="two-col">
+
+  <!-- Upload -->
+  <div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title"><i class="fas fa-file-import" style="color:var(--green); margin-right:6px;"></i>JSON fayl yuklash</span>
+      </div>
+      <div class="card-body">
+        <div id="importAlert" style="display:none;"></div>
+
+        <div class="form-group">
+          <label class="form-label">JSON fayl tanlang (.json)</label>
+          <input type="file" id="jsonFile" accept=".json" class="form-control" onchange="loadFile(this)">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Yoki JSON matn kiriting</label>
+          <textarea id="jsonText" class="form-control" rows="16"
+            placeholder='[
+  {
+    "Savol": "Savol matni...",
+    "Fan": "Matematika",
+    "Mavzu": "Chiziqli tenglamalar",
+    "Qiyinlik": "hard",
+    "A": "Variant A",
+    "B": "Variant B",
+    "C": "Variant C",
+    "D": "Variant D",
+    "Togri_javob": "A"
+  }
+]'></textarea>
+        </div>
+
+        <button onclick="importQuestions()" class="btn btn-primary" style="width:100%;">
+          <i class="fas fa-upload"></i> Import qilish
+        </button>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div id="resultCard" style="display:none;" class="card">
+      <div class="card-header"><span class="card-title">Import natijasi</span></div>
+      <div class="card-body" id="resultBody"></div>
+    </div>
+  </div>
+
+  <!-- Format -->
+  <div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title"><i class="fas fa-code" style="color:var(--indigo); margin-right:6px;"></i>JSON format</span>
+      </div>
+      <div class="card-body">
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">
+          Savollarni quyidagi formatda JSON fayliga yozing va import qiling.
+          Bir savol yoki massiv (ko'p savollar) yuklash mumkin.
+        </p>
+
+        <pre class="code-block">[
+  {
+    "Savol": "Parametr $a$ ning
+      qanday qiymatlarida
+      $|ax - 2| &lt; 4$
+      tengsizligining yechim
+      to'plami bo'sh emas?",
+    "Fan": "Matematika",
+    "Mavzu": "Chiziqli tengsizliklar",
+    "Qiyinlik": "hard",
+    "A": "Barcha $a \\neq 0$ uchun",
+    "B": "$a &gt; 0$ faqat",
+    "C": "$|a| \\geq 1$ faqat",
+    "D": "$a &lt; 0$ faqat",
+    "Togri_javob": "A",
+    "Izoh": "Izohlash...",
+    "Yil": 2024,
+    "Manba": "DTM 2024"
+  }
+]</pre>
+
+        <hr class="divider">
+        <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.8;">
+          <strong>Majburiy maydonlar:</strong><br>
+          <code>Savol</code> — Savol matni (LaTeX qo'llab-quvvatlanadi)<br>
+          <code>Fan</code> — Matematika / Ingliz tili / Reading / Boshqa<br>
+          <code>Mavzu</code> — Savol mavzusi<br>
+          <code>Qiyinlik</code> — easy / medium / hard (yoki oson/o'rta/qiyin)<br>
+          <code>A, B, C, D</code> — Javob variantlari<br>
+          <code>Togri_javob</code> — A, B, C yoki D<br>
+          <br>
+          <strong>Ixtiyoriy maydonlar:</strong><br>
+          <code>Izoh</code> — To'g'ri javob izohi<br>
+          <code>Yil</code> — Yil (masalan: 2024)<br>
+          <code>Manba</code> — Manba nomi
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick tips -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title"><i class="fas fa-lightbulb" style="color:var(--yellow); margin-right:6px;"></i>Eslatmalar</span>
+      </div>
+      <div class="card-body" style="font-size:0.82rem; color:var(--text-muted); line-height:1.8;">
+        <ul style="padding-left:16px;">
+          <li>LaTeX formulalar: <code>$x^2$</code> yoki <code>\(x^2\)</code></li>
+          <li>Massiv yoki bitta obyekt yuklash mumkin</li>
+          <li>Qiyinlik: <code>easy</code>, <code>medium</code>, <code>hard</code></li>
+          <li>To'g'ri javob: faqat <code>A</code>, <code>B</code>, <code>C</code> yoki <code>D</code></li>
+          <li>Fayl hajmi: cheksiz (bir vaqtda ko'p savol)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function loadFile(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => { document.getElementById('jsonText').value = e.target.result; };
+    reader.readAsText(input.files[0], 'utf-8');
+  }
+}
+
+function importQuestions() {
+  const text = document.getElementById('jsonText').value.trim();
+  if (!text) { showAlert('error', 'JSON kiriting!'); return; }
+
+  let data;
+  try { data = JSON.parse(text); }
+  catch(e) { showAlert('error', 'Noto\'g\'ri JSON: ' + e.message); return; }
+
+  const btn = event.target;
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Import qilinmoqda...';
+
+  csrfFetch('/panel/questions/import/', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(r => r.json())
+  .then(res => {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-upload"></i> Import qilish';
+    if (res.success) {
+      showAlert('success', `${res.created} ta savol muvaffaqiyatli import qilindi (jami: ${res.total})`);
+      showResult(res);
+    } else {
+      showAlert('error', res.error || 'Xato yuz berdi');
+    }
+  })
+  .catch(e => {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-upload"></i> Import qilish';
+    showAlert('error', 'Server xatosi');
+  });
+}
+
+function showAlert(type, msg) {
+  const el = document.getElementById('importAlert');
+  el.className = `alert alert-${type}`;
+  el.innerHTML = `<i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle"></i> ${msg}`;
+  el.style.display = 'flex';
+}
+
+function showResult(res) {
+  const card = document.getElementById('resultCard');
+  const body = document.getElementById('resultBody');
+  const errHtml = res.errors && res.errors.length
+    ? `<div style="margin-top:12px;"><strong style="color:var(--red);">Xatolar (${res.errors.length}):</strong><ul style="margin-top:6px; font-size:0.78rem; color:var(--red);">${res.errors.map(e=>`<li>${e}</li>`).join('')}</ul></div>`
+    : '';
+  body.innerHTML = `
+    <div style="display:flex; gap:24px; flex-wrap:wrap; margin-bottom:16px;">
+      <div><div style="font-size:0.75rem; color:var(--text-muted);">Jami</div><div style="font-size:1.5rem; font-weight:800;">${res.total}</div></div>
+      <div><div style="font-size:0.75rem; color:var(--text-muted);">Import qilindi</div><div style="font-size:1.5rem; font-weight:800; color:var(--green);">${res.created}</div></div>
+      <div><div style="font-size:0.75rem; color:var(--text-muted);">Xatolar</div><div style="font-size:1.5rem; font-weight:800; color:var(--red);">${res.errors ? res.errors.length : 0}</div></div>
+    </div>
+    ${errHtml}
+    <a href="/panel/questions/" class="btn btn-outline" style="margin-top:8px;"><i class="fas fa-list"></i> Savollar ro'yxatiga</a>
+  `;
+  card.style.display = 'block';
+}
+</script>
+{% endblock %}

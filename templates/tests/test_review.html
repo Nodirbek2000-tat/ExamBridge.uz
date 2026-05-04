@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %}Review — {{ attempt.test }}{% endblock %}
+
+{% block content %}
+<div class="container section-sm">
+  <div style="display:flex; align-items:center; gap:16px; margin-bottom:24px; flex-wrap:wrap;">
+    <a href="/tests/result/{{ attempt.id }}/" class="btn btn-ghost btn-sm">
+      <i class="fas fa-arrow-left"></i> Score Report
+    </a>
+    <div>
+      <h2 style="font-size:1.4rem;">Answer Review</h2>
+      <div class="text-sm text-muted">{{ attempt.test }}</div>
+    </div>
+    <div style="margin-left:auto; display:flex; gap:12px; flex-wrap:wrap;">
+      <span class="badge badge-green"><i class="fas fa-check"></i> Correct</span>
+      <span class="badge badge-red"><i class="fas fa-times"></i> Wrong</span>
+      <span class="badge" style="background:var(--bg-card); border-color:var(--border); color:var(--text-dim);">Skipped</span>
+    </div>
+  </div>
+
+  <!-- Score summary bar -->
+  <div class="card" style="padding:20px; margin-bottom:28px; display:flex; gap:32px; flex-wrap:wrap;">
+    <div><div class="text-xs text-dim">Total Score</div><div style="font-size:1.6rem; font-weight:900; color:var(--blue-light);">{{ result.total_score }}</div></div>
+    <div><div class="text-xs text-dim">Math</div><div style="font-size:1.3rem; font-weight:800;">{{ result.math_score }}</div></div>
+    <div><div class="text-xs text-dim">English</div><div style="font-size:1.3rem; font-weight:800;">{{ result.english_score }}</div></div>
+  </div>
+
+  {% for mod_data in modules_data %}
+  <!-- Module section -->
+  <div style="margin-bottom:40px;">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <h3>{{ mod_data.section.get_section_type_display }} — Module {{ mod_data.module.module_number }}</h3>
+      <span class="badge badge-{% if mod_data.section.section_type == 'MATH' %}blue{% else %}green{% endif %}">
+        {{ mod_data.correct_count }}/{{ mod_data.total }} correct
+      </span>
+    </div>
+
+    {% for item in mod_data.questions %}
+    <div class="review-question {% if item.is_skipped %}skipped{% elif item.is_correct %}correct{% else %}wrong{% endif %}">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+        <div style="flex:1;">
+          <div style="font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:10px;">
+            <span style="min-width:28px; height:28px; border-radius:50%;
+              {% if item.is_skipped %}background:var(--bg-hover); color:var(--text-dim);
+              {% elif item.is_correct %}background:var(--green-bg); color:var(--green);
+              {% else %}background:var(--red-bg); color:var(--red);{% endif %}
+              display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">
+              {{ item.question.number }}
+            </span>
+            <span class="text-sm text-muted">Question {{ item.question.number }}</span>
+            {% if item.is_skipped %}<span class="badge" style="background:var(--bg-card); border-color:var(--border); color:var(--text-dim); font-size:0.7rem;">Skipped</span>
+            {% elif item.is_correct %}<span class="badge badge-green" style="font-size:0.7rem;"><i class="fas fa-check"></i> Correct</span>
+            {% else %}<span class="badge badge-red" style="font-size:0.7rem;"><i class="fas fa-times"></i> Wrong</span>
+            {% endif %}
+          </div>
+
+          <!-- Question content (truncated) -->
+          <div style="font-size:0.875rem; color:var(--text-muted); margin-bottom:12px; max-height:80px; overflow:hidden; position:relative;">
+            {{ item.question.content|striptags|truncatewords:30 }}
+          </div>
+
+          <!-- Answer comparison -->
+          {% if item.answer %}
+            {% if not item.is_skipped %}
+            <div class="review-choice {% if item.is_correct %}correct-answer{% else %}user-answer{% endif %}">
+              <i class="fas {% if item.is_correct %}fa-check{% else %}fa-times{% endif %}"></i>
+              Your answer:
+              {% if item.answer.selected_choice %}
+                <strong>{{ item.answer.selected_choice.option }}. {{ item.answer.selected_choice.text|truncatewords:10 }}</strong>
+              {% elif item.answer.text_answer %}
+                <strong>{{ item.answer.text_answer }}</strong>
+              {% endif %}
+            </div>
+            {% if not item.is_correct %}
+            <div class="review-choice correct-answer" style="margin-top:6px;">
+              <i class="fas fa-check"></i>
+              Correct answer: <strong>{{ item.question.correct_answer }}</strong>
+            </div>
+            {% endif %}
+            {% endif %}
+          {% else %}
+          <div class="review-choice" style="background:var(--bg-hover); color:var(--text-dim);">
+            <i class="fas fa-minus"></i> Not answered
+          </div>
+          <div class="review-choice correct-answer" style="margin-top:6px;">
+            <i class="fas fa-check"></i>
+            Correct answer: <strong>{{ item.question.correct_answer }}</strong>
+          </div>
+          {% endif %}
+
+          <!-- Explanation (if available) -->
+          {% if item.question.explanation %}
+          <details style="margin-top:10px;">
+            <summary style="cursor:pointer; font-size:0.8rem; color:var(--blue-light);">
+              <i class="fas fa-lightbulb"></i> View Explanation
+            </summary>
+            <div style="margin-top:8px; padding:12px; background:var(--bg); border-radius:8px; font-size:0.875rem; line-height:1.7;">
+              {{ item.question.explanation|safe }}
+            </div>
+          </details>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+if (window.MathJax) MathJax.typesetPromise();
+</script>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %}SATBridge — Digital SAT Practice{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">
+      <i class="fas fa-bolt"></i> Digital SAT Practice
+    </div>
+    <h1 class="hero-title">Score higher on the<br>Digital SAT</h1>
+    <p class="hero-sub">Adaptive mock tests, real timing, and question-by-question review — built for the modern SAT.</p>
+    <div class="hero-cta">
+      {% if user.is_authenticated %}
+        <a href="/tests/" class="btn btn-primary btn-lg"><i class="fas fa-play"></i> Start a test</a>
+        <a href="/auth/profile/" class="btn btn-secondary btn-lg">My results</a>
+      {% else %}
+        <a href="/auth/register/" class="btn btn-primary btn-lg">Get started free</a>
+        <a href="/auth/login/" class="btn btn-secondary btn-lg">Sign in</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div style="height:1px; background:var(--border);"></div>
+
+<!-- Features — minimal 3 cards -->
+<section class="section-sm" style="background:var(--bg-soft);">
+  <div class="container">
+    <div class="grid-3" style="gap:12px;">
+      <div class="feature-item">
+        <div class="feature-icon">⏱</div>
+        <div>
+          <h3 style="font-size:0.95rem; margin-bottom:4px;">Real timing</h3>
+          <p style="font-size:0.82rem;">35 min Math · 32 min English per module. Countdown timer with warnings.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📊</div>
+        <div>
+          <h3 style="font-size:0.95rem; margin-bottom:4px;">Score report</h3>
+          <p style="font-size:0.82rem;">Scaled 400–1600 score with per-module breakdown and answer review.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🎯</div>
+        <div>
+          <h3 style="font-size:0.95rem; margin-bottom:4px;">Track progress</h3>
+          <p style="font-size:0.82rem;">See your improvement over time. Save questions. Review mistakes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing section -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="text-center mb-32">
+      <h2>Simple pricing</h2>
+      <p style="margin-top:8px;">Start free. Upgrade when you're ready.</p>
+    </div>
+    <div class="grid-3" style="gap:16px; max-width:820px; margin:0 auto;">
+
+      <!-- Free -->
+      <div class="pricing-card">
+        <div class="text-xs text-light fw-700" style="text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Free</div>
+        <div class="pricing-price">$0 <span>/ month</span></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> 3 tests per month</li>
+          <li><span class="check">✓</span> Score report</li>
+          <li><span class="check">✓</span> Answer review</li>
+          <li><span class="x">—</span> AI analysis</li>
+          <li><span class="x">—</span> All test history</li>
+        </ul>
+        <a href="/auth/register/" class="btn btn-secondary w-full">Get started</a>
+      </div>
+
+      <!-- Pro -->
+      <div class="pricing-card featured">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <div class="text-xs fw-700" style="text-transform:uppercase; letter-spacing:1px; color:var(--green-dark);">Pro</div>
+          <span class="badge badge-green">Most popular</span>
+        </div>
+        <div class="pricing-price">$12 <span>/ month</span></div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Unlimited tests</li>
+          <li><span class="check">✓</span> AI score analysis</li>
+          <li><span class="check">✓</span> University matching</li>
+          <li><span class="check">✓</span> All test history</li>
+          <li><span class="check">✓</span> Saved questions</li>
+        </ul>
+        <a href="/auth/register/" class="btn btn-primary w-full">Start free trial</a>
+      </div>
+
+      <!-- Annual -->
+      <div class="pricing-card">
+        <div class="text-xs text-light fw-700" style="text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Annual</div>
+        <div class="pricing-price">$8 <span>/ month</span></div>
+        <p style="font-size:0.78rem; color:var(--green-dark); margin-bottom:4px;">Billed $96/year · Save 33%</p>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Everything in Pro</li>
+          <li><span class="check">✓</span> Priority support</li>
+          <li><span class="check">✓</span> Early access to new tests</li>
+          <li><span class="check">✓</span> Vocabulary builder</li>
+        </ul>
+        <a href="/auth/register/" class="btn btn-secondary w-full">Get annual</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

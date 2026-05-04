@@ -1,0 +1,116 @@
+{% extends 'panel/base.html' %}
+{% block title %}Testlar{% endblock %}
+{% block page_title %}Testlar boshqaruvi{% endblock %}
+{% block breadcrumb %}SATBridge / Admin / Testlar{% endblock %}
+
+{% block topbar_actions %}
+  <a href="/panel/tests/import/" class="btn btn-primary btn-sm"><i class="fas fa-upload"></i> JSON import</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><i class="fas fa-file-alt" style="color:var(--indigo); margin-right:6px;"></i>Barcha testlar — {{ tests|length }} ta</span>
+    <div style="display:flex; gap:8px;">
+      <span class="badge badge-green">{{ total_tests }} aktiv</span>
+      <a href="/panel/tests/import/" class="btn btn-outline btn-xs"><i class="fas fa-upload"></i> Import</a>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Test nomi</th>
+          <th>Yil</th>
+          <th>Oy</th>
+          <th>Form</th>
+          <th>Tur</th>
+          <th>Urinishlar</th>
+          <th>Yakunlangan</th>
+          <th>Premium</th>
+          <th>Aktiv</th>
+          <th>Qo'shilgan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for test in tests %}
+        <tr>
+          <td>
+            <div style="font-weight:600;">{{ test.test_type }} {{ test.get_month_display }} {{ test.year }}</div>
+            <div style="font-size:0.72rem; color:var(--text-muted);">ID: {{ test.id }}</div>
+          </td>
+          <td><span style="font-weight:700;">{{ test.year }}</span></td>
+          <td>{{ test.get_month_display }}</td>
+          <td><span class="badge badge-gray">Form {{ test.form }}</span></td>
+          <td>
+            {% if test.is_international %}
+            <span class="badge badge-indigo">INTL</span>
+            {% else %}
+            <span class="badge badge-blue">US</span>
+            {% endif %}
+          </td>
+          <td><span style="font-weight:600; color:var(--blue);">{{ test.attempt_count }}</span></td>
+          <td><span style="font-weight:600; color:var(--green-dark);">{{ test.completed_count }}</span></td>
+          <td>
+            {% if test.is_premium %}
+            <span class="badge badge-yellow">PRO</span>
+            {% else %}
+            <span class="badge badge-gray">Bepul</span>
+            {% endif %}
+          </td>
+          <td>
+            <label class="toggle-switch">
+              <input type="checkbox" {% if test.is_active %}checked{% endif %}
+                     onchange="toggleTest({{ test.id }}, this)">
+              <span class="toggle-slider"></span>
+            </label>
+          </td>
+          <td style="color:var(--text-muted); font-size:0.75rem; white-space:nowrap;">{{ test.created_at|date:"d M Y" }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="10">
+            <div class="empty-state">
+              <div class="empty-state-icon">📋</div>
+              <p>Test mavjud emas. <a href="/panel/tests/import/" style="color:var(--green);">JSON import qiling</a></p>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Import hint card -->
+<div class="card" style="background: linear-gradient(135deg, #0f1117, #1a1f2e); border-color: #2d3748;">
+  <div class="card-body" style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:200px;">
+      <div style="font-weight:700; color:#fff; margin-bottom:4px; font-size:0.95rem;">
+        <i class="fas fa-upload" style="color:var(--green); margin-right:6px;"></i>JSON orqali test import
+      </div>
+      <div style="font-size:0.8rem; color:#94a3b8;">
+        To'liq SAT testini JSON formatda import qiling: sections → modules → questions → choices.
+      </div>
+    </div>
+    <a href="/panel/tests/import/" class="btn btn-primary">
+      <i class="fas fa-file-import"></i> Test import qilish
+    </a>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function toggleTest(testId, checkbox) {
+  csrfFetch(`/panel/tests/${testId}/toggle-active/`, { method: 'POST' })
+    .then(r => r.json())
+    .then(data => {
+      if (!data.is_active) checkbox.checked = false;
+    })
+    .catch(() => { checkbox.checked = !checkbox.checked; });
+}
+</script>
+{% endblock %}

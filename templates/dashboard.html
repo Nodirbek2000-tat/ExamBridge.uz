@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container section-sm">
+
+  <!-- Header -->
+  <div class="dashboard-header">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+      <div>
+        <h1 style="font-size:1.8rem;">
+          Welcome back, {{ user.full_name }} 👋
+        </h1>
+        <p style="margin-top:6px;">
+          {% if stats.total_tests_taken %}
+            You've completed {{ stats.total_tests_taken }} test{{ stats.total_tests_taken|pluralize }}. Keep pushing!
+          {% else %}
+            Ready to start your SAT journey? Take your first practice test.
+          {% endif %}
+        </p>
+      </div>
+      <a href="/tests/" class="btn btn-primary">
+        <i class="fas fa-play"></i> Take a Test
+      </a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-grid mb-32">
+    <div class="stat-card blue">
+      <div class="stat-label"><i class="fas fa-trophy"></i> Best Score</div>
+      <div class="stat-value" style="color:var(--blue-light);">
+        {{ stats.best_total_score|default:"—" }}
+      </div>
+      <div class="stat-sub">out of 1600</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-label"><i class="fas fa-file-alt"></i> Tests Taken</div>
+      <div class="stat-value" style="color:var(--green);">{{ stats.total_tests_taken }}</div>
+      <div class="stat-sub">practice tests</div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-label"><i class="fas fa-fire"></i> Streak</div>
+      <div class="stat-value" style="color:var(--yellow);">{{ stats.current_streak }}</div>
+      <div class="stat-sub">days in a row</div>
+    </div>
+    <div class="stat-card purple">
+      <div class="stat-label"><i class="fas fa-book"></i> Avg Score</div>
+      <div class="stat-value" style="color:var(--purple);">
+        {% if stats.avg_total_score %}{{ stats.avg_total_score|floatformat:0 }}{% else %}—{% endif %}
+      </div>
+      <div class="stat-sub">average total</div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="gap:24px; align-items:start;">
+
+    <!-- Recent Results -->
+    <div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3>Recent Results</h3>
+        <a href="/tests/" class="text-sm text-blue">View all tests →</a>
+      </div>
+
+      {% if recent_results %}
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          {% for result in recent_results %}
+          <div class="card" style="padding:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <div>
+                <div style="font-weight:700; font-size:0.9rem;">{{ result.attempt.test }}</div>
+                <div class="text-xs text-dim" style="margin-top:2px;">
+                  {{ result.calculated_at|date:"M d, Y · g:i A" }}
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.5rem; font-weight:900; color:var(--blue-light);">{{ result.total_score }}</div>
+                <div class="text-xs text-dim">M: {{ result.math_score }} · E: {{ result.english_score }}</div>
+              </div>
+            </div>
+            <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+              <a href="/tests/result/{{ result.attempt.id }}/" class="btn btn-ghost btn-sm">
+                <i class="fas fa-chart-bar"></i> Score Report
+              </a>
+              <a href="/tests/result/{{ result.attempt.id }}/review/" class="btn btn-ghost btn-sm">
+                <i class="fas fa-eye"></i> Review
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="card text-center" style="padding:40px;">
+          <div style="font-size:2.5rem; margin-bottom:12px;">📝</div>
+          <h3 style="margin-bottom:8px;">No tests yet</h3>
+          <p>Take your first practice test to see results here.</p>
+          <a href="/tests/" class="btn btn-primary mt-16">Browse Tests</a>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Quick Actions -->
+    <div>
+      <h3 style="margin-bottom:16px;">Quick Actions</h3>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/tests/" class="card card-hover" style="padding:18px; text-decoration:none; display:flex; align-items:center; gap:16px;">
+          <div style="width:44px; height:44px; background:var(--blue-glow); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fas fa-file-alt" style="color:var(--blue-light); font-size:1.2rem;"></i>
+          </div>
+          <div>
+            <div style="font-weight:700;">Practice Tests</div>
+            <div class="text-sm text-muted">Full SAT mock tests by year & month</div>
+          </div>
+          <i class="fas fa-chevron-right text-dim" style="margin-left:auto;"></i>
+        </a>
+
+        <a href="/tests/saved/" class="card card-hover" style="padding:18px; text-decoration:none; display:flex; align-items:center; gap:16px;">
+          <div style="width:44px; height:44px; background:rgba(245,158,11,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fas fa-bookmark" style="color:var(--yellow); font-size:1.2rem;"></i>
+          </div>
+          <div>
+            <div style="font-weight:700;">Saved Questions</div>
+            <div class="text-sm text-muted">Review bookmarked questions</div>
+          </div>
+          <i class="fas fa-chevron-right text-dim" style="margin-left:auto;"></i>
+        </a>
+
+        <a href="/universities/" class="card card-hover" style="padding:18px; text-decoration:none; display:flex; align-items:center; gap:16px;">
+          <div style="width:44px; height:44px; background:rgba(168,85,247,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fas fa-university" style="color:var(--purple); font-size:1.2rem;"></i>
+          </div>
+          <div>
+            <div style="font-weight:700;">University Finder</div>
+            <div class="text-sm text-muted">Find universities matching your score</div>
+          </div>
+          <i class="fas fa-chevron-right text-dim" style="margin-left:auto;"></i>
+        </a>
+
+        {% if not user.is_premium %}
+        <a href="/pricing/" class="card card-hover" style="padding:18px; text-decoration:none; display:flex; align-items:center; gap:16px; border-color:rgba(245,158,11,0.3);">
+          <div style="width:44px; height:44px; background:rgba(245,158,11,0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <i class="fas fa-crown" style="color:var(--yellow); font-size:1.2rem;"></i>
+          </div>
+          <div>
+            <div style="font-weight:700;">Upgrade to Pro</div>
+            <div class="text-sm text-muted">Unlock all tests and AI features</div>
+          </div>
+          <span class="badge badge-yellow" style="margin-left:auto;">PRO</span>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

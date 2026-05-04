@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}Complete Your Profile{% endblock %}
+{% block body_class %}no-nav{% endblock %}
+
+{% block full_page %}
+<div class="auth-page" style="align-items:flex-start; padding-top:48px;">
+  <div class="auth-card" style="max-width:520px;">
+    <div class="auth-logo">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">S</span>
+        <span class="brand-text">SAT<span class="brand-plus">+</span></span>
+      </a>
+    </div>
+
+    <h1 class="auth-title">Complete your profile</h1>
+    <p class="auth-subtitle">
+      Just a few more details to personalize your SAT+ experience.
+    </p>
+
+    <form method="POST" novalidate>
+      {% csrf_token %}
+      <div style="display:flex; flex-direction:column; gap:16px;">
+
+        <div class="grid-2" style="gap:12px;">
+          <div class="form-group">
+            <label class="form-label">First Name <span style="color:var(--red)">*</span></label>
+            {{ form.first_name }}
+            {% if form.first_name.errors %}<div class="form-error">{{ form.first_name.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            {{ form.last_name }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Country <span style="color:var(--red)">*</span></label>
+          {{ form.country }}
+          {% if form.country.errors %}<div class="form-error">{{ form.country.errors.0 }}</div>{% endif %}
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number <span class="text-dim">(optional)</span></label>
+          {{ form.phone }}
+        </div>
+
+        <!-- Password section — only shown if no social account -->
+        <div style="border-top:1px solid var(--border); padding-top:16px; margin-top:4px;">
+          <p class="text-sm text-muted" style="margin-bottom:12px;">
+            <i class="fas fa-lock" style="color:var(--text-dim)"></i>
+            Set a password to sign in without Google (optional).
+          </p>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div class="form-group">
+              <label class="form-label">Set Password</label>
+              {{ form.password1 }}
+              {% if form.password1.errors %}<div class="form-error">{{ form.password1.errors.0 }}</div>{% endif %}
+            </div>
+            <div class="form-group">
+              <label class="form-label">Confirm Password</label>
+              {{ form.password2 }}
+              {% if form.password2.errors %}<div class="form-error">{{ form.password2.errors.0 }}</div>{% endif %}
+            </div>
+          </div>
+        </div>
+
+        {% if form.non_field_errors %}
+        <div class="alert alert-error">{{ form.non_field_errors.0 }}</div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary w-full" style="padding:13px; margin-top:8px;">
+          <i class="fas fa-arrow-right"></i> Continue to Dashboard
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

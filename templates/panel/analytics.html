@@ -1,0 +1,183 @@
+{% extends 'panel/base.html' %}
+{% block title %}Analytics{% endblock %}
+{% block page_title %}Analytics{% endblock %}
+{% block breadcrumb %}SATBridge / Admin / Analytics{% endblock %}
+
+{% block content %}
+
+<!-- Stats Row -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-card-header">
+      <div class="stat-card-icon icon-blue"><i class="fas fa-pen"></i></div>
+    </div>
+    <div class="stat-card-value">{{ total_attempts }}</div>
+    <div class="stat-card-label">Jami urinishlar</div>
+  </div>
+  {% for s in status_stats %}
+  <div class="stat-card">
+    <div class="stat-card-header">
+      <div class="stat-card-icon {% if s.status == 'COMPLETED' %}icon-green{% elif s.status == 'IN_PROGRESS' %}icon-blue{% else %}icon-red{% endif %}">
+        <i class="fas fa-{% if s.status == 'COMPLETED' %}check{% elif s.status == 'IN_PROGRESS' %}clock{% else %}times{% endif %}"></i>
+      </div>
+    </div>
+    <div class="stat-card-value">{{ s.count }}</div>
+    <div class="stat-card-label">
+      {% if s.status == 'COMPLETED' %}Yakunlangan{% elif s.status == 'IN_PROGRESS' %}Davom etmoqda{% else %}Tashlab ketilgan{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="two-col">
+
+  <!-- Daily attempts chart -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title"><i class="fas fa-chart-line" style="color:var(--blue); margin-right:6px;"></i>Kunlik urinishlar (14 kun)</span>
+    </div>
+    <div class="card-body">
+      <canvas id="attemptsChart" style="height:200px; max-height:200px;"></canvas>
+    </div>
+  </div>
+
+  <!-- Score distribution -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title"><i class="fas fa-chart-bar" style="color:var(--green); margin-right:6px;"></i>Ball taqsimoti</span>
+    </div>
+    <div class="card-body">
+      <canvas id="scoreChart" style="height:200px; max-height:200px;"></canvas>
+    </div>
+  </div>
+
+</div>
+
+<div class="two-col">
+
+  <!-- Top tests -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title"><i class="fas fa-fire" style="color:var(--yellow); margin-right:6px;"></i>Eng ko'p yechilgan testlar</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Test</th><th>Urinishlar</th></tr></thead>
+        <tbody>
+          {% for t in top_tests %}
+          <tr>
+            <td style="font-size:0.83rem;">{{ t.test_type }} {{ t.year }} {{ t.get_month_display }} Form {{ t.form }}</td>
+            <td><span class="badge badge-blue">{{ t.attempt_count }}</span></td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="2"><div class="empty-state" style="padding:20px;"><p>Ma'lumot yo'q</p></div></td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Question bank breakdown -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title"><i class="fas fa-question-circle" style="color:var(--indigo); margin-right:6px;"></i>Savollar banki statistikasi</span>
+    </div>
+    <div class="card-body">
+      <div style="margin-bottom:16px;">
+        <div style="font-size:0.78rem; font-weight:700; color:var(--text-muted); margin-bottom:8px;">Fanga ko'ra</div>
+        {% for b in bank_by_subject %}
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+          <div style="font-size:0.83rem; flex:1;">{{ b.subject }}</div>
+          <div style="font-weight:700;">{{ b.count }}</div>
+          <div style="width:100px; height:6px; background:#f1f5f9; border-radius:3px; overflow:hidden;">
+            <div style="width:{% widthratio b.count total_bank_questions 100 %}%; height:100%; background:var(--green); border-radius:3px;"></div>
+          </div>
+        </div>
+        {% empty %}
+        <p style="color:var(--text-muted); font-size:0.82rem;">Ma'lumot yo'q</p>
+        {% endfor %}
+      </div>
+      <hr class="divider">
+      <div>
+        <div style="font-size:0.78rem; font-weight:700; color:var(--text-muted); margin-bottom:8px;">Qiyinlikka ko'ra</div>
+        {% for b in bank_by_difficulty %}
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+          <div style="flex:1;">
+            {% if b.difficulty == 'easy' %}<span class="badge badge-green">Oson</span>
+            {% elif b.difficulty == 'medium' %}<span class="badge badge-yellow">O'rta</span>
+            {% else %}<span class="badge badge-red">Qiyin</span>{% endif %}
+          </div>
+          <div style="font-weight:700;">{{ b.count }}</div>
+        </div>
+        {% empty %}
+        <p style="color:var(--text-muted); font-size:0.82rem;">Ma'lumot yo'q</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+const dailyData = {{ daily_attempts_json|safe }};
+const scoreData = {{ score_dist_json|safe }};
+
+// Daily attempts chart
+new Chart(document.getElementById('attemptsChart').getContext('2d'), {
+  type: 'line',
+  data: {
+    labels: dailyData.map(d => d.date),
+    datasets: [
+      {
+        label: 'Jami',
+        data: dailyData.map(d => d.total),
+        borderColor: '#3b82f6',
+        backgroundColor: 'rgba(59,130,246,0.1)',
+        tension: 0.4, fill: true, borderWidth: 2,
+      },
+      {
+        label: 'Yakunlangan',
+        data: dailyData.map(d => d.completed),
+        borderColor: '#32C992',
+        backgroundColor: 'rgba(50,201,146,0.1)',
+        tension: 0.4, fill: true, borderWidth: 2,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'top', labels: { font: { size: 11 } } } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 } } },
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
+// Score chart
+new Chart(document.getElementById('scoreChart').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: scoreData.map(d => d.range),
+    datasets: [{
+      data: scoreData.map(d => d.count),
+      backgroundColor: ['#fef2f2','#fffbeb','#f0fdf4','#eff6ff','#eef2ff','#e8faf3'],
+      borderColor: ['#ef4444','#f59e0b','#22c55e','#3b82f6','#6366f1','#32C992'],
+      borderWidth: 2, borderRadius: 6,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 } } },
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+</script>
+{% endblock %}

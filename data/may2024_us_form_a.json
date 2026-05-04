@@ -1,0 +1,1439 @@
+{
+  "test_type": "SAT",
+  "year": 2024,
+  "month": 5,
+  "form": "A",
+  "is_international": false,
+  "sections": [
+    {
+      "section_type": "MATH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "content": "If \\(3x + 7 = 22\\), what is the value of \\(x\\)?",
+              "correct_answer": "B",
+              "explanation": "Subtract 7 from both sides: \\(3x = 15\\). Divide by 3: \\(x = 5\\).",
+              "choices": [
+                {"option": "A", "text": "3"},
+                {"option": "B", "text": "5"},
+                {"option": "C", "text": "7"},
+                {"option": "D", "text": "9"}
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "content": "A store sells pens for $2 each and notebooks for $5 each. If Marcus buys 3 pens and 2 notebooks, how much does he spend in total?",
+              "correct_answer": "C",
+              "explanation": "Cost = 3(2) + 2(5) = 6 + 10 = $16.",
+              "choices": [
+                {"option": "A", "text": "$11"},
+                {"option": "B", "text": "$14"},
+                {"option": "C", "text": "$16"},
+                {"option": "D", "text": "$21"}
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "content": "If \\(f(x) = 4x - 3\\), what is \\(f(6)\\)?",
+              "correct_answer": "D",
+              "explanation": "\\(f(6) = 4(6) - 3 = 24 - 3 = 21\\).",
+              "choices": [
+                {"option": "A", "text": "9"},
+                {"option": "B", "text": "15"},
+                {"option": "C", "text": "18"},
+                {"option": "D", "text": "21"}
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "content": "What is 40% of 85?",
+              "correct_answer": "B",
+              "explanation": "\\(0.40 \\times 85 = 34\\).",
+              "choices": [
+                {"option": "A", "text": "30"},
+                {"option": "B", "text": "34"},
+                {"option": "C", "text": "38"},
+                {"option": "D", "text": "40"}
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "content": "Which of the following is equivalent to \\(5(x + 4) - 3x\\)?",
+              "correct_answer": "A",
+              "explanation": "\\(5x + 20 - 3x = 2x + 20\\).",
+              "choices": [
+                {"option": "A", "text": "\\(2x + 20\\)"},
+                {"option": "B", "text": "\\(2x + 4\\)"},
+                {"option": "C", "text": "\\(8x + 20\\)"},
+                {"option": "D", "text": "\\(5x + 20\\)"}
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "content": "In the \\(xy\\)-plane, the point \\((3, k)\\) lies on the line \\(y = 2x - 1\\). What is the value of \\(k\\)?",
+              "correct_answer": "C",
+              "explanation": "Substitute \\(x = 3\\): \\(y = 2(3) - 1 = 5\\). So \\(k = 5\\).",
+              "choices": [
+                {"option": "A", "text": "1"},
+                {"option": "B", "text": "4"},
+                {"option": "C", "text": "5"},
+                {"option": "D", "text": "7"}
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "content": "A rectangle has a length of 12 cm and a width of 7 cm. What is the perimeter of the rectangle?",
+              "correct_answer": "B",
+              "explanation": "Perimeter = 2(l + w) = 2(12 + 7) = 2(19) = 38 cm.",
+              "choices": [
+                {"option": "A", "text": "19 cm"},
+                {"option": "B", "text": "38 cm"},
+                {"option": "C", "text": "84 cm"},
+                {"option": "D", "text": "76 cm"}
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The system of equations below has solution \\((x, y)\\). What is the value of \\(y\\)?\n\\[2x + y = 11\\]\n\\[x - y = 1\\]",
+              "correct_answer": "C",
+              "explanation": "Add the two equations: \\(3x = 12\\), so \\(x = 4\\). Substitute into \\(x - y = 1\\): \\(4 - y = 1\\), so \\(y = 3\\).",
+              "choices": [
+                {"option": "A", "text": "1"},
+                {"option": "B", "text": "2"},
+                {"option": "C", "text": "3"},
+                {"option": "D", "text": "4"}
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The expression \\(x^2 - 7x + 12\\) can be written as \\((x - a)(x - b)\\), where \\(a\\) and \\(b\\) are positive integers. What is the value of \\(a + b\\)?",
+              "correct_answer": "D",
+              "explanation": "Factor: \\(x^2 - 7x + 12 = (x-3)(x-4)\\). So \\(a = 3, b = 4\\), and \\(a + b = 7\\).",
+              "choices": [
+                {"option": "A", "text": "3"},
+                {"option": "B", "text": "4"},
+                {"option": "C", "text": "6"},
+                {"option": "D", "text": "7"}
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A survey of 200 students found that 60% prefer online classes. How many students prefer in-person classes?",
+              "correct_answer": "B",
+              "explanation": "If 60% prefer online, then 40% prefer in-person. \\(0.40 \\times 200 = 80\\) students.",
+              "choices": [
+                {"option": "A", "text": "60"},
+                {"option": "B", "text": "80"},
+                {"option": "C", "text": "120"},
+                {"option": "D", "text": "140"}
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If \\(\\frac{3x - 2}{4} = \\frac{x + 6}{2}\\), what is the value of \\(x\\)?",
+              "correct_answer": "A",
+              "explanation": "Multiply both sides by 4: \\(3x - 2 = 2(x + 6) = 2x + 12\\). Subtract \\(2x\\): \\(x - 2 = 12\\), so \\(x = 14\\).",
+              "choices": [
+                {"option": "A", "text": "14"},
+                {"option": "B", "text": "10"},
+                {"option": "C", "text": "8"},
+                {"option": "D", "text": "4"}
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A car travels 240 miles in 4 hours. At the same speed, how many miles will it travel in 6 hours?",
+              "correct_answer": "C",
+              "explanation": "Speed = \\(\\frac{240}{4} = 60\\) mph. Distance in 6 hours = \\(60 \\times 6 = 360\\) miles.",
+              "choices": [
+                {"option": "A", "text": "280"},
+                {"option": "B", "text": "320"},
+                {"option": "C", "text": "360"},
+                {"option": "D", "text": "400"}
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In the figure, two parallel lines are cut by a transversal. One angle measures \\((3x + 15)°\\) and its co-interior (same-side interior) angle measures \\((2x + 25)°\\). What is the value of \\(x\\)?",
+              "correct_answer": "B",
+              "explanation": "Co-interior angles are supplementary: \\((3x + 15) + (2x + 25) = 180\\). So \\(5x + 40 = 180\\), \\(5x = 140\\), \\(x = 28\\).",
+              "choices": [
+                {"option": "A", "text": "24"},
+                {"option": "B", "text": "28"},
+                {"option": "C", "text": "32"},
+                {"option": "D", "text": "36"}
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The function \\(g\\) is defined by \\(g(x) = x^2 - 4x + 3\\). For which values of \\(x\\) does \\(g(x) = 0\\)?",
+              "correct_answer": "D",
+              "explanation": "Factor: \\(x^2 - 4x + 3 = (x-1)(x-3) = 0\\). So \\(x = 1\\) or \\(x = 3\\).",
+              "choices": [
+                {"option": "A", "text": "\\(x = -1\\) and \\(x = -3\\)"},
+                {"option": "B", "text": "\\(x = 1\\) and \\(x = -3\\)"},
+                {"option": "C", "text": "\\(x = -1\\) and \\(x = 3\\)"},
+                {"option": "D", "text": "\\(x = 1\\) and \\(x = 3\\)"}
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The price of an item increased from $80 to $100. What is the percent increase?",
+              "correct_answer": "B",
+              "explanation": "Percent increase = \\(\\frac{100 - 80}{80} \\times 100 = \\frac{20}{80} \\times 100 = 25\\%\\).",
+              "choices": [
+                {"option": "A", "text": "20%"},
+                {"option": "B", "text": "25%"},
+                {"option": "C", "text": "30%"},
+                {"option": "D", "text": "33%"}
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "The graph of the function \\(f\\) in the \\(xy\\)-plane is a parabola with vertex at \\((2, -5)\\). Which of the following could be the equation of \\(f\\)?",
+              "correct_answer": "C",
+              "explanation": "A parabola with vertex \\((h, k)\\) has equation \\(f(x) = a(x-h)^2 + k\\). With vertex \\((2, -5)\\): \\(f(x) = a(x-2)^2 - 5\\). Option C matches this form.",
+              "choices": [
+                {"option": "A", "text": "\\(f(x) = (x + 2)^2 - 5\\)"},
+                {"option": "B", "text": "\\(f(x) = (x - 2)^2 + 5\\)"},
+                {"option": "C", "text": "\\(f(x) = (x - 2)^2 - 5\\)"},
+                {"option": "D", "text": "\\(f(x) = (x + 2)^2 + 5\\)"}
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "If \\(2^{x+1} = 32\\), what is the value of \\(x\\)?",
+              "correct_answer": "B",
+              "explanation": "\\(32 = 2^5\\), so \\(2^{x+1} = 2^5\\), meaning \\(x + 1 = 5\\), so \\(x = 4\\).",
+              "choices": [
+                {"option": "A", "text": "3"},
+                {"option": "B", "text": "4"},
+                {"option": "C", "text": "5"},
+                {"option": "D", "text": "6"}
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "A circle in the \\(xy\\)-plane has center \\((3, -1)\\) and radius 5. Which of the following is an equation of this circle?",
+              "correct_answer": "A",
+              "explanation": "Equation of circle: \\((x - h)^2 + (y - k)^2 = r^2\\). With center \\((3, -1)\\) and \\(r = 5\\): \\((x-3)^2 + (y+1)^2 = 25\\).",
+              "choices": [
+                {"option": "A", "text": "\\((x-3)^2 + (y+1)^2 = 25\\)"},
+                {"option": "B", "text": "\\((x+3)^2 + (y-1)^2 = 25\\)"},
+                {"option": "C", "text": "\\((x-3)^2 + (y+1)^2 = 5\\)"},
+                {"option": "D", "text": "\\((x+3)^2 + (y-1)^2 = 5\\)"}
+              ]
+            },
+            {
+              "number": 19,
+              "question_type": "INPUT",
+              "difficulty": "HARD",
+              "content": "If \\(x^2 - 9 = 0\\) and \\(x > 0\\), what is the value of \\(x\\)?",
+              "correct_answer": "3",
+              "explanation": "\\(x^2 = 9\\). Since \\(x > 0\\), \\(x = 3\\).",
+              "choices": []
+            },
+            {
+              "number": 20,
+              "question_type": "INPUT",
+              "difficulty": "HARD",
+              "content": "A line passes through the points \\((0, 4)\\) and \\((6, 0)\\). What is the slope of the line?",
+              "correct_answer": "-2/3",
+              "explanation": "Slope = \\(\\frac{0-4}{6-0} = \\frac{-4}{6} = -\\frac{2}{3}\\).",
+              "choices": []
+            },
+            {
+              "number": 21,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "The polynomial \\(p(x) = x^3 - 6x^2 + 11x - 6\\) has \\(x = 1\\) as a root. Which of the following is a factor of \\(p(x)\\)?",
+              "correct_answer": "D",
+              "explanation": "Since \\(x = 1\\) is a root, \\((x-1)\\) is a factor. Dividing: \\(p(x) = (x-1)(x^2 - 5x + 6) = (x-1)(x-2)(x-3)\\). All three are factors.",
+              "choices": [
+                {"option": "A", "text": "\\(x + 1\\)"},
+                {"option": "B", "text": "\\(x + 2\\)"},
+                {"option": "C", "text": "\\(x + 3\\)"},
+                {"option": "D", "text": "\\(x - 2\\)"}
+              ]
+            },
+            {
+              "number": 22,
+              "question_type": "INPUT",
+              "difficulty": "HARD",
+              "content": "In a right triangle, the two legs have lengths 5 and 12. What is the length of the hypotenuse?",
+              "correct_answer": "13",
+              "explanation": "By the Pythagorean theorem: \\(c = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13\\).",
+              "choices": []
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The function \\(h\\) is defined by \\(h(x) = 3x^2 - 12x + 9\\). What is the minimum value of \\(h\\)?",
+              "correct_answer": "C",
+              "explanation": "The vertex is at \\(x = -\\frac{b}{2a} = \\frac{12}{6} = 2\\). \\(h(2) = 3(4) - 12(2) + 9 = 12 - 24 + 9 = -3\\).",
+              "choices": [
+                {"option": "A", "text": "9"},
+                {"option": "B", "text": "0"},
+                {"option": "C", "text": "-3"},
+                {"option": "D", "text": "-9"}
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If \\(\\sqrt{4x + 1} = 7\\), what is the value of \\(x\\)?",
+              "correct_answer": "B",
+              "explanation": "Square both sides: \\(4x + 1 = 49\\). So \\(4x = 48\\), \\(x = 12\\).",
+              "choices": [
+                {"option": "A", "text": "10"},
+                {"option": "B", "text": "12"},
+                {"option": "C", "text": "15"},
+                {"option": "D", "text": "24"}
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The table below shows the number of hours 5 students studied and their test scores. Which best describes the relationship?\n\n| Hours | Score |\n|-------|-------|\n| 1     | 55    |\n| 2     | 65    |\n| 3     | 72    |\n| 4     | 80    |\n| 5     | 90    |",
+              "correct_answer": "A",
+              "explanation": "As hours increase, scores increase. This is a positive linear relationship.",
+              "choices": [
+                {"option": "A", "text": "Positive linear association"},
+                {"option": "B", "text": "Negative linear association"},
+                {"option": "C", "text": "Positive nonlinear association"},
+                {"option": "D", "text": "No association"}
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "For the equation \\(y = -2x + 8\\), what is the \\(x\\)-intercept?",
+              "correct_answer": "C",
+              "explanation": "Set \\(y = 0\\): \\(-2x + 8 = 0\\), so \\(2x = 8\\), \\(x = 4\\). The \\(x\\)-intercept is \\((4, 0)\\).",
+              "choices": [
+                {"option": "A", "text": "\\((0, 8)\\)"},
+                {"option": "B", "text": "\\((8, 0)\\)"},
+                {"option": "C", "text": "\\((4, 0)\\)"},
+                {"option": "D", "text": "\\((0, 4)\\)"}
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A bag contains 4 red, 6 blue, and 5 green marbles. If one marble is drawn at random, what is the probability of drawing a blue marble?",
+              "correct_answer": "B",
+              "explanation": "Total marbles = 4 + 6 + 5 = 15. P(blue) = \\(\\frac{6}{15} = \\frac{2}{5}\\).",
+              "choices": [
+                {"option": "A", "text": "\\(\\frac{1}{3}\\)"},
+                {"option": "B", "text": "\\(\\frac{2}{5}\\)"},
+                {"option": "C", "text": "\\(\\frac{4}{15}\\)"},
+                {"option": "D", "text": "\\(\\frac{1}{2}\\)"}
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "What is the area of a triangle with base 14 and height 9?",
+              "correct_answer": "C",
+              "explanation": "Area = \\(\\frac{1}{2} \\times base \\times height = \\frac{1}{2} \\times 14 \\times 9 = 63\\).",
+              "choices": [
+                {"option": "A", "text": "42"},
+                {"option": "B", "text": "56"},
+                {"option": "C", "text": "63"},
+                {"option": "D", "text": "126"}
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If \\(|2x - 6| = 10\\), which of the following gives all values of \\(x\\)?",
+              "correct_answer": "D",
+              "explanation": "Case 1: \\(2x - 6 = 10\\) → \\(x = 8\\). Case 2: \\(2x - 6 = -10\\) → \\(x = -2\\).",
+              "choices": [
+                {"option": "A", "text": "\\(x = 8\\) only"},
+                {"option": "B", "text": "\\(x = -2\\) only"},
+                {"option": "C", "text": "\\(x = 2\\) and \\(x = 8\\)"},
+                {"option": "D", "text": "\\(x = -2\\) and \\(x = 8\\)"}
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A company's profit (in thousands) is modeled by \\(P(t) = -2t^2 + 20t - 30\\), where \\(t\\) is years after 2000. In which year is the profit maximum?",
+              "correct_answer": "B",
+              "explanation": "Maximum at \\(t = -\\frac{20}{2(-2)} = \\frac{20}{4} = 5\\). So year 2005.",
+              "choices": [
+                {"option": "A", "text": "2003"},
+                {"option": "B", "text": "2005"},
+                {"option": "C", "text": "2007"},
+                {"option": "D", "text": "2010"}
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "If \\(\\log_2(x) = 5\\), what is the value of \\(x\\)?",
+              "correct_answer": "C",
+              "explanation": "\\(\\log_2(x) = 5\\) means \\(2^5 = x\\), so \\(x = 32\\).",
+              "choices": [
+                {"option": "A", "text": "10"},
+                {"option": "B", "text": "25"},
+                {"option": "C", "text": "32"},
+                {"option": "D", "text": "64"}
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "The rational expression \\(\\frac{x^2 - 4}{x - 2}\\) is equivalent to which of the following for \\(x \\neq 2\\)?",
+              "correct_answer": "B",
+              "explanation": "Factor: \\(\\frac{(x-2)(x+2)}{x-2} = x + 2\\) for \\(x \\neq 2\\).",
+              "choices": [
+                {"option": "A", "text": "\\(x - 2\\)"},
+                {"option": "B", "text": "\\(x + 2\\)"},
+                {"option": "C", "text": "\\(x^2 - 2\\)"},
+                {"option": "D", "text": "\\(x + 4\\)"}
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "In the \\(xy\\)-plane, line \\(m\\) passes through the origin and has slope 3. Line \\(n\\) is perpendicular to line \\(m\\) and passes through the point \\((6, 2)\\). What is the \\(y\\)-intercept of line \\(n\\)?",
+              "correct_answer": "D",
+              "explanation": "Slope of \\(n = -\\frac{1}{3}\\). Using point-slope form: \\(y - 2 = -\\frac{1}{3}(x - 6)\\) → \\(y = -\\frac{x}{3} + 2 + 2 = -\\frac{x}{3} + 4\\). The \\(y\\)-intercept is 4.",
+              "choices": [
+                {"option": "A", "text": "2"},
+                {"option": "B", "text": "3"},
+                {"option": "C", "text": "3.5"},
+                {"option": "D", "text": "4"}
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "If \\(i = \\sqrt{-1}\\), what is the value of \\((3 + 2i)(3 - 2i)\\)?",
+              "correct_answer": "A",
+              "explanation": "\\((3+2i)(3-2i) = 9 - 4i^2 = 9 - 4(-1) = 9 + 4 = 13\\).",
+              "choices": [
+                {"option": "A", "text": "13"},
+                {"option": "B", "text": "5"},
+                {"option": "C", "text": "9 + 4i"},
+                {"option": "D", "text": "9 - 4i"}
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "A geometric sequence has first term 3 and common ratio 2. What is the 6th term?",
+              "correct_answer": "C",
+              "explanation": "\\(a_n = a_1 \\cdot r^{n-1} = 3 \\cdot 2^5 = 3 \\cdot 32 = 96\\).",
+              "choices": [
+                {"option": "A", "text": "48"},
+                {"option": "B", "text": "64"},
+                {"option": "C", "text": "96"},
+                {"option": "D", "text": "192"}
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "In a right triangle, \\(\\sin(\\theta) = \\frac{3}{5}\\). What is \\(\\cos(\\theta)\\)?",
+              "correct_answer": "B",
+              "explanation": "Using Pythagorean identity: \\(\\cos^2(\\theta) = 1 - \\sin^2(\\theta) = 1 - \\frac{9}{25} = \\frac{16}{25}\\). So \\(\\cos(\\theta) = \\frac{4}{5}\\).",
+              "choices": [
+                {"option": "A", "text": "\\(\\frac{3}{4}\\)"},
+                {"option": "B", "text": "\\(\\frac{4}{5}\\)"},
+                {"option": "C", "text": "\\(\\frac{5}{3}\\)"},
+                {"option": "D", "text": "\\(\\frac{5}{4}\\)"}
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "Which of the following systems of inequalities has no solution?\n\\[y > 2x + 1\\]\n\\[y < 2x - 3\\]",
+              "correct_answer": "A",
+              "explanation": "Since both lines have the same slope (2) but different y-intercepts (1 and -3), they are parallel. No point can be both above \\(y = 2x + 1\\) and below \\(y = 2x - 3\\) simultaneously.",
+              "choices": [
+                {"option": "A", "text": "The given system has no solution because the lines are parallel."},
+                {"option": "B", "text": "The given system has infinitely many solutions."},
+                {"option": "C", "text": "The given system has exactly one solution."},
+                {"option": "D", "text": "The given system has two solutions."}
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "INPUT",
+              "difficulty": "HARD",
+              "content": "If \\(3^{2x} = 81\\), what is the value of \\(x\\)?",
+              "correct_answer": "2",
+              "explanation": "\\(81 = 3^4\\), so \\(3^{2x} = 3^4\\), meaning \\(2x = 4\\), so \\(x = 2\\).",
+              "choices": []
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "The function \\(f(x) = \\frac{2x + 3}{x - 1}\\) has a vertical asymptote at which value of \\(x\\)?",
+              "correct_answer": "B",
+              "explanation": "Vertical asymptote occurs where denominator = 0: \\(x - 1 = 0\\), so \\(x = 1\\).",
+              "choices": [
+                {"option": "A", "text": "\\(x = -3\\)"},
+                {"option": "B", "text": "\\(x = 1\\)"},
+                {"option": "C", "text": "\\(x = 2\\)"},
+                {"option": "D", "text": "\\(x = 3\\)"}
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "The scatterplot shows data points with a line of best fit. The equation is \\(y = 1.5x + 4\\). According to this model, what is the predicted value of \\(y\\) when \\(x = 10\\)?",
+              "correct_answer": "C",
+              "explanation": "\\(y = 1.5(10) + 4 = 15 + 4 = 19\\).",
+              "choices": [
+                {"option": "A", "text": "14"},
+                {"option": "B", "text": "17"},
+                {"option": "C", "text": "19"},
+                {"option": "D", "text": "21"}
+              ]
+            },
+            {
+              "number": 19,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "A cylinder has radius 4 and height 6. What is the volume of the cylinder? (Use \\(\\pi \\approx 3.14\\))",
+              "correct_answer": "B",
+              "explanation": "Volume = \\(\\pi r^2 h = \\pi (4)^2 (6) = 96\\pi \\approx 301.44\\).",
+              "choices": [
+                {"option": "A", "text": "\\(48\\pi\\)"},
+                {"option": "B", "text": "\\(96\\pi\\)"},
+                {"option": "C", "text": "\\(144\\pi\\)"},
+                {"option": "D", "text": "\\(192\\pi\\)"}
+              ]
+            },
+            {
+              "number": 20,
+              "question_type": "INPUT",
+              "difficulty": "HARD",
+              "content": "If the mean of 5, 8, 12, \\(x\\), and 15 is 10, what is the value of \\(x\\)?",
+              "correct_answer": "10",
+              "explanation": "Sum = \\(5 \\times 10 = 50\\). Known sum = \\(5 + 8 + 12 + 15 = 40\\). So \\(x = 50 - 40 = 10\\).",
+              "choices": []
+            },
+            {
+              "number": 21,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "content": "Which expression is equivalent to \\((2x^2y^3)^3\\)?",
+              "correct_answer": "D",
+              "explanation": "\\((2x^2y^3)^3 = 2^3 \\cdot x^{2 \\cdot 3} \\cdot y^{3 \\cdot 3} = 8x^6y^9\\).",
+              "choices": [
+                {"option": "A", "text": "\\(6x^5y^6\\)"},
+                {"option": "B", "text": "\\(6x^6y^9\\)"},
+                {"option": "C", "text": "\\(8x^5y^6\\)"},
+                {"option": "D", "text": "\\(8x^6y^9\\)"}
+              ]
+            },
+            {
+              "number": 22,
+              "question_type": "INPUT",
+              "difficulty": "HARD",
+              "content": "If \\(\\frac{a}{b} = 4\\) and \\(\\frac{b}{c} = 3\\), what is the value of \\(\\frac{a}{c}\\)?",
+              "correct_answer": "12",
+              "explanation": "\\(\\frac{a}{c} = \\frac{a}{b} \\times \\frac{b}{c} = 4 \\times 3 = 12\\).",
+              "choices": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "ENGLISH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 32,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "passage": "Bioluminescence is the production and emission of light by living organisms. This phenomenon occurs in a wide variety of species, including certain fish, jellyfish, bacteria, and fungi. The light is produced through a chemical reaction involving a compound called luciferin. Unlike the heat generated by a light bulb, bioluminescent light is considered \"cold light\" because it produces very little heat.",
+              "content": "What is the primary purpose of the passage?",
+              "correct_answer": "A",
+              "explanation": "The passage defines bioluminescence and explains how it works, making A the best choice.",
+              "choices": [
+                {"option": "A", "text": "To define bioluminescence and describe how it works"},
+                {"option": "B", "text": "To argue that bioluminescent animals are superior to non-bioluminescent ones"},
+                {"option": "C", "text": "To explain why bioluminescence is harmful to ecosystems"},
+                {"option": "D", "text": "To compare different types of artificial light with natural light"}
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "passage": "Bioluminescence is the production and emission of light by living organisms. This phenomenon occurs in a wide variety of species, including certain fish, jellyfish, bacteria, and fungi. The light is produced through a chemical reaction involving a compound called luciferin. Unlike the heat generated by a light bulb, bioluminescent light is considered \"cold light\" because it produces very little heat.",
+              "content": "As used in the passage, the word \"phenomenon\" most nearly means:",
+              "correct_answer": "B",
+              "explanation": "\"Phenomenon\" refers to an observable fact or event, especially one that is remarkable.",
+              "choices": [
+                {"option": "A", "text": "Problem"},
+                {"option": "B", "text": "Observable occurrence"},
+                {"option": "C", "text": "Scientific theory"},
+                {"option": "D", "text": "Harmful effect"}
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "passage": "The ancient city of Pompeii was buried under volcanic ash when Mount Vesuvius erupted in 79 AD. For centuries, the city lay hidden. When excavations began in the 18th century, archaeologists discovered remarkably preserved buildings, artifacts, and even the forms of people who perished in the disaster. Today, Pompeii is one of the most visited archaeological sites in the world.",
+              "content": "According to the passage, what happened to Pompeii after the eruption of Mount Vesuvius?",
+              "correct_answer": "C",
+              "explanation": "The passage states Pompeii was buried under volcanic ash and lay hidden for centuries.",
+              "choices": [
+                {"option": "A", "text": "It was immediately excavated by archaeologists."},
+                {"option": "B", "text": "It was rebuilt by the survivors of the eruption."},
+                {"option": "C", "text": "It was buried and hidden for centuries."},
+                {"option": "D", "text": "It became a major tourist destination shortly after the eruption."}
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "passage": "The ancient city of Pompeii was buried under volcanic ash when Mount Vesuvius erupted in 79 AD. For centuries, the city lay hidden. When excavations began in the 18th century, archaeologists discovered remarkably preserved buildings, artifacts, and even the forms of people who perished in the disaster. Today, Pompeii is one of the most visited archaeological sites in the world.",
+              "content": "Which choice completes the text with the most logical transition?\n\nPompeii was buried by volcanic ash in 79 AD. _______, archaeologists have been able to learn a great deal about Roman daily life from the site.",
+              "correct_answer": "B",
+              "explanation": "The sentence expresses a positive result despite the disaster, so \"Nevertheless\" (showing contrast/unexpected outcome) fits best.",
+              "choices": [
+                {"option": "A", "text": "Consequently,"},
+                {"option": "B", "text": "Nevertheless,"},
+                {"option": "C", "text": "For example,"},
+                {"option": "D", "text": "In contrast,"}
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "passage": "",
+              "content": "Which of the following sentences uses the correct subject-verb agreement?\n\nA. The group of students are working on their project.\nB. Each of the participants were given a certificate.\nC. The committee has reached a decision.\nD. Neither the teacher nor the students was present.",
+              "correct_answer": "C",
+              "explanation": "\"The committee\" is a collective noun treated as singular in this context, so \"has\" is correct. The other options have subject-verb agreement errors.",
+              "choices": [
+                {"option": "A", "text": "The group of students are working on their project."},
+                {"option": "B", "text": "Each of the participants were given a certificate."},
+                {"option": "C", "text": "The committee has reached a decision."},
+                {"option": "D", "text": "Neither the teacher nor the students was present."}
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "EASY",
+              "passage": "Urban gardens have become increasingly popular in cities across the world. These small plots of land, often located on rooftops or in vacant lots, allow city residents to grow fresh vegetables and herbs. Studies have shown that urban gardening reduces stress, builds community connections, and improves food security in urban areas.",
+              "content": "The author's claim that urban gardening \"builds community connections\" would be most directly supported by which additional detail?",
+              "correct_answer": "B",
+              "explanation": "Evidence of neighbors working together and socializing would directly support the claim about community connections.",
+              "choices": [
+                {"option": "A", "text": "Statistics showing that urban gardens produce more vegetables per square foot than rural farms"},
+                {"option": "B", "text": "Research showing that people who garden together report stronger friendships with their neighbors"},
+                {"option": "C", "text": "Data indicating that urban gardens reduce city temperatures by reflecting sunlight"},
+                {"option": "D", "text": "A description of the tools needed to start an urban garden"}
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Scientists studying the deep ocean have discovered organisms that thrive in extreme conditions near hydrothermal vents. These vents release superheated water rich in minerals. Unlike most ecosystems, which rely on sunlight for energy, these communities depend on chemosynthesis — a process by which bacteria convert chemicals into energy. These findings have expanded scientists' understanding of where life can exist.",
+              "content": "Which statement best describes the relationship between hydrothermal vents and the organisms that live near them?",
+              "correct_answer": "D",
+              "explanation": "The passage describes how organisms near hydrothermal vents use chemosynthesis to convert the chemicals from the vents into energy.",
+              "choices": [
+                {"option": "A", "text": "Organisms near hydrothermal vents depend on sunlight filtered through the deep ocean."},
+                {"option": "B", "text": "Hydrothermal vents are harmful to deep-sea organisms."},
+                {"option": "C", "text": "Organisms near hydrothermal vents use photosynthesis to produce energy."},
+                {"option": "D", "text": "Organisms near hydrothermal vents use chemicals from the vents to produce energy through chemosynthesis."}
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Malala Yousafzai, a Pakistani activist for female education, survived a 2012 assassination attempt by the Taliban. Rather than silencing her, the attack strengthened her resolve. In 2014, she became the youngest person ever to receive the Nobel Peace Prize. In her acceptance speech, she declared, \"One child, one teacher, one book, one pen can change the world.\"",
+              "content": "Based on the passage, which of the following best describes Malala Yousafzai's response to the assassination attempt?",
+              "correct_answer": "A",
+              "explanation": "The passage states the attack \"strengthened her resolve,\" indicating she became more determined rather than discouraged.",
+              "choices": [
+                {"option": "A", "text": "She became more determined to advocate for girls' education."},
+                {"option": "B", "text": "She abandoned her activism to protect her safety."},
+                {"option": "C", "text": "She moved to a different country and stopped speaking publicly."},
+                {"option": "D", "text": "She became focused primarily on winning the Nobel Prize."}
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Researcher Dr. Elena Gómez notes: \"Our study found a significant correlation between sleep duration and academic performance in high school students. Students who reported sleeping 8 or more hours per night scored, on average, 15% higher on standardized tests than those sleeping fewer than 6 hours.\"",
+              "content": "Which of the following would most effectively introduce Dr. Gómez's finding in a research paper?",
+              "correct_answer": "C",
+              "explanation": "This introduction most accurately and directly represents the research finding about sleep duration and test scores.",
+              "choices": [
+                {"option": "A", "text": "Sleep is generally considered important for teenagers."},
+                {"option": "B", "text": "Dr. Gómez has conducted many valuable studies on student health."},
+                {"option": "C", "text": "Research suggests that adequate sleep is linked to better academic outcomes for high school students."},
+                {"option": "D", "text": "Many students today do not get enough sleep due to their busy schedules."}
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "",
+              "content": "Which of the following sentences contains an error in punctuation?\n\nA. After the meeting ended, the team members dispersed quickly.\nB. The report, which was submitted late, was still accepted by the manager.\nC. She studied hard for the exam; however, she still felt nervous.\nD. The students went to the library to study for their, upcoming exams.",
+              "correct_answer": "D",
+              "explanation": "Option D incorrectly places a comma between \"their\" and \"upcoming exams.\" No comma should separate an adjective from the noun it modifies when they function as part of a noun phrase.",
+              "choices": [
+                {"option": "A", "text": "After the meeting ended, the team members dispersed quickly."},
+                {"option": "B", "text": "The report, which was submitted late, was still accepted by the manager."},
+                {"option": "C", "text": "She studied hard for the exam; however, she still felt nervous."},
+                {"option": "D", "text": "The students went to the library to study for their, upcoming exams."}
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Text 1: Some historians argue that the printing press, invented by Johannes Gutenberg around 1440, was the most significant invention of the second millennium. By making books affordable and widely available, it democratized knowledge and helped trigger the Protestant Reformation and the Scientific Revolution.\n\nText 2: While the printing press was certainly transformative, other historians suggest the steam engine's impact was more profound. The Industrial Revolution, powered by steam, fundamentally altered how humans lived and worked, lifting millions out of poverty and setting the stage for modern economies.",
+              "content": "How do the authors of Text 1 and Text 2 differ in their assessment of historical inventions?",
+              "correct_answer": "B",
+              "explanation": "Text 1 argues the printing press was most significant, while Text 2 argues the steam engine had a more profound impact.",
+              "choices": [
+                {"option": "A", "text": "Text 1 focuses on economic impacts while Text 2 focuses on cultural impacts."},
+                {"option": "B", "text": "Text 1 argues the printing press was most significant; Text 2 argues the steam engine was more impactful."},
+                {"option": "C", "text": "Both texts agree that the printing press was the most important invention."},
+                {"option": "D", "text": "Text 1 focuses on the 20th century while Text 2 focuses on the 19th century."}
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "The monarch butterfly undertakes one of nature's most remarkable migrations. Each fall, millions of monarchs travel up to 3,000 miles from Canada and the United States to their overwintering grounds in the mountains of central Mexico. Scientists are still studying how these butterflies navigate with such precision, given that no individual butterfly makes the round trip more than once.",
+              "content": "According to the passage, what makes the monarch butterfly's navigation particularly puzzling?",
+              "correct_answer": "D",
+              "explanation": "The passage notes that no single butterfly makes the trip more than once, yet they navigate precisely — making this an unexplained mystery.",
+              "choices": [
+                {"option": "A", "text": "The butterflies travel only at night."},
+                {"option": "B", "text": "The migration distance is too short to be impressive."},
+                {"option": "C", "text": "The butterflies travel in groups too large to study."},
+                {"option": "D", "text": "No individual butterfly completes the round trip, yet each generation migrates accurately."}
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "",
+              "content": "A student is writing a research paper and wants to include a sentence stating that global temperatures have risen significantly over the past century. Which of the following would be the most reliable source to cite?",
+              "correct_answer": "A",
+              "explanation": "A peer-reviewed scientific journal article is the most credible and reliable academic source for climate data.",
+              "choices": [
+                {"option": "A", "text": "A peer-reviewed article published in Nature Climate Change"},
+                {"option": "B", "text": "A blog post by a concerned citizen"},
+                {"option": "C", "text": "A social media post from an environmental organization"},
+                {"option": "D", "text": "A news report from a magazine focused on entertainment"}
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Ocean acidification is a serious environmental threat. When carbon dioxide dissolves in seawater, it forms carbonic acid, which lowers the ocean's pH. This process threatens marine organisms like corals and shellfish, which need calcium carbonate — a substance that dissolves in acidic water — to build their shells and skeletons. Some scientists predict that if current CO₂ emissions continue, many coral reefs could be severely damaged by 2050.",
+              "content": "The word \"threatens\" in the passage most nearly means:",
+              "correct_answer": "C",
+              "explanation": "In context, \"threatens\" means to put at risk or endanger.",
+              "choices": [
+                {"option": "A", "text": "Intimidates"},
+                {"option": "B", "text": "Improves"},
+                {"option": "C", "text": "Endangers"},
+                {"option": "D", "text": "Describes"}
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Ocean acidification is a serious environmental threat. When carbon dioxide dissolves in seawater, it forms carbonic acid, which lowers the ocean's pH. This process threatens marine organisms like corals and shellfish, which need calcium carbonate — a substance that dissolves in acidic water — to build their shells and skeletons. Some scientists predict that if current CO₂ emissions continue, many coral reefs could be severely damaged by 2050.",
+              "content": "Which choice best states the central claim of the passage?",
+              "correct_answer": "B",
+              "explanation": "The passage's central claim is that ocean acidification (caused by CO₂) endangers marine life, particularly organisms that depend on calcium carbonate.",
+              "choices": [
+                {"option": "A", "text": "Coral reefs are the most beautiful ecosystems on Earth."},
+                {"option": "B", "text": "Increasing CO₂ emissions are causing ocean acidification, which harms marine life."},
+                {"option": "C", "text": "Calcium carbonate is no longer found in the ocean."},
+                {"option": "D", "text": "Scientists disagree about whether ocean acidification is actually occurring."}
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Researchers have identified a consistent pattern in the sleep habits of teenagers. Biological changes during adolescence shift the circadian rhythm — the body's internal clock — causing teens to feel alert later in the evening and sleepy later in the morning. Despite this, most high schools begin classes before 8:00 AM, requiring students to wake up when their bodies are still in a sleep phase. A growing number of medical organizations, including the American Academy of Pediatrics, have called for later school start times.",
+              "content": "Which of the following, if true, would most strengthen the argument for later school start times?",
+              "correct_answer": "C",
+              "explanation": "Data showing that schools with later start times had better academic performance and attendance would most directly support the argument for later start times.",
+              "choices": [
+                {"option": "A", "text": "Many parents prefer earlier start times because they coincide with their work schedules."},
+                {"option": "B", "text": "Teenagers in other countries also stay up late due to social media use."},
+                {"option": "C", "text": "Schools that shifted to later start times reported improved grades and lower absence rates."},
+                {"option": "D", "text": "The American Academy of Pediatrics is a well-respected medical organization."}
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "While revising an essay, a student wants to combine the following two sentences into one:\n\n\"The scientist published her findings in a journal. The findings challenged decades of accepted theory.\"\n\nWhich option best combines the sentences while maintaining clarity?",
+              "correct_answer": "B",
+              "explanation": "This clearly combines the idea of publishing with the fact that the findings challenged accepted theory.",
+              "choices": [
+                {"option": "A", "text": "The scientist published her findings in a journal, it challenged decades of accepted theory."},
+                {"option": "B", "text": "The scientist published her findings in a journal, and these findings challenged decades of accepted theory."},
+                {"option": "C", "text": "Publishing in a journal, the decades of theory were challenged by the scientist's findings."},
+                {"option": "D", "text": "The scientist's findings was published in a journal to challenge decades of accepted theory."}
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "In her 2018 book, sociologist Dr. Priya Nair argues that digital communication has fundamentally transformed human relationships. While technology enables people to maintain connections across vast distances, Nair contends that it also promotes a shallow form of engagement. She writes: \"We are more connected than ever, and yet profoundly alone — linked by algorithms but separated by the very screens meant to unite us.\"",
+              "content": "The quotation from Dr. Nair's book primarily serves to:",
+              "correct_answer": "A",
+              "explanation": "The quotation illustrates the paradox Nair describes — technology connects and isolates simultaneously.",
+              "choices": [
+                {"option": "A", "text": "Illustrate the paradox that technology both connects and isolates people"},
+                {"option": "B", "text": "Provide statistical evidence of declining human relationships"},
+                {"option": "C", "text": "Argue that algorithms are harmful and should be regulated"},
+                {"option": "D", "text": "Suggest that people should stop using digital communication entirely"}
+              ]
+            },
+            {
+              "number": 19,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "Which of the following uses a semicolon correctly?\n\nA. She wanted to attend; but the event was canceled.\nB. The results were surprising; they exceeded all expectations.\nC. He ran; quickly down the street.\nD. The professor; who had a PhD, was brilliant.",
+              "correct_answer": "B",
+              "explanation": "A semicolon correctly joins two independent clauses: \"The results were surprising\" and \"they exceeded all expectations.\"",
+              "choices": [
+                {"option": "A", "text": "She wanted to attend; but the event was canceled."},
+                {"option": "B", "text": "The results were surprising; they exceeded all expectations."},
+                {"option": "C", "text": "He ran; quickly down the street."},
+                {"option": "D", "text": "The professor; who had a PhD, was brilliant."}
+              ]
+            },
+            {
+              "number": 20,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "The following graph shows the population of City X from 2010 to 2020:\n\n2010: 120,000\n2012: 132,000\n2014: 148,000\n2016: 165,000\n2018: 180,000\n2020: 192,000",
+              "content": "Based on the data, which of the following statements is best supported?",
+              "correct_answer": "A",
+              "explanation": "The population increases by roughly 7,000–17,000 each period, showing steady but slightly variable growth — best described as increasing each period.",
+              "choices": [
+                {"option": "A", "text": "The population of City X increased steadily between 2010 and 2020."},
+                {"option": "B", "text": "The population of City X doubled between 2010 and 2020."},
+                {"option": "C", "text": "The population of City X decreased in some years between 2010 and 2020."},
+                {"option": "D", "text": "The population growth rate was constant throughout the decade."}
+              ]
+            },
+            {
+              "number": 21,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Linguist Noam Chomsky proposed the concept of \"universal grammar\" — the idea that all human languages share a common underlying structure that is innate to the human mind. While this theory was influential, recent studies of rare, isolated languages have led some researchers to question whether universal grammar applies to all languages or reflects only the most widely studied Indo-European language families.",
+              "content": "What is the main point of the passage?",
+              "correct_answer": "C",
+              "explanation": "The passage presents Chomsky's theory, then notes that recent research has raised questions about its universality.",
+              "choices": [
+                {"option": "A", "text": "Chomsky's theory of universal grammar has been completely disproven by recent research."},
+                {"option": "B", "text": "All languages share the exact same grammatical structures."},
+                {"option": "C", "text": "Chomsky's influential theory is being re-examined in light of new linguistic research."},
+                {"option": "D", "text": "Isolated languages are grammatically superior to Indo-European languages."}
+              ]
+            },
+            {
+              "number": 22,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "Which of the following correctly identifies and fixes the error in the sentence below?\n\n\"Between you and I, the decision was made too quickly.\"",
+              "correct_answer": "A",
+              "explanation": "\"Between\" is a preposition and must be followed by object pronouns. \"I\" is a subject pronoun, so it should be \"me.\" Correct: \"Between you and me.\"",
+              "choices": [
+                {"option": "A", "text": "Change \"I\" to \"me\" — prepositions require object pronouns"},
+                {"option": "B", "text": "Change \"was made\" to \"were made\" — subject-verb agreement error"},
+                {"option": "C", "text": "Add a comma after \"Between you and I\" — introductory phrase"},
+                {"option": "D", "text": "The sentence is correct as written"}
+              ]
+            },
+            {
+              "number": 23,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Economists have long debated whether a universal basic income (UBI) — a policy in which the government provides all citizens with a regular cash payment — would reduce poverty or simply inflate prices. Proponents argue that UBI would give people the financial security to pursue education and entrepreneurship. Critics contend that without work requirements, UBI might reduce the incentive to work, potentially slowing economic growth.",
+              "content": "Which of the following best describes how the passage is organized?",
+              "correct_answer": "B",
+              "explanation": "The passage presents two opposing views on UBI — proponents and critics — making it a presentation of two perspectives.",
+              "choices": [
+                {"option": "A", "text": "A historical narrative followed by a prediction about the future"},
+                {"option": "B", "text": "A presentation of two opposing perspectives on a policy issue"},
+                {"option": "C", "text": "A detailed description of how UBI is implemented in various countries"},
+                {"option": "D", "text": "A scientific explanation of economic theory"}
+              ]
+            },
+            {
+              "number": 24,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "NASA's James Webb Space Telescope, launched in December 2021, is designed to observe some of the earliest galaxies formed after the Big Bang. By detecting infrared light — which can penetrate clouds of dust that block visible light — the telescope can peer deeper into the universe than any previous instrument. Scientists hope it will answer fundamental questions about the origins of stars, galaxies, and the chemical elements essential to life.",
+              "content": "According to the passage, one advantage of the James Webb Space Telescope over previous instruments is that it:",
+              "correct_answer": "D",
+              "explanation": "The passage states JWST detects infrared light, which can penetrate dust clouds that block visible light, allowing it to see farther.",
+              "choices": [
+                {"option": "A", "text": "Is located on Earth, making it easier to maintain"},
+                {"option": "B", "text": "Is larger than any telescope ever built"},
+                {"option": "C", "text": "Can travel to distant galaxies to collect samples"},
+                {"option": "D", "text": "Uses infrared light to see through dust clouds that block visible light"}
+              ]
+            },
+            {
+              "number": 25,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "Which version of the underlined sentence best maintains the formal, academic tone of the essay?\n\nMain text: Recent archaeological discoveries have transformed our understanding of ancient trade routes. _______ these findings suggest that globalization is not a modern phenomenon.\n\nA. Yo, it turns out\nB. Basically,\nC. Taken together,\nD. Like, obviously,",
+              "correct_answer": "C",
+              "explanation": "\"Taken together\" is a formal, academic transition that fits the tone of the essay.",
+              "choices": [
+                {"option": "A", "text": "Yo, it turns out"},
+                {"option": "B", "text": "Basically,"},
+                {"option": "C", "text": "Taken together,"},
+                {"option": "D", "text": "Like, obviously,"}
+              ]
+            },
+            {
+              "number": 26,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "During the Cambrian explosion, approximately 541 million years ago, most of the major animal phyla appeared in the fossil record over a geologically short period of time. This rapid diversification of life has puzzled scientists for over 150 years. Some researchers argue that changes in ocean chemistry triggered the event; others suggest that evolutionary innovations, such as the development of eyes, may have accelerated diversification.",
+              "content": "The passage implies that the Cambrian explosion is still not fully understood because:",
+              "correct_answer": "B",
+              "explanation": "The passage states that scientists have proposed different explanations (ocean chemistry vs. evolutionary innovations), indicating no consensus on a single cause.",
+              "choices": [
+                {"option": "A", "text": "The fossils from that period are too fragmented to study"},
+                {"option": "B", "text": "Multiple competing explanations exist, and no single cause has been confirmed"},
+                {"option": "C", "text": "Scientists have not yet discovered any fossils from that period"},
+                {"option": "D", "text": "The Cambrian period is too recent for modern analysis"}
+              ]
+            },
+            {
+              "number": 27,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "A student wants to add the following sentence to the end of a paragraph about the benefits of renewable energy:\n\n\"Solar panels, for instance, have become 89% cheaper over the past decade, making them accessible to more households.\"\n\nThis sentence would best function as:",
+              "correct_answer": "A",
+              "explanation": "The sentence provides a specific, concrete example (with statistics) to illustrate the broader claim about renewable energy becoming more accessible.",
+              "choices": [
+                {"option": "A", "text": "A specific example that supports the paragraph's main claim with data"},
+                {"option": "B", "text": "A counterargument that challenges the paragraph's main claim"},
+                {"option": "C", "text": "A topic sentence introducing a new idea"},
+                {"option": "D", "text": "A conclusion that summarizes the entire essay"}
+              ]
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "time_limit": 32,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "The concept of \"food deserts\" — geographic areas where residents lack access to affordable, nutritious food — has drawn significant attention from public health researchers. Studies consistently show that residents of food deserts have higher rates of diet-related diseases such as diabetes and heart disease. However, some researchers have challenged this framework, arguing that \"food swamps\" — areas overwhelmed by fast-food outlets and convenience stores — may be a more accurate predictor of poor health outcomes than mere proximity to grocery stores.",
+              "content": "What is the main argument made by the researchers who challenge the food desert framework?",
+              "correct_answer": "C",
+              "explanation": "These researchers argue that 'food swamps' (too many unhealthy options) predict poor health outcomes better than the lack of grocery stores.",
+              "choices": [
+                {"option": "A", "text": "Food deserts do not actually exist in the United States."},
+                {"option": "B", "text": "Diet-related diseases are not caused by food access issues."},
+                {"option": "C", "text": "The abundance of unhealthy food options may be more harmful than the lack of healthy ones."},
+                {"option": "D", "text": "Fast-food restaurants should be banned from residential areas."}
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "",
+              "content": "Which version of the following sentence uses modifiers correctly?\n\nA. Running down the street, the rain began to fall heavily.\nB. Having finished her homework, the television was turned on by Maria.\nC. After reviewing the evidence, the jury reached a verdict.\nD. To improve your writing, more books must be read.",
+              "correct_answer": "C",
+              "explanation": "In C, \"after reviewing the evidence\" correctly modifies \"the jury,\" which performed the action. The others have dangling or misplaced modifiers.",
+              "choices": [
+                {"option": "A", "text": "Running down the street, the rain began to fall heavily."},
+                {"option": "B", "text": "Having finished her homework, the television was turned on by Maria."},
+                {"option": "C", "text": "After reviewing the evidence, the jury reached a verdict."},
+                {"option": "D", "text": "To improve your writing, more books must be read."}
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Archaeologist Dr. Fatima Al-Rashid has spent 20 years excavating sites in the Arabian Peninsula. Her most recent discovery — a 3,000-year-old trading post — suggests that ancient Arabian merchants had extensive trade networks stretching as far as India and East Africa. She notes: \"The diversity of artifacts at this site is extraordinary. We found Chinese porcelain, Indian textiles, and African ivory — all in the same layer.\"",
+              "content": "What does the quotation from Dr. Al-Rashid most directly illustrate?",
+              "correct_answer": "B",
+              "explanation": "The presence of objects from China, India, and Africa in the same layer directly illustrates the geographic reach of the ancient Arabian trade networks.",
+              "choices": [
+                {"option": "A", "text": "The challenges archaeologists face when excavating in hot climates"},
+                {"option": "B", "text": "The geographic extent of ancient Arabian trade networks"},
+                {"option": "C", "text": "The value of Chinese porcelain in ancient markets"},
+                {"option": "D", "text": "The reason why Dr. Al-Rashid chose to study archaeology"}
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Wolves were reintroduced to Yellowstone National Park in 1995 after being absent for 70 years. The results were dramatic and far-reaching. With wolves hunting elk, the elk population declined and changed their grazing behavior, avoiding riverbanks and valleys. This allowed vegetation to recover, which in turn stabilized riverbanks and changed the course of rivers. Scientists call this process a \"trophic cascade\" — the idea that one species can have cascading effects throughout an entire ecosystem.",
+              "content": "According to the passage, which sequence best describes the trophic cascade following wolf reintroduction?",
+              "correct_answer": "A",
+              "explanation": "The passage describes the chain: wolves → elk behavior change → vegetation recovery → stabilized riverbanks → rivers changed course.",
+              "choices": [
+                {"option": "A", "text": "Wolves hunted elk → elk avoided riverbanks → vegetation recovered → rivers changed"},
+                {"option": "B", "text": "Rivers changed → vegetation grew → elk returned → wolves arrived"},
+                {"option": "C", "text": "Vegetation declined → elk overpopulated → wolves were introduced → rivers changed"},
+                {"option": "D", "text": "Wolves increased → rivers flooded → vegetation died → elk population collapsed"}
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "",
+              "content": "Which of the following sentences is correctly punctuated?\n\nA. Its important to consider all options before making a final decision.\nB. The company announced it's newest product at the annual conference.\nC. The dog wagged its tail enthusiastically when it saw its owner.\nD. Its' too late to change the schedule now.",
+              "correct_answer": "C",
+              "explanation": "\"Its\" (possessive) is correctly used twice — \"its tail\" and \"its owner.\" Options A and B incorrectly use \"its\" or \"it's.\" \"Its'\" in D does not exist.",
+              "choices": [
+                {"option": "A", "text": "Its important to consider all options before making a final decision."},
+                {"option": "B", "text": "The company announced it's newest product at the annual conference."},
+                {"option": "C", "text": "The dog wagged its tail enthusiastically when it saw its owner."},
+                {"option": "D", "text": "Its' too late to change the schedule now."}
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "Text 1: Microplastics — tiny particles of plastic less than 5 millimeters in size — have been found in oceans, rivers, soil, and even the human bloodstream. Scientists are alarmed by their ubiquity and are investigating their potential health effects.\n\nText 2: While microplastics are certainly widespread, some researchers urge caution before drawing alarming conclusions. Current evidence suggests that the concentrations of microplastics found in human tissue are far below levels associated with harm in laboratory studies. More research is needed before definitive health recommendations can be made.",
+              "content": "How do the two texts differ in their approach to the topic of microplastics?",
+              "correct_answer": "B",
+              "explanation": "Text 1 emphasizes alarm at the ubiquity of microplastics; Text 2 urges caution and notes current evidence doesn't show clear harm.",
+              "choices": [
+                {"option": "A", "text": "Text 1 focuses on ocean pollution while Text 2 focuses on human health."},
+                {"option": "B", "text": "Text 1 expresses alarm about microplastics while Text 2 urges caution about drawing conclusions."},
+                {"option": "C", "text": "Both texts agree that microplastics pose an immediate danger to human health."},
+                {"option": "D", "text": "Text 1 argues microplastics are harmless while Text 2 argues they are dangerous."}
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "The following table summarizes results from a study on exercise frequency and average resting heart rate:\n\n| Weekly Exercise (days) | Avg. Resting Heart Rate (bpm) |\n|------------------------|-------------------------------|\n| 0–1                    | 82                            |\n| 2–3                    | 74                            |\n| 4–5                    | 67                            |\n| 6–7                    | 61                            |",
+              "content": "Based on the table, which of the following conclusions is best supported by the data?",
+              "correct_answer": "A",
+              "explanation": "The data shows a consistent inverse relationship: as exercise days increase, resting heart rate decreases.",
+              "choices": [
+                {"option": "A", "text": "People who exercise more frequently tend to have lower resting heart rates."},
+                {"option": "B", "text": "People who exercise every day have the same resting heart rate as those who never exercise."},
+                {"option": "C", "text": "Exercising 2–3 days per week is more beneficial than exercising 6–7 days per week."},
+                {"option": "D", "text": "Resting heart rate is not related to exercise frequency."}
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "passage": "In the late 19th century, physicist Albert Michelson and chemist Edward Morley conducted an experiment to detect the luminiferous aether — a hypothetical substance scientists believed filled space and served as the medium through which light traveled. Their experiment, now known as the Michelson-Morley experiment, found no evidence for the aether's existence. This \"null result\" was initially confusing to scientists, but it later proved crucial to Einstein's development of the theory of special relativity.",
+              "content": "According to the passage, why was the Michelson-Morley experiment significant?",
+              "correct_answer": "D",
+              "explanation": "The passage states that the null result was initially confusing but later proved crucial to Einstein's development of special relativity.",
+              "choices": [
+                {"option": "A", "text": "It proved definitively that the luminiferous aether exists."},
+                {"option": "B", "text": "It was the first experiment conducted in the 19th century."},
+                {"option": "C", "text": "It showed that light cannot travel through a vacuum."},
+                {"option": "D", "text": "Its unexpected result contributed to the development of Einstein's theory of special relativity."}
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "A student is writing a persuasive essay about the importance of arts education. She wants to add a sentence supporting the claim that arts education improves academic performance. Which of the following would best serve that purpose?",
+              "correct_answer": "C",
+              "explanation": "A study with specific data directly supporting the claim that arts education improves academic performance would best serve this purpose.",
+              "choices": [
+                {"option": "A", "text": "Many students enjoy art class more than math class."},
+                {"option": "B", "text": "Schools that cut arts programs often do so due to budget constraints."},
+                {"option": "C", "text": "A 2019 study found that students enrolled in arts programs had GPAs 0.3 points higher than those who were not."},
+                {"option": "D", "text": "Famous artists like Picasso and Da Vinci had successful careers."}
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Geologist Dr. Mei Lin has spent decades studying the formation of the Himalayas. According to her research, the collision of the Indian and Eurasian tectonic plates began approximately 50 million years ago and continues today, causing the Himalayas to rise about 5 millimeters per year. She notes that while the mountains appear static and immovable to human observers, on a geological timescale they are in a constant state of change.",
+              "content": "Dr. Lin's observation that the Himalayas are \"in a constant state of change\" primarily serves to:",
+              "correct_answer": "B",
+              "explanation": "This observation contrasts human perception (mountains as static) with geological reality (constant gradual change), highlighting the importance of geological perspective.",
+              "choices": [
+                {"option": "A", "text": "Argue that the Himalayas will eventually disappear"},
+                {"option": "B", "text": "Contrast human perception of geological features with their actual dynamic nature"},
+                {"option": "C", "text": "Warn readers about the dangers of tectonic activity"},
+                {"option": "D", "text": "Explain why geologists prefer to study younger mountain ranges"}
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "Which of the following correctly uses a colon?\n\nA. The scientist needed: several items for the experiment.\nB. The museum contains many ancient artifacts: Egyptian mummies, Greek sculptures, and Roman coins.\nC. She has two goals: to graduate: and to find a job.\nD. The meeting will be at: 3 PM tomorrow.",
+              "correct_answer": "B",
+              "explanation": "A colon correctly introduces a list or explanation after an independent clause. \"The museum contains many ancient artifacts\" is an independent clause, and the colon introduces the list.",
+              "choices": [
+                {"option": "A", "text": "The scientist needed: several items for the experiment."},
+                {"option": "B", "text": "The museum contains many ancient artifacts: Egyptian mummies, Greek sculptures, and Roman coins."},
+                {"option": "C", "text": "She has two goals: to graduate: and to find a job."},
+                {"option": "D", "text": "The meeting will be at: 3 PM tomorrow."}
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Philosopher and economist John Stuart Mill argued in his 1859 work On Liberty that freedom of expression is essential to the development of truth and the progress of society. Mill proposed the \"marketplace of ideas\" — the notion that all ideas should be allowed to compete openly, because truth will ultimately prevail over falsehood when challenged in open debate. Critics of this view have argued that not all voices start from an equal position, and that some speech can cause direct harm to marginalized groups.",
+              "content": "Which of the following best captures the tension described in the passage?",
+              "correct_answer": "D",
+              "explanation": "The passage presents Mill's argument for unrestricted free speech versus critics' concern that speech can harm marginalized groups — a tension between liberty and protection from harm.",
+              "choices": [
+                {"option": "A", "text": "The tension between philosophy and economics in the 19th century"},
+                {"option": "B", "text": "The debate over whether John Stuart Mill was a reliable thinker"},
+                {"option": "C", "text": "The conflict between different economic systems in modern society"},
+                {"option": "D", "text": "The tension between unrestricted free expression and the potential harm speech can cause"}
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "A survey was conducted among 500 college students about their study habits. The results showed that 64% used digital flashcard apps, 48% preferred printed textbooks over e-books, 73% reported studying in short intervals (the Pomodoro technique), and only 22% met regularly with study groups.",
+              "content": "Based on the survey data, which of the following is best supported?",
+              "correct_answer": "A",
+              "explanation": "73% using the Pomodoro technique is the highest percentage, making it the most common study habit among respondents.",
+              "choices": [
+                {"option": "A", "text": "The Pomodoro technique was the most commonly reported study habit among those surveyed."},
+                {"option": "B", "text": "Most students preferred e-books over printed textbooks."},
+                {"option": "C", "text": "The majority of students studied in groups."},
+                {"option": "D", "text": "Digital flashcard apps were less popular than printed textbooks."}
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "The Renaissance, which flourished in Europe from the 14th to 17th centuries, represented a profound cultural and intellectual transformation. Scholars and artists turned to the classical texts of ancient Greece and Rome for inspiration, developing a philosophy known as humanism, which placed human experience and potential at the center of inquiry. This shift from a purely theological worldview had lasting effects on art, science, and political thought.",
+              "content": "The word \"theological\" in the passage most nearly means:",
+              "correct_answer": "B",
+              "explanation": "\"Theological\" relates to the study of God and religion. In context, the passage contrasts humanism's human-centered focus with a previously religion-centered worldview.",
+              "choices": [
+                {"option": "A", "text": "Scientific"},
+                {"option": "B", "text": "Religious"},
+                {"option": "C", "text": "Political"},
+                {"option": "D", "text": "Artistic"}
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "The Renaissance, which flourished in Europe from the 14th to 17th centuries, represented a profound cultural and intellectual transformation. Scholars and artists turned to the classical texts of ancient Greece and Rome for inspiration, developing a philosophy known as humanism, which placed human experience and potential at the center of inquiry. This shift from a purely theological worldview had lasting effects on art, science, and political thought.",
+              "content": "Which of the following, if true, would most strengthen the claim that the Renaissance had lasting effects on science?",
+              "correct_answer": "D",
+              "explanation": "This directly connects Renaissance humanism to specific scientific advances and figures, strengthening the claim about science being impacted.",
+              "choices": [
+                {"option": "A", "text": "Many Renaissance paintings depicted religious subjects."},
+                {"option": "B", "text": "Renaissance artists were often commissioned by wealthy patrons."},
+                {"option": "C", "text": "The printing press was invented during the Renaissance period."},
+                {"option": "D", "text": "Renaissance figures like Leonardo da Vinci and Nicolaus Copernicus made foundational scientific contributions that influenced later discoveries."}
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Linguist and cognitive scientist Steven Pinker argues in his book The Language Instinct that human language is not a cultural artifact but a biological adaptation — as much a part of our genetic inheritance as vision or the ability to walk upright. He contends that children acquire language not by instruction but through an innate capacity that is activated by exposure to language in their environment.",
+              "content": "Which of the following best describes Pinker's central claim as presented in the passage?",
+              "correct_answer": "A",
+              "explanation": "Pinker argues language is a biological adaptation, not a learned cultural skill — making A the most accurate description of his claim.",
+              "choices": [
+                {"option": "A", "text": "Human language ability is innate and biological, not merely a learned cultural skill."},
+                {"option": "B", "text": "Children must be formally taught language in school to achieve fluency."},
+                {"option": "C", "text": "Language is primarily a cultural tool developed through social interaction."},
+                {"option": "D", "text": "Language differs fundamentally from other biological abilities such as vision."}
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "Read the following paragraph and choose the sentence that does NOT belong:\n\n(1) The Great Barrier Reef is the world's largest coral reef system, stretching over 2,300 kilometers. (2) It is home to thousands of species of marine life. (3) Coral reefs around the world are threatened by rising ocean temperatures and acidification. (4) The Sydney Opera House is one of Australia's most famous landmarks. (5) Scientists are working to develop methods to protect and restore reef ecosystems.",
+              "correct_answer": "D",
+              "explanation": "Sentence 4 about the Sydney Opera House is irrelevant to the passage's topic of coral reefs and reef conservation.",
+              "choices": [
+                {"option": "A", "text": "Sentence 1"},
+                {"option": "B", "text": "Sentence 2"},
+                {"option": "C", "text": "Sentence 3"},
+                {"option": "D", "text": "Sentence 4"}
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Cognitive psychologist Daniel Kahneman distinguishes between two systems of thinking in his book Thinking, Fast and Slow. System 1 operates automatically and quickly, relying on intuition and emotional responses. System 2 is deliberate, slower, and involves effortful reasoning. Kahneman argues that humans often default to System 1 even when a problem requires the careful analysis of System 2 — a tendency that can lead to predictable errors in judgment.",
+              "content": "According to Kahneman's framework, which of the following scenarios best illustrates a System 1 response?",
+              "correct_answer": "B",
+              "explanation": "Reacting immediately based on a \"gut feeling\" without deliberate analysis exemplifies the automatic, intuitive System 1 thinking.",
+              "choices": [
+                {"option": "A", "text": "A chess player analyzing all possible moves before deciding"},
+                {"option": "B", "text": "A driver immediately swerving to avoid an obstacle without consciously thinking"},
+                {"option": "C", "text": "A scientist carefully reviewing data before drawing a conclusion"},
+                {"option": "D", "text": "A student re-reading an essay multiple times before submitting it"}
+              ]
+            },
+            {
+              "number": 19,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Economist Ha-Joon Chang argues in 23 Things They Don't Tell You About Capitalism that free-market economics, as commonly taught, oversimplifies the relationship between government intervention and economic development. He points to the success of economies like South Korea and Taiwan, which achieved rapid growth through active state involvement in industry and trade, as evidence that markets alone do not explain prosperity.",
+              "content": "Chang's argument would be most directly challenged by which of the following?",
+              "correct_answer": "C",
+              "explanation": "If free-market economies with minimal government intervention consistently outperformed those with heavy state involvement, this would directly counter Chang's argument.",
+              "choices": [
+                {"option": "A", "text": "Evidence that South Korea's economy has slowed in recent decades"},
+                {"option": "B", "text": "Data showing that government spending has increased in most countries"},
+                {"option": "C", "text": "A study showing that economies with minimal state intervention consistently achieve higher long-term growth than those with heavy state involvement"},
+                {"option": "D", "text": "Historical evidence that free markets were first developed in Europe"}
+              ]
+            },
+            {
+              "number": 20,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "Which of the following is the most effective revision of the sentence below to eliminate wordiness?\n\nOriginal: \"Due to the fact that the weather was bad, the outdoor concert was cancelled and did not take place.\"",
+              "correct_answer": "B",
+              "explanation": "\"Due to the fact that\" can be simplified to \"Because,\" and \"was cancelled and did not take place\" is redundant — \"was cancelled\" is sufficient.",
+              "choices": [
+                {"option": "A", "text": "Due to bad weather conditions existing, the concert was cancelled and did not occur."},
+                {"option": "B", "text": "Because of bad weather, the outdoor concert was cancelled."},
+                {"option": "C", "text": "The weather being bad, the concert was not held and was cancelled."},
+                {"option": "D", "text": "The outdoor concert was cancelled due to the fact that weather was not good."}
+              ]
+            },
+            {
+              "number": 21,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Ecologist Dr. Amara Osei studies the effects of light pollution on nocturnal wildlife. Her research shows that artificial light at night disrupts the circadian rhythms of many animals, affecting their feeding, reproduction, and migration patterns. Sea turtles, for example, typically emerge from the ocean at night to lay eggs on dark beaches. Artificial coastal lighting causes hatchlings to move toward lights rather than the ocean, significantly increasing mortality rates.",
+              "content": "Which of the following best describes the function of the sea turtle example in the passage?",
+              "correct_answer": "A",
+              "explanation": "The sea turtle example provides a specific, concrete case showing how light pollution disrupts wildlife (specifically reproduction and survival), supporting Dr. Osei's research findings.",
+              "choices": [
+                {"option": "A", "text": "It provides a specific illustration of how light pollution harms wildlife behavior and survival."},
+                {"option": "B", "text": "It introduces a new, unrelated topic about marine conservation."},
+                {"option": "C", "text": "It contradicts Dr. Osei's findings about light pollution."},
+                {"option": "D", "text": "It shows that sea turtles are the only animals affected by light pollution."}
+              ]
+            },
+            {
+              "number": 22,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "The following notes are from a research study:\n\n• Study population: 1,200 adults aged 18–65\n• Finding 1: Participants who meditated daily for 8 weeks showed a 23% reduction in self-reported stress\n• Finding 2: Participants who exercised for 30 minutes daily showed a 19% reduction in stress\n• Finding 3: Participants who both meditated and exercised showed a 34% reduction in stress\n• Control group: No significant change",
+              "content": "A student wants to write a sentence summarizing the most significant finding from this study. Which of the following best accomplishes this goal?",
+              "correct_answer": "C",
+              "explanation": "The most significant finding is that combining meditation and exercise produced the greatest reduction in stress (34%), which this sentence accurately captures.",
+              "choices": [
+                {"option": "A", "text": "The study found that exercise is more effective than meditation for reducing stress."},
+                {"option": "B", "text": "Meditation alone was the most effective intervention for reducing stress."},
+                {"option": "C", "text": "Combining daily meditation and exercise led to the greatest reduction in stress among participants."},
+                {"option": "D", "text": "The control group showed the same results as the meditation group."}
+              ]
+            },
+            {
+              "number": 23,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Anthropologist Margaret Mead's 1928 work Coming of Age in Samoa challenged prevailing assumptions in Western psychology about the universality of adolescent turmoil. Mead argued that the stress associated with puberty in Western societies was not biologically inevitable but culturally conditioned — that in Samoan society, adolescence was a smooth, relatively carefree transition. Decades later, anthropologist Derek Freeman published a contentious rebuttal, arguing that Mead had been misled by her informants and that Samoan adolescence was, in fact, marked by considerable conflict and competition.",
+              "content": "The passage primarily describes:",
+              "correct_answer": "B",
+              "explanation": "The passage presents Mead's original argument and Freeman's later challenge, framing this as a scholarly debate.",
+              "choices": [
+                {"option": "A", "text": "A biography of Margaret Mead's career and personal life"},
+                {"option": "B", "text": "A scholarly debate about the nature of adolescence in cross-cultural perspective"},
+                {"option": "C", "text": "A defense of the universality of adolescent turmoil across all cultures"},
+                {"option": "D", "text": "A comparison between Samoan and Western educational systems"}
+              ]
+            },
+            {
+              "number": 24,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "Choose the option that correctly identifies the error in the following sentence and explains how to fix it:\n\n\"The data clearly shows that the new policy have been effective in reducing crime rates.\"",
+              "correct_answer": "A",
+              "explanation": "\"Data\" is the plural of \"datum\" and takes a plural verb. The phrase \"the new policy\" is a separate subject. The issue is that \"have been\" agrees with \"policy\" (singular), which should be \"has been.\" Actually, re-reading: \"the new policy have been\" — \"policy\" is singular, so \"have\" should be \"has.\"",
+              "choices": [
+                {"option": "A", "text": "\"have been\" should be \"has been\" because \"policy\" is singular"},
+                {"option": "B", "text": "\"shows\" should be \"show\" because \"data\" is plural"},
+                {"option": "C", "text": "\"clearly\" should be removed as it is an unnecessary adverb"},
+                {"option": "D", "text": "No error — the sentence is correct as written"}
+              ]
+            },
+            {
+              "number": 25,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Climate scientist Dr. Yuki Tanaka's research focuses on feedback loops in the Arctic. One critical feedback loop involves sea ice: as temperatures rise, sea ice melts; with less ice to reflect sunlight, the darker ocean absorbs more heat; this accelerates warming, which causes more ice to melt. Dr. Tanaka notes that feedback loops like this one can dramatically accelerate climate change beyond what linear projections would suggest.",
+              "content": "Based on the passage, which of the following best describes why feedback loops are concerning?",
+              "correct_answer": "D",
+              "explanation": "Feedback loops are concerning because they can cause self-reinforcing acceleration beyond linear projections — each effect amplifies the next.",
+              "choices": [
+                {"option": "A", "text": "They only occur in the Arctic and do not affect other regions."},
+                {"option": "B", "text": "They reduce the amount of research scientists can conduct."},
+                {"option": "C", "text": "They cause sea ice to form faster than expected."},
+                {"option": "D", "text": "They can accelerate climate change beyond what simple projections would predict."}
+              ]
+            },
+            {
+              "number": 26,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "Philosopher Simone de Beauvoir argued in The Second Sex (1949) that women are not born with a defined \"feminine nature\" but rather become women through socialization and cultural conditioning. Her famous statement, \"One is not born, but rather becomes, a woman,\" challenged essentialist views of gender that treated femininity as a natural, biologically determined category. De Beauvoir's ideas were foundational to second-wave feminism and remain influential in gender studies.",
+              "content": "De Beauvoir's statement \"One is not born, but rather becomes, a woman\" most directly challenges the idea that:",
+              "correct_answer": "B",
+              "explanation": "De Beauvoir challenges essentialism — the view that femininity is biologically or naturally determined. She argues it is socially constructed.",
+              "choices": [
+                {"option": "A", "text": "Women are capable of philosophical inquiry"},
+                {"option": "B", "text": "Femininity is a natural, biologically determined characteristic"},
+                {"option": "C", "text": "Cultural conditioning is more powerful than biology in all human behavior"},
+                {"option": "D", "text": "Second-wave feminism was an important political movement"}
+              ]
+            },
+            {
+              "number": 27,
+              "question_type": "MCQ",
+              "difficulty": "HARD",
+              "passage": "",
+              "content": "A student writes: \"The author's use of vivid imagery in the poem creates a sense of ominousness that hangs over the reader throughout.\" The teacher comments that the sentence has a structural issue. Which revision best addresses this?\n\nA. The author's use of vivid imagery in the poem creates a sense of ominousness that hangs over throughout the reader.\nB. In the poem, the author's vivid imagery creates a pervasive sense of ominousness.\nC. Vivid imagery is used by the author in the poem creating ominousness over the reader.\nD. The author creates a sense of ominousness that hangs through vivid imagery over the reader.",
+              "correct_answer": "B",
+              "explanation": "Option B is the clearest, most concise revision. It eliminates the awkward phrase \"hangs over the reader\" and restructures the sentence for clarity.",
+              "choices": [
+                {"option": "A", "text": "The author's use of vivid imagery in the poem creates a sense of ominousness that hangs over throughout the reader."},
+                {"option": "B", "text": "In the poem, the author's vivid imagery creates a pervasive sense of ominousness."},
+                {"option": "C", "text": "Vivid imagery is used by the author in the poem creating ominousness over the reader."},
+                {"option": "D", "text": "The author creates a sense of ominousness that hangs through vivid imagery over the reader."}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,510 @@
+{% extends 'base.html' %}
+{% block title %}{{ module }} — SAT+{% endblock %}
+{% block body_class %}test-mode{% endblock %}
+{% block robots %}noindex, nofollow{% endblock %}
+
+{% block full_page %}
+{% with section_type=module.section.section_type %}
+
+<!-- ── Test Header ──────────────────────────────────────── -->
+<header class="test-header">
+  <div class="test-header-left">
+    <div>
+      <div class="test-section-label">
+        {% if section_type == 'MATH' %}Math{% else %}Reading & Writing{% endif %}
+      </div>
+      <div class="test-module-label">Module {{ module.module_number }}</div>
+    </div>
+    <div style="width:1px; height:30px; background:var(--border);"></div>
+    <div class="test-timer" id="timerDisplay">
+      <i class="fas fa-clock timer-icon"></i>
+      <span id="timerText">--:--</span>
+    </div>
+  </div>
+  <div class="test-header-right">
+    {% if section_type == 'MATH' %}
+    <button class="btn btn-ghost btn-sm" onclick="toggleDesmos()" id="calcBtn">
+      <i class="fas fa-calculator"></i> Calculator
+    </button>
+    {% endif %}
+    <button class="btn btn-ghost btn-sm" id="refBtn" onclick="toggleRef()" title="Math Reference">
+      <i class="fas fa-book"></i> Reference
+    </button>
+    <button class="btn btn-danger btn-sm" onclick="showExitModal()">
+      <i class="fas fa-times"></i> Exit Test
+    </button>
+  </div>
+</header>
+
+<!-- ── Test Body ────────────────────────────────────────── -->
+<div class="test-body" id="testBody">
+
+  <!-- Questions are rendered one at a time -->
+  {% for question in questions %}
+  <div class="question-slide {% if forloop.first %}active{% endif %}" id="q{{ question.id }}" data-qid="{{ question.id }}" data-number="{{ question.number }}" style="{% if not forloop.first %}display:none;{% endif %}">
+
+    {% if section_type == 'ENGLISH' %}
+    <!-- English: split screen layout -->
+    <div class="test-split">
+      <!-- Passage pane -->
+      <div class="test-passage-pane" id="passage-{{ question.id }}">
+        {% if question.passage %}
+        <div class="question-content" id="passageContent-{{ question.id }}" style="font-size:0.95rem; line-height:1.9;">
+          {{ question.passage|safe }}
+        </div>
+        {% else %}
+        <div style="color:var(--text-dim); font-style:italic; text-align:center; padding-top:60px;">
+          <i class="fas fa-book" style="font-size:2rem; display:block; margin-bottom:12px; opacity:0.3;"></i>
+          No passage for this question
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Question pane -->
+      <div class="test-question-pane">
+        {% include 'tests/partials/question_content.html' %}
+      </div>
+    </div>
+
+    {% else %}
+    <!-- Math: single column layout -->
+    <div class="test-single">
+      {% include 'tests/partials/question_content.html' %}
+    </div>
+    {% endif %}
+
+  </div>
+  {% endfor %}
+
+</div>
+
+<!-- ── Test Footer (Navigation bar) ───────────────────── -->
+<footer class="test-footer">
+  <div class="question-nav" id="qNav">
+    {% for question in questions %}
+    <button
+      class="qnav-btn {% if forloop.first %}current{% endif %}"
+      id="qnav-{{ question.id }}"
+      data-qid="{{ question.id }}"
+      onclick="jumpToQuestion('{{ question.id }}')"
+      title="Question {{ question.number }}">
+      {{ question.number }}
+    </button>
+    {% endfor %}
+  </div>
+  <div class="test-nav-btns">
+    <button class="btn btn-ghost btn-sm" id="prevBtn" onclick="prevQuestion()" disabled>
+      <i class="fas fa-chevron-left"></i> Back
+    </button>
+    <button class="btn btn-primary btn-sm" id="nextBtn" onclick="nextQuestion()">
+      Next <i class="fas fa-chevron-right"></i>
+    </button>
+    <button class="btn btn-primary btn-sm hidden" id="submitBtn" onclick="showSubmitModal()">
+      Submit Module <i class="fas fa-check"></i>
+    </button>
+  </div>
+</footer>
+
+<!-- ── Desmos Calculator (Math only) ──────────────────── -->
+{% if section_type == 'MATH' %}
+<div class="desmos-panel" id="desmosPanel">
+  <div class="desmos-header" id="desmosHeader">
+    <span><i class="fas fa-calculator"></i> Desmos Graphing Calculator</span>
+    <button onclick="toggleDesmos()" style="background:none; border:none; color:var(--text-muted); cursor:pointer;">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <iframe
+    class="desmos-frame"
+    src="https://www.desmos.com/scientific"
+    id="desmosFrame"
+    title="Desmos Calculator"
+    allowfullscreen>
+  </iframe>
+</div>
+{% endif %}
+
+<!-- ── Math Reference Sheet ───────────────────────────── -->
+<div class="modal-overlay hidden" id="refModal">
+  <div class="modal-box" style="max-width:600px; text-align:left;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+      <h3>Math Reference Sheet</h3>
+      <button onclick="toggleRef()" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:1.2rem;"><i class="fas fa-times"></i></button>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.875rem;">
+      <div class="card" style="padding:14px;">
+        <strong>Area Formulas</strong>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px; color:var(--text-muted);">
+          <div>Rectangle: \(A = lw\)</div>
+          <div>Triangle: \(A = \frac{1}{2}bh\)</div>
+          <div>Circle: \(A = \pi r^2\)</div>
+          <div>Trapezoid: \(A = \frac{1}{2}(b_1+b_2)h\)</div>
+        </div>
+      </div>
+      <div class="card" style="padding:14px;">
+        <strong>Volume Formulas</strong>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px; color:var(--text-muted);">
+          <div>Rectangular prism: \(V = lwh\)</div>
+          <div>Cylinder: \(V = \pi r^2 h\)</div>
+          <div>Sphere: \(V = \frac{4}{3}\pi r^3\)</div>
+          <div>Cone: \(V = \frac{1}{3}\pi r^2 h\)</div>
+        </div>
+      </div>
+      <div class="card" style="padding:14px;">
+        <strong>Pythagorean Theorem</strong>
+        <div style="margin-top:8px; color:var(--text-muted);">\(a^2 + b^2 = c^2\)</div>
+        <div style="margin-top:8px; color:var(--text-muted);">Special triangles: 3-4-5, 5-12-13</div>
+      </div>
+      <div class="card" style="padding:14px;">
+        <strong>Circle</strong>
+        <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px; color:var(--text-muted);">
+          <div>Circumference: \(C = 2\pi r\)</div>
+          <div>Arc: \(\frac{\theta}{360} \cdot 2\pi r\)</div>
+          <div>Degrees in a circle: 360°</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:16px; padding:12px; background:var(--bg); border-radius:8px; font-size:0.8rem; color:var(--text-dim);">
+      The number of degrees of arc in a circle is 360. The number of radians of arc in a circle is \(2\pi\). The sum of the measures in degrees of the angles of a triangle is 180.
+    </div>
+    <button class="btn btn-primary w-full mt-16" onclick="toggleRef()">Close</button>
+  </div>
+</div>
+
+<!-- ── Exit Test Modal ────────────────────────────────── -->
+<div class="modal-overlay hidden" id="exitModal">
+  <div class="modal-box">
+    <div class="modal-icon">⚠️</div>
+    <h2 class="modal-title">Exit test?</h2>
+    <p class="modal-text">
+      Are you sure you want to exit the test?
+      <br><br>
+      Your current answers for this module will be saved, but the test will be marked as <strong>abandoned</strong> and no score will be calculated.
+    </p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeExitModal()">
+        <i class="fas fa-arrow-left"></i> Continue Test
+      </button>
+      <button class="btn btn-danger" onclick="exitTest()">
+        <i class="fas fa-sign-out-alt"></i> Exit Test
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Submit Module Modal ────────────────────────────── -->
+<div class="modal-overlay hidden" id="submitModal">
+  <div class="modal-box">
+    <div class="modal-icon">📤</div>
+    <h2 class="modal-title">Submit this module?</h2>
+    <p class="modal-text" id="submitModalText">
+      Once submitted, you <strong>cannot go back</strong> to this module.
+      <br><br>
+      Unanswered questions: <strong id="unansweredCount">0</strong>
+      <br>
+      Answered questions: <strong id="answeredCount">0</strong>
+    </p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeSubmitModal()">
+        <i class="fas fa-arrow-left"></i> Go Back
+      </button>
+      <button class="btn btn-primary" id="confirmSubmitBtn" onclick="submitModule()">
+        Submit Module <i class="fas fa-check"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endwith %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// ─── State ──────────────────────────────────────────────
+const ATTEMPT_ID = {{ attempt.id }};
+const SAVE_URL = '/tests/attempt/{{ attempt.id }}/save-answer/';
+const SUBMIT_URL = '/tests/attempt/{{ attempt.id }}/submit-module/';
+const TIME_LIMIT = {{ time_limit_seconds }};
+
+const questions = [{% for q in questions %}{ id: {{ q.id }}, type: '{{ q.question_type }}' }{% if not forloop.last %},{% endif %}{% endfor %}];
+const answerMap = {{ answer_map_json|safe }};
+const bookmarkedIds = new Set({{ bookmarked_ids|safe }});
+
+let currentIdx = 0;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+let saveQueue = {};
+let questionStartTime = Date.now();
+
+// ─── Timer ───────────────────────────────────────────────
+function startTimer() {
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      autoSubmit();
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const mins = Math.floor(timeLeft / 60);
+  const secs = timeLeft % 60;
+  const text = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+  document.getElementById('timerText').textContent = text;
+  const el = document.getElementById('timerDisplay');
+  el.classList.remove('warning','danger');
+  if (timeLeft <= 60) el.classList.add('danger');
+  else if (timeLeft <= 300) el.classList.add('warning');
+}
+
+function autoSubmit() {
+  document.getElementById('timerDisplay').classList.add('danger');
+  // Auto-submit after 2 seconds
+  setTimeout(() => submitModule(), 2000);
+}
+
+// ─── Navigation ──────────────────────────────────────────
+function getCurrentQid() { return questions[currentIdx].id; }
+
+function showQuestion(idx) {
+  const prev = currentIdx;
+  currentIdx = idx;
+
+  // Hide old, show new
+  document.querySelectorAll('.question-slide').forEach(s => s.style.display = 'none');
+  document.getElementById('q' + questions[idx].id).style.display = '';
+
+  // Update nav buttons style
+  document.querySelectorAll('.qnav-btn').forEach(b => b.classList.remove('current'));
+  const navBtn = document.getElementById('qnav-' + questions[idx].id);
+  if (navBtn) navBtn.classList.add('current');
+  navBtn?.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+
+  // Prev/next buttons
+  document.getElementById('prevBtn').disabled = (idx === 0);
+  const isLast = idx === questions.length - 1;
+  document.getElementById('nextBtn').classList.toggle('hidden', isLast);
+  document.getElementById('submitBtn').classList.toggle('hidden', !isLast);
+
+  // Record time on previous question
+  const elapsed = Math.round((Date.now() - questionStartTime) / 1000);
+  if (saveQueue[questions[prev].id]) {
+    saveQueue[questions[prev].id].time_spent = elapsed;
+  }
+  questionStartTime = Date.now();
+
+  // Re-render MathJax
+  if (window.MathJax) MathJax.typesetPromise();
+}
+
+function nextQuestion() { if (currentIdx < questions.length - 1) showQuestion(currentIdx + 1); }
+function prevQuestion() { if (currentIdx > 0) showQuestion(currentIdx - 1); }
+function jumpToQuestion(qid) {
+  const idx = questions.findIndex(q => String(q.id) === String(qid));
+  if (idx !== -1) showQuestion(idx);
+}
+
+// ─── Answer Selection ────────────────────────────────────
+document.addEventListener('click', function(e) {
+  const item = e.target.closest('.choice-item');
+  if (!item) return;
+
+  const slide = item.closest('.question-slide');
+  if (!slide) return;
+  const qid = slide.dataset.qid;
+
+  // Deselect all in this question
+  slide.querySelectorAll('.choice-item').forEach(c => c.classList.remove('selected'));
+  item.classList.add('selected');
+
+  const option = item.dataset.option;
+  answerMap[qid] = option;
+
+  queueSave(qid, { selected_option: option });
+  updateNavBtn(qid);
+});
+
+// Input answer
+document.addEventListener('input', function(e) {
+  if (!e.target.classList.contains('input-answer')) return;
+  const slide = e.target.closest('.question-slide');
+  const qid = slide.dataset.qid;
+  const val = e.target.value;
+  answerMap[qid] = val;
+  queueSave(qid, { text_answer: val });
+  updateNavBtn(qid);
+});
+
+// Bookmark toggle
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.bookmark-btn');
+  if (!btn) return;
+  const slide = btn.closest('.question-slide');
+  const qid = slide.dataset.qid;
+  const isBookmarked = bookmarkedIds.has(parseInt(qid));
+  if (isBookmarked) {
+    bookmarkedIds.delete(parseInt(qid));
+    btn.classList.remove('active');
+  } else {
+    bookmarkedIds.add(parseInt(qid));
+    btn.classList.add('active');
+  }
+  const existing = saveQueue[qid] || {};
+  queueSave(qid, { ...existing, is_bookmarked: !isBookmarked });
+  const navBtn = document.getElementById('qnav-' + qid);
+  if (navBtn) navBtn.classList.toggle('bookmarked', !isBookmarked);
+});
+
+// ─── Save queue (debounced) ───────────────────────────────
+let saveTimer = null;
+function queueSave(qid, data) {
+  saveQueue[qid] = { ...(saveQueue[qid] || {}), ...data, question_id: parseInt(qid) };
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(flushSave, 800);
+}
+
+async function flushSave() {
+  for (const [qid, data] of Object.entries(saveQueue)) {
+    try {
+      await post(SAVE_URL, data);
+      delete saveQueue[qid];
+    } catch(err) {}
+  }
+}
+
+function updateNavBtn(qid) {
+  const btn = document.getElementById('qnav-' + qid);
+  if (btn) btn.classList.add('answered');
+}
+
+// ─── Submit module ────────────────────────────────────────
+function showSubmitModal() {
+  const answered = Object.keys(answerMap).length;
+  const total = questions.length;
+  document.getElementById('answeredCount').textContent = answered;
+  document.getElementById('unansweredCount').textContent = total - answered;
+  document.getElementById('submitModal').classList.remove('hidden');
+}
+function closeSubmitModal() {
+  document.getElementById('submitModal').classList.add('hidden');
+}
+
+async function submitModule() {
+  const btn = document.getElementById('confirmSubmitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Submitting...';
+
+  // Flush any pending saves
+  await flushSave();
+  clearInterval(timerInterval);
+
+  try {
+    const data = await post(SUBMIT_URL, {});
+    if (data.next === 'result') {
+      window.location.href = '/tests/result/' + data.result_id + '/';
+    } else if (data.next === 'module') {
+      // Show module transition screen
+      showModuleTransition(data);
+    }
+  } catch(err) {
+    btn.disabled = false;
+    btn.innerHTML = 'Submit Module <i class="fas fa-check"></i>';
+    alert('Error submitting. Please try again.');
+  }
+}
+
+function showModuleTransition(data) {
+  document.body.innerHTML = `
+  <div style="min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg);">
+    <div style="text-align:center; max-width:480px; padding:40px;">
+      <div style="font-size:4rem; margin-bottom:20px;">✅</div>
+      <h1 style="font-size:1.8rem; margin-bottom:12px;">Module ${data.module_number === 1 ? 1 : data.module_number} Complete</h1>
+      <p style="color:var(--text-muted); margin-bottom:32px;">
+        ${data.section === 'ENGLISH' ? 'Starting Reading & Writing — Module ' + data.module_number : 'Starting Math — Module ' + data.module_number}
+        <br><br>
+        Take a moment to relax. Your next module will begin shortly.
+      </p>
+      <div id="breakTimer" style="font-size:3rem; font-weight:900; color:var(--blue-light); margin-bottom:24px; font-family:var(--font-mono);">0:10</div>
+      <a href="/tests/attempt/${ATTEMPT_ID}/" class="btn btn-primary btn-lg" id="continueBtn">
+        <i class="fas fa-play"></i> Continue to Next Module
+      </a>
+    </div>
+  </div>`;
+  // Brief break countdown
+  let t = 10;
+  const iv = setInterval(() => {
+    t--;
+    const el = document.getElementById('breakTimer');
+    if (el) el.textContent = '0:' + String(t).padStart(2,'0');
+    if (t <= 0) { clearInterval(iv); window.location.href = '/tests/attempt/' + ATTEMPT_ID + '/'; }
+  }, 1000);
+}
+
+// ─── Exit modal ───────────────────────────────────────────
+function showExitModal() {
+  document.getElementById('exitModal').classList.remove('hidden');
+}
+function closeExitModal() {
+  document.getElementById('exitModal').classList.add('hidden');
+}
+async function exitTest() {
+  await flushSave();
+  window.location.href = '/tests/';
+}
+
+// ─── Desmos ───────────────────────────────────────────────
+function toggleDesmos() {
+  document.getElementById('desmosPanel')?.classList.toggle('open');
+}
+
+// ─── Math Reference ───────────────────────────────────────
+function toggleRef() {
+  const m = document.getElementById('refModal');
+  m.classList.toggle('hidden');
+  if (!m.classList.contains('hidden') && window.MathJax) {
+    MathJax.typesetPromise([m]);
+  }
+}
+
+// ─── Prevent copy/paste/select ───────────────────────────
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', function(e) {
+  // Block Ctrl+C, Ctrl+A, Ctrl+V, F12, PrintScreen
+  if ((e.ctrlKey || e.metaKey) && ['c','a','v','u','s','p'].includes(e.key.toLowerCase())) {
+    e.preventDefault();
+    return false;
+  }
+  if (e.key === 'F12' || e.key === 'PrintScreen') e.preventDefault();
+});
+
+// ─── Restore previous answers from server ────────────────
+(function restoreAnswers() {
+  for (const [qid, answer] of Object.entries(answerMap)) {
+    const slide = document.getElementById('q' + qid);
+    if (!slide) continue;
+    if (typeof answer === 'string' && ['A','B','C','D'].includes(answer)) {
+      const choice = slide.querySelector('[data-option="' + answer + '"]');
+      if (choice) choice.classList.add('selected');
+    } else {
+      const input = slide.querySelector('.input-answer');
+      if (input) input.value = answer;
+    }
+    updateNavBtn(qid);
+  }
+  // Restore bookmarks
+  bookmarkedIds.forEach(qid => {
+    const navBtn = document.getElementById('qnav-' + qid);
+    if (navBtn) navBtn.classList.add('bookmarked');
+    const slide = document.getElementById('q' + qid);
+    if (slide) slide.querySelector('.bookmark-btn')?.classList.add('active');
+  });
+})();
+
+// ─── Init ─────────────────────────────────────────────────
+startTimer();
+if (window.MathJax) MathJax.typesetPromise();
+</script>
+{% endblock %}

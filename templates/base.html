@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}SATBridge{% endblock %}</title>
+  <meta name="description" content="{% block meta_desc %}Real Digital SAT practice with adaptive tests and AI analysis.{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <link rel="stylesheet" href="/static/css/main.css">
+  {% block extra_css %}{% endblock %}
+  {% if GA_TRACKING_ID %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_TRACKING_ID }}"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ GA_TRACKING_ID }}');</script>
+  {% endif %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+{% block full_page %}
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <span class="brand-name">SATBridge</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      {% if user.is_authenticated %}
+        <a href="/tests/" class="nav-link {% if 'tests' in request.path %}active{% endif %}">Tests</a>
+        <a href="/pricing/" class="nav-link {% if 'pricing' in request.path %}active{% endif %}">Pricing</a>
+      {% else %}
+        <a href="/tests/" class="nav-link">Tests</a>
+        <a href="/pricing/" class="nav-link">Pricing</a>
+      {% endif %}
+    </div>
+
+    <div class="nav-right">
+      {% if user.is_authenticated %}
+        <div class="user-pill" onclick="toggleUserMenu()">
+          <div class="user-avatar">{{ user.full_name|first|upper }}</div>
+          <span class="user-pill-name">{{ user.full_name|truncatechars:16 }}</span>
+          {% if user.is_premium %}<span class="badge-pro">PRO</span>{% endif %}
+          <i class="fas fa-chevron-down" style="font-size:0.6rem; color:var(--text-light);"></i>
+          <div class="user-dropdown" id="userDropdown">
+            <a href="/auth/profile/"><i class="fas fa-user" style="width:14px;"></i> Profile</a>
+            <a href="/pricing/"><i class="fas fa-crown" style="width:14px; color:var(--yellow);"></i> Upgrade</a>
+            <div class="dropdown-sep"></div>
+            <a href="/auth/logout/" class="danger"><i class="fas fa-sign-out-alt" style="width:14px;"></i> Sign out</a>
+          </div>
+        </div>
+      {% else %}
+        <a href="/auth/login/" class="btn btn-ghost btn-sm">Sign in</a>
+        <a href="/auth/register/" class="btn btn-primary btn-sm">Get started</a>
+      {% endif %}
+      <button class="nav-toggle" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+{% if messages %}
+<div class="messages-container">
+  {% for msg in messages %}
+  <div class="alert alert-{{ msg.tags }}">
+    <span>{{ msg }}</span>
+    <button onclick="this.parentElement.remove()" class="alert-close">&times;</button>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<main class="main-content">{% block content %}{% endblock %}</main>
+
+{% block footer %}
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-brand">
+        <div class="brand-mark"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span class="brand-name">SATBridge</span>
+      </a>
+      <p>Real Digital SAT practice. Score higher.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Practice</h5>
+        <a href="/tests/">Mock Tests</a>
+        <a href="/tests/saved/">Saved Questions</a>
+      </div>
+      <div class="footer-col">
+        <h5>Account</h5>
+        <a href="/auth/profile/">Profile</a>
+        <a href="/pricing/">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h5>Info</h5>
+        <a href="/universities/">Universities</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SATBridge. All rights reserved.</p>
+    <a href="#" style="font-size:0.8rem; color:var(--text-light);">Privacy Policy</a>
+  </div>
+</footer>
+{% endblock %}
+{% endblock full_page %}
+
+<script src="/static/js/main.js"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

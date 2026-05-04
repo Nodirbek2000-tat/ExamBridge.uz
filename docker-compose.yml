@@ -1,0 +1,82 @@
+version: '3.9'
+
+# ─── Backend services for exambridge.uz ─────────────────────────────────────
+# Domain: nodir.exambridge.uz (proxied by sat_front nginx)
+# Network: joins shared exambridge_net (created by sat_front compose)
+#
+# Start order:
+#   1. First run sat_front (creates exambridge_net + owns 80/443)
+#   2. Then run this (docker-compose up -d --build)
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data   # ← data NEVER deleted on restart
+    environment:
+      POSTGRES_DB: ${DB_NAME:-satdb}
+      POSTGRES_USER: ${DB_USER:-satuser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - exambridge_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-satuser} -d ${DB_NAME:-satdb}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Redis ────────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    networks:
+      - exambridge_net
+
+  # ── Django / Gunicorn ────────────────────────────────────────────────────────
+  web:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - exambridge_net
+    # Internal only — no host port binding, nginx (in sat_front) handles routing
+
+  # ── Celery Worker ────────────────────────────────────────────────────────────
+  celery:
+    build: .
+    restart: unless-stopped
+    command: celery -A config worker -l info --concurrency 2
+    volumes:
+      - media_volume:/app/media
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - exambridge_net
+
+# ─── Shared external network (owned by sat_front compose) ────────────────────
+networks:
+  exambridge_net:
+    external: true
+
+# ─── Persistent volumes (survive restarts & re-deploys) ──────────────────────
+volumes:
+  postgres_data:      # PostgreSQL data — NEVER wiped automatically
+  static_volume:      # Django collectstatic output
+  media_volume:       # User-uploaded files

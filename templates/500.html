@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}500 — Server Error{% endblock %}
+
+{% block content %}
+<div class="error-page">
+  <div>
+    <span class="error-code">500</span>
+    <h2 style="margin-top:16px; margin-bottom:12px;">Internal Server Error</h2>
+    <p style="max-width:400px; margin:0 auto 32px;">
+      Something went wrong on our end. We're working on fixing it.
+    </p>
+    <a href="/" class="btn btn-primary">
+      <i class="fas fa-home"></i> Go Home
+    </a>
+  </div>
+</div>
+{% endblock %}

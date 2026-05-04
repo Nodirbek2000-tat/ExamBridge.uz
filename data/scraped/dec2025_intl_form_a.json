@@ -1,0 +1,2750 @@
+{
+  "test_type": "SAT",
+  "year": 2025,
+  "month": 12,
+  "form": "A",
+  "is_international": true,
+  "sections": [
+    {
+      "section_type": "MATH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The function h is defned by $ h\\left(x\\right)=100x-40 $ . What is the value of h ( x ) when x = 5?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 540 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 460 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 145 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 65 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A teacher is creating an assignment worth 42 points. The assignment wll consist of questions worth 1 point and questions worth 2 points. Which equation represents this situation, where x represents the number of 1-point questions and y represents the number of 2-point questions?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "3xy=42",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 3(x+y)=42 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 2x+y=42 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ x+2y=42 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Which expression is equivalent to $ x^3+2x^2+9x+18 $ ​​​​​​​?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\left(x+2\\right)\\left(x^2+2\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\left(x+2\\right)\\left(x^{2}+9\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\left(x+1\\right)\\left(x^{2}+18\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\left(x+18\\right)\\left(x^{2}+1\\right) $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If $ \\sqrt{x-3}=5 $ , what is the value of ( x -3)?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 5 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 22 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 25 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 50 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "For the absolute value function in the system: Moving from left to right: The function slants sharply down to the point (- 1 , 5). The function then slants sharply up. The function passes through the following points: (-,three halves , StartFraction 11 Over 2 EndFraction) (- 1 , 5) (- one half , StartFraction 11 Over 2 EndFraction) For the linear function in the system: The function slants sharply up from left to right. The function passes through the following points: (- three halves , StartFraction 11 Over 2 EndFraction) (0 , 7) The graph of a system of an absolute value function and a linear function is shown. What is the solution ( x , y ) to this systemof two equations?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-A-Math-M1-Q7.png",
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ (0,7) $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\left(\\dfrac{3}{2},\\dfrac{11}{2}\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\left(-\\dfrac{3}{2},\\dfrac{11}{2}\\right) $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ (-1,5) $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Week Number of dogs walked 1 6 2 18 3 30 The table shows the number of dogs walked by a dog walker each week for 3 weeks. What is the mean nunber of dogs walked per week for these 3 weeks?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 6 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 18 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 30 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 54 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The ratio 54 to m is equivalent to the ratio 2 to 18. What is the value of m ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 3 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 18 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 162 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 486 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "As part of a science experiment on evaporation, Ella measured the height of water in a glass over a period of time. The function $ f\\left(x\\right)=32-0.21x $ gives the estimated height, in centimeters (cm), of the water in the glass x days after the start of the experiment. Which of the following is the best interpretation of 32 in this context?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "The estimated height, in cm, of the water at the start ot the experlment",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The estimated height, in cm, of the water at the end of the experiment",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "The estimated change in the height, in cm, of the water each day",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "The estimated number of days for all the water to evagorate",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "x y 1 10 2 16 3 a ​​​​​​​ The table shows three values of x and their corresponding values of y for the equation $ y=3\\left(2\\right)^x+4 $ . In the table, a is a constant. What is the value of a ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 22 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 24 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 28 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 52 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The fgure shows the xy- plane with the quadrants labeled. The graph of a linear function h (not shown, where y = h ( x ), is a line completely contained in only quadrants l and ll of the xy -plane. Which of the following could defne the function h ?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-A-Math-M1-Q12.png",
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ h(x)=16x+16 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ h(x)=16x $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ h(x)=16 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ h(x)=-16x $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "What is the value of tanX in the triangle shown?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-A-Math-M1-Q14-300x232.png",
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{3}{5} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{3}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{4}{3} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{4}{5} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ -3（4v-1）（v+6）^2-\\left(v+6\\right)^2=0 $ What is the positive solution to the given equation?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 6 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 4 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{1}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{1}{6} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A number f is 130% greater than a positive number g . A number h is 20% less than the number h . The number h is how many times the number g ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 0.26 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 0.46 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 1.04 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 1.84 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ 4x^2-12x+4=0 $ What is a solution to the given equation?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{3-\\sqrt{5}}{2} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{3-\\sqrt{10}}{2} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{12-\\sqrt{80}}{2} $ $ \\dfrac{12-\\sqrt{51}}{2} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{12-\\sqrt{208}}{2} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Triangle ABC is similar to triangle XYZ , where A and B correspond to X and Y , respectively. The length of each side of triangle XYZ is k times the length of its corresponding side in triangle ABC , where k is an integer greater than 1. The measure, in degrees, of angle Z can be represented by the expression 9 x +29, where x is an integer. Which of the following expressions represents the measure, in degrees, of angle C for all possible values of x ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 9x+29 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ k(9x+29) $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 90-(9x+29) $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 180-k(9x+29) $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A conservation specialist hung artifhcial nesting structures each in the shape of a right rectangular prism for a species of native duck. Each structure has a height of 18 inches, The length of each structure&#8217;s base is x inches, which is 1 inch more than the width of the structure&#8217;s base. Which function V gives the volume of each structure, in cubic inches, in terms of the length of the structure&#8217;s base?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ V(x)=x(x+18)(x+1) $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ V(x)=x(x+18)(x-1) $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ V(x)=18(x+1) $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ V(x)=18(x-1) $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Which system of linear equations has no solution?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ -4x+2y=-7 $ $ 4x-2y=7 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 4x-2y=7 $ $ 5x+3y=8 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 4x-2y=7 $ $ -12x+6y=-21 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ -4x+2y=7 $ $ 8x-4y=14 $",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "time_limit": 35,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A total of 215 toothpicks of equal length were used to construct two types of figures: triangles and squares. The triangles and squares were constructed so that no two figures had a common side. The equation 3 x + 4 y = 215 represents this situation, where x is the number of triangles constructed and y is the number of squares constructed. What is the best interpretation of ( x, y ) = (25, 35) in this context?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "If 25 triangles were constructed, then 35 squares were constructed.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "If 25 triangles were constructed, then 35 toothpicks were used.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "If 35 triangles were constructed, then 25 squares were constructed.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "If 35 triangles were constructed, than 25 toothpicks were used.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Moving from left to right, the curve passes from quadrant 2 to quadrant 3 to quadrant 4 to quadrant 1 to quadrant 4. The curve has 1 relative minimum and 1 relative maximum. The curve crosses the axes at the following points: (- 2 , 0) approximately (0 , negative 4.8) (1 , 0) (2 , 0) The graph of y = f(x) is shown, where the function f is defned by f(x) = ax 3 + bx 2 + cx + d and a, b, c, and d are constants. For how many values of x does f(x) = 0 ? &nbsp;",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-A-Math-M2-Q3-300x264.png",
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "One",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Two",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Three",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Four",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "If 3( x &#8211; 4) 2 = 243, what is the value of x 2 &#8211; 8 x ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 49 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 65 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 81 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 97 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The scatterplot has 8 data points. The data points are in a quadratic pattern opening downward. ​​​​​​​ Which of the following equations is the most appropriate quadratic model for the data shown?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/03/Dec2025-INTL-Form-A-Math-M2-Q5-300x229.png",
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ y = -0.005(x &#8211; 50)^{2} + 34 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ y = -0.005(x &#8211; 34)^{2} + 50 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ y = -0.005(x + 50)^{2} + 34 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ y = -0.005(x + 34)^{2} + 50 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A right circular cylinder has a volume of 36,501π cubic inches, The height of the cylinder is 3 times its radius. What is the radius, in inches, of the cylinder?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 23 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 69 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 529 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 1587 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "x y -26 0 -13 +29 0 +58 For a linear relationship between x and y , the table gives three values of x and their corresponding values of y , where t is aconstant.Which equation represents this relationship?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ y = -2x + t + 29 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ y = 2x + t + 29 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ y=-\\dfrac{29}{13}x+t+58 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ y=\\dfrac{29}{13}x+t+58 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "5(7 x ) + 8(6 y ) = 266 5(7 x ) &#8211; 8(6 y ) = -406 The solution to the given system of equations is ( x , y ). What is the value of 7 x + 6 y ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ -56 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ -14 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 28 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 42 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "y &lt; 13 x + 12 For which of the following tables are all the values of x and their corresponding values of y solutions to the given inequality?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "xy 221481673",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "xy221447673",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "xy238464690",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "xy238447690",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ \\left(\\dfrac{-20x-37+m}{2}=k（x+6\\right) $ In the given. equation, k and m are constants. The equation has infnitely many solutions. Wnat is the value of m ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 49 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ -10 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ -23 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ -83 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "f ( x ) =5,000(1.003) 2 x The given function f models the balance of a bank account, in dolars, x years after it is opened. Which statement is the best interpretation of (1.003) 2 x ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Every 6 montiis, the balance increases by about $ 3.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Every 2 years, the balance increases by about $3.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "At the end of every 6-month interva, the baiance increases by about 0.3% of the balance at the beginning of the 6-month interval.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "At the end of every 2-year interval, the balance increases by about 0.3% of the balance at the beginning of the 2-year interval.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "At a hotel, guests used the pool for a total of t hours in March. At the same hotel, guests used the pool for 3.78 t hours in April. What is the percent increase in the number of hours guests used the pool from March to April?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "2.78%",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "3.78%",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "278%",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "378%",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "$ \\dfrac{1}{7xy} $ + xyz = $ \\dfrac{1}{9yz} $ In the given equation, x, y , and z are positive numbers. Which expression is equivalent to y ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{7x-9z}{63x2z2} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\sqrt{\\dfrac{7x-9z}{63x2z2}} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{1}{9xz2-7x2z} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\sqrt{\\dfrac{1}{9xz2−7x2z}} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A researcher selected 23 guinea pigs from one habitat and 19 wild cavies from another habitat at random in Venezuela. A held of a specifc size within each habitat was divided into equally-sized virtual squares, and the animals were allowed to wander in the field for a fixed amount of time. To observe their behavior, the researcher counted the number of times the guinea pigs and wild cavies crossed the virtual squares in their held during early adolescence and again during late adolescence. The researcher found that in early adolescence, the number of virtual squares the wild cavies crossed was significantly more than the number of virtual squares the quinea pigs crossed, The researcher also found that the number of virtual squares crossed by both the wild cavies and the guinea pigs decreased from early adolescence to late adolescence. Based on the researcher&#8217;s findings, which of the following statements is an appropriate conclusion that can be drawn from this study?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "the statistically significant difference in behavior between the two age groups was caused by the differences in habitat.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The statistically significant difference in behavior between the two age groups was caused by aging.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "The statistically significant difference in behavior during early adolescence between the two groups of animals can be generalized to all guinea pigs and wild cavies.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Tho statistically significant difference in behavior during early adolescence between the two groups of animals can only be generalized to the habitats in the study.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The measure of angle G is $ \\dfrac{Π}{10} $ , radians. lf the measare of angle G is 9 n degrees, where n is a constant, what is the value of n ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ 2 $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ 9 $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ 10 $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ 18 $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In triangle XYZ, the measure of angle X is 90. Point W lies on segment YZ , and segment WX is perpendicular to segment YZ . The length of segment WY is 684, and the length of segment WX is 513. What is the value of tan Z ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{4}{3} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{4}{5} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{3}{4} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{3}{5} $",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "n triangle ABC , the measure of angle B is 90 and BD is an altitude of the triangle. The length of AB is 15 and the lengthof AC is .17 greater than the length of AB . What is the value of $ \\dfrac{BC}{BD} $ ?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "$ \\dfrac{15}{32} $",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "$ \\dfrac{15}{17} $",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "$ \\dfrac{17}{15} $",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "$ \\dfrac{32}{15} $",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "ENGLISH",
+      "modules": [
+        {
+          "module_number": 1,
+          "time_limit": 32,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The following text is from Mark Twain&#8217;s 1876 novel The Adventures of Tom Sawyer . Tom, a child, has been told by his aunt to paint their house&#8217;s fence. Tom appeared on the sidewalk with a bucket of whitewash and a long-handled brush. He surveyed the fence, and all gladness left him and a deep melancholy settled down upon his spirit. Thirty yards of board fence nine feet high. As used in the text, what does the word &#8220;surveyed” most nearly mean?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Promoted",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Organized",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Transformed",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Examined",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Though Vasily Grossman&#8217;s novel Stalingrad is not as beloved as his later work Life and Fate , some critics commend it despite its mangling by Soviet censors: Luke Harding in The Guardian called it &#8220;one of the great novels of the twentieth century.&#8221; Several draft versions have been ______ , and translators consulted those drafts when working on what they hoped would be a definitive English edition. Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "assigned",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "hypothesized",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "debunked",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "preserved",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Writer Lydia Davis observed that while ______ literary forms, such as the novel, are recognizable as such even as they evolve, there are path-breaking “intergeneric” forms that might, for example, use elements of both fiction and essays to create something unclassifiable. The late-period pieces of James Tate arguably fit in this category, since they straddle the line between prose and poetry. Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "established",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "ambiguous",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "innovative",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "elusive",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Analysis of preserved plants cataloged in the United States Virtual Herbarium indicates that rising temperatures correlate with earlier leaf production, but such specimens represent only brief moments in plants’ overall development. ______ this research with studies involving live plants would enable a fuller understanding of how these observed changes affect plant fitness. Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Foregrounding",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Complementing",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Categorizing",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Anticipating",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "One challenge faced by researchers studying global urbanization is that different countries have different definitions of what constitutes an urban settlement. Many countries define urban settlements based on the number of people living in them. However, countries do not all use the same number to define an urban settlement; for example, Iceland uses a minimum population of 200, while Mali uses 30,000. Other countries use a combination of population and other factors, like the number of buildings in the area. This variation makes it difficult for researchers to compare aspects of urbanization in different countries. Which choice best states the main purpose of the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "To compare the urban populations of two different countries.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "To explain why researchers are interested in studying global urbanization.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "To illustrate a problem faced by researchers studying global urbanization.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "To object to a method that some countries use to classify different types of settlements.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "INPUT",
+              "difficulty": "MEDIUM",
+              "content": "In their study of fossils of the extinct arthropod Mollisonia symmetrica , Javier Ortega-Hernández, Rudy Lerosey-Aubril, and team reported some obvious indications of M. symmetrica &#8216;s nervous system—for example, nerves extending into the animal&#8217;s body parts. Most intriguingly, they also saw signs of what might be a synganglion, a brain-like nerve mass, in the animal&#8217;s head. This is an exciting possibility; without evidence of a synganglion, we can&#8217;t tell exactly how M. symmetrica relates to mosquitoes, slipper lobsters, and other arthropods. Which choice best states the main purpose of the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": []
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Charles Fuller&#8217;s critically acclaimed play The Brownsville Raid was produced in 1976 by the groundbreaking Negro Ensemble Company (NEC). NEC cofounder Douglas Turner Ward, who worked as an actor, director, and playwright, had met actor and producer Robert Hooks while they were performing in a 1960 touring production of Lorraine Hansberry&#8217;s play A Raisin in the Sun . Together, they envisioned a theater company that would nurture and showcase the work of Black theater professionals. Since NEC&#8217;s founding in 1967, its workshops and performances have given Black playwrights, including Fuller, a forum for their compelling stories. Which choice best describes the function of the underlined sentence in the text as a whole?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "It provides additional information about a person mentioned in the text.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "It emphasizes the ongoing significance of the theater company discussed in the text.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "It illustrates the widespread influence of a play discussed earlier in the text.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "It explains the circumstances that led to the formation of the theater company discussed in the text.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "INPUT",
+              "difficulty": "MEDIUM",
+              "content": "In the Greek village of Pyrgi, the buildings are embellished with xysta , a traditional design featuring rows upon rows of carved geometric shapes on the facades of buildings. Deeply rooted in Pyrgi&#8217;s cultural history and handed down over generations, the techniques used for creating these precise patterns involve mathematical principles and tools, such as compasses and rulers. Studying the history of xysta , therefore, has given researchers an understanding of how mathematics has been used in this region dating to the medieval period. Which choice best states the main idea of the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": []
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Online surveys are a common tool researchers use to collect information. These surveys are usually designed for use on personal computers (PCs), but more people are using smartphones to complete them than they are PCs. This shift in device usage may change how participants interact with online surveys. When researchers Jean Philippe Décieux and Philipp E. Sischka investigated, they found that PC users were more likely to multitask while taking surveys than smartphone users were, but PC users were also more likely to complete the surveys. Which choice best states the main idea of the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "People are choosing to take online surveys on smartphones more often than they are on PCs because smartphones are convenient.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "A study shows that the type of device people use to complete online surveys affects how they interact with these surveys.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Researchers prefer online surveys to other ways of collecting information because they think online survey results are more reliable.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Researchers are investigating why survey completion rates are higher on PCs than they are on smartphones, despite increased multitasking on PCs.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Memoirs of Elleanor Eldridge is an 1838 historical account by Elleanor Eldridge and Frances Harriet Whipple Green. In the book, the authors suggest that many memoirs of renowned people aren&#8217;t particularly straightforward or candid, writing, ______ Which quotation from Memoirs of Elleanor Eldridge most effectively illustrates the claim?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "There is often a kind of [deceptive] light, playing around such [famous] names, calculated to dazzle and mislead, by their false lustre, until the eye can no longer receive the pure light of Truth, or the mind appreciate real excellence, or intrinsic worth.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "It should not be considered essential to the interest and value of biography, that its subject be of exalted rank, or illustrious name.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "How careful ought we to be to speak nothing but the truth, even in regard to the most trifling circumstances; and not only so, but to be well assured that what we suppose to be true, is truth, before we receive it as such.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Then let no one turn with too much [fussiness], from the simple story of the humble Elleanor, though it may contain few, or none, of the thrilling charms of poetry and passion.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Andrea Sommese, Akos Pogány, and team investigated head-tilting behavior in a group of forty dogs, which included thirty-four typical dogs from five different breeds (including Enzo, a whippet) and six dogs that had previously demonstrated giftedness at learning words, all of which were border collies. The researchers recorded the dogs’ head-tilting behavior in response to requests to fetch a toy that had been introduced early in the study. They found that all six gifted dogs tilted their heads at least some of the time when asked to retrieve the toy by name, while the typical dogs almost never tilted their heads. After reviewing the study, a student concludes that a tendency to tilt their heads is a characteristic trait of all border collies. Which finding from the study, if true, would most directly challenge the student&#8217;s conclusion?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "The typical dogs that tilted their heads appeared to be processing the meaning of the requests.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The border collies successfully fetched the toy more often than the dogs of other breeds did.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "The majority of dogs in the typical group were border collies.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Most of the gifted dogs tilted their heads to the same side in each trial.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Cane is a 1923 novel by Jean Toomer. In the novel, Toomer mentions a road in rural Georgia called Dixie Pike and describes it as having a deep connection to a faraway place, writing, ______ Which quotation from Cane most effectively illustrates the claim?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "“If it were dusk, then [Fern&#8217;s eyes would] wait for the search-light of the evening train which you could see miles up the track before it flared across the Dixie Pike, close to her home.”",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "“And when the wind is from the South, soil of my homeland falls like a fertile shower upon the lean streets of [Washington, DC].”",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "“The Dixie Pike has grown from a goat path in Africa.”",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "“I leave the men around the stove to follow [Carma] with my eyes down the red dust road.”",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Myoglobin (Mb) is a protein that primarily aids in oxygen storage and diffusion across the mitochondrial membrane in cardiac muscle cells; these are necessary functions in aerobic organisms, including teleost fish. Carrying out these functions typically requires Mb to be expressed at high levels, evidenced by red heart tissue. The table shows the average Mb levels and their standard deviations (indicating how dispersed the Mb levels of individual fish are in relation to the average) of three teleost fish species, as calculated by Daniel J. Macqueen et al. Based on the data, the researchers concluded that for some teleost species, oxygen storage and diffusion may occur with negligible assistance from Mb. Which choice most effectively uses data from the table to support Macqueen et al.&#8217;s conclusion?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/02/Dec2025-INTL-Form-A-SAT-M1-13.png",
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Greater average Mb levels in a certain species were associated with greater variance in Mb levels among individuals of that species.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Coffee farming around the world has changed greatly over time. Originally, coffee plants grew in the shade of tropical forests. Today coffee is often grown without shade cover. This is because full-sun coffee farms can produce more coffee beans. But the lack of trees on such farms means a lack of spaces for many species of birds to roost. Therefore, compared with full-sun coffee farms, shaded farms tend to ______ Which choice most logically completes the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "experience generally milder weather conditions.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "have fewer problems with insects and other pests.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "be home to a more diverse range of birds.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "have better soil quality.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Zooarchaeologist Ophélie Lebrasseur and her team examined a fox skeleton discovered in 1991 at an archaeological site alongside artifacts of human habitation (like spear points) in central Argentina. Lebrasseur et al. determined that the fox was Dusicyon avus , an extinct species resembling a jackal, and radiocarbon dating placed the fox at the site at the same time as human inhabitants. (Indeed, the inhabitants may have deliberately buried the fox.) In addition, while wild foxes have a diet entirely made of meat, isotopic signatures of the skeleton&#8217;s teeth indicated that the fox&#8217;s diet, like that of the humans, was partly composed of plant material. Lebrasseur et al. therefore concluded that ______ Which choice most logically completes the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "the fox had a diet more similar to that of jackals than to that of wild foxes.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "the humans who were alive at the same time as the fox most likely ate more meat than the fox did.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "the humans who were alive at the same time as the fox hunted using the spears whose points were also found at the site.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "the fox may have been a companion animal of the humans who inhabited the site at the same time.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Cycads are palmlike plants with cones. ______ plants were abundant throughout the Mesozoic Era (66 to 252 million years ago). Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "These",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "That",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "This",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Each",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The theory of plate tectonics explains how large pieces of Earth&#8217;s crust, called tectonic plates, move and interact. According to the theory, the movement of tectonic plates forms ______ creates volcanoes, and causes earthquakes. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "mountains;",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "mountains",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "mountains,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "mountains:",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Philosopher Gottlob Frege (1848–1925) explored how multiple names can be used to refer to the same object or person yet still have different meanings. For instance, the fictional character Clark Kent and his alter ego Superman are the same person, yet the two personas are distinct. For Frege, this raises further questions about how ______ Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "can we hold contradictory beliefs about a single thing.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "we can hold contradictory beliefs about a single thing.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "we can hold contradictory beliefs about a single thing?",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "can we hold contradictory beliefs about a single thing?",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 19,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Choreographers George Balanchine and Martha Graham both contributed sections to the dance piece Episodes , which premiered at New York&#8217;s City Center of Music and Drama in 1959. This cross-genre collaboration brought together the distinct features of Balanchine&#8217;s neoclassical ballet and Graham&#8217;s modern ______ the stylistic diversity and creative innovation within the dance world. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "dance, showcasing",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "dance, it showcased",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "dance. Which showcased",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "dance. Showcasing",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 20,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In her Silueta sculpture series, the Cuban American artist Ana ______ to access what she called an “omnipresent female force,” utilized a variety of natural materials to create outlines—or silhouettes—of her own body. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Mendieta, hoping",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Mendieta hope",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Mendieta had hoped",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Mendieta was hoping",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 21,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The United Nations’ Trade and Development organization divides exports into five key categories: food items, agricultural materials, fuels, ores and raw metals, and manufactured goods (i.e., most nonfood goods made by machinery or by hand). In 2022, the majority (77 percent) of Malta&#8217;s exports were manufactured goods. ______ integrated circuits, medicines, and postage stamps were its top exports. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "In a broader sense,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Within this category,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "In the future,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Despite this majority,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 22,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Barium is one of a variety of potentially useful trace elements contained in the chemical-rich brine that remains after seawater is purified through desalination. However, routine extraction of barium and other such elements from brine is not yet technologically or economically feasible. ______ most trace elements have only been extracted from seawater on an experimental basis. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Finally,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Similarly,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "In doing so,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "To date,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 23,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: A synthesis reaction is a type of chemical reaction. In a synthesis reaction, two or more substances combine to form a new substance. When sodium and chloride combine, they form a substance called sodium chloride. This substance is more commonly known as table salt. The student wants to define the term “synthesis reaction.” Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "When sodium and chloride combine, they form a substance commonly known as table salt.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The substance sodium chloride, also known as table salt, is formed by a chemical reaction.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "A new substance is formed when a chemical reaction combines sodium and chloride.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "A synthesis reaction is a chemical reaction in which two or more substances combine to form a new substance.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 24,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: The Highpointers Club is a hiking club. One of the main goals among club members is to reach the highest points in all fifty US states. Those who achieve this are called 50 Completers.In Suk Han became a 50 Completer on November 15, 2013. The highest point in West Virginia is Spruce Knob, at 4,863 ft. The highest point in Colorado is Mount Elbert, at 14,440 ft. Which choice most effectively uses information from the given sentences to explain the 50 Completers hiking challenge to a new audience?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Hikers aiming to count themselves among the 50 Completers must reach not only West Virginia&#8217;s Spruce Knob but also the even higher peak of Mount Elbert in Colorado.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Not until after you have reached the highest points in all fifty US states—including Spruce Knob in West Virginia and Mount Elbert in Colorado—can you include yourself among the 50 Completers of the Highpointers Club.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "If you are looking for a new hiking challenge, consider joining the Highpointers Club, as did In Suk Han, a hiker who successfully reached the highest point in every US state.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "On November 15, 2013, In Suk Han finally completed the feat of reaching the highest point in all fifty US states, including Spruce Knob in West Virginia and Mount Elbert in Colorado.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 25,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: Epistolary novels are novels written primarily as a series of fictional documents, typically letters. Sometimes, the documents are journal entries, newspaper clippings, and more. Hyperion (1797) is an epistolary novel by German author Friedrich Hölderlin. It consists primarily of letters sent between a Greek hermit named Hyperion and his friend Bellarmin. Absolutely Normal Chaos (1990) is an epistolary novel by US author Sharon Creech. It consists primarily of journal entries written by a student during her summer vacation. The student wants to emphasize a difference between the two novels. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Both Friedrich Hölderlin and Sharon Creech have written epistolary novels.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 26,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: The Ellicott Slough National Wildlife Refuge (NWR) is a protected natural area in California. It encompasses 139 acres. The Ellicott Slough NWR was established to safeguard the habitat of the Santa Cruz long-toed salamander, an endangered species. The Ellicott Slough NWR is managed by the US Fish &amp; Wildlife Service.The US Fish &amp; Wildlife Service limits human activities in the area. The student wants to emphasize the role the US Fish &amp; Wildlife Service plays in safeguarding the habitat of the Santa Cruz long-toed salamander. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "By limiting human activities in the Ellicott Slough NWR, the US Fish &#038; Wildlife Service safeguards the habitat of the Santa Cruz long-toed salamander.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The 139-acre Ellicott Slough NWR was established to safeguard the habitat of the Santa Cruz long-toed salamander, an endangered species.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Human activities are limited in the Ellicott Slough NWR, a protected natural area in California.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "The Santa Cruz long-toed salamander is an endangered species whose habitat is protected within the Ellicott Slough National Wildlife Refuge, a 139-acre natural area in California.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 27,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: Henry W. Sobel is a US particle physicist. Particle physicists study subatomic particles. Neutrinos are some of the least understood subatomic particles. Neutrinos were first discovered in the mid-twentieth century. Sobel is known for his research on neutrino oscillations. The student wants to provide an example of a particle physicist whose research focuses on neutrinos. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "The research done on neutrino oscillations exemplifies the work particle physicists do to advance our understanding of subatomic particles.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Particle physicist Henry W. Sobel is known for his research on neutrino oscillations.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "By studying neutrino oscillations — to name just one example — particle physicists can learn more about neutrinos.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Neutrinos are a type of subatomic particle that particle physicists are still trying to understand.",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module_number": 2,
+          "time_limit": 32,
+          "questions": [
+            {
+              "number": 1,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "In the Metropolitan Museum of Art&#8217;s Costume Institute&#8217;s innovative multisensory exhibit of garments and accessories spanning four centuries, an emphasis on the ______ of fashion was conveyed both by the exhibit&#8217;s theme of perpetual renewal in nature and, more subtly, by its scientific re-creations of ephemeral elements (like a fragrance worn with a dress more than a century ago). Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "definitiveness",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "superficiality",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "partiality",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "transience",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Because blue holes (such as the Lost Blue Hole in the Bahamas) and cenotes (such as Cenote Dos Ojos in Mexico) differ in their size, water composition, and type of location, they are not usually viewed as being ______ , but both are water-filled sinkholes typically produced by the natural dissolution and collapse of rocks. Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "distinct",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "incongruous",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "analogous",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "explicable",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Wind power and solar power constitute over 60% of Chile&#8217;s electricity production. Due to the geographical availability of renewable resources of energy, Chile is in an advantageous position to potentially ______ the proportion of electricity it produces from renewable resources in the future. Which choice completes the text with the most logical and precise word or phrase?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "induce",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "augment",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "alleviate",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "exhaust",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Vertical gene transfer involves the transmission of genetic material from a parent to offspring; horizontal gene transfer, on the other hand, involves the exchange of genetic material between organisms not in a parent-offspring relationship. While horizontal gene transfer is common among prokaryotes—single-celled organisms, such as the bacteria Enterococcus cecorum and Moraxella caviae —it has rarely been observed among eukaryotes (multicellular organisms). However, new studies suggest that horizontal gene transfer is more common in eukaryotes than originally thought. Which choice best states the function of the underlined sentence in the text as a whole?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "It argues that two biological phenomena are more similar than they may initially appear to be.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "It explains why a common perception of a biological process is flawed.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "It contrasts the frequency with which a biological phenomenon has been detected in two categories of organisms.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "It indicates a distinction between the mechanics of two kinds of biological processes.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 5,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The following text is from Rachel Heng’s 2023 novel The Great Reclamation . Ah Boon is fishing off the coast of Singapore. When he pulled up the nets, they contained only one kind of fish— black pomfrets , the flat diamonds of their bodies slick in the morning light. This uniformity did not surprise him; over the years, he’d learned that the waters here were temperamental. They could be relied upon for a good catch, but from time to time threw up only prawns or squid , and other times colorful varieties of fish that weren’t even supposed to be found in this region. He’d grown to accept the unpredictability, embracing it as a game to be played, like the reading of tea leaves or the grooves of a palm. Taken together, the three underlined portions most clearly serve which function in the text as a whole?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "They emphasize the wide variety of sea creatures that Ah Boon has caught on this particular fishing trip.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "They provide examples of what Ah Boon most frequently catches in the area.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "They illustrate the changeable nature of the fishing grounds where Ah Boon is.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "They underscore Ah Boon&#8217;s lack of surprise at seeing sea creatures that aren&#8217;t usually found in the region.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 6,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Technological advances have prompted companies to increasingly rely on automation to streamline production. Armin Granulo and colleagues, however, found that for products with higher symbolic value (those viewed as contributing to individual self-expression), consumers prefer products made by humans rather than by robots, likely because human-made products are more strongly associated with uniqueness. When considering automation, therefore, companies—especially those specializing in products of symbolic value—should weigh trade-offs between efficiency gains and consumer preferences. Which choice best describes the function of the underlined sentence in the text as a whole?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "It presents evidence supporting the text&#8217;s argument that consumers prefer products with high symbolic value over products with low symbolic value.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "It illustrates the need for additional research to evaluate the claim in the previous sentence that automation affects how consumers rate product uniqueness.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "It emphasizes that a research finding discussed in the text has practical implications that are particularly relevant for businesses making a certain class of product.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "It refers to a finding presented in the previous sentence to recommend that companies that value product quality reconsider their approach to automation.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 7,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Text 1 Oil extraction and other human activities are sources of atmospheric methane (CH₄), but, as Donald Wuebbles and Katherine Hayhoe have shown, so too are naturally occurring emissions, such as those from termite mounds. This biogenic CH₄ is challenging to track given natural sources’ variability and spatial diffusion, but one promising approach is to use CH₄ flux data from extant monitoring infrastructure as proxies for CH₄ fluxes in unmonitored areas. Text 2 Sparkle Malone and colleagues examined the United States’ network of eddy covariance (EC) towers—the equipment used to measure methane fluxes—and identified significant gaps in the infrastructure that limit the ability to constrain biogenic CH₄ emissions. Their analysis revealed that the existing EC towers are not distributed representatively across all climatic regions and ecosystem types, particularly in areas like Alaska and the Rocky Mountains, leading to uncertainties in extrapolating flux data to unmonitored areas. This challenges the reliability of using observed fluxes as proxies for unmonitored regions, as the network&#8217;s incomplete coverage fails to capture the full variability of biogenic sources. Based on the texts, how would Malone et al. (Text 2) most likely respond to the claim in the underlined portion of Text 1?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "By disputing that biogenic CH₄ fluxes from unobserved areas can be reliably derived from observed fluxes.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "By disagreeing about the importance of quantifying biogenic CH₄ fluxes.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "By challenging the assumption that there are significant biogenic CH₄ fluxes that existing CH₄ monitoring infrastructure fails to capture.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "By arguing that existing monitoring technology is not sensitive enough to detect biogenic CH₄ fluxes.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Marketers of goods often emphasize popularity or expert approval (e.g., “Japan&#8217;s best-selling car” or “gum preferred by dentists”). To assess the effects of these types of recommendations, Kamal Bookwala and her team asked consumers to choose between two cupcake flavors in several different scenarios; when neither flavor had a recommendation label (the baseline condition), when one flavor was labeled with either “most popular” or “baker&#8217;s choice” information and a thumbs-up approval symbol, and when one flavor was labeled with only a thumbs-up symbol (to control for the increased product prominence any recommendation label confers). What does the text most strongly suggest would have been a limitation of the findings if Bookwala and her team had not included conditions with only a thumbs-up label?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "The researchers wouldn&#8217;t have been able to determine whether differences in consumers’ choices between the baseline condition and the conditions with recommendation labels were caused by the content of the labels or the mere fact that labels were present.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "The researchers wouldn&#8217;t have been able to determine whether differences in consumers’ choices between the baseline condition and the conditions with recommendation labels were attributable to a positive effect of recognizing an indication of approval.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "The researchers wouldn&#8217;t have been able to rule out the possibility that differences in consumers’ choices between the baseline condition and the conditions with recommendation labels were due to consumers&#8217; awareness of an attempt to influence their decisions.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "The researchers wouldn&#8217;t have been able to determine whether the effectiveness of the recommendations depended on the specific type of approval (e.g., popularity vs. expert) rather than the mere presence of a label.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Research by economists Wei Feng and Jinzhe Yan indicates that the degree of linguistic abstraction in negative reviews influences how consumers perceive businesses: reviews with concrete details were more likely to result in stronger attributions of fault to companies than vague reviews were. They also found that varying levels of linguistic abstraction in reviews require different types of responses to mitigate their effects. Conciliatory responses were most effective at mitigating the impact of concrete reviews, whereas more defensive responses were more useful when reviews were relatively abstract. Which choice best states the main idea of the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Increasing linguistic abstraction in negative reviews correlates with the degree to which consumers hold companies accountable for negative experiences, but companies can mitigate this effect by responding to such reviews promptly.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Given its implications for companies reputation among consumers, the level of linguistic abstraction in negative reviews is an important consideration when companies devise a response strategy.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Consumers are more likely to find companies blameworthy for negative consumer experiences if the companies are overly defensive and linguistically abstract in their responses to negative reviews than if their responses are accommodating and linguistically concrete.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "The study demonstrates that the relationship between linguistic abstraction in negative reviews and consumer blame is fixed, but companies can neutralize this effect by consistently using conciliatory responses regardless of the review&#8217;s abstractness.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Drosophila (fruit flies) have generation times of 10-12 days, so seasonal changes in rainfall and other environmental conditions can drive seasonal fluctuations in chromosome rearrangements in species such as D. persimilis and D. mediopunctata . Drosophila body size (for which wing centroid size serves as a proxy measure) correlates with life span. Banu Sebnem Onder and Cansu Fidan Aksoy measured the wing sizes of members of a D. melanogaster population in Yesilóz, Turkey, that were collected monthly between May and October over three years. Their research suggests that Drosophila collected in relatively warmer months should tend to have a longer life span, as is illustrated by the finding that ______ Which choice most effectively uses data from the table to complete the assertion?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/02/Dec2025-INTL-Form-A-SAT-M2-10.png",
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "the average male wing centroid size was larger in July than in May.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "the average female wing centroid size was consistently larger than the average male wing centroid size in all four months in the table.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "the average monthly low temperature was higher in September than in May.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "the average female wing centroid size was 2.02 mm in July but was 2.29 mm in October.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "A student is writing a research paper on the history of irrigation in the southwestern United States, concentrating on the Clear Lake Reservoir, created in Modoc County, California, in 1910. The student claims that the Clear Lake Reservoir is one instance in a long line of successful attempts at irrigation in southwestern states, such as California, Arizona, and New Mexico. Which quotation from a historian best supports the student&#8217;s claim?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "“Sprinkler irrigation systems, which were developed in the late 20th century, are a method of irrigating that requires machinery that can spray water in all directions. These systems are currently widely used in many areas of California, New Mexico, and Arizona.”",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "“Several major irrigation canals currently in use in central Arizona follow the original paths of the irrigation system constructed by the Hohokam people in the early 7th century CE, the first of a number of systems in the region.”",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "“The significance of the Clear Lake Reservoir in the development of California cannot be overstated, since irrigation is a principal means of transporting water for food production.”",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "“The success of the Clear Lake Reservoir exemplifies the technical innovations of early 20th-century federal reclamation projects, yet its design relied primarily on contemporary engineering rather than historical precedents from the region.”",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 12,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The percent of cities and towns in a given period that persist from a prior period (backward continuity) and the percent that persist into a later period (forward continuity) are known to correlate positively with economic and political stability in a region. Researchers studying demographic trends in the Indigenous societies of ancient Mexico determined both continuity measures for the Yautepec Valley, which lay within the macroregional hegemony of the city-state of Teotihuacan from roughly 100 BCE until roughly 450 CE, after which point Teotihuacan declined. The team concluded that ______ Which choice most effectively uses data from the table to complete the text?",
+              "passage": null,
+              "image": "https://bluebookplus.plus/wp-content/uploads/2026/02/Dec2025-INTL-Form-A-SAT-M2-12.png",
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Teotihuacan&#8217;s hegemony imposed stability on the Yautepec Valley, mitigating the decrease in the compound average annual growth rate of the valley&#8217;s population as well as the decrease in the number of cities and towns there in the Early Classic and Middle Classic.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "the marginal decrease in the compound average annual growth rate of the Yautepec Valley&#8217;s population in the Early Classic was likely associated with the widespread abandonment of cities and towns established in the Terminal Formative.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "values for both backward and forward continuity in the Yautepec Valley were consistently higher during the centuries of Teotihuacan&#8217;s hegemony than they were in the period following the collapse of the hegemony.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "although the forward continuity data suggest that the decline of Teotihuacan occasioned economic and political instability in the Yautepec Valley, these developments were nonetheless associated with a net increase in the valley&#8217;s population.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Sir Gawain and the Green Knight is a circa 1400 poem written in Middle English—an archaic form of the English spoken today. Over the last several centuries, the English language has undergone such transformations in vocabulary, spelling, and grammar that most readers now rely on translations to read Sir Gawain . In the introduction to his 2007 translation, Simon Armitage remarks that the sonic patterns of the poem, which was written in alliterative verse (a verse form featuring extensive repetition of initial consonant sounds), are essential to its structure. Because many Modern English words begin with different sounds than their Middle English equivalents do, a strictly literal translation of Sir Gawain would therefore likely ______ Which choice most logically completes the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "be more faithful to the original intentions of the poem than most strictly literal translations of alliterative Middle English poems are to their originals.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "appeal more to modern readers than would translations like Armitage&#8217;s that instead prioritize the original text&#8217;s sonic and structural qualities.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "be preferable to modern readers who are primarily interested in learning what the poem reveals about historical conditions during the time it was originally written.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "preserve much of the original text&#8217;s meaning at the expense of other qualities that are also integral to the experience of reading the poem.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 14,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Many studies have found a positive association between levels of dissolved organic carbon and mercury in bodies of fresh water undisturbed by human activity. But Stéphane Guédron, Delphine Tisserand, and colleagues did not find this correlation in an examination of freshwater bodies impacted by wastewater, leading some scientists to hypothesize that the association could be particular to undisturbed waters. However, Michael E. Berndt and Travis K. Bavin carried out a study on freshwater bodies disturbed by mining that showed similar results to the studies on undisturbed waters, suggesting that ______ Which choice most logically completes the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Guédron, Tisserand, and colleagues&#8217; study used different methods to measure the concentration of mercury in fresh water than Berndt and Bavin&#8217;s study did.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "levels of dissolved organic carbon and mercury are both much higher in bodies of fresh water impacted by wastewater than they are in bodies of fresh water disturbed by mining.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "disturbances linked to wastewater affect significantly more bodies of fresh water than disturbances linked to mining do.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "the effects of wastewater on the association between levels of dissolved organic carbon and mercury should not be taken as indicative of the effects of every type of human disturbance.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 15,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "To better understand consumer loyalty to specific online retailers, Branislav Dudic and colleagues created a survey using 58 statements as proxy indicators of customer experience with receiving goods purchased online. The statements are categorized as relevant to one of six topics—e.g., statement 37, “I like when packages delivered to me are tightly packed,” is categorized as relevant to the topic of visual appeal—and respondents rate the importance of each statement to their experience. The researchers propose that the survey can be adapted for use by companies and other researchers, and they note that same-category responses show very low same-participant heterogeneity, which suggests that ______ Which choice most logically completes the text?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "responses to statements in the visual appeal topic are highly predictive of responses in the other five topics.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "the reliability of the survey data for each topic would be largely unaffected by the number of survey respondents.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "it may be possible to collect meaningful data about all six customer experience topics without using all 58 of the original statements.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "the six topics into which the 58 statements are grouped may actually represent more than six different topics.",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 16,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Arms outstretched, right wrist over left with both hands dangling, South Korean musician Psy galloped from one foot to the other in the iconic dance of his 2012 international hit song &#8220;Gangnam Style.&#8221; Later, a statue depicting Psy&#8217;s arm-positioning during the dance was erected in the place that inspired the song&#8217;s ______ Gangnam District in Seoul, South Korea. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "name.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "name—",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "name",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "name;",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 17,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "At Ramla I-Hamra Beach in Malta, deposits of iron oxide and other organic matter ______ to lend a unique red tint to the sand. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "is helping",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "helps",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "help",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "has helped",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 18,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Los Angeles-based artist Henry Taylor&#8217;s large, vibrant paintings of prominent Black figures such as Olympian Alice Coachman ( See Alice Jump, 2011 ) and artist David Hammons ( Hammons meets a hyena on holiday , ______ celebrated by admirers of twenty-first-century portraiture, attracted legions of new fans in 2024 when they were included in a popular Taylor retrospective at the Whitney Museum. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "2016) have long been",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "2016), had long been",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "2016) were long",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "2016), long",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 19,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The shesep , which is written as a long, horizontal hieroglyph shaped like a thumbless hand, and the heqat , which is written as a hieroglyph that looks like four oval items pouring out of a barrel, were ancient Egyptian units of ______ to record length and volume, respectively, the shesep and heqat have since fallen out of use. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "measurement, used",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "measurement and used",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "measurement used",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "measurement. Used",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 20,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Reena Esmail&#8217;s classical composition &#8220;String Quartet (Ragamala)&#8221; incorporates a raag, a melodic framework used in Hindustani classical music, called Raag Bihag. Often, interplay between the raag&#8217;s designated vadi and samvadi (the first- and second-most important notes, respectively) and its prescribed melodic sequences ______ an intense mood. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "have evoked",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "evoking",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "evokes",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "evoke",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 21,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The extensive impact that chitosan nanoparticles (ChNPs) have had on medicine belies their minuscule size, the nanoparticles typically ______ from only 33 to 75 billionths of a meter. Which choice completes the text so that it conforms to the conventions of Standard English?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "ranging",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "can range",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "range",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "will range",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 22,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The moon Elara orbits Jupiter in the same direction that the planet rotates. ______ Elara&#8217;s orbit is described as prograde. Erinome, another of Jupiter&#8217;s moons, orbits in the opposite direction, so its orbit is described with the opposite term: retrograde. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "In reality,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Nevertheless,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Next,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Hence,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 23,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "For several centuries after the birth of opera in sixteenth-century Florence, Italian remained the default language in which most opera scores were written. ______ opera singers today, such as the mezzo-soprano Gala El Hadidi, encounter a wide range of Italian terms from drammatico (dramatically) to affrettando (at a hurried tempo)—when following many eighteenth-century opera scores. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "D",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "However,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Granted,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Lastly,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Thus,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 24,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "Unlike the sprawling, permanent mural installations of David Alfaro Siqueiros and other contemporaries of the Muralismo Mexicano movement, the easily reproducible block print posters that Francisco Mora and Elizabeth Catlett created as part of the printmaking collective Taller de Gráfica Popular (TGP) were highly portable. ______ the prints were a boon to the TGP&#8217;s goal of spreading their artwork throughout Mexico and the world beyond. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "For instance,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "As such,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Despite this,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "To be exact,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 25,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "The Mundrabilla I meteorite, discovered in Australia in 1911, weighs approximately 27,300 pounds and is the twelfth-largest iron meteorite ever discovered on Earth. The Estherville meteorite, discovered in the United States in 1879, is much smaller at 710 pounds. ______ the latter is a stony-iron meteorite, and a size difference between meteorites of different compositions isn&#8217;t unexpected. Which choice completes the text with the most logical transition?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "B",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "In other words,",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "Admittedly,",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "As a result,",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "In conclusion,",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 26,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: The Future of Nostalgia is a book by Svetlana Boym. In it, Boym explores the concept of nostalgia from various angles. In Chapter 5, “Reflective Nostalgia,” she defines a form of nostalgia interested in meditating on past things. In Chapter 14, “Joseph Brodsky&#8217;s Room and a Half,” she discusses themes of nostalgia in Joseph Brodsky&#8217;s writing. The student wants to emphasize the order in which the topics appear. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "C",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "In the book, Svetlana Boym not only discusses themes of nostalgia in Joseph Brodsky&#8217;s writing but also defines a form of nostalgia interested in meditating on past things.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "After defining a form of nostalgia interested in meditating on past things, Svetlana Boym goes on to discuss themes of nostalgia in Joseph Brodsky&#8217;s writing.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "Svetlana Boym defines a form of nostalgia interested in meditating on past things in her chapter titled “Reflective Nostalgia.”",
+                  "image": null
+                }
+              ]
+            },
+            {
+              "number": 27,
+              "question_type": "MCQ",
+              "difficulty": "MEDIUM",
+              "content": "While researching a topic, a student has taken the following notes: Ukiyo-e woodblock prints were a popular artistic form in Japan from the 1600s through the 1800s. Ukiyo-e prints were produced by teams of artisans that included artists, wood-carvers, printers, and publishers. Sōsaku-hanga was a popular Japanese printmaking movement that emerged in the early 1900s. Sōsaku-hanga prioritized individual artistic expression. An artist working in this style typically handled all aspects of print creation, from drawing to wood carving to printing. The student wants to contrast ukiyo-e and sōsaku-hanga production methods. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+              "passage": null,
+              "image": null,
+              "correct_answer": "A",
+              "explanation": null,
+              "choices": [
+                {
+                  "option": "A",
+                  "text": "Teams of artisans produced ukiyo-e prints, whereas individual artists typically handled all aspects of sōsaku-hanga printmaking themselves.",
+                  "image": null
+                },
+                {
+                  "option": "B",
+                  "text": "In contrast to ukiyo-e prints, sōsaku-hanga prints were produced using methods such as drawing and wood carving.",
+                  "image": null
+                },
+                {
+                  "option": "C",
+                  "text": "Ukiyo-e prints were popular in Japan from the 1600s through the 1800s, while sōsaku-hanga prints emerged later, in the early 1900s.",
+                  "image": null
+                },
+                {
+                  "option": "D",
+                  "text": "One notable distinction between ukiyo-e and sōsaku-hanga prints is sōsaku-hanga&#8217;s emphasis on individual artistic expression.",
+                  "image": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

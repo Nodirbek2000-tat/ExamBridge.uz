@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}Premium Required — SATBridge{% endblock %}
+
+{% block content %}
+<div class="section">
+  <div class="container" style="max-width:520px;">
+    <div class="card card-body" style="text-align:center; padding:48px 40px;">
+
+      <!-- Icon -->
+      <div style="width:64px; height:64px; border-radius:16px; background:rgba(50,201,146,0.1);
+        display:flex; align-items:center; justify-content:center; margin:0 auto 24px; font-size:1.8rem;">
+        🔒
+      </div>
+
+      <h2 style="font-size:1.4rem; font-weight:800; margin-bottom:10px;">Pro feature</h2>
+
+      {% if test %}
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:8px;">
+        <strong>{{ test.year }}
+        {% if test.month %}{{ test.get_month_display }}{% endif %}
+        {% if test.form %}· Form {{ test.form }}{% endif %}</strong>
+        is a premium test.
+      </p>
+      {% endif %}
+
+      <p style="color:var(--text-muted); font-size:0.875rem; margin-bottom:32px;">
+        Upgrade to <strong>Pro</strong> or <strong>Annual</strong> to access all tests, AI analysis, university finder, and more.
+      </p>
+
+      <!-- Features list -->
+      <div style="text-align:left; background:var(--bg-soft); border-radius:12px; padding:16px 20px; margin-bottom:28px;">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px;">What you get with Pro</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="display:flex; gap:10px; font-size:0.875rem;">
+            <span style="color:var(--green-dark); font-weight:700;">✓</span> Unlimited tests
+          </li>
+          <li style="display:flex; gap:10px; font-size:0.875rem;">
+            <span style="color:var(--green-dark); font-weight:700;">✓</span> AI score analysis
+          </li>
+          <li style="display:flex; gap:10px; font-size:0.875rem;">
+            <span style="color:var(--green-dark); font-weight:700;">✓</span> University finder
+          </li>
+          <li style="display:flex; gap:10px; font-size:0.875rem;">
+            <span style="color:var(--green-dark); font-weight:700;">✓</span> Full test history
+          </li>
+          <li style="display:flex; gap:10px; font-size:0.875rem;">
+            <span style="color:var(--green-dark); font-weight:700;">✓</span> Vocabulary builder
+          </li>
+        </ul>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/pricing/" class="btn btn-primary" style="font-size:0.95rem; padding:12px;">
+          Upgrade to Pro — $12/month
+        </a>
+        <a href="/tests/" class="btn btn-ghost">
+          Back to tests
+        </a>
+      </div>
+
+      <p style="margin-top:20px; font-size:0.78rem; color:var(--text-light);">
+        Cancel anytime. No hidden fees.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

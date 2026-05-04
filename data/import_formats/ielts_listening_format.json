@@ -1,0 +1,108 @@
+{
+  "_comment": "IELTS Listening Import Format — POST /api/import/ielts/listening/",
+
+  "mode": "standalone",
+  "section": {
+    "section_number": 1,
+    "title": "Part 1: Booking a Hotel",
+    "audio_url": "https://example.com/audio/part1.mp3",
+    "transcript": "Receptionist: Good afternoon, how can I help?\nGuest: I'd like to book a room for [1] nights.\nReceptionist: Certainly. And your name?\nGuest: My name is [2] Johnson.\nReceptionist: Could I take your phone number?\nGuest: Yes, it's [3].\nReceptionist: And what type of room would you like?\nGuest: A [4] room please.\nReceptionist: That will be [5] per night.",
+    "_comment_transcript": "Use [1], [2], [N] to mark where answers appear in the transcript.",
+    "difficulty": "EASY",
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "GAP",
+      "_comment_type": "Gap Fill — text with ___ blank, answer fills the blank",
+      "content": "The guest wants to stay for ___ nights.",
+      "correct_answer": "3",
+      "explanation": "The guest says '3 nights' in the recording.",
+      "group_instruction": "Questions 1-5: Complete the form below. Write NO MORE THAN ONE WORD AND/OR A NUMBER for each answer."
+    },
+    {
+      "number": 2,
+      "question_type": "GAP",
+      "content": "Guest's surname: ___ Johnson",
+      "correct_answer": "David",
+      "explanation": "The guest gives the name David Johnson.",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "GAP",
+      "content": "Phone number: ___",
+      "correct_answer": "07891234567",
+      "explanation": "The phone number given.",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "MCQ",
+      "_comment_type": "Multiple Choice",
+      "content": "What type of room does the guest want?",
+      "correct_answer": "B",
+      "explanation": "The guest asks for a double room.",
+      "group_instruction": "Questions 4-6: Choose the correct letter A, B or C.",
+      "choices": [
+        {"option": "A", "text": "Single room"},
+        {"option": "B", "text": "Double room"},
+        {"option": "C", "text": "Suite"}
+      ]
+    },
+    {
+      "number": 5,
+      "question_type": "TABLE",
+      "_comment_type": "Table/Form/Note Completion — fill in table cell",
+      "content": "Price per night: £___",
+      "correct_answer": "85",
+      "explanation": "The receptionist states £85 per night.",
+      "group_instruction": "Questions 5-8: Complete the booking form."
+    },
+    {
+      "number": 6,
+      "question_type": "MULTI",
+      "_comment_type": "Multiple Select — choose N from options, correct_answer pipe-separated",
+      "content": "Which TWO facilities does the hotel offer?",
+      "correct_answer": "A|D",
+      "max_selections": 2,
+      "explanation": "The hotel offers free parking (A) and a gym (D).",
+      "group_instruction": "Questions 6-7: Choose TWO letters A-E.",
+      "choices": [
+        {"option": "A", "text": "Free parking"},
+        {"option": "B", "text": "Airport shuttle"},
+        {"option": "C", "text": "Business centre"},
+        {"option": "D", "text": "Gym"},
+        {"option": "E", "text": "Outdoor pool"}
+      ]
+    },
+    {
+      "number": 7,
+      "question_type": "MULTI",
+      "content": "Which THREE services are included in the breakfast?",
+      "correct_answer": "B|C|E",
+      "max_selections": 3,
+      "explanation": "Breakfast includes items B, C and E.",
+      "group_instruction": "Questions 7-9: Choose THREE letters A-F.",
+      "choices": [
+        {"option": "A", "text": "Champagne"},
+        {"option": "B", "text": "Fresh juice"},
+        {"option": "C", "text": "Hot food"},
+        {"option": "D", "text": "Sushi"},
+        {"option": "E", "text": "Continental pastries"},
+        {"option": "F", "text": "Afternoon tea"}
+      ]
+    },
+    {
+      "number": 8,
+      "question_type": "SENT",
+      "_comment_type": "Sentence Completion",
+      "content": "Guests can check in from ___ o'clock.",
+      "correct_answer": "2",
+      "explanation": "Check-in starts at 2pm.",
+      "group_instruction": "Questions 8-10: Complete the sentences."
+    }
+  ]
+}
