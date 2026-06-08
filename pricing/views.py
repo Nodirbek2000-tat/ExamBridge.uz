@@ -189,8 +189,11 @@ def stripe_webhook(request):
         logger.warning('Stripe webhook: invalid signature')
         return HttpResponse(status=400)
 
-    etype = event['type']
-    data = event['data']['object']
+    # Stripe v15 da event StripeObject — uni oddiy dict ga aylantiramiz,
+    # aks holda .get() AttributeError beradi (500). Imzo yuqorida tekshirildi.
+    event_dict = json.loads(payload)
+    etype = event_dict['type']
+    data = event_dict['data']['object']
 
     # ── Payment succeeded (subscription created / renewed) ────────────────────
     if etype == 'checkout.session.completed':
