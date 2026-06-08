@@ -36,3 +36,13 @@ logs/
 .idea/
 .vscode/
 *.swp
+
+# Stripe CLI binary (server uchun kerak emas)
+stripe.exe
+stripe_*.zip
+stripe_*windows*
+
+# Backups
+*.backup
+backup_*.json
+backups/

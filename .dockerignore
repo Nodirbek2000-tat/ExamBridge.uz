@@ -22,3 +22,11 @@ pytest_cache/
 htmlcov/
 dist/
 build/
+
+# Backups & Stripe CLI binary (build ga kerak emas)
+backups/
+stripe.exe
+stripe_*.zip
+stripe_*windows*
+*.backup
+backup_*.json
