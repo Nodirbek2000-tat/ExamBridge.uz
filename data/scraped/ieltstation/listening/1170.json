@@ -1,0 +1,664 @@
+{
+  "title": "Cambridge 19_Test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_035654_0f338f77.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Charlotte's First Day at the Supermarket",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_035654_0f338f77.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Running Tips and Inspiring Stories from Compton Park Runners Club",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_035654_0f338f77.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What reason prevented each of the following members of the Compton Park Runners Club from joining until recently?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a lack of confidence"
+            },
+            {
+              "option": "B",
+              "text": "a dislike of running"
+            },
+            {
+              "option": "C",
+              "text": "a lack of time"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a lack of confidence"
+            },
+            {
+              "option": "B",
+              "text": "a dislike of running"
+            },
+            {
+              "option": "C",
+              "text": "a lack of time"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a lack of confidence"
+            },
+            {
+              "option": "B",
+              "text": "a dislike of running"
+            },
+            {
+              "option": "C",
+              "text": "a lack of time"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a lack of confidence"
+            },
+            {
+              "option": "B",
+              "text": "a dislike of running"
+            },
+            {
+              "option": "C",
+              "text": "a lack of time"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MCQ",
+          "content": "What does Liz say about running her first marathon?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It had always been her ambition."
+            },
+            {
+              "option": "B",
+              "text": "Her husband persuaded her to do it."
+            },
+            {
+              "option": "C",
+              "text": "She nearly gave up before the end."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MCQ",
+          "content": "Liz says new runners should sign up for a race",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "every six months."
+            },
+            {
+              "option": "B",
+              "text": "within a few weeks of taking up running."
+            },
+            {
+              "option": "C",
+              "text": "after completing several practice runs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Jane and Kieran's Conversation about Books and Bookshop",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_035654_0f338f77.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "How does Jane feel about the books her grandfather has given her?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They are not worth keeping."
+            },
+            {
+              "option": "B",
+              "text": "They should go to a collector."
+            },
+            {
+              "option": "C",
+              "text": "They have sentimental value for her."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Jane and Kieran agree that hardback books should be",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "put out on display."
+            },
+            {
+              "option": "B",
+              "text": "given as gifts to visitors."
+            },
+            {
+              "option": "C",
+              "text": "more attractively designed."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What do Jane and Kieran suggest about new books?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Their parents liked buying them as presents."
+            },
+            {
+              "option": "B",
+              "text": "They would like to buy more of them."
+            },
+            {
+              "option": "C",
+              "text": "Not everyone can afford them."
+            }
+          ]
+        },
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "Kieran thinks the packing advice given by Jane's grandfather is",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "common sense."
+            },
+            {
+              "option": "B",
+              "text": "hard to follow."
+            },
+            {
+              "option": "C",
+              "text": "over-protective."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "While talking about taking a book from a shelf, Jane",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "describes the mistakes other people make doing it."
+            },
+            {
+              "option": "B",
+              "text": "reflects on a significant childhood experience."
+            },
+            {
+              "option": "C",
+              "text": "explains why some books are easier to remove than others."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Where does Jane's grandfather keep each of the following types of books in his shop?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "near the entrance"
+            },
+            {
+              "option": "B",
+              "text": "in the attic"
+            },
+            {
+              "option": "C",
+              "text": "at the back of the shop"
+            },
+            {
+              "option": "D",
+              "text": "on a high shelf"
+            },
+            {
+              "option": "E",
+              "text": "near the stairs"
+            },
+            {
+              "option": "F",
+              "text": "in a specially designed space"
+            },
+            {
+              "option": "G",
+              "text": "within the caf\\00e9"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "near the entrance"
+            },
+            {
+              "option": "B",
+              "text": "in the attic"
+            },
+            {
+              "option": "C",
+              "text": "at the back of the shop"
+            },
+            {
+              "option": "D",
+              "text": "on a high shelf"
+            },
+            {
+              "option": "E",
+              "text": "near the stairs"
+            },
+            {
+              "option": "F",
+              "text": "in a specially designed space"
+            },
+            {
+              "option": "G",
+              "text": "within the caf\\00e9"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "near the entrance"
+            },
+            {
+              "option": "B",
+              "text": "in the attic"
+            },
+            {
+              "option": "C",
+              "text": "at the back of the shop"
+            },
+            {
+              "option": "D",
+              "text": "on a high shelf"
+            },
+            {
+              "option": "E",
+              "text": "near the stairs"
+            },
+            {
+              "option": "F",
+              "text": "in a specially designed space"
+            },
+            {
+              "option": "G",
+              "text": "within the caf\\00e9"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "near the entrance"
+            },
+            {
+              "option": "B",
+              "text": "in the attic"
+            },
+            {
+              "option": "C",
+              "text": "at the back of the shop"
+            },
+            {
+              "option": "D",
+              "text": "on a high shelf"
+            },
+            {
+              "option": "E",
+              "text": "near the stairs"
+            },
+            {
+              "option": "F",
+              "text": "in a specially designed space"
+            },
+            {
+              "option": "G",
+              "text": "within the caf\\00e9"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "near the entrance"
+            },
+            {
+              "option": "B",
+              "text": "in the attic"
+            },
+            {
+              "option": "C",
+              "text": "at the back of the shop"
+            },
+            {
+              "option": "D",
+              "text": "on a high shelf"
+            },
+            {
+              "option": "E",
+              "text": "near the stairs"
+            },
+            {
+              "option": "F",
+              "text": "in a specially designed space"
+            },
+            {
+              "option": "G",
+              "text": "within the caf\\00e9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Reforestation: Challenges, Best Practices, and Community Involvement",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_035654_0f338f77.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

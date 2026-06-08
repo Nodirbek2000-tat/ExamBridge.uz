@@ -1,0 +1,118 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "Rubber",
+    "content": "The plants that produce rubber are spread right across the globe, and grow in many different habitats. One might think it likely, therefore, that humankind has known about rubber for thousands of years. Yet, unlike other crops of economic importance, rubber led a relatively anonymous life until the last 150 years or so. The Indians of South America appear to be the first people to have understood the properties of rubber, and the Aztecs of what is now Mexico were the first to be recorded using the substance; a wall painting dating back to the sixth century depicts a scene of a tributary offering of crude rubber. With the arrival of Columbus in the Americas and the resulting Spanish influx, further evidence starts to appear concerning the Native American use of rubber. Antonio de Herrera y Tordesillas describes a ritual game played with a rubber ball at the court of the Aztec Emperor Montezuma II, and the Mayan and Toltec people are known to have taken part in similar activities. Rubber was also used to make raincoats, shoes, jars, torches and musical instruments, all of which must have been made from the indigenous Castilla elastica, as the Para plant now favoured for rubber cultivation does not grow in the Mexican region.\n\nThe first description of latex (liquid rubber) extraction is made by Juan de Torquemada, who noted that if a receptacle was not at hand the Native Americans would place the latex on their bodies to allow it to solidify. However, no real interest in rubber was shown by any European until Charles de la Condamine, a French mathematician, published an account of his journey to South America in 1735. The journey was undertaken on behalf of the Paris Academy of Sciences to measure an arc of the meridian line on the equator, but the journey home was to turn out to be more significant than the true purpose of the trip. Condamine explored Brazil and Peru and discovered how the local people used one single piece of coagulated latex to make boots. The boots were impervious to water and, when smoked, looked like real leather. In 1747 the first description of the rubber tree and latex tapping was made by a military engineer and amateur botanist, François Fresneau, who was posted to French Guiana. The publications of Condamine and Fresneau created considerable excitement among French scientists, and an attempt was made to discover a solvent that could turn the crude rubber into a substance for commercial exploitation.\n\nIn 1818 a British medical student named James Syme first used rubber to make waterproof cloth. Another early use of the substance was as an eraser of pencil marks, hence the name 'rubber'. This was complemented by balloons, rubber bands, braces, boots for the army and other ideas that met with varying degrees of success. In 1820 Thomas Hancock, an English manufacturer of rubber goods such as driving belts, industrial rollers and rubber hoses, invented a machine he called the 'piokle', which chewed up waste strips for re-use. It was discovered that the masticated rubber was more malleable, while maintaining much of its elasticity. In Scotland at the same time Charles Mackintosh had discovered a way of using rubber as waterproofing material, by a process he patented in 1823. Hancock and Mackintosh joined forces in 1834, and three years later Hancock invented a machine for spreading rubber onto material.\n\nDespite their beneficial qualities, such as waterproofing, rubber goods were still not particularly popular as they had some major flaws, including the fact that they dissolved malodorously. They also became pliant when warm and rigid when cold. Then in 1839 the American Charles Goodyear discovered that it was possible to stabilise rubber by mixing it with sulphur while exposing it to heat - a process he called vulcanisation - and the full versatility of this extraordinary substance became apparent.\n\nRubber goods could now be manufactured which had all the beneficial qualities of the material, such as durability, elasticity and variability, but which were not sticky, soluble or governed by the vagaries of the weather. The economic potential of rubber was now clearly evident. It played an important role in the Industrial Revolution, being employed in the steam engines found in factories, mills, mines and railways. It made a triumphant entrance as a new and innovative material at the Great Exhibition of 1851, where shoes, airbeds, furniture and clothing made out of newly improved rubber were proudly displayed.\n\nOne of the most important rubber inventions was made in 1888, when an Irishman called John Boyd Dunlop produced the first pneumatic tyre. Solid rubber tyres had been used for the previous 18 years, but Dunlop's new design, which he updated in 1890, immediately became popular. In 1895 Dunlop's tyres were first used in motor cars, and with the mass production of cars just over the horizon the rubber industry had never looked healthier. The import levels of rubber over the nineteenth century bear witness to its irrepressible rise. In 1830 Britain had imported just 211 kg of crude rubber. This had risen to 10,000kg in 1857, and by 1874 levels were just under six times as much again.",
+    "passage_number": 1,
+    "difficulty": "EASY",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TFNG",
+      "content": "Rubber plants grow only in certain regions of the world.",
+      "correct_answer": null,
+      "explanation": "The passage says rubber plants grow across the globe and in many habitats, not only in limited regions.",
+      "group_instruction": "<p>Choose&nbsp;<strong>TRUE</strong>&nbsp;if the statement agrees with the information given in the text, choose&nbsp;<strong>FALSE</strong>&nbsp;if the statement contradicts the information, or choose&nbsp;<strong>NOT GIVEN</strong>&nbsp;if there is no information on this.</p>"
+    },
+    {
+      "number": 2,
+      "question_type": "TFNG",
+      "content": "Rubber was extracted in Mexico as early as the sixth century.",
+      "correct_answer": null,
+      "explanation": "The passage states that a sixth-century painting showed people offering rubber, which means it was used in Mexico at that time.",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "TFNG",
+      "content": "The process of vulcanisation was discovered by accident.",
+      "correct_answer": null,
+      "explanation": "The passage states that Goodyear discovered vulcanisation, but does not say whether it was accidental or intentional.",
+      "group_instruction": ""
+    },
+    {
+      "number": 6,
+      "question_type": "TFNG",
+      "content": "Imports of crude rubber into Britain fell during the nineteenth century.",
+      "correct_answer": null,
+      "explanation": "Imports increased massively, not decreased.",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "TFNG",
+      "content": "Rubber from the Castilla elastica plant is of poorer quality than that from the Para plant.",
+      "correct_answer": null,
+      "explanation": "The passage says Castilla elastica was used by ancient peoples and Para rubber does not grow there – but it never compares the quality of the two types. Therefore, the statement cannot be confirmed.",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "TFNG",
+      "content": "A French mathematician inspired real interest in rubber amongst Europeans.",
+      "correct_answer": null,
+      "explanation": "The passage clearly says that Europeans showed no interest in rubber until Condamine’s report was published.",
+      "group_instruction": ""
+    },
+    {
+      "number": 7,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage states that the first major 1818 invention using rubber was waterproof cloth.",
+      "group_instruction": "<p>Answer the questions. Write&nbsp;<strong>NO MORE THAN THREE WORDS </strong>from the text&nbsp;for&nbsp;each&nbsp;answer.</p>"
+    },
+    {
+      "number": 9,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Before improvements, rubber became soft when hot and rigid when cold.",
+      "group_instruction": ""
+    },
+    {
+      "number": 10,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Goodyear discovered a process that stabilised rubber.",
+      "group_instruction": ""
+    },
+    {
+      "number": 11,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Improved rubber was used in steam engines during the Industrial Revolution.",
+      "group_instruction": ""
+    },
+    {
+      "number": 12,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Dunlop invented the first pneumatic tyre in 1888.",
+      "group_instruction": ""
+    },
+    {
+      "number": 8,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Hancock invented a machine to reuse waste strips of rubber.",
+      "group_instruction": ""
+    },
+    {
+      "number": 13,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Dunlop’s tyres entered motor cars just before mass production of cars began.",
+      "group_instruction": ""
+    }
+  ]
+}

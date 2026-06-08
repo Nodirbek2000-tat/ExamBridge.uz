@@ -1,0 +1,664 @@
+{
+  "title": "Cambridge 14_Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_132116_86215074.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Crime Report Form",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_132116_86215074.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the note below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Induction talk for new apprentices",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_132116_86215074.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What does the manager say about each of the following aspects of the company policy for apprentices?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is encouraged."
+            },
+            {
+              "option": "B",
+              "text": "There are some restrictions."
+            },
+            {
+              "option": "C",
+              "text": "It is against the rules."
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is encouraged."
+            },
+            {
+              "option": "B",
+              "text": "There are some restrictions."
+            },
+            {
+              "option": "C",
+              "text": "It is against the rules."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is encouraged."
+            },
+            {
+              "option": "B",
+              "text": "There are some restrictions."
+            },
+            {
+              "option": "C",
+              "text": "It is against the rules."
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is encouraged."
+            },
+            {
+              "option": "B",
+              "text": "There are some restrictions."
+            },
+            {
+              "option": "C",
+              "text": "It is against the rules."
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is encouraged."
+            },
+            {
+              "option": "B",
+              "text": "There are some restrictions."
+            },
+            {
+              "option": "C",
+              "text": "It is against the rules."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is encouraged."
+            },
+            {
+              "option": "B",
+              "text": "There are some restrictions."
+            },
+            {
+              "option": "C",
+              "text": "It is against the rules."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Cities built by the sea",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_132116_86215074.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "Carla and Rob were surprised to learn that coastal cities",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "contain nearly half the world's population."
+            },
+            {
+              "option": "B",
+              "text": "include most of the world's largest cities."
+            },
+            {
+              "option": "C",
+              "text": "are growing twice as fast as other cities."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "According to Rob, building coastal cities near to rivers",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "may bring pollution to the cities."
+            },
+            {
+              "option": "B",
+              "text": "may reduce the land available for agriculture."
+            },
+            {
+              "option": "C",
+              "text": "may mean the countryside is spoiled by industry."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "What mistake was made when building water drainage channels in Miami in the 1950s?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "There were not enough of them."
+            },
+            {
+              "option": "B",
+              "text": "They were made of unsuitable materials."
+            },
+            {
+              "option": "C",
+              "text": "They did not allow for the effects of climate change."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "What do Rob and Carla think that the authorities in Miami should do immediately?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "take measures to restore ecosystems"
+            },
+            {
+              "option": "B",
+              "text": "pay for a new flood prevention system"
+            },
+            {
+              "option": "C",
+              "text": "stop disposing of waste materials into the ocean"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What do they agree should be the priority for international action?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "greater coordination of activities"
+            },
+            {
+              "option": "B",
+              "text": "more sharing of information"
+            },
+            {
+              "option": "C",
+              "text": "agreement on shared policies"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What decision do the students make about each of the following parts of their presentation?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use visuals"
+            },
+            {
+              "option": "B",
+              "text": "keep it short"
+            },
+            {
+              "option": "C",
+              "text": "involve other students"
+            },
+            {
+              "option": "D",
+              "text": "check the information is accurate"
+            },
+            {
+              "option": "E",
+              "text": "provide a handout"
+            },
+            {
+              "option": "F",
+              "text": "focus on one example"
+            },
+            {
+              "option": "G",
+              "text": "do online research"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use visuals"
+            },
+            {
+              "option": "B",
+              "text": "keep it short"
+            },
+            {
+              "option": "C",
+              "text": "involve other students"
+            },
+            {
+              "option": "D",
+              "text": "check the information is accurate"
+            },
+            {
+              "option": "E",
+              "text": "provide a handout"
+            },
+            {
+              "option": "F",
+              "text": "focus on one example"
+            },
+            {
+              "option": "G",
+              "text": "do online research"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use visuals"
+            },
+            {
+              "option": "B",
+              "text": "keep it short"
+            },
+            {
+              "option": "C",
+              "text": "involve other students"
+            },
+            {
+              "option": "D",
+              "text": "check the information is accurate"
+            },
+            {
+              "option": "E",
+              "text": "provide a handout"
+            },
+            {
+              "option": "F",
+              "text": "focus on one example"
+            },
+            {
+              "option": "G",
+              "text": "do online research"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use visuals"
+            },
+            {
+              "option": "B",
+              "text": "keep it short"
+            },
+            {
+              "option": "C",
+              "text": "involve other students"
+            },
+            {
+              "option": "D",
+              "text": "check the information is accurate"
+            },
+            {
+              "option": "E",
+              "text": "provide a handout"
+            },
+            {
+              "option": "F",
+              "text": "focus on one example"
+            },
+            {
+              "option": "G",
+              "text": "do online research"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use visuals"
+            },
+            {
+              "option": "B",
+              "text": "keep it short"
+            },
+            {
+              "option": "C",
+              "text": "involve other students"
+            },
+            {
+              "option": "D",
+              "text": "check the information is accurate"
+            },
+            {
+              "option": "E",
+              "text": "provide a handout"
+            },
+            {
+              "option": "F",
+              "text": "focus on one example"
+            },
+            {
+              "option": "G",
+              "text": "do online research"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Marine Renewable Energy (Ocean Energy)",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_132116_86215074.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

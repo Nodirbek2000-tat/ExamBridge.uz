@@ -1,0 +1,83 @@
+{
+  "title": "A closer examination of a study on verbal and non-verbal messages",
+  "content": "A study of non-verbal communication carried out in 1967 continues to be widely quoted today. David Lapakko looks at limitations in the original study\n\nDescription of the Study\nThe findings of a study on verbal and non-verbal messages in communication by Albert Mehrabian and his colleagues at UCLA1 in 1967 have been quoted so frequently that they are now often regarded as a self-evident truth.\n\nIn the first experiment, subjects were asked to listen to a recording of a female saying the word 'maybe' in three tones of voice to convey liking, neutrality and disliking. The subjects were then shown photos of female faces expressing the same three emotions and were asked to guess the emotions in the recorded voice and the photos. It was found that the photos got more accurate responses than the voices. In the second experiment, subjects listened to nine recorded words spoken in different tones of voice. Three words had positive meanings (e.g. honey), three were neutral (e.g. oh) and three were negative (e.g. terrible). Again, the subjects had to guess the speaker's emotions. It was found that tone of voice carried more meaning than the individual words. From these experiments the researchers concluded that 7% of our feeling towards a speaker is based on the actual words they use, 38% on their tone of voice, and 55% on their body language (e.g. facial expression).\n\nMethodological Issues\nHowever, a closer look at the study reveals several limitations. The first is that the entire study involved only 62 subjects. Of these, 25 were used to select the word for the first experiment, while the key issue comparing verbal and non-verbal communication - was determined by only the 37 remaining subjects. All were female undergraduates who participated as part of their introductory psychology course, and their ages and academic qualifications seem remarkably uniform. Thus, the findings may simply be a product of the nature of the sample.\n\nCritics have also pointed out that the 7-38-55 formula is flawed since it was pieced together from two different experiments, neither of which involved all three channels (verbal, vocal, and facial). In addition, in the first experiment the single word maybe was used throughout so it was impossible for the effects of changes in verbal input to be assessed. The researchers intentionally used a 'neutral' word so naturally the subjects found little meaning there. Clearly, such a methodology lacks validity. In the real world, people communicate in a particular context and speak in phrases and full-blown sentences, making extensive use of the multi-faceted vehicle of language.\n\nMy concern is that interpretations of this study have gained such prominence in our pedagogical literature. This 7-38-55 formula appears in many basic texts, used for training in public speaking, interpersonal communication and organizational communication.\n\nLessons to consider\nClearly, one appealing aspect of the Mehrabian study is its numerical precision. Communication is a complex phenomenon, but it seems less so when we can rely on these three magical numbers. In contrast to the ambiguities of language, numbers seem to possess exactness. And the popular appeal of the study has given the 7-38-55 formula enormous credibility. There is a certain mystique about non-verbal communication, and the continued references to this research sustain it, encouraging people to believe in the overwhelming importance of the non-verbal message compared with the verbal one. Yet we know that even one ill-chosen word to a colleague or friend can make or break a communicative effort. Words do matter. Bradley (1991), one of the few textbook writers to criticize the Mehrabian study, makes the same point when he observes, 'If we could communicate 93% of information and attitudes with vocal and facial cues, it would be wasteful to spend time learning a language'.\n\nMehrabian himself believes his research should not be interpreted to devalue the role of language in communication, saying:\n\nPlease remember that all my findings... dealt with communications of feelings and attitudes... it is absurd to imply or suggest that the verbal portion of all communication constitutes only 7% of the message... anytime we communicate abstract relationships (e.g., x = y the square of z) clearly 100% of the entire communication is verbal. (Mehrabian, 1995)\n\nConclusion\nTo be fair, many textbook writers attempt to be faithful to the context of Mehrabian's research. For example, Stewart and D'Angelo (1988) write: 'Mehrabian argues that when we're uncertain about what someone's feeling, or about how much we like him or her, we rely...only 7% on the words that are spoken'. Others try to play down the specific percentages, saying that an understanding of the general importance of non-verbal cues is more important. Nonetheless, other textbook authors simply use the numbers without placing any limits on their meaning.\n\nSince this relatively small study was first published it has achieved an influence far beyond its intended scope. We need to put it into its proper perspective and learn some important lessons from it regarding social science research, communication pedagogy, and the forces which have created widespread misunderstanding about communication.",
+  "passage_number": 3,
+  "difficulty": "HARD",
+  "time_limit": 20,
+  "is_standalone": true,
+  "is_premium": false,
+  "questions": [
+    {
+      "number": 27,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "“–an influential study comparing the effects of verbal and non-verbal communication–”\n\n\t•\tThe study measured how verbal and non-verbal communication influenced perception, so “effects” fits perfectly.\n\t•\tOther options like “purposes” or “characteristics” are not what’s being compared.",
+      "group_instruction": "<p><strong>Complete the summary using the list of words and phrases below.</strong></p><p><strong><em>Drag and drop </em></strong><em>the correct words into the gaps.</em></p><p><br></p>"
+    },
+    {
+      "number": 28,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "“–subjects had to identify the feelings being communicated–”\n\n\t•\tThis is stated explicitly in the explanation: “the subjects had to guess the speaker’s emotions.”\n\t•\t“Feelings” is a direct synonym for “emotions.”",
+      "group_instruction": ""
+    },
+    {
+      "number": 29,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "“–The two main areas focused on in the first experiment were voice tones and facial expressions–”\n\n\t•\tClearly supported in the original paragraph describing the first experiment (voices + photos).",
+      "group_instruction": ""
+    },
+    {
+      "number": 30,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "“–while the second focused mainly on voice tones and word meanings.”\n\n\t•\tThe second experiment used 9 words with positive, neutral, and negative meanings, so this is the only accurate fit.",
+      "group_instruction": ""
+    },
+    {
+      "number": 35,
+      "question_type": "YNNG",
+      "content": "The study would have been more valid if it had included a range of languages.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation: Nowhere in the passage does it suggest that using more languages would have improved validity. The criticisms focus on sample size, gender, verbal channel limitations, etc. No mention of multilingualism.",
+      "group_instruction": "<h3><strong>Do the following statements agree with the views of the writer in Reading Passage 3?</strong>&nbsp;</h3><p><strong><em>YES</em></strong><em> -&nbsp;if the statement agrees with the information given in the text</em></p><p><strong><em>NO</em></strong><em> -&nbsp;if the statement contradicts the information</em></p><p><strong><em>NOT GIVEN</em></strong><em>&nbsp;- if there is no information on this.</em></p>"
+    },
+    {
+      "number": 33,
+      "question_type": "YNNG",
+      "content": "The two experiments should have been carried out in a different order.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation: No comment is made about the order of the experiments – whether it was right or wrong, better or worse – this idea is never mentioned.",
+      "group_instruction": ""
+    },
+    {
+      "number": 31,
+      "question_type": "YNNG",
+      "content": "One limitation of the study was that there were too few subjects involved.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Methodological Issues section):\n\n“The first is that the entire study involved only 62 subjects– the key issue– was determined by only the 37 remaining subjects.”\n\nThis clearly criticizes the small sample size as a limitation, so the statement is directly supported.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“too few subjects” ࢒ “only 62 subjects– only 37 remaining”\n“limitation” ࢒ “the first [issue]”",
+      "group_instruction": ""
+    },
+    {
+      "number": 32,
+      "question_type": "YNNG",
+      "content": "The fact that the subjects in the study came from a similar background was an advantage.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Methodological Issues section):\n\n“–their ages and academic qualifications seem remarkably uniform. Thus, the findings may simply be a product of the nature of the sample.”\n\nThis criticizes the lack of diversity – it’s considered a problem, not an advantage. So this statement is the opposite of the text.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“came from a similar background” ࢒ “remarkably uniform”\n“was an advantage” ࣔ “may be a product of the nature of the sample” (i.e., a limitation)",
+      "group_instruction": ""
+    },
+    {
+      "number": 34,
+      "question_type": "YNNG",
+      "content": "The researchers' choice of a neutral word was helpful in the context of the study.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Methodological Issues section):\n\n“The researchers intentionally used a ‘neutral’ word so naturally the subjects found little meaning there. Clearly, such a methodology lacks validity.”\n\nThis criticizes the use of a neutral word as a flaw, not a helpful choice. The word choice made it hard to assess verbal impact, thus weakening the study.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“helpful” ࣔ “lacks validity”\n“choice of a neutral word” ࢒ “used a ‘neutral’ word– found little meaning”",
+      "group_instruction": ""
+    }
+  ]
+}

@@ -1,0 +1,826 @@
+{
+  "title": "Cambridge 14_Test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_171252_4e1a5f81.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Enquiry about booking hotel room",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_171252_4e1a5f81.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><span class=\"ql-cursor\">\\feff</span>What is said about using each of the following hotel facilities?</p><p>Choose the correct letter,&nbsp;<strong>A-C</strong>, next to Questions&nbsp;8-10.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "included in cost of hiring room"
+            },
+            {
+              "option": "B",
+              "text": "available at extra charge"
+            },
+            {
+              "option": "C",
+              "text": "not available"
+            }
+          ]
+        },
+        {
+          "number": 9,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "included in cost of hiring room"
+            },
+            {
+              "option": "B",
+              "text": "available at extra charge"
+            },
+            {
+              "option": "C",
+              "text": "not available"
+            }
+          ]
+        },
+        {
+          "number": 10,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "included in cost of hiring room"
+            },
+            {
+              "option": "B",
+              "text": "available at extra charge"
+            },
+            {
+              "option": "C",
+              "text": "not available"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "An Overview of Activities and Entertainment at the Hotel",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_171252_4e1a5f81.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 12,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What information does the speaker give about each of the following excursions?</p><p>Choose the correct letter,&nbsp;<strong>A-H</strong>, next to Questions&nbsp;11-16.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all downhill"
+            },
+            {
+              "option": "B",
+              "text": "suitable for beginners"
+            },
+            {
+              "option": "C",
+              "text": "only in good weather"
+            },
+            {
+              "option": "D",
+              "text": "food included"
+            },
+            {
+              "option": "E",
+              "text": "no charge"
+            },
+            {
+              "option": "F",
+              "text": "swimming possible"
+            },
+            {
+              "option": "G",
+              "text": "fully booked today"
+            },
+            {
+              "option": "H",
+              "text": "transport not included"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all downhill"
+            },
+            {
+              "option": "B",
+              "text": "suitable for beginners"
+            },
+            {
+              "option": "C",
+              "text": "only in good weather"
+            },
+            {
+              "option": "D",
+              "text": "food included"
+            },
+            {
+              "option": "E",
+              "text": "no charge"
+            },
+            {
+              "option": "F",
+              "text": "swimming possible"
+            },
+            {
+              "option": "G",
+              "text": "fully booked today"
+            },
+            {
+              "option": "H",
+              "text": "transport not included"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all downhill"
+            },
+            {
+              "option": "B",
+              "text": "suitable for beginners"
+            },
+            {
+              "option": "C",
+              "text": "only in good weather"
+            },
+            {
+              "option": "D",
+              "text": "food included"
+            },
+            {
+              "option": "E",
+              "text": "no charge"
+            },
+            {
+              "option": "F",
+              "text": "swimming possible"
+            },
+            {
+              "option": "G",
+              "text": "fully booked today"
+            },
+            {
+              "option": "H",
+              "text": "transport not included"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all downhill"
+            },
+            {
+              "option": "B",
+              "text": "suitable for beginners"
+            },
+            {
+              "option": "C",
+              "text": "only in good weather"
+            },
+            {
+              "option": "D",
+              "text": "food included"
+            },
+            {
+              "option": "E",
+              "text": "no charge"
+            },
+            {
+              "option": "F",
+              "text": "swimming possible"
+            },
+            {
+              "option": "G",
+              "text": "fully booked today"
+            },
+            {
+              "option": "H",
+              "text": "transport not included"
+            }
+          ]
+        },
+        {
+          "number": 11,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all downhill"
+            },
+            {
+              "option": "B",
+              "text": "suitable for beginners"
+            },
+            {
+              "option": "C",
+              "text": "only in good weather"
+            },
+            {
+              "option": "D",
+              "text": "food included"
+            },
+            {
+              "option": "E",
+              "text": "no charge"
+            },
+            {
+              "option": "F",
+              "text": "swimming possible"
+            },
+            {
+              "option": "G",
+              "text": "fully booked today"
+            },
+            {
+              "option": "H",
+              "text": "transport not included"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all downhill"
+            },
+            {
+              "option": "B",
+              "text": "suitable for beginners"
+            },
+            {
+              "option": "C",
+              "text": "only in good weather"
+            },
+            {
+              "option": "D",
+              "text": "food included"
+            },
+            {
+              "option": "E",
+              "text": "no charge"
+            },
+            {
+              "option": "F",
+              "text": "swimming possible"
+            },
+            {
+              "option": "G",
+              "text": "fully booked today"
+            },
+            {
+              "option": "H",
+              "text": "transport not included"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "A Discussion about a Literature for Children Course and Related Books",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_171252_4e1a5f81.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What does Trevor find interesting about the purpose of children's literature?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><strong>Questions 21-25</strong></p><p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the fact that authors may not realise what values they're teaching\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "the fact that literature can be entertaining and educational at the same time\\000a"
+            },
+            {
+              "option": "C",
+              "text": "the fact that adults expect children to imitate characters in literature"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Stephanie is interested in the Pictures module because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "she intends to become an illustrator."
+            },
+            {
+              "option": "B",
+              "text": "she can remember beautiful illustrations from her childhood."
+            },
+            {
+              "option": "C",
+              "text": "she believes illustrations are more important than words."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Trevor and Stephanie agree that comics",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "are inferior to books."
+            },
+            {
+              "option": "B",
+              "text": "have the potential for being useful."
+            },
+            {
+              "option": "C",
+              "text": "discourage children from using their imagination"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "With regard to books aimed at only boys or only girls, Trevor was surprised",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "how long the distinction had gone unquestioned."
+            },
+            {
+              "option": "B",
+              "text": "how few books were aimed at both girls and boys."
+            },
+            {
+              "option": "C",
+              "text": "how many children enjoyed books intended for the opposite sex."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Trevor says the module about the purpose of children's literature made him",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "analyse some of the stories that his niece reads."
+            },
+            {
+              "option": "B",
+              "text": "wonder how far popularity reflects good quality."
+            },
+            {
+              "option": "C",
+              "text": "decide to start writing some children's stories."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><strong>Questions 26-30</strong></p><p>What comment is made about each of these stories?</p><p>Choose the correct letter,&nbsp;<strong>A-G</strong>, next to Questions&nbsp;26-30.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "translated into many other languages"
+            },
+            {
+              "option": "B",
+              "text": "hard to read"
+            },
+            {
+              "option": "C",
+              "text": "inspired a work in a different area of art"
+            },
+            {
+              "option": "D",
+              "text": "more popular than the author's other works"
+            },
+            {
+              "option": "E",
+              "text": "original title refers to another book"
+            },
+            {
+              "option": "F",
+              "text": "started a new genre"
+            },
+            {
+              "option": "G",
+              "text": "unlikely topic"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "translated into many other languages"
+            },
+            {
+              "option": "B",
+              "text": "hard to read"
+            },
+            {
+              "option": "C",
+              "text": "inspired a work in a different area of art"
+            },
+            {
+              "option": "D",
+              "text": "more popular than the author's other works"
+            },
+            {
+              "option": "E",
+              "text": "original title refers to another book"
+            },
+            {
+              "option": "F",
+              "text": "started a new genre"
+            },
+            {
+              "option": "G",
+              "text": "unlikely topic"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "translated into many other languages"
+            },
+            {
+              "option": "B",
+              "text": "hard to read"
+            },
+            {
+              "option": "C",
+              "text": "inspired a work in a different area of art"
+            },
+            {
+              "option": "D",
+              "text": "more popular than the author's other works"
+            },
+            {
+              "option": "E",
+              "text": "original title refers to another book"
+            },
+            {
+              "option": "F",
+              "text": "started a new genre"
+            },
+            {
+              "option": "G",
+              "text": "unlikely topic"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "translated into many other languages"
+            },
+            {
+              "option": "B",
+              "text": "hard to read"
+            },
+            {
+              "option": "C",
+              "text": "inspired a work in a different area of art"
+            },
+            {
+              "option": "D",
+              "text": "more popular than the author's other works"
+            },
+            {
+              "option": "E",
+              "text": "original title refers to another book"
+            },
+            {
+              "option": "F",
+              "text": "started a new genre"
+            },
+            {
+              "option": "G",
+              "text": "unlikely topic"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "translated into many other languages"
+            },
+            {
+              "option": "B",
+              "text": "hard to read"
+            },
+            {
+              "option": "C",
+              "text": "inspired a work in a different area of art"
+            },
+            {
+              "option": "D",
+              "text": "more popular than the author's other works"
+            },
+            {
+              "option": "E",
+              "text": "original title refers to another book"
+            },
+            {
+              "option": "F",
+              "text": "started a new genre"
+            },
+            {
+              "option": "G",
+              "text": "unlikely topic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Hunt for sunken settlements",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_171252_4e1a5f81.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><strong>Questions 31-40</strong></p><p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

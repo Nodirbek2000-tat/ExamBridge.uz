@@ -1,0 +1,636 @@
+{
+  "title": "Cambridge 18_Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_180517_75d82cb4.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Transport Survey",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_180517_75d82cb4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Becoming a volunteer for ACE",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_180517_75d82cb4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Why does the speaker apologise about the seats?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>\\feffChoose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They are too small."
+            },
+            {
+              "option": "B",
+              "text": "There are not enough of them"
+            },
+            {
+              "option": "C",
+              "text": "Some of them are very close together."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What does the speaker say about the age of volunteers?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The age of volunteers is less important than other"
+            },
+            {
+              "option": "B",
+              "text": "Young volunteers are less reliable than older ones."
+            },
+            {
+              "option": "C",
+              "text": "Most volunteers are about 60 years old."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "What does the speaker say about training?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is continuous."
+            },
+            {
+              "option": "B",
+              "text": "It is conducted by a manager."
+            },
+            {
+              "option": "C",
+              "text": "It takes place online."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 15,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What does the speaker suggest would be helpful for each of the following areas of voluntary work?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "experience on stage"
+            },
+            {
+              "option": "B",
+              "text": "original, new ideas"
+            },
+            {
+              "option": "C",
+              "text": "parenting skills"
+            },
+            {
+              "option": "D",
+              "text": "an understanding of food and diet"
+            },
+            {
+              "option": "E",
+              "text": "retail experience"
+            },
+            {
+              "option": "F",
+              "text": "a good memory"
+            },
+            {
+              "option": "G",
+              "text": "a good level of fitness"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "experience on stage"
+            },
+            {
+              "option": "B",
+              "text": "original, new ideas"
+            },
+            {
+              "option": "C",
+              "text": "parenting skills"
+            },
+            {
+              "option": "D",
+              "text": "an understanding of food and diet"
+            },
+            {
+              "option": "E",
+              "text": "retail experience"
+            },
+            {
+              "option": "F",
+              "text": "a good memory"
+            },
+            {
+              "option": "G",
+              "text": "a good level of fitness"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "experience on stage"
+            },
+            {
+              "option": "B",
+              "text": "original, new ideas"
+            },
+            {
+              "option": "C",
+              "text": "parenting skills"
+            },
+            {
+              "option": "D",
+              "text": "an understanding of food and diet"
+            },
+            {
+              "option": "E",
+              "text": "retail experience"
+            },
+            {
+              "option": "F",
+              "text": "a good memory"
+            },
+            {
+              "option": "G",
+              "text": "a good level of fitness"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "experience on stage"
+            },
+            {
+              "option": "B",
+              "text": "original, new ideas"
+            },
+            {
+              "option": "C",
+              "text": "parenting skills"
+            },
+            {
+              "option": "D",
+              "text": "an understanding of food and diet"
+            },
+            {
+              "option": "E",
+              "text": "retail experience"
+            },
+            {
+              "option": "F",
+              "text": "a good memory"
+            },
+            {
+              "option": "G",
+              "text": "a good level of fitness"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "experience on stage"
+            },
+            {
+              "option": "B",
+              "text": "original, new ideas"
+            },
+            {
+              "option": "C",
+              "text": "parenting skills"
+            },
+            {
+              "option": "D",
+              "text": "an understanding of food and diet"
+            },
+            {
+              "option": "E",
+              "text": "retail experience"
+            },
+            {
+              "option": "F",
+              "text": "a good memory"
+            },
+            {
+              "option": "G",
+              "text": "a good level of fitness"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Talk on jobs in fashion design",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_180517_75d82cb4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What problem did Chantal have at the start of the talk?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the  correct letter <strong>A,B or C. </strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Her view of the speaker was blocked."
+            },
+            {
+              "option": "B",
+              "text": "She was unable to find an empty seat."
+            },
+            {
+              "option": "C",
+              "text": "The students next to her were talking."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "What were Hugo and Chantal surprised to hear about the job market?  A.",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It has become more competitive than it used to be"
+            },
+            {
+              "option": "B",
+              "text": "There is more variety in it than they had realised"
+            },
+            {
+              "option": "C",
+              "text": "Some areas of it are more exciting than others"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Hugo and Chantal agree that the speaker's message was",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "unfair to them at times."
+            },
+            {
+              "option": "B",
+              "text": "hard for them to follow."
+            },
+            {
+              "option": "C",
+              "text": "critical of the industry."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "What do Hugo and Chantal criticise about their school careers advice?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "when they received the advice"
+            },
+            {
+              "option": "B",
+              "text": "how much advice was given"
+            },
+            {
+              "option": "C",
+              "text": "who gave the advice"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "How does Hugo feel about being an unpaid assistant?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "He is realistic about the practice."
+            },
+            {
+              "option": "B",
+              "text": "He feels the practice is dishonest."
+            },
+            {
+              "option": "C",
+              "text": "He thinks others want to change the practice."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "When discussing their future, Hugo and Chantal disagree on",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "which is the best career in fashion."
+            },
+            {
+              "option": "B",
+              "text": "when to choose a career in fashion."
+            },
+            {
+              "option": "C",
+              "text": "why they would like a career in fashion."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Elephant Translocation",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_180517_75d82cb4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

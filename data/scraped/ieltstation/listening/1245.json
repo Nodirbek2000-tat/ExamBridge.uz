@@ -1,0 +1,664 @@
+{
+  "title": "Cambridge 13_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_104306_e2fd839f.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "South City Cycling Club",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_104306_e2fd839f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Company Volunteering Projects",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_104306_e2fd839f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "How much time for volunteering does the company allow per employee?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "two hours per week"
+            },
+            {
+              "option": "B",
+              "text": "one day per month"
+            },
+            {
+              "option": "C",
+              "text": "8 hours per year"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "In feedback almost all employees said that volunteering improved their",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "chances of promotion"
+            },
+            {
+              "option": "B",
+              "text": "job satisfaction"
+            },
+            {
+              "option": "C",
+              "text": "relationships with colleagues"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Last year some staff helped unemployed people with their",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "literacy skills"
+            },
+            {
+              "option": "B",
+              "text": "job applications"
+            },
+            {
+              "option": "C",
+              "text": "communication skills"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "This year the company will start a new volunteering project with a local",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "school"
+            },
+            {
+              "option": "B",
+              "text": "park"
+            },
+            {
+              "option": "C",
+              "text": "charity"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "Where will the Digital Inclusion Day be held?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "at the company's training facility"
+            },
+            {
+              "option": "B",
+              "text": "at a college"
+            },
+            {
+              "option": "C",
+              "text": "in a community centre"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "What should staff do if they want to take part in the Digital Inclusion Day?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "fill in a form"
+            },
+            {
+              "option": "B",
+              "text": "fill in a form"
+            },
+            {
+              "option": "C",
+              "text": "get permission from their manager"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Presentation on Nanotechnology",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_104306_e2fd839f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "Russ says that his difficulty in planning the presentation is due to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "his lack of knowledge about the topic"
+            },
+            {
+              "option": "B",
+              "text": "his uncertainty about what he should try to achieve."
+            },
+            {
+              "option": "C",
+              "text": "the short time that he has for preparation."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Russ and his tutor agree that his approach in the presentation will be",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to concentrate on how nanotechnology is used in one field."
+            },
+            {
+              "option": "B",
+              "text": "to follow the chronological development of nanotechnology."
+            },
+            {
+              "option": "C",
+              "text": "to show the range of applications of nanotechnology."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "In connection with slides, the tutor advises Russ to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "talk about things that he can find slides to illustrate."
+            },
+            {
+              "option": "B",
+              "text": "look for slides to illustrate the points he makes."
+            },
+            {
+              "option": "C",
+              "text": "consider omitting slides altogether."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "They both agree that the best way for Russ to start his presentation is",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to encourage the audience to talk."
+            },
+            {
+              "option": "B",
+              "text": "to explain what Russ intends to do."
+            },
+            {
+              "option": "C",
+              "text": "to provide an example."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What does the tutor advise Russ to do next while preparing his presentation?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "summarise the main point he wants to make"
+            },
+            {
+              "option": "B",
+              "text": "read the notes he has already made"
+            },
+            {
+              "option": "C",
+              "text": "list the topics he wants to cover"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What comments do the speakers make about each of the following aspects of Russ's previous presentation?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "lacked a conclusion"
+            },
+            {
+              "option": "B",
+              "text": "useful in the future"
+            },
+            {
+              "option": "C",
+              "text": "not enough"
+            },
+            {
+              "option": "D",
+              "text": "sometimes distracting"
+            },
+            {
+              "option": "E",
+              "text": "showed originality"
+            },
+            {
+              "option": "F",
+              "text": "covered a wide range"
+            },
+            {
+              "option": "G",
+              "text": "not too technical"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "lacked a conclusion"
+            },
+            {
+              "option": "B",
+              "text": "useful in the future"
+            },
+            {
+              "option": "C",
+              "text": "not enough"
+            },
+            {
+              "option": "D",
+              "text": "sometimes distracting"
+            },
+            {
+              "option": "E",
+              "text": "showed originality"
+            },
+            {
+              "option": "F",
+              "text": "covered a wide range"
+            },
+            {
+              "option": "G",
+              "text": "not too technical"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "lacked a conclusion"
+            },
+            {
+              "option": "B",
+              "text": "useful in the future"
+            },
+            {
+              "option": "C",
+              "text": "not enough"
+            },
+            {
+              "option": "D",
+              "text": "sometimes distracting"
+            },
+            {
+              "option": "E",
+              "text": "showed originality"
+            },
+            {
+              "option": "F",
+              "text": "covered a wide range"
+            },
+            {
+              "option": "G",
+              "text": "not too technical"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "lacked a conclusion"
+            },
+            {
+              "option": "B",
+              "text": "useful in the future"
+            },
+            {
+              "option": "C",
+              "text": "not enough"
+            },
+            {
+              "option": "D",
+              "text": "sometimes distracting"
+            },
+            {
+              "option": "E",
+              "text": "showed originality"
+            },
+            {
+              "option": "F",
+              "text": "covered a wide range"
+            },
+            {
+              "option": "G",
+              "text": "not too technical"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "lacked a conclusion"
+            },
+            {
+              "option": "B",
+              "text": "useful in the future"
+            },
+            {
+              "option": "C",
+              "text": "not enough"
+            },
+            {
+              "option": "D",
+              "text": "sometimes distracting"
+            },
+            {
+              "option": "E",
+              "text": "showed originality"
+            },
+            {
+              "option": "F",
+              "text": "covered a wide range"
+            },
+            {
+              "option": "G",
+              "text": "not too technical"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Episodic Memory",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_104306_e2fd839f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

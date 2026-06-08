@@ -1,0 +1,117 @@
+{
+  "title": "What makes a musical expert?",
+  "content": "How does someone become expert in music? And is it really possible to have a ‘talent’ for music?\n\nDoes that class of people acknowledged to be musical experts just have more of the same basic skills we are all endowed with, or do they have a set of abilities – or neural structures – that are totally different from those of the rest of us? Are high levels of musical achievement simply the result of training and practice, or are they based on innate brain structure – what we refer to as ‘talent’? Talent can be defined as something that originates in genetic structures and that is identifiable by trained people who can recognise its existence before a person has achieved exceptional levels of performance. The emphasis on early identification means that to investigate it, we study the development of skills in children.\n\nIt is evident that some children acquire skills more rapidly than others: the age of onset for walking and talking varies widely, even between children in the same household. There may be genetic factors at work, but these are closely linked with other factors – with a presumably environmental component – such as motivation and family dynamics. Similar factors can influence musical development and can mask the contribution of genetics to musical ability.\n\nBrain studies, so far, haven’t been of much use in sorting out the issues. Gottfried Schlaug at Harvard collected brain scans of individuals with absolute pitch (‘AP’) and showed that a region in the brain called the planum temporale is larger in these people than in others. This suggests that the planum is involved in AP, but it’s not clear if it starts out larger in people who eventually acquire AP, or if the acquisition of AP makes the planum increase in size.\n\nResults of research into those areas of the brain involved in skilled motor movement are more conclusive. Studies of violin players have shown that the region of the brain responsible for controlling the movement of the left hand (the hand that requires greater precision in violin playing) increases in size as a result of practice. We do not know yet if the propensity for increase pre-exists in some people, or not.\n\nThe evidence against talent comes from research on how much training the experts do. Like experts in mathematics, chess, or sports, experts in music require lengthy periods of instruction and practice. In several studies, the very best music students practiced two to three times as much as others. In another study, students were secretly divided into two groups based on the teachers’ perceptions of their talent, and they were given more challenging tasks and more opportunities; the highest performance ratings had far more to do with the extra instruction they had been assigned to, suggesting that practice does not merely correlate with achievement, but causes it.\n\nAnders Ericsson, at Florida State University, approaches the topic of musical expertise as a general problem in cognitive psychology. He takes as a starting point the assumption that there are certain issues involved in becoming an expert at anything; that we can learn about musical expertise by studying expert chess players, athletes, artists, mathematicians, as well as the musicians themselves. The emerging picture from such studies is that ten thousand hours of practice is required to achieve the level of mastery associated with being a world-class expert – in anything. In study after study, of composers, ice skaters, concert pianists, chess players and master criminals, this number comes up again and again. Someone would do this amount of practice if they practiced, for example, roughly 20 hours a week for ten years. Of course, this does not address why some people do not seem to get anywhere when they practice, and why some people get more out of their practice sessions than others. But no-one has yet found a case in which true world-class expertise was accomplished in less time. It seems that it takes the brain this long to assimilate all that it needs to know to achieve true mastery.\n\nThe ten-thousand-hour theory is consistent with what we know about how the brain learns. Learning requires the assimilation and consolidation of information in neural tissue. The more experiences we have with something, the stronger the memory/learning trace for that information becomes. Although people differ in how long it takes them to consolidate information neurally, it remains true that increased practice leads to a greater number of neural traces, which create stronger memory representation.\n\nThe classic rebuttal to this theory goes something like this: ‘What about Mozart? I hear that he composed his first symphony at the age of four!’ First, there is a factual error here: Mozart did not write it until he was eight. Still, this is unusual, to say the least. However, this early work received little acclaim and was not performed very often. In fact, the only reason we know about it is because the child who wrote it grew up to become Mozart. And Mozart had an expert teacher in his father, who was renowned as a teacher of musicians all over Europe. We do not know how much Mozart practiced, but if he started at age two and worked thirty-two hours a week (quite possible, given that his father was a stern taskmaster) he would have made his ten thousand hours by the time he composed his first symphony. This does not mean that there are no genetic factors involved in Mozart’s greatness, but that inborn traits may not be the only cause.",
+  "passage_number": 3,
+  "difficulty": "HARD",
+  "time_limit": 20,
+  "is_standalone": true,
+  "is_premium": false,
+  "questions": [
+    {
+      "number": 27,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": "D",
+      "explanation": "",
+      "group_instruction": "<p>Choose the correct answer.</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Who is aware of being set apart from other people"
+        },
+        {
+          "option": "B",
+          "text": "Whose brain structure is unlike that of other people"
+        },
+        {
+          "option": "C",
+          "text": "Who can perform extremely well in early childhood"
+        },
+        {
+          "option": "D",
+          "text": "Whose essential skills are more varied that those of ordinary people"
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "question_type": "YNNG",
+      "content": "Different areas of expertise seem to have one specific thing in common.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose <strong>YES</strong> if the statement agrees with the information given in the text, choose <strong>NO</strong> if the statement contradicts the information, or choose <strong>NOT GIVEN</strong> if there is no information on this.</p>"
+    },
+    {
+      "number": 33,
+      "question_type": "YNNG",
+      "content": "In order to be useful, practice must be carried out regularly every day.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 34,
+      "question_type": "YNNG",
+      "content": "Anyone who practices for long enough can reach the level of a world-class expert.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 36,
+      "question_type": "YNNG",
+      "content": "Existing knowledge of learning and cognitive skills supports the importance of practice.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 31,
+      "question_type": "YNNG",
+      "content": "Anders Ericsson’s work with cognitive psychology has influenced other researchers.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 35,
+      "question_type": "YNNG",
+      "content": "Occasionally, someone can become an expert at global level with fewer than 10,000 hours’ practice.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 37,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Complete the summary using the list of words. Choose the correct answer and move it into the gap.</p>"
+    },
+    {
+      "number": 38,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 39,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 40,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    }
+  ]
+}

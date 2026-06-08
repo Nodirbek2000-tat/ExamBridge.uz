@@ -1,0 +1,514 @@
+{
+  "title": "CAMBRIDGE 7 TEST 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043514_ecc3dbf9.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Insurance Enquiry for a Car",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043514_ecc3dbf9.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Transport and Attractions in the City",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043514_ecc3dbf9.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Label the map below.</p><p>Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 14,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 16,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "How often do the Top Bus Company tours run?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Answer the questions below. Write&nbsp;<strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "Where can you catch a Number One Sightseeing Tour from?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "The Antarctic Centre and the Antarctic Treaty",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043514_ecc3dbf9.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "The Antarctic Centre was established in Christchurch because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "New Zealand is a member of the Antarctic Treaty.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "Christchurch is geographically well positioned."
+            },
+            {
+              "option": "C",
+              "text": "the climate of Christchurch is suitable."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "One role of the Antarctic Centre is to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "provide expeditions with suitable equipment.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "provide researchers with financial assistance.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "ensure that research is internationally relevant."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "The purpose of the Visitors' Centre is to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "provide accommodation.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "run training sessions.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "show people what Antarctica is like."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "Dr Merrywhether thinks Antarctica was part of another continent because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "he has done his own research in the area.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "there is geological evidence of this.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "it is very close to South America."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Dr Merrywhether says that Antarctica is",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "unlike any other country.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "extremely beautiful.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "too cold for tourists."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "According to Dr Merrywhether, Antarctica is very cold because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "of the shape of the continent.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "it is surrounded by a frozen sea.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "it is an extremely dry continent."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR TWO NUMBERS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 28,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E.</strong></p>"
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Handedness in Different Sports",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043514_ecc3dbf9.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MCQ",
+          "content": "Anita first felt the Matthews article was of value when she realised",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "how it would help her difficulties with left-handedness"
+            },
+            {
+              "option": "B",
+              "text": "the relevance of connections he made with music"
+            },
+            {
+              "option": "C",
+              "text": "the impressive size of his research project"
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MCQ",
+          "content": "Anita feels that the findings on handedness will be of value in",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "helping sportspeople identify their weaknesses"
+            },
+            {
+              "option": "B",
+              "text": "aiding sportspeople as they plan tactics for each game"
+            },
+            {
+              "option": "C",
+              "text": "developing suitable training programmes for sportspeople"
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "MCQ",
+          "content": "Anita feels that most sports coaches",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "know nothing about the influence of handedness."
+            },
+            {
+              "option": "B",
+              "text": "focus on the wrong aspects of performance."
+            },
+            {
+              "option": "C",
+              "text": "underestimate what science has to offer sport."
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "question_type": "MCQ",
+          "content": "A German study showed there was greater 'mixed handedness' in musicians who",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "started playing instruments in early youth"
+            },
+            {
+              "option": "B",
+              "text": "play a string instrument such as the violin"
+            },
+            {
+              "option": "C",
+              "text": "practise a great deal on their instrument"
+            }
+          ]
+        },
+        {
+          "number": 35,
+          "question_type": "MCQ",
+          "content": "Studies on ape behaviour show that",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "apes which always use the same hand to get food are most successful"
+            },
+            {
+              "option": "B",
+              "text": "apes have the same proportion of left- and right-handers as humans"
+            },
+            {
+              "option": "C",
+              "text": "more apes are left-handed than right-handed"
+            }
+          ]
+        },
+        {
+          "number": 36,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 37,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

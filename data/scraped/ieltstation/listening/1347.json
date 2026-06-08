@@ -1,0 +1,702 @@
+{
+  "title": "CAMBRIDGE 8 TEST 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_040413_588d46bf.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Making an Insurance Claim for Damaged Shipment",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_040413_588d46bf.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Green Vale Agricultural Park Overview",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_040413_588d46bf.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "According to the speaker, the main purposes of the park are",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "education and entertainment"
+            },
+            {
+              "option": "B",
+              "text": "research and education."
+            },
+            {
+              "option": "C",
+              "text": "\\000aresearch and entertainment."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "When are the experimental areas closed to the public?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all the year round"
+            },
+            {
+              "option": "B",
+              "text": "almost all the year"
+            },
+            {
+              "option": "C",
+              "text": "a short time every year"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "How can you move around the park?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "by tram, walking or bicycle"
+            },
+            {
+              "option": "B",
+              "text": "by solar car or bicycle"
+            },
+            {
+              "option": "C",
+              "text": "by bicycle, walking or bus"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MCQ",
+          "content": "The rare breed animals kept in the park include",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "hens and horses"
+            },
+            {
+              "option": "B",
+              "text": "goats and cows."
+            },
+            {
+              "option": "C",
+              "text": "goats and hens."
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MCQ",
+          "content": "What is the main purpose of having the Rare Breeds Section?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to save unusual animals"
+            },
+            {
+              "option": "B",
+              "text": "to keep a variety of breeds"
+            },
+            {
+              "option": "C",
+              "text": "to educate the public"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MCQ",
+          "content": "What can you see in the park at the present time?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the arrival of wild birds"
+            },
+            {
+              "option": "B",
+              "text": "fruit tree blossom"
+            },
+            {
+              "option": "C",
+              "text": "a demonstration of fishing"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MCQ",
+          "content": "The shop contains books about",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "animals"
+            },
+            {
+              "option": "B",
+              "text": "local traditions"
+            },
+            {
+              "option": "C",
+              "text": "the history of the park"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Research on Preventing the Introduction of Asian Honey Bees to Australia",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_040413_588d46bf.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "Where in Australia have Asian honey bees been found in the past?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Queensland"
+            },
+            {
+              "option": "B",
+              "text": "New South Wales"
+            },
+            {
+              "option": "C",
+              "text": "several states"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "A problem with Asian honey bees is that they",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "attack native bees"
+            },
+            {
+              "option": "B",
+              "text": "carry parasites"
+            },
+            {
+              "option": "C",
+              "text": "damage crops."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "What point is made about Australian bees?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Their honey varies in quality"
+            },
+            {
+              "option": "B",
+              "text": "Their size stops them from pollinating some flowers"
+            },
+            {
+              "option": "C",
+              "text": "They are sold to customers abroad"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Grant Freeman says that if Asian honey bees got into Australia,",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the country's economy would be affected."
+            },
+            {
+              "option": "B",
+              "text": "they could be used in the study of allergies"
+            },
+            {
+              "option": "C",
+              "text": "certain areas of agriculture would benefit."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the summary below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Research on Public Perception of General Practitioners",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_040413_588d46bf.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MCQ",
+          "content": "In order to set up her research programme, Shona got",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "advice from personal friends in other countries."
+            },
+            {
+              "option": "B",
+              "text": "help from students in other countries."
+            },
+            {
+              "option": "C",
+              "text": "information from her tutor's contacts in other countries."
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MCQ",
+          "content": "What types of people were included in the research?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "young people in their first job"
+            },
+            {
+              "option": "B",
+              "text": "men who were working"
+            },
+            {
+              "option": "C",
+              "text": "women who were unemployed"
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "MCQ",
+          "content": "Shona says that in her questionnaire her aim was",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to get a wide range of data"
+            },
+            {
+              "option": "B",
+              "text": "to limit people's responses"
+            },
+            {
+              "option": "C",
+              "text": "to guide people through interviews"
+            }
+          ]
+        },
+        {
+          "number": 35,
+          "question_type": "MCQ",
+          "content": "Shona needs to do further research in order to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "present the government with her findings"
+            },
+            {
+              "option": "B",
+              "text": "decide the level of extra funding needed"
+            },
+            {
+              "option": "C",
+              "text": "identify the preferences of the public"
+            }
+          ]
+        },
+        {
+          "number": 36,
+          "question_type": "MCQ",
+          "content": "Shona has learnt from the research project that",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "it is important to plan projects carefully."
+            },
+            {
+              "option": "B",
+              "text": "people do not like answering questions."
+            },
+            {
+              "option": "C",
+              "text": "colleagues do not always agree."
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "question_type": "MCQ",
+          "content": "What do Shona's initial results show about medical services in Britain?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Current concerns are misrepresented by the press"
+            },
+            {
+              "option": "B",
+              "text": "Financial issues are critical to the government"
+            },
+            {
+              "option": "C",
+              "text": "Reforms within hospitals have been unsuccessful"
+            }
+          ]
+        },
+        {
+          "number": 37,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which statement applies to each of the following people who were interviewed by Shona?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "gave false data"
+            },
+            {
+              "option": "B",
+              "text": "decided to stop participating"
+            },
+            {
+              "option": "C",
+              "text": "refused to tell Shona about their job"
+            },
+            {
+              "option": "D",
+              "text": "kept changing their mind about participating"
+            },
+            {
+              "option": "E",
+              "text": "became very angry with Shona"
+            },
+            {
+              "option": "F",
+              "text": "was worried about confidentiality"
+            }
+          ]
+        },
+        {
+          "number": 38,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "gave false data"
+            },
+            {
+              "option": "B",
+              "text": "decided to stop participating"
+            },
+            {
+              "option": "C",
+              "text": "refused to tell Shona about their job"
+            },
+            {
+              "option": "D",
+              "text": "kept changing their mind about participating"
+            },
+            {
+              "option": "E",
+              "text": "became very angry with Shona"
+            },
+            {
+              "option": "F",
+              "text": "was worried about confidentiality"
+            }
+          ]
+        },
+        {
+          "number": 39,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "gave false data"
+            },
+            {
+              "option": "B",
+              "text": "decided to stop participating"
+            },
+            {
+              "option": "C",
+              "text": "refused to tell Shona about their job"
+            },
+            {
+              "option": "D",
+              "text": "kept changing their mind about participating"
+            },
+            {
+              "option": "E",
+              "text": "became very angry with Shona"
+            },
+            {
+              "option": "F",
+              "text": "was worried about confidentiality"
+            }
+          ]
+        },
+        {
+          "number": 40,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "gave false data"
+            },
+            {
+              "option": "B",
+              "text": "decided to stop participating"
+            },
+            {
+              "option": "C",
+              "text": "refused to tell Shona about their job"
+            },
+            {
+              "option": "D",
+              "text": "kept changing their mind about participating"
+            },
+            {
+              "option": "E",
+              "text": "became very angry with Shona"
+            },
+            {
+              "option": "F",
+              "text": "was worried about confidentiality"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

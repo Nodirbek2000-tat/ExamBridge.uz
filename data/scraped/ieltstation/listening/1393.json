@@ -1,0 +1,704 @@
+{
+  "title": "Cambridge 17_test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_114222_96d04553.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Easy Life Cleaning Services",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_114222_96d04553.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Hotel Management",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_114222_96d04553.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Many hotel managers are unaware that their staff often leave because of",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a lack of training."
+            },
+            {
+              "option": "B",
+              "text": "long hours.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "low pay."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What is the impact of high staff turnover on managers?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "an increased workload"
+            },
+            {
+              "option": "B",
+              "text": "low morale\\000a"
+            },
+            {
+              "option": "C",
+              "text": "an inability to meet targets"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "What mistake should managers always avoid?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "failing to treat staff equally"
+            },
+            {
+              "option": "B",
+              "text": "reorganising shifts without warning\\000a"
+            },
+            {
+              "option": "C",
+              "text": "neglecting to have enough staff during busy periods"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What unexpected benefit did Dunwich Hotel notice after improving staff retention rates?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a fall in customer complaints\\000a"
+            },
+            {
+              "option": "B",
+              "text": "an increase in loyalty club membership\\000a"
+            },
+            {
+              "option": "C",
+              "text": "a rise in spending per customer"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which way of reducing staff turnover was used in each of the following hotels?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "improving relationships and teamwork"
+            },
+            {
+              "option": "B",
+              "text": "offering incentives and financial benefits"
+            },
+            {
+              "option": "C",
+              "text": "providing career opportunities"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "improving relationships and teamwork"
+            },
+            {
+              "option": "B",
+              "text": "offering incentives and financial benefits"
+            },
+            {
+              "option": "C",
+              "text": "providing career opportunities"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "improving relationships and teamwork"
+            },
+            {
+              "option": "B",
+              "text": "offering incentives and financial benefits"
+            },
+            {
+              "option": "C",
+              "text": "providing career opportunities"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "improving relationships and teamwork"
+            },
+            {
+              "option": "B",
+              "text": "offering incentives and financial benefits"
+            },
+            {
+              "option": "C",
+              "text": "providing career opportunities"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "improving relationships and teamwork"
+            },
+            {
+              "option": "B",
+              "text": "offering incentives and financial benefits"
+            },
+            {
+              "option": "C",
+              "text": "providing career opportunities"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "improving relationships and teamwork"
+            },
+            {
+              "option": "B",
+              "text": "offering incentives and financial benefits"
+            },
+            {
+              "option": "C",
+              "text": "providing career opportunities"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Sporting Activities at School",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_114222_96d04553.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What comment do the students make about the development of each of the following items of sporting equipment?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It could cause excessive sweating."
+            },
+            {
+              "option": "B",
+              "text": "The material was being mass produced for another purpose."
+            },
+            {
+              "option": "C",
+              "text": "People often needed to make their own."
+            },
+            {
+              "option": "D",
+              "text": "It often had to be replaced."
+            },
+            {
+              "option": "E",
+              "text": "The material was expensive."
+            },
+            {
+              "option": "F",
+              "text": "It was unpopular among spectators."
+            },
+            {
+              "option": "G",
+              "text": "It caused injuries."
+            },
+            {
+              "option": "H",
+              "text": "No one using it liked it at first."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It could cause excessive sweating."
+            },
+            {
+              "option": "B",
+              "text": "The material was being mass produced for another purpose."
+            },
+            {
+              "option": "C",
+              "text": "People often needed to make their own."
+            },
+            {
+              "option": "D",
+              "text": "It often had to be replaced."
+            },
+            {
+              "option": "E",
+              "text": "The material was expensive."
+            },
+            {
+              "option": "F",
+              "text": "It was unpopular among spectators."
+            },
+            {
+              "option": "G",
+              "text": "It caused injuries."
+            },
+            {
+              "option": "H",
+              "text": "No one using it liked it at first."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It could cause excessive sweating."
+            },
+            {
+              "option": "B",
+              "text": "The material was being mass produced for another purpose."
+            },
+            {
+              "option": "C",
+              "text": "People often needed to make their own."
+            },
+            {
+              "option": "D",
+              "text": "It often had to be replaced."
+            },
+            {
+              "option": "E",
+              "text": "The material was expensive."
+            },
+            {
+              "option": "F",
+              "text": "It was unpopular among spectators."
+            },
+            {
+              "option": "G",
+              "text": "It caused injuries."
+            },
+            {
+              "option": "H",
+              "text": "No one using it liked it at first."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It could cause excessive sweating."
+            },
+            {
+              "option": "B",
+              "text": "The material was being mass produced for another purpose."
+            },
+            {
+              "option": "C",
+              "text": "People often needed to make their own."
+            },
+            {
+              "option": "D",
+              "text": "It often had to be replaced."
+            },
+            {
+              "option": "E",
+              "text": "The material was expensive."
+            },
+            {
+              "option": "F",
+              "text": "It was unpopular among spectators."
+            },
+            {
+              "option": "G",
+              "text": "It caused injuries."
+            },
+            {
+              "option": "H",
+              "text": "No one using it liked it at first."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It could cause excessive sweating."
+            },
+            {
+              "option": "B",
+              "text": "The material was being mass produced for another purpose."
+            },
+            {
+              "option": "C",
+              "text": "People often needed to make their own."
+            },
+            {
+              "option": "D",
+              "text": "It often had to be replaced."
+            },
+            {
+              "option": "E",
+              "text": "The material was expensive."
+            },
+            {
+              "option": "F",
+              "text": "It was unpopular among spectators."
+            },
+            {
+              "option": "G",
+              "text": "It caused injuries."
+            },
+            {
+              "option": "H",
+              "text": "No one using it liked it at first."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It could cause excessive sweating."
+            },
+            {
+              "option": "B",
+              "text": "The material was being mass produced for another purpose."
+            },
+            {
+              "option": "C",
+              "text": "People often needed to make their own."
+            },
+            {
+              "option": "D",
+              "text": "It often had to be replaced."
+            },
+            {
+              "option": "E",
+              "text": "The material was expensive."
+            },
+            {
+              "option": "F",
+              "text": "It was unpopular among spectators."
+            },
+            {
+              "option": "G",
+              "text": "It caused injuries."
+            },
+            {
+              "option": "H",
+              "text": "No one using it liked it at first."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Maple Syrup",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_114222_96d04553.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

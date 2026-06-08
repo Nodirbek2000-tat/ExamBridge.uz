@@ -1,0 +1,296 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "The History of Chocolate",
+    "content": "A \nChocolate is now perceived as a ubiquitous indulgence, whether consumed as confectionery or a beverage, readily accessible in global markets. However, it may come as a surprise that chocolate was once regarded as a commodity of extraordinary value. The discovery of the cocoa tree, the source of chocolate, occurred approximately 2,000 years ago in the lush tropical rain forests of the Americas. The evolution of the chocolate – from a regionally significant Mesoamerican drink to globally consumed confectionery – has been shaped through cross-continental cultural exchanges and the successive influences of multiple civilisations.\n\nB \nHistorians suggest that the ancient Maya pioneered cocoa tree cultivation in Mesoamerica, with evidence dating back approximately 2,000 years. They transplanted cocoa trees from the dense rain forest into their domesticated gardens, where cocoa beans were initially roasted and ground into a smooth paste. The paste was combined with spices and water to produce unsweetened chocolate beverages. The Maya also employed a distinctive technique of transferring the liquid back and forth between containers, generating a foamy layer on the drink's surface.\n\nC \nCocoa and chocolate were integral to Maya culture, commonly depicted in their architectural structures and artistic works. While the aristocracy, particularly the royal families, consumed chocolate during elaborate ceremonies, even less privileged groups occasionally savoured the drink. Furthermore, cocoa beans served as a powerful emblem of marital union and were ritually exchanged during wedding ceremonies.\n\nD \nThe Aztec civilisation in Mexico regarded chocolate as a prestigious commodity, despite being geographically unable to cultivate cocoa trees within their heartland. Accordingly, they sourced cocoa beans through extensive trade networks, even utilising them as currency for tax payments. Chocolate held an exclusive function within Aztec imperial and religious ceremonies, where priests offered cocoa beans as divine offerings and prepared sacred chocolate drinks. Due to the scarcity of cocoa beans, consumption remained restricted to the societal elite, with historical accounts suggesting Emperor Montezuma consumed up to 50 cups daily. Linguists trace the term 'chocolate' to the Aztec Nahuatl word xocolatl, meaning 'bitter water' in the Nahuatl language, though some scholars argue that it has hybrid origins combining Maya and Nahuatl linguistic elements.\n\nE \nIn 1502, explorer Christopher Columbus introduced cocoa beans to Spain after voyaging to Mesoamerica, and later Spanish explorer Hernán Cortés quickly recognised the potential economic value of chocolate. Upon arriving in present-day Mexico in 1519, Cortés observed that chocolate beverages would appeal to the Spanish. After conquering the Aztec Empire, Spanish forces exported confiscated cocoa supplies to Spain. In response to the growing demand, Spain began cultivating cocoa trees in its American colonies. Spanish elite first developed a taste for sweetened chocolate drinks, but the beverage rapidly spread across Europe. England, the Netherlands, and France followed suit by establishing cocoa plantations in their own colonies. By the 18th century, chocolate remained primarily a luxury restricted to the affluent. However, the Industrial Revolution's technologies enabled mechanised production, dramatically reducing costs and making chocolate available to a broader population.\n\nF \nCocoa trees are cultivated across multiple countries in Africa, Mesoamerica, and South America, thriving in cool, shaded environments within equatorial zones. Despite widespread cultivation, cocoa farming remains labour-intensive, due to the trees' requirement for specific water thresholds, temperature ranges, soil compositions, and protection from environmental threats. Approximately five years after planting, cocoa trees begin to yield large, pod-shaped fruits that grow on the trunk. These pods contain the beans used in chocolate production. While several types of cocoa trees exist, the bulk of the chocolate is produced from the seeds of the most commonly cultivated varieties. However, farmers opt to grow more specialised types, such as Criollo or Trinitario, valued for distinctive flavour profiles. Unexpectedly, cocoa trees grown on farms are more vulnerable to disease and pests than their wild counterparts. Cocoa cultivation presents a strenuous endeavour for farmers, who sell their harvests on futures markets, exposing their incomes to external market fluctuations.\n\nG \nThe process of chocolate production involves a series of steps, carried out in specialised factories where cocoa beans are meticulously processed. Workers first sort, clean, and roast the beans before extracting the outer shells, leaving only the inner nibs. These nibs are then ground into a dense paste known as chocolate liquor, which is subsequently separated into two components: cocoa solids and cocoa butter. Following standardised formulations, chocolate manufacturers blend the chocolate liquor with precise ratios of sugar, milk, and cocoa butter. The resulting mixture, often referred to as the 'crumb', undergoes fine grinding to create a smooth consistency. Finally, the mixture is then subjected to two additional processes – conching and tempering – before being placed into moulds to create various forms, such as bars or other chocolate products.\n\nH \nChocolate holds significant global economic value, with the manufacturing industry generating over $5 billion annually from cocoa crops, and its reputation remains most prominent in Europe and the United States. For instance, US cocoa product imports reached $1.4 billion in 2005. On average, Americans consume over five kilogrammes of chocolate per person each year. In addition, upscale chocolate boutiques, which offer premium chocolates, have gained significant popularity. Many of these shops specialise in artisanal chocolates, crafted with unique flavour profiles. Renowned chocolate brands such as Cadbury, Godiva, Lindt, and Ferrero Rocher dominate the market. However, the cocoa and chocolate production sectors often face challenges related to fair trade, sustainable development, and environmental preservation. These issues are now being actively addressed by industry stakeholders, including officials, activists, and researchers, who are working closely with farmers to promote faming practices that foster sustainability and protect the environment.",
+    "passage_number": 3,
+    "difficulty": "HARD",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 27,
+      "question_type": "MINFO",
+      "content": "The part of cocoa trees used for chocolate production.",
+      "correct_answer": null,
+      "explanation": "The passage mentions that the pods of the cocoa tree contain beans, which are the main ingredient used in chocolate production. These beans are harvested, processed, and turned into chocolate products.",
+      "group_instruction": "<p><strong>Reading Passage 3 has eight paragraphs, A-H.</strong></p><p><strong>Which paragraph contains the following information?</strong></p><p>Choose the correct letter, A-H, in boxes 27-31.</p><p><strong><em>NB</em></strong><em>&nbsp;You may use any letter more than once.</em></p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        },
+        {
+          "option": "H",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "question_type": "MINFO",
+      "content": "Annual chocolate consumption per capita in the United States.",
+      "correct_answer": null,
+      "explanation": "The paragraph talks about the popularity of chocolate in the US and states a specific average amount consumed per person, which directly answers this question.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        },
+        {
+          "option": "H",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "question_type": "MINFO",
+      "content": "The higher likelihood of cultivated cocoa trees being attacked by insects.",
+      "correct_answer": null,
+      "explanation": "The paragraph explains that cocoa trees grown on farms (cultivated) are more vulnerable to disease and pests than wild trees, which clearly answers this question.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        },
+        {
+          "option": "H",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "question_type": "MINFO",
+      "content": "A community which developed a preference for sweetened chocolate beverages",
+      "correct_answer": null,
+      "explanation": "After cocoa was brought to Spain, the Spanish elite started drinking sweetened chocolate, and this preference later spread across Europe. This shows how that community developed a taste for sweet chocolate drinks.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        },
+        {
+          "option": "H",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "question_type": "MINFO",
+      "content": "An approach by which ancient Mexicans could acquire cocoa beans.",
+      "correct_answer": null,
+      "explanation": "The Aztecs couldn’t grow cocoa trees in their region, so they obtained cocoa beans through trade networks. This was their method of acquiring cocoa.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        },
+        {
+          "option": "H",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "question_type": "TFNG",
+      "content": "Wild cocoa trees are more susceptible to infectious diseases than cultivated ones.",
+      "correct_answer": null,
+      "explanation": "The text says the opposite: cocoa trees grown on farms (cultivated) are more vulnerable than wild ones.",
+      "group_instruction": "<p>Choose&nbsp;<strong>TRUE</strong>&nbsp;if the statement agrees with the information given in the text, choose&nbsp;<strong>FALSE</strong>&nbsp;if the statement contradicts the information, or choose&nbsp;<strong>NOT GIVEN</strong>&nbsp;if there is no information on this.</p>"
+    },
+    {
+      "number": 32,
+      "question_type": "TFNG",
+      "content": "The Mayan ruling class forbade the use of cocoa and chocolate in rituals.",
+      "correct_answer": null,
+      "explanation": "The passage clearly states that the royal families (i.e., the ruling class) consumed chocolate during elaborate ceremonies. This means they used it in rituals, not forbade it.",
+      "group_instruction": ""
+    },
+    {
+      "number": 35,
+      "question_type": "TFNG",
+      "content": "During chocolate production, some of the seeds are discarded.",
+      "correct_answer": null,
+      "explanation": "During the process, the outer shells of cocoa beans are removed, which means part of the seed is discarded.",
+      "group_instruction": ""
+    },
+    {
+      "number": 36,
+      "question_type": "TFNG",
+      "content": "Chocolate enjoys more prestige in Europe and the United States than in any other country.",
+      "correct_answer": null,
+      "explanation": "The passage says its reputation remains most prominent in Europe and the US, which supports this statement.",
+      "group_instruction": ""
+    },
+    {
+      "number": 33,
+      "question_type": "TFNG",
+      "content": "The Spanish explorer Hern\\00e1n Cort\\00e9s had made an investment in chocolate and chocolate beverages.",
+      "correct_answer": null,
+      "explanation": "The passage says Cortés recognized the economic value of chocolate and observed its appeal but does not mention him personally investing in it. So, the information is not given.",
+      "group_instruction": ""
+    },
+    {
+      "number": 37,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The question says \"stripping their ______.\" The word stripping is synonymous with extracting, and the passage clearly states that after roasting, the beans have their outer shells extracted. This means the shells are removed or stripped, making outer shells the correct answer.",
+      "group_instruction": "<p>Complete the flow-chart below.</p><p>Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;from the passage for each answer.</p>"
+    },
+    {
+      "number": 38,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The question refers to crushing the nibs and producing something. The passage says nibs are ground into (i.e., crushed into) chocolate liquor. This matches the production process, so chocolate liquor is the correct phrase.",
+      "group_instruction": ""
+    },
+    {
+      "number": 39,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The question asks for an ingredient added with sweeteners and liquid dairy. According to the passage, the three blended components are sugar, milk, and cocoa butter, so this is the correct answer.",
+      "group_instruction": ""
+    },
+    {
+      "number": 40,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The question mentions manufacturing different shapes of chocolate in something. The passage says chocolate is placed into moulds to create various forms, which exactly matches the question’s idea. Hence, moulds is the correct answer.",
+      "group_instruction": ""
+    }
+  ]
+}

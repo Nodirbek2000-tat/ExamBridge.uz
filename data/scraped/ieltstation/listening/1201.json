@@ -1,0 +1,812 @@
+{
+  "title": "Cambridge 18_Test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_190937_3c030b4a.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Job Details from Employment Agency",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_190937_3c030b4a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "The Museum Building",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_190937_3c030b4a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "The museum building was originally",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a factory"
+            },
+            {
+              "option": "B",
+              "text": "a private home"
+            },
+            {
+              "option": "C",
+              "text": "a hall of residence"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "The university uses part of the museum building as",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "teaching rooms."
+            },
+            {
+              "option": "B",
+              "text": "a research library."
+            },
+            {
+              "option": "C",
+              "text": "administration offices."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "What does the guide say about the entrance fee?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Visitors decide whether or not they wish to pay."
+            },
+            {
+              "option": "B",
+              "text": "Only children and students receive a discount."
+            },
+            {
+              "option": "C",
+              "text": "The museum charges extra for special exhibitions"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What are visitors advised to leave in the cloakroom?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "cameras"
+            },
+            {
+              "option": "B",
+              "text": "coats"
+            },
+            {
+              "option": "C",
+              "text": "bags"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>The Four Seasons area features an animation designed by students.</p><p>Choose the correct letter.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Parents must supervise their children."
+            },
+            {
+              "option": "B",
+              "text": "There are new things to see."
+            },
+            {
+              "option": "C",
+              "text": "It is closed today."
+            },
+            {
+              "option": "D",
+              "text": "This is only for school groups."
+            },
+            {
+              "option": "E",
+              "text": "There is a quiz for visitors."
+            },
+            {
+              "option": "F",
+              "text": "It features something created by students."
+            },
+            {
+              "option": "G",
+              "text": "An expert is here today."
+            },
+            {
+              "option": "H",
+              "text": "There is a one-way system."
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Parents must supervise their children."
+            },
+            {
+              "option": "B",
+              "text": "There are new things to see."
+            },
+            {
+              "option": "C",
+              "text": "It is closed today."
+            },
+            {
+              "option": "D",
+              "text": "This is only for school groups."
+            },
+            {
+              "option": "E",
+              "text": "There is a quiz for visitors."
+            },
+            {
+              "option": "F",
+              "text": "It features something created by students."
+            },
+            {
+              "option": "G",
+              "text": "An expert is here today."
+            },
+            {
+              "option": "H",
+              "text": "There is a one-way system."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Parents must supervise their children."
+            },
+            {
+              "option": "B",
+              "text": "There are new things to see."
+            },
+            {
+              "option": "C",
+              "text": "It is closed today."
+            },
+            {
+              "option": "D",
+              "text": "This is only for school groups."
+            },
+            {
+              "option": "E",
+              "text": "There is a quiz for visitors."
+            },
+            {
+              "option": "F",
+              "text": "It features something created by students."
+            },
+            {
+              "option": "G",
+              "text": "An expert is here today."
+            },
+            {
+              "option": "H",
+              "text": "There is a one-way system."
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Parents must supervise their children."
+            },
+            {
+              "option": "B",
+              "text": "There are new things to see."
+            },
+            {
+              "option": "C",
+              "text": "It is closed today."
+            },
+            {
+              "option": "D",
+              "text": "This is only for school groups."
+            },
+            {
+              "option": "E",
+              "text": "There is a quiz for visitors."
+            },
+            {
+              "option": "F",
+              "text": "It features something created by students."
+            },
+            {
+              "option": "G",
+              "text": "An expert is here today."
+            },
+            {
+              "option": "H",
+              "text": "There is a one-way system."
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Parents must supervise their children."
+            },
+            {
+              "option": "B",
+              "text": "There are new things to see."
+            },
+            {
+              "option": "C",
+              "text": "It is closed today."
+            },
+            {
+              "option": "D",
+              "text": "This is only for school groups."
+            },
+            {
+              "option": "E",
+              "text": "There is a quiz for visitors."
+            },
+            {
+              "option": "F",
+              "text": "It features something created by students."
+            },
+            {
+              "option": "G",
+              "text": "An expert is here today."
+            },
+            {
+              "option": "H",
+              "text": "There is a one-way system."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Parents must supervise their children."
+            },
+            {
+              "option": "B",
+              "text": "There are new things to see."
+            },
+            {
+              "option": "C",
+              "text": "It is closed today."
+            },
+            {
+              "option": "D",
+              "text": "This is only for school groups."
+            },
+            {
+              "option": "E",
+              "text": "There is a quiz for visitors."
+            },
+            {
+              "option": "F",
+              "text": "It features something created by students."
+            },
+            {
+              "option": "G",
+              "text": "An expert is here today."
+            },
+            {
+              "option": "H",
+              "text": "There is a one-way system."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Children Doing Origami",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_190937_3c030b4a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which comment do the students make about each of the following children in the video?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "demonstrated independence"
+            },
+            {
+              "option": "B",
+              "text": "asked for teacher support"
+            },
+            {
+              "option": "C",
+              "text": "developed a competitive attitude"
+            },
+            {
+              "option": "D",
+              "text": "seemed to find the activity calming"
+            },
+            {
+              "option": "E",
+              "text": "seemed pleased with the results"
+            },
+            {
+              "option": "F",
+              "text": "seemed confused"
+            },
+            {
+              "option": "G",
+              "text": "seemed to find the activity easy Children"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "demonstrated independence"
+            },
+            {
+              "option": "B",
+              "text": "asked for teacher support"
+            },
+            {
+              "option": "C",
+              "text": "developed a competitive attitude"
+            },
+            {
+              "option": "D",
+              "text": "seemed to find the activity calming"
+            },
+            {
+              "option": "E",
+              "text": "seemed pleased with the results"
+            },
+            {
+              "option": "F",
+              "text": "seemed confused"
+            },
+            {
+              "option": "G",
+              "text": "seemed to find the activity easy Children"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "demonstrated independence"
+            },
+            {
+              "option": "B",
+              "text": "asked for teacher support"
+            },
+            {
+              "option": "C",
+              "text": "developed a competitive attitude"
+            },
+            {
+              "option": "D",
+              "text": "seemed to find the activity calming"
+            },
+            {
+              "option": "E",
+              "text": "seemed pleased with the results"
+            },
+            {
+              "option": "F",
+              "text": "seemed confused"
+            },
+            {
+              "option": "G",
+              "text": "seemed to find the activity easy Children"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "demonstrated independence"
+            },
+            {
+              "option": "B",
+              "text": "asked for teacher support"
+            },
+            {
+              "option": "C",
+              "text": "developed a competitive attitude"
+            },
+            {
+              "option": "D",
+              "text": "seemed to find the activity calming"
+            },
+            {
+              "option": "E",
+              "text": "seemed pleased with the results"
+            },
+            {
+              "option": "F",
+              "text": "seemed confused"
+            },
+            {
+              "option": "G",
+              "text": "seemed to find the activity easy Children"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "demonstrated independence"
+            },
+            {
+              "option": "B",
+              "text": "asked for teacher support"
+            },
+            {
+              "option": "C",
+              "text": "developed a competitive attitude"
+            },
+            {
+              "option": "D",
+              "text": "seemed to find the activity calming"
+            },
+            {
+              "option": "E",
+              "text": "seemed pleased with the results"
+            },
+            {
+              "option": "F",
+              "text": "seemed confused"
+            },
+            {
+              "option": "G",
+              "text": "seemed to find the activity easy Children"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "Before starting an origami activity in class, the students think it is important for the teacher to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make models that demonstrate the different stages."
+            },
+            {
+              "option": "B",
+              "text": "check children understand the terminology involved."
+            },
+            {
+              "option": "C",
+              "text": "tell children not to worry if they find the activity difficult."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "The students agree that some teachers might be unwilling to use origami inclass because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "they may not think that crafts are important."
+            },
+            {
+              "option": "B",
+              "text": "they may not have the necessary skills."
+            },
+            {
+              "option": "C",
+              "text": "they may worry that it will take up too much time."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "Why do the students decide to use origami in their maths teaching practice?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to correct a particular misunderstanding\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "to set a challenge"
+            },
+            {
+              "option": "C",
+              "text": "to introduce a new concept"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Victor Hugo",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_190937_3c030b4a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

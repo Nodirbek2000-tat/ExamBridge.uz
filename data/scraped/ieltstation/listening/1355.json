@@ -1,0 +1,586 @@
+{
+  "title": "CAMBRIDGE 8 TEST 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_041229_085947a6.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Inquiry about the West Bay Hotel's Temporary Staff Advertisement",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_041229_085947a6.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Improvement Plan for Red Hill Suburb",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_041229_085947a6.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Community groups are mainly concerned about",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "pedestrian safety."
+            },
+            {
+              "option": "B",
+              "text": "traffic jams."
+            },
+            {
+              "option": "C",
+              "text": "increased pollution."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "It has been decided that the overhead power lines will be",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "extended."
+            },
+            {
+              "option": "B",
+              "text": "buried."
+            },
+            {
+              "option": "C",
+              "text": "repaired."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "The expenses related to the power lines will be paid for by",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the council."
+            },
+            {
+              "option": "B",
+              "text": "the power company."
+            },
+            {
+              "option": "C",
+              "text": "local businesses."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MAP",
+          "content": "trees",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>"
+        },
+        {
+          "number": 15,
+          "question_type": "MAP",
+          "content": "wider footpaths",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "coloured road surface",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "traffic lights",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "artwork",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "children's playground",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "new sign",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "College Life and Studies Discussion",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_041229_085947a6.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What does Dan say about the seminars on the course?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The other students do not give him a chance to speak."
+            },
+            {
+              "option": "B",
+              "text": "The seminars make him feel inferior to the other students."
+            },
+            {
+              "option": "C",
+              "text": "The preparation for seminars takes too much time"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "What does Jeannie say about the tutorials on the course?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They are an inefficient way of providing guidance."
+            },
+            {
+              "option": "B",
+              "text": "They are more challenging than she had expected."
+            },
+            {
+              "option": "C",
+              "text": "They are helping her to develop her study skills."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the flowchart below. Write&nbsp;<strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Australian Aboriginal Rock Art: Styles, Content, and the Rainbow Serpent",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_041229_085947a6.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which painting styles have the following features?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Dynamic"
+            },
+            {
+              "option": "B",
+              "text": "Yam"
+            },
+            {
+              "option": "C",
+              "text": "Modern"
+            },
+            {
+              "option": "D",
+              "text": "Yam"
+            },
+            {
+              "option": "E",
+              "text": "Yam"
+            },
+            {
+              "option": "F",
+              "text": "Modern"
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Dynamic"
+            },
+            {
+              "option": "B",
+              "text": "Yam"
+            },
+            {
+              "option": "C",
+              "text": "Modern"
+            },
+            {
+              "option": "D",
+              "text": "Yam"
+            },
+            {
+              "option": "E",
+              "text": "Yam"
+            },
+            {
+              "option": "F",
+              "text": "Modern"
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Dynamic"
+            },
+            {
+              "option": "B",
+              "text": "Yam"
+            },
+            {
+              "option": "C",
+              "text": "Modern"
+            },
+            {
+              "option": "D",
+              "text": "Yam"
+            },
+            {
+              "option": "E",
+              "text": "Yam"
+            },
+            {
+              "option": "F",
+              "text": "Modern"
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Dynamic"
+            },
+            {
+              "option": "B",
+              "text": "Yam"
+            },
+            {
+              "option": "C",
+              "text": "Modern"
+            },
+            {
+              "option": "D",
+              "text": "Yam"
+            },
+            {
+              "option": "E",
+              "text": "Yam"
+            },
+            {
+              "option": "F",
+              "text": "Modern"
+            }
+          ]
+        },
+        {
+          "number": 35,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Dynamic"
+            },
+            {
+              "option": "B",
+              "text": "Yam"
+            },
+            {
+              "option": "C",
+              "text": "Modern"
+            },
+            {
+              "option": "D",
+              "text": "Yam"
+            },
+            {
+              "option": "E",
+              "text": "Yam"
+            },
+            {
+              "option": "F",
+              "text": "Modern"
+            }
+          ]
+        },
+        {
+          "number": 36,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Dynamic"
+            },
+            {
+              "option": "B",
+              "text": "Yam"
+            },
+            {
+              "option": "C",
+              "text": "Modern"
+            },
+            {
+              "option": "D",
+              "text": "Yam"
+            },
+            {
+              "option": "E",
+              "text": "Yam"
+            },
+            {
+              "option": "F",
+              "text": "Modern"
+            }
+          ]
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

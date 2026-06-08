@@ -1,0 +1,115 @@
+{
+  "title": "The History of the Guitar",
+  "content": "The earliest stringed instruments currently known to archaeologists are bowl harps. For millennia, people made bowl harps using, for example, tortoise shells as resonators, with a bent stick for a neck and one or more gut or silk strings. The world's museums contain many such harps from the ancient Sumerian, Babylonian, and Egyptian civilisations. Around 2500-2000 BC more advanced harps, such as the beautifully carved 11-stringed instrument found in the tomb of Queen Shub-Ad in ancient Mesopotamia, now modern day Iraq, started to appear.\n\nThe tanbur probably developed from the bowl harp. It was different from the bowl harp in that its neck was straightened out to allow the strings to be pressed down to create more notes. Tomb paintings and stone carvings in Egypt indicate that harps and tanburs - plus flutes and percussion instruments - were being played together 3,500-4,000 years ago. Archaeologists have also found many similar relics amongst the ruins of the ancient Mesopotamian civilisation. Many of these instruments have survived into modern times in almost unchanged form, for example folk instruments of the region such as the Turkish saz and Afghan panchtar.\n\nAt 3,500 years old, the tanbur which belonged to the Egyptian singer Har-Mose is the earliest known example of this instrument. Har-Mose's tanbur had three strings and a plectrum suspended from the neck by a cord. The soundbox, which increased the volume, was made of beautifully polished cedarwood and covered in rawhide. It can be seen today at the Archaeological Museum in Cairo.\n\nIn order to distinguish guitars from other stringed instruments, it is helpful to have a broad definition of the guitar. Music expert Dr Michael Kasha defines a guitar as having 'a long, fretted neck, flat wooden soundboard, ribs, and a flat back, most often with sides that curve inwards'. The oldest known visual representation of such an instrument is a stone carving at Alaca Huyuk in Turkey, which shows a 3,300-year-old instrument with a long neck and sides that clearly curve inwards.\n\nThe name 'guitar' comes from the ancient Sanskrit word for 'string' - 'tar'. Many popular stringed instruments used in central Asia today have existed in an unchanged form for several thousand years, as shown by archaeological finds in the area. Many have names that end in 'tar', with a prefix indicating the number of strings, such as the doter, a two-stringed instrument found in Turkestan, and the Persian three-stringed setar and four-stringed chartar. The Indian sitar almost certainly took its name from the setar, but over the centuries it evolved radically, following the Indians' own aesthetic and cultural ideals.\n\nTanburs and harps spread around the ancient world with travellers, merchants and seamen. The earliest guitar-like instruments to arrive in Europe had, most often, four strings. Many such instruments, and variations with from three to five strings, can be seen in mediaeval illustrated manuscripts. They were also carved in stone in European churches and cathedrals, from the first century AD through until the 13th century.\n\nWhen the four-stringed Persian chartar arrived in Spain, however, it changed in form and construction, acquiring pairs of strings tuned to the same note instead of single strings. It became known as the chitarra. By the middle of the 14th century, the chitarra had become dominant, at least in most of Europe. The earliest known music for the eight-stringed chitarra was written in 16th-century Spain. The ten-string version first appeared in Italy at the same time, and gradually replaced the eight-stringed instrument. A further two strings first appeared in the 17th century, an innovation which guitar makers all over Europe quickly took up. However, this twelve-string arrangement gradually gave way to six single strings across the continent. The six-stringed guitar can thus be said to be a development of the twelve-stringed, rather than vice versa, as was thought previously.\n\nAt the beginning of the 19th century, the present-day guitar began to take shape, although bodies were still fairly small and narrow-waisted. The modern classical guitar first appeared in its current form in the mid-19th century, when the Spanish guitar maker Antonio Torres increased the size of the body, altered its proportions, and introduced the revolutionary fan-braced top. His design radically increased the volume and improved the tone of the instrument, and very soon became the norm. This design has remained essentially unchanged to this day.\n\nAt the time when Torres made his breakthrough, German immigrants to America - among them Christian Fredrich Martin - began making guitars with X-braced tops. Steel strings, which became widely available several decades later in the early 1900s, offered the promise of much louder guitar, but the increased tension was too much for the fan-braced top. The stronger X-braced top proved equal to the job, and quickly became the industry standard.\n\nAt the end of the 19th century, guitar manufacturer Orville Gibson added steel strings to a body constructed like a cello, a combination which produced more volume. The electric guitar was born when pickups were fitted to Hawaiian and jazz guitars in the late 1920s, but met with little success until 1936, when Gibson introduced its famous ES150 model.",
+  "passage_number": 1,
+  "difficulty": "MEDIUM",
+  "time_limit": 20,
+  "is_standalone": true,
+  "is_premium": false,
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TFNG",
+      "content": "The instrument found in Queen Shub-Ad's tomb is the world's oldest known version of a harp.",
+      "correct_answer": "TEST",
+      "explanation": "Explanation: The text mentions an 11-string instrument in Queen Shub-Ad’s tomb but does not claim it is the world’s oldest harp – so the statement is Not Given.",
+      "group_instruction": "<p>Do the following statements agree with the information given in Reading Passage 1?</p><p>In boxes <strong>1-6 </strong>on your answer sheet, write:</p><p><strong><em>TRUE</em></strong><em> - if the statement agrees with the information</em></p><p><strong><em>FALSE</em></strong><em> - if the statement contradicts the information</em></p><p><strong><em>NOT GIVEN </em></strong><em>- if there is no information</em></p>"
+    },
+    {
+      "number": 2,
+      "question_type": "TFNG",
+      "content": "Today's Afghan panchtar is very similar to an ancient Mesopotamian instrument.",
+      "correct_answer": "",
+      "explanation": "Explanation: It says many instruments survived almost unchanged and cites the Afghan panchtar; similar relics were found in Mesopotamia – supporting TRUE.",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "TFNG",
+      "content": "The Egyptian singer Har-Mose was an excellent tanbur player.",
+      "correct_answer": "",
+      "explanation": "Explanation: Har-Mose’s tanbur is described (age, materials), but nothing about his playing skill – Not Given.",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "TFNG",
+      "content": "Cairo Archaeological Museum contains many historic musical instruments.",
+      "correct_answer": "",
+      "explanation": "Explanation: Only Har-Mose’s tanbur is stated to be on display in Cairo; there’s no claim about many instruments – Not Given.",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "TFNG",
+      "content": "The instrument carved in stone at Alaca Huyuk is consistent with Dr Michael Kasha's definition of a guitar.",
+      "correct_answer": "",
+      "explanation": "Explanation: Kasha’s definition (long, fretted neck; inward curves, etc.) is paired with the Alaca Huyuk carving that shows such an instrument – TRUE.",
+      "group_instruction": ""
+    },
+    {
+      "number": 6,
+      "question_type": "TFNG",
+      "content": "The different instruments that appeared in medieval literature had the same number of strings.",
+      "correct_answer": "",
+      "explanation": "Explanation: Medieval sources show several instruments with three to five strings, i.e., not the same number – FALSE.",
+      "group_instruction": ""
+    },
+    {
+      "number": 7,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "Explanation: Chitarra in Spain developed from the Persian ‘chartar’ (four-string), which later changed construction/tuning.",
+      "group_instruction": "<p>Complete the table below.</p><p>Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.</p>"
+    },
+    {
+      "number": 8,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "Explanation: Antonio Torres increased the size of the guitar’s ‘body’, among other changes.",
+      "group_instruction": ""
+    },
+    {
+      "number": 9,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "Explanation: Torres’s design ‘increased the volume and improved the tone’ – hence ‘volume’.",
+      "group_instruction": ""
+    },
+    {
+      "number": 10,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "Explanation: German immigrants to ‘America’ (e.g., C.F. Martin) first made X-braced guitars in the mid-19th century.",
+      "group_instruction": ""
+    },
+    {
+      "number": 11,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "Explanation: ‘Steel’ strings became widely available in the early 1900s (ࣈ around 1900).",
+      "group_instruction": ""
+    },
+    {
+      "number": 12,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "Explanation: In the late 1920s, ‘pickups’ were fitted to guitars, leading to the electric guitar.",
+      "group_instruction": ""
+    },
+    {
+      "number": 13,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "Explanation: Gibson introduced the famous ES-150 (1936), a well-known version – hence ‘Gibson’.",
+      "group_instruction": ""
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "title": "Cambridge 11_Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_173859_394cb8a1.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Hiring a public room",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_173859_394cb8a1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Fiddy Working Heritage Farm",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_173859_394cb8a1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MAP",
+          "content": "Scarecrow",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "Maze",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "Black Barn",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "Covered picnic area",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "Fiddy House",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "Cafeĭ",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Study on gender in Physics",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_173859_394cb8a1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "The students in Akira Miyake's study were all majoring in",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "physics"
+            },
+            {
+              "option": "B",
+              "text": "psychology or physics."
+            },
+            {
+              "option": "C",
+              "text": "science, technology, engineering or mathematics"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "The female physics students were wrong to believe that",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the teachers marked them in an unfair way"
+            },
+            {
+              "option": "B",
+              "text": "the male students expected them to do badly"
+            },
+            {
+              "option": "C",
+              "text": "their test results were lower than the male students'"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What was the aim of the writing exercise done by the subjects?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to reduce stress"
+            },
+            {
+              "option": "B",
+              "text": "to strengthen verbal ability"
+            },
+            {
+              "option": "C",
+              "text": "to encourage logical thinking"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "Greg and Lisa think Miyake's results could have been affected by",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the length of the writing task"
+            },
+            {
+              "option": "B",
+              "text": "the number of students who took part"
+            },
+            {
+              "option": "C",
+              "text": "the information the students were given"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "Greg and Lisa decide that in their own project, they will compare the effects of",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "two different writing tasks."
+            },
+            {
+              "option": "B",
+              "text": "a writing task with an oral task"
+            },
+            {
+              "option": "C",
+              "text": "two different oral tasks"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "What will Lisa and Greg do next?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "talk to a professor"
+            },
+            {
+              "option": "B",
+              "text": "observe a science class"
+            },
+            {
+              "option": "C",
+              "text": "look at the science timetable"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "The aim of Miyake's study was to investigate",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "what kind of women choose to study physics"
+            },
+            {
+              "option": "B",
+              "text": "a way of improving women's performance in physics"
+            },
+            {
+              "option": "C",
+              "text": "whether fewer women than men study physics at college"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Miyake's team asked the students to write about",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "what they enjoyed about studying physics."
+            },
+            {
+              "option": "B",
+              "text": "the successful experiences of other people."
+            },
+            {
+              "option": "C",
+              "text": "something that was important to them personally."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "What surprised the researchers about the study?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "how few students managed to get A grades"
+            },
+            {
+              "option": "B",
+              "text": "the positive impact it had on physics results for women"
+            },
+            {
+              "option": "C",
+              "text": "the difference between male and female performance"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "The main finding of Smolinsky's research was that class teamwork activities",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "were most effective when done by all-women groups."
+            },
+            {
+              "option": "B",
+              "text": "had no effect on the performance of men or women."
+            },
+            {
+              "option": "C",
+              "text": "improved the results of men more than of women."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Ocean Biodiversity",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_173859_394cb8a1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

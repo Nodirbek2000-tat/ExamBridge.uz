@@ -1,0 +1,632 @@
+{
+  "title": "Cambridge 19_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_174545_ddc0ccef.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Inside Coleman's Guitar Experience",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_174545_ddc0ccef.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the form below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Working as a Lifeboat Volunteer",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_174545_ddc0ccef.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "What made David leave London and move to Northsea?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "He was eager to develop a hobby."
+            },
+            {
+              "option": "B",
+              "text": "He wanted to work shorter hours."
+            },
+            {
+              "option": "C",
+              "text": "He found his job in website design unsatisfying."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "The Lifeboat Institution in Northsea was built with money provided by  A.",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a local organisation."
+            },
+            {
+              "option": "B",
+              "text": "a local resident."
+            },
+            {
+              "option": "C",
+              "text": "the local council."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "In his health assessment, the doctor was concerned about the fact that David",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "might be colour blind."
+            },
+            {
+              "option": "B",
+              "text": "was rather short-sighted."
+            },
+            {
+              "option": "C",
+              "text": "had undergone eye surgery."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "After arriving at the lifeboat station, they aim to launch the boat within",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "five minutes."
+            },
+            {
+              "option": "B",
+              "text": "six to eight minutes."
+            },
+            {
+              "option": "C",
+              "text": "eight and a half minutes."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "As a 'helmsman', David has the responsibility of deciding",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "who will be the members of his crew."
+            },
+            {
+              "option": "B",
+              "text": "what equipment it will be necessary to take."
+            },
+            {
+              "option": "C",
+              "text": "if the lifeboat should be launched."
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "As well as going out on the lifeboat, David",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "gives talks on safety at sea."
+            },
+            {
+              "option": "B",
+              "text": "helps with fundraising."
+            },
+            {
+              "option": "C",
+              "text": "recruits new volunteers."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Recycling Footwear: Challenges and Opportunities",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_174545_ddc0ccef.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "At first, Don thought the topic of recycling footwear might be too",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "limited in scope."
+            },
+            {
+              "option": "B",
+              "text": "hard to research."
+            },
+            {
+              "option": "C",
+              "text": "boring for listeners."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "When discussing trainers, Bella and Don disagree about",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "how popular they are among young people."
+            },
+            {
+              "option": "B",
+              "text": "how suitable they are for school."
+            },
+            {
+              "option": "C",
+              "text": "how quickly they wear out."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "What did the article say that confused Don?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Public consumption of footwear has risen."
+            },
+            {
+              "option": "B",
+              "text": "\\000aLess footwear is recycled now than in the past."
+            },
+            {
+              "option": "C",
+              "text": "People dispose of more footwear than they used to."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Bella says that she sometimes recycles shoes because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "they no longer fit."
+            },
+            {
+              "option": "B",
+              "text": "she no longer likes them."
+            },
+            {
+              "option": "C",
+              "text": "they are no longer in fashion."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What reasons did the recycling manager give for rejecting footwear, according to the students?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "one shoe was missing"
+            },
+            {
+              "option": "B",
+              "text": "the colour of one shoe had faded"
+            },
+            {
+              "option": "C",
+              "text": "one shoe had a hole in it"
+            },
+            {
+              "option": "D",
+              "text": "the shoes were brand new"
+            },
+            {
+              "option": "E",
+              "text": "the shoes were too dirty"
+            },
+            {
+              "option": "F",
+              "text": "the stitching on the shoes was broken"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "one shoe was missing"
+            },
+            {
+              "option": "B",
+              "text": "the colour of one shoe had faded"
+            },
+            {
+              "option": "C",
+              "text": "one shoe had a hole in it"
+            },
+            {
+              "option": "D",
+              "text": "the shoes were brand new"
+            },
+            {
+              "option": "E",
+              "text": "the shoes were too dirty"
+            },
+            {
+              "option": "F",
+              "text": "the stitching on the shoes was broken"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "one shoe was missing"
+            },
+            {
+              "option": "B",
+              "text": "the colour of one shoe had faded"
+            },
+            {
+              "option": "C",
+              "text": "one shoe had a hole in it"
+            },
+            {
+              "option": "D",
+              "text": "the shoes were brand new"
+            },
+            {
+              "option": "E",
+              "text": "the shoes were too dirty"
+            },
+            {
+              "option": "F",
+              "text": "the stitching on the shoes was broken"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "one shoe was missing"
+            },
+            {
+              "option": "B",
+              "text": "the colour of one shoe had faded"
+            },
+            {
+              "option": "C",
+              "text": "one shoe had a hole in it"
+            },
+            {
+              "option": "D",
+              "text": "the shoes were brand new"
+            },
+            {
+              "option": "E",
+              "text": "the shoes were too dirty"
+            },
+            {
+              "option": "F",
+              "text": "the stitching on the shoes was broken"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "Bella and Don agree that they can present their topic",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "from a new angle."
+            },
+            {
+              "option": "B",
+              "text": "with relevant images."
+            },
+            {
+              "option": "C",
+              "text": "in a straightforward way."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "Why did the project to make 'new' shoes out of old shoes fail?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "People believed the 'new' pairs of shoes were unhygienic."
+            },
+            {
+              "option": "B",
+              "text": "There were not enough good parts to use in the old shoes."
+            },
+            {
+              "option": "C",
+              "text": "The shoes in the 'new' pairs were not completely alike."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Tardigrades: The Microscopic Survivors",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_174545_ddc0ccef.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

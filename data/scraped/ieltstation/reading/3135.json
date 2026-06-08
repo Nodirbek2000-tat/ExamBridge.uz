@@ -1,0 +1,815 @@
+{
+  "title": "Cambridge_16 Test 1",
+  "test_type": "FULL_MOCK",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "parts": [
+    {
+      "passage_number": 1,
+      "title": "Why we need to protect polar bears",
+      "content": "Polar bears are being increasingly threatened by the effects of climate change, but their disappearance could have far-reaching consequences. They are uniquely adapted to the extreme conditions of the Arctic Circle, where temperatures can reach -40°C.One reason for this is that they have up to 11 centimetres of fat underneath their skin. Humans with comparative levels of adipose tissue would be considered obese and would be likely to suffer from diabetes and heart disease .Yet the polar bear experiences no such consequences.\n\nA 2014 study by Shi Ping Liu and colleagues sheds light on this mystery. They compared the genetic structure of polar bears with that of their closest relatives from a warmer climate, the brown bears. This allowed them to determine the genes that have allowed polar bears to survive in one of the toughest environments on Earth. Liu and his colleagues found the polar bears had a gene known as APoB, which reduces levels of low-density lipoproteins (LDLs) - a form of 'bad' cholesterol. In humans, mutations of this gene are associated with increased risk of heart disease. Polar bears may therefore be an important study model to understand heart disease in humans.\n\nThe genome of the polar bear may also provide the solution for another condition, one that particularly affects our older generation: osteoporosis. This is a disease where bones show reduced density, usually caused by insufficient exercise, reduced calcium intake or food starvation. Bone tissue is constantly being remodelled, meaning that bone is added or removed, depending on nutrient availability and the stress that the bone is under. Female polar bears, however, undergo extreme conditions during every pregnancy. Once autumn comes around, these females will dig maternity dens in the snow and will remain there throughout the winter, both before and after the birth of their cubs. This process results in about six months of fasting, where the female bears have to keep themselves and their cubs alive, depleting their own calcium and calorie reserves. Despite this, their bones remain strong and dense.\n\nPhysiologists Alanda Lennox and Allen Goodship found an explanation for this paradox in 2008.They discovered that pregnant bears were able to increase the density of their bones before they started to build their dens. In addition, six months later, when they finally emerged from the den with their cubs, there was no evidence of significant loss of bone density. Hibernating brown bears do not have this capacity and must therefore resort to major bone reformation in the following spring. If the mechanism of bone remodelling in polar bears can be understood, many bedridden humans, and even astronauts, could potentially benefit.\n\nThe medical benefits of the polar bear for humanity certainly have their importance in our conservation efforts, but these should not be the only factors taken into consideration. We tend to want to protect animals we think are intelligent and possess emotions, such as elephants and primates. Bears, on the other hand, seem to be perceived as stupid and in many cases violent. And yet anecdotal evidence from the field challenges those assumptions, suggesting for example that polar bears have good problem-solving abilities. A male bear called GoGo in Tennoji Zoo, Osaka, has even been observed making use of a tool to manipulate his environment. The bear used a tree branch on multiple occasions to dislodge a piece of meat hung out of his reach. Problem-solving ability has also been witnessed in wild polar bears, although not as obviously as with Gogo. A calculated move by a male bear involved running and jumping onto barrels in an attempt to get to a photographer standing on a platform four metres high.\n\nIn other studies, such as one by Alison Ames in 2008, polar bears showed deliberate and focused manipulation. For example, Ames observed bears putting objects in piles and then knocking them over in what appeared to be a game. The study demonstrates that bears are capable of agile and thought-out behaviours. These examples suggest bears have greater creativity and problem-solving abilities than previously thought.\n\nAs for emotions, while the evidence is once again anecdotal, many bears have been seen to hit out at ice and snow-seemingly out of frustration - when they have just missed out on a kill. Moreover, polar bears can form unusual relationships with other species, including playing with the dogs used to pull sleds in the Arctic. Remarkably, one hand-raised polar bear called Agee has formed a close relationship with her owner Mark Dumas to the point where they even swim together. This is even more astonishing since polar bears are known to actively hunt humans in the wild.\n\nIf climate change were to lead to their extinction, this would mean not only the loss of potential breakthroughs in human medicine, but more importantly, the disappearance of an intelligent, majestic animal.",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TFNG",
+          "content": "Polar bears suffer from various health problems due to the build-up of fat under their skin.",
+          "correct_answer": "Yet the polar bear experiences no such consequences.",
+          "explanation": "The passage states that although polar bears have a thick layer of fat, they do not suffer from the health problems that humans would experience under similar conditions.",
+          "group_instruction": "<p>Choose <strong>TRUE</strong> if the statement agrees with the information given in the text, choose<strong> FALSE</strong> if the statement contradicts the information, or choose <strong>NOT GIVEN</strong> if there is no information on this.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "TFNG",
+          "content": "The study done by Liu and his colleagues compared different groups of polar bears.",
+          "correct_answer": "They compared the genetic structure of polar bears with that of their closest relatives from a warmer climate, the brown bears.",
+          "explanation": "The study compared polar bears with brown bears, not different groups of polar bears.",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TFNG",
+          "content": "Liu and colleagues were the first researchers to compare polar bears and brown bears genetically.",
+          "correct_answer": "A 2014 study by Shi Ping Liu and colleagues sheds light on this mystery.",
+          "explanation": "The passage describes the study but does not state whether Liu and his colleagues were the first to conduct such a genetic comparison.",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TFNG",
+          "content": "Polar bears are able to control their levels of bad' cholesterol by genetic means.",
+          "correct_answer": "Liu and his colleagues found the polar bears had a gene known as APoB, which reduces levels of low-density lipoproteins (LDLs) - a form of 'bad' cholesterol.",
+          "explanation": "The passage explains that polar bears have a specific gene APoB that reduces levels of bad cholesterol, showing genetic control of LDL levels.",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TFNG",
+          "content": "Female polar bears are able to survive for about six months without food.",
+          "correct_answer": "This process results in about six months of fasting, where the female bears have to keep themselves and their cubs alive, depleting their own calcium and calorie reserves.",
+          "explanation": "The passage clearly states that female polar bears fast for about six months while in maternity dens.",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TFNG",
+          "content": "It was found that the bones of female polar bears were very weak when they came out of their dens in spring.",
+          "correct_answer": "In addition, six months later, when they finally emerged from the den with their cubs, there was no evidence of significant loss of bone density.",
+          "explanation": "The passage states that there was no significant loss of bone density when female bears left their dens.",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TFNG",
+          "content": "The polar bear's mechanism for increasing bone density could also be used by people one day",
+          "correct_answer": "If the mechanism of bone remodelling in polar bears can be understood, many bedridden humans, and even astronauts, could potentially benefit.",
+          "explanation": "The passage suggests that understanding the polar bear’s bone remodelling mechanism could benefit humans in the future.",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "Bears, on the other hand, seem to be perceived as stupid and in many cases violent",
+          "explanation": "The passage states that bears are often perceived as unintelligent and violent.",
+          "group_instruction": "<p>Complete the notes below.</p><p><br></p><p>Choose&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;from the passage for each answer.</p>"
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "A male bear called GoGo in Tennoji Zoo, Osaka, has even been observed making use of a tool to manipulate his environment.",
+          "explanation": "The bear in Tennoji Zoo used a branch as a tool to manipulate its environment.",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "The bear used a tree branch on multiple occasions to dislodge a piece of meat hung out of his reach.",
+          "explanation": "The branch was used to knock down a piece of meat that was out of reach.",
+          "group_instruction": ""
+        },
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "A calculated move by a male bear involved running and jumping onto barrels in an attempt to get to a photographer standing on a platform four metres high.",
+          "explanation": "A wild polar bear tried to reach a photographer standing on a platform.",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "As for emotions, while the evidence is once again anecdotal, many bears have been seen to hit out at ice and snow-seemingly out of frustration - when they have just missed out on a kill.",
+          "explanation": "Bears have been seen hitting ice and snow, seemingly out of frustration when they miss a kill.",
+          "group_instruction": ""
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "For example, Ames observed bears putting objects in piles and then knocking them over in what appeared to be a game.",
+          "explanation": "The bears’ behaviour appeared similar to a game when they knocked over piles of objects.",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "passage_number": 2,
+      "title": "The Step Pyramid of Djoser",
+      "content": "[HEADING: A]\nThe pyramids are the most famous monuments of ancient Egypt and still hold enormous interest for people in the present day.These grand, impressive tributes to the memory of the Egyptian kings have become linked with the country even though other cultures, such as the Chinese and Mayan, also built pyramids.The evolution of the pyramid form has been written and argued about for centuries.However, there is no question that, as far as Egypt is concerned, it began with one monument to one king designed by one brilliant architect: the Step Pyramid of Djoser at Saqqara.\n\n[HEADING: B]\nDjoser was the first king of the Third Dynasty of Egypt and the first to build in stone.Prior to Djoser's reign, tombs were rectangular monuments made of dried clay brick, which covered underground passages where the deceased person was buried.For reasons which remain unclear, Djoser's main official, whose name was Imhotep, conceived of building a taller, more impressive tomb for his king by stacking stone slabs on top of one another, progressively making them smaller, to form the shape now known as the Step Pyramid.Djoser is thought to have reigned for 19 years, but some historians and scholars attribute a much longer time for his rule, owing to the number and size of the monuments he built.\n\n[HEADING: C]\nThe Step Pyramid has been thoroughly examined and investigated over the last century, and it is now known that the building process went through many different stages.Historian Marc Van de Mieroop comments on this, writing \"Much experimentation was involved, which is especially clear in the construction of the pyramid in the center of the complex.It had several plans... before it became the first Step Pyramid in history, piling six levels on top of one another...The weight of the enormous mass was a challenge for the builders, who placed the stones at an inward incline in order to prevent the monument breaking up.\"\n \n[HEADING: D]\nWhen finally completed, the Step Pyramid rose 62 meters high and was the tallest structure of its time.The complex in which it was built was the size of a city in ancient Egypt and included a temple, courtyards, shrines, and living quarters for the priests.It covered a region of 16 hectares and was surrounded by a wall 10.5 meters high.The wall had 13 false doors cut into it with only one true entrance cut into the south-east corner; the entire wall was then ringed by a trench 750 meters long and 40 meters wide.The false doors and the trench were incorporated into the complex to discourage unwanted visitors.If someone wished to enter.he or she would have needed to know in advance how to find the location of the true opening in the wall.Djoser was so proud of his accomplishment that he broke the tradition of having only his own name on the monument and had Imhotep's name carved on it as well.\n \n[HEADING: E]\nThe burial chamber of the tomb, where the king's body was laid to rest, was dug beneath the base of the pyramid, surrounded by a vast maze of long tunnels that had rooms off them to discourage robbers.One of the most mysterious discoveries found inside the pyramid was a large number of stone vessels.Over 40,000 of these vessels, of various forms and shapes, were discovered in storerooms off the pyramid's underground passages.They are inscribed with the names of rulers from the First and Second Dynasties of Egypt and made from different kinds of stone.There is no agreement among scholars and archaeologists on why the vessels were placed in the tomb of Djoser or what they were supposed to represent.The archaeologist Jean-Philippe Lauer, who excavated most of the pyramid and complex, believes they were originally stored and then given a 'proper burial' by Djoser in his pyramid to honor his predecessors.There are other historians, however, who claim the vessels were dumped into the shafts as yet another attempt to prevent grave robbers from getting to the king's burial chamber.\n \n[HEADING: F]\nUnfortunately, all of the precautions and intricate design of the underground network did not prevent ancient robbers from finding a way in.Djoser's grave goods, and even his body, were stolen at some point in the past and all archaeologists found were a small number of his valuables overlooked by the thieves.There was enough left throughout the pyramid and its complex, however, to astonish and amaze the archaeologists who excavated it.\n \n[HEADING: G]\nEgyptologist Miroslav Verner writes, \"Few monuments hold a place in human history as significant as that of the Step Pyramid in Saqqara...It can be said without exaggeration that this pyramid complex constitutes a milestone in the evolution of monumental stone architecture in Egypt and in the world as a whole.\"The Step Pyramid was a revolutionary advance in architecture and became the archetype which all the other great pyramid builders of Egypt would follow.",
+      "questions": [
+        {
+          "number": 15,
+          "question_type": "MATCH",
+          "content": "",
+          "correct_answer": "For reasons which remain unclear, Djoser's main official, whose name was Imhotep, conceived of building a taller, more impressive tomb for his king by stacking stone slabs on top of one another, progressively making them smaller, to form the shape now known as the Step Pyramid.",
+          "explanation": "Paragraph B explains how Imhotep developed a new idea by stacking stone slabs to create a taller burial structure.",
+          "group_instruction": "<p>Reading Passage 2&nbsp;has&nbsp;seven&nbsp;paragraphs, Choose the correct heading for each paragraph from the list of headings below.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The areas and artefacts within the pyramid itself"
+            },
+            {
+              "option": "B",
+              "text": "A difficult task for those involved"
+            },
+            {
+              "option": "C",
+              "text": "A king who saved his people"
+            },
+            {
+              "option": "D",
+              "text": "A single certainty among other less definite facts"
+            },
+            {
+              "option": "E",
+              "text": "An overview of the external buildings and areas"
+            },
+            {
+              "option": "F",
+              "text": "A pyramid design that others copied"
+            },
+            {
+              "option": "G",
+              "text": "An idea for changing the design of burial structures"
+            },
+            {
+              "option": "H",
+              "text": "An incredible experience despite the few remains"
+            },
+            {
+              "option": "I",
+              "text": "The answers to some unexpected questions"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MATCH",
+          "content": "",
+          "correct_answer": "The complex in which it was built was the size of a city in ancient Egypt and included a temple, courtyards, shrines, and living quarters for the priests.",
+          "explanation": "Paragraph D provides an overview of the pyramid complex, including temples, courtyards, shrines, living quarters, walls, and trenches.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The areas and artefacts within the pyramid itself"
+            },
+            {
+              "option": "B",
+              "text": "A difficult task for those involved"
+            },
+            {
+              "option": "C",
+              "text": "A king who saved his people"
+            },
+            {
+              "option": "D",
+              "text": "A single certainty among other less definite facts"
+            },
+            {
+              "option": "E",
+              "text": "An overview of the external buildings and areas"
+            },
+            {
+              "option": "F",
+              "text": "A pyramid design that others copied"
+            },
+            {
+              "option": "G",
+              "text": "An idea for changing the design of burial structures"
+            },
+            {
+              "option": "H",
+              "text": "An incredible experience despite the few remains"
+            },
+            {
+              "option": "I",
+              "text": "The answers to some unexpected questions"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MATCH",
+          "content": "",
+          "correct_answer": "The burial chamber of the tomb, where the king's body was laid to rest, was dug beneath the base of the pyramid, surrounded by a vast maze of long tunnels that had rooms off them to discourage robbers.",
+          "explanation": "Paragraph E focuses on the burial chamber, tunnels, and the discovery of thousands of stone vessels inside the pyramid.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The areas and artefacts within the pyramid itself"
+            },
+            {
+              "option": "B",
+              "text": "A difficult task for those involved"
+            },
+            {
+              "option": "C",
+              "text": "A king who saved his people"
+            },
+            {
+              "option": "D",
+              "text": "A single certainty among other less definite facts"
+            },
+            {
+              "option": "E",
+              "text": "An overview of the external buildings and areas"
+            },
+            {
+              "option": "F",
+              "text": "A pyramid design that others copied"
+            },
+            {
+              "option": "G",
+              "text": "An idea for changing the design of burial structures"
+            },
+            {
+              "option": "H",
+              "text": "An incredible experience despite the few remains"
+            },
+            {
+              "option": "I",
+              "text": "The answers to some unexpected questions"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MATCH",
+          "content": "",
+          "correct_answer": "There was enough left throughout the pyramid and its complex, however, to astonish and amaze the archaeologists who excavated it.",
+          "explanation": "Paragraph F explains that although most valuables were stolen, enough remained to impress archaeologists.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The areas and artefacts within the pyramid itself"
+            },
+            {
+              "option": "B",
+              "text": "A difficult task for those involved"
+            },
+            {
+              "option": "C",
+              "text": "A king who saved his people"
+            },
+            {
+              "option": "D",
+              "text": "A single certainty among other less definite facts"
+            },
+            {
+              "option": "E",
+              "text": "An overview of the external buildings and areas"
+            },
+            {
+              "option": "F",
+              "text": "A pyramid design that others copied"
+            },
+            {
+              "option": "G",
+              "text": "An idea for changing the design of burial structures"
+            },
+            {
+              "option": "H",
+              "text": "An incredible experience despite the few remains"
+            },
+            {
+              "option": "I",
+              "text": "The answers to some unexpected questions"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MATCH",
+          "content": "",
+          "correct_answer": "The Step Pyramid was a revolutionary advance in architecture and became the archetype which all the other great pyramid builders of Egypt would follow.",
+          "explanation": "Paragraph G states that the Step Pyramid became a model for future pyramid construction.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The areas and artefacts within the pyramid itself"
+            },
+            {
+              "option": "B",
+              "text": "A difficult task for those involved"
+            },
+            {
+              "option": "C",
+              "text": "A king who saved his people"
+            },
+            {
+              "option": "D",
+              "text": "A single certainty among other less definite facts"
+            },
+            {
+              "option": "E",
+              "text": "An overview of the external buildings and areas"
+            },
+            {
+              "option": "F",
+              "text": "A pyramid design that others copied"
+            },
+            {
+              "option": "G",
+              "text": "An idea for changing the design of burial structures"
+            },
+            {
+              "option": "H",
+              "text": "An incredible experience despite the few remains"
+            },
+            {
+              "option": "I",
+              "text": "The answers to some unexpected questions"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MATCH",
+          "content": "",
+          "correct_answer": "However, there is no question that, as far as Egypt is concerned, it began with one monument to one king designed by one brilliant architect: the Step Pyramid of Djoser at Saqqara.",
+          "explanation": "Paragraph A states that although many aspects of pyramid development are debated, one fact is certain: it began with Djoser’s Step Pyramid.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The areas and artefacts within the pyramid itself"
+            },
+            {
+              "option": "B",
+              "text": "A difficult task for those involved"
+            },
+            {
+              "option": "C",
+              "text": "A king who saved his people"
+            },
+            {
+              "option": "D",
+              "text": "A single certainty among other less definite facts"
+            },
+            {
+              "option": "E",
+              "text": "An overview of the external buildings and areas"
+            },
+            {
+              "option": "F",
+              "text": "A pyramid design that others copied"
+            },
+            {
+              "option": "G",
+              "text": "An idea for changing the design of burial structures"
+            },
+            {
+              "option": "H",
+              "text": "An incredible experience despite the few remains"
+            },
+            {
+              "option": "I",
+              "text": "The answers to some unexpected questions"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MATCH",
+          "content": "",
+          "correct_answer": "The weight of the enormous mass was a challenge for the builders, who placed the stones at an inward incline in order to prevent the monument breaking up.",
+          "explanation": "Paragraph C describes the challenges builders faced, particularly managing the pyramid’s enormous weight.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The areas and artefacts within the pyramid itself"
+            },
+            {
+              "option": "B",
+              "text": "A difficult task for those involved"
+            },
+            {
+              "option": "C",
+              "text": "A king who saved his people"
+            },
+            {
+              "option": "D",
+              "text": "A single certainty among other less definite facts"
+            },
+            {
+              "option": "E",
+              "text": "An overview of the external buildings and areas"
+            },
+            {
+              "option": "F",
+              "text": "A pyramid design that others copied"
+            },
+            {
+              "option": "G",
+              "text": "An idea for changing the design of burial structures"
+            },
+            {
+              "option": "H",
+              "text": "An incredible experience despite the few remains"
+            },
+            {
+              "option": "I",
+              "text": "The answers to some unexpected questions"
+            }
+          ]
+        },
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "The complex in which it was built was the size of a city in ancient Egypt and included a temple, courtyards, shrines, and living quarters for the priests.",
+          "explanation": "The passage states that the pyramid complex was as large as a city in ancient Egypt.",
+          "group_instruction": "<p>Complete the notes below.</p><p>Choose&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;from the passage for each answer.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "The complex in which it was built was the size of a city in ancient Egypt and included a temple, courtyards, shrines, and living quarters for the priests.",
+          "explanation": "The living quarters in the complex were occupied by priests.",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "If someone wished to enter.he or she would have needed to know in advance how to find the location of the true opening in the wall.",
+          "explanation": "A trench surrounded the wall of the complex as part of its protective design.",
+          "group_instruction": ""
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "If someone wished to enter.he or she would have needed to know in advance how to find the location of the true opening in the wall.",
+          "explanation": "Visitors needed to know the location of the true entrance to get inside.",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "",
+          "correct_answer": "B",
+          "explanation": "The passage states that historians disagree about how long Djoser ruled.",
+          "group_instruction": "<p>Choose <strong>TWO</strong> correct answers. </p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Initially he had to be persuaded to build in stone rather than clay."
+            },
+            {
+              "option": "B",
+              "text": "There is disagreement concerning the length of his reign."
+            },
+            {
+              "option": "C",
+              "text": "He failed to appreciate Imhotep's part in the design of the Step Pyramid."
+            },
+            {
+              "option": "D",
+              "text": "A few of his possessions were still in his tomb when archaeologists found it."
+            },
+            {
+              "option": "E",
+              "text": "He criticised the design and construction of other pyramids in Egypt."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "",
+          "correct_answer": "B",
+          "explanation": "Although most grave goods were stolen, a small number of valuables remained when archaeologists excavated the tomb.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Initially he had to be persuaded to build in stone rather than clay."
+            },
+            {
+              "option": "B",
+              "text": "There is disagreement concerning the length of his reign."
+            },
+            {
+              "option": "C",
+              "text": "He failed to appreciate Imhotep's part in the design of the Step Pyramid."
+            },
+            {
+              "option": "D",
+              "text": "A few of his possessions were still in his tomb when archaeologists found it."
+            },
+            {
+              "option": "E",
+              "text": "He criticised the design and construction of other pyramids in Egypt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage_number": 3,
+      "title": "The future of work",
+      "content": "According to a leading business consultancy, 3-14% of the global workforce will need to switch to a different occupation within the next 10-15 years, and all workers will need to adapt as their occupations evolve alongside increasingly capable machines. Automation - or 'embodied artificial intelligence' (AI) - is one aspect of the disruptive effects of technology on the labour market. 'Disembodied AI', like the algorithms running in our smartphones, is another.\n\nDr Stella Pachidi from Cambridge Judge Business School believes that some of the most fundamental changes are happening as a result of the 'algorithmication' of jobs that are dependent on data rather than on production - the so-called knowledge economy. Algorithms are capable of learning from data to undertake tasks that previously needed human judgement, such as reading legal contracts, analysing medical scans and gathering market intelligence.\n\n\"In many cases, they can outperform humans,\" says Pachidi.\"Organisations are attracted to using algorithms because they want to make choices based on what they consider is 'perfect information', as well as to reduce costs and enhance productivity.\"\n\n\"But these enhancements are not without consequences,\" says Pachidi.\"If routine cognitive tasks are taken over by AI, how do professions develop their future experts?\" she asks. \"One way of learning about a job is 'legitimate peripheral participation' - a novice stands next to experts and learns by observation. If this isn't happening, then you need to find new ways to learn.\"\n\nAnother issue is the extent to which the technology influences or even controls the workforce. For over two years, Pachidi monitored a telecommunications company.\"The way telecoms salespeople work is through personal and frequent contact with clients, using the benefit of experience to assess a situation and reach a decision. However, the company had started using a[n]...algorithm that defined when account managers should contact certain customers about which kinds of campaigns and what to offer them.\"\n\nThe algorithm - usually built by external designers - often becomes the keeper of knowledge, she explains. In cases like this, Pachidi believes, a short-sighted view begins to creep into working practices whereby workers learn through the \"algorithm's eyes\" and become dependent on its instructions. Alternative explorations - where experimentation and human instinct lead to progress and new ideas - are effectively discouraged.\n\nPachidi and colleagues even observed people developing strategies to make the algorithm work to their own advantage. \"We are seeing cases where workers feed the algorithm with false data to reach their targets,\" she reports.\n\nIt's scenarios like these that many researchers are working to avoid. Their objective is to make AI technologies more trustworthy and transparent, so that organisations and individuals understand how AI decisions are made. In the meantime, says Pachidi, \"We need to make sure we fully understand the dilemmas that this new world raises regarding expertise, occupational boundaries and control.\"\n\nEconomist Professor Hamish Low believes that the future of work will involve major transitions across the whole life course for everyone: \"The traditional trajectory of full-time education followed by full-time work followed by a pensioned retirement is a thing of the past,\" says Low. Instead, he envisages a multistage employment life: one where retraining happens across the life course, and where multiple jobs and no job happen by choice at different stages.\n\nOn the subject of job losses, Low believes the predictions are founded on a fallacy: \"It assumes that the number of jobs is fixed. If in 30 years, half of 100 jobs are being carried out by robots, that doesn't mean we are left with just 50 jobs for humans. The number of jobs will increase: we would expect there to be 150 jobs.\"\n\nDr Ewan McGaughey, at Cambridge's Centre for Business Research and King's College London, agrees that 'apocalyptic' views about the future of work are misguided. \"It's the laws that restrict the supply of capital to the job market, not the advent of new technologies that causes unemployment.\"\n\nHis recently published research answers the question of whether automation, AI and robotics will mean a 'jobless future' by looking at the causes of unemployment. \"History is clear that change can mean redundancies. But social policies can tackle this through retraining and redeployment.\"\n\nHe adds: \"If there is going to be change to jobs as a result of AI and robotics then I'd like to see governments seizing the opportunity to improve policy to enforce good job security. We can 'reprogramme' the law to prepare for a fairer future of work and leisure. \"McGaughey's findings are a call to arms to leaders of organisations, governments and banks to pre-empt the coming changes with bold new policies that guarantee full employment, fair incomes and a thriving economic democracy.\n\n\"The promises of these new technologies are astounding. They deliver humankind the capacity to live in a way that nobody could have once imagined,\" he adds. \"Just as the industrial revolution brought people past subsistence agriculture, and the corporate revolution enabled mass production, a third revolution has been pronounced. But it will not only be one of technology. The next revolution will be social.\"",
+      "questions": [
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "",
+          "correct_answer": "B",
+          "explanation": "The first paragraph discusses how many workers will need to change jobs or adapt due to increasingly capable machines, showing the scale of change AI will bring to work.",
+          "group_instruction": "<p>Choose the correct answer. </p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the kinds of jobs that will be most affected by the growth of AI"
+            },
+            {
+              "option": "B",
+              "text": "the extent to which AI will alter the nature of the work that people do"
+            },
+            {
+              "option": "C",
+              "text": "the proportion of the world's labour force who will have jobs in AI in the future."
+            },
+            {
+              "option": "D",
+              "text": "the difference between ways that embodied and disembodied AI will impact on workers."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "",
+          "correct_answer": "D",
+          "explanation": "Pachidi believes that the ‘algorithmication’ of knowledge-based jobs is causing fundamental changes in the workplace.",
+          "group_instruction": "<p>Choose the correct answer</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is having an influence on the number of jobs available."
+            },
+            {
+              "option": "B",
+              "text": "It is changing people's attitudes towards their occupations."
+            },
+            {
+              "option": "C",
+              "text": "It is the main reason why the production sector is declining."
+            },
+            {
+              "option": "D",
+              "text": "It is a key factor driving current developments in the workplace."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "",
+          "correct_answer": "C",
+          "explanation": "Pachidi observed workers manipulating the algorithm by feeding it false data to meet their targets.",
+          "group_instruction": "<p>Choose the correct answer</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "staff disagreeing with the recommendations of AI"
+            },
+            {
+              "option": "B",
+              "text": "staff feeling resentful about the intrusion of AI in their work"
+            },
+            {
+              "option": "C",
+              "text": "staff making sure that AI produces the results that they want"
+            },
+            {
+              "option": "D",
+              "text": "staff allowing AI to carry out tasks they ought to do themselves"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "",
+          "correct_answer": "D",
+          "explanation": "McGaughey argues that although change can cause redundancies, social policies such as retraining can address the problem effectively.",
+          "group_instruction": "<p>Choose the correct answer</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "challenges the idea that redundancy is a negative thing"
+            },
+            {
+              "option": "B",
+              "text": "shows the profound effect of mass unemployment on society."
+            },
+            {
+              "option": "C",
+              "text": "highlights some differences between past and future job losses."
+            },
+            {
+              "option": "D",
+              "text": "illustrates how changes in the job market can be successfully handled."
+            }
+          ]
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "Dr Stella Pachidi from Cambridge Judge Business School believes that some of the most fundamental changes are happening as a result of the 'algorithmication' of jobs that are dependent on data rather than on production - the so-called knowledge economy",
+          "explanation": "The knowledge economy refers to jobs that depend on data or information rather than production.",
+          "group_instruction": "<p>Complete the summary using the list of words or phrases below.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "Alternative explorations - where experimentation and human instinct lead to progress and new ideas - are effectively discouraged.",
+          "explanation": "The passage states that human instinct and experimentation are discouraged, which refers to intuition.",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "Their objective is to make AI technologies more trustworthy and transparent, so that organisations and individuals understand how AI decisions are made.",
+          "explanation": "Researchers aim to make AI more trustworthy and transparent so users can better understand and trust its decisions.",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "",
+          "correct_answer": "In cases like this, Pachidi believes, a short-sighted view begins to creep into working practices whereby workers learn through the 'algorithm's eyes' and become dependent on its instructions.",
+          "explanation": "Workers became dependent on the algorithm’s instructions, learning through the “algorithm’s eyes.”",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "MINFO",
+          "content": "Greater levels of automation will not result in lower employment",
+          "correct_answer": "The number of jobs will increase: we would expect there to be 150 jobs.",
+          "explanation": "Low argues that even if robots perform many tasks, the total number of jobs will increase rather than decrease.",
+          "group_instruction": "<p>Match each statement with the correct person, </p><p><br></p><p><strong><em>NB</em></strong><em>&nbsp;You may use any letter more than once</em></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Stella Pachidi"
+            },
+            {
+              "option": "B",
+              "text": "Hamish Low"
+            },
+            {
+              "option": "C",
+              "text": "Ewan McGaughey"
+            }
+          ]
+        },
+        {
+          "number": 37,
+          "question_type": "MINFO",
+          "content": "AI's potential to transform people's lives has parallels with major cultural shifts which occurred in previous eras.",
+          "correct_answer": "Just as the industrial revolution brought people past subsistence agriculture, and the corporate revolution enabled mass production, a third revolution has been pronounced.",
+          "explanation": "McGaughey compares the AI revolution to the industrial and corporate revolutions of the past.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Stella Pachidi"
+            },
+            {
+              "option": "B",
+              "text": "Hamish Low"
+            },
+            {
+              "option": "C",
+              "text": "Ewan McGaughey"
+            }
+          ]
+        },
+        {
+          "number": 38,
+          "question_type": "MINFO",
+          "content": "It is important to be aware of the range of problems that AI causes.",
+          "correct_answer": "We need to make sure we fully understand the dilemmas that this new world raises regarding expertise, occupational boundaries and control.",
+          "explanation": "Pachidi stresses the need to understand the dilemmas raised by AI in relation to expertise and control.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Stella Pachidi"
+            },
+            {
+              "option": "B",
+              "text": "Hamish Low"
+            },
+            {
+              "option": "C",
+              "text": "Ewan McGaughey"
+            }
+          ]
+        },
+        {
+          "number": 39,
+          "question_type": "MINFO",
+          "content": "People are going to follow a less conventional career path than in the past.",
+          "correct_answer": "Instead, he envisages a multistage employment life: one where retraining happens across the life course, and where multiple jobs and no job happen by choice at different stages.",
+          "explanation": "Low predicts a multistage employment life with retraining and multiple jobs at different stages.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Stella Pachidi"
+            },
+            {
+              "option": "B",
+              "text": "Hamish Low"
+            },
+            {
+              "option": "C",
+              "text": "Ewan McGaughey"
+            }
+          ]
+        },
+        {
+          "number": 40,
+          "question_type": "MINFO",
+          "content": "Authorities should take measures to ensure that there will be adequately paid work for everyone.",
+          "correct_answer": "McGaughey's findings are a call to arms to leaders of organisations, governments and banks to pre-empt the coming changes with bold new policies that guarantee full employment, fair incomes and a thriving economic democracy.",
+          "explanation": "McGaughey calls for governments to introduce policies that ensure job security and fair incomes.",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Stella Pachidi"
+            },
+            {
+              "option": "B",
+              "text": "Hamish Low"
+            },
+            {
+              "option": "C",
+              "text": "Ewan McGaughey"
+            }
+          ]
+        },
+        {
+          "number": 36,
+          "question_type": "MINFO",
+          "content": "There are several reasons why AI is appealing to businesses.",
+          "correct_answer": "Organisations are attracted to using algorithms because they want to make choices based on what they consider is 'perfect information', as well as to reduce costs and enhance productivity.",
+          "explanation": "Pachidi explains that organisations use algorithms to access ‘perfect information’, reduce costs, and improve productivity",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Stella Pachidi"
+            },
+            {
+              "option": "B",
+              "text": "Hamish Low"
+            },
+            {
+              "option": "C",
+              "text": "Ewan McGaughey"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

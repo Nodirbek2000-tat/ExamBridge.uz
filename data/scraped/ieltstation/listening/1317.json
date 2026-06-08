@@ -1,0 +1,650 @@
+{
+  "title": "Cambridge 12_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182626_986b31a5.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Events during Kenton Festival",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182626_986b31a5.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Theatre trip to Munich",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182626_986b31a5.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "The group will be met at Munich Airport by",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><br></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "an employee at the National Theatre."
+            },
+            {
+              "option": "B",
+              "text": "a theatre manager."
+            },
+            {
+              "option": "C",
+              "text": "a tour operator."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "How much will they pay per night for a double room at the hotel?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "110 euros"
+            },
+            {
+              "option": "B",
+              "text": "120 euros"
+            },
+            {
+              "option": "C",
+              "text": "150 euros"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What type of restaurant will they go to on Tuesday evening?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "an Italian restaurant"
+            },
+            {
+              "option": "B",
+              "text": "a Lebanese restaurant"
+            },
+            {
+              "option": "C",
+              "text": "a typical restaurant of the region"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "Who will they meet on Wednesday afternoon?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "an actor"
+            },
+            {
+              "option": "B",
+              "text": "a playwright"
+            },
+            {
+              "option": "C",
+              "text": "a theatre director"
+            }
+          ]
+        },
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "When the group meet at the airport they will have",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "breakfast"
+            },
+            {
+              "option": "B",
+              "text": "coffee"
+            },
+            {
+              "option": "C",
+              "text": "lunch"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What does the man say about the play on each of the following days?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The playwright will be present."
+            },
+            {
+              "option": "B",
+              "text": "The play was written to celebrate an anniversary."
+            },
+            {
+              "option": "C",
+              "text": "The play will be performed inside a historic building."
+            },
+            {
+              "option": "D",
+              "text": "The play will be accompanied by live music."
+            },
+            {
+              "option": "E",
+              "text": "The play will be performed outdoors."
+            },
+            {
+              "option": "F",
+              "text": "The play will be performed for the first time."
+            },
+            {
+              "option": "G",
+              "text": "The performance will be attended by officials from the town."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The playwright will be present."
+            },
+            {
+              "option": "B",
+              "text": "The play was written to celebrate an anniversary."
+            },
+            {
+              "option": "C",
+              "text": "The play will be performed inside a historic building."
+            },
+            {
+              "option": "D",
+              "text": "The play will be accompanied by live music."
+            },
+            {
+              "option": "E",
+              "text": "The play will be performed outdoors."
+            },
+            {
+              "option": "F",
+              "text": "The play will be performed for the first time."
+            },
+            {
+              "option": "G",
+              "text": "The performance will be attended by officials from the town."
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The playwright will be present."
+            },
+            {
+              "option": "B",
+              "text": "The play was written to celebrate an anniversary."
+            },
+            {
+              "option": "C",
+              "text": "The play will be performed inside a historic building."
+            },
+            {
+              "option": "D",
+              "text": "The play will be accompanied by live music."
+            },
+            {
+              "option": "E",
+              "text": "The play will be performed outdoors."
+            },
+            {
+              "option": "F",
+              "text": "The play will be performed for the first time."
+            },
+            {
+              "option": "G",
+              "text": "The performance will be attended by officials from the town."
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The playwright will be present."
+            },
+            {
+              "option": "B",
+              "text": "The play was written to celebrate an anniversary."
+            },
+            {
+              "option": "C",
+              "text": "The play will be performed inside a historic building."
+            },
+            {
+              "option": "D",
+              "text": "The play will be accompanied by live music."
+            },
+            {
+              "option": "E",
+              "text": "The play will be performed outdoors."
+            },
+            {
+              "option": "F",
+              "text": "The play will be performed for the first time."
+            },
+            {
+              "option": "G",
+              "text": "The performance will be attended by officials from the town."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The playwright will be present."
+            },
+            {
+              "option": "B",
+              "text": "The play was written to celebrate an anniversary."
+            },
+            {
+              "option": "C",
+              "text": "The play will be performed inside a historic building."
+            },
+            {
+              "option": "D",
+              "text": "The play will be accompanied by live music."
+            },
+            {
+              "option": "E",
+              "text": "The play will be performed outdoors."
+            },
+            {
+              "option": "F",
+              "text": "The play will be performed for the first time."
+            },
+            {
+              "option": "G",
+              "text": "The performance will be attended by officials from the town."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Scandinavian Studies",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182626_986b31a5.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "James chose to take Scandinavian Studies because when he was a child",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "he was often taken to Denmark."
+            },
+            {
+              "option": "B",
+              "text": "his mother spoke to him in Danish."
+            },
+            {
+              "option": "C",
+              "text": "a number of Danish people visited his family."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "When he graduates, James would like to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "take a postgraduate course."
+            },
+            {
+              "option": "B",
+              "text": "work in the media."
+            },
+            {
+              "option": "C",
+              "text": "become a translator."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Which course will end this term?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Swedish cinema"
+            },
+            {
+              "option": "B",
+              "text": "Danish television programmes"
+            },
+            {
+              "option": "C",
+              "text": "Scandinavian literature"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "They agree that James's literature paper this term will be on",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "19th century playwrights"
+            },
+            {
+              "option": "B",
+              "text": "the Icelandic sagas"
+            },
+            {
+              "option": "C",
+              "text": "modern Scandinavian novels"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "Beth recommends that James's paper should be",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a historical overview of the genre"
+            },
+            {
+              "option": "B",
+              "text": "an in-depth analysis of a single writer"
+            },
+            {
+              "option": "C",
+              "text": "a study of the social background to the literature"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the flowchart below.</p>"
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Conflict at work",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182626_986b31a5.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,620 @@
+{
+  "title": "Cambridge 15_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135625_b770ff7d.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Festival information",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135625_b770ff7d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Minster Park",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135625_b770ff7d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "The park was originally established",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "as an amenity provided by the city council."
+            },
+            {
+              "option": "B",
+              "text": "as land belonging to a private house."
+            },
+            {
+              "option": "C",
+              "text": "as a shared area set up by the local community."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "Why is there a statue of Diane Gosforth in the park?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "She was a resident who helped to lead a campaign."
+            },
+            {
+              "option": "B",
+              "text": "She was a council member responsible for giving the public access."
+            },
+            {
+              "option": "C",
+              "text": "She was a senior worker at the park for many years."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "During the First World War, the park was mainly used for",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "exercises by troops."
+            },
+            {
+              "option": "B",
+              "text": "growing vegetables."
+            },
+            {
+              "option": "C",
+              "text": "public meetings."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "When did the physical transformation of the park begin?  A",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "2013"
+            },
+            {
+              "option": "B",
+              "text": "2015"
+            },
+            {
+              "option": "C",
+              "text": "2016"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MAP",
+          "content": "statue of Diane Gosforth",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Label the map below.</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "wooden sculptures",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "playground",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "maze",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "tennis courts",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "fitness area",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Cathy & Graham novels",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135625_b770ff7d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What topic do Cathy and Graham choose to illustrate with each novel?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "poverty"
+            },
+            {
+              "option": "B",
+              "text": "education"
+            },
+            {
+              "option": "C",
+              "text": "Dickens's travels"
+            },
+            {
+              "option": "D",
+              "text": "entertainment"
+            },
+            {
+              "option": "E",
+              "text": "crime and the law"
+            },
+            {
+              "option": "F",
+              "text": "wealth"
+            },
+            {
+              "option": "G",
+              "text": "medicine"
+            },
+            {
+              "option": "H",
+              "text": "a woman's life"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "poverty"
+            },
+            {
+              "option": "B",
+              "text": "education"
+            },
+            {
+              "option": "C",
+              "text": "Dickens's travels"
+            },
+            {
+              "option": "D",
+              "text": "entertainment"
+            },
+            {
+              "option": "E",
+              "text": "crime and the law"
+            },
+            {
+              "option": "F",
+              "text": "wealth"
+            },
+            {
+              "option": "G",
+              "text": "medicine"
+            },
+            {
+              "option": "H",
+              "text": "a woman's life"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "poverty"
+            },
+            {
+              "option": "B",
+              "text": "education"
+            },
+            {
+              "option": "C",
+              "text": "Dickens's travels"
+            },
+            {
+              "option": "D",
+              "text": "entertainment"
+            },
+            {
+              "option": "E",
+              "text": "crime and the law"
+            },
+            {
+              "option": "F",
+              "text": "wealth"
+            },
+            {
+              "option": "G",
+              "text": "medicine"
+            },
+            {
+              "option": "H",
+              "text": "a woman's life"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "poverty"
+            },
+            {
+              "option": "B",
+              "text": "education"
+            },
+            {
+              "option": "C",
+              "text": "Dickens's travels"
+            },
+            {
+              "option": "D",
+              "text": "entertainment"
+            },
+            {
+              "option": "E",
+              "text": "crime and the law"
+            },
+            {
+              "option": "F",
+              "text": "wealth"
+            },
+            {
+              "option": "G",
+              "text": "medicine"
+            },
+            {
+              "option": "H",
+              "text": "a woman's life"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "poverty"
+            },
+            {
+              "option": "B",
+              "text": "education"
+            },
+            {
+              "option": "C",
+              "text": "Dickens's travels"
+            },
+            {
+              "option": "D",
+              "text": "entertainment"
+            },
+            {
+              "option": "E",
+              "text": "crime and the law"
+            },
+            {
+              "option": "F",
+              "text": "wealth"
+            },
+            {
+              "option": "G",
+              "text": "medicine"
+            },
+            {
+              "option": "H",
+              "text": "a woman's life"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "poverty"
+            },
+            {
+              "option": "B",
+              "text": "education"
+            },
+            {
+              "option": "C",
+              "text": "Dickens's travels"
+            },
+            {
+              "option": "D",
+              "text": "entertainment"
+            },
+            {
+              "option": "E",
+              "text": "crime and the law"
+            },
+            {
+              "option": "F",
+              "text": "wealth"
+            },
+            {
+              "option": "G",
+              "text": "medicine"
+            },
+            {
+              "option": "H",
+              "text": "a woman's life"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Agricultural programme in Mozambique",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135625_b770ff7d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

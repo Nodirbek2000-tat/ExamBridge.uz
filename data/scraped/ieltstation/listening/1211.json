@@ -1,0 +1,632 @@
+{
+  "title": "Cambridge 20_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_144652_ca229a68.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Furniture Rental Companies",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_144652_ca229a68.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Bidcaster Community Archaeology Project",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_144652_ca229a68.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Who was responsible for starting the community project?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the castle owners"
+            },
+            {
+              "option": "B",
+              "text": "a national charity"
+            },
+            {
+              "option": "C",
+              "text": "the local council"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "How was the gold coin found?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Heavy rain had removed some of the soil."
+            },
+            {
+              "option": "B",
+              "text": "The ground was dug up by wild rabbits"
+            },
+            {
+              "option": "C",
+              "text": "A person with a metal detector searched the area."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "What led the archaeologists to believe there was an ancient village on this site?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the lucky discovery of old records"
+            },
+            {
+              "option": "B",
+              "text": "the bases of several structures visible in the grass"
+            },
+            {
+              "option": "C",
+              "text": "the unusual stones found near the castle"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What are the team still hoping to find?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "everyday pottery"
+            },
+            {
+              "option": "B",
+              "text": "animal bones"
+            },
+            {
+              "option": "C",
+              "text": "pieces of jewellery"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "What was found on the other side of the river to the castle?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the remains of a large palace"
+            },
+            {
+              "option": "B",
+              "text": "the outline of fields"
+            },
+            {
+              "option": "C",
+              "text": "a number of small huts"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "What do the team plan to do after work ends this summer?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "prepare a display for a museum"
+            },
+            {
+              "option": "B",
+              "text": "take part in a television programme\\000a\\000a"
+            },
+            {
+              "option": "C",
+              "text": "start to organise school visits"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "bridge foundations",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "rubbish pit",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "meeting hall",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "fish pond",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Project on Theatre Programmes",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_144652_ca229a68.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "Finn was pleased to discover that their topic",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "was not familiar to their module leader."
+            },
+            {
+              "option": "B",
+              "text": "had not been chosen by other students."
+            },
+            {
+              "option": "C",
+              "text": "did not prove to be difficult to research"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Maya says a mistaken belief about theatre programmes is that",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "theatres pay companies to produce them."
+            },
+            {
+              "option": "B",
+              "text": "\\000afew theatre-goers buy them nowadays."
+            },
+            {
+              "option": "C",
+              "text": "they contain far more adverts than previously"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Maya feels their project should include an explanation of why companies of actors",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "promoted their own plays."
+            },
+            {
+              "option": "B",
+              "text": "performed plays outdoors."
+            },
+            {
+              "option": "C",
+              "text": "had to tour with their plays."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "Finn and Maya both think that, compared to nineteenth-century programmes,those from the eighteenth century",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "were more original"
+            },
+            {
+              "option": "B",
+              "text": "were more colourful."
+            },
+            {
+              "option": "C",
+              "text": "were more informative"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "Maya doesn't fully understand why, in the twentieth century,",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "very few theatre programmes were printed in the USA."
+            },
+            {
+              "option": "B",
+              "text": "British theatre programmes failed to develop for so long."
+            },
+            {
+              "option": "C",
+              "text": "theatre programmes in Britain copied fashions from the USA."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Finn was surprised that, in early British theatre, programmes",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "were difficult for audiences to obtain"
+            },
+            {
+              "option": "B",
+              "text": "were given out free of charge"
+            },
+            {
+              "option": "C",
+              "text": "were seen as a kind of contract"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What comment is made about the programme for each of the following shows? Choose the correct letter.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Its origin is somewhat controversial."
+            },
+            {
+              "option": "B",
+              "text": "It is historically significant for a country."
+            },
+            {
+              "option": "C",
+              "text": "It was effective at attracting audiences."
+            },
+            {
+              "option": "D",
+              "text": "It is included in a recent project."
+            },
+            {
+              "option": "E",
+              "text": "It contains insights into the show."
+            },
+            {
+              "option": "F",
+              "text": "It resembles an artwork."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Its origin is somewhat controversial."
+            },
+            {
+              "option": "B",
+              "text": "It is historically significant for a country."
+            },
+            {
+              "option": "C",
+              "text": "It was effective at attracting audiences."
+            },
+            {
+              "option": "D",
+              "text": "It is included in a recent project."
+            },
+            {
+              "option": "E",
+              "text": "It contains insights into the show."
+            },
+            {
+              "option": "F",
+              "text": "It resembles an artwork."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Its origin is somewhat controversial."
+            },
+            {
+              "option": "B",
+              "text": "It is historically significant for a country."
+            },
+            {
+              "option": "C",
+              "text": "It was effective at attracting audiences."
+            },
+            {
+              "option": "D",
+              "text": "It is included in a recent project."
+            },
+            {
+              "option": "E",
+              "text": "It contains insights into the show."
+            },
+            {
+              "option": "F",
+              "text": "It resembles an artwork."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Its origin is somewhat controversial."
+            },
+            {
+              "option": "B",
+              "text": "It is historically significant for a country."
+            },
+            {
+              "option": "C",
+              "text": "It was effective at attracting audiences."
+            },
+            {
+              "option": "D",
+              "text": "It is included in a recent project."
+            },
+            {
+              "option": "E",
+              "text": "It contains insights into the show."
+            },
+            {
+              "option": "F",
+              "text": "It resembles an artwork."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Inclusive design",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_144652_ca229a68.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

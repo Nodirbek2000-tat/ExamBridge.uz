@@ -231,6 +231,7 @@ class SpeakingTask(models.Model):
     bullet_points = models.JSONField(default=list, blank=True, help_text='Bullet points for Part 2 cue card')
     follow_up = models.CharField(max_length=500, blank=True, help_text='Follow-up question after Part 2 long turn')
     parts_data = models.JSONField(default=list, blank=True, help_text='Full mock: list of part objects')
+    source = models.CharField(max_length=10, default='IELTS', choices=[('IELTS', 'IELTS'), ('CEFR', 'CEFR')])
 
     class Meta:
         ordering = ['part', 'title']

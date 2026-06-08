@@ -956,24 +956,35 @@ def import_cefr_test(request):
         )
 
         if import_type == 'reading':
-            # Multi-part mock (has "parts" key) — create one passage per part
+            # Multi-part full mock (has "parts" key) — group all passages under one CEFRTest
             if 'parts' in data:
+                from cefr.models import CEFRTest
                 parts_data = data['parts']
                 if not parts_data:
                     return Response({'error': 'No parts provided.'}, status=400)
                 created_passages = []
                 with transaction.atomic():
-                    for part in parts_data:
+                    # Create one CEFRTest to group all parts as a full mock
+                    mock_test = CEFRTest.objects.create(
+                        title=data.get('title', 'CEFR Reading Full Mock'),
+                        level=data.get('level', 'B2'),
+                        test_type='READING',
+                        time_limit=data.get('time_limit', 60),
+                        is_premium=data.get('is_premium', False),
+                        is_active=True,
+                    )
+                    for idx, part in enumerate(parts_data, start=1):
                         passage = CEFRReadingPassage.objects.create(
+                            test=mock_test,
                             title=part.get('title', data.get('title', '')),
                             content=part.get('content', ''),
-                            passage_number=part.get('passage_number', 1),
-                            is_standalone=part.get('is_standalone', False),
+                            passage_number=part.get('passage_number', idx),
+                            is_standalone=False,
                             level=data.get('level', ''),
-                            time_limit=data.get('time_limit', 20),
+                            time_limit=part.get('time_limit', data.get('time_limit', 20)),
                             difficulty=data.get('difficulty', 'MEDIUM').upper(),
                             is_premium=data.get('is_premium', False),
-                            is_mock=data.get('is_mock', True),
+                            is_mock=True,
                         )
                         for q_data in part.get('questions', []):
                             q = CEFRReadingQuestion.objects.create(
@@ -991,7 +1002,7 @@ def import_cefr_test(request):
                             for c in q_data.get('choices', []):
                                 CEFRReadingChoice.objects.create(question=q, option=c['option'], text=c['text'])
                         created_passages.append({'id': passage.id, 'title': passage.title, 'questions': passage.questions.count()})
-                return Response({'part_count': len(parts_data), 'passages': created_passages})
+                return Response({'test_id': mock_test.id, 'part_count': len(parts_data), 'passages': created_passages})
 
             # Single passage — support both flat format (title/content at top level, same as IELTS)
             # and nested format (passage: {title, content, ...})
@@ -1255,16 +1266,23 @@ def admin_toggle_premium(request, user_id):
 def admin_toggle_staff(request, user_id):
     """Toggle is_staff for a user — grants/revokes admin panel access."""
     from accounts.models import User
+    from accounts.middleware import add_to_admin_whitelist, remove_from_admin_whitelist
     try:
         user = User.objects.get(id=user_id)
     except User.DoesNotExist:
         return Response({'error': 'Not found'}, status=404)
-    # Prevent removing superuser staff status from the panel
     if user.is_superuser and not request.user.is_superuser:
         return Response({'error': 'Cannot modify superuser status.'}, status=403)
     user.is_staff = not user.is_staff
     user.save(update_fields=['is_staff'])
-    return Response({'is_staff': user.is_staff})
+    # Admin qilinganda IP whitelist-ga qo'shamiz (agar ip berilgan bo'lsa)
+    admin_ip = request.data.get('admin_ip', '').strip() if request.data else ''
+    if admin_ip:
+        if user.is_staff:
+            add_to_admin_whitelist(admin_ip)
+        else:
+            remove_from_admin_whitelist(admin_ip)
+    return Response({'is_staff': user.is_staff, 'ip_added': bool(admin_ip and user.is_staff)})
 
 
 @api_view(['GET', 'DELETE'])

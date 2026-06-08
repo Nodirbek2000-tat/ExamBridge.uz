@@ -1,0 +1,644 @@
+{
+  "title": "Cambridge 14_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_140234_687b868b.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Flanders conference hotel",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_140234_687b868b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "An Introduction to Volunteering and Its Impact",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_140234_687b868b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What has each of the following volunteers helped someone to do?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "overcome physical difficulties"
+            },
+            {
+              "option": "B",
+              "text": "rediscover skills not used for a long time"
+            },
+            {
+              "option": "C",
+              "text": "improve their communication skills"
+            },
+            {
+              "option": "D",
+              "text": "solve problems independently"
+            },
+            {
+              "option": "E",
+              "text": "escape isolation"
+            },
+            {
+              "option": "F",
+              "text": "remember past times"
+            },
+            {
+              "option": "G",
+              "text": "start a new hobby"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "overcome physical difficulties"
+            },
+            {
+              "option": "B",
+              "text": "rediscover skills not used for a long time"
+            },
+            {
+              "option": "C",
+              "text": "improve their communication skills"
+            },
+            {
+              "option": "D",
+              "text": "solve problems independently"
+            },
+            {
+              "option": "E",
+              "text": "escape isolation"
+            },
+            {
+              "option": "F",
+              "text": "remember past times"
+            },
+            {
+              "option": "G",
+              "text": "start a new hobby"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "overcome physical difficulties"
+            },
+            {
+              "option": "B",
+              "text": "rediscover skills not used for a long time"
+            },
+            {
+              "option": "C",
+              "text": "improve their communication skills"
+            },
+            {
+              "option": "D",
+              "text": "solve problems independently"
+            },
+            {
+              "option": "E",
+              "text": "escape isolation"
+            },
+            {
+              "option": "F",
+              "text": "remember past times"
+            },
+            {
+              "option": "G",
+              "text": "start a new hobby"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "overcome physical difficulties"
+            },
+            {
+              "option": "B",
+              "text": "rediscover skills not used for a long time"
+            },
+            {
+              "option": "C",
+              "text": "improve their communication skills"
+            },
+            {
+              "option": "D",
+              "text": "solve problems independently"
+            },
+            {
+              "option": "E",
+              "text": "escape isolation"
+            },
+            {
+              "option": "F",
+              "text": "remember past times"
+            },
+            {
+              "option": "G",
+              "text": "start a new hobby"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "overcome physical difficulties"
+            },
+            {
+              "option": "B",
+              "text": "rediscover skills not used for a long time"
+            },
+            {
+              "option": "C",
+              "text": "improve their communication skills"
+            },
+            {
+              "option": "D",
+              "text": "solve problems independently"
+            },
+            {
+              "option": "E",
+              "text": "escape isolation"
+            },
+            {
+              "option": "F",
+              "text": "remember past times"
+            },
+            {
+              "option": "G",
+              "text": "start a new hobby"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "overcome physical difficulties"
+            },
+            {
+              "option": "B",
+              "text": "rediscover skills not used for a long time"
+            },
+            {
+              "option": "C",
+              "text": "improve their communication skills"
+            },
+            {
+              "option": "D",
+              "text": "solve problems independently"
+            },
+            {
+              "option": "E",
+              "text": "escape isolation"
+            },
+            {
+              "option": "F",
+              "text": "remember past times"
+            },
+            {
+              "option": "G",
+              "text": "start a new hobby"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "School Marching Band",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_140234_687b868b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What problem does Joe mention in connection with each of the following band members?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "makes a lot of mistakes in rehearsals"
+            },
+            {
+              "option": "B",
+              "text": "keeps making unhelpful suggestions"
+            },
+            {
+              "option": "C",
+              "text": "has difficulty with rhythm"
+            },
+            {
+              "option": "D",
+              "text": "misses too many rehearsals"
+            },
+            {
+              "option": "E",
+              "text": "has a health problem"
+            },
+            {
+              "option": "F",
+              "text": "doesn't mix with other students"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "makes a lot of mistakes in rehearsals"
+            },
+            {
+              "option": "B",
+              "text": "keeps making unhelpful suggestions"
+            },
+            {
+              "option": "C",
+              "text": "has difficulty with rhythm"
+            },
+            {
+              "option": "D",
+              "text": "misses too many rehearsals"
+            },
+            {
+              "option": "E",
+              "text": "has a health problem"
+            },
+            {
+              "option": "F",
+              "text": "doesn't mix with other students"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "makes a lot of mistakes in rehearsals"
+            },
+            {
+              "option": "B",
+              "text": "keeps making unhelpful suggestions"
+            },
+            {
+              "option": "C",
+              "text": "has difficulty with rhythm"
+            },
+            {
+              "option": "D",
+              "text": "misses too many rehearsals"
+            },
+            {
+              "option": "E",
+              "text": "has a health problem"
+            },
+            {
+              "option": "F",
+              "text": "doesn't mix with other students"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "makes a lot of mistakes in rehearsals"
+            },
+            {
+              "option": "B",
+              "text": "keeps making unhelpful suggestions"
+            },
+            {
+              "option": "C",
+              "text": "has difficulty with rhythm"
+            },
+            {
+              "option": "D",
+              "text": "misses too many rehearsals"
+            },
+            {
+              "option": "E",
+              "text": "has a health problem"
+            },
+            {
+              "option": "F",
+              "text": "doesn't mix with other students"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Concerts in University Arts Festival",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_140234_687b868b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

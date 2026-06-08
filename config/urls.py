@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 # ── API imports ──────────────────────────────────────────────────────────────
-from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, google_login_view, token_refresh_view
+from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
 from api.sat_views import (
     sat_test_list, sat_start_test, sat_attempt_detail,
     sat_submit_answer, sat_submit_module, sat_security_event, sat_stats, sat_result_detail, sat_result_delete,
@@ -30,11 +30,14 @@ from api.ielts_views import (
 from api.cefr_views import (
     cefr_test_list, cefr_test_detail, cefr_start_attempt,
     cefr_submit_attempt, cefr_security_event, cefr_attempt_review,
-    cefr_reading_list, cefr_reading_detail, cefr_reading_start, cefr_reading_submit,
+    cefr_reading_list, cefr_reading_detail, cefr_reading_start, cefr_reading_submit, cefr_reading_full_mock_start,
     cefr_listening_list, cefr_listening_detail, cefr_listening_start, cefr_listening_submit,
     cefr_history, cefr_analysis,
 )
-from api.system_views import system_health, celery_tasks, platform_stats, admin_leaderboard
+from api.system_views import (
+    system_health, celery_tasks, platform_stats, admin_leaderboard,
+    security_blocked_list, security_unblock, security_whitelist, security_whitelist_remove,
+)
 from api.ai_views import (
     ai_chat, ai_conversations, ai_conversation_detail,
     admin_ai_structures, admin_ai_structure_detail,
@@ -71,6 +74,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 
+    # ── PAYMENTS / STRIPE ─────────────────────────────────────────────────────
+    path('api/payments/', include('pricing.urls')),
+
+    # ── CENTERS API ───────────────────────────────────────────────────────────
+    path('api/centers/', include('centers.urls')),
+
     # ── AUTH API ──────────────────────────────────────────────────────────────
     path('api/auth/csrf/', csrf_token),
     path('api/auth/login/', login_view),
@@ -79,6 +88,9 @@ urlpatterns = [
     path('api/auth/me/', me_view),
     path('api/auth/google/', google_login_view),
     path('api/auth/refresh/', token_refresh_view),
+    path('api/auth/platform-bridge/', platform_bridge_auth),  # testmakon → SAT+ JWT
+    path('api/auth/profile/', update_profile_view),
+    path('api/auth/change-password/', change_password_view),
 
     # ── SAT API ───────────────────────────────────────────────────────────────
     path('api/sat/tests/', sat_test_list),
@@ -161,6 +173,7 @@ urlpatterns = [
     # CEFR Reading
     path('api/cefr/reading/', cefr_reading_list),
     path('api/cefr/reading/<int:passage_id>/', cefr_reading_detail),
+    path('api/cefr/reading/full-mock/<int:test_id>/start/', cefr_reading_full_mock_start),
     path('api/cefr/reading/<int:passage_id>/start/', cefr_reading_start),
     path('api/cefr/reading/<int:passage_id>/submit/', cefr_reading_submit),
     # CEFR Listening
@@ -180,6 +193,11 @@ urlpatterns = [
     path('api/system/health/', system_health),
     path('api/system/tasks/', celery_tasks),
     path('api/system/stats/', platform_stats),
+    # ── Security ──────────────────────────────────────────────────────────────
+    path('api/admin/security/blocked/', security_blocked_list),
+    path('api/admin/security/unblock/', security_unblock),
+    path('api/admin/security/whitelist/', security_whitelist),
+    path('api/admin/security/whitelist/remove/', security_whitelist_remove),
 
     # ── ADMIN MANAGEMENT ──────────────────────────────────────────────────────
     path('api/admin/users/', admin_user_list),

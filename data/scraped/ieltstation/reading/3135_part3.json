@@ -1,0 +1,282 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "The future of work",
+    "content": "According to a leading business consultancy, 3-14% of the global workforce will need to switch to a different occupation within the next 10-15 years, and all workers will need to adapt as their occupations evolve alongside increasingly capable machines. Automation - or 'embodied artificial intelligence' (AI) - is one aspect of the disruptive effects of technology on the labour market. 'Disembodied AI', like the algorithms running in our smartphones, is another.\n\nDr Stella Pachidi from Cambridge Judge Business School believes that some of the most fundamental changes are happening as a result of the 'algorithmication' of jobs that are dependent on data rather than on production - the so-called knowledge economy. Algorithms are capable of learning from data to undertake tasks that previously needed human judgement, such as reading legal contracts, analysing medical scans and gathering market intelligence.\n\n\"In many cases, they can outperform humans,\" says Pachidi.\"Organisations are attracted to using algorithms because they want to make choices based on what they consider is 'perfect information', as well as to reduce costs and enhance productivity.\"\n\n\"But these enhancements are not without consequences,\" says Pachidi.\"If routine cognitive tasks are taken over by AI, how do professions develop their future experts?\" she asks. \"One way of learning about a job is 'legitimate peripheral participation' - a novice stands next to experts and learns by observation. If this isn't happening, then you need to find new ways to learn.\"\n\nAnother issue is the extent to which the technology influences or even controls the workforce. For over two years, Pachidi monitored a telecommunications company.\"The way telecoms salespeople work is through personal and frequent contact with clients, using the benefit of experience to assess a situation and reach a decision. However, the company had started using a[n]...algorithm that defined when account managers should contact certain customers about which kinds of campaigns and what to offer them.\"\n\nThe algorithm - usually built by external designers - often becomes the keeper of knowledge, she explains. In cases like this, Pachidi believes, a short-sighted view begins to creep into working practices whereby workers learn through the \"algorithm's eyes\" and become dependent on its instructions. Alternative explorations - where experimentation and human instinct lead to progress and new ideas - are effectively discouraged.\n\nPachidi and colleagues even observed people developing strategies to make the algorithm work to their own advantage. \"We are seeing cases where workers feed the algorithm with false data to reach their targets,\" she reports.\n\nIt's scenarios like these that many researchers are working to avoid. Their objective is to make AI technologies more trustworthy and transparent, so that organisations and individuals understand how AI decisions are made. In the meantime, says Pachidi, \"We need to make sure we fully understand the dilemmas that this new world raises regarding expertise, occupational boundaries and control.\"\n\nEconomist Professor Hamish Low believes that the future of work will involve major transitions across the whole life course for everyone: \"The traditional trajectory of full-time education followed by full-time work followed by a pensioned retirement is a thing of the past,\" says Low. Instead, he envisages a multistage employment life: one where retraining happens across the life course, and where multiple jobs and no job happen by choice at different stages.\n\nOn the subject of job losses, Low believes the predictions are founded on a fallacy: \"It assumes that the number of jobs is fixed. If in 30 years, half of 100 jobs are being carried out by robots, that doesn't mean we are left with just 50 jobs for humans. The number of jobs will increase: we would expect there to be 150 jobs.\"\n\nDr Ewan McGaughey, at Cambridge's Centre for Business Research and King's College London, agrees that 'apocalyptic' views about the future of work are misguided. \"It's the laws that restrict the supply of capital to the job market, not the advent of new technologies that causes unemployment.\"\n\nHis recently published research answers the question of whether automation, AI and robotics will mean a 'jobless future' by looking at the causes of unemployment. \"History is clear that change can mean redundancies. But social policies can tackle this through retraining and redeployment.\"\n\nHe adds: \"If there is going to be change to jobs as a result of AI and robotics then I'd like to see governments seizing the opportunity to improve policy to enforce good job security. We can 'reprogramme' the law to prepare for a fairer future of work and leisure. \"McGaughey's findings are a call to arms to leaders of organisations, governments and banks to pre-empt the coming changes with bold new policies that guarantee full employment, fair incomes and a thriving economic democracy.\n\n\"The promises of these new technologies are astounding. They deliver humankind the capacity to live in a way that nobody could have once imagined,\" he adds. \"Just as the industrial revolution brought people past subsistence agriculture, and the corporate revolution enabled mass production, a third revolution has been pronounced. But it will not only be one of technology. The next revolution will be social.\"",
+    "passage_number": 3,
+    "difficulty": "MEDIUM",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 27,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The first paragraph discusses how many workers will need to change jobs or adapt due to increasingly capable machines, showing the scale of change AI will bring to work.",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "the kinds of jobs that will be most affected by the growth of AI"
+        },
+        {
+          "option": "B",
+          "text": "the extent to which AI will alter the nature of the work that people do"
+        },
+        {
+          "option": "C",
+          "text": "the proportion of the world's labour force who will have jobs in AI in the future."
+        },
+        {
+          "option": "D",
+          "text": "the difference between ways that embodied and disembodied AI will impact on workers."
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Pachidi believes that the ‘algorithmication’ of knowledge-based jobs is causing fundamental changes in the workplace.",
+      "group_instruction": "<p>Choose the correct answer</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "It is having an influence on the number of jobs available."
+        },
+        {
+          "option": "B",
+          "text": "It is changing people's attitudes towards their occupations."
+        },
+        {
+          "option": "C",
+          "text": "It is the main reason why the production sector is declining."
+        },
+        {
+          "option": "D",
+          "text": "It is a key factor driving current developments in the workplace."
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Pachidi observed workers manipulating the algorithm by feeding it false data to meet their targets.",
+      "group_instruction": "<p>Choose the correct answer</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "staff disagreeing with the recommendations of AI"
+        },
+        {
+          "option": "B",
+          "text": "staff feeling resentful about the intrusion of AI in their work"
+        },
+        {
+          "option": "C",
+          "text": "staff making sure that AI produces the results that they want"
+        },
+        {
+          "option": "D",
+          "text": "staff allowing AI to carry out tasks they ought to do themselves"
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "McGaughey argues that although change can cause redundancies, social policies such as retraining can address the problem effectively.",
+      "group_instruction": "<p>Choose the correct answer</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "challenges the idea that redundancy is a negative thing"
+        },
+        {
+          "option": "B",
+          "text": "shows the profound effect of mass unemployment on society."
+        },
+        {
+          "option": "C",
+          "text": "highlights some differences between past and future job losses."
+        },
+        {
+          "option": "D",
+          "text": "illustrates how changes in the job market can be successfully handled."
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The knowledge economy refers to jobs that depend on data or information rather than production.",
+      "group_instruction": "<p>Complete the summary using the list of words or phrases below.</p>"
+    },
+    {
+      "number": 33,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage states that human instinct and experimentation are discouraged, which refers to intuition.",
+      "group_instruction": ""
+    },
+    {
+      "number": 34,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Researchers aim to make AI more trustworthy and transparent so users can better understand and trust its decisions.",
+      "group_instruction": ""
+    },
+    {
+      "number": 32,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Workers became dependent on the algorithm’s instructions, learning through the “algorithm’s eyes.”",
+      "group_instruction": ""
+    },
+    {
+      "number": 35,
+      "question_type": "MINFO",
+      "content": "Greater levels of automation will not result in lower employment",
+      "correct_answer": null,
+      "explanation": "Low argues that even if robots perform many tasks, the total number of jobs will increase rather than decrease.",
+      "group_instruction": "<p>Match each statement with the correct person, </p><p><br></p><p><strong><em>NB</em></strong><em>&nbsp;You may use any letter more than once</em></p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Stella Pachidi"
+        },
+        {
+          "option": "B",
+          "text": "Hamish Low"
+        },
+        {
+          "option": "C",
+          "text": "Ewan McGaughey"
+        }
+      ]
+    },
+    {
+      "number": 37,
+      "question_type": "MINFO",
+      "content": "AI's potential to transform people's lives has parallels with major cultural shifts which occurred in previous eras.",
+      "correct_answer": null,
+      "explanation": "McGaughey compares the AI revolution to the industrial and corporate revolutions of the past.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Stella Pachidi"
+        },
+        {
+          "option": "B",
+          "text": "Hamish Low"
+        },
+        {
+          "option": "C",
+          "text": "Ewan McGaughey"
+        }
+      ]
+    },
+    {
+      "number": 38,
+      "question_type": "MINFO",
+      "content": "It is important to be aware of the range of problems that AI causes.",
+      "correct_answer": null,
+      "explanation": "Pachidi stresses the need to understand the dilemmas raised by AI in relation to expertise and control.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Stella Pachidi"
+        },
+        {
+          "option": "B",
+          "text": "Hamish Low"
+        },
+        {
+          "option": "C",
+          "text": "Ewan McGaughey"
+        }
+      ]
+    },
+    {
+      "number": 39,
+      "question_type": "MINFO",
+      "content": "People are going to follow a less conventional career path than in the past.",
+      "correct_answer": null,
+      "explanation": "Low predicts a multistage employment life with retraining and multiple jobs at different stages.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Stella Pachidi"
+        },
+        {
+          "option": "B",
+          "text": "Hamish Low"
+        },
+        {
+          "option": "C",
+          "text": "Ewan McGaughey"
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "question_type": "MINFO",
+      "content": "Authorities should take measures to ensure that there will be adequately paid work for everyone.",
+      "correct_answer": null,
+      "explanation": "McGaughey calls for governments to introduce policies that ensure job security and fair incomes.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Stella Pachidi"
+        },
+        {
+          "option": "B",
+          "text": "Hamish Low"
+        },
+        {
+          "option": "C",
+          "text": "Ewan McGaughey"
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "question_type": "MINFO",
+      "content": "There are several reasons why AI is appealing to businesses.",
+      "correct_answer": null,
+      "explanation": "Pachidi explains that organisations use algorithms to access ‘perfect information’, reduce costs, and improve productivity",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Stella Pachidi"
+        },
+        {
+          "option": "B",
+          "text": "Hamish Low"
+        },
+        {
+          "option": "C",
+          "text": "Ewan McGaughey"
+        }
+      ]
+    }
+  ]
+}

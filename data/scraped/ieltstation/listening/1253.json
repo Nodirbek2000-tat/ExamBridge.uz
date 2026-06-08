@@ -1,0 +1,632 @@
+{
+  "title": "Cambridge 13_Test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_131015_29756790.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Alex's Training",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_131015_29756790.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "The Snow Centre",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_131015_29756790.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Annie recommends that when cross-country skiing, the visitors should",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "get away from the regular trails."
+            },
+            {
+              "option": "B",
+              "text": "stop to enjoy views of the scenery."
+            },
+            {
+              "option": "C",
+              "text": "go at a slow speed at the beginning."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What does Annie tell the group about this afternoon's dog-sled trip?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Those who want to can take part in a race."
+            },
+            {
+              "option": "B",
+              "text": "Anyone has the chance to drive a team of dogs."
+            },
+            {
+              "option": "C",
+              "text": "One group member will be chosen to lead the trail."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "What does Annie say about the team relay event?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "All participants receive a medal"
+            },
+            {
+              "option": "B",
+              "text": "The course is 4 km long"
+            },
+            {
+              "option": "C",
+              "text": "Each team is led by a teacher"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "On the snow-shoe trip, the visitors will",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "visit an old gold mine"
+            },
+            {
+              "option": "B",
+              "text": "learn about unusual flowers"
+            },
+            {
+              "option": "C",
+              "text": "climb to the top of a mountain"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "The cost of accommodation in the mountain hut includes",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a supply of drinking water"
+            },
+            {
+              "option": "B",
+              "text": "transport of visitors' luggage"
+            },
+            {
+              "option": "C",
+              "text": "cooked meals"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "If there is a storm while the visitors are in the hut, they should",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "contact the bus driver"
+            },
+            {
+              "option": "B",
+              "text": "\\000await until the weather improves"
+            },
+            {
+              "option": "C",
+              "text": "use the emergency locator beacon"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What information does Annie give about skiing on each of the following mountain trails?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It has a good place to stop and rest."
+            },
+            {
+              "option": "B",
+              "text": "It is suitable for all abilities."
+            },
+            {
+              "option": "C",
+              "text": "It involves crossing a river."
+            },
+            {
+              "option": "D",
+              "text": "It demands a lot of skill."
+            },
+            {
+              "option": "E",
+              "text": "It may be closed in bad weather."
+            },
+            {
+              "option": "F",
+              "text": "It has some very narrow sections."
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It has a good place to stop and rest."
+            },
+            {
+              "option": "B",
+              "text": "It is suitable for all abilities."
+            },
+            {
+              "option": "C",
+              "text": "It involves crossing a river."
+            },
+            {
+              "option": "D",
+              "text": "It demands a lot of skill."
+            },
+            {
+              "option": "E",
+              "text": "It may be closed in bad weather."
+            },
+            {
+              "option": "F",
+              "text": "It has some very narrow sections."
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It has a good place to stop and rest."
+            },
+            {
+              "option": "B",
+              "text": "It is suitable for all abilities."
+            },
+            {
+              "option": "C",
+              "text": "It involves crossing a river."
+            },
+            {
+              "option": "D",
+              "text": "It demands a lot of skill."
+            },
+            {
+              "option": "E",
+              "text": "It may be closed in bad weather."
+            },
+            {
+              "option": "F",
+              "text": "It has some very narrow sections."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It has a good place to stop and rest."
+            },
+            {
+              "option": "B",
+              "text": "It is suitable for all abilities."
+            },
+            {
+              "option": "C",
+              "text": "It involves crossing a river."
+            },
+            {
+              "option": "D",
+              "text": "It demands a lot of skill."
+            },
+            {
+              "option": "E",
+              "text": "It may be closed in bad weather."
+            },
+            {
+              "option": "F",
+              "text": "It has some very narrow sections."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Food packaging labels",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_131015_29756790.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What was Jack's attitude to nutritional food labels before this project?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "He didn't read everything on them."
+            },
+            {
+              "option": "B",
+              "text": "He didn't think they were important."
+            },
+            {
+              "option": "C",
+              "text": "He thought they were too complicated."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "When discussing supermarket brands of pizza, Jack agrees with Alice that",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the list of ingredients is shocking."
+            },
+            {
+              "option": "B",
+              "text": "he will hesitate before buying pizza again."
+            },
+            {
+              "option": "C",
+              "text": "the nutritional label is misleading."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Jack prefers the daily value system to other labelling systems because it is",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "more accessible."
+            },
+            {
+              "option": "B",
+              "text": "more logical."
+            },
+            {
+              "option": "C",
+              "text": "more comprehensive."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What surprised both students about one flavour of crisps?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The percentage of artificial additives given was incorrect."
+            },
+            {
+              "option": "B",
+              "text": "The products did not contain any meat."
+            },
+            {
+              "option": "C",
+              "text": "The labels did not list all the ingredients."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "What do the students think about research into the impact of nutritional food labelling?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It did not produce clear results."
+            },
+            {
+              "option": "B",
+              "text": "It focused on the wrong people."
+            },
+            {
+              "option": "C",
+              "text": "It made unrealistic recommendations."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Alice says that before doing this project,",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "she was unaware of what certain foods contained."
+            },
+            {
+              "option": "B",
+              "text": "she was too lazy to read food labels."
+            },
+            {
+              "option": "C",
+              "text": "she was only interested in the number of calories."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The history of coffee",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_131015_29756790.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

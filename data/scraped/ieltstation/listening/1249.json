@@ -1,0 +1,800 @@
+{
+  "title": "Cambridge 13_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_114109_3b7f5407.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Moving to Branford City",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_114109_3b7f5407.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Physical activities",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_114109_3b7f5407.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What advantage does the speaker mention for each of the following physical activities?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not dependent on season"
+            },
+            {
+              "option": "B",
+              "text": "enjoyable"
+            },
+            {
+              "option": "C",
+              "text": "low risk of injury"
+            },
+            {
+              "option": "D",
+              "text": "fitness level unimportant"
+            },
+            {
+              "option": "E",
+              "text": "sociable"
+            },
+            {
+              "option": "F",
+              "text": "fast results"
+            },
+            {
+              "option": "G",
+              "text": "motivating"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not dependent on season"
+            },
+            {
+              "option": "B",
+              "text": "enjoyable"
+            },
+            {
+              "option": "C",
+              "text": "low risk of injury"
+            },
+            {
+              "option": "D",
+              "text": "fitness level unimportant"
+            },
+            {
+              "option": "E",
+              "text": "sociable"
+            },
+            {
+              "option": "F",
+              "text": "fast results"
+            },
+            {
+              "option": "G",
+              "text": "motivating"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not dependent on season"
+            },
+            {
+              "option": "B",
+              "text": "enjoyable"
+            },
+            {
+              "option": "C",
+              "text": "low risk of injury"
+            },
+            {
+              "option": "D",
+              "text": "fitness level unimportant"
+            },
+            {
+              "option": "E",
+              "text": "sociable"
+            },
+            {
+              "option": "F",
+              "text": "fast results"
+            },
+            {
+              "option": "G",
+              "text": "motivating"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not dependent on season"
+            },
+            {
+              "option": "B",
+              "text": "enjoyable"
+            },
+            {
+              "option": "C",
+              "text": "low risk of injury"
+            },
+            {
+              "option": "D",
+              "text": "fitness level unimportant"
+            },
+            {
+              "option": "E",
+              "text": "sociable"
+            },
+            {
+              "option": "F",
+              "text": "fast results"
+            },
+            {
+              "option": "G",
+              "text": "motivating"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not dependent on season"
+            },
+            {
+              "option": "B",
+              "text": "enjoyable"
+            },
+            {
+              "option": "C",
+              "text": "low risk of injury"
+            },
+            {
+              "option": "D",
+              "text": "fitness level unimportant"
+            },
+            {
+              "option": "E",
+              "text": "sociable"
+            },
+            {
+              "option": "F",
+              "text": "fast results"
+            },
+            {
+              "option": "G",
+              "text": "motivating"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not dependent on season"
+            },
+            {
+              "option": "B",
+              "text": "enjoyable"
+            },
+            {
+              "option": "C",
+              "text": "low risk of injury"
+            },
+            {
+              "option": "D",
+              "text": "fitness level unimportant"
+            },
+            {
+              "option": "E",
+              "text": "sociable"
+            },
+            {
+              "option": "F",
+              "text": "fast results"
+            },
+            {
+              "option": "G",
+              "text": "motivating"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Using natural dyes to colour fabrics",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_114109_3b7f5407.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What first inspired Jim to choose this project?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "textiles displayed in an exhibition"
+            },
+            {
+              "option": "B",
+              "text": "a book about a botanic garden"
+            },
+            {
+              "option": "C",
+              "text": "carpets he saw on holiday"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Jim eventually decided to do a practical investigation which involved",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "using a range of dyes with different fibres."
+            },
+            {
+              "option": "B",
+              "text": "applying different dyes to one type of fibre."
+            },
+            {
+              "option": "C",
+              "text": "testing one dye and a range of fibres."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "When doing his experiments, Jim was surprised by",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "how much natural material was needed to make the dye."
+            },
+            {
+              "option": "B",
+              "text": "the fact that dyes were widely available on the internet."
+            },
+            {
+              "option": "C",
+              "text": "the time that he had to leave the fabric in the dye."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "What problem did Jim have with using tartrazine as a fabric dye?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It caused a slight allergic reaction."
+            },
+            {
+              "option": "B",
+              "text": "It was not a permanent dye on cotton."
+            },
+            {
+              "option": "C",
+              "text": "It was ineffective when used on nylon."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What problem is identified with each of the following natural dyes?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is expensive."
+            },
+            {
+              "option": "B",
+              "text": "The colour is too strong."
+            },
+            {
+              "option": "C",
+              "text": "The colour is not long-lasting."
+            },
+            {
+              "option": "D",
+              "text": "It is very poisonous."
+            },
+            {
+              "option": "E",
+              "text": "It can damage the fabric."
+            },
+            {
+              "option": "F",
+              "text": "The colour may be unexpected."
+            },
+            {
+              "option": "G",
+              "text": "It is unsuitable for some fabrics."
+            },
+            {
+              "option": "H",
+              "text": "It is not generally available."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is expensive."
+            },
+            {
+              "option": "B",
+              "text": "The colour is too strong."
+            },
+            {
+              "option": "C",
+              "text": "The colour is not long-lasting."
+            },
+            {
+              "option": "D",
+              "text": "It is very poisonous."
+            },
+            {
+              "option": "E",
+              "text": "It can damage the fabric."
+            },
+            {
+              "option": "F",
+              "text": "The colour may be unexpected."
+            },
+            {
+              "option": "G",
+              "text": "It is unsuitable for some fabrics."
+            },
+            {
+              "option": "H",
+              "text": "It is not generally available."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is expensive."
+            },
+            {
+              "option": "B",
+              "text": "The colour is too strong."
+            },
+            {
+              "option": "C",
+              "text": "The colour is not long-lasting."
+            },
+            {
+              "option": "D",
+              "text": "It is very poisonous."
+            },
+            {
+              "option": "E",
+              "text": "It can damage the fabric."
+            },
+            {
+              "option": "F",
+              "text": "The colour may be unexpected."
+            },
+            {
+              "option": "G",
+              "text": "It is unsuitable for some fabrics."
+            },
+            {
+              "option": "H",
+              "text": "It is not generally available."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is expensive."
+            },
+            {
+              "option": "B",
+              "text": "The colour is too strong."
+            },
+            {
+              "option": "C",
+              "text": "The colour is not long-lasting."
+            },
+            {
+              "option": "D",
+              "text": "It is very poisonous."
+            },
+            {
+              "option": "E",
+              "text": "It can damage the fabric."
+            },
+            {
+              "option": "F",
+              "text": "The colour may be unexpected."
+            },
+            {
+              "option": "G",
+              "text": "It is unsuitable for some fabrics."
+            },
+            {
+              "option": "H",
+              "text": "It is not generally available."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is expensive."
+            },
+            {
+              "option": "B",
+              "text": "The colour is too strong."
+            },
+            {
+              "option": "C",
+              "text": "The colour is not long-lasting."
+            },
+            {
+              "option": "D",
+              "text": "It is very poisonous."
+            },
+            {
+              "option": "E",
+              "text": "It can damage the fabric."
+            },
+            {
+              "option": "F",
+              "text": "The colour may be unexpected."
+            },
+            {
+              "option": "G",
+              "text": "It is unsuitable for some fabrics."
+            },
+            {
+              "option": "H",
+              "text": "It is not generally available."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It is expensive."
+            },
+            {
+              "option": "B",
+              "text": "The colour is too strong."
+            },
+            {
+              "option": "C",
+              "text": "The colour is not long-lasting."
+            },
+            {
+              "option": "D",
+              "text": "It is very poisonous."
+            },
+            {
+              "option": "E",
+              "text": "It can damage the fabric."
+            },
+            {
+              "option": "F",
+              "text": "The colour may be unexpected."
+            },
+            {
+              "option": "G",
+              "text": "It is unsuitable for some fabrics."
+            },
+            {
+              "option": "H",
+              "text": "It is not generally available."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The Sleepy Lizard",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_114109_3b7f5407.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

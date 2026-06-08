@@ -1,0 +1,234 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "The Pirahã People of Brazil",
+    "content": "The Pirahã tribe live deep in Brazil's Amazon forest, and their language is hotly debated by linguists. Since 1977, the ethnologist Daniel Everett has spent a total of seven years living with the Pirahã and has committed his career to studying their puzzling speech. Indeed, he was uncertain for so long about what he was actually hearing while living among the Pirahã that he waited nearly three decades before publishing his findings.\n\nThe debate over the Pirahã language goes right to the core of the riddle regarding how Homo sapiens managed to develop vocal communication. Although bees dance, birds sing and whales even sing with syntax*, human language is unique, if only for the reason that it enables humans to piece together never-before-constructed thoughts, and be infinitely imaginative - think of Shakespeare's plays or Einstein's theory of relativity.\n\nLinguistics generally focuses on what features all human languages have in common, but the Pirahã language departs from what some academics have long maintained are essential and inalienable features of all human languages. Most of all, it may be unique for not employing subordinate clauses. Instead of saying, 'When I have finished eating, I will speak to you,' the Pirahã say, 'I finish eating, I speak with you.' Equally perplexing, the Pirahã appear not to use numbers. During the time he spent with them, Everett never heard words like 'all', 'every' and 'more'. There is one word, 'hoi', that comes close to the numeral 1, but it can also mean 'small'. And they were never observed to count without language, on their fingers for example, in order to determine important tasks in village life like how many pieces of meat to grill.\n\nEverett's findings among the Pirahã have brought new life to a controversial theory by the linguist Benjamin Whorf, who suggested that people are only capable of constructing thoughts for which they possess actual words. Or to put it another way, because they have no words for numbers, they cannot even begin to understand the concept of numbers or arithmetic.\n\nThe Warlpiri language - spoken by a group of Australian Aborigines - like that of the Pirahã, features only the most rudimentary system of counting. However, the Warlpiri people had no difficulty counting farther than three in a foreign language, in this case English, but when Everett attempted to teach the Pirahã how to count in Portuguese like other Brazilians, not a single person could count to 10.\n\nEverett is at pains to point out that the Pirahã are not unintelligent, for their thinking is not any slower than that of the average university student. And although they reside in a remote part of the forest, they do not live in complete genetic isolation, but mix with people from the surrounding populations and share similar intellectual capacities with their neighbours whose languages do contain numbers.\n\nEventually, after some 30 years of research, Everett has come up with a surprising explanation for the peculiarities of the Pirahã language. Language, he believes, is created by a people's way of life, their belief system and values. In this way, variety in human language is almost limitless, a function of the human capacity to live in different ways, such as in the forest. What Everett's research has revealed is that the central tenet of the Pirahã culture is to live in the here and now. The only thing of importance that is worth communicating to others is what is being experienced at that very moment, though this can often be described with great care and detail. In consequence, the language has no means to conjugate verbs in order to describe 'yesterday' or 'last week' or 'when I was a child'. Their very literal view of the world curtails abstract thought, and many features taken for granted among other peoples are absent among the Pirahã, such as a creation myth, story telling and painting. One manifestation of their beliefs is that by tradition the names they give their children are not particularly imaginative. Often they are named after other members of the tribe with whom they share similar character traits. Standing out or being different is not encouraged by the Pirahã, and this is reflected in their perhaps colourless choice of names.\n\nEverett anticipated that these findings would be controversial and the reaction came as expected. Until this point, many linguists had defended the theories of Noam Chomsky, according to which all human languages have a universal grammar. What exactly makes up this universal grammar is the subject of debate, but at its heart is the concept of 'recursion', which is defined as replication of a structure within its single parts. Without it, humans would not be able to view separate thoughts as subordinate parts of a complex whole. And, most pertinent to Everett's work, there would not be subordinate clauses, which are responsible for translating the concept of recursion into grammar. But if the Pirahã do not form subordinate clauses, then recursion cannot explain the uniqueness of human language, and this would negate Chomsky's theories.\n\nThe logical way forward now would be to try to prove that the Pirahã can think in a recursive fashion. The only problem is, nobody can confirm or deny Everett's observations since no other researcher can speak Pirahã as well as he does. Despite this, several researchers - including two of Chomsky's colleagues - will soon travel to Brazil to check his claims. My concern is that soon the Pirahã will simply become one more scientific oddity with every aspect of their lives being exploited and analysed.",
+    "passage_number": 3,
+    "difficulty": "HARD",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 27,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage directly states that Everett devoted his career to studying the Pirahã language. This matches option D.",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "He has lived among the Pirah\\00e3 since 1977."
+        },
+        {
+          "option": "B",
+          "text": "It took him seven years to learn the Pirah\\00e3 language."
+        },
+        {
+          "option": "C",
+          "text": "No one would publish his research for three decades."
+        },
+        {
+          "option": "D",
+          "text": "Studying the Pirah\\00e3 language is the focus of his work."
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The paragraph states that human language is unique because it allows infinite creativity – a characteristic no other species possesses.",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Humans are the only species to be linguistically creative."
+        },
+        {
+          "option": "B",
+          "text": "Humans, bees, birds and whales share a characteristic."
+        },
+        {
+          "option": "C",
+          "text": "Human language is not fully understood by scientists."
+        },
+        {
+          "option": "D",
+          "text": "Humans are the only species to use syntax."
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Subordinate clauses are mentioned as a rare or unusual feature because the Pirahã language does not use them.",
+      "group_instruction": "<p>choose the correct answe. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "To criticise the general approach of linguistics."
+        },
+        {
+          "option": "B",
+          "text": "To compare two features of the Pirah\\00e3 language."
+        },
+        {
+          "option": "C",
+          "text": "To explain why the Pirah\\00e3 language is difficult to learn."
+        },
+        {
+          "option": "D",
+          "text": "To exemplify an unusual feature of the Pirah\\00e3 language."
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage says Everett’s discoveries support Whorf’s theory that language limits thought.",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "He thought that numbers were common to all human languages."
+        },
+        {
+          "option": "B",
+          "text": "His theory might be supported by Everett's research."
+        },
+        {
+          "option": "C",
+          "text": "His research enabled him to find a new life among the Pirah\\00e3."
+        },
+        {
+          "option": "D",
+          "text": "He predicted that people like the Pirah\\00e3 would never be found."
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The Warlpiri are used to highlight how unusual the Pirahã are when it comes to counting.",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Suggest that the Pirah\\00e3 be taught to count in English."
+        },
+        {
+          "option": "B",
+          "text": "Show how tribal peoples learn a foreign language."
+        },
+        {
+          "option": "C",
+          "text": "Compare counting in English and Portuguese."
+        },
+        {
+          "option": "D",
+          "text": "Illustrate the uniqueness of the Pirah\\00e3."
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Everett stresses that the Pirahã are not unintelligent, which shows he wants to prevent people from judging their intelligence negatively.",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Pirah\\00e3 students have not graduated from universities."
+        },
+        {
+          "option": "B",
+          "text": "He does not want people to criticise their intelligence."
+        },
+        {
+          "option": "C",
+          "text": "Their isolation makes it difficult to evaluate their intelligence."
+        },
+        {
+          "option": "D",
+          "text": "He believes their language is more complex than their neighbours’."
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Everett believes language comes from a people's way of life – meaning their culture.",
+      "group_instruction": "<p>Complete the summary using the list of words. Choose the correct answer and move it into the gap.</p>"
+    },
+    {
+      "number": 34,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The Pirahã value only what is happening now.",
+      "group_instruction": ""
+    },
+    {
+      "number": 35,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The Pirahã language has no grammar to express past time.",
+      "group_instruction": ""
+    },
+    {
+      "number": 36,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Names are simple because the Pirahã do not value individuality.",
+      "group_instruction": ""
+    },
+    {
+      "number": 37,
+      "question_type": "YNNG",
+      "content": "Everett was surprised by the way his research was greeted.",
+      "correct_answer": null,
+      "explanation": "Everett was not surprised – he expected criticism.",
+      "group_instruction": "<p>Choose&nbsp;<strong>YES</strong>&nbsp;if the statement agrees with the information given in the text, choose&nbsp;<strong>NO</strong>&nbsp;if the statement contradicts the information, or choose&nbsp;<strong>NOT</strong> <strong>GIVEN</strong>&nbsp;if there is no information on this.</p>"
+    },
+    {
+      "number": 38,
+      "question_type": "YNNG",
+      "content": "Chomsky has been critical of Everett’s research methodology.",
+      "correct_answer": null,
+      "explanation": "Nowhere in the passage does it say Chomsky criticised Everett’s methodology. Chomsky’s theories are discussed, but NOT his personal comments or criticism.",
+      "group_instruction": ""
+    },
+    {
+      "number": 40,
+      "question_type": "YNNG",
+      "content": "The Pirah\\00e3 will benefit from their new-found status among academics.",
+      "correct_answer": null,
+      "explanation": "The writer is worried the Pirahã will become exploited – meaning they will not benefit.",
+      "group_instruction": ""
+    },
+    {
+      "number": 39,
+      "question_type": "YNNG",
+      "content": "If ‘recursion’ as a universal concept is disproved, Chomsky’s ideas about language would be wrong.",
+      "correct_answer": null,
+      "explanation": "The passage clearly states that if the Pirahã lack recursion, this would contradict Chomsky’s theory.",
+      "group_instruction": ""
+    }
+  ]
+}

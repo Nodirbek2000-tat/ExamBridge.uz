@@ -1,0 +1,812 @@
+{
+  "title": "Cambridge 17 TEST_3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_064036_d5860340.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Advice on Surfing Holidays",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_064036_d5860340.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p class=\"ql-align-center\"><br></p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Childcare Services",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_064036_d5860340.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What does the manager say about food?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Children with allergies should bring their own food"
+            },
+            {
+              "option": "B",
+              "text": "Children may bring healthy snacks with them"
+            },
+            {
+              "option": "C",
+              "text": "Children are given a proper meal at 5 p.m"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "What is different about arrangements in the school holidays?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Children from other schools can attend"
+            },
+            {
+              "option": "B",
+              "text": "Older children can attend."
+            },
+            {
+              "option": "C",
+              "text": "A greater number of children can attend."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "How much does childcare cost for a complete afternoon session per child?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\00a33.50"
+            },
+            {
+              "option": "B",
+              "text": "\\00a35.70"
+            },
+            {
+              "option": "C",
+              "text": "\\00a37.20"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What information is given about each of the following activities on offer?</p><p><br></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "has limited availability"
+            },
+            {
+              "option": "B",
+              "text": "is no longer available"
+            },
+            {
+              "option": "C",
+              "text": "is for over 8s only"
+            },
+            {
+              "option": "D",
+              "text": "requires help from parents"
+            },
+            {
+              "option": "E",
+              "text": "involves an additional fee"
+            },
+            {
+              "option": "F",
+              "text": "is a new activity"
+            },
+            {
+              "option": "G",
+              "text": "was requested by children"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "has limited availability"
+            },
+            {
+              "option": "B",
+              "text": "is no longer available"
+            },
+            {
+              "option": "C",
+              "text": "is for over 8s only"
+            },
+            {
+              "option": "D",
+              "text": "requires help from parents"
+            },
+            {
+              "option": "E",
+              "text": "involves an additional fee"
+            },
+            {
+              "option": "F",
+              "text": "is a new activity"
+            },
+            {
+              "option": "G",
+              "text": "was requested by children"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "has limited availability"
+            },
+            {
+              "option": "B",
+              "text": "is no longer available"
+            },
+            {
+              "option": "C",
+              "text": "is for over 8s only"
+            },
+            {
+              "option": "D",
+              "text": "requires help from parents"
+            },
+            {
+              "option": "E",
+              "text": "involves an additional fee"
+            },
+            {
+              "option": "F",
+              "text": "is a new activity"
+            },
+            {
+              "option": "G",
+              "text": "was requested by children"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "has limited availability"
+            },
+            {
+              "option": "B",
+              "text": "is no longer available"
+            },
+            {
+              "option": "C",
+              "text": "is for over 8s only"
+            },
+            {
+              "option": "D",
+              "text": "requires help from parents"
+            },
+            {
+              "option": "E",
+              "text": "involves an additional fee"
+            },
+            {
+              "option": "F",
+              "text": "is a new activity"
+            },
+            {
+              "option": "G",
+              "text": "was requested by children"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "has limited availability"
+            },
+            {
+              "option": "B",
+              "text": "is no longer available"
+            },
+            {
+              "option": "C",
+              "text": "is for over 8s only"
+            },
+            {
+              "option": "D",
+              "text": "requires help from parents"
+            },
+            {
+              "option": "E",
+              "text": "involves an additional fee"
+            },
+            {
+              "option": "F",
+              "text": "is a new activity"
+            },
+            {
+              "option": "G",
+              "text": "was requested by children"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Holly's Work Placement Tutorial",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_064036_d5860340.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "Holly has chosen the Orion Stadium placement because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "it involves children."
+            },
+            {
+              "option": "B",
+              "text": "it is outdoors"
+            },
+            {
+              "option": "C",
+              "text": "it sounds like fun."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "What does Dr Green say about the spectators?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They can be hard to manage"
+            },
+            {
+              "option": "B",
+              "text": "They make useful volunteers"
+            },
+            {
+              "option": "C",
+              "text": "They shouldn't take photographs."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "What has affected the schedule in the past?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "bad weather"
+            },
+            {
+              "option": "B",
+              "text": "an injury"
+            },
+            {
+              "option": "C",
+              "text": "extra time"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Which aspect of safety does Dr Green emphasise most?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ensuring children stay in the stadium"
+            },
+            {
+              "option": "B",
+              "text": "checking the equipment children will use"
+            },
+            {
+              "option": "C",
+              "text": "removing obstacles in changing rooms"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What do Holly and her tutor agree is an important aspect of each of the following events management skills?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "being flexible"
+            },
+            {
+              "option": "B",
+              "text": "focusing on details"
+            },
+            {
+              "option": "C",
+              "text": "having a smart appearance"
+            },
+            {
+              "option": "D",
+              "text": "hiding your emotions"
+            },
+            {
+              "option": "E",
+              "text": "relying on experts"
+            },
+            {
+              "option": "F",
+              "text": "trusting your own views"
+            },
+            {
+              "option": "G",
+              "text": "doing one thing at a time"
+            },
+            {
+              "option": "H",
+              "text": "thinking of the future"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "being flexible"
+            },
+            {
+              "option": "B",
+              "text": "focusing on details"
+            },
+            {
+              "option": "C",
+              "text": "having a smart appearance"
+            },
+            {
+              "option": "D",
+              "text": "hiding your emotions"
+            },
+            {
+              "option": "E",
+              "text": "relying on experts"
+            },
+            {
+              "option": "F",
+              "text": "trusting your own views"
+            },
+            {
+              "option": "G",
+              "text": "doing one thing at a time"
+            },
+            {
+              "option": "H",
+              "text": "thinking of the future"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "being flexible"
+            },
+            {
+              "option": "B",
+              "text": "focusing on details"
+            },
+            {
+              "option": "C",
+              "text": "having a smart appearance"
+            },
+            {
+              "option": "D",
+              "text": "hiding your emotions"
+            },
+            {
+              "option": "E",
+              "text": "relying on experts"
+            },
+            {
+              "option": "F",
+              "text": "trusting your own views"
+            },
+            {
+              "option": "G",
+              "text": "doing one thing at a time"
+            },
+            {
+              "option": "H",
+              "text": "thinking of the future"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "being flexible"
+            },
+            {
+              "option": "B",
+              "text": "focusing on details"
+            },
+            {
+              "option": "C",
+              "text": "having a smart appearance"
+            },
+            {
+              "option": "D",
+              "text": "hiding your emotions"
+            },
+            {
+              "option": "E",
+              "text": "relying on experts"
+            },
+            {
+              "option": "F",
+              "text": "trusting your own views"
+            },
+            {
+              "option": "G",
+              "text": "doing one thing at a time"
+            },
+            {
+              "option": "H",
+              "text": "thinking of the future"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "being flexible"
+            },
+            {
+              "option": "B",
+              "text": "focusing on details"
+            },
+            {
+              "option": "C",
+              "text": "having a smart appearance"
+            },
+            {
+              "option": "D",
+              "text": "hiding your emotions"
+            },
+            {
+              "option": "E",
+              "text": "relying on experts"
+            },
+            {
+              "option": "F",
+              "text": "trusting your own views"
+            },
+            {
+              "option": "G",
+              "text": "doing one thing at a time"
+            },
+            {
+              "option": "H",
+              "text": "thinking of the future"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "being flexible"
+            },
+            {
+              "option": "B",
+              "text": "focusing on details"
+            },
+            {
+              "option": "C",
+              "text": "having a smart appearance"
+            },
+            {
+              "option": "D",
+              "text": "hiding your emotions"
+            },
+            {
+              "option": "E",
+              "text": "relying on experts"
+            },
+            {
+              "option": "F",
+              "text": "trusting your own views"
+            },
+            {
+              "option": "G",
+              "text": "doing one thing at a time"
+            },
+            {
+              "option": "H",
+              "text": "thinking of the future"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Bird Migration Theory",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_064036_d5860340.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

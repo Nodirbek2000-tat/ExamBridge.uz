@@ -1,0 +1,728 @@
+{
+  "title": "Cambridge 10_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260303_083513_47b51c19.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Transport Survey",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260303_083513_47b51c19.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "New city developments",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260303_083513_47b51c19.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "The idea for the two new developments in the city came from",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "local people"
+            },
+            {
+              "option": "B",
+              "text": "the City Council."
+            },
+            {
+              "option": "C",
+              "text": "the SWRDC."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What is unusual about Brackenside pool?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "its architectural style"
+            },
+            {
+              "option": "B",
+              "text": "its heating system"
+            },
+            {
+              "option": "C",
+              "text": "its method of water treatment"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Local newspapers have raised worries about",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the late opening date."
+            },
+            {
+              "option": "B",
+              "text": "the cost of the project."
+            },
+            {
+              "option": "C",
+              "text": "the size of the facilities."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What decision has not yet been made about the pool?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "whose statue will be at the door"
+            },
+            {
+              "option": "B",
+              "text": "the exact opening times"
+            },
+            {
+              "option": "C",
+              "text": "who will open it"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which feature is related to each of the following areas of the world represented in the playground?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ancient forts"
+            },
+            {
+              "option": "B",
+              "text": "waterways"
+            },
+            {
+              "option": "C",
+              "text": "ice and snow"
+            },
+            {
+              "option": "D",
+              "text": "jewels"
+            },
+            {
+              "option": "E",
+              "text": "local animals"
+            },
+            {
+              "option": "F",
+              "text": "mountains"
+            },
+            {
+              "option": "G",
+              "text": "music and film"
+            },
+            {
+              "option": "H",
+              "text": "space travel"
+            },
+            {
+              "option": "I",
+              "text": "volcanoes"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ancient forts"
+            },
+            {
+              "option": "B",
+              "text": "waterways"
+            },
+            {
+              "option": "C",
+              "text": "ice and snow"
+            },
+            {
+              "option": "D",
+              "text": "jewels"
+            },
+            {
+              "option": "E",
+              "text": "local animals"
+            },
+            {
+              "option": "F",
+              "text": "mountains"
+            },
+            {
+              "option": "G",
+              "text": "music and film"
+            },
+            {
+              "option": "H",
+              "text": "space travel"
+            },
+            {
+              "option": "I",
+              "text": "volcanoes"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ancient forts"
+            },
+            {
+              "option": "B",
+              "text": "waterways"
+            },
+            {
+              "option": "C",
+              "text": "ice and snow"
+            },
+            {
+              "option": "D",
+              "text": "jewels"
+            },
+            {
+              "option": "E",
+              "text": "local animals"
+            },
+            {
+              "option": "F",
+              "text": "mountains"
+            },
+            {
+              "option": "G",
+              "text": "music and film"
+            },
+            {
+              "option": "H",
+              "text": "space travel"
+            },
+            {
+              "option": "I",
+              "text": "volcanoes"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ancient forts"
+            },
+            {
+              "option": "B",
+              "text": "waterways"
+            },
+            {
+              "option": "C",
+              "text": "ice and snow"
+            },
+            {
+              "option": "D",
+              "text": "jewels"
+            },
+            {
+              "option": "E",
+              "text": "local animals"
+            },
+            {
+              "option": "F",
+              "text": "mountains"
+            },
+            {
+              "option": "G",
+              "text": "music and film"
+            },
+            {
+              "option": "H",
+              "text": "space travel"
+            },
+            {
+              "option": "I",
+              "text": "volcanoes"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ancient forts"
+            },
+            {
+              "option": "B",
+              "text": "waterways"
+            },
+            {
+              "option": "C",
+              "text": "ice and snow"
+            },
+            {
+              "option": "D",
+              "text": "jewels"
+            },
+            {
+              "option": "E",
+              "text": "local animals"
+            },
+            {
+              "option": "F",
+              "text": "mountains"
+            },
+            {
+              "option": "G",
+              "text": "music and film"
+            },
+            {
+              "option": "H",
+              "text": "space travel"
+            },
+            {
+              "option": "I",
+              "text": "volcanoes"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ancient forts"
+            },
+            {
+              "option": "B",
+              "text": "waterways"
+            },
+            {
+              "option": "C",
+              "text": "ice and snow"
+            },
+            {
+              "option": "D",
+              "text": "jewels"
+            },
+            {
+              "option": "E",
+              "text": "local animals"
+            },
+            {
+              "option": "F",
+              "text": "mountains"
+            },
+            {
+              "option": "G",
+              "text": "music and film"
+            },
+            {
+              "option": "H",
+              "text": "space travel"
+            },
+            {
+              "option": "I",
+              "text": "volcanoes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Thor Heyerdahl",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260303_083513_47b51c19.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "According to Victor and Olivia, academics thought that Polynesian migration from the east was impossible due to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the fact that Eastern countries were far away."
+            },
+            {
+              "option": "B",
+              "text": "the lack of materials for boat building."
+            },
+            {
+              "option": "C",
+              "text": "the direction of the winds and currents."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "Which do the speakers agree was the main reason for Heyerdahl's raft journey?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to overcome a research setback"
+            },
+            {
+              "option": "B",
+              "text": "to demonstrate a personal quality"
+            },
+            {
+              "option": "C",
+              "text": "to test a new theory"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "What was most important to Heyerdahl about his raft journey?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the fact that he was the first person to do it"
+            },
+            {
+              "option": "B",
+              "text": "the speed of crossing the Pacific"
+            },
+            {
+              "option": "C",
+              "text": "the use of authentic construction methods"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "Why did Heyerdahl go to Easter Island?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to build a stone statue"
+            },
+            {
+              "option": "B",
+              "text": "to sail a reed boat"
+            },
+            {
+              "option": "C",
+              "text": "to learn the local language"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "In Olivia's opinion, Heyerdahl's greatest influence was on",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "theories about Polynesian origins."
+            },
+            {
+              "option": "B",
+              "text": "the development of archaeological methodology."
+            },
+            {
+              "option": "C",
+              "text": "establishing archaeology as an academic subject."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "Which criticism do the speakers make of William Oliver's textbook?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Its style is out of date."
+            },
+            {
+              "option": "B",
+              "text": "Its content is over-simplified."
+            },
+            {
+              "option": "C",
+              "text": "Its methodology is flawed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The future of Management",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260303_083513_47b51c19.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

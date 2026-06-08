@@ -1,0 +1,596 @@
+{
+  "title": "Cambridge 16 TEST_4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_073218_1202ed1b.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Renting a Cottage: Details and Arrangements",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_073218_1202ed1b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Town Infrastructure Updates and Proposals",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_073218_1202ed1b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Plans for a pedestrian crossing have been postponed because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter<strong> A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000athe Post Office has moved"
+            },
+            {
+              "option": "B",
+              "text": "\\000athe proposed location is unsafe."
+            },
+            {
+              "option": "C",
+              "text": "\\000afunding is not available at present"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "On Station Road, notices have been erected",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "telling cyclists not to leave their bikes outside the station ticket office"
+            },
+            {
+              "option": "B",
+              "text": "asking motorists to switch off engines when waiting at the level crossing"
+            },
+            {
+              "option": "C",
+              "text": "warning pedestrians to leave enough time when crossing the railway line"
+            }
+          ]
+        },
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "A survey found people's main concern about traffic in the area was",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000acuts to public transport"
+            },
+            {
+              "option": "B",
+              "text": "\\000apoor maintenance of roads"
+            },
+            {
+              "option": "C",
+              "text": "\\000achanges in the type of traffic"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "Which change will shortly be made to the cycle path next to the river?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000aIt will be widened.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "\\000aIt will be extended"
+            },
+            {
+              "option": "C",
+              "text": "\\000aIt will be resurfaced"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MAP",
+          "content": "New car park",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Label the map below. Choose the correct letter.</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "New cricket pitch",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "Children's playground",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "Skateboard ramp",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "Pavilion",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "Notice board",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Analyzing and Discussing Bike-sharing Schemes",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_073218_1202ed1b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO&nbsp;</strong>letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO&nbsp;</strong>letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What is the speakers' opinion of the bike-sharing schemes in each of the following cities?</p><p>Choose the correct letter.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They agree it has been disappointing."
+            },
+            {
+              "option": "B",
+              "text": "They think it should be cheaper."
+            },
+            {
+              "option": "C",
+              "text": "They are surprised it has been so successful."
+            },
+            {
+              "option": "D",
+              "text": "They agree that more investment is required."
+            },
+            {
+              "option": "E",
+              "text": "They think the system has been well designed"
+            },
+            {
+              "option": "F",
+              "text": "They disagree about the reasons for its success"
+            },
+            {
+              "option": "G",
+              "text": "They think it has expanded too quickly."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They agree it has been disappointing."
+            },
+            {
+              "option": "B",
+              "text": "They think it should be cheaper."
+            },
+            {
+              "option": "C",
+              "text": "They are surprised it has been so successful."
+            },
+            {
+              "option": "D",
+              "text": "They agree that more investment is required."
+            },
+            {
+              "option": "E",
+              "text": "They think the system has been well designed"
+            },
+            {
+              "option": "F",
+              "text": "They disagree about the reasons for its success"
+            },
+            {
+              "option": "G",
+              "text": "They think it has expanded too quickly."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They agree it has been disappointing."
+            },
+            {
+              "option": "B",
+              "text": "They think it should be cheaper."
+            },
+            {
+              "option": "C",
+              "text": "They are surprised it has been so successful."
+            },
+            {
+              "option": "D",
+              "text": "They agree that more investment is required."
+            },
+            {
+              "option": "E",
+              "text": "They think the system has been well designed"
+            },
+            {
+              "option": "F",
+              "text": "They disagree about the reasons for its success"
+            },
+            {
+              "option": "G",
+              "text": "They think it has expanded too quickly."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They agree it has been disappointing."
+            },
+            {
+              "option": "B",
+              "text": "They think it should be cheaper."
+            },
+            {
+              "option": "C",
+              "text": "They are surprised it has been so successful."
+            },
+            {
+              "option": "D",
+              "text": "They agree that more investment is required."
+            },
+            {
+              "option": "E",
+              "text": "They think the system has been well designed"
+            },
+            {
+              "option": "F",
+              "text": "They disagree about the reasons for its success"
+            },
+            {
+              "option": "G",
+              "text": "They think it has expanded too quickly."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They agree it has been disappointing."
+            },
+            {
+              "option": "B",
+              "text": "They think it should be cheaper."
+            },
+            {
+              "option": "C",
+              "text": "They are surprised it has been so successful."
+            },
+            {
+              "option": "D",
+              "text": "They agree that more investment is required."
+            },
+            {
+              "option": "E",
+              "text": "They think the system has been well designed"
+            },
+            {
+              "option": "F",
+              "text": "They disagree about the reasons for its success"
+            },
+            {
+              "option": "G",
+              "text": "They think it has expanded too quickly."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They agree it has been disappointing."
+            },
+            {
+              "option": "B",
+              "text": "They think it should be cheaper."
+            },
+            {
+              "option": "C",
+              "text": "They are surprised it has been so successful."
+            },
+            {
+              "option": "D",
+              "text": "They agree that more investment is required."
+            },
+            {
+              "option": "E",
+              "text": "They think the system has been well designed"
+            },
+            {
+              "option": "F",
+              "text": "They disagree about the reasons for its success"
+            },
+            {
+              "option": "G",
+              "text": "They think it has expanded too quickly."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The Dodo: From History to Extinction",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260306_073218_1202ed1b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD ONLY&nbsp;</strong>for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,596 @@
+{
+  "title": "Cambridge 12_Test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_183650_026f3864.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "City Tour Leader",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_183650_026f3864.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Visiting Sheepmarket area",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_183650_026f3864.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Which is the most rapidly-growing group of residents in the Sheepmarket area?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "young professional people"
+            },
+            {
+              "option": "B",
+              "text": "students from the university"
+            },
+            {
+              "option": "C",
+              "text": "employees in the local market"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "The speaker recommends the side streets in the Sheepmarket for their",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "international restaurants."
+            },
+            {
+              "option": "B",
+              "text": "historical buildings."
+            },
+            {
+              "option": "C",
+              "text": "arts and crafts."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Clothes designed by entrants for the Young Fashion competition must",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "be modelled by the designers themselves."
+            },
+            {
+              "option": "B",
+              "text": "be inspired by aspects of contemporary culture."
+            },
+            {
+              "option": "C",
+              "text": "be made from locally produced materials."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "Car parking is free in some car parks if you",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "stay for less than an hour."
+            },
+            {
+              "option": "B",
+              "text": "buy something in the shops."
+            },
+            {
+              "option": "C",
+              "text": "park in the evenings or at weekends."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MAP",
+          "content": "The Reynolds House",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "The Thumb",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "The Museum",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "The Contemporary Art Gallery",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "The Warner Gallery",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "Nucleus",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Film adaptations on Shakespeare's plays",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_183650_026f3864.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 24,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What do the speakers say about each of the following films?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "clearly shows the historical period"
+            },
+            {
+              "option": "B",
+              "text": "contains only parts of the play"
+            },
+            {
+              "option": "C",
+              "text": "is too similar to another kind of film"
+            },
+            {
+              "option": "D",
+              "text": "turned out to be unpopular with audiences"
+            },
+            {
+              "option": "E",
+              "text": "presents the play in a different period from the original"
+            },
+            {
+              "option": "F",
+              "text": "sets the original in a different country"
+            },
+            {
+              "option": "G",
+              "text": "incorporates a variety of art forms"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "clearly shows the historical period"
+            },
+            {
+              "option": "B",
+              "text": "contains only parts of the play"
+            },
+            {
+              "option": "C",
+              "text": "is too similar to another kind of film"
+            },
+            {
+              "option": "D",
+              "text": "turned out to be unpopular with audiences"
+            },
+            {
+              "option": "E",
+              "text": "presents the play in a different period from the original"
+            },
+            {
+              "option": "F",
+              "text": "sets the original in a different country"
+            },
+            {
+              "option": "G",
+              "text": "incorporates a variety of art forms"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "clearly shows the historical period"
+            },
+            {
+              "option": "B",
+              "text": "contains only parts of the play"
+            },
+            {
+              "option": "C",
+              "text": "is too similar to another kind of film"
+            },
+            {
+              "option": "D",
+              "text": "turned out to be unpopular with audiences"
+            },
+            {
+              "option": "E",
+              "text": "presents the play in a different period from the original"
+            },
+            {
+              "option": "F",
+              "text": "sets the original in a different country"
+            },
+            {
+              "option": "G",
+              "text": "incorporates a variety of art forms"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "clearly shows the historical period"
+            },
+            {
+              "option": "B",
+              "text": "contains only parts of the play"
+            },
+            {
+              "option": "C",
+              "text": "is too similar to another kind of film"
+            },
+            {
+              "option": "D",
+              "text": "turned out to be unpopular with audiences"
+            },
+            {
+              "option": "E",
+              "text": "presents the play in a different period from the original"
+            },
+            {
+              "option": "F",
+              "text": "sets the original in a different country"
+            },
+            {
+              "option": "G",
+              "text": "incorporates a variety of art forms"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "clearly shows the historical period"
+            },
+            {
+              "option": "B",
+              "text": "contains only parts of the play"
+            },
+            {
+              "option": "C",
+              "text": "is too similar to another kind of film"
+            },
+            {
+              "option": "D",
+              "text": "turned out to be unpopular with audiences"
+            },
+            {
+              "option": "E",
+              "text": "presents the play in a different period from the original"
+            },
+            {
+              "option": "F",
+              "text": "sets the original in a different country"
+            },
+            {
+              "option": "G",
+              "text": "incorporates a variety of art forms"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "clearly shows the historical period"
+            },
+            {
+              "option": "B",
+              "text": "contains only parts of the play"
+            },
+            {
+              "option": "C",
+              "text": "is too similar to another kind of film"
+            },
+            {
+              "option": "D",
+              "text": "turned out to be unpopular with audiences"
+            },
+            {
+              "option": "E",
+              "text": "presents the play in a different period from the original"
+            },
+            {
+              "option": "F",
+              "text": "sets the original in a different country"
+            },
+            {
+              "option": "G",
+              "text": "incorporates a variety of art forms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Noise in cities",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_183650_026f3864.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

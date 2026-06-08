@@ -1,0 +1,638 @@
+{
+  "title": "Cambridge 11_Test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_181531_ec5aa284.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Stretton Festival",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_181531_ec5aa284.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Who is each play suitable for?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "mainly for children"
+            },
+            {
+              "option": "B",
+              "text": "mainly for adults"
+            },
+            {
+              "option": "C",
+              "text": "suitable for people of all ages"
+            }
+          ]
+        },
+        {
+          "number": 9,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "mainly for children"
+            },
+            {
+              "option": "B",
+              "text": "mainly for adults"
+            },
+            {
+              "option": "C",
+              "text": "suitable for people of all ages"
+            }
+          ]
+        },
+        {
+          "number": 10,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "mainly for children"
+            },
+            {
+              "option": "B",
+              "text": "mainly for adults"
+            },
+            {
+              "option": "C",
+              "text": "suitable for people of all ages"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Basement of Museum",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_181531_ec5aa284.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What does the speaker say about each of the following collections?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "was given by one person"
+            },
+            {
+              "option": "B",
+              "text": "was recently publicised in the media"
+            },
+            {
+              "option": "C",
+              "text": "includes some items given by members of the public"
+            },
+            {
+              "option": "D",
+              "text": "includes some items given by the artists"
+            },
+            {
+              "option": "E",
+              "text": "includes the most popular exhibits in the museum"
+            },
+            {
+              "option": "F",
+              "text": "is the largest of its kind in the country"
+            },
+            {
+              "option": "G",
+              "text": "has had some of its contents relocated"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "was given by one person"
+            },
+            {
+              "option": "B",
+              "text": "was recently publicised in the media"
+            },
+            {
+              "option": "C",
+              "text": "includes some items given by members of the public"
+            },
+            {
+              "option": "D",
+              "text": "includes some items given by the artists"
+            },
+            {
+              "option": "E",
+              "text": "includes the most popular exhibits in the museum"
+            },
+            {
+              "option": "F",
+              "text": "is the largest of its kind in the country"
+            },
+            {
+              "option": "G",
+              "text": "has had some of its contents relocated"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "was given by one person"
+            },
+            {
+              "option": "B",
+              "text": "was recently publicised in the media"
+            },
+            {
+              "option": "C",
+              "text": "includes some items given by members of the public"
+            },
+            {
+              "option": "D",
+              "text": "includes some items given by the artists"
+            },
+            {
+              "option": "E",
+              "text": "includes the most popular exhibits in the museum"
+            },
+            {
+              "option": "F",
+              "text": "is the largest of its kind in the country"
+            },
+            {
+              "option": "G",
+              "text": "has had some of its contents relocated"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "was given by one person"
+            },
+            {
+              "option": "B",
+              "text": "was recently publicised in the media"
+            },
+            {
+              "option": "C",
+              "text": "includes some items given by members of the public"
+            },
+            {
+              "option": "D",
+              "text": "includes some items given by the artists"
+            },
+            {
+              "option": "E",
+              "text": "includes the most popular exhibits in the museum"
+            },
+            {
+              "option": "F",
+              "text": "is the largest of its kind in the country"
+            },
+            {
+              "option": "G",
+              "text": "has had some of its contents relocated"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "was given by one person"
+            },
+            {
+              "option": "B",
+              "text": "was recently publicised in the media"
+            },
+            {
+              "option": "C",
+              "text": "includes some items given by members of the public"
+            },
+            {
+              "option": "D",
+              "text": "includes some items given by the artists"
+            },
+            {
+              "option": "E",
+              "text": "includes the most popular exhibits in the museum"
+            },
+            {
+              "option": "F",
+              "text": "is the largest of its kind in the country"
+            },
+            {
+              "option": "G",
+              "text": "has had some of its contents relocated"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "was given by one person"
+            },
+            {
+              "option": "B",
+              "text": "was recently publicised in the media"
+            },
+            {
+              "option": "C",
+              "text": "includes some items given by members of the public"
+            },
+            {
+              "option": "D",
+              "text": "includes some items given by the artists"
+            },
+            {
+              "option": "E",
+              "text": "includes the most popular exhibits in the museum"
+            },
+            {
+              "option": "F",
+              "text": "is the largest of its kind in the country"
+            },
+            {
+              "option": "G",
+              "text": "has had some of its contents relocated"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "restaurant",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>"
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "baby-changing facilities",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "cloakroom",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "caf\\00e9",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Joanna's psychology study",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_181531_ec5aa284.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "Mike Frost's article suggests that in popular music, women's dress is affected by",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "their wish to be taken seriously"
+            },
+            {
+              "option": "B",
+              "text": "their tendency to copy each other"
+            },
+            {
+              "option": "C",
+              "text": "their reaction to the masculine nature of the music"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "What did Joanna's subjects say about the audience at a performance?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The musicians' choice of clothing is linked to respect for the audience."
+            },
+            {
+              "option": "B",
+              "text": "The clothing should not distract the audience from the music."
+            },
+            {
+              "option": "C",
+              "text": "The audience should make the effort to dress appropriately."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "According to the speakers, musicians could learn from sports scientists about",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the importance of clothing for physical freedom."
+            },
+            {
+              "option": "B",
+              "text": "the part played by clothing in improving performance."
+            },
+            {
+              "option": "C",
+              "text": "the way clothing may protect against physical injury."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "Joanna concentrated on women performers because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "women are more influenced by fashion."
+            },
+            {
+              "option": "B",
+              "text": "women's dress has led to more controversy"
+            },
+            {
+              "option": "C",
+              "text": "women's code of dress is less strict than men's"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Use of soil to reduce carbon dioxide in atmosphere",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_181531_ec5aa284.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

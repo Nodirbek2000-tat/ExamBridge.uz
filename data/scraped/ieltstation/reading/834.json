@@ -1,0 +1,115 @@
+{
+  "title": "The English Canal System",
+  "content": "The development of an extensive inland network of rivers and canals in England during the 18th century was a direct result of the Industrial Revolution, which required an effective transport system. The widespread use of inland waterways in England may seem surprising, as the country's rivers are relatively small compared to those in continental Europe, and no part of England lies more than about 150 kilometres from the sea. At first glance, road transport might have appeared to be a more practical option. However, the small scale of English rivers may actually have been advantageous. During the early 18th century, hydraulic engineering was still at an early stage, and the modest size of the required works made it easier for engineers of the time to plan and construct them successfully.\n\nAnother factor that encouraged the growth of inland water transport was the poor condition of roads in the 18th century. They were few in number, badly maintained, and often impassable, particularly in the steep hills and valleys of northern England. As a result, they were incapable of carrying the large quantities of heavy materials demanded by expanding industries. Merchants and factory owners needed a cheaper means of moving both raw materials and finished goods. In England, it was these merchants who financed the construction of the first successful canals, unlike in many parts of Europe, where such projects were typically funded by the aristocracy.\n\nBy the second half of the 18th century, most of England's canal system had been completed. Civil engineering had advanced considerably, and many of the earlier canals, which had taken long, winding routes, were later made more direct, thereby reducing travel distances. Another major innovation was the introduction of locks, which made it possible to build canals through hilly areas. Locks functioned like steps, raising or lowering boats from one level to another. When a boat was enclosed in the central chamber and both sets of lock gates were closed, no water could enter or escape through them, as they were watertight. However, water could flow in or out through sluice gates positioned below the lock gates. By opening or closing these, the water level inside the lock could be adjusted until it matched the level of the water outside, allowing the boat to continue on its journey.\n\nNevertheless, several factors associated with the late 18th-century canal network led to persistent problems. To minimize construction costs, many canals and locks in industrial areas were built to very small dimensions–sometimes only 2.15 metres wide. Consequently, the boats that used them also had to be narrow. The canal builders of the time had not anticipated the rapid growth in traffic that would follow. By contrast, canals linking to coastal rivers and ports were wider, with larger boats and locks measuring around 4.3 metres across. This lack of standardisation resulted in a fragmented transport network.\n\nDuring the 1790s, many newly planned canals were viewed primarily as profit-making ventures by investors who were often speculators with no connection to local industry. These individuals believed that any canal would be profitable, regardless of its location. In practice, only a few canals yielded good returns, most of them wide canals in northern England that served as vital links between industrial centres and transport routes. Canals built in agricultural regions rarely carried enough cargo to recover their construction costs. By the early 19th century, many canals could no longer compete with the newly emerging railways. To reduce competition, railway companies purchased many of these canals but often neglected their maintenance, leading to their eventual abandonment.\n\nToday, inland water transport is no longer a major mode of goods transportation in England, with most freight now moved by road. In the latter half of the 20th century, the General Development Initiative (GDI) campaigned to increase public awareness of the historical and recreational value of canals. It was not an easy task, as many influential figures considered canals to be derelict and even dangerous to children, with some parents calling for them to be drained. However, growing public interest gradually brought national attention to these waterways. Many people became fascinated by their history, as centuries of neglect had left them largely unchanged since their construction over 200 years ago. Today, thanks to restoration and conservation efforts, England's canals are recognised as sites of both historical and environmental significance.",
+  "passage_number": 1,
+  "difficulty": "MEDIUM",
+  "time_limit": 20,
+  "is_standalone": true,
+  "is_premium": false,
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TFNG",
+      "content": "Larger rivers would have made the work of 18th-century hydraulic engineers more difficult.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 1): “–the small scale of English rivers may actually have been advantageous– the modest size of the required works made it easier for engineers of the time–”\n\nThis shows the opposite of what the question says. Smaller rivers helped engineers; therefore, larger ones would likely have made it more difficult. The statement is logically opposite to what the text suggests.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“larger rivers” ࢒ opposite of “small scale of English rivers”\n“made–more difficult” ࢒ “made it easier” (opposite meaning)",
+      "group_instruction": "<p>Do the following statements agree with the information given in Reading Passage 1?</p><p>In boxes 1产 on your answer sheet, write:</p><p><strong><em>TRUE</em></strong><em> - if the statement agrees with the information</em></p><p><strong><em>FALSE</em></strong><em> - if the statement contradicts the information</em></p><p><strong><em>NOT GIVEN</em></strong><em> - if there is no information on this</em></p>"
+    },
+    {
+      "number": 2,
+      "question_type": "TFNG",
+      "content": "Merchants refused to pay the high costs associated with road transport.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 2): “Merchants and factory owners needed a cheaper means of moving– raw materials and finished goods. In England, it was these merchants who financed the construction of the first successful canals–”\n\nThe passage says they looked for a cheaper option but does not say they refused to pay for road transport. No explicit refusal is mentioned.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“refused to pay” ࣔ “needed a cheaper means”\n“high costs associated with road transport” ࢒ “incapable of carrying heavy materials– cheaper means”",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "TFNG",
+      "content": "18th-century European and English canals were funded differently.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 2): “In England– merchants– financed– canals, unlike in many parts of Europe, where such projects were typically funded by the aristocracy.”\n\nThis directly supports the idea that funding sources were different between England and Europe.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“funded differently” ࢒ “merchants– unlike– aristocracy”\n“European and English canals” ࢐ “England” vs. “many parts of Europe”",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "TFNG",
+      "content": "Canals were narrower in some places than in others.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 4): “–many canals and locks in industrial areas were built to very small dimensions– By contrast, canals linking to coastal rivers and ports were wider–”\n\nThis contrast confirms variation in canal width depending on the location.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“narrower in some places” ࢒ “very small dimensions”\n“than in others” ࢒ “by contrast– were wider”",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "TFNG",
+      "content": "Canal locks were first introduced in the 19th century.",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 3): “Another major innovation was the introduction of locks– By the second half of the 18th century, most of England’s canal system had been completed.”\n\nLocks were introduced before the 19th century, i.e., during or before the late 18th century.\n\n\\+01f44d\\+01f3fc Synonyms/Paraphrases:\n“first introduced” ࢒ “introduction of locks”\n“19th century” ࣔ “second half of the 18th century”",
+      "group_instruction": ""
+    },
+    {
+      "number": 6,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 3): “Locks– made it possible to build canals through hilly areas.",
+      "group_instruction": "<h3><strong>Complete the notes below.</strong></h3><p>Choose&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;from the passage for each answer.</p><p>Write your answers in boxes 6享 on your answer sheet.</p>"
+    },
+    {
+      "number": 7,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 3): “When a boat was enclosed in the central chamber–",
+      "group_instruction": ""
+    },
+    {
+      "number": 8,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 3): “...sluice gates– By opening or closing these, the water level– could be adjusted–",
+      "group_instruction": ""
+    },
+    {
+      "number": 9,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 3): “...the water level inside the lock could be adjusted until it matched the level of the water outside–",
+      "group_instruction": ""
+    },
+    {
+      "number": 13,
+      "question_type": "SENT",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 5): “...railway companies purchased many of these canals...",
+      "group_instruction": "<p><strong>Answer the questions below.</strong></p><p><em>Choose&nbsp;</em><strong><em>NO MORE THAN TWO WORDS</em></strong><em>&nbsp;from the passage for each answer.</em></p><p><em>Write your answers in boxes 10亣3 on your answer sheet.</em></p>"
+    },
+    {
+      "number": 10,
+      "question_type": "SENT",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 5): “...investors who were often speculators with no connection to local industry.",
+      "group_instruction": ""
+    },
+    {
+      "number": 11,
+      "question_type": "SENT",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 5): “...wide canals in northern England... yielded good returns...",
+      "group_instruction": ""
+    },
+    {
+      "number": 12,
+      "question_type": "SENT",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "\\+01f50d Explanation (Paragraph 5): “Canals built in agricultural regions rarely carried enough cargo to recover their construction costs.",
+      "group_instruction": ""
+    }
+  ]
+}

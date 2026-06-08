@@ -1,0 +1,562 @@
+{
+  "title": "Cambridge 12_Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182119_412d71c1.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Family Excursions",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182119_412d71c1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Talk to new kitchen assistants",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182119_412d71c1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "According to the manager, what do most people like about the job of kitchen assistant?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><strong>Questions 11-14</strong></p><p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the variety of work\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "the friendly atmosphere"
+            },
+            {
+              "option": "C",
+              "text": "the opportunities for promotion"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "The manager is concerned about some of the new staff's",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "jewellery."
+            },
+            {
+              "option": "B",
+              "text": "hair styles."
+            },
+            {
+              "option": "C",
+              "text": "shoes."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "The manager says that the day is likely to be busy for kitchen staff because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "it is a public holiday.\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "the head chef is absent.\\000a\\000a"
+            },
+            {
+              "option": "C",
+              "text": "the restaurant is almost fully booked"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "Only kitchen staff who are 18 or older are allowed to use",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the waste disposal unit.\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "the electric mixer.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "the meat slicer"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p><p><br></p>"
+        },
+        {
+          "number": 16,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><strong>Questions 17-20</strong></p><p>Choose the correct letter,&nbsp;<strong>A-F</strong>, next to Questions&nbsp;17-20.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "training courses"
+            },
+            {
+              "option": "B",
+              "text": "food stocks"
+            },
+            {
+              "option": "C",
+              "text": "first aid"
+            },
+            {
+              "option": "D",
+              "text": "breakages"
+            },
+            {
+              "option": "E",
+              "text": "staff discounts"
+            },
+            {
+              "option": "F",
+              "text": "timetables"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "training courses"
+            },
+            {
+              "option": "B",
+              "text": "food stocks"
+            },
+            {
+              "option": "C",
+              "text": "first aid"
+            },
+            {
+              "option": "D",
+              "text": "breakages"
+            },
+            {
+              "option": "E",
+              "text": "staff discounts"
+            },
+            {
+              "option": "F",
+              "text": "timetables"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "training courses"
+            },
+            {
+              "option": "B",
+              "text": "food stocks"
+            },
+            {
+              "option": "C",
+              "text": "first aid"
+            },
+            {
+              "option": "D",
+              "text": "breakages"
+            },
+            {
+              "option": "E",
+              "text": "staff discounts"
+            },
+            {
+              "option": "F",
+              "text": "timetables"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "training courses"
+            },
+            {
+              "option": "B",
+              "text": "food stocks"
+            },
+            {
+              "option": "C",
+              "text": "first aid"
+            },
+            {
+              "option": "D",
+              "text": "breakages"
+            },
+            {
+              "option": "E",
+              "text": "staff discounts"
+            },
+            {
+              "option": "F",
+              "text": "timetables"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Paper on Public libraries",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182119_412d71c1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What will be the main topic of Trudie and Stewart's paper?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><strong>Questions 21-23</strong></p><p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "how public library services are organised in different countries\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "how changes in society are reflected in public libraries"
+            },
+            {
+              "option": "C",
+              "text": "how the funding of public libraries has changed"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "They agree that one disadvantage of free digitalised books is that",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "they may take a long time to read.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "they can be difficult to read."
+            },
+            {
+              "option": "C",
+              "text": "they are generally old."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Stewart expects that in the future libraries will",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "maintain their traditional function.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "become centres for local communities."
+            },
+            {
+              "option": "C",
+              "text": "no longer contain any books."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Four business values",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_182119_412d71c1.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

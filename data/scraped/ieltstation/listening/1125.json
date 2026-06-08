@@ -1,0 +1,500 @@
+{
+  "title": "Cambridge 20_Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260213_121734_d39eae51.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Restaurant Recommendations for a Celebration",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260213_121734_d39eae51.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Pottery",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260213_121734_d39eae51.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Heather says pottery differs from other art forms because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "it lasts longer in the ground."
+            },
+            {
+              "option": "B",
+              "text": "\\000ait is practised by more people"
+            },
+            {
+              "option": "C",
+              "text": "it can be repaired more easily."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "Archaeologists sometimes identify the use of ancient pottery from",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the clay it was made with."
+            },
+            {
+              "option": "B",
+              "text": "the marks that are on it"
+            },
+            {
+              "option": "C",
+              "text": "the basic shape of it."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Some people join Heather's pottery class because they want to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "create an item that looks very old."
+            },
+            {
+              "option": "B",
+              "text": "find something that they are good at"
+            },
+            {
+              "option": "C",
+              "text": "make something that will outlive them."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What does Heather value most about being a potter?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000aits calming effect"
+            },
+            {
+              "option": "B",
+              "text": "\\000aits messy nature"
+            },
+            {
+              "option": "C",
+              "text": "\\000aits physical benefits"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "Most of the visitors to Edelman Pottery",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "bring friends to join courses."
+            },
+            {
+              "option": "B",
+              "text": "have never made a pot before."
+            },
+            {
+              "option": "C",
+              "text": "try to learn techniques too quickly.\\000a"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "Heather reminds her visitors that they should",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "put on their aprons."
+            },
+            {
+              "option": "B",
+              "text": "change their clothes."
+            },
+            {
+              "option": "C",
+              "text": "take off their jewellery."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> correct answers.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> correct answers.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Sociology Students' Research on Loneliness",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260213_121734_d39eae51.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> correct answers.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> correct answers.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> correct answers.</p>"
+        },
+        {
+          "number": 25,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "When comparing loneliness to depression, the students",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "doubt that there will ever be a medical cure for loneliness."
+            },
+            {
+              "option": "B",
+              "text": "claim that the link between loneliness and mental health is overstated."
+            },
+            {
+              "option": "C",
+              "text": "express frustration that loneliness is not taken more seriously."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "Why do the students decide to start their presentation with an example from their own experience?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to explain how difficult loneliness can be"
+            },
+            {
+              "option": "B",
+              "text": "to highlight a situation that most students will recognise"
+            },
+            {
+              "option": "C",
+              "text": "to emphasise that feeling lonely is more common for men than women"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "The students agree that talking to strangers is a good strategy for dealing with loneliness because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "it creates a sense of belonging."
+            },
+            {
+              "option": "B",
+              "text": "it builds self-confidence."
+            },
+            {
+              "option": "C",
+              "text": "it makes people feel more positive.\\000a"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "The students find it difficult to understand why solitude is considered to be",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "similar to loneliness."
+            },
+            {
+              "option": "B",
+              "text": "necessary for mental health."
+            },
+            {
+              "option": "C",
+              "text": "an enjoyable experience."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Reclaiming urban rivers",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260213_121734_d39eae51.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

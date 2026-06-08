@@ -1,0 +1,812 @@
+{
+  "title": "Cambridge 17_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_032357_f41e205b.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Opportunities for voluntary work in Southoe village",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_032357_f41e205b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Oniton Hall",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_032357_f41e205b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Many past owners made changes to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the gardens"
+            },
+            {
+              "option": "B",
+              "text": "the house"
+            },
+            {
+              "option": "C",
+              "text": "the farm"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "Sir Edward Downes built Oniton Hall because he wanted",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a place for discussing politics"
+            },
+            {
+              "option": "B",
+              "text": "a place to display his wealth"
+            },
+            {
+              "option": "C",
+              "text": "a place for artists and writers."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Visitors can learn about the work of servants in the past from",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "audio guides"
+            },
+            {
+              "option": "B",
+              "text": "photographs."
+            },
+            {
+              "option": "C",
+              "text": "people in costume"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What is new for children at Oniton Hall?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "clothes for dressing up"
+            },
+            {
+              "option": "B",
+              "text": "mini tractors"
+            },
+            {
+              "option": "C",
+              "text": "the adventure playground"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which activity is offered at each of the following locations on the farm?</p><p><br></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "shopping"
+            },
+            {
+              "option": "B",
+              "text": "watching cows being milked"
+            },
+            {
+              "option": "C",
+              "text": "seeing old farming equipment"
+            },
+            {
+              "option": "D",
+              "text": "eating and drinking"
+            },
+            {
+              "option": "E",
+              "text": "starting a trip"
+            },
+            {
+              "option": "F",
+              "text": "seeing rare breeds of animals"
+            },
+            {
+              "option": "G",
+              "text": "helping to look after animals"
+            },
+            {
+              "option": "H",
+              "text": "using farming tools"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "shopping"
+            },
+            {
+              "option": "B",
+              "text": "watching cows being milked"
+            },
+            {
+              "option": "C",
+              "text": "seeing old farming equipment"
+            },
+            {
+              "option": "D",
+              "text": "eating and drinking"
+            },
+            {
+              "option": "E",
+              "text": "starting a trip"
+            },
+            {
+              "option": "F",
+              "text": "seeing rare breeds of animals"
+            },
+            {
+              "option": "G",
+              "text": "helping to look after animals"
+            },
+            {
+              "option": "H",
+              "text": "using farming tools"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "shopping"
+            },
+            {
+              "option": "B",
+              "text": "watching cows being milked"
+            },
+            {
+              "option": "C",
+              "text": "seeing old farming equipment"
+            },
+            {
+              "option": "D",
+              "text": "eating and drinking"
+            },
+            {
+              "option": "E",
+              "text": "starting a trip"
+            },
+            {
+              "option": "F",
+              "text": "seeing rare breeds of animals"
+            },
+            {
+              "option": "G",
+              "text": "helping to look after animals"
+            },
+            {
+              "option": "H",
+              "text": "using farming tools"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "shopping"
+            },
+            {
+              "option": "B",
+              "text": "watching cows being milked"
+            },
+            {
+              "option": "C",
+              "text": "seeing old farming equipment"
+            },
+            {
+              "option": "D",
+              "text": "eating and drinking"
+            },
+            {
+              "option": "E",
+              "text": "starting a trip"
+            },
+            {
+              "option": "F",
+              "text": "seeing rare breeds of animals"
+            },
+            {
+              "option": "G",
+              "text": "helping to look after animals"
+            },
+            {
+              "option": "H",
+              "text": "using farming tools"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "shopping"
+            },
+            {
+              "option": "B",
+              "text": "watching cows being milked"
+            },
+            {
+              "option": "C",
+              "text": "seeing old farming equipment"
+            },
+            {
+              "option": "D",
+              "text": "eating and drinking"
+            },
+            {
+              "option": "E",
+              "text": "starting a trip"
+            },
+            {
+              "option": "F",
+              "text": "seeing rare breeds of animals"
+            },
+            {
+              "option": "G",
+              "text": "helping to look after animals"
+            },
+            {
+              "option": "H",
+              "text": "using farming tools"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "shopping"
+            },
+            {
+              "option": "B",
+              "text": "watching cows being milked"
+            },
+            {
+              "option": "C",
+              "text": "seeing old farming equipment"
+            },
+            {
+              "option": "D",
+              "text": "eating and drinking"
+            },
+            {
+              "option": "E",
+              "text": "starting a trip"
+            },
+            {
+              "option": "F",
+              "text": "seeing rare breeds of animals"
+            },
+            {
+              "option": "G",
+              "text": "helping to look after animals"
+            },
+            {
+              "option": "H",
+              "text": "using farming tools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Romeo and Juliet",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_032357_f41e205b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>correct answers.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which opinion do the speakers give about each of the following aspects of The Emporium's production of Romeo and Juliet?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They both expected this to be more traditional."
+            },
+            {
+              "option": "B",
+              "text": "They both thought this was original."
+            },
+            {
+              "option": "C",
+              "text": "They agree this created the right atmosphere."
+            },
+            {
+              "option": "D",
+              "text": "They agree this was a major strength."
+            },
+            {
+              "option": "E",
+              "text": "They were both disappointed by this."
+            },
+            {
+              "option": "F",
+              "text": "They disagree about why this was an issue."
+            },
+            {
+              "option": "G",
+              "text": "They disagree about how this could be improved."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They both expected this to be more traditional."
+            },
+            {
+              "option": "B",
+              "text": "They both thought this was original."
+            },
+            {
+              "option": "C",
+              "text": "They agree this created the right atmosphere."
+            },
+            {
+              "option": "D",
+              "text": "They agree this was a major strength."
+            },
+            {
+              "option": "E",
+              "text": "They were both disappointed by this."
+            },
+            {
+              "option": "F",
+              "text": "They disagree about why this was an issue."
+            },
+            {
+              "option": "G",
+              "text": "They disagree about how this could be improved."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They both expected this to be more traditional."
+            },
+            {
+              "option": "B",
+              "text": "They both thought this was original."
+            },
+            {
+              "option": "C",
+              "text": "They agree this created the right atmosphere."
+            },
+            {
+              "option": "D",
+              "text": "They agree this was a major strength."
+            },
+            {
+              "option": "E",
+              "text": "They were both disappointed by this."
+            },
+            {
+              "option": "F",
+              "text": "They disagree about why this was an issue."
+            },
+            {
+              "option": "G",
+              "text": "They disagree about how this could be improved."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They both expected this to be more traditional."
+            },
+            {
+              "option": "B",
+              "text": "They both thought this was original."
+            },
+            {
+              "option": "C",
+              "text": "They agree this created the right atmosphere."
+            },
+            {
+              "option": "D",
+              "text": "They agree this was a major strength."
+            },
+            {
+              "option": "E",
+              "text": "They were both disappointed by this."
+            },
+            {
+              "option": "F",
+              "text": "They disagree about why this was an issue."
+            },
+            {
+              "option": "G",
+              "text": "They disagree about how this could be improved."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They both expected this to be more traditional."
+            },
+            {
+              "option": "B",
+              "text": "They both thought this was original."
+            },
+            {
+              "option": "C",
+              "text": "They agree this created the right atmosphere."
+            },
+            {
+              "option": "D",
+              "text": "They agree this was a major strength."
+            },
+            {
+              "option": "E",
+              "text": "They were both disappointed by this."
+            },
+            {
+              "option": "F",
+              "text": "They disagree about why this was an issue."
+            },
+            {
+              "option": "G",
+              "text": "They disagree about how this could be improved."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "The students think the story of Romeo and Juliet is still relevant for young people today because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer<strong> A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "it illustrates how easily conflict can start."
+            },
+            {
+              "option": "B",
+              "text": "it deals with problems that families experience"
+            },
+            {
+              "option": "C",
+              "text": "it teaches them about relationships."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "The students found watching Romeo and Juliet in another language",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "frustrating"
+            },
+            {
+              "option": "B",
+              "text": "demanding"
+            },
+            {
+              "option": "C",
+              "text": "moving."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "Why do the students think Shakespeare's plays have such international appeal?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The stories are exciting."
+            },
+            {
+              "option": "B",
+              "text": "There are recognisable characters."
+            },
+            {
+              "option": "C",
+              "text": "They can be interpreted in many ways."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The impact of digital technology on the Icelandic language",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_032357_f41e205b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

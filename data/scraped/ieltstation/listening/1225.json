@@ -1,0 +1,604 @@
+{
+  "title": "Cambridge 17_Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_035825_ef65d005.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Buckworth Conservation Group",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_035825_ef65d005.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Boat trip round Tasmania",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_035825_ef65d005.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "What is the maximum number of people who can stand on each side of the boat?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "9"
+            },
+            {
+              "option": "B",
+              "text": "15"
+            },
+            {
+              "option": "C",
+              "text": "18"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What colour are the tour boats?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "dark red"
+            },
+            {
+              "option": "B",
+              "text": "jet black"
+            },
+            {
+              "option": "C",
+              "text": "light green"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Which lunchbox is suitable for someone who doesn't eat meat or fish?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Lunchbox 1"
+            },
+            {
+              "option": "B",
+              "text": "Lunchbox 2"
+            },
+            {
+              "option": "C",
+              "text": "Lunchbox 3"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What should people do with their litter?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "take it home"
+            },
+            {
+              "option": "B",
+              "text": "hand it to a member of staff"
+            },
+            {
+              "option": "C",
+              "text": "put it in the bins provided on the boat"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Work experience for veterinary science students",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_035825_ef65d005.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What problem did both Diana and Tim have when arranging their work experience?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter<strong> A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "making initial contact with suitable farms"
+            },
+            {
+              "option": "B",
+              "text": "organising transport to and from the farm"
+            },
+            {
+              "option": "C",
+              "text": "finding a placement for the required length of time"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Tim was pleased to be able to help",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a lamb that had a broken leg"
+            },
+            {
+              "option": "B",
+              "text": "a sheep that was having difficulty giving birth."
+            },
+            {
+              "option": "C",
+              "text": "a newly born lamb that was having trouble feeding."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Diana says the sheep on her farm",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "were of various different varieties"
+            },
+            {
+              "option": "B",
+              "text": "were mainly reared for their meat"
+            },
+            {
+              "option": "C",
+              "text": "had better quality wool than sheep on the hills"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "What did the students learn about adding supplements to chicken feed?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "These should only be given if specially needed."
+            },
+            {
+              "option": "B",
+              "text": "It is worth paying extra for the most effective ones."
+            },
+            {
+              "option": "C",
+              "text": "The amount given at one time should be limited."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What happened when Diana was working with dairy cows?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "She identified some cows incorrectly."
+            },
+            {
+              "option": "B",
+              "text": "She accidentally threw some milk away."
+            },
+            {
+              "option": "C",
+              "text": "She made a mistake when storing milk."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "What did both farmers mention about vets and farming?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Vets are failing to cope with some aspects of animal health."
+            },
+            {
+              "option": "B",
+              "text": "There needs to be a fundamental change in the training of vets."
+            },
+            {
+              "option": "C",
+              "text": "Some jobs could be done by the farmer rather than by a vet."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What opinion do the students give about each of the following modules on their veterinary science course?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Tim found this easier than expected."
+            },
+            {
+              "option": "B",
+              "text": "Tim thought this was not very clearly organised."
+            },
+            {
+              "option": "C",
+              "text": "Diana may do some further study on this."
+            },
+            {
+              "option": "D",
+              "text": "They both found the reading required for this was difficult."
+            },
+            {
+              "option": "E",
+              "text": "Tim was shocked at something he learned on this module."
+            },
+            {
+              "option": "F",
+              "text": "They were both surprised how little is known about some aspects of this."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Tim found this easier than expected."
+            },
+            {
+              "option": "B",
+              "text": "Tim thought this was not very clearly organised."
+            },
+            {
+              "option": "C",
+              "text": "Diana may do some further study on this."
+            },
+            {
+              "option": "D",
+              "text": "They both found the reading required for this was difficult."
+            },
+            {
+              "option": "E",
+              "text": "Tim was shocked at something he learned on this module."
+            },
+            {
+              "option": "F",
+              "text": "They were both surprised how little is known about some aspects of this."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Tim found this easier than expected."
+            },
+            {
+              "option": "B",
+              "text": "Tim thought this was not very clearly organised."
+            },
+            {
+              "option": "C",
+              "text": "Diana may do some further study on this."
+            },
+            {
+              "option": "D",
+              "text": "They both found the reading required for this was difficult."
+            },
+            {
+              "option": "E",
+              "text": "Tim was shocked at something he learned on this module."
+            },
+            {
+              "option": "F",
+              "text": "They were both surprised how little is known about some aspects of this."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Tim found this easier than expected."
+            },
+            {
+              "option": "B",
+              "text": "Tim thought this was not very clearly organised."
+            },
+            {
+              "option": "C",
+              "text": "Diana may do some further study on this."
+            },
+            {
+              "option": "D",
+              "text": "They both found the reading required for this was difficult."
+            },
+            {
+              "option": "E",
+              "text": "Tim was shocked at something he learned on this module."
+            },
+            {
+              "option": "F",
+              "text": "They were both surprised how little is known about some aspects of this."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Labyrinths",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260227_035825_ef65d005.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

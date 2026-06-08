@@ -1,0 +1,216 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "Insight or evolution?",
+    "content": "Two scientists consider the origins of discoveries and other innovative behaviour\nScientific discovery is popularly believed to result from the sheer genius of such intellectual stars as naturalist Charles Darwin and theoretical physicist Albert Einstein. Our view of such unique contributions to science often disregards the person's prior experience and the efforts of their lesser-known predecessors. Conventional wisdom also places great weight on insight in promoting breakthrough scientific achievements, as if ideas spontaneously pop into someone's head - fully formed and functional.\n\nThere may be some limited truth to this view. However, we believe that it largely misrepresents the real nature of scientific discovery, as well as that of creativity and innovation in many other realms of human endeavour.\n\nSetting aside such greats as Darwin and Einstein - whose monumental contributions are duly celebrated - we suggest that innovation is more a process of trial and error, where two steps forward may sometimes come with one step back, as well as one or more steps to the right or left. This evolutionary view of human innovation undermines the notion of creative genius and recognizes the cumulative nature of scientific progress.\n\nConsider one unheralded scientist: John Nicholson, a mathematical physicist working in the 1910s who postulated the existence of 'proto-elements' in outer space. By combining different numbers of weights of these proto-elements' atoms, Nicholson could recover the weights of all the elements in the then-known periodic table. These successes are all the more noteworthy given the fact that Nicholson was wrong about the presence of proto-elements: they do not actually exist. Yet, amid his often fanciful theories and wild speculations, Nicholson also proposed a novel theory about the structure of atoms. Niels Bohr, the Nobel prize-winning father of modern atomic theory, jumped off from this interesting idea to conceive his now-famous model of the atom.\n\nWhat are we to make of this story?One might simply conclude that science is a collective and cumulative enterprise. That may be true, but there may be a deeper insight to be gleaned. We propose that science is constantly evolving, much as species of animals do. In biological systems, organisms may display new characteristics that result from random genetic mutations. In the same way, random, arbitrary or accidental mutations of ideas may help pave the way for advances in science. If mutations prove beneficial, then the animal or the scientific theory will continue to thrive and perhaps reproduce.\n\nSupport for this evolutionary view of behavioural innovation comes from many domains. Consider one example of an influential innovation in US horseracing. The so-called 'acey-deucy' stirrup placement, in which the rider's foot in his left stirrup is placed as much as 25 centimetres lower than the right, is believed to confer important speed advantages when turning on oval tracks. It was developed by a relatively unknown jockey named Jackie Westrope. Had Westrope conducted methodical investigations or examined extensive film records in a shrewd plan to outrun his rivals?Had he foreseen the speed advantage that would be conferred by riding acey-deucy? No. He suffered a leg injury, which left him unable to fully bend his left knee. His modification just happened to coincide with enhanced left-hand turning performance. This led to the rapid and widespread adoption of riding acey-deucy by many riders, a racing style which continues in today's thoroughbred racing.\n\nPlenty of other stories show that fresh advances can arise from error, misadventure, and also pure serendipity - a happy accident. For example, in the early 1970s, two employees of the company 3M each had a problem: Spencer Silver had a product - a glue which was only slightly sticky - and no use for it, while his colleague Art Fry was trying to figure out how to affix temporary bookmarks in his hymn book without damaging its pages. The solution to both these problems was the invention of the brilliantly simple yet phenomenally successful Post-It note. Such examples give lie to the claim that ingenious, designing minds are responsible for human creativity and invention. Far more banal and mechanical forces may be at work; forces that are fundamentally connected to the laws of science.\n\nThe notions of insight, creativity and genius are often invoked, but they remain vague and of doubtful scientific utility, especially when one considers the diverse and enduring contributions of individuals such as Plato, Leonardo da Vinci, Shakespeare, Beethoven, Galileo, Newton, Kepler, Curie, Pasteur and Edison. These notions merely label rather than explain the evolution of human innovations. We need another approach, and there is a promising candidate.\n\nThe Law of Effect was advanced by psychologist Edward Thorndike in 1898, some 40 years after Charles Darwin published his groundbreaking work on biological evolution, On the Origin of Species. This simple law holds that organisms tend to repeat successful behaviors and to refrain from performing unsuccessful ones.Just like Darwin's Law of Natural Selection, the Law of Effect involves an entirely mechanical process of variation and selection, without any end objective in sight.\n\nOf course, the origin of human innovation demands much further study. In particular, the provenance of the raw material on which the Law of Effect operates is not as clearly known as that of the genetic mutations on which the Law of Natural Selection operates. The generation of novel ideas and behaviors may not be entirely random, but constrained by prior successes and failures - of the current individual (such as Bohr) or of predecessors (such as Nicholson).\n\nThe time seems right for abandoning the naive notions of intelligent design and genius, and for scientifically exploring the true origins of creative behavior.",
+    "passage_number": 3,
+    "difficulty": "MEDIUM",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 27,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The first paragraph outlines a commonly held assumption about scientific discovery, which the writers aim to challenge throughout the passage.",
+      "group_instruction": "<p>Choose the correct letter</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "defend particular ideas."
+        },
+        {
+          "option": "B",
+          "text": "compare certain beliefs."
+        },
+        {
+          "option": "C",
+          "text": "disprove a widely held view."
+        },
+        {
+          "option": "D",
+          "text": "outline a common assumption."
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "In the second paragraph, the writers are criticizing the common view of scientific discovery and its emphasis on sudden insight.",
+      "group_instruction": "<p>Choose the correct letter</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "criticising an opinion"
+        },
+        {
+          "option": "B",
+          "text": "justifying a standpoint"
+        },
+        {
+          "option": "C",
+          "text": "explaining an approach"
+        },
+        {
+          "option": "D",
+          "text": "supporting an argument"
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The writers suggest that Darwin and Einstein are exceptions to the general view of scientific discovery, highlighting their monumental achievements while challenging the common understanding of how discoveries are made.",
+      "group_instruction": "<p>Choose the correct letter</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "They represent an exception to a general rule."
+        },
+        {
+          "option": "B",
+          "text": "Their way of working has been misunderstood."
+        },
+        {
+          "option": "C",
+          "text": "They are an ideal which others should aspire to."
+        },
+        {
+          "option": "D",
+          "text": "Their achievements deserve greater recognition."
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage discusses how John Nicholson's ideas laid the foundation for Niels Bohr's breakthrough, even though Nicholson's theories were incorrect.",
+      "group_instruction": "<p>Choose the correct letter</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "established his reputation as an influential scientist."
+        },
+        {
+          "option": "B",
+          "text": "was only fully understood at a later point in history."
+        },
+        {
+          "option": "C",
+          "text": "laid the foundations for someone else's breakthrough."
+        },
+        {
+          "option": "D",
+          "text": "nitially met with scepticism from the scientific community."
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The key point about the 'acey-deucy' stirrup placement is that it was invented out of necessity, not a carefully planned research process, and this simple reason led to its widespread adoption.",
+      "group_instruction": "<p>Choose the correct letter</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "the simple reason why it was invented"
+        },
+        {
+          "option": "B",
+          "text": "the enthusiasm with which it was adopted"
+        },
+        {
+          "option": "C",
+          "text": "the research that went into its development"
+        },
+        {
+          "option": "D",
+          "text": "the cleverness of the person who first used it"
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "question_type": "YNNG",
+      "content": "Acknowledging people such as Plato or da Vinci as geniuses will help us understand the process by which great minds create new ideas.",
+      "correct_answer": null,
+      "explanation": "The writer argues that labeling people like Plato or da Vinci as geniuses doesn't help explain how new ideas come about.",
+      "group_instruction": "<p>Choose <strong>YES</strong> if the statement agrees with the information given in the text, choose <strong>NO</strong> if the statement contradicts the information, or choose <strong>NOT GIVEN</strong> if there is no information on this</p>"
+    },
+    {
+      "number": 33,
+      "question_type": "YNNG",
+      "content": "The Law of Effect was discovered at a time when psychologists were seeking a scientific reason why creativity occurs.",
+      "correct_answer": null,
+      "explanation": "The passage doesn't specifically mention that the Law of Effect was discovered while psychologists were seeking an explanation for creativity.",
+      "group_instruction": ""
+    },
+    {
+      "number": 34,
+      "question_type": "YNNG",
+      "content": "The Law of Effect states that no planning is involved in the behaviour of organisms.",
+      "correct_answer": null,
+      "explanation": "The Law of Effect states that organisms tend to repeat successful behaviors and avoid unsuccessful ones, suggesting a mechanical process without any planning involved.",
+      "group_instruction": ""
+    },
+    {
+      "number": 35,
+      "question_type": "YNNG",
+      "content": "The Law of Effect sets out clear explanations about the sources of new ideas and behaviours.",
+      "correct_answer": null,
+      "explanation": "The writer clarifies that while the Law of Effect describes the process of variation and selection, it doesn't provide clear explanations about the sources of new ideas.",
+      "group_instruction": ""
+    },
+    {
+      "number": 36,
+      "question_type": "YNNG",
+      "content": "Many scientists are now turning away from the notion of intelligent design and genius.",
+      "correct_answer": null,
+      "explanation": "The passage suggests that many scientists are turning away from the notion of genius and intelligent design in favor of exploring the true origins of creative behavior.",
+      "group_instruction": ""
+    },
+    {
+      "number": 37,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage suggests that the traditional view of scientific discovery involves an element of inspiration, where a genius suddenly has a breakthrough idea.",
+      "group_instruction": "<p>Complete the summary using the list of words or phrases below.</p>"
+    },
+    {
+      "number": 39,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The Post-It note was invented due to a fortunate coincidence or luck when two employees found themselves in need of a solution to unrelated problems.",
+      "group_instruction": ""
+    },
+    {
+      "number": 40,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Both the Law of Natural Selection and the Law of Effect emphasize variation and selection, without a clear objective or set goals.",
+      "group_instruction": ""
+    },
+    {
+      "number": 38,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The process of trial and error, such as Nicholson’s theory about proto-elements, involves experiments and testing of ideas.",
+      "group_instruction": ""
+    }
+  ]
+}

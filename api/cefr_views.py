@@ -10,6 +10,38 @@ from cefr.models import (
 )
 from ielts.models import BookmarkedQuestion
 
+# ── SCORE MAPS ────────────────────────────────────────────────────────────────
+READING_SCORE_MAP = {
+    1:20, 2:24, 3:27, 4:29, 5:32, 6:34, 7:36, 8:38, 9:39, 10:41,
+    11:42, 12:44, 13:45, 14:46, 15:48, 16:49, 17:51, 18:52, 19:54, 20:55,
+    21:57, 22:58, 23:60, 24:61, 25:63, 26:65, 27:66, 28:68, 29:70, 30:71,
+    31:73, 32:74, 33:75, 34:75, 35:75,
+}
+LISTENING_SCORE_MAP = {
+    1:23, 2:26, 3:28, 4:30, 5:33, 6:34, 7:36, 8:38, 9:39, 10:41,
+    11:42, 12:44, 13:45, 14:47, 15:48, 16:50, 17:51, 18:53, 19:54, 20:55,
+    21:57, 22:58, 23:60, 24:61, 25:63, 26:65, 27:66, 28:68, 29:70, 30:72,
+    31:73, 32:74, 33:75, 34:75, 35:75,
+}
+
+def _calc_cefr_score(correct, score_map):
+    """Map raw correct count to CEFR numeric score (20-75)."""
+    if not correct:
+        return score_map.get(1, 20)
+    key = max(1, min(int(correct), max(score_map.keys())))
+    return score_map.get(key, 20)
+
+def _cefr_level(score):
+    """Return CEFR level label from numeric score."""
+    if score >= 65:
+        return 'C1'
+    elif score >= 61:
+        return 'B2'
+    elif score >= 50:
+        return 'B1+'
+    else:
+        return 'B1'
+
 
 # ── HELPERS ──────────────────────────────────────────────────────────────────
 
@@ -289,23 +321,82 @@ def cefr_attempt_review(request, attempt_id):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def cefr_reading_list(request):
+    from cefr.models import CEFRTest
     level = request.query_params.get('level')
-    qs = CEFRReadingPassage.objects.all()
+    result = []
+
+    # Full mocks: CEFRTest with test_type=READING that has passages linked
+    mock_qs = CEFRTest.objects.filter(test_type='READING', is_active=True).prefetch_related('reading_passages')
+    if level:
+        mock_qs = mock_qs.filter(level=level)
+    for test in mock_qs:
+        passages = list(test.reading_passages.all())
+        if not passages:
+            continue
+        result.append({
+            'id': test.id,
+            'title': test.title,
+            'level': test.level,
+            'item_type': 'full_mock',
+            'part_count': len(passages),
+            'question_count': sum(p.questions.count() for p in passages),
+            'time_limit': test.time_limit,
+            'is_premium': test.is_premium,
+            'is_mock': True,
+        })
+
+    # Standalone passages (not linked to any CEFRTest)
+    qs = CEFRReadingPassage.objects.filter(test__isnull=True)
     if level:
         qs = qs.filter(level=level)
+    for p in qs:
+        result.append({
+            'id': p.id,
+            'title': p.title,
+            'level': p.level,
+            'item_type': 'passage',
+            'passage_number': p.passage_number,
+            'question_count': p.questions.count(),
+            'time_limit': p.time_limit,
+            'difficulty': p.difficulty,
+            'is_premium': p.is_premium,
+            'is_mock': p.is_mock,
+            'is_standalone': p.is_standalone,
+        })
 
-    return Response([{
-        'id': p.id,
-        'title': p.title,
-        'level': p.level,
-        'passage_number': p.passage_number,
-        'question_count': p.questions.count(),
-        'time_limit': p.time_limit,
-        'difficulty': p.difficulty,
-        'is_premium': p.is_premium,
-        'is_mock': p.is_mock,
-        'is_standalone': p.is_standalone,
-    } for p in qs])
+    return Response(result)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def cefr_reading_full_mock_start(request, test_id):
+    """Start a full mock reading test (multiple passages grouped under one CEFRTest)."""
+    from cefr.models import CEFRTest
+    test = get_object_or_404(CEFRTest, id=test_id, test_type='READING', is_active=True)
+    passages = list(test.reading_passages.order_by('passage_number'))
+    if not passages:
+        return Response({'error': 'No passages found for this mock test.'}, status=400)
+
+    existing = CEFRAttempt.objects.filter(
+        user=request.user, test=test, status='IN_PROGRESS'
+    ).first()
+    if existing:
+        return Response({
+            'attempt_id': existing.id,
+            'passage_ids': [p.id for p in passages],
+            'resumed': True,
+        })
+
+    attempt = CEFRAttempt.objects.create(
+        user=request.user,
+        test=test,
+        attempt_type='READING',
+    )
+    return Response({
+        'attempt_id': attempt.id,
+        'passage_ids': [p.id for p in passages],
+        'resumed': False,
+    }, status=201)
 
 
 @api_view(['GET'])
@@ -326,6 +417,7 @@ def cefr_reading_detail(request, passage_id):
     return Response({
         'id': p.id, 'title': p.title, 'content': p.content,
         'level': p.level, 'time_limit': p.time_limit,
+        'passage_number': p.passage_number,
         'image': p.image.url if p.image else None,
         'questions': questions,
     })
@@ -352,6 +444,8 @@ def cefr_reading_submit(request, passage_id):
     attempt_id = request.data.get('attempt_id')
     attempt = get_object_or_404(CEFRAttempt, id=attempt_id, user=request.user)
     answers = request.data.get('answers', {})
+    # partial=True means this is not the final passage – don't complete the attempt yet
+    partial = request.data.get('partial', False)
 
     passage = get_object_or_404(CEFRReadingPassage, id=passage_id)
     questions = list(passage.questions.prefetch_related('choices').all())
@@ -379,15 +473,33 @@ def cefr_reading_submit(request, passage_id):
         })
 
     score_percent = (correct / total * 100) if total else 0
-    attempt.score_percent = score_percent
-    attempt.correct_count = correct
-    attempt.total_count = total
-    attempt.complete()
+    cefr_score = _calc_cefr_score(correct, READING_SCORE_MAP)
+    cefr_level = _cefr_level(cefr_score)
+
+    if not partial:
+        # Final passage – accumulate totals from all previous answers and complete
+        all_answers = CEFRReadingAnswer.objects.filter(attempt=attempt)
+        total_correct_all = all_answers.filter(is_correct=True).count()
+        total_all = all_answers.count()
+        score_percent_all = (total_correct_all / total_all * 100) if total_all else 0
+        cefr_score_all = _calc_cefr_score(total_correct_all, READING_SCORE_MAP)
+        cefr_level_all = _cefr_level(cefr_score_all)
+        attempt.score_percent = score_percent_all
+        attempt.correct_count = total_correct_all
+        attempt.total_count = total_all
+        attempt.complete()
+        cefr_score = cefr_score_all
+        cefr_level = cefr_level_all
+        correct = total_correct_all
+        total = total_all
 
     return Response({
         'correct': correct, 'total': total,
         'score_percent': round(score_percent, 1),
+        'cefr_score': cefr_score,
+        'cefr_level': cefr_level,
         'results': results,
+        'partial': partial,
     })
 
 
@@ -433,8 +545,10 @@ def cefr_listening_detail(request, section_id):
     return Response({
         'id': s.id, 'title': s.title,
         'level': s.level, 'time_limit': s.time_limit,
+        'section_number': s.section_number,
         'audio_url': s.audio_url or (s.audio_file.url if s.audio_file else None),
         'transcript': s.transcript,
+        'image': s.image.url if s.image else None,
         'questions': questions,
     })
 
@@ -487,6 +601,8 @@ def cefr_listening_submit(request, section_id):
         })
 
     score_percent = (correct / total * 100) if total else 0
+    cefr_score = _calc_cefr_score(correct, LISTENING_SCORE_MAP)
+    cefr_level = _cefr_level(cefr_score)
     attempt.score_percent = score_percent
     attempt.correct_count = correct
     attempt.total_count = total
@@ -495,6 +611,8 @@ def cefr_listening_submit(request, section_id):
     return Response({
         'correct': correct, 'total': total,
         'score_percent': round(score_percent, 1),
+        'cefr_score': cefr_score,
+        'cefr_level': cefr_level,
         'results': results,
     })
 

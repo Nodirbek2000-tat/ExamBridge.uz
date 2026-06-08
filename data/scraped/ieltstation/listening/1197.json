@@ -1,0 +1,624 @@
+{
+  "title": "Cambridge 18_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_184759_4bcf9d26.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Wayside Camera Club",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_184759_4bcf9d26.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the form below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Picking Mushrooms",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_184759_4bcf9d26.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "What advice does Dan give about picking mushrooms in parks?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Choose wooded areas."
+            },
+            {
+              "option": "B",
+              "text": "Don't disturb wildlife."
+            },
+            {
+              "option": "C",
+              "text": "Get there early."
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "Dan says it is a good idea for beginners to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use a mushroom app."
+            },
+            {
+              "option": "B",
+              "text": "join a group."
+            },
+            {
+              "option": "C",
+              "text": "take a reference book."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MCQ",
+          "content": "What does Dan say is important for conservation?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "selecting only fully grown mushrooms"
+            },
+            {
+              "option": "B",
+              "text": "picking a limited amount of mushrooms"
+            },
+            {
+              "option": "C",
+              "text": "avoiding areas where rare mushroom species grow"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MCQ",
+          "content": "According to Dan, some varieties of wild mushrooms are in decline because there is",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a huge demand for them from restaurants."
+            },
+            {
+              "option": "B",
+              "text": "a lack of rain in this part of the country."
+            },
+            {
+              "option": "C",
+              "text": "a rise in building developments locally."
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MCQ",
+          "content": "Dan says that when storing mushrooms, people should",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "keep them in the fridge for no more than two days."
+            },
+            {
+              "option": "B",
+              "text": "keep them in a brown bag in a dark room."
+            },
+            {
+              "option": "C",
+              "text": "leave them for a period after washing them."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MCQ",
+          "content": "What does Dan say about trying new varieties of mushrooms?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Experiment with different recipes."
+            },
+            {
+              "option": "B",
+              "text": "Expect some to have a strong taste."
+            },
+            {
+              "option": "C",
+              "text": "Cook them for a long time."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Luddites",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_184759_4bcf9d26.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What comment do the students make about each of the following jobs?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "These jobs are likely to be at risk."
+            },
+            {
+              "option": "B",
+              "text": "Their role has become more interesting in recent years."
+            },
+            {
+              "option": "C",
+              "text": "The number of people working in this sector has fallen dramatically."
+            },
+            {
+              "option": "D",
+              "text": "This job will require more qualifications."
+            },
+            {
+              "option": "E",
+              "text": "Higher disposable income has led to a huge increase in jobs."
+            },
+            {
+              "option": "F",
+              "text": "There is likely to be a significant rise in demand for this service."
+            },
+            {
+              "option": "G",
+              "text": "Both employment and productivity have risen."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "These jobs are likely to be at risk."
+            },
+            {
+              "option": "B",
+              "text": "Their role has become more interesting in recent years."
+            },
+            {
+              "option": "C",
+              "text": "The number of people working in this sector has fallen dramatically."
+            },
+            {
+              "option": "D",
+              "text": "This job will require more qualifications."
+            },
+            {
+              "option": "E",
+              "text": "Higher disposable income has led to a huge increase in jobs."
+            },
+            {
+              "option": "F",
+              "text": "There is likely to be a significant rise in demand for this service."
+            },
+            {
+              "option": "G",
+              "text": "Both employment and productivity have risen."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "These jobs are likely to be at risk."
+            },
+            {
+              "option": "B",
+              "text": "Their role has become more interesting in recent years."
+            },
+            {
+              "option": "C",
+              "text": "The number of people working in this sector has fallen dramatically."
+            },
+            {
+              "option": "D",
+              "text": "This job will require more qualifications."
+            },
+            {
+              "option": "E",
+              "text": "Higher disposable income has led to a huge increase in jobs."
+            },
+            {
+              "option": "F",
+              "text": "There is likely to be a significant rise in demand for this service."
+            },
+            {
+              "option": "G",
+              "text": "Both employment and productivity have risen."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "These jobs are likely to be at risk."
+            },
+            {
+              "option": "B",
+              "text": "Their role has become more interesting in recent years."
+            },
+            {
+              "option": "C",
+              "text": "The number of people working in this sector has fallen dramatically."
+            },
+            {
+              "option": "D",
+              "text": "This job will require more qualifications."
+            },
+            {
+              "option": "E",
+              "text": "Higher disposable income has led to a huge increase in jobs."
+            },
+            {
+              "option": "F",
+              "text": "There is likely to be a significant rise in demand for this service."
+            },
+            {
+              "option": "G",
+              "text": "Both employment and productivity have risen."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "These jobs are likely to be at risk."
+            },
+            {
+              "option": "B",
+              "text": "Their role has become more interesting in recent years."
+            },
+            {
+              "option": "C",
+              "text": "The number of people working in this sector has fallen dramatically."
+            },
+            {
+              "option": "D",
+              "text": "This job will require more qualifications."
+            },
+            {
+              "option": "E",
+              "text": "Higher disposable income has led to a huge increase in jobs."
+            },
+            {
+              "option": "F",
+              "text": "There is likely to be a significant rise in demand for this service."
+            },
+            {
+              "option": "G",
+              "text": "Both employment and productivity have risen."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "These jobs are likely to be at risk."
+            },
+            {
+              "option": "B",
+              "text": "Their role has become more interesting in recent years."
+            },
+            {
+              "option": "C",
+              "text": "The number of people working in this sector has fallen dramatically."
+            },
+            {
+              "option": "D",
+              "text": "This job will require more qualifications."
+            },
+            {
+              "option": "E",
+              "text": "Higher disposable income has led to a huge increase in jobs."
+            },
+            {
+              "option": "F",
+              "text": "There is likely to be a significant rise in demand for this service."
+            },
+            {
+              "option": "G",
+              "text": "Both employment and productivity have risen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Space Traffic Management",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_184759_4bcf9d26.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

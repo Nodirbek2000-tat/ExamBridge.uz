@@ -1,0 +1,118 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "Deep Sea Discovery",
+    "content": "Nico Michiels is an ecologist from the University of Tubingen in Germany who spends part of each year in Egypt, where he dives in the Red Sea, observing fish life and gathering data on its coral reefs. In September 2007 he decided to find out how far red light could penetrate the ocean depths. Seawater absorbs different colours at different depths, and as an experienced diver, Michiels was aware that red light is extinguished not far below the surface whereas blue-green light penetrates deeper. To find out the depth at which red disappeared in this particular ocean, however, he attached a special plastic filter to his dive mask which was designed to block out all colours except red. Then he began to descend. In theory, once he reached about 15 metres, he should have been plunged into darkness. Instead, something totally unexpected happened. Sure enough, 20 metres down it was as dark as night. 'All the fish disappeared. With no light from the surface, they were effectively black and had become invisible,' he says. But it didn't stay black for long. Then I saw a group of goby fish with bright red eyes lit up against the background. After that red spots began to show up all over the reef.\n\nEven with the red filter removed, Michiels could pick them out without much trouble once his eyes grew accustomed to the gloom. It seems strange that no diver or researcher had spotted all this red before, but as Michiels points out, no one saw it because no one expected to see it. On that one dive Michiels discovered three fish species with prominent red markings, and has found many others since.\n\nBut how can fish appear red where there's no red light? Ordinary red pigments look red because they reflect red light while absorbing all other wavelengths. At 20 metres down, there had to be some other explanation for the red Michiels was seeing. He suspected fluorescence. Fluorescent pigments behave differently from ordinary ones: they receive incoming light of one wavelength, for example blue, and emit light of a longer wavelength, in this case red. On the reef in the Red Sea during daytime, the most likely explanation was that the predominantly blue and green wavelengths at depth triggered the emission of fluorescent red in the fish.\n\nWith only a week left in Egypt, and lacking the equipment to confirm that the fish were fluorescent, Michiels photographed as many of them as he could. Then once back in Germany, he bought an assortment of tropical fish and installed them in his lab. Here he confirmed that the fish did indeed fluoresce. In most of the fish he looked at, the fluorescence could be traced to specialised pigment cells that lie in the skin beneath the scales. These cells contain 'guanine crystals', which scatter light to give fish their silvery sheen. However, Michiels says they are still not sure exactly what is fluorescing. 'It's not the crystals themselves. It's probably a fluorescent protein built into the crystals, and we have a suspicion that it might be made by bacteria.'\n\nIntrigued, Michiels began a systematic search for red fluorescence in reef fish. He and his colleagues, Nils Anthes and Dennis Sprenger, have identified some 50 species with red fluorescence. The most common markings tend to be on the body towards the head and to a lesser extent around the eyes, and then the fins. To Michiels, the distribution of these markings is one of the strongest indications that red fluorescence has a very particular function: communication with other members of the species. According to several recent studies, a whole range of animals employ fluorescence as a natural highlighter to boost the visibility of body parts they use to signal, for example to ward off enemies. In reef fish, the red tends to be confined to parts of the body used to signal, suggesting these markings serve a similar function. But instead of highlighting an existing colour, the fluorescence gives the fish a colour that otherwise wouldn't exist. For example, fish commonly use eye rings to signal that they are present and their direction of gaze, and Michiels suspects that red-eyed gobies use signals to indicate their location and keep their group together.\n\nRed light, whatever its source, doesn't travel far through water, which suggests signals are intended to be private, seen only by nearby fish of the right species. There are several lines of evidence to support this, says Michiels. And closely related species do not have completely identical markings, which suggests they might be important in species recognition.\n\nMichiels suspects red fluorescence has another important role for some reef fish: helping them blend in. During his first dive with the red filter, he noticed corals glow a dark but faint red too. Against this irregular red background, a fish that glows red all over would be hard to distinguish. More compelling for Michiels is the case of the scorpionfish, which lies perfectly still until food swims past which it then sucks in.\n\nYet if red plays any part in a fish's life then it must be able to see it. Fish that live in a world dominated by blue-green light are assumed to have eyes tuned to those wavelengths, and most marine fish that have been studied are thought incapable of seeing red. One exception is the seahorse, whose eyes are sensitive to red. As for the other fish, it remains to be seen.\n\n*pigments: a pigment is a substance that gives something a particular colour",
+    "passage_number": 1,
+    "difficulty": "EASY",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TFNG",
+      "content": "During his 2007 dive, Michiels expected to encounter total darkness at about 15 metres.",
+      "correct_answer": null,
+      "explanation": "The passage clearly states he expected darkness at 15 meters due to loss of red light.",
+      "group_instruction": "<p>Choose&nbsp;<strong>TRUE</strong>&nbsp;if the statement agrees with the information given in the text, choose&nbsp;<strong>FALSE</strong>&nbsp;if the statement contradicts the information, or choose&nbsp;<strong>NOT GIVEN</strong>&nbsp;if there is no information on this.</p>"
+    },
+    {
+      "number": 2,
+      "question_type": "TFNG",
+      "content": "Michiels could see the red markings on fish without the aid of the red filter.",
+      "correct_answer": null,
+      "explanation": "Paragraph B says he could see the red markings even without the red filter.",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "TFNG",
+      "content": "Other divers had assumed they would see fish with red markings.",
+      "correct_answer": null,
+      "explanation": "No diver had seen the red before because no one expected it.",
+      "group_instruction": ""
+    },
+    {
+      "number": 6,
+      "question_type": "TFNG",
+      "content": "Michiels remains uncertain as to what creates fluorescence in fish.",
+      "correct_answer": null,
+      "explanation": "He is still unsure what exactly fluoresces.",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "TFNG",
+      "content": "All the fish with red markings that Michiels found during his diving expeditions came from the Red Sea.",
+      "correct_answer": null,
+      "explanation": "We are told that he found species in the Red Sea and later in Germany in his lab – but NOT that all red-marked fish were from the Red Sea.",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "TFNG",
+      "content": "Michiels first thought of the possibility that fish could fluoresce while he was in Germany.",
+      "correct_answer": null,
+      "explanation": "He suspected fluorescence during the dive in the Red Sea – not in Germany.",
+      "group_instruction": ""
+    },
+    {
+      "number": 7,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Markings are mainly near the head.",
+      "group_instruction": "<p>Complete the notes. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;from the text for each answer.</p>"
+    },
+    {
+      "number": 8,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Michiels believes fluorescence serves a communication function.",
+      "group_instruction": ""
+    },
+    {
+      "number": 9,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Fluorescence is used to signal and ward off enemies.",
+      "group_instruction": ""
+    },
+    {
+      "number": 10,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Goby fish use fluorescence to show location and stay together.",
+      "group_instruction": ""
+    },
+    {
+      "number": 11,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Variations in markings help with species recognition.",
+      "group_instruction": ""
+    },
+    {
+      "number": 12,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Red fluorescence helps fish blend in near faintly glowing red corals.",
+      "group_instruction": ""
+    },
+    {
+      "number": 13,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The seahorse is the only fish proven to see red.",
+      "group_instruction": ""
+    }
+  ]
+}

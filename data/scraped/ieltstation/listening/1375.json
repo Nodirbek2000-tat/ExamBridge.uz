@@ -1,0 +1,600 @@
+{
+  "title": "Cambridge 9 TEST_3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_050315_77165ce2.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Inquiry about Apartments in Arilas and Holiday Insurance",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_050315_77165ce2.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Winridge Forest Railway Park: From Start to Success and Future Plans",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_050315_77165ce2.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Simon's idea for a theme park came from",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "his childhood hobby."
+            },
+            {
+              "option": "B",
+              "text": "his interest in landscape design"
+            },
+            {
+              "option": "C",
+              "text": "his visit to another park."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "When they started, the family decided to open the park only when",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the weather was expected to be good.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "the children weren't at school."
+            },
+            {
+              "option": "C",
+              "text": "there were fewer farming commitments."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Since opening, the park has had",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000a50,000 visitors."
+            },
+            {
+              "option": "B",
+              "text": "1,000,000 visitors."
+            },
+            {
+              "option": "C",
+              "text": "1,500,000 visitors."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "advertising"
+            },
+            {
+              "option": "B",
+              "text": "animal care"
+            },
+            {
+              "option": "C",
+              "text": "building"
+            },
+            {
+              "option": "D",
+              "text": "educational links"
+            },
+            {
+              "option": "E",
+              "text": "engine maintenance"
+            },
+            {
+              "option": "F",
+              "text": "food and drink"
+            },
+            {
+              "option": "G",
+              "text": "sales"
+            },
+            {
+              "option": "H",
+              "text": "staffing"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "advertising"
+            },
+            {
+              "option": "B",
+              "text": "animal care"
+            },
+            {
+              "option": "C",
+              "text": "building"
+            },
+            {
+              "option": "D",
+              "text": "educational links"
+            },
+            {
+              "option": "E",
+              "text": "engine maintenance"
+            },
+            {
+              "option": "F",
+              "text": "food and drink"
+            },
+            {
+              "option": "G",
+              "text": "sales"
+            },
+            {
+              "option": "H",
+              "text": "staffing"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "advertising"
+            },
+            {
+              "option": "B",
+              "text": "animal care"
+            },
+            {
+              "option": "C",
+              "text": "building"
+            },
+            {
+              "option": "D",
+              "text": "educational links"
+            },
+            {
+              "option": "E",
+              "text": "engine maintenance"
+            },
+            {
+              "option": "F",
+              "text": "food and drink"
+            },
+            {
+              "option": "G",
+              "text": "sales"
+            },
+            {
+              "option": "H",
+              "text": "staffing"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "advertising"
+            },
+            {
+              "option": "B",
+              "text": "animal care"
+            },
+            {
+              "option": "C",
+              "text": "building"
+            },
+            {
+              "option": "D",
+              "text": "educational links"
+            },
+            {
+              "option": "E",
+              "text": "engine maintenance"
+            },
+            {
+              "option": "F",
+              "text": "food and drink"
+            },
+            {
+              "option": "G",
+              "text": "sales"
+            },
+            {
+              "option": "H",
+              "text": "staffing"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "advertising"
+            },
+            {
+              "option": "B",
+              "text": "animal care"
+            },
+            {
+              "option": "C",
+              "text": "building"
+            },
+            {
+              "option": "D",
+              "text": "educational links"
+            },
+            {
+              "option": "E",
+              "text": "engine maintenance"
+            },
+            {
+              "option": "F",
+              "text": "food and drink"
+            },
+            {
+              "option": "G",
+              "text": "sales"
+            },
+            {
+              "option": "H",
+              "text": "staffing"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD AND/OR NUMBERS</strong>&nbsp;for each answer</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Caroline's Dissertation Planning and Study Skills Discussion",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_050315_77165ce2.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "An Underground Eco-house Design and Its Features",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_050315_77165ce2.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MCQ",
+          "content": "The owners of the underground house",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>choose the correct answer</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000ahad no experience of living in a rural area."
+            },
+            {
+              "option": "B",
+              "text": "\\000awere interested in environmental issues"
+            },
+            {
+              "option": "C",
+              "text": "\\000awanted a professional project manager"
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MCQ",
+          "content": "What does the speaker say about the site of the house?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The land was quite cheap."
+            },
+            {
+              "option": "B",
+              "text": "\\000aStone was being extracted nearby."
+            },
+            {
+              "option": "C",
+              "text": "It was in a completely unspoilt area."
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,634 @@
+{
+  "title": "Cambridge 19_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_002501_2a15198e.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Shopping for a Meal in Kite Place",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_002501_2a15198e.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Children's Book Festival Highlights and Reading Tips",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_002501_2a15198e.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What information is given about each of the following festival workshops? Choose the correct letter</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "involve painting and drawing"
+            },
+            {
+              "option": "B",
+              "text": "will be led by a prize-winning author"
+            },
+            {
+              "option": "C",
+              "text": "is aimed at children with a disability"
+            },
+            {
+              "option": "D",
+              "text": "involves a drama activity"
+            },
+            {
+              "option": "E",
+              "text": "focuses on new relationships"
+            },
+            {
+              "option": "F",
+              "text": "is aimed at a specific age group"
+            },
+            {
+              "option": "G",
+              "text": "explores an unhappy feeling"
+            },
+            {
+              "option": "H",
+              "text": "raises awareness of a particular culture"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "involve painting and drawing"
+            },
+            {
+              "option": "B",
+              "text": "will be led by a prize-winning author"
+            },
+            {
+              "option": "C",
+              "text": "is aimed at children with a disability"
+            },
+            {
+              "option": "D",
+              "text": "involves a drama activity"
+            },
+            {
+              "option": "E",
+              "text": "focuses on new relationships"
+            },
+            {
+              "option": "F",
+              "text": "is aimed at a specific age group"
+            },
+            {
+              "option": "G",
+              "text": "explores an unhappy feeling"
+            },
+            {
+              "option": "H",
+              "text": "raises awareness of a particular culture"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "involve painting and drawing"
+            },
+            {
+              "option": "B",
+              "text": "will be led by a prize-winning author"
+            },
+            {
+              "option": "C",
+              "text": "is aimed at children with a disability"
+            },
+            {
+              "option": "D",
+              "text": "involves a drama activity"
+            },
+            {
+              "option": "E",
+              "text": "focuses on new relationships"
+            },
+            {
+              "option": "F",
+              "text": "is aimed at a specific age group"
+            },
+            {
+              "option": "G",
+              "text": "explores an unhappy feeling"
+            },
+            {
+              "option": "H",
+              "text": "raises awareness of a particular culture"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "involve painting and drawing"
+            },
+            {
+              "option": "B",
+              "text": "will be led by a prize-winning author"
+            },
+            {
+              "option": "C",
+              "text": "is aimed at children with a disability"
+            },
+            {
+              "option": "D",
+              "text": "involves a drama activity"
+            },
+            {
+              "option": "E",
+              "text": "focuses on new relationships"
+            },
+            {
+              "option": "F",
+              "text": "is aimed at a specific age group"
+            },
+            {
+              "option": "G",
+              "text": "explores an unhappy feeling"
+            },
+            {
+              "option": "H",
+              "text": "raises awareness of a particular culture"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "involve painting and drawing"
+            },
+            {
+              "option": "B",
+              "text": "will be led by a prize-winning author"
+            },
+            {
+              "option": "C",
+              "text": "is aimed at children with a disability"
+            },
+            {
+              "option": "D",
+              "text": "involves a drama activity"
+            },
+            {
+              "option": "E",
+              "text": "focuses on new relationships"
+            },
+            {
+              "option": "F",
+              "text": "is aimed at a specific age group"
+            },
+            {
+              "option": "G",
+              "text": "explores an unhappy feeling"
+            },
+            {
+              "option": "H",
+              "text": "raises awareness of a particular culture"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "involve painting and drawing"
+            },
+            {
+              "option": "B",
+              "text": "will be led by a prize-winning author"
+            },
+            {
+              "option": "C",
+              "text": "is aimed at children with a disability"
+            },
+            {
+              "option": "D",
+              "text": "involves a drama activity"
+            },
+            {
+              "option": "E",
+              "text": "focuses on new relationships"
+            },
+            {
+              "option": "F",
+              "text": "is aimed at a specific age group"
+            },
+            {
+              "option": "G",
+              "text": "explores an unhappy feeling"
+            },
+            {
+              "option": "H",
+              "text": "raises awareness of a particular culture"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Designing a Mouse Diet Experiment in the Context of Science Teaching",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_002501_2a15198e.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "How does Clare feel about the students in her Year 12 science class?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "worried that they are not making progress"
+            },
+            {
+              "option": "B",
+              "text": "challenged by their poor behaviour in class"
+            },
+            {
+              "option": "C",
+              "text": "frustrated at their lack of interest in the subject"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "What problem do they agree may be involved in an experiment involving animals?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Any results may not apply to humans."
+            },
+            {
+              "option": "B",
+              "text": "It may be complicated to get permission."
+            },
+            {
+              "option": "C",
+              "text": "Students may not be happy about animal experiments."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "What question do they decide the experiment should address?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Are mice capable of controlling their food intake?"
+            },
+            {
+              "option": "B",
+              "text": "Does an increase in sugar lead to health problems?"
+            },
+            {
+              "option": "C",
+              "text": "How much do supplements of different kinds affect health?"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "Clare might also consider doing another experiment involving",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "other types of food supplement."
+            },
+            {
+              "option": "B",
+              "text": "different genetic strains of mice."
+            },
+            {
+              "option": "C",
+              "text": "varying amounts of exercise."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "How does Jake react to Clare's suggestion about an experiment based on children's diet?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "He is concerned that the results might not be meaningful."
+            },
+            {
+              "option": "B",
+              "text": "He feels some of the data might be difficult to obtain."
+            },
+            {
+              "option": "C",
+              "text": "\\000aHe suspects that the conclusions might be upsetting."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the flowchart below.</p>"
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Microplastics' Impact on Soil",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_002501_2a15198e.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

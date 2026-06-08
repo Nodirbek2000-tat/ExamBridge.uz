@@ -45,6 +45,7 @@ LOCAL_APPS = [
     'pricing',
     'panel',
     'ai_chat',
+    'centers',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -56,6 +57,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    # ── Security: must be early to block bad requests before they hit the app ──
+    'accounts.middleware.BotBlockerMiddleware',
+    'accounts.middleware.BruteForceProtectionMiddleware',
+    'accounts.middleware.AdminIPWhitelistMiddleware',
+    # ─────────────────────────────────────────────────────────────────────────
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -173,11 +179,14 @@ SOCIALACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
+GOOGLE_CLIENT_ID = config('GOOGLE_CLIENT_ID', default='')
+GOOGLE_CLIENT_SECRET = config('GOOGLE_CLIENT_SECRET', default='')
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': config('GOOGLE_CLIENT_ID', default=''),
-            'secret': config('GOOGLE_CLIENT_SECRET', default=''),
+            'client_id': GOOGLE_CLIENT_ID,
+            'secret': GOOGLE_CLIENT_SECRET,
             'key': ''
         },
         'SCOPE': ['profile', 'email'],
@@ -244,10 +253,17 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
     "https://exambridge.uz",
     "https://www.exambridge.uz",
     "https://nodir.exambridge.uz",
+    "https://testmakon.uz",
+    "https://www.testmakon.uz",
 ]
+
+# Shared secret for testmakon.uz ↔ SAT+ bridge auth
+TESTMAKON_API_KEY = config('TESTMAKON_API_KEY', default='change-me-in-production')
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Production da False, development da True
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
@@ -265,6 +281,16 @@ USE_X_FORWARDED_HOST = True
 # ─── RATE LIMITING ────────────────────────────────────────────────────────────
 RATELIMIT_USE_CACHE = 'default'
 
+# ─── ADMIN IP WHITELIST ───────────────────────────────────────────────────────
+# Production da o'z serveringiz va siz kiradigan IP larni qo'shing.
+# Bo'sh list = hamma kirishi mumkin (development uchun).
+# Masalan: ADMIN_IP_WHITELIST = ['185.x.x.x', '91.x.x.x']
+ADMIN_IP_WHITELIST = config(
+    'ADMIN_IP_WHITELIST',
+    default='',
+    cast=lambda v: [ip.strip() for ip in v.split(',') if ip.strip()],
+)
+
 # ─── REST FRAMEWORK ───────────────────────────────────────────────────────────
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -279,8 +305,10 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.UserRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'anon': '100/hour',
-        'user': '1000/hour',
+        'anon': '60/hour',       # Anonim foydalanuvchilar: soatiga 60 ta
+        'user': '2000/hour',     # Login bo'lgan: soatiga 2000 ta
+        'login': '10/hour',      # Login endpoint: soatiga 10 ta urinish
+        'register': '5/hour',    # Register: soatiga 5 ta
     },
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
@@ -307,6 +335,15 @@ ANTHROPIC_API_KEY = config('ANTHROPIC_API_KEY', default='')
 
 # ─── OPENAI ───────────────────────────────────────────────────────────────────
 OPENAI_API_KEY = config('OPENAI_API_KEY', default='')
+
+# ─── STRIPE ───────────────────────────────────────────────────────────────────
+STRIPE_SECRET_KEY      = config('STRIPE_SECRET_KEY', default='')
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY', default='')
+STRIPE_WEBHOOK_SECRET  = config('STRIPE_WEBHOOK_SECRET', default='')
+FRONTEND_URL           = config('FRONTEND_URL', default='http://localhost:5173')
+STRIPE_PRICE_1MONTH    = config('STRIPE_PRICE_1MONTH', default=799, cast=int)   # USD cents
+STRIPE_PRICE_3MONTH    = config('STRIPE_PRICE_3MONTH', default=1599, cast=int)  # USD cents
+STRIPE_PRICE_6MONTH    = config('STRIPE_PRICE_6MONTH', default=2899, cast=int)  # USD cents
 
 # ─── GOOGLE ANALYTICS ─────────────────────────────────────────────────────────
 GA_TRACKING_ID = config('GA_TRACKING_ID', default='')

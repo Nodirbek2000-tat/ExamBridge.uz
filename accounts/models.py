@@ -16,6 +16,14 @@ class User(AbstractUser):
     # Premium system
     is_premium = models.BooleanField(default=False)
     premium_until = models.DateTimeField(null=True, blank=True)
+    stripe_customer_id = models.CharField(max_length=120, blank=True, default='')
+    stripe_subscription_id = models.CharField(max_length=120, blank=True, default='')
+
+    # Study preferences
+    target_band = models.CharField(max_length=5, blank=True, default='')
+    exam_date = models.DateField(null=True, blank=True)
+    daily_study_minutes = models.PositiveSmallIntegerField(default=30)
+    email_newsletter = models.BooleanField(default=False)
 
     # Profile completion flag (shown after Google OAuth)
     profile_completed = models.BooleanField(default=False)
@@ -24,6 +32,22 @@ class User(AbstractUser):
     failed_login_attempts = models.PositiveSmallIntegerField(default=0)
     locked_until = models.DateTimeField(null=True, blank=True)
     last_ip = models.GenericIPAddressField(null=True, blank=True)
+
+    # Platform source — which site this user belongs to
+    PLATFORM_EXAMBRIDGE = 'exambridge'
+    PLATFORM_TESTMAKON = 'testmakon'
+    PLATFORM_CHOICES = [
+        (PLATFORM_EXAMBRIDGE, 'ExamBridge'),
+        (PLATFORM_TESTMAKON, 'TestMakon'),
+    ]
+    platform = models.CharField(
+        max_length=20,
+        choices=PLATFORM_CHOICES,
+        default=PLATFORM_EXAMBRIDGE,
+        db_index=True,
+    )
+    # External identifier on the partner platform (e.g. testmakon user UUID)
+    platform_uid = models.CharField(max_length=64, blank=True, default='')
 
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)

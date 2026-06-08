@@ -1,0 +1,570 @@
+{
+  "title": "Cambrodge 7_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044022_a221ae7b.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Anita's Search for a Part-time Student Job",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044022_a221ae7b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Sponsored Trekking for Sierra Education Charity",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044022_a221ae7b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "On the holiday, you will be walking for",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "6 days."
+            },
+            {
+              "option": "B",
+              "text": "8 days."
+            },
+            {
+              "option": "C",
+              "text": "10 days."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Each walker's sponsorship money goes to one",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "student."
+            },
+            {
+              "option": "B",
+              "text": "teacher."
+            },
+            {
+              "option": "C",
+              "text": "school."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "When you start the trek you must be",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "interested in getting fit.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "already quite fit.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "already very fit."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "As you walk you will carry",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "all of your belongings.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "some of your belongings\\000a"
+            },
+            {
+              "option": "C",
+              "text": "none of your belongings."
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "The Semira Region has a long tradition of",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "making carpets.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "weaving blankets."
+            },
+            {
+              "option": "C",
+              "text": "carving wood."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What proportion of the sponsorship money goes to charity?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "35%."
+            },
+            {
+              "option": "B",
+              "text": "50%."
+            },
+            {
+              "option": "C",
+              "text": "65%."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Robotic Floats in Ocean Research",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044022_a221ae7b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the diagram below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>In what time period can data from the float projects help with the following things?</p><p>Choose the correct letter,&nbsp;<strong>A-C</strong>, next to Questions&nbsp;<strong>26-30.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "At present"
+            },
+            {
+              "option": "B",
+              "text": "In the near future"
+            },
+            {
+              "option": "C",
+              "text": "In the long-term future"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "At present"
+            },
+            {
+              "option": "B",
+              "text": "In the near future"
+            },
+            {
+              "option": "C",
+              "text": "In the long-term future"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "At present"
+            },
+            {
+              "option": "B",
+              "text": "In the near future"
+            },
+            {
+              "option": "C",
+              "text": "In the long-term future"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "At present"
+            },
+            {
+              "option": "B",
+              "text": "In the near future"
+            },
+            {
+              "option": "C",
+              "text": "In the long-term future"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "At present"
+            },
+            {
+              "option": "B",
+              "text": "In the near future"
+            },
+            {
+              "option": "C",
+              "text": "In the long-term future"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The Luxury End of the Hotel Business",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044022_a221ae7b.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MCQ",
+          "content": "According to the speaker, how might a guest feel when staying in a luxury hotel?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "impressed with the facilities\\000a"
+            },
+            {
+              "option": "B",
+              "text": "depressed by the experience\\000a"
+            },
+            {
+              "option": "C",
+              "text": "concerned at the high costs"
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MCQ",
+          "content": "According to recent research, luxury hotels overlook the need to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "provide for the demands of important guests.\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "create a comfortable environment.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "offer an individual and personal welcome."
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "MCQ",
+          "content": "The company focused their research on",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a wide variety of hotels.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "large, luxury hotel chains.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "exotic holiday hotels."
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "question_type": "MCQ",
+          "content": "What is the impact of the outside environment on a hotel guest?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It has a considerable effect.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "It has a very limited effect.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "It has no effect whatsoever."
+            }
+          ]
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

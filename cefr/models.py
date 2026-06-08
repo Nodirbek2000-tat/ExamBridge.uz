@@ -121,6 +121,8 @@ class CEFRListeningSection(models.Model):
     time_limit = models.PositiveSmallIntegerField(default=25, help_text='Minutes')
     audio_file = models.FileField(upload_to='cefr/audio/', blank=True)
     audio_url = models.URLField(max_length=500, blank=True)
+    image = models.ImageField(upload_to='cefr/listening/', null=True, blank=True,
+                              help_text='Optional image shown for Part 4 (image left, questions right layout)')
     transcript = models.TextField(
         blank=True,
         help_text='Full transcript. Use [1], [2] markers for answer positions.'

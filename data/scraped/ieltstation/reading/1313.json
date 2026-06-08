@@ -1,0 +1,115 @@
+{
+  "title": "Reef Fish Study",
+  "content": "Tom Holmes examines the relationship between size and survival in fish on Australia's Great Barrier Reef\n\nIt is a widely held belief among those who study animals that larger size conveys some form of advantage throughout life. The idea that certain body characteristics may influence a prey's ability to survive when being attacked by a predator has received considerable attention in the past, and has been applied to a wide range of both animals and habitats. Body size, weight, growth rate, overall condition, sensory development and escape speed have all been linked to survival. Of these, body size has received the most attention from researchers, which has subsequently led to the development of a number of theories on how this characteristic may influence the predator-prey relationship. One of the most popular of these is known as the 'bigger is better' hypothesis. This theory predicts that larger body size should increase an individual's ability to escape from a predator due to the characteristics associated with this, such as overall strength and visual development. Bigger is thought to be better, but is this always the case?\n\nCompared with other habitats and ecosystems, not a great deal is known about predator-prey relationships within tropical reef communities. What we do know is largely limited to predator identity and, to some extent, to what these predators eat. But what drives these interactions and how does body size influence the outcome? How would fish populations respond to the removal of certain predators from a reef fish community? It is precisely these questions that have led our research team to Lizard Island, in the northern sector of the Great Barrier Reef. We want to examine the predator-prey relationship during the 'early juvenile' or larval phase of tropical fish, and determine whether a predator's choice of prey is influenced by factors such as the prey's size, weight and swimming speed, as these characteristics vary from individual to individual at the beginning of the juvenile stage.\n\nMost coral reef fish have a life cycle consisting of an open ocean larval phase followed by a juvenile to adult phase near the reef. The transition between the two stages is marked by rapid and dramatic changes in the body of the fish, and a sudden move from the open ocean to coral reef habitats. This point is commonly known as 'settlement'. Not surprisingly, it is also characterised by increased levels of mortality in the first 48 hours following settlement, as individuals are forced to adapt to life not only on the reef but also with a previously unknown set of predators.\n\nHowever, studying the interactions between predators and prey during this phase is no easy task. On the northern Great Barrier Reef, coral reef fish settlement usually occurs within 2-3 days of a new moon during the warmer summer months. These short windows of opportunity, combined with the difficulties associated with working underwater, transporting fish and adapting them to the laboratory, often make research a daunting task. These obstacles are overcome using a combination of innovative techniques, long working hours and a measure of sheer persistence. We collect the larval fish immediately prior to settlement using purpose-built traps that use artificial light to attract and contain fish of this life stage only. These fish are subsequently transported to an aquarium, along with predatory fish, before being used in a series of aquarium and field-based trials.\n\nAccording to the 'bigger is better' hypothesis, being larger at the time of settlement should result in an increased chance of surviving an attack by a predator during the period immediately following settlement. However, our initial research shows that this is not always true. There may be several reasons for this.\n\nCommunities of reef-based predators can differ considerably over quite small distances. Species that are abundant in one location may be particularly rare in a similar habitat just 100 metres away. In the same way that different predators prefer different types of prey, so too do they prefer different sizes of prey. This relationship is driven by physical characteristics of predators, such as mouth size, and behavioural differences between different predator species. As a result, the predator community into which a reef fish settles may very well determine which individuals survive.\n\nSo why don't larger individuals survive more often than smaller fish over this period? The answer may well lie in an alternative hypothesis known as 'optimal foraging theory'. According to this theory, being either very large or very small in size should assist prey to escape during a predatory encounter. The theory predicts that a predator should prefer those individuals that provide the greatest energy return. This is generally a trade-off between the potential energy intake from eating a fish and the amount of energy required to catch it. Larger prey provide a higher energy return but smaller prey generally require less energy to catch. This usually results in a preference for medium-sized prey.\n\nAt the time of settlement, juvenile reef fish vary in the characteristics that can help them survive a predatory attack. However, these characteristics are not strongly associated with body size. For example, larger individuals are not necessarily faster. This means that they may be easier to catch than smaller prey. If this is the case then, according to the optimal foraging theory, predators should prefer larger prey because of their greater energy return. Consequently, larger prey individuals may be targeted by some predators at the time of settlement. Our research hopes to show that larger size may, in fact, be a distinct disadvantage during certain life stages.",
+  "passage_number": 1,
+  "difficulty": "EASY",
+  "time_limit": 20,
+  "is_standalone": true,
+  "is_premium": false,
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TFNG",
+      "content": "Research to date has concentrated on the importance of escape speed in surviving an attack by a predator.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose&nbsp;<strong>TRUE</strong>&nbsp;if the statement agrees with the information given in the text, choose&nbsp;<strong>FALSE</strong>&nbsp;if the statement contradicts the information, or choose&nbsp;<strong>NOT GIVEN</strong>&nbsp;if there is no information on this.</p>"
+    },
+    {
+      "number": 2,
+      "question_type": "TFNG",
+      "content": "According to the 'bigger is better' hypothesis, larger animals have better eyesight.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "TFNG",
+      "content": "Early-juvenile reef fish share similar characteristics.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "TFNG",
+      "content": "Fully developed reef fish have a slower swimming speed than juveniles.",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Complete the summary below.</p><p>Choose<strong>&nbsp;NO MORE THAN TWO WORDS</strong>&nbsp;from the passage for each answer.</p><p>Write your answers in boxes&nbsp;5-7&nbsp;on your answer sheet.</p>"
+    },
+    {
+      "number": 6,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 7,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 8,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Complete the notes below.</p><p>Choose&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;from the passage for each answer.</p><p>Write your answers in boxes&nbsp;8-13&nbsp;on your answer sheet.</p>"
+    },
+    {
+      "number": 9,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 10,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 11,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 12,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 13,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "title": "Moving Office",
+  "section_number": 1,
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20251127_190815_06b16eb5.m4a",
+  "transcript": "",
+  "difficulty": "MEDIUM",
+  "is_standalone": true,
+  "is_premium": false,
+  "questions": [
+    {
+      "number": 11,
+      "question_type": "MCQ",
+      "content": "what reason does the manager give for moving to a new office building?",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "to have more space"
+        },
+        {
+          "option": "B",
+          "text": "to pay less rent"
+        },
+        {
+          "option": "C",
+          "text": "be in a central location"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "question_type": "MCQ",
+      "content": "What is best about the new office building?",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose the correct answer. </p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "the air- conditioning system"
+        },
+        {
+          "option": "B",
+          "text": "the amount of natural light"
+        },
+        {
+          "option": "C",
+          "text": "the low level of noise"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "question_type": "MCQ",
+      "content": "When will the office move take place?",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose the correct answer.</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "after the sales conference"
+        },
+        {
+          "option": "B",
+          "text": "after the end of the tax year"
+        },
+        {
+          "option": "C",
+          "text": "after the annual holiday period"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "question_type": "MCQ",
+      "content": "What information about the new location is already on the company website?",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose the correct answer.</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "where to park"
+        },
+        {
+          "option": "B",
+          "text": "places to eat"
+        },
+        {
+          "option": "C",
+          "text": "public transport"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "question_type": "MCQ",
+      "content": "What practical thing must staff do now?",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose the correct answer.</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "give details of damaged furniture"
+        },
+        {
+          "option": "B",
+          "text": "throw away unnecessary papers"
+        },
+        {
+          "option": "C",
+          "text": "take home personal items"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "question_type": "MCQ",
+      "content": "Staff will need to put folders containing confidential details",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose the correct answer.</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "into packing boxes"
+        },
+        {
+          "option": "B",
+          "text": "into grey plastic bags"
+        },
+        {
+          "option": "C",
+          "text": "into new filing cabinets"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose <strong>TWO</strong> correct answers.</p>"
+    },
+    {
+      "number": 18,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 19,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Choose <strong>TWO</strong> correct answers.</p>"
+    },
+    {
+      "number": 20,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    }
+  ]
+}

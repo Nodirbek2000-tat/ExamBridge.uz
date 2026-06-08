@@ -1,0 +1,530 @@
+{
+  "title": "CAMBRIDGE 7 TEST 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044452_55f04ac7.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Keiko's Homestay Arrangement",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044452_55f04ac7.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "What does the student particularly like to eat?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Answer the questions below. Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "What mode of transport does the student prefer?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "What sport does the student play?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "When will the student find out her homestay address?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "A Tour of the Bicentennial Park",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044452_55f04ac7.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "What kind of tour is Sally leading?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>A, B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a bus tour"
+            },
+            {
+              "option": "B",
+              "text": "a train tour"
+            },
+            {
+              "option": "C",
+              "text": "a walking tour"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "The original buildings on the site were",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "houses."
+            },
+            {
+              "option": "B",
+              "text": "industrial buildings."
+            },
+            {
+              "option": "C",
+              "text": "shops."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "The local residents wanted to use the site for",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "leisure."
+            },
+            {
+              "option": "B",
+              "text": "apartment blocks."
+            },
+            {
+              "option": "C",
+              "text": "a sports centre."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "The Tower is at the centre of the",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "nature reserve."
+            },
+            {
+              "option": "B",
+              "text": "formal gardens."
+            },
+            {
+              "option": "C",
+              "text": "Bicentennial Park."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Label the plan below.</p><p>Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 19,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Preparing for the Presentation on the Islands' Education System",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044452_55f04ac7.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>NO MORE THAN ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A-C</strong>, next to Questions&nbsp;23-26.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They will definitely include this topic."
+            },
+            {
+              "option": "B",
+              "text": "They might include this topic."
+            },
+            {
+              "option": "C",
+              "text": "They will not include this topic."
+            },
+            {
+              "option": "D",
+              "text": "They will definitely include this topic."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They will definitely include this topic."
+            },
+            {
+              "option": "B",
+              "text": "They might include this topic."
+            },
+            {
+              "option": "C",
+              "text": "They will not include this topic."
+            },
+            {
+              "option": "D",
+              "text": "They will definitely include this topic."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They will definitely include this topic."
+            },
+            {
+              "option": "B",
+              "text": "They might include this topic."
+            },
+            {
+              "option": "C",
+              "text": "They will not include this topic."
+            },
+            {
+              "option": "D",
+              "text": "They will definitely include this topic."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They will definitely include this topic."
+            },
+            {
+              "option": "B",
+              "text": "They might include this topic."
+            },
+            {
+              "option": "C",
+              "text": "They will not include this topic."
+            },
+            {
+              "option": "D",
+              "text": "They will definitely include this topic."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 28,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Monosodium Glutamate: A Flavour Enhancer Explored",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_044452_55f04ac7.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MCQ",
+          "content": "The speaker says the main topic of the lecture is",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the history of monosodium glutamate"
+            },
+            {
+              "option": "B",
+              "text": "the way monosodium glutamate works"
+            },
+            {
+              "option": "C",
+              "text": "where monosodium glutamate is used"
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MCQ",
+          "content": "In 1908, scientists in Japan",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "made monosodium glutamate"
+            },
+            {
+              "option": "B",
+              "text": "began using kombu"
+            },
+            {
+              "option": "C",
+              "text": "identified glutamate"
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "MCQ",
+          "content": "What change occurred in the manufacture of glutamate in 1956?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It began to be manufactured on a large scale"
+            },
+            {
+              "option": "B",
+              "text": "The Japanese began extracting it from natural sources"
+            },
+            {
+              "option": "C",
+              "text": "It became much more expensive to produce"
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>NO MORE THAN TWO WRODS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

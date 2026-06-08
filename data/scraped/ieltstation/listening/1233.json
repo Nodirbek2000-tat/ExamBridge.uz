@@ -1,0 +1,620 @@
+{
+  "title": "Cambridge 16 Test_1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260228_045713_ea757856.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Children's Engineering Workshops",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260228_045713_ea757856.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Stevenson's Metal Goods Company and Work Experience Program",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260228_045713_ea757856.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Stevenson's was founded in",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "1923"
+            },
+            {
+              "option": "B",
+              "text": "1924"
+            },
+            {
+              "option": "C",
+              "text": "1926"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "Originally, Stevenson's manufactured goods for",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the healthcare industry"
+            },
+            {
+              "option": "B",
+              "text": "the automotive industry"
+            },
+            {
+              "option": "C",
+              "text": "the machine tools industry"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "What does the speaker say about the company premises?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000aThe company has recently moved"
+            },
+            {
+              "option": "B",
+              "text": "\\000aThe company has no plans to move."
+            },
+            {
+              "option": "C",
+              "text": "\\000aThe company is going to move shortly."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "The programme for the work experience group includes",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "time to do research."
+            },
+            {
+              "option": "B",
+              "text": "meetings with a teacher"
+            },
+            {
+              "option": "C",
+              "text": "talks by staff"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MAP",
+          "content": "coffee room",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "warehouse",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "staff canteen",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "meeting room",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "human resources",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "boardroom",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Discussing an Art Project on Birds",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260228_045713_ea757856.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Which personal meaning do the students decide to give to each of the following pictures?</p><p>Choose the correct letter.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a childhood memory"
+            },
+            {
+              "option": "B",
+              "text": "hope for the future"
+            },
+            {
+              "option": "C",
+              "text": "fast movement"
+            },
+            {
+              "option": "D",
+              "text": "a potential threat"
+            },
+            {
+              "option": "E",
+              "text": "the power of colour"
+            },
+            {
+              "option": "F",
+              "text": "the continuity of life"
+            },
+            {
+              "option": "G",
+              "text": "protection of nature"
+            },
+            {
+              "option": "H",
+              "text": "a confused attitude to nature"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a childhood memory"
+            },
+            {
+              "option": "B",
+              "text": "hope for the future"
+            },
+            {
+              "option": "C",
+              "text": "fast movement"
+            },
+            {
+              "option": "D",
+              "text": "a potential threat"
+            },
+            {
+              "option": "E",
+              "text": "the power of colour"
+            },
+            {
+              "option": "F",
+              "text": "the continuity of life"
+            },
+            {
+              "option": "G",
+              "text": "protection of nature"
+            },
+            {
+              "option": "H",
+              "text": "a confused attitude to nature"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a childhood memory"
+            },
+            {
+              "option": "B",
+              "text": "hope for the future"
+            },
+            {
+              "option": "C",
+              "text": "fast movement"
+            },
+            {
+              "option": "D",
+              "text": "a potential threat"
+            },
+            {
+              "option": "E",
+              "text": "the power of colour"
+            },
+            {
+              "option": "F",
+              "text": "the continuity of life"
+            },
+            {
+              "option": "G",
+              "text": "protection of nature"
+            },
+            {
+              "option": "H",
+              "text": "a confused attitude to nature"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a childhood memory"
+            },
+            {
+              "option": "B",
+              "text": "hope for the future"
+            },
+            {
+              "option": "C",
+              "text": "fast movement"
+            },
+            {
+              "option": "D",
+              "text": "a potential threat"
+            },
+            {
+              "option": "E",
+              "text": "the power of colour"
+            },
+            {
+              "option": "F",
+              "text": "the continuity of life"
+            },
+            {
+              "option": "G",
+              "text": "protection of nature"
+            },
+            {
+              "option": "H",
+              "text": "a confused attitude to nature"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a childhood memory"
+            },
+            {
+              "option": "B",
+              "text": "hope for the future"
+            },
+            {
+              "option": "C",
+              "text": "fast movement"
+            },
+            {
+              "option": "D",
+              "text": "a potential threat"
+            },
+            {
+              "option": "E",
+              "text": "the power of colour"
+            },
+            {
+              "option": "F",
+              "text": "the continuity of life"
+            },
+            {
+              "option": "G",
+              "text": "protection of nature"
+            },
+            {
+              "option": "H",
+              "text": "a confused attitude to nature"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a childhood memory"
+            },
+            {
+              "option": "B",
+              "text": "hope for the future"
+            },
+            {
+              "option": "C",
+              "text": "fast movement"
+            },
+            {
+              "option": "D",
+              "text": "a potential threat"
+            },
+            {
+              "option": "E",
+              "text": "the power of colour"
+            },
+            {
+              "option": "F",
+              "text": "the continuity of life"
+            },
+            {
+              "option": "G",
+              "text": "protection of nature"
+            },
+            {
+              "option": "H",
+              "text": "a confused attitude to nature"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The Significance and Influence of Stoicism Throughout History",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260228_045713_ea757856.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

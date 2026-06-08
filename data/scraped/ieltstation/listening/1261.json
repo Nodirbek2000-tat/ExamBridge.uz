@@ -1,0 +1,690 @@
+{
+  "title": "Cambridge 14_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135632_86db0206.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Total Health Clinic",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135632_86db0206.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Visit to Branley Castle",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135632_86db0206.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Before Queen Elizabeth I visited the castle in 1576,",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "repairs were carried out to the guest rooms."
+            },
+            {
+              "option": "B",
+              "text": "a new building was constructed for her."
+            },
+            {
+              "option": "C",
+              "text": "a fire damaged part of the main hall."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "In 1982, the castle was sold to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the government."
+            },
+            {
+              "option": "B",
+              "text": "the Fenys family."
+            },
+            {
+              "option": "C",
+              "text": "an entertainment company."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "In some of the rooms, visitors can",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "speak to experts on the history of the castle."
+            },
+            {
+              "option": "B",
+              "text": "interact with actors dressed as famous characters."
+            },
+            {
+              "option": "C",
+              "text": "see models of historical figures moving and talking."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "In the castle park, visitors can",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "see an 800-year-old tree."
+            },
+            {
+              "option": "B",
+              "text": "go to an art exhibition."
+            },
+            {
+              "option": "C",
+              "text": "visit a small zoo."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "At the end of the visit, the group will have",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "afternoon tea in the conservatory."
+            },
+            {
+              "option": "B",
+              "text": "the chance to meet the castle's owners."
+            },
+            {
+              "option": "C",
+              "text": "a photograph together on the Great Staircase."
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "Starting point for walking the walls",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Label the plan below.</p>"
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "Bow and arrow display",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "Hunting birds display",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "Traditional dancing",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "Shop",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Woolly Mammoths",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135632_86db0206.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "How will Rosie and Martin introduce their presentation?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><br></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "with a drawing of woolly mammoths in their natural habitat"
+            },
+            {
+              "option": "B",
+              "text": "with a timeline showing when woolly mammoths lived"
+            },
+            {
+              "option": "C",
+              "text": "with a video clip about woolly mammoths"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "What was surprising about the mammoth tooth found by Russell Graham?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It was still embedded in the mammoth's jawbone."
+            },
+            {
+              "option": "B",
+              "text": "It was from an unknown species of mammoth."
+            },
+            {
+              "option": "C",
+              "text": "It was not as old as mammoth remains from elsewhere."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "The students will use an animated diagram to demonstrate how the mammoths",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "became isolated on the island."
+            },
+            {
+              "option": "B",
+              "text": "spread from the island to other areas."
+            },
+            {
+              "option": "C",
+              "text": "coexisted with other animals on the island."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "According to Martin, what is unusual about the date of the mammoths' extinction on the island?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "how exact it is"
+            },
+            {
+              "option": "B",
+              "text": "how early it is"
+            },
+            {
+              "option": "C",
+              "text": "how it was established"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make it more interactive"
+            },
+            {
+              "option": "B",
+              "text": "reduce visual input"
+            },
+            {
+              "option": "C",
+              "text": "add personal opinions"
+            },
+            {
+              "option": "D",
+              "text": "contact one of the researchers"
+            },
+            {
+              "option": "E",
+              "text": "make detailed notes"
+            },
+            {
+              "option": "F",
+              "text": "find information online"
+            },
+            {
+              "option": "G",
+              "text": "check timing"
+            },
+            {
+              "option": "H",
+              "text": "organise the content more clearly"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make it more interactive"
+            },
+            {
+              "option": "B",
+              "text": "reduce visual input"
+            },
+            {
+              "option": "C",
+              "text": "add personal opinions"
+            },
+            {
+              "option": "D",
+              "text": "contact one of the researchers"
+            },
+            {
+              "option": "E",
+              "text": "make detailed notes"
+            },
+            {
+              "option": "F",
+              "text": "find information online"
+            },
+            {
+              "option": "G",
+              "text": "check timing"
+            },
+            {
+              "option": "H",
+              "text": "organise the content more clearly"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make it more interactive"
+            },
+            {
+              "option": "B",
+              "text": "reduce visual input"
+            },
+            {
+              "option": "C",
+              "text": "add personal opinions"
+            },
+            {
+              "option": "D",
+              "text": "contact one of the researchers"
+            },
+            {
+              "option": "E",
+              "text": "make detailed notes"
+            },
+            {
+              "option": "F",
+              "text": "find information online"
+            },
+            {
+              "option": "G",
+              "text": "check timing"
+            },
+            {
+              "option": "H",
+              "text": "organise the content more clearly"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make it more interactive"
+            },
+            {
+              "option": "B",
+              "text": "reduce visual input"
+            },
+            {
+              "option": "C",
+              "text": "add personal opinions"
+            },
+            {
+              "option": "D",
+              "text": "contact one of the researchers"
+            },
+            {
+              "option": "E",
+              "text": "make detailed notes"
+            },
+            {
+              "option": "F",
+              "text": "find information online"
+            },
+            {
+              "option": "G",
+              "text": "check timing"
+            },
+            {
+              "option": "H",
+              "text": "organise the content more clearly"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make it more interactive"
+            },
+            {
+              "option": "B",
+              "text": "reduce visual input"
+            },
+            {
+              "option": "C",
+              "text": "add personal opinions"
+            },
+            {
+              "option": "D",
+              "text": "contact one of the researchers"
+            },
+            {
+              "option": "E",
+              "text": "make detailed notes"
+            },
+            {
+              "option": "F",
+              "text": "find information online"
+            },
+            {
+              "option": "G",
+              "text": "check timing"
+            },
+            {
+              "option": "H",
+              "text": "organise the content more clearly"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make it more interactive"
+            },
+            {
+              "option": "B",
+              "text": "reduce visual input"
+            },
+            {
+              "option": "C",
+              "text": "add personal opinions"
+            },
+            {
+              "option": "D",
+              "text": "contact one of the researchers"
+            },
+            {
+              "option": "E",
+              "text": "make detailed notes"
+            },
+            {
+              "option": "F",
+              "text": "find information online"
+            },
+            {
+              "option": "G",
+              "text": "check timing"
+            },
+            {
+              "option": "H",
+              "text": "organise the content more clearly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "History of weather forecasting",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260301_135632_86db0206.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

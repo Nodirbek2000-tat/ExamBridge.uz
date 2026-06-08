@@ -1,0 +1,118 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "The Development of Plastics",
+    "content": "The first plastics were developed as a substitute for natural rubber. Chemically, rubber is a polymer–a compound containing large molecules that are formed by the bonding of many smaller, simpler units, repeated over and over again. The same bonding principle–polymerization–is the basis of the creation of a huge range of plastics by the chemical industry.\n\nThe first plastic was developed as a result of a competition in the USA. In the 1860s, $10,000 was offered to anybody who could replace ivory–supplies of which were declining–with something equally good as a material for making billiard balls. The prize was won by John Wesley Hyatt, with a material called celluloid. Celluloid was made by dissolving cellulose, a carbohydrate obtained from plants, in a solution of camphor dissolved in ethanol. This new material rapidly found other applications in the manufacture of everyday products such as knife handles and detachable collars and cuffs. But perhaps the best-known celluloid product was photographic film, without which the film industry could never have taken off at the end of the 19th century.\n\nCelluloid can be repeatedly softened and reshaped by heat, and is known as a thermoplastic. In 1907, Leo Baekeland (1863-1944), a Belgian chemist working in the USA, invented a different kind of plastic, by causing phenol and formaldehyde to react together. Baekeland called it Bakelite, and it was the first of the thermosets–plastic that can be cast and moulded while hot, but cannot be softened by heat and reshaped once they have set. Bakelite was a good insulator, and was resistant to water and acid. With these properties it was soon being used in the manufacture of electrical switches as well as a variety of domestic items.\n\nAs the century went on, the range of newly developed plastics increased. Chemists began looking for other small molecules that could be strung together to make polymers. In the 1930s, chemists in Britain discovered that the gas ethylene would polymerize under heat and pressure to form a thermoplastic they called polythene. Polypropylene followed in the 1950s. Both are used to make bottles, pipes, and plastic bags. A small change in the starting material–replacing a hydrogen atom in ethylene with a chlorine atom–produced rigid PVC (polyvinyl chloride), a fireproof plastic suitable for drains and gutters. By adding certain chemicals, a soft form of PVC can be produced, suitable as a substitute for rubber in items such as waterproof clothing. A closely related plastic is Teflon or PTFE (polytetrafluoroethylene). It produces very little friction, making it ideal for products such as non-stick frying pans.\n\nPolystyrene, a hard, clear material like glass, was developed during the 1930s in Germany, and its applications included food containers and toys. Expanded polystyrene is rigid and is widely used in packaging and insulation. Polyurethane, developed in the same country, was commonly produced as a foam which was very useful in the production of insulating materials.\n\nIn the 1930s, the first of the man-made fibres was created–nylon. Its inventor was a chemist called Wallace Carothers (1896-1937), who worked for the Du Pont company in the USA. He found that under the right conditions two particular chemicals would form a polymer that could be pumped out through holes and then stretched to form long glossy threads that could be woven like silk. Its first use was to make parachutes for the US armed forces in World War II. In the postwar years, it completely replaced silk in the manufacture of stockings.\n\nMany other synthetic fibres joined nylon, including Orion, Acrilan, and Terylene. Today most garments are made of a blend of natural fibres, such as cotton and wool, and man-made fibres that make fabrics easier to look after.\n\nDespite its enormous usefulness, plastic has its drawbacks. In fact, one of its great strengths–its indestructibility–is its greatest disadvantage. Beaches all over the world, even on the remotest islands, are littered with plastic bottles that nothing can destroy. Nor is it very easy to recycle plastics, as different types of plastics are often found in the same items and call for different treatments. Plastics can be made biodegradable by incorporating into their structure a material such as starch, which is attacked by bacteria and causes the plastic to fall apart. Other materials can be incorporated that gradually decay in sunlight–although bottles made of such materials have to be stored in the dark, to ensure they do not disintegrate before they have been used.",
+    "passage_number": 1,
+    "difficulty": "EASY",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage states that the best-known use of celluloid was photographic film.",
+      "group_instruction": "<p>Complete the table. Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;from the text for each answer.</p><p><br></p><h2>                              Early Types of Plastic</h2>"
+    },
+    {
+      "number": 3,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Bakelite was used to manufacture electrical switches.",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Polythene was developed in Britain.",
+      "group_instruction": ""
+    },
+    {
+      "number": 6,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Polystyrene resembles glass.",
+      "group_instruction": ""
+    },
+    {
+      "number": 7,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Polyurethane was commonly produced as a foam.",
+      "group_instruction": ""
+    },
+    {
+      "number": 2,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The second type of plastic mentioned (after celluloid) is Bakelite.",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Rigid PVC is described as a fireproof plastic.",
+      "group_instruction": ""
+    },
+    {
+      "number": 9,
+      "question_type": "TFNG",
+      "content": "John Wesley Hyatt was an industrial chemist.",
+      "correct_answer": null,
+      "explanation": "The text does not state whether Hyatt was an industrial chemist or not.",
+      "group_instruction": "<p>Choose&nbsp;<strong>TRUE</strong>&nbsp;if the statement agrees with the information given in the text, choose&nbsp;<strong>FALSE</strong>&nbsp;if the statement contradicts the information, or choose&nbsp;<strong>NOT</strong> <strong>GIVEN</strong>&nbsp;if there is no information on this.</p>"
+    },
+    {
+      "number": 10,
+      "question_type": "TFNG",
+      "content": "Celluloid and Bakelite react in the same way to heat.",
+      "correct_answer": null,
+      "explanation": "Celluloid softens with heat; Bakelite cannot be softened after setting. They react differently.",
+      "group_instruction": ""
+    },
+    {
+      "number": 11,
+      "question_type": "TFNG",
+      "content": "If an object is made of several plastics, these prove hard to break down and reuse.",
+      "correct_answer": null,
+      "explanation": "Objects made from several different plastics are hard to recycle because each plastic needs a different treatment.",
+      "group_instruction": ""
+    },
+    {
+      "number": 13,
+      "question_type": "TFNG",
+      "content": "Containers which are designed to decompose need particular storage conditions.",
+      "correct_answer": null,
+      "explanation": "Plastics designed to decay in sunlight must be stored in darkness.",
+      "group_instruction": ""
+    },
+    {
+      "number": 8,
+      "question_type": "TFNG",
+      "content": "The chemical structure of rubber is very different to that of plastics.",
+      "correct_answer": null,
+      "explanation": "The passage says rubber and plastics share the same bonding principle–polymerization–so they are not chemically very different in structure.",
+      "group_instruction": ""
+    },
+    {
+      "number": 12,
+      "question_type": "TFNG",
+      "content": "Adding starch to plastic makes it more durable.",
+      "correct_answer": null,
+      "explanation": "Adding starch does not make plastic more durable – it makes it biodegradable (breaks apart).",
+      "group_instruction": ""
+    }
+  ]
+}

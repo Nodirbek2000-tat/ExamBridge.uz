@@ -1,0 +1,698 @@
+{
+  "title": "Full Listening Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20251130_214325_306ddb21.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Building Work",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20251130_214325_306ddb21.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write <strong>NO MORE THAN ONE WORD AND/OR NUMBER</strong> for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Job requirement",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20251130_214325_306ddb21.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "The speaker's job requires",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a great deal of walking"
+            },
+            {
+              "option": "B",
+              "text": "extensive travel"
+            },
+            {
+              "option": "C",
+              "text": "clean water"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "Why is this story being told?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to promote Charity-Water"
+            },
+            {
+              "option": "B",
+              "text": "for entertainment purposes"
+            },
+            {
+              "option": "C",
+              "text": "to encourage Helen"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Why do the charity workers usually surprise communities?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It makes people happy"
+            },
+            {
+              "option": "B",
+              "text": "It is difficult to spread news."
+            },
+            {
+              "option": "C",
+              "text": "It makes their work easier."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "When villagers heard of the charity worker's arrival, they",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer. </p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "had a party"
+            },
+            {
+              "option": "B",
+              "text": "were suspicious"
+            },
+            {
+              "option": "C",
+              "text": "took no notice."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "Helen is feeling",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "ecstatic about her new life"
+            },
+            {
+              "option": "B",
+              "text": "curious about the charity workers."
+            },
+            {
+              "option": "C",
+              "text": "nostalgic about her old life"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "What did the speaker notice about Helen?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "she had bathed recently"
+            },
+            {
+              "option": "B",
+              "text": "the care she took with her appearance"
+            },
+            {
+              "option": "C",
+              "text": "she was wearing a green uniform"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MCQ",
+          "content": "Making someone feel beautiful was",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "part of the speaker's job description."
+            },
+            {
+              "option": "B",
+              "text": "an unexpected bonus for the speaker."
+            },
+            {
+              "option": "C",
+              "text": "of little importance to the speaker"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>THREE</strong> correct answers.</p>"
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Song-writing course for drama students",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20251130_214325_306ddb21.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What problem is Lorna having with her report?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "listing the references"
+            },
+            {
+              "option": "B",
+              "text": "keeping to the word limit"
+            },
+            {
+              "option": "C",
+              "text": "writing the evaluation"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "Why did Charles take the song-writing course?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "to improve his job prospects"
+            },
+            {
+              "option": "B",
+              "text": "to increase his self-confidence"
+            },
+            {
+              "option": "C",
+              "text": "to develop his self-expression"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "Which type of work did Lorna most enjoy?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "individual work"
+            },
+            {
+              "option": "B",
+              "text": "pair work"
+            },
+            {
+              "option": "C",
+              "text": "group work"
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Which aspect of the course content did both students find interesting?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer. </p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "song structure"
+            },
+            {
+              "option": "B",
+              "text": "writing a chorus"
+            },
+            {
+              "option": "C",
+              "text": "lyrical styles and forms"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "Lorna found writing a song",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "impossible"
+            },
+            {
+              "option": "B",
+              "text": "tiring"
+            },
+            {
+              "option": "C",
+              "text": "amusing"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter for each question.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use of own memories"
+            },
+            {
+              "option": "B",
+              "text": "full use of the stage"
+            },
+            {
+              "option": "C",
+              "text": "relaxation techniques"
+            },
+            {
+              "option": "D",
+              "text": "physical expression of character"
+            },
+            {
+              "option": "E",
+              "text": "play readings"
+            },
+            {
+              "option": "F",
+              "text": "acting without preparation"
+            },
+            {
+              "option": "G",
+              "text": "using a range of accents"
+            },
+            {
+              "option": "H",
+              "text": "following instructions"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use of own memories"
+            },
+            {
+              "option": "B",
+              "text": "full use of the stage"
+            },
+            {
+              "option": "C",
+              "text": "relaxation techniques"
+            },
+            {
+              "option": "D",
+              "text": "physical expression of character"
+            },
+            {
+              "option": "E",
+              "text": "play readings"
+            },
+            {
+              "option": "F",
+              "text": "acting without preparation"
+            },
+            {
+              "option": "G",
+              "text": "using a range of accents"
+            },
+            {
+              "option": "H",
+              "text": "following instructions"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use of own memories"
+            },
+            {
+              "option": "B",
+              "text": "full use of the stage"
+            },
+            {
+              "option": "C",
+              "text": "relaxation techniques"
+            },
+            {
+              "option": "D",
+              "text": "physical expression of character"
+            },
+            {
+              "option": "E",
+              "text": "play readings"
+            },
+            {
+              "option": "F",
+              "text": "acting without preparation"
+            },
+            {
+              "option": "G",
+              "text": "using a range of accents"
+            },
+            {
+              "option": "H",
+              "text": "following instructions"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use of own memories"
+            },
+            {
+              "option": "B",
+              "text": "full use of the stage"
+            },
+            {
+              "option": "C",
+              "text": "relaxation techniques"
+            },
+            {
+              "option": "D",
+              "text": "physical expression of character"
+            },
+            {
+              "option": "E",
+              "text": "play readings"
+            },
+            {
+              "option": "F",
+              "text": "acting without preparation"
+            },
+            {
+              "option": "G",
+              "text": "using a range of accents"
+            },
+            {
+              "option": "H",
+              "text": "following instructions"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "use of own memories"
+            },
+            {
+              "option": "B",
+              "text": "full use of the stage"
+            },
+            {
+              "option": "C",
+              "text": "relaxation techniques"
+            },
+            {
+              "option": "D",
+              "text": "physical expression of character"
+            },
+            {
+              "option": "E",
+              "text": "play readings"
+            },
+            {
+              "option": "F",
+              "text": "acting without preparation"
+            },
+            {
+              "option": "G",
+              "text": "using a range of accents"
+            },
+            {
+              "option": "H",
+              "text": "following instructions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The Lontar Palm",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20251130_214325_306ddb21.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write <strong>ONE WORD ONLY</strong> for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

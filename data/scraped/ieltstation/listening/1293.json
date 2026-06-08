@@ -1,0 +1,648 @@
+{
+  "title": "Cambridge 16_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_061649_33ef7138.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Junior Cycle Camp",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_061649_33ef7138.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Food and Agriculture Sector Job Opportunities",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_061649_33ef7138.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> letters.</p>"
+        },
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>answers.</p>"
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What information does Megan give about each of the following job opportunities?</p><p>Choose the correct letter.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not a permanent job"
+            },
+            {
+              "option": "B",
+              "text": "involves leading a team"
+            },
+            {
+              "option": "C",
+              "text": "experience not essential"
+            },
+            {
+              "option": "D",
+              "text": "Intensive work but also fun"
+            },
+            {
+              "option": "E",
+              "text": "Chance to earn more through overtime"
+            },
+            {
+              "option": "F",
+              "text": "Chance for rapid promotion"
+            },
+            {
+              "option": "G",
+              "text": "accommodation available"
+            },
+            {
+              "option": "H",
+              "text": "local travel involved"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not a permanent job"
+            },
+            {
+              "option": "B",
+              "text": "involves leading a team"
+            },
+            {
+              "option": "C",
+              "text": "experience not essential"
+            },
+            {
+              "option": "D",
+              "text": "Intensive work but also fun"
+            },
+            {
+              "option": "E",
+              "text": "Chance to earn more through overtime"
+            },
+            {
+              "option": "F",
+              "text": "Chance for rapid promotion"
+            },
+            {
+              "option": "G",
+              "text": "accommodation available"
+            },
+            {
+              "option": "H",
+              "text": "local travel involved"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not a permanent job"
+            },
+            {
+              "option": "B",
+              "text": "involves leading a team"
+            },
+            {
+              "option": "C",
+              "text": "experience not essential"
+            },
+            {
+              "option": "D",
+              "text": "Intensive work but also fun"
+            },
+            {
+              "option": "E",
+              "text": "Chance to earn more through overtime"
+            },
+            {
+              "option": "F",
+              "text": "Chance for rapid promotion"
+            },
+            {
+              "option": "G",
+              "text": "accommodation available"
+            },
+            {
+              "option": "H",
+              "text": "local travel involved"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not a permanent job"
+            },
+            {
+              "option": "B",
+              "text": "involves leading a team"
+            },
+            {
+              "option": "C",
+              "text": "experience not essential"
+            },
+            {
+              "option": "D",
+              "text": "Intensive work but also fun"
+            },
+            {
+              "option": "E",
+              "text": "Chance to earn more through overtime"
+            },
+            {
+              "option": "F",
+              "text": "Chance for rapid promotion"
+            },
+            {
+              "option": "G",
+              "text": "accommodation available"
+            },
+            {
+              "option": "H",
+              "text": "local travel involved"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not a permanent job"
+            },
+            {
+              "option": "B",
+              "text": "involves leading a team"
+            },
+            {
+              "option": "C",
+              "text": "experience not essential"
+            },
+            {
+              "option": "D",
+              "text": "Intensive work but also fun"
+            },
+            {
+              "option": "E",
+              "text": "Chance to earn more through overtime"
+            },
+            {
+              "option": "F",
+              "text": "Chance for rapid promotion"
+            },
+            {
+              "option": "G",
+              "text": "accommodation available"
+            },
+            {
+              "option": "H",
+              "text": "local travel involved"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "not a permanent job"
+            },
+            {
+              "option": "B",
+              "text": "involves leading a team"
+            },
+            {
+              "option": "C",
+              "text": "experience not essential"
+            },
+            {
+              "option": "D",
+              "text": "Intensive work but also fun"
+            },
+            {
+              "option": "E",
+              "text": "Chance to earn more through overtime"
+            },
+            {
+              "option": "F",
+              "text": "Chance for rapid promotion"
+            },
+            {
+              "option": "G",
+              "text": "accommodation available"
+            },
+            {
+              "option": "H",
+              "text": "local travel involved"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Planning a Presentation on Diet, Obesity, and Related Solutions",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_061649_33ef7138.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> letters.</p>"
+        },
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO</strong> letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "Adam suggests that restaurants could reduce obesity if their menus",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "offered fewer options."
+            },
+            {
+              "option": "B",
+              "text": "had more low-calorie foods."
+            },
+            {
+              "option": "C",
+              "text": "were organised in a particular way"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "The students agree that food manufacturers deliberately",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "make calorie counts hard to understand."
+            },
+            {
+              "option": "B",
+              "text": "fail to provide accurate calorie counts."
+            },
+            {
+              "option": "C",
+              "text": "use ineffective methods to reduce calories."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "What does Rosie say about levels of exercise in England?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The amount recommended is much too low"
+            },
+            {
+              "option": "B",
+              "text": "Most people overestimate how much they do."
+            },
+            {
+              "option": "C",
+              "text": "Women now exercise more than they used to."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "Adam refers to the location and width of stairs in a train station to illustrate",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "practical changes that can influence people's behaviour."
+            },
+            {
+              "option": "B",
+              "text": "methods of helping people who have mobility problems."
+            },
+            {
+              "option": "C",
+              "text": "ways of preventing accidents by controlling crowd movement."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "What do the students agree about including reference to exercise in their presentation?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "they should probably leave it out."
+            },
+            {
+              "option": "B",
+              "text": "They need to do more research on it"
+            },
+            {
+              "option": "C",
+              "text": "They should discuss this with their tutor."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "What are the students going to do next for their presentation?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "prepare some slides for it"
+            },
+            {
+              "option": "B",
+              "text": "find out how long they have for it"
+            },
+            {
+              "option": "C",
+              "text": "decide on its content and organisation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Hand knitting",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260302_061649_33ef7138.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

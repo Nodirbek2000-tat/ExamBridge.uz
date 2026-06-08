@@ -1,0 +1,652 @@
+{
+  "title": "Cambridge 10_test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_131908_88922e95.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Thorndyke's builders",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_131908_88922e95.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Manham Port",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_131908_88922e95.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "Why did a port originally develop at Manham?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It was safe from enemy attack."
+            },
+            {
+              "option": "B",
+              "text": "It was convenient for river transport."
+            },
+            {
+              "option": "C",
+              "text": "It had a good position on the sea coast."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What caused Manham's sudden expansion during the Industrial Revolution?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the improvement in mining techniques"
+            },
+            {
+              "option": "B",
+              "text": "the increase in demand for metals"
+            },
+            {
+              "option": "C",
+              "text": "the discovery of tin in the area"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Why did rocks have to be sent away from Manham to be processed?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "shortage of fuel"
+            },
+            {
+              "option": "B",
+              "text": "poor transport systems"
+            },
+            {
+              "option": "C",
+              "text": "lack of skills among local people"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "What happened when the port declined in the twentieth century?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The workers went away."
+            },
+            {
+              "option": "B",
+              "text": "Traditional skills were lost."
+            },
+            {
+              "option": "C",
+              "text": "Buildings were used for new purposes."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "What did the Manham Trust hope to do?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "discover the location of the original port"
+            },
+            {
+              "option": "B",
+              "text": "provide jobs for the unemployed"
+            },
+            {
+              "option": "C",
+              "text": "rebuild the port complex"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below.</p><p>Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 18,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 16,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Laura's work placement",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_131908_88922e95.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What source of information should Tim use at each of the following stages of the work placement?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "company manager"
+            },
+            {
+              "option": "B",
+              "text": "company's personnel department"
+            },
+            {
+              "option": "C",
+              "text": "personal tutor"
+            },
+            {
+              "option": "D",
+              "text": "psychology department"
+            },
+            {
+              "option": "E",
+              "text": "mentor"
+            },
+            {
+              "option": "F",
+              "text": "university careers officer"
+            },
+            {
+              "option": "G",
+              "text": "internet"
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "company manager"
+            },
+            {
+              "option": "B",
+              "text": "company's personnel department"
+            },
+            {
+              "option": "C",
+              "text": "personal tutor"
+            },
+            {
+              "option": "D",
+              "text": "psychology department"
+            },
+            {
+              "option": "E",
+              "text": "mentor"
+            },
+            {
+              "option": "F",
+              "text": "university careers officer"
+            },
+            {
+              "option": "G",
+              "text": "internet"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "company manager"
+            },
+            {
+              "option": "B",
+              "text": "company's personnel department"
+            },
+            {
+              "option": "C",
+              "text": "personal tutor"
+            },
+            {
+              "option": "D",
+              "text": "psychology department"
+            },
+            {
+              "option": "E",
+              "text": "mentor"
+            },
+            {
+              "option": "F",
+              "text": "university careers officer"
+            },
+            {
+              "option": "G",
+              "text": "internet"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "company manager"
+            },
+            {
+              "option": "B",
+              "text": "company's personnel department"
+            },
+            {
+              "option": "C",
+              "text": "personal tutor"
+            },
+            {
+              "option": "D",
+              "text": "psychology department"
+            },
+            {
+              "option": "E",
+              "text": "mentor"
+            },
+            {
+              "option": "F",
+              "text": "university careers officer"
+            },
+            {
+              "option": "G",
+              "text": "internet"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "company manager"
+            },
+            {
+              "option": "B",
+              "text": "company's personnel department"
+            },
+            {
+              "option": "C",
+              "text": "personal tutor"
+            },
+            {
+              "option": "D",
+              "text": "psychology department"
+            },
+            {
+              "option": "E",
+              "text": "mentor"
+            },
+            {
+              "option": "F",
+              "text": "university careers officer"
+            },
+            {
+              "option": "G",
+              "text": "internet"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "company manager"
+            },
+            {
+              "option": "B",
+              "text": "company's personnel department"
+            },
+            {
+              "option": "C",
+              "text": "personal tutor"
+            },
+            {
+              "option": "D",
+              "text": "psychology department"
+            },
+            {
+              "option": "E",
+              "text": "mentor"
+            },
+            {
+              "option": "F",
+              "text": "university careers officer"
+            },
+            {
+              "option": "G",
+              "text": "internet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Nanotechnology",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_131908_88922e95.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MCQ",
+          "content": "The speaker says that one problem with nanotechnology is that",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "it could threaten our way of life."
+            },
+            {
+              "option": "B",
+              "text": "it could be used to spy on people."
+            },
+            {
+              "option": "C",
+              "text": "it is misunderstood by the public."
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MCQ",
+          "content": "According to the speaker, some scientists believe that nano-particles",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "should be restricted to secure environments."
+            },
+            {
+              "option": "B",
+              "text": "should be used with more caution."
+            },
+            {
+              "option": "C",
+              "text": "should only be developed for essential products."
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "MCQ",
+          "content": "In the speaker's opinion, research into nanotechnology",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "has yet to win popular support."
+            },
+            {
+              "option": "B",
+              "text": "could be seen as unethical."
+            },
+            {
+              "option": "C",
+              "text": "ought to be continued."
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write <strong>ONE WORD ONLY </strong>for each answer.</p>"
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

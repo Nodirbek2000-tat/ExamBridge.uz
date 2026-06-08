@@ -1,0 +1,572 @@
+{
+  "title": "Cambridge 7_Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043101_531aa77d.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Getting from Toronto Airport to Milton",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043101_531aa77d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write <strong>NO MORE THAN THREE WORDS</strong> for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Questions 11-16</p><p>Choose the correct letter, A, B or C.</p>"
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "PS Camping: Company Overview and Holiday Offerings",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043101_531aa77d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "PS Camping has been organising holidays for",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "15 years"
+            },
+            {
+              "option": "B",
+              "text": "20 years"
+            },
+            {
+              "option": "C",
+              "text": "25 years"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "The company has most camping sites in",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "France"
+            },
+            {
+              "option": "B",
+              "text": "Italy"
+            },
+            {
+              "option": "C",
+              "text": "Switzerland"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Which organised activity can children do every day of the week?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "football"
+            },
+            {
+              "option": "B",
+              "text": "drama"
+            },
+            {
+              "option": "C",
+              "text": "model making"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "Some areas of the sites have a 'no noise' rule after",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "9:30 p.m."
+            },
+            {
+              "option": "B",
+              "text": "10:00 p.m."
+            },
+            {
+              "option": "C",
+              "text": "10:30 p.m."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "The holiday insurance that is offered by PS Camping",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "can be charged on an annual basis.\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "is included in the price of the holiday.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "must be taken out at the time of booking."
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MCQ",
+          "content": "Customers who recommend PS Camping to friends will receive",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a free gift.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "an upgrade to a luxury tent.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "a discount."
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What does the speaker say about the following items?</p><p><br></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They are provided in all tents."
+            },
+            {
+              "option": "B",
+              "text": "They are found in central areas of the campsite."
+            },
+            {
+              "option": "C",
+              "text": "They are available on request."
+            },
+            {
+              "option": "D",
+              "text": "They are available on request."
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They are provided in all tents."
+            },
+            {
+              "option": "B",
+              "text": "They are found in central areas of the campsite."
+            },
+            {
+              "option": "C",
+              "text": "They are available on request."
+            },
+            {
+              "option": "D",
+              "text": "They are available on request."
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They are provided in all tents."
+            },
+            {
+              "option": "B",
+              "text": "They are found in central areas of the campsite."
+            },
+            {
+              "option": "C",
+              "text": "They are available on request."
+            },
+            {
+              "option": "D",
+              "text": "They are available on request."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They are provided in all tents."
+            },
+            {
+              "option": "B",
+              "text": "They are found in central areas of the campsite."
+            },
+            {
+              "option": "C",
+              "text": "They are available on request."
+            },
+            {
+              "option": "D",
+              "text": "They are available on request."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Managing Individual Differences in the Workplace",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043101_531aa77d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Janice thinks that employers should encourage workers who are",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "potential leaders.\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "open to new ideas.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "good at teamwork."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "Janice suggests that managers may find it difficult to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "form successful groups.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "balance conflicting needs.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "deal with uncooperative workers."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "Janice believes employers should look for job applicants who",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "can think independently.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "will obey the system.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "can solve problems."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "Janice believes managers should",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "demonstrate good behaviour.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "encourage co-operation early on.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "increase financial incentives."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the sentences below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 29,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Preparing for the Archaeological Fieldwork in Namibia",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_043101_531aa77d.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the sentences below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 37,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

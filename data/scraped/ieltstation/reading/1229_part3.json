@@ -1,0 +1,94 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "Movie of Metropolis",
+    "content": "– being the science-fiction film that is steadily becoming a fact\n\nA\nWhen German director Fritz Lang visited the United States in 1924, his first glimpse of the country was a night-time view of the New York skyline from the deck of an ocean liner. This, he later recalled, was the direct inspiration for what is still probably the most innovative and influential science-fiction film ever made – Metropolis.\n\nB\nMetropolis is a bleak vision of the early twenty-first century that is at once both chilling and exhilarating. This spectacular city of the future is a technological marvel of high-rise buildings connected by elevated railways and airships. It’s also a world of extreme inequality and social division. The workers live below ground and exist as machines working in an endless routine of mind-numbing 10-hour shifts while the city’s elite lead lives of luxury high above. Presiding over them all is the Master of Metropolis, John Fredersen, whose sole satisfaction seems to lie in the exercise of power.\n\nC\nLang’s graphic depiction of the future is conceived in almost totally abstract terms. The function of the individual machines is never defined. Instead, this mass of dials, levers and gauges symbolically stands for all machines and all industry, with the workers as slave-live extensions of the equipment they have to operate. Lang emphasizes this idea in the famous shift-change sequence at the start of the movie when the workers walk in zombie-like geometric ranks, all dressed in the same dark overalls and all exhibiting the same bowed head and dead-eyed stare. An extraordinary fantasy sequence sees one machine transformed into a huge open-jawed statue which then literally swallows them up.\n\nD\nOn one level the machines and the exploited workers simply provide the wealth and services which allow the elite to live their lives of leisure, but on a more profound level, the purpose of all this demented industry is to serve itself. Power, control and the continuance of the system from one 10-hour shift to the next is all that counts. The city consumes people and their labour and in the process becomes a perverse parody of a living being.\n\nE\nIt is enlightening, I think, to relate the film to the modern global economy in which multinational corporations now routinely close their factories in one continent so that they can take advantage of cheap labour in another. Like the industry in Metropolis, these corporations’ goals of increased efficiency and profits have little to do with the welfare of the majority of their employees or that of the population at large. Instead, their aims are to sustain the momentum of their own growth and to increase the monetary rewards to a tiny elite – their executives and shareholders. Fredersen himself is the essence of the big company boss: Rupert Murdoch would probably feel perfectly at home in his huge skyscraper office with its panoramic view of the city below. And it is important that there is never any mention of government in Metropolis – the whole concept is by implication obsolete. The only people who have power are the supreme industrialist, Fredersen, and his magician/scientist cohort Rotwang.\n\nF\nSo far so good: when the images are allowed to speak for themselves the film is impeccable both in its symbolism and in its cynicism. The problem with Metropolis is its sentimental story-line, which sees Freder, Fredersen’s son, instantly falling in love with the visionary Maria. Maria leads an underground pseudo-religious movement and preaches that the workers should not rebel but should await the arrival of a ‘Mediator’ between the ‘Head’ (capital) and the ‘Hands’ (labour). That mediator is the ‘Heart’ – love, as embodied, finally, by Freder’s love of Maria and his father’s love of him.\n\nG\nLang wrote the screenplay in collaboration with his then-wife Thea von Harbou. In 1933 he fled from the Nazis (and continued a very successful career in Hollywood). She stayed in Germany and continued to make films under the Hitler regime. There is a constant tension within the film between the too-tidy platitudes of von Harbou’s script and the uncompromisingly caustic vigour of Lang’s imagery.\n\nH\nTo my mind, both in Metropolis and in the real world, it’s not so much that the ‘Head’ and ‘Hands’ require a ‘Heart’ to mediate between them but that the ‘Hands’ need to develop their own ‘Head’, their own political consciousness, and act accordingly – through the ballot box, through buying power and through a sceptical resistance to the materialistic fantasies of the Fredersens.\n\nI\nAll the same, Metropolis is probably more accurate now as a representation of industrial and social relations than it has been at any time since its original release. And Fredersen is certainly still the most potent movie symbol of the handful of elusive corporate figureheads who increasingly treat the world as a Metropolis-like global village.",
+    "passage_number": 3,
+    "difficulty": "MEDIUM",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 28,
+      "question_type": "YNNG",
+      "content": "The Master of Metropolis, John Fredersen, is portrayed from an industrialist that the director met in the US.",
+      "correct_answer": null,
+      "explanation": "Explanation: The passage does not provide any information about whether the character John Fredersen was modeled after an industrialist Lang met in the US.\n\nTherefore, the answer is: NOT GIVEN",
+      "group_instruction": "<p>Choose&nbsp;<strong>YES</strong>&nbsp;if the statement agrees with the information given in the text, choose&nbsp;<strong>NO</strong>&nbsp;if the statement contradicts the information, or choose&nbsp;<strong>NOT GIVEN</strong>&nbsp;if there is no information on this.</p>"
+    },
+    {
+      "number": 29,
+      "question_type": "YNNG",
+      "content": "The start of the movie exhibits the workers working in full energy.",
+      "correct_answer": null,
+      "explanation": "In paragraph C:\n\"Lang emphasizes this idea in the famous shift-change sequence at the start of the movie when the workers walk in zombie-like geometric ranks, all dressed in the same dark overalls and all exhibiting the same bowed head and dead-eyed stare.\"\n\nExplanation: This description shows the workers as tired and robotic, not working with full energy, which contradicts the statement.\n\nTherefore, the answer is: NO",
+      "group_instruction": ""
+    },
+    {
+      "number": 30,
+      "question_type": "YNNG",
+      "content": "The director and his wife got divorced because his wife decided to stay in Germany.",
+      "correct_answer": null,
+      "explanation": "In paragraph G: She stayed in Germany and continued to make films under the Hitler regime.\n\nExplanation: The passage states that Lang fled Nazi Germany while his wife stayed, but it does not say whether they divorced.\n\nTherefore, the answer is: NOT GIVEN",
+      "group_instruction": ""
+    },
+    {
+      "number": 27,
+      "question_type": "YNNG",
+      "content": "The inspiration of the movie- Metropolis -comes from the director’s visit in the USA in 1924.",
+      "correct_answer": null,
+      "explanation": "In paragraph A: \"When German director Fritz Lang visited the United States in 1924, his first glimpse of the country was a night-time view of the New York skyline from the deck of an ocean liner. This, he later recalled, was the direct inspiration for what is still probably the most innovative and influential science-fiction film ever made – Metropolis.\"\n\nExplanation: The passage explicitly states that Lang’s visit to the USA in 1924 directly inspired Metropolis. This matches the question exactly. Therefore, the answer is: YES",
+      "group_instruction": ""
+    },
+    {
+      "number": 33,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "In paragraph B: \"Presiding over them all is the Master of Metropolis, John Fredersen, whose sole satisfaction seems to lie in the exercise of power.\"\n\nExplanation: John Fredersen is identified as the powerful leader controlling the city, matching the question. Therefore, the answer is: John Fredersen",
+      "group_instruction": "<p>Complete the summary. Write&nbsp;<strong>NO MORE THAN TWO WORDS</strong>&nbsp;from the text for each</p>"
+    },
+    {
+      "number": 35,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "In paragraph C: \"The function of the individual machines is never defined.\"\n\nExplanation: The specific roles of the machines are left unclear, representing all machinery and industry collectively. Therefore, the answer is: function",
+      "group_instruction": ""
+    },
+    {
+      "number": 31,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "In paragraph B: \"This spectacular city of the future is a technological marvel of high-rise buildings connected by elevated railways and airships. It’s also a world of extreme inequality and social division.\"\n\nExplanation: The passage clearly describes the city as a place of great inequality and social division, showing the separation between rich and poor in Metropolis. This directly answers the question about the theme shown in the film. Therefore, the answer is: social division",
+      "group_instruction": ""
+    },
+    {
+      "number": 32,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "In paragraph C: The workers live below ground and exist as machines working in an endless routine of mind-numbing 10-hour shifts while the city’s elite lead lives of luxury high above.\n\nExplanation: The passage clearly compares the workers to machines, showing they are treated like parts of the industrial system rather than as individuals. Therefore, the answer is: machines",
+      "group_instruction": ""
+    },
+    {
+      "number": 34,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "In paragraph C: Lang’s graphic depiction of the future is conceived in almost totally abstract terms. The function of the individual machines is never defined .\n\nExplanation: The film uses symbolic and abstract imagery rather than literal representations. Therefore, the answer is: abstract",
+      "group_instruction": ""
+    },
+    {
+      "number": 36,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "In paragraph E: \"Multinational corporations now routinely close their factories in one continent so that they can take advantage of cheap labour in another. Like the industry in Metropolis, these corporations’ goals of increased efficiency and profits have little to do with the welfare of the majority.\"\n\nExplanation: The passage compares the film’s industrial world with real-world companies focused mainly on efficiency and profit. Therefore, the answer is: efficiency",
+      "group_instruction": ""
+    }
+  ]
+}

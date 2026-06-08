@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 from django.http import HttpResponse
+from django.db.models import Count
 from ielts.models import (
     IELTSTest, ReadingPassage, ReadingQuestion, ReadingChoice,
     ListeningSection, ListeningQuestion,
@@ -161,9 +162,9 @@ def reading_passages(request):
         passages__isnull=False
     ).prefetch_related('passages').distinct()
 
-    completed_ids = set(
+    test_attempt_counts = dict(
         IELTSAttempt.objects.filter(user=request.user, status='COMPLETED', test__isnull=False)
-        .values_list('test_id', flat=True)
+        .values('test_id').annotate(cnt=Count('id')).values_list('test_id', 'cnt')
     )
 
     mocks = []
@@ -172,6 +173,7 @@ def reading_passages(request):
         if not passages.exists():
             continue
         total_questions = sum(p.questions.count() for p in passages)
+        cnt = test_attempt_counts.get(test.id, 0)
         mocks.append({
             'id': test.id,
             'title': test.title,
@@ -181,7 +183,8 @@ def reading_passages(request):
             'part_count': passages.count(),
             'time_limit': passages.count() * 20,
             'total_questions': total_questions,
-            'attempted': test.id in completed_ids,
+            'attempted': cnt > 0,
+            'attempts_count': cnt,
             'parts': [{
                 'id': p.id,
                 'passage_number': p.passage_number,
@@ -238,17 +241,22 @@ def reading_start(request, passage_id):
 @permission_classes([IsAuthenticated])
 def reading_mock_start(request, test_id):
     test = get_object_or_404(IELTSTest, id=test_id, is_active=True)
+    passages = test.passages.order_by('passage_number')
+    passages_data = [
+        {'id': p.id, 'passage_number': p.passage_number, 'title': p.title}
+        for p in passages
+    ]
     existing = IELTSAttempt.objects.filter(
         user=request.user, test=test, status='IN_PROGRESS'
     ).first()
     if existing:
-        return Response({'attempt_id': existing.id, 'resumed': True})
+        # Always return passages so deep-links (e.g. from My Tasks) work on resume.
+        return Response({'attempt_id': existing.id, 'resumed': True, 'passages': passages_data})
     attempt = IELTSAttempt.objects.create(user=request.user, test=test)
-    passages = test.passages.order_by('passage_number')
     return Response({
         'attempt_id': attempt.id,
         'resumed': False,
-        'passages': [{'id': p.id, 'passage_number': p.passage_number, 'title': p.title} for p in passages],
+        'passages': passages_data,
     }, status=201)
 
 
@@ -303,6 +311,22 @@ def reading_submit(request, passage_id):
     attempt.save(update_fields=['reading_band'])
     attempt.complete()
 
+    # ── Auto-complete any matching center assignment ──────────────────────────
+    # If this exact reading test was assigned by a learning center, mark the
+    # student's assignment complete automatically (no manual "Done" needed).
+    try:
+        from centers.views import auto_complete_assignments
+        ref_id = attempt.test_id if attempt.test_id else passage.id
+        auto_complete_assignments(
+            request.user, 'ielts_reading', ref_id,
+            score=float(band),
+            score_detail=f"Band {band}",
+            result_data={'correct': correct, 'total': total, 'band': float(band)},
+            attempt_ref_id=attempt.id,
+        )
+    except Exception:
+        pass
+
     return Response({
         'correct': correct,
         'total': total,
@@ -341,9 +365,9 @@ def listening_sections(request):
         listening_sections__isnull=False
     ).prefetch_related('listening_sections').distinct()
 
-    completed_ids = set(
+    listening_test_attempt_counts = dict(
         IELTSAttempt.objects.filter(user=request.user, status='COMPLETED', test__isnull=False)
-        .values_list('test_id', flat=True)
+        .values('test_id').annotate(cnt=Count('id')).values_list('test_id', 'cnt')
     )
 
     mocks = []
@@ -352,6 +376,7 @@ def listening_sections(request):
         if not sections.exists():
             continue
         total_questions = sum(s.questions.count() for s in sections)
+        cnt = listening_test_attempt_counts.get(test.id, 0)
         mocks.append({
             'id': test.id,
             'title': test.title,
@@ -360,7 +385,8 @@ def listening_sections(request):
             'section_count': sections.count(),
             'time_limit': 40,
             'total_questions': total_questions,
-            'attempted': test.id in completed_ids,
+            'attempted': cnt > 0,
+            'attempts_count': cnt,
             'parts': [{
                 'id': s.id,
                 'section_number': s.section_number,
@@ -499,7 +525,8 @@ def listening_submit(request, section_id):
 @permission_classes([IsAuthenticated])
 def speaking_tasks(request):
     """List all speaking tasks."""
-    tasks = SpeakingTask.objects.all()
+    source = request.query_params.get('source', 'IELTS')
+    tasks = SpeakingTask.objects.filter(source=source)
     part_filter = request.query_params.get('part')
     if part_filter:
         tasks = tasks.filter(part=int(part_filter))
@@ -756,7 +783,10 @@ Return this exact JSON:
                 sr = SpeakingResponse.objects.get(id=response_id, attempt__user=request.user)
                 sr.ai_band = result.get('overall_band')
                 criteria_keys = ['fluency_coherence', 'lexical_resource', 'grammatical_range', 'pronunciation']
-                sr.ai_criteria = {k: result[k] for k in criteria_keys if k in result}
+                saved_criteria = {k: result[k] for k in criteria_keys if k in result}
+                if 'answer_corrections' in result:
+                    saved_criteria['answer_corrections'] = result['answer_corrections']
+                sr.ai_criteria = saved_criteria
                 sr.ai_feedback = result.get('fluency_coherence', {}).get('feedback', '')
                 sr.save(update_fields=['ai_band', 'ai_criteria', 'ai_feedback'])
             except SpeakingResponse.DoesNotExist:
@@ -778,8 +808,10 @@ Return this exact JSON:
 @permission_classes([IsAuthenticated])
 def speaking_history(request):
     """User's speaking history."""
+    source = request.query_params.get('source', 'IELTS')
     responses = SpeakingResponse.objects.filter(
-        attempt__user=request.user
+        attempt__user=request.user,
+        task__source=source,
     ).select_related('task', 'attempt').order_by('-created_at')[:30]
 
     result = []
@@ -809,6 +841,7 @@ def speaking_review(request, response_id):
         'task_title': sr.task.title,
         'task_part': sr.task.part,
         'task_test_type': sr.task.test_type,
+        'task_source': sr.task.source,
         'transcripts': sr.transcripts,
         'ai_feedback': sr.ai_feedback,
         'ai_band': str(sr.ai_band) if sr.ai_band else None,

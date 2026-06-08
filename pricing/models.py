@@ -39,6 +39,9 @@ class Subscription(models.Model):
     started_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
     payment_ref = models.CharField(max_length=200, blank=True)
+    stripe_subscription_id = models.CharField(max_length=120, blank=True, default='')
+    amount_paid = models.PositiveIntegerField(default=0, help_text='Amount in USD cents')
+    plan_label = models.CharField(max_length=20, blank=True, default='', help_text='1month or 3month')
 
     class Meta:
         ordering = ['-started_at']

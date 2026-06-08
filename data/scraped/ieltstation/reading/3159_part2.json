@@ -1,0 +1,318 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "A second attempt at domesticating the tomato",
+    "content": "[HEADING: A]\nIt took at least 3,000 years for humans to learn how to domesticate the wild tomato and cultivate it for food. Now two separate teams in Brazil and China have done it all over again in less than three years. And they have done it better in some ways, as the re-domesticated tomatoes are more nutritious than the ones we eat at present.\n\nThis approach relies on the revolutionary CRISPR genome editing technique, in which changes are deliberately made to the DNA of a living cell, allowing genetic material to be added, removed or altered. The technique could not only improve existing crops, but could also be used to turn thousands of wild plants into useful and appealing foods. In fact, a third team in the US has already begun to do this with a relative of the tomato called the groundcherry.\n\nThis fast-track domestication could help make the world's food supply healthier and far more resistant to diseases, such as the rust fungus devastating wheat crops.\n\n\"This could transform what we eat,\" says Jorg Kudla at the University of Munster in Germany, a member of the Brazilian team. \"There are 50,000 edible plants in the world, but 90 percent of our energy comes from just 15 crops.\"\n\n\"We can now mimic the known domestication course of major crops like rice, maize, sorghum or others,\" says Caixia Gao of the Chinese Academy of Sciences in Beijing. \"Then we might try to domesticate plants that have never been domesticated.\"\n\n[HEADING: B]\nWild tomatoes, which are native to the Andes region in South America, produce pea-sized fruits. Over many generations, peoples such as the Aztecs and Incas transformed the plant by selecting and breeding plants with mutations* in their genetic structure, which resulted in desirable traits such as larger fruit.\n\nBut every time a single plant with a mutation is taken from a larger population for breeding, much genetic diversity is lost. And sometimes the desirable mutations come with less desirable traits. For instance, the tomato strains grown for supermarkets have lost much of their flavour.\n\nBy comparing the genomes of modern plants to those of their wild relatives, biologists have been working out what genetic changes occurred as plants were domesticated. The teams in Brazil and China have now used this knowledge to reintroduce these changes from scratch while maintaining or even enhancing the desirable traits of wild strains.\n\n[HEADING: C]\nKudla's team made six changes altogether. For instance, they tripled the size of fruit by editing a gene called FRUIT WEIGHT, and increased the number of tomatoes per truss by editing another called MULTIFLORA.\n\nWhile the historical domestication of tomatoes reduced levels of the red pigment lycopene - thought to have potential health benefits - the team in Brazil managed to boost it instead. The wild tomato has twice as much lycopene as cultivated ones; the newly domesticated one has five times as much.\n\n\"They are quite tasty,\" says Kudla. \"A little bit strong. And very aromatic.\"\n\nThe team in China re-domesticated several strains of wild tomatoes with desirable traits lost in domesticated tomatoes. In this way they managed to create a strain resistant to a common disease called bacterial spot race, which can devastate yields. They also created another strain that is more salt tolerant - and has higher levels of vitamin C.\n\n[HEADING: D]\nMeanwhile, Joyce Van Eck at the Boyce Thompson Institute in New York state decided to use the same approach to domesticate the groundcherry or goldenberry (\"Physalis pruinosa\") for the first time. This fruit looks similar to the closely related Cape gooseberry (\"Physalis peruviana\").\n\nGroundcherries are already sold to a limited extent in the US but they are hard to produce because the plant has a sprawling growth habit and the small fruits fall off the branches when ripe. Van Eck's team has edited the plants to increase fruit size, make their growth more compact and to stop fruits dropping. \"There's potential for this to be a commercial crop,\" says Van Eck. But she adds that taking the work further would be expensive because of the need to pay for a licence for the CRISPR technology and get regulatory approval.\n\n[HEADING: E]\nThis approach could boost the use of many obscure plants, says Jonathan Jones of the Sainsbury Lab in the UK. But it will be hard for new foods to grow so popular with farmers and consumers that they become new staple crops, he thinks.\n\nThe three teams already have their eye on other plants that could be \"catapulted into the mainstream\", including foxtail, oat-grass and cowpea.By choosing wild plants that are drought or heat tolerant, says Gao, we could create crops that will thrive even as the planet warms.\n\nBut Kudla didn't want to reveal which species were in his team's sights, because CRISPR has made the process so easy.\"Any one with the right skills could go to their lab and do this.\"",
+    "passage_number": 2,
+    "difficulty": "MEDIUM",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 14,
+      "question_type": "MINFO",
+      "content": "a reference to a type of tomato that can resist a dangerous infection",
+      "correct_answer": null,
+      "explanation": "Section C discusses a strain of tomato resistant to bacterial spot race, a dangerous infection.",
+      "group_instruction": "<p>Reading Passage 2&nbsp;has&nbsp;five&nbsp;sections, which section contains the following information?</p><p><br></p><p><strong><em>NB</em></strong><em>&nbsp;You may use any letter more than once.</em></p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "question_type": "MINFO",
+      "content": "an explanation of how problems can arise from focusing only on a certain type of tomato plant",
+      "correct_answer": null,
+      "explanation": "Section B explains how problems arise from focusing only on specific tomato traits, such as losing genetic diversity and flavor.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "question_type": "MINFO",
+      "content": "a number of examples of plants that are not cultivated at present but could be useful as food sources",
+      "correct_answer": null,
+      "explanation": "Section E provides examples of plants that are not cultivated yet but could be useful, like foxtail, oat-grass, and cowpea.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "question_type": "MINFO",
+      "content": "a comparison between the early domestication of the tomato and more recent research",
+      "correct_answer": null,
+      "explanation": "Section A compares early domestication of the tomato with recent re-domestication efforts using CRISPR, a more modern approach.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "question_type": "MINFO",
+      "content": "a personal reaction to the flavour of a tomato that has been genetically edited",
+      "correct_answer": null,
+      "explanation": "Section C includes Kudla's personal reaction to the flavor of the genetically edited tomatoes, calling them \"quite tasty\" and \"very aromatic.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "question_type": "MINFO",
+      "content": "Domestication of certain plants could allow them to adapt to future environmental challenges",
+      "correct_answer": null,
+      "explanation": "Caixia Gao talks about using domestication to help plants adapt to environmental challenges, like drought and heat tolerance.",
+      "group_instruction": "<p>Match each statement with the correct researcher.</p><p><br></p><p><strong><em>NB</em></strong><em>&nbsp;You may use any letter more than once</em></p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Jorg Kudla"
+        },
+        {
+          "option": "B",
+          "text": "Caixia Gao"
+        },
+        {
+          "option": "C",
+          "text": "Joyce Van Eck"
+        },
+        {
+          "option": "D",
+          "text": "Jonathan Jones"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "question_type": "MINFO",
+      "content": "The idea of growing and eating unusual plants may not be accepted on a large scale.",
+      "correct_answer": null,
+      "explanation": "Jonathan Jones expresses that it will be difficult for new foods to become popular on a large scale, especially with farmers and consumers.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Jorg Kudla"
+        },
+        {
+          "option": "B",
+          "text": "Caixia Gao"
+        },
+        {
+          "option": "C",
+          "text": "Joyce Van Eck"
+        },
+        {
+          "option": "D",
+          "text": "Jonathan Jones"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "question_type": "MINFO",
+      "content": "It is not advisable for the future direction of certain research to be made public.",
+      "correct_answer": null,
+      "explanation": "Jorg Kudla indicates that the future direction of certain research should not be publicly revealed because the process is so easy that anyone with the right skills could replicate it.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Jorg Kudla"
+        },
+        {
+          "option": "B",
+          "text": "Caixia Gao"
+        },
+        {
+          "option": "C",
+          "text": "Joyce Van Eck"
+        },
+        {
+          "option": "D",
+          "text": "Jonathan Jones"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "question_type": "MINFO",
+      "content": "Present efforts to domesticate one wild fruit are limited by the costs involved.",
+      "correct_answer": null,
+      "explanation": "Joyce Van Eck discusses how the current domestication of the groundcherry is limited by the costs involved, including licensing and regulatory approval.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Jorg Kudla"
+        },
+        {
+          "option": "B",
+          "text": "Caixia Gao"
+        },
+        {
+          "option": "C",
+          "text": "Joyce Van Eck"
+        },
+        {
+          "option": "D",
+          "text": "Jonathan Jones"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "question_type": "MINFO",
+      "content": "Humans only make use of a small proportion of the plant food available on Earth.",
+      "correct_answer": null,
+      "explanation": "Jorg Kudla refers to how humans currently make use of only a small proportion of edible plants, even though there are 50,000 edible plants in the world.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Jorg Kudla"
+        },
+        {
+          "option": "B",
+          "text": "Caixia Gao"
+        },
+        {
+          "option": "C",
+          "text": "Joyce Van Eck"
+        },
+        {
+          "option": "D",
+          "text": "Jonathan Jones"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage mentions that undesirable traits like the loss of flavor can occur during the domestication of tomatoes.",
+      "group_instruction": "<p>Complete the sentences below. Choose&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;from the passage for each answer.</p>"
+    },
+    {
+      "number": 25,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "Kudla's team edited a gene to increase the fruit size of the tomato, making it three times larger than the original.",
+      "group_instruction": ""
+    },
+    {
+      "number": 26,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The team in China created a tomato strain that is more salt tolerant and rich in vitamin C.",
+      "group_instruction": ""
+    }
+  ]
+}

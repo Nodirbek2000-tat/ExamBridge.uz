@@ -1,0 +1,864 @@
+{
+  "title": "Cambridge 20_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_141909_5e5e107f.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Help for carers",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_141909_5e5e107f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Elmleigh Town Council Volunteer Scheme Introduction",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_141909_5e5e107f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What is the role of the volunteers in each of the following activities?</p><p>Choose the correct letter.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "providing entertainment"
+            },
+            {
+              "option": "B",
+              "text": "providing publicity about a council service"
+            },
+            {
+              "option": "C",
+              "text": "contacting local businesses"
+            },
+            {
+              "option": "D",
+              "text": "giving advice to visitors"
+            },
+            {
+              "option": "E",
+              "text": "collecting feedback on events"
+            },
+            {
+              "option": "F",
+              "text": "selling tickets"
+            },
+            {
+              "option": "G",
+              "text": "introducing guest speakers at an event"
+            },
+            {
+              "option": "H",
+              "text": "encouraging cooperation between local organisations"
+            },
+            {
+              "option": "I",
+              "text": "helping people find their seats"
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "providing entertainment"
+            },
+            {
+              "option": "B",
+              "text": "providing publicity about a council service"
+            },
+            {
+              "option": "C",
+              "text": "contacting local businesses"
+            },
+            {
+              "option": "D",
+              "text": "giving advice to visitors"
+            },
+            {
+              "option": "E",
+              "text": "collecting feedback on events"
+            },
+            {
+              "option": "F",
+              "text": "selling tickets"
+            },
+            {
+              "option": "G",
+              "text": "introducing guest speakers at an event"
+            },
+            {
+              "option": "H",
+              "text": "encouraging cooperation between local organisations"
+            },
+            {
+              "option": "I",
+              "text": "helping people find their seats"
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "providing entertainment"
+            },
+            {
+              "option": "B",
+              "text": "providing publicity about a council service"
+            },
+            {
+              "option": "C",
+              "text": "contacting local businesses"
+            },
+            {
+              "option": "D",
+              "text": "giving advice to visitors"
+            },
+            {
+              "option": "E",
+              "text": "collecting feedback on events"
+            },
+            {
+              "option": "F",
+              "text": "selling tickets"
+            },
+            {
+              "option": "G",
+              "text": "introducing guest speakers at an event"
+            },
+            {
+              "option": "H",
+              "text": "encouraging cooperation between local organisations"
+            },
+            {
+              "option": "I",
+              "text": "helping people find their seats"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "providing entertainment"
+            },
+            {
+              "option": "B",
+              "text": "providing publicity about a council service"
+            },
+            {
+              "option": "C",
+              "text": "contacting local businesses"
+            },
+            {
+              "option": "D",
+              "text": "giving advice to visitors"
+            },
+            {
+              "option": "E",
+              "text": "collecting feedback on events"
+            },
+            {
+              "option": "F",
+              "text": "selling tickets"
+            },
+            {
+              "option": "G",
+              "text": "introducing guest speakers at an event"
+            },
+            {
+              "option": "H",
+              "text": "encouraging cooperation between local organisations"
+            },
+            {
+              "option": "I",
+              "text": "helping people find their seats"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "providing entertainment"
+            },
+            {
+              "option": "B",
+              "text": "providing publicity about a council service"
+            },
+            {
+              "option": "C",
+              "text": "contacting local businesses"
+            },
+            {
+              "option": "D",
+              "text": "giving advice to visitors"
+            },
+            {
+              "option": "E",
+              "text": "collecting feedback on events"
+            },
+            {
+              "option": "F",
+              "text": "selling tickets"
+            },
+            {
+              "option": "G",
+              "text": "introducing guest speakers at an event"
+            },
+            {
+              "option": "H",
+              "text": "encouraging cooperation between local organisations"
+            },
+            {
+              "option": "I",
+              "text": "helping people find their seats"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "providing entertainment"
+            },
+            {
+              "option": "B",
+              "text": "providing publicity about a council service"
+            },
+            {
+              "option": "C",
+              "text": "contacting local businesses"
+            },
+            {
+              "option": "D",
+              "text": "giving advice to visitors"
+            },
+            {
+              "option": "E",
+              "text": "collecting feedback on events"
+            },
+            {
+              "option": "F",
+              "text": "selling tickets"
+            },
+            {
+              "option": "G",
+              "text": "introducing guest speakers at an event"
+            },
+            {
+              "option": "H",
+              "text": "encouraging cooperation between local organisations"
+            },
+            {
+              "option": "I",
+              "text": "helping people find their seats"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MCQ",
+          "content": "Which event requires the largest number of volunteers?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the music festival"
+            },
+            {
+              "option": "B",
+              "text": "the science festival"
+            },
+            {
+              "option": "C",
+              "text": "the book festival"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MCQ",
+          "content": "What is the most important requirement for volunteers at the festivals?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "interpersonal skills"
+            },
+            {
+              "option": "B",
+              "text": "personal interest in the event"
+            },
+            {
+              "option": "C",
+              "text": "flexibility"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MCQ",
+          "content": "New volunteers will start working in the week beginning",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "2 September."
+            },
+            {
+              "option": "B",
+              "text": "9 September."
+            },
+            {
+              "option": "C",
+              "text": "23 September."
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MCQ",
+          "content": "What is the next annual event for volunteers?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a boat trip"
+            },
+            {
+              "option": "B",
+              "text": "a barbecue"
+            },
+            {
+              "option": "C",
+              "text": "a party"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Rosie and Colin's Discussion on Human Geography Assignment",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_141909_5e5e107f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What is Rosie and Colin's opinion about each of the following aspects of human geography?</p><p>Choose the correct letter.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The information given about this was too vague."
+            },
+            {
+              "option": "B",
+              "text": "This may not be relevant to their course."
+            },
+            {
+              "option": "C",
+              "text": "This will involve only a small number of statistics."
+            },
+            {
+              "option": "D",
+              "text": "It will be easy to find facts about this."
+            },
+            {
+              "option": "E",
+              "text": "The facts about this may not be reliable."
+            },
+            {
+              "option": "F",
+              "text": "No useful research has been done on this."
+            },
+            {
+              "option": "G",
+              "text": "The information provided about this was interesting."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The information given about this was too vague."
+            },
+            {
+              "option": "B",
+              "text": "This may not be relevant to their course."
+            },
+            {
+              "option": "C",
+              "text": "This will involve only a small number of statistics."
+            },
+            {
+              "option": "D",
+              "text": "It will be easy to find facts about this."
+            },
+            {
+              "option": "E",
+              "text": "The facts about this may not be reliable."
+            },
+            {
+              "option": "F",
+              "text": "No useful research has been done on this."
+            },
+            {
+              "option": "G",
+              "text": "The information provided about this was interesting."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The information given about this was too vague."
+            },
+            {
+              "option": "B",
+              "text": "This may not be relevant to their course."
+            },
+            {
+              "option": "C",
+              "text": "This will involve only a small number of statistics."
+            },
+            {
+              "option": "D",
+              "text": "It will be easy to find facts about this."
+            },
+            {
+              "option": "E",
+              "text": "The facts about this may not be reliable."
+            },
+            {
+              "option": "F",
+              "text": "No useful research has been done on this."
+            },
+            {
+              "option": "G",
+              "text": "The information provided about this was interesting."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The information given about this was too vague."
+            },
+            {
+              "option": "B",
+              "text": "This may not be relevant to their course."
+            },
+            {
+              "option": "C",
+              "text": "This will involve only a small number of statistics."
+            },
+            {
+              "option": "D",
+              "text": "It will be easy to find facts about this."
+            },
+            {
+              "option": "E",
+              "text": "The facts about this may not be reliable."
+            },
+            {
+              "option": "F",
+              "text": "No useful research has been done on this."
+            },
+            {
+              "option": "G",
+              "text": "The information provided about this was interesting."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "The information given about this was too vague."
+            },
+            {
+              "option": "B",
+              "text": "This may not be relevant to their course."
+            },
+            {
+              "option": "C",
+              "text": "This will involve only a small number of statistics."
+            },
+            {
+              "option": "D",
+              "text": "It will be easy to find facts about this."
+            },
+            {
+              "option": "E",
+              "text": "The facts about this may not be reliable."
+            },
+            {
+              "option": "F",
+              "text": "No useful research has been done on this."
+            },
+            {
+              "option": "G",
+              "text": "The information provided about this was interesting."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MCQ",
+          "content": "Rosie says that in her own city the main problem is",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "crime."
+            },
+            {
+              "option": "B",
+              "text": "housing."
+            },
+            {
+              "option": "C",
+              "text": "unemployment."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MCQ",
+          "content": "What recent additions to the outskirts of their cities are both students happy about?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "conference centres"
+            },
+            {
+              "option": "B",
+              "text": "sports centres"
+            },
+            {
+              "option": "C",
+              "text": "retail centres"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MCQ",
+          "content": "The students agree that developing disused industrial sites may",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "have unexpected costs."
+            },
+            {
+              "option": "B",
+              "text": "damage the urban environment."
+            },
+            {
+              "option": "C",
+              "text": "destroy valuable historical buildings."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MCQ",
+          "content": "The students will mention Masdar City as an example of an attempt to achieve",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "daily collections for waste recycling."
+            },
+            {
+              "option": "B",
+              "text": "sustainable energy use."
+            },
+            {
+              "option": "C",
+              "text": "free transport for everyone."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MCQ",
+          "content": "When discussing the ecotown of Greenhill Abbots, Colin is uncertain about",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "what its objectives were."
+            },
+            {
+              "option": "B",
+              "text": "why there was opposition to it."
+            },
+            {
+              "option": "C",
+              "text": "how much of it has actually been built."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Developing food trends",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260226_141909_5e5e107f.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

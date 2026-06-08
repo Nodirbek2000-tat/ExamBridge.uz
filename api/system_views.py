@@ -7,6 +7,57 @@ from rest_framework.response import Response
 import redis
 from django.conf import settings
 from django.utils import timezone
+from accounts.middleware import (
+    get_all_blocked, _unregister_block,
+    add_to_admin_whitelist, remove_from_admin_whitelist, get_admin_whitelist,
+)
+
+
+# ── Security: Blocked IPs ─────────────────────────────────────────────────────
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def security_blocked_list(request):
+    """Barcha bloklangan IP lar ro'yxati."""
+    return Response({'blocked': get_all_blocked()})
+
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def security_unblock(request):
+    """IP ni blokdan chiqarish."""
+    ip = request.data.get('ip', '').strip()
+    if not ip:
+        return Response({'error': 'ip required'}, status=400)
+    _unregister_block(ip)
+    return Response({'unblocked': ip})
+
+
+# ── Security: Admin IP Whitelist ──────────────────────────────────────────────
+
+@api_view(['GET', 'POST'])
+@permission_classes([IsAdminUser])
+def security_whitelist(request):
+    """GET: whitelist ko'rish. POST: IP qo'shish."""
+    if request.method == 'POST':
+        ip = request.data.get('ip', '').strip()
+        label = request.data.get('label', '').strip()
+        if not ip:
+            return Response({'error': 'ip required'}, status=400)
+        add_to_admin_whitelist(ip)
+        return Response({'added': ip})
+    return Response({'whitelist': get_admin_whitelist()})
+
+
+@api_view(['DELETE'])
+@permission_classes([IsAdminUser])
+def security_whitelist_remove(request):
+    """Whitelist dan IP olib tashlash."""
+    ip = request.data.get('ip', '').strip()
+    if not ip:
+        return Response({'error': 'ip required'}, status=400)
+    remove_from_admin_whitelist(ip)
+    return Response({'removed': ip})
 
 
 @api_view(['GET'])

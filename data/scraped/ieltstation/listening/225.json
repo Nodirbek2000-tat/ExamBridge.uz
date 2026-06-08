@@ -1,0 +1,91 @@
+{
+  "title": "Eco-farm Tour",
+  "section_number": 1,
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20251126_112902_ca0a6d83.mp3",
+  "transcript": "",
+  "difficulty": "MEDIUM",
+  "is_standalone": true,
+  "is_premium": false,
+  "questions": [
+    {
+      "number": 2,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Complete the note below. Write <strong>NO MORE THAN TWO WORDS AND/OR A NUMBER</strong> for each answer.</p>"
+    },
+    {
+      "number": 3,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 1,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "GAP",
+      "content": "----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 7,
+      "question_type": "TABLE",
+      "content": "-----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": "<p>Complete the table below. Write<strong> ONE WORD ONLY </strong>for each answer.</p>"
+    },
+    {
+      "number": 8,
+      "question_type": "TABLE",
+      "content": "-----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 9,
+      "question_type": "TABLE",
+      "content": "-----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 6,
+      "question_type": "TABLE",
+      "content": "-----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    },
+    {
+      "number": 10,
+      "question_type": "TABLE",
+      "content": "-----",
+      "correct_answer": "",
+      "explanation": "",
+      "group_instruction": ""
+    }
+  ]
+}

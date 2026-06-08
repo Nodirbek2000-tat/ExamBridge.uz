@@ -57,7 +57,18 @@
       "Bash(grep:*)",
       "Bash(npx tsc:*)",
       "Bash(node_modules/.bin/vite build:*)",
-      "WebFetch(domain:api.otaboyev-prep.uz)"
+      "WebFetch(domain:api.otaboyev-prep.uz)",
+      "Bash(sshpass *)",
+      "Bash(ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 -o BatchMode=no root@161.97.107.51 \"echo connected && ls /\")",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://bluebookplus.plus/bluebook-plus-digital-sat-tests/\")",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36\" \"https://bluebookplus.plus/bluebook-plus-digital-sat-tests/\")",
+      "Bash(sed 's/v2-lesson-title\">//')",
+      "Bash(where python *)",
+      "Read(//usr/**)",
+      "Bash(curl -s -X POST https://api.satstation.io/api/v1/attempts/2271/answers -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNDE0IiwiZXhwIjoxNzgwNTg0Njc0LCJpYXQiOjE3Nzc5OTI2NzQsInR5cGUiOiJhY2Nlc3MiLCJyb2xlIjoic3R1ZGVudCJ9.tW0I54Svfwk_lEWuz0-Y0SokwPPphQx2jh1su7YJgEk' -H 'Content-Type: application/json' -d '{\"question_id\":9644,\"answer\":\"A\"}')",
+      "Bash(curl -s -X POST https://api.satstation.io/api/v1/attempts/2271/submit-answer -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNDE0IiwiZXhwIjoxNzgwNTg0Njc0LCJpYXQiOjE3Nzc5OTI2NzQsInR5cGUiOiJhY2Nlc3MiLCJyb2xlIjoic3R1ZGVudCJ9.tW0I54Svfwk_lEWuz0-Y0SokwPPphQx2jh1su7YJgEk' -H 'Content-Type: application/json' -d '{\"question_id\":9644,\"selected_option\":\"A\"}')",
+      "WebFetch(domain:ieltsnation.uz)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('E:/SAT_plus/sat/data/satstation_bank_progress.json',encoding='utf-8'\\)\\); print\\(f'Progress: {len\\(d[\\\\\"done_ids\\\\\"]\\)}/9601 qilingan, {d[\\\\\"imported_total\\\\\"]} import'\\)\")"
     ]
   }
 }

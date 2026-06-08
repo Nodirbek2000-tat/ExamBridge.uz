@@ -1,0 +1,110 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "The coconut palm",
+    "content": "For millennia, the coconut has been central to the lives of Polynesian and Asian peoples. In the western world, on the other hand, coconuts have always been exotic and unusual, sometimes rare. The Italian merchant traveller Marco Polo apparently saw coconuts in South Asia in the late 13th century, and among the mid-14th-century travel writings of Sir John Mandeville there is mention of 'great Notes of Ynde' (great Nuts of India). Today, images of palm-fringed tropical beaches are cliches in the west to sell holidays, chocolate bars, fizzy drinks and even romance.\n\nTypically, we envisage coconuts as brown cannonballs that, when opened, provide sweet white flesh. But we see only part of the fruit and none of the plant from which they come. The coconut palm has a smooth, slender, grey trunk, up to 30 metres tall. This is an important source of timber for building houses, and is increasingly being used as a replacement for endangered hardwoods in the furniture construction industry. The trunk is surmounted by a rosette of leaves, each of which may be up to six metres long. The leaves have hard veins in their centres which, in many parts of the world, are used as brushes after the green part of the leaf has been stripped away. Immature coconut flowers are tightly clustered together among the leaves at the top of the trunk. The flower stems may be tapped for their sap to produce a drink, and the sap can also be reduced by boiling to produce a type of sugar used for cooking.\n\nCoconut palms produce as many as seventy fruits per year, weighing more than a kilogram each. The wall of the fruit has three layers: a waterproof outer layer, a fibrous middle layer and a hard, inner layer. The thick fibrous middle layer produces coconut fibre, 'coir', which has numerous uses and is particularly important in manufacturing ropes. The woody innermost layer, the shell, with its three prominent 'eyes', surrounds the seed. An important product obtained from the shell is charcoal, which is widely used in various industries as well as in the home as a cooking fuel. When broken in half, the shells are also used as bowls in many parts of Asia.\n\nInside the shell are the nutrients (endosperm) needed by the developing seed. Initially, the endosperm is a sweetish liquid, coconut water, which is enjoyed as a drink, but also provides the hormones which encourage other plants to grow more rapidly and produce higher yields. As the fruit matures, the coconut water gradually solidifies to form the brilliant white, fat-rich, edible flesh or meat. Dried coconut flesh, 'copra', is made into coconut oil and coconut milk, which are widely used in cooking in different parts of the world, as well as in cosmetics. A derivative of coconut fat, glycerine, acquired strategic importance in a quite different sphere, as Alfred Nobel introduced the world to his nitroglycerine-based invention: dynamite.\n\nTheir biology would appear to make coconuts the great maritime voyagers and coastal colonizers of the plant world. The large, energy-rich fruits are able to float in water and tolerate salt, but cannot remain viable indefinitely; studies suggest after about 110 days at sea they are no longer able to germinate. Literally cast onto desert island shores, with little more than sand to grow in and exposed to the full glare of the tropical sun, coconut seeds are able to germinate and root. The air pocket in the seed, created as the endosperm solidifies, protects the embryo. In addition, the fibrous fruit wall that helped it to float during the voyage stores moisture that can be taken up by the roots of the coconut seedling as it starts to grow.\n\nThere have been centuries of academic debate over the origins of the coconut. There were no coconut palms in West Africa, the Caribbean or the east coast of the Americas before the voyages of the European explorers Vasco da Gama and Columbus in the late 15th and early 16th centuries. 16th century trade and human migration patterns reveal that Arab traders and European sailors are likely to have moved coconuts from South and Southeast Asia to Africa and then across the Atlantic to the east coast of America. But the origin of coconuts discovered along the west coast of America by 16th century sailors has been the subject of centuries of discussion. Two diametrically opposed origins have been proposed: that they came from Asia, or that they were native to America. Both suggestions have problems. In Asia, there is a large degree of coconut diversity and evidence of millennia of human use - but there are no relatives growing in the wild. In America, there are close coconut relatives, but no evidence that coconuts are indigenous. These problems have led to the intriguing suggestion that coconuts originated on coral islands in the Pacific and were dispersed from there.",
+    "passage_number": 1,
+    "difficulty": "MEDIUM",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage states that the coconut trunk is used as timber for building houses and is increasingly used as a replacement for endangered hardwoods in the furniture industry.",
+      "group_instruction": "<p>Choose&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;from the passage for each answer.</p>"
+    },
+    {
+      "number": 2,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage mentions that the sap from the flower stems can be boiled to produce a type of sugar used for cooking.",
+      "group_instruction": ""
+    },
+    {
+      "number": 3,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage explains that the fibrous middle layer of the coconut, called coir, is particularly important for manufacturing ropes.",
+      "group_instruction": ""
+    },
+    {
+      "number": 4,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage states that the woody innermost layer, the shell, is used to produce charcoal.",
+      "group_instruction": ""
+    },
+    {
+      "number": 5,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage mentions that when the shell is broken in half, it is used as bowls in many parts of Asia.",
+      "group_instruction": ""
+    },
+    {
+      "number": 6,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage explains that coconut water provides hormones which encourage other plants to grow more rapidly and produce higher yields.",
+      "group_instruction": ""
+    },
+    {
+      "number": 7,
+      "question_type": "TABLE",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage says that coconut oil and milk are widely used in cooking as well as in cosmetics.",
+      "group_instruction": ""
+    },
+    {
+      "number": 9,
+      "question_type": "TFNG",
+      "content": "Coconut seeds need shade in order to germinate.",
+      "correct_answer": null,
+      "explanation": "The passage describes coconut seeds germinating on desert islands with little more than sand and full sun, meaning they do not need shade to germinate.",
+      "group_instruction": "<p><strong><em>TRUE </em></strong><em>if the statement agrees with the information </em><strong><em>FALSE </em></strong><em>if the statement contradicts the information </em><strong><em>NOT GIVEN </em></strong><em>if there is no information on this</em></p>"
+    },
+    {
+      "number": 10,
+      "question_type": "TFNG",
+      "content": "Coconuts were probably transported to Asia from America in the 16th century.",
+      "correct_answer": null,
+      "explanation": "The passage indicates that coconuts were likely moved from Asia to Africa and the Americas, not the other way around.",
+      "group_instruction": ""
+    },
+    {
+      "number": 11,
+      "question_type": "TFNG",
+      "content": "Coconuts found on the west coast of America were a different type from those found on the east coast.",
+      "correct_answer": null,
+      "explanation": "The passage discusses the origins of coconuts on the west coast of America but does not provide any information comparing them with coconuts on the east coast.",
+      "group_instruction": ""
+    },
+    {
+      "number": 12,
+      "question_type": "TFNG",
+      "content": "All the coconuts found in Asia are cultivated varieties.",
+      "correct_answer": null,
+      "explanation": "The passage mentions that in Asia, there is evidence of millennia of human use, but no coconuts grow in the wild, meaning all coconuts there are cultivated varieties.",
+      "group_instruction": ""
+    },
+    {
+      "number": 13,
+      "question_type": "TFNG",
+      "content": "Coconuts are cultivated in different ways in America and the Pacific.",
+      "correct_answer": null,
+      "explanation": "The passage does not provide any information about how coconuts are cultivated differently in America versus the Pacific.",
+      "group_instruction": ""
+    }
+  ]
+}

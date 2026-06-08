@@ -1,0 +1,520 @@
+{
+  "title": "Cambridge 18_Test 2",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_182854_60e523c8.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Working at Milo's Restaurants",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_182854_60e523c8.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below. Write <strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the table below. Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Housing Development",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_182854_60e523c8.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 14,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 15,
+          "question_type": "MAP",
+          "content": "School",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter.</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "Sports centre",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "Clinic",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "Community centre",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "Supermarket",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "Playground",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Laki Eruption",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_182854_60e523c8.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "Why do the students think the Laki eruption of 1783 is so important?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It was the most severe eruption in modern times."
+            },
+            {
+              "option": "B",
+              "text": "It led to the formal study of volcanoes."
+            },
+            {
+              "option": "C",
+              "text": "It had a profound effect on society."
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "What surprised Adam about observations made at the time?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the number of places producing them"
+            },
+            {
+              "option": "B",
+              "text": "the contradictions in them"
+            },
+            {
+              "option": "C",
+              "text": "the lack of scientific data to support them"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "According to Michelle, what did the contemporary sources say about the Laki haze?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "People thought it was similar to ordinary fog."
+            },
+            {
+              "option": "B",
+              "text": "It was associated with health issues."
+            },
+            {
+              "option": "C",
+              "text": "It completely blocked out the sun for weeks."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "Adam corrects Michelle when she claims that Benjamin Franklin",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "came to the wrong conclusion about the cause of the haze."
+            },
+            {
+              "option": "B",
+              "text": "was the first to identify the reason for the haze."
+            },
+            {
+              "option": "C",
+              "text": "supported the opinions of other observers about the haze."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters.</p>"
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What comment do the students make about the impact of the Laki eruption on the following countries?</p><p><br></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This country suffered the most severe loss of life"
+            },
+            {
+              "option": "B",
+              "text": "The impact on agriculture was predictable."
+            },
+            {
+              "option": "C",
+              "text": "There was a significant increase in deaths of young people."
+            },
+            {
+              "option": "D",
+              "text": "Animals suffered from a sickness."
+            },
+            {
+              "option": "E",
+              "text": "This country saw the highest rise in food prices in the world."
+            },
+            {
+              "option": "F",
+              "text": "It caused a particularly harsh winter."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This country suffered the most severe loss of life"
+            },
+            {
+              "option": "B",
+              "text": "The impact on agriculture was predictable."
+            },
+            {
+              "option": "C",
+              "text": "There was a significant increase in deaths of young people."
+            },
+            {
+              "option": "D",
+              "text": "Animals suffered from a sickness."
+            },
+            {
+              "option": "E",
+              "text": "This country saw the highest rise in food prices in the world."
+            },
+            {
+              "option": "F",
+              "text": "It caused a particularly harsh winter."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This country suffered the most severe loss of life"
+            },
+            {
+              "option": "B",
+              "text": "The impact on agriculture was predictable."
+            },
+            {
+              "option": "C",
+              "text": "There was a significant increase in deaths of young people."
+            },
+            {
+              "option": "D",
+              "text": "Animals suffered from a sickness."
+            },
+            {
+              "option": "E",
+              "text": "This country saw the highest rise in food prices in the world."
+            },
+            {
+              "option": "F",
+              "text": "It caused a particularly harsh winter."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This country suffered the most severe loss of life"
+            },
+            {
+              "option": "B",
+              "text": "The impact on agriculture was predictable."
+            },
+            {
+              "option": "C",
+              "text": "There was a significant increase in deaths of young people."
+            },
+            {
+              "option": "D",
+              "text": "Animals suffered from a sickness."
+            },
+            {
+              "option": "E",
+              "text": "This country saw the highest rise in food prices in the world."
+            },
+            {
+              "option": "F",
+              "text": "It caused a particularly harsh winter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Pockets",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260225_182854_60e523c8.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

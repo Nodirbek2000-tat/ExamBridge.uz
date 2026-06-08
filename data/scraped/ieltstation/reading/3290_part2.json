@@ -1,0 +1,326 @@
+{
+  "mode": "standalone",
+  "passage": {
+    "title": "Stadiums: past, present and future",
+    "content": "A\nStadiums are among the oldest forms of urban architecture: vast stadiums where the public could watch sporting events were at the centre of western city life as far back as the ancient Greek and Roman Empires, well before the construction of the great medieval cathedrals and the grand 19th- and 20th-century railway stations which dominated urban skylines in later eras.\n\nToday, however, stadiums are regarded with growing scepticism. Construction costs can soar above £1 billion, and stadiums finished for major events such as the Olympic Games or the FIFA World Cup have notably fallen into disuse and disrepair.\n\nBut this need not be the case. History shows that stadiums can drive urban development and adapt to the culture of every age. Even today, architects and planners are finding new ways to adapt the mono-functional sports arenas which became emblematic of modernisation during the 20th century.\n\nB\nThe amphitheatre* of Arles in southwest France, with a capacity of 25,000 spectators, is perhaps the best example of just how versatile stadiums can be. Built by the Romans in 90 AD, it became a fortress with four towers after the fifth century, and was then transformed into a village containing more than 200 houses. With the growing interest in conservation during the 19th century, it was converted back into an arena for the staging of bullfights, thereby returning the structure to its original use as a venue for public spectacles.\n\nAnother example is the imposing arena of Verona in northern Italy, with space for 30,000 spectators, which was built 60 years before the Arles amphitheatre and 40 years before Rome's famous Colosseum. It has endured the centuries and is currently considered one of the world's prime sites for opera, thanks to its outstanding acoustics.\n\nC\nThe area in the centre of the Italian town of Lucca, known as the Piazza dell 'Anfiteatro, is yet another impressive example of an amphitheatre becoming absorbed into the fabric of the city. The site evolved in a similar way to Arles and was progressively filled with buildings from the Middle Ages until the 19th century, variously used as houses, a salt depot and a prison. But rather than reverting to an arena, it became a market square, designed by Romanticist architect Lorenzo Nottolini. Today, the ruins of the amphitheatre remain embedded in the various shops and residences surrounding the public square.\n\nD\nThere are many similarities between modern stadiums and the ancient amphitheatres intended for games. But some of the flexibility was lost at the beginning of the 20th century, as stadiums were developed using new products such as steel and reinforced concrete, and made use of bright lights for night-time matches.\n\nMany such stadiums are situated in suburban areas, designed for sporting use only and surrounded by parking lots. These factors mean that they may not be as accessible to the general public, require more energy to run and contribute to urban heat.\n\nE\nBut many of today's most innovative architects see scope for the stadium to help improve the city. Among the current strategies, two seem to be having particular success: the stadium as an urban hub, and as a power plant.\n\nThere's a growing trend for stadiums to be equipped with public spaces and services that serve a function beyond sport, such as hotels, retail outlets, conference centres, restaurants and bars, children's playgrounds and green space. Creating mixed-use developments such as this reinforces compactness and multi-functionality, making more efficient use of land and helping to regenerate urban spaces.\n\nThis opens the space up to families and a wider cross-section of society, instead of catering only to sportspeople and supporters. There have been many examples of this in the UK: the mixed-use facilities at Wembley and Old Trafford have become a blueprint for many other stadiums in the world.\n\nF\nThe phenomenon of stadiums as power stations has arisen from the idea that energy problems can be overcome by integrating interconnected buildings by means of a smart grid, which is an electricity supply network that uses digital communications technology to detect and react to local changes in usage, without significant energy losses. Stadiums are ideal for these purposes, because their canopies have a large surface area for fitting photovoltaic panels and rise high enough (more than 40 metres) to make use of micro wind turbines.\n\nFreiburg Mage Solar Stadium in Germany is the first of a new wave of stadiums as power plants, which also includes the Amsterdam Arena and the Kaohsiung Stadium. The latter, inaugurated in 2009, has 8,844 photovoltaic panels producing up to 1.14 GWh of electricity annually. This reduces the annual output of carbon dioxide by 660 tons and supplies up to 80 percent of the surrounding area when the stadium is not in use. This is proof that a stadium can serve its city, and have a decidedly positive impact in terms of reduction of CO2 emissions.\n\nG\nSporting arenas have always been central to the life and culture of cities. In every era, the stadium has acquired new value and uses: from military fortress to residential village, public space to theatre and most recently a field for experimentation in advanced engineering.\n\nThe stadium of today now brings together multiple functions, thus helping cities to create a sustainable future.\n\nGlossary\n* amphitheatre: (especially in Greek and Roman architecture) an open circular or oval building with a central space surrounded by tiers of seats for spectators, for the presentation of dramatic or sporting events",
+    "passage_number": 2,
+    "difficulty": "MEDIUM",
+    "time_limit": 20,
+    "is_standalone": true,
+    "is_premium": false
+  },
+  "questions": [
+    {
+      "number": 16,
+      "question_type": "MINFO",
+      "content": "examples of the wide range of facilities available at some new stadiums",
+      "correct_answer": null,
+      "explanation": "Section E lists various facilities such as hotels, retail outlets, restaurants and playgrounds available in modern stadium complexes.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "question_type": "MINFO",
+      "content": "reference to the disadvantages of the stadiums built during a certain era",
+      "correct_answer": null,
+      "explanation": "Section D explains that modern stadiums lost flexibility and are often poorly located and energy-intensive.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "question_type": "MINFO",
+      "content": "a mention of negative attitudes towards stadium building projects",
+      "correct_answer": null,
+      "explanation": "Section A states that modern stadium projects are viewed negatively due to high costs and later disuse.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "question_type": "MINFO",
+      "content": "figures demonstrating the environmental benefits of a certain stadium",
+      "correct_answer": null,
+      "explanation": "Section F provides specific figures showing reduced carbon dioxide emissions and electricity production, demonstrating environmental benefits.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": ""
+        },
+        {
+          "option": "B",
+          "text": ""
+        },
+        {
+          "option": "C",
+          "text": ""
+        },
+        {
+          "option": "D",
+          "text": ""
+        },
+        {
+          "option": "E",
+          "text": ""
+        },
+        {
+          "option": "F",
+          "text": ""
+        },
+        {
+          "option": "G",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The Arles amphitheatre was first converted into a fortress after the fifth century.",
+      "group_instruction": "<p>Complete the summary below. Choose&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;from the passage for each answer.</p>"
+    },
+    {
+      "number": 19,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "It was later converted back into an arena used for bullfights.",
+      "group_instruction": ""
+    },
+    {
+      "number": 20,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The Verona arena is currently used as a venue for opera performances.",
+      "group_instruction": ""
+    },
+    {
+      "number": 21,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The Lucca amphitheatre site was used as a salt depot.",
+      "group_instruction": ""
+    },
+    {
+      "number": 22,
+      "question_type": "GAP",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The remains of the amphitheatre are now embedded in shops and residences around the square.",
+      "group_instruction": ""
+    },
+    {
+      "number": 23,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "section D states that many modern stadiums are located in suburban areas (less convenient) and are designed for sporting use only",
+      "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "They are less imaginatively designed."
+        },
+        {
+          "option": "B",
+          "text": "They are less spacious."
+        },
+        {
+          "option": "C",
+          "text": "They are in less convenient locations"
+        },
+        {
+          "option": "D",
+          "text": "They are less versatile."
+        },
+        {
+          "option": "E",
+          "text": "They are made of less durable materials."
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "section D states that many modern stadiums are located in suburban areas (less convenient) and are designed for sporting use only",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "They are less imaginatively designed."
+        },
+        {
+          "option": "B",
+          "text": "They are less spacious."
+        },
+        {
+          "option": "C",
+          "text": "They are in less convenient locations"
+        },
+        {
+          "option": "D",
+          "text": "They are less versatile."
+        },
+        {
+          "option": "E",
+          "text": "They are made of less durable materials."
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage explains that modern stadiums function as urban hubs serving communities and are suitable for installing renewable energy systems such as photovoltaic panels and wind turbines.",
+      "group_instruction": "<p>Choose <strong>TWO</strong> letters</p>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "offering improved amenities for the enjoyment of sports events"
+        },
+        {
+          "option": "B",
+          "text": "bringing community life back into the city environment"
+        },
+        {
+          "option": "C",
+          "text": "facilitating research into solar and wind energy solutions"
+        },
+        {
+          "option": "D",
+          "text": "enabling local residents to reduce their consumption of electricity"
+        },
+        {
+          "option": "E",
+          "text": "providing a suitable site for the installation of renewable power generators"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "question_type": "MCQ",
+      "content": "",
+      "correct_answer": null,
+      "explanation": "The passage explains that modern stadiums function as urban hubs serving communities and are suitable for installing renewable energy systems such as photovoltaic panels and wind turbines.",
+      "group_instruction": "",
+      "choices": [
+        {
+          "option": "A",
+          "text": "offering improved amenities for the enjoyment of sports events"
+        },
+        {
+          "option": "B",
+          "text": "bringing community life back into the city environment"
+        },
+        {
+          "option": "C",
+          "text": "facilitating research into solar and wind energy solutions"
+        },
+        {
+          "option": "D",
+          "text": "enabling local residents to reduce their consumption of electricity"
+        },
+        {
+          "option": "E",
+          "text": "providing a suitable site for the installation of renewable power generators"
+        }
+      ]
+    }
+  ]
+}

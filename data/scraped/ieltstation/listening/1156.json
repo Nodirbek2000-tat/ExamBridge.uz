@@ -1,0 +1,634 @@
+{
+  "title": "Cambridge_19 Test 1",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260224_172916_30c253d4.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "School Visit to Hinchingbrooke Country Park",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260224_172916_30c253d4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Stanthorpe and Malatte Twinning Association",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260224_172916_30c253d4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "MCQ",
+          "content": "During the visit to Malatte, in France, members especially enjoyed",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A, B or C</strong>.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "going to a theme park."
+            },
+            {
+              "option": "B",
+              "text": "experiencing a river trip."
+            },
+            {
+              "option": "C",
+              "text": "visiting a cheese factory."
+            }
+          ]
+        },
+        {
+          "number": 12,
+          "question_type": "MCQ",
+          "content": "What will happen in Stanthorpe to mark the 25th anniversary of the Twinning Association?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "A tree will be planted"
+            },
+            {
+              "option": "B",
+              "text": "A garden seat will be bought"
+            },
+            {
+              "option": "C",
+              "text": "A footbridge will be built."
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Which event raised most funds this year?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the film show"
+            },
+            {
+              "option": "B",
+              "text": "the pancake evening"
+            },
+            {
+              "option": "C",
+              "text": "the cookery demonstration"
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "For the first evening with the French visitors host families are advised to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "take them for a walk round the town."
+            },
+            {
+              "option": "B",
+              "text": "go to a local restaurant."
+            },
+            {
+              "option": "C",
+              "text": "have a meal at home."
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "On Saturday evening there will be the chance to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "listen to a concert."
+            },
+            {
+              "option": "B",
+              "text": "watch a match."
+            },
+            {
+              "option": "C",
+              "text": "take part in a competition"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MAP",
+          "content": "Kitchen gardens",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A-H</strong>, next to Questions&nbsp;16-20.</p>"
+        },
+        {
+          "number": 16,
+          "question_type": "MAP",
+          "content": "Farm shop",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 17,
+          "question_type": "MAP",
+          "content": "Disabled entry",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 18,
+          "question_type": "MAP",
+          "content": "Adventure playground",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 20,
+          "question_type": "MAP",
+          "content": "The Temple of the Four Winds",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Colin and Marie's Discussion on Food Trends, Projects and Innovations",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260224_172916_30c253d4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 22,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 23,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters,&nbsp;<strong>A-E</strong>.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter,&nbsp;<strong>A-H</strong>, next to Questions&nbsp;25-30.</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This is only relevant to young people."
+            },
+            {
+              "option": "B",
+              "text": "This may have disappointing results."
+            },
+            {
+              "option": "C",
+              "text": "This already seems to be widespread."
+            },
+            {
+              "option": "D",
+              "text": "Retailers should do more to encourage this."
+            },
+            {
+              "option": "E",
+              "text": "More financial support is needed for this."
+            },
+            {
+              "option": "F",
+              "text": "Most people know little about this."
+            },
+            {
+              "option": "G",
+              "text": "There should be stricter regulations about this."
+            },
+            {
+              "option": "H",
+              "text": "This could be dangerous."
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This is only relevant to young people."
+            },
+            {
+              "option": "B",
+              "text": "This may have disappointing results."
+            },
+            {
+              "option": "C",
+              "text": "This already seems to be widespread."
+            },
+            {
+              "option": "D",
+              "text": "Retailers should do more to encourage this."
+            },
+            {
+              "option": "E",
+              "text": "More financial support is needed for this."
+            },
+            {
+              "option": "F",
+              "text": "Most people know little about this."
+            },
+            {
+              "option": "G",
+              "text": "There should be stricter regulations about this."
+            },
+            {
+              "option": "H",
+              "text": "This could be dangerous."
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This is only relevant to young people."
+            },
+            {
+              "option": "B",
+              "text": "This may have disappointing results."
+            },
+            {
+              "option": "C",
+              "text": "This already seems to be widespread."
+            },
+            {
+              "option": "D",
+              "text": "Retailers should do more to encourage this."
+            },
+            {
+              "option": "E",
+              "text": "More financial support is needed for this."
+            },
+            {
+              "option": "F",
+              "text": "Most people know little about this."
+            },
+            {
+              "option": "G",
+              "text": "There should be stricter regulations about this."
+            },
+            {
+              "option": "H",
+              "text": "This could be dangerous."
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This is only relevant to young people."
+            },
+            {
+              "option": "B",
+              "text": "This may have disappointing results."
+            },
+            {
+              "option": "C",
+              "text": "This already seems to be widespread."
+            },
+            {
+              "option": "D",
+              "text": "Retailers should do more to encourage this."
+            },
+            {
+              "option": "E",
+              "text": "More financial support is needed for this."
+            },
+            {
+              "option": "F",
+              "text": "Most people know little about this."
+            },
+            {
+              "option": "G",
+              "text": "There should be stricter regulations about this."
+            },
+            {
+              "option": "H",
+              "text": "This could be dangerous."
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This is only relevant to young people."
+            },
+            {
+              "option": "B",
+              "text": "This may have disappointing results."
+            },
+            {
+              "option": "C",
+              "text": "This already seems to be widespread."
+            },
+            {
+              "option": "D",
+              "text": "Retailers should do more to encourage this."
+            },
+            {
+              "option": "E",
+              "text": "More financial support is needed for this."
+            },
+            {
+              "option": "F",
+              "text": "Most people know little about this."
+            },
+            {
+              "option": "G",
+              "text": "There should be stricter regulations about this."
+            },
+            {
+              "option": "H",
+              "text": "This could be dangerous."
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "This is only relevant to young people."
+            },
+            {
+              "option": "B",
+              "text": "This may have disappointing results."
+            },
+            {
+              "option": "C",
+              "text": "This already seems to be widespread."
+            },
+            {
+              "option": "D",
+              "text": "Retailers should do more to encourage this."
+            },
+            {
+              "option": "E",
+              "text": "More financial support is needed for this."
+            },
+            {
+              "option": "F",
+              "text": "Most people know little about this."
+            },
+            {
+              "option": "G",
+              "text": "There should be stricter regulations about this."
+            },
+            {
+              "option": "H",
+              "text": "This could be dangerous."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "The C\\00e9ide Fields: A Neolithic Site in Ireland",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260224_172916_30c253d4.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

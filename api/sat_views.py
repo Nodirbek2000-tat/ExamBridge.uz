@@ -472,15 +472,7 @@ def sat_result_detail(request, result_id):
         ans = answered_map.get(q.id)
         answers_data.append(_q_data(q, ans, omitted_module=False))
 
-    # ── Include predicted M2 as "Omitted" when not taken ───────────────────────
-    def _pick_variant(pct_val):
-        if pct_val < 60:
-            return 'EASY'
-        elif pct_val <= 85:
-            return 'MEDIUM'
-        else:
-            return 'HARD'
-
+    # ── Include M2 as "Omitted" when not taken (always show HARD variant) ────────
     seen_sections_m2 = set(
         q.module.section.section_type
         for q in all_questions
@@ -491,22 +483,18 @@ def sat_result_detail(request, result_id):
         if section_type in seen_sections_m2:
             continue  # M2 already included
 
-        # Check if M1 was done for this section
-        m1_answers = attempt.answers.filter(
-            question__module__section__section_type=section_type,
-            question__module__module_number=1,
-        )
-        m1_total = m1_answers.count()
-        if m1_total == 0:
-            continue  # M1 not done either — skip
+        # Check if M1 module exists in this test (regardless of whether user answered)
+        m1_module_exists = Module.objects.filter(
+            section__test=test,
+            section__section_type=section_type,
+            module_number=1,
+        ).exists()
+        if not m1_module_exists:
+            continue  # This section has no M1 — skip
 
-        m1_correct = m1_answers.filter(is_correct=True).count()
-        pct = (m1_correct / m1_total * 100) if m1_total > 0 else 0
-        predicted_variant = _pick_variant(pct)
-
-        # Find the predicted M2 module (with fallback)
+        # Always show HARD module as the omitted M2 (fallback to other variants if HARD unavailable)
         m2_module = None
-        for v in [predicted_variant, 'HARD', 'EASY', 'MEDIUM', 'STANDARD']:
+        for v in ['HARD', 'MEDIUM', 'EASY', 'STANDARD']:
             m2_module = Module.objects.filter(
                 section__test=test,
                 section__section_type=section_type,

@@ -1,0 +1,622 @@
+{
+  "title": "Cambridge 9_Test 4",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_062832_e0736699.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Health Centres",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_062832_e0736699.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 3,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 2,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose&nbsp;<strong>TWO</strong>&nbsp;letters</p>"
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Holiday Flat Information and Troubleshooting",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_062832_e0736699.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 14,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct one</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "in box on washing machine"
+            },
+            {
+              "option": "B",
+              "text": "in cupboard on landing"
+            },
+            {
+              "option": "C",
+              "text": "in chest of drawers"
+            },
+            {
+              "option": "D",
+              "text": "next to window in living room"
+            },
+            {
+              "option": "E",
+              "text": "on shelf by back door"
+            },
+            {
+              "option": "F",
+              "text": "on top of television"
+            },
+            {
+              "option": "G",
+              "text": "under kitchen sink"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "in box on washing machine"
+            },
+            {
+              "option": "B",
+              "text": "in cupboard on landing"
+            },
+            {
+              "option": "C",
+              "text": "in chest of drawers"
+            },
+            {
+              "option": "D",
+              "text": "next to window in living room"
+            },
+            {
+              "option": "E",
+              "text": "on shelf by back door"
+            },
+            {
+              "option": "F",
+              "text": "on top of television"
+            },
+            {
+              "option": "G",
+              "text": "under kitchen sink"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "in box on washing machine"
+            },
+            {
+              "option": "B",
+              "text": "in cupboard on landing"
+            },
+            {
+              "option": "C",
+              "text": "in chest of drawers"
+            },
+            {
+              "option": "D",
+              "text": "next to window in living room"
+            },
+            {
+              "option": "E",
+              "text": "on shelf by back door"
+            },
+            {
+              "option": "F",
+              "text": "on top of television"
+            },
+            {
+              "option": "G",
+              "text": "under kitchen sink"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "in box on washing machine"
+            },
+            {
+              "option": "B",
+              "text": "in cupboard on landing"
+            },
+            {
+              "option": "C",
+              "text": "in chest of drawers"
+            },
+            {
+              "option": "D",
+              "text": "next to window in living room"
+            },
+            {
+              "option": "E",
+              "text": "on shelf by back door"
+            },
+            {
+              "option": "F",
+              "text": "on top of television"
+            },
+            {
+              "option": "G",
+              "text": "under kitchen sink"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "in box on washing machine"
+            },
+            {
+              "option": "B",
+              "text": "in cupboard on landing"
+            },
+            {
+              "option": "C",
+              "text": "in chest of drawers"
+            },
+            {
+              "option": "D",
+              "text": "next to window in living room"
+            },
+            {
+              "option": "E",
+              "text": "on shelf by back door"
+            },
+            {
+              "option": "F",
+              "text": "on top of television"
+            },
+            {
+              "option": "G",
+              "text": "under kitchen sink"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 20,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Kira's University Study Experience and Insights",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_062832_e0736699.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "In her home country, Kira had",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "completed a course"
+            },
+            {
+              "option": "B",
+              "text": "done two years of a course."
+            },
+            {
+              "option": "C",
+              "text": "found her course difficult"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "To succeed with assignments, Kira had to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "read faster."
+            },
+            {
+              "option": "B",
+              "text": "write faster."
+            },
+            {
+              "option": "C",
+              "text": "change her way of thinking"
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 24,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 25,
+          "question_type": "SENT",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 26,
+          "question_type": "GAP",
+          "content": "How did the students do their practical sessions?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Answer the questions below. Write&nbsp;<strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 27,
+          "question_type": "GAP",
+          "content": "In the second semester how often did Kira work in a hospital?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 28,
+          "question_type": "GAP",
+          "content": "How much full-time work did Kira do during the year?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 29,
+          "question_type": "GAP",
+          "content": "Having completed the year, how does Kira feel?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 30,
+          "question_type": "GAP",
+          "content": "In addition to the language, what do overseas students need to become familiar with?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Wildlife in City Gardens: Project Findings and Insights",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260305_062832_e0736699.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "MCQ",
+          "content": "What led the group to choose their topic?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct answer</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "They were concerned about the decline of one species.\\000a\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "\\000aThey were interested in the effects of city growth."
+            },
+            {
+              "option": "C",
+              "text": "\\000aThey wanted to investigate a recent phenomenon"
+            }
+          ]
+        },
+        {
+          "number": 32,
+          "question_type": "MCQ",
+          "content": "The exact proportion of land devoted to private gardens was confirmed by",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "consulting some official documents.\\000a\\000a"
+            },
+            {
+              "option": "B",
+              "text": "taking large-scale photos."
+            },
+            {
+              "option": "C",
+              "text": "discussions with town surveyors"
+            }
+          ]
+        },
+        {
+          "number": 33,
+          "question_type": "MCQ",
+          "content": "The group asked garden owners to",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "take part in formal interviews."
+            },
+            {
+              "option": "B",
+              "text": "keep a record of animals they saw."
+            },
+            {
+              "option": "C",
+              "text": "\\000aget in contact when they saw a rare species."
+            }
+          ]
+        },
+        {
+          "number": 34,
+          "question_type": "MCQ",
+          "content": "The group made their observations in gardens",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000awhich had a large number of animal species"
+            },
+            {
+              "option": "B",
+              "text": "which they considered to be representative."
+            },
+            {
+              "option": "C",
+              "text": "which had stable populations of rare animals"
+            }
+          ]
+        },
+        {
+          "number": 35,
+          "question_type": "MCQ",
+          "content": "The group did extensive reading on",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "\\000awildlife problems in rural areas"
+            },
+            {
+              "option": "B",
+              "text": "urban animal populations."
+            },
+            {
+              "option": "C",
+              "text": "current gardening practices."
+            }
+          ]
+        },
+        {
+          "number": 36,
+          "question_type": "MCQ",
+          "content": "The speaker focuses on three animal species because",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "a lot of data has been obtained about them"
+            },
+            {
+              "option": "B",
+              "text": "\\000athe group were most interested in them"
+            },
+            {
+              "option": "C",
+              "text": "\\000athey best indicated general trends"
+            }
+          ]
+        },
+        {
+          "number": 37,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer</p>"
+        },
+        {
+          "number": 39,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "TABLE",
+          "content": "-----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}

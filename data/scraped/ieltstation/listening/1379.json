@@ -1,0 +1,712 @@
+{
+  "title": "Cambridge 10_Test 3",
+  "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_111120_2c1bf84a.mp3",
+  "difficulty": "MEDIUM",
+  "is_premium": false,
+  "sections": [
+    {
+      "section_number": 1,
+      "title": "Early Learning Childcare Centre",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_111120_2c1bf84a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 1,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD AND/OR A NUMBER</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 2,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 3,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 4,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 5,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 6,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 7,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 8,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 10,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 9,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    },
+    {
+      "section_number": 2,
+      "title": "Dolphin Conservation Trust",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_111120_2c1bf84a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 11,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose <strong>TWO </strong>letters.</p>"
+        },
+        {
+          "number": 12,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 13,
+          "question_type": "MCQ",
+          "content": "Why is Alice so pleased the Trust has won the Charity Commission award?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "It has brought in extra money."
+            },
+            {
+              "option": "B",
+              "text": "It made the work of the trust better known.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "It has attracted more members."
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "question_type": "MCQ",
+          "content": "Alice says oil exploration causes problems to dolphins because of",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "noise"
+            },
+            {
+              "option": "B",
+              "text": "oil leaks"
+            },
+            {
+              "option": "C",
+              "text": "movement of ships"
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "question_type": "MCQ",
+          "content": "Alice became interested in dolphins when",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "she saw one swimming near her home.\\000a"
+            },
+            {
+              "option": "B",
+              "text": "she heard a speaker at her school.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "she read a book about them.\\000a"
+            }
+          ]
+        },
+        {
+          "number": 16,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p><br></p><p>Which dolphin does Alice make each of the following comments about?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Moon dancer"
+            },
+            {
+              "option": "B",
+              "text": "Echo"
+            },
+            {
+              "option": "C",
+              "text": "Kiwi"
+            },
+            {
+              "option": "D",
+              "text": "Samson"
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Moon dancer"
+            },
+            {
+              "option": "B",
+              "text": "Echo"
+            },
+            {
+              "option": "C",
+              "text": "Kiwi"
+            },
+            {
+              "option": "D",
+              "text": "Samson"
+            }
+          ]
+        },
+        {
+          "number": 18,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Moon dancer"
+            },
+            {
+              "option": "B",
+              "text": "Echo"
+            },
+            {
+              "option": "C",
+              "text": "Kiwi"
+            },
+            {
+              "option": "D",
+              "text": "Samson"
+            }
+          ]
+        },
+        {
+          "number": 19,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Moon dancer"
+            },
+            {
+              "option": "B",
+              "text": "Echo"
+            },
+            {
+              "option": "C",
+              "text": "Kiwi"
+            },
+            {
+              "option": "D",
+              "text": "Samson"
+            }
+          ]
+        },
+        {
+          "number": 20,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "Moon dancer"
+            },
+            {
+              "option": "B",
+              "text": "Echo"
+            },
+            {
+              "option": "C",
+              "text": "Kiwi"
+            },
+            {
+              "option": "D",
+              "text": "Samson"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 3,
+      "title": "Theatre Studies Course",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_111120_2c1bf84a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 21,
+          "question_type": "MCQ",
+          "content": "What helped Rob to prepare to play the character of a doctor?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Choose the correct letter <strong>A,B or C.</strong></p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "the stories his grandfather told him\\000a"
+            },
+            {
+              "option": "B",
+              "text": "the times when he watched his grandfather working\\000a"
+            },
+            {
+              "option": "C",
+              "text": "the way he imagined his grandfather at work"
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "question_type": "MCQ",
+          "content": "In the play's first scene, the boredom of village life was suggested by",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "repetition of words and phrases."
+            },
+            {
+              "option": "B",
+              "text": "scenery painted in dull colours.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "long pauses within conversations."
+            }
+          ]
+        },
+        {
+          "number": 23,
+          "question_type": "MCQ",
+          "content": "What has Rob learned about himself through working in a group?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "He likes to have clear guidelines."
+            },
+            {
+              "option": "B",
+              "text": "He copes well with stress.\\000a"
+            },
+            {
+              "option": "C",
+              "text": "He thinks he is a good leader."
+            }
+          ]
+        },
+        {
+          "number": 24,
+          "question_type": "MCQ",
+          "content": "To support the production, research material was used which described",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "political developments."
+            },
+            {
+              "option": "B",
+              "text": "changing social attitudes.\\000a\\000a"
+            },
+            {
+              "option": "C",
+              "text": "economic transformations."
+            }
+          ]
+        },
+        {
+          "number": 25,
+          "question_type": "MCQ",
+          "content": "What problem did the students overcome in the final rehearsal?",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "one person forgetting their words"
+            },
+            {
+              "option": "B",
+              "text": "an equipment failure\\000a"
+            },
+            {
+              "option": "C",
+              "text": "the injury of one character"
+            }
+          ]
+        },
+        {
+          "number": 26,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>What action is needed for the following stages in doing the 'year abroad' option?</p>",
+          "choices": [
+            {
+              "option": "A",
+              "text": "be on time"
+            },
+            {
+              "option": "B",
+              "text": "get a letter of recommendation"
+            },
+            {
+              "option": "C",
+              "text": "plan for the final year"
+            },
+            {
+              "option": "D",
+              "text": "make sure the institution's focus is relevant"
+            },
+            {
+              "option": "E",
+              "text": "show ability in Theatre Studies"
+            },
+            {
+              "option": "F",
+              "text": "make travel arrangements and bookings"
+            },
+            {
+              "option": "G",
+              "text": "ask for help"
+            }
+          ]
+        },
+        {
+          "number": 27,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "be on time"
+            },
+            {
+              "option": "B",
+              "text": "get a letter of recommendation"
+            },
+            {
+              "option": "C",
+              "text": "plan for the final year"
+            },
+            {
+              "option": "D",
+              "text": "make sure the institution's focus is relevant"
+            },
+            {
+              "option": "E",
+              "text": "show ability in Theatre Studies"
+            },
+            {
+              "option": "F",
+              "text": "make travel arrangements and bookings"
+            },
+            {
+              "option": "G",
+              "text": "ask for help"
+            }
+          ]
+        },
+        {
+          "number": 28,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "be on time"
+            },
+            {
+              "option": "B",
+              "text": "get a letter of recommendation"
+            },
+            {
+              "option": "C",
+              "text": "plan for the final year"
+            },
+            {
+              "option": "D",
+              "text": "make sure the institution's focus is relevant"
+            },
+            {
+              "option": "E",
+              "text": "show ability in Theatre Studies"
+            },
+            {
+              "option": "F",
+              "text": "make travel arrangements and bookings"
+            },
+            {
+              "option": "G",
+              "text": "ask for help"
+            }
+          ]
+        },
+        {
+          "number": 29,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "be on time"
+            },
+            {
+              "option": "B",
+              "text": "get a letter of recommendation"
+            },
+            {
+              "option": "C",
+              "text": "plan for the final year"
+            },
+            {
+              "option": "D",
+              "text": "make sure the institution's focus is relevant"
+            },
+            {
+              "option": "E",
+              "text": "show ability in Theatre Studies"
+            },
+            {
+              "option": "F",
+              "text": "make travel arrangements and bookings"
+            },
+            {
+              "option": "G",
+              "text": "ask for help"
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "question_type": "MINFO",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "",
+          "choices": [
+            {
+              "option": "A",
+              "text": "be on time"
+            },
+            {
+              "option": "B",
+              "text": "get a letter of recommendation"
+            },
+            {
+              "option": "C",
+              "text": "plan for the final year"
+            },
+            {
+              "option": "D",
+              "text": "make sure the institution's focus is relevant"
+            },
+            {
+              "option": "E",
+              "text": "show ability in Theatre Studies"
+            },
+            {
+              "option": "F",
+              "text": "make travel arrangements and bookings"
+            },
+            {
+              "option": "G",
+              "text": "ask for help"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_number": 4,
+      "title": "Self Regulatory Focus Theory",
+      "audio_url": "https://api.otaboyev-prep.uz/uploads/files/file_20260304_111120_2c1bf84a.mp3",
+      "transcript": "",
+      "questions": [
+        {
+          "number": 31,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": "<p>Complete the notes below.</p><p>Write&nbsp;<strong>ONE WORD ONLY</strong>&nbsp;for each answer.</p>"
+        },
+        {
+          "number": 33,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 34,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 35,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 36,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 37,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 38,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 39,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 40,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        },
+        {
+          "number": 32,
+          "question_type": "GAP",
+          "content": "----",
+          "correct_answer": "",
+          "explanation": "",
+          "group_instruction": ""
+        }
+      ]
+    }
+  ]
+}
