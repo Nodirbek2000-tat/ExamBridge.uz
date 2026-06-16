@@ -34,30 +34,39 @@ def analyze_speaking(self, response_id):
 
 @shared_task(bind=True, max_retries=3)
 def evaluate_writing(self, response_id):
-    """AI evaluation of IELTS writing response."""
+    """AI evaluation of IELTS writing response — haqiqiy OpenAI tahlil.
+
+    ai_criteria shakli (frontend IELTSWritingResult shuni kutadi):
+      {task_achievement: {band, label, feedback, strengths, errors}, ...}
+    """
     try:
         from ielts.models import WritingResponse
+        from api.ielts_views import run_writing_ai
+
         response = WritingResponse.objects.get(id=response_id)
+        task = response.task
 
-        # TODO: Integrate Claude API for detailed IELTS writing evaluation
-        word_count = response.word_count
-
-        # Placeholder scoring
-        response.ai_feedback = (
-            f"Task Achievement: Your response addresses the task adequately ({word_count} words). "
-            "Coherence & Cohesion: Good paragraph structure. "
-            "Lexical Resource: Varied vocabulary used. "
-            "Grammatical Range & Accuracy: Minor errors present."
+        result = run_writing_ai(
+            text=response.response_text,
+            task_type=task.task_type if task else 2,
+            prompt_txt=task.prompt if task else '',
+            word_count=response.word_count,
         )
-        response.ai_band = 6.0
-        response.ai_criteria = {
-            'task_achievement': 6.0,
-            'coherence_cohesion': 6.5,
-            'lexical_resource': 6.0,
-            'grammatical_range': 5.5,
-        }
+
+        criteria_keys = ('task_achievement', 'coherence_cohesion', 'lexical_resource', 'grammatical_range')
+        criteria = {k: result.get(k) or {} for k in criteria_keys}
+
+        # ai_feedback — "ready" flag sifatida ishlatiladi; mezon fikrlarini birlashtirib saqlaymiz
+        feedback_parts = []
+        for k in criteria_keys:
+            c = criteria[k]
+            if isinstance(c, dict) and c.get('feedback'):
+                feedback_parts.append(f"{c.get('label', k)}: {c['feedback']}")
+        response.ai_feedback = ' '.join(feedback_parts) or 'Evaluated.'
+        response.ai_band = result.get('overall_band') or 0
+        response.ai_criteria = criteria
         response.save(update_fields=['ai_feedback', 'ai_band', 'ai_criteria'])
-        logger.info(f"Writing response {response_id} evaluated.")
+        logger.info(f"Writing response {response_id} evaluated by AI: band={response.ai_band}")
 
     except Exception as exc:
         logger.error(f"Writing evaluation failed: {exc}")

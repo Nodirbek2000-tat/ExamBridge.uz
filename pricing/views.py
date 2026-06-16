@@ -115,9 +115,10 @@ def _activate_premium(user, days, plan_type, amount, plan_label,
 
     user.is_premium = True
     user.premium_until = expires_at
+    user.premium_source = 'stripe'
     if stripe_sub_id:
         user.stripe_subscription_id = stripe_sub_id
-    user.save(update_fields=['is_premium', 'premium_until', 'stripe_subscription_id'])
+    user.save(update_fields=['is_premium', 'premium_until', 'premium_source', 'stripe_subscription_id'])
 
     logger.info('Premium activated: user=%s plan=%s expires=%s', user.email, plan_label, expires_at)
 

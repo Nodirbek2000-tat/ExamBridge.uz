@@ -1,0 +1,2465 @@
+{
+  "name": "SAT December 2025",
+  "year": 2025,
+  "month": 12,
+  "form": "A",
+  "is_international": false,
+  "is_premium": false,
+  "test_mode": "INDIVIDUAL",
+  "english_m1": [
+    {
+      "number": 1,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p class=\"source-note\">The following text is from Mark Twain’s 1876 novel <em>The Adventures of Tom Sawyer</em>. Tom, a child, has been told by his aunt to paint their house’s fence.</p><blockquote><p>Tom appeared on the sidewalk with a bucket of whitewash and a long-handled brush. He surveyed the fence, and all gladness left him and a deep melancholy settled down upon his spirit. Thirty yards of board fence nine feet high.</p></blockquote>",
+      "content": "<p>As used in the text, what does the word “surveyed” most nearly mean?</p>",
+      "correct_answer": "C",
+      "explanation": "In the passage, Tom is standing before a large fence that he has been tasked with painting. After he 'surveyed' the fence, he realized its massive dimensions—'Thirty yards of board fence nine feet high'—and became discouraged by the scale of the work. In this context, 'surveyed' describes Tom looking over or inspecting the fence to assess the task at hand. 'Examined' is the most accurate synonym, as it describes the act of inspecting something closely to understand its condition or extent.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Guaranteed</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Modified</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Examined</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Organized</p>"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Zygomorphic (bilaterally symmetric) flowers remain open and functional on average 1.1 days longer than actinomorphic (radially symmetric) flowers do. Ruby E. Stephens and colleagues claim that this extended period could be ________ the relatively small pool of potential pollinators available to zygomorphic flowers and the greater chance at successful pollination that remaining open affords them.</p>",
+      "content": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "correct_answer": "A",
+      "explanation": "The sentence describes a causal relationship between a biological observation (zygomorphic flowers staying open longer) and potential reasons for that observation (a small pool of pollinators and the need for successful pollination). The phrase \"attributed to\" is the most logical choice because it is used to assign a cause or reason to a specific effect or phenomenon. In this context, the researchers are suggesting that the extended period exists *because of* the factors mentioned.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>attributed to</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>converted by</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>analogous to</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>magnified by</p>"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>The influence of William Shakespeare's writings is clear in a vast range of subsequent literary works and is similarly ________ in many works in other media, from fine art (such as Edward Alcock's painting <em>Portia and Shylock</em>) to popular music (such as the band the Lumineers' song \"<em>Ophelia</em>\").</p>",
+      "content": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "correct_answer": "C",
+      "explanation": "The sentence compares Shakespeare's influence in literature to his influence in other media. The word \"similarly\" acts as a transition word that connects the two halves of the sentence, indicating that the influence in other media mirrors the influence in literature. Since the first half of the sentence describes the influence in literature as \"clear,\" the blank should be filled with a word that means \"clear\" or \"obvious.\" \"Apparent\" is a precise synonym for \"clear\" and fits perfectly in this context.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "excessive"
+        },
+        {
+          "option": "B",
+          "text": "unusual"
+        },
+        {
+          "option": "C",
+          "text": "apparent"
+        },
+        {
+          "option": "D",
+          "text": "subtle"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Mastering <em>'ajami</em>, a Syrian art of creating intricately painted wood panels, demands a skill set that ______ innate talent: crafting the panels requires not just the ability to draw but also an understanding of traditional techniques, materials, and design elements, necessitating expertise gained through dedicated guidance from experienced artisans.</p>",
+      "content": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "correct_answer": "C",
+      "explanation": "The sentence discusses the mastery of 'ajami, emphasizing that it requires a combination of abilities. The passage notes that the process requires \"not just the ability to draw\" (which represents the innate talent mentioned earlier) but also \"an understanding of traditional techniques, materials, and design elements\" and \"expertise gained through dedicated guidance.\" This indicates that the necessary skill set goes beyond or exceeds mere innate talent. The word \"transcends\" means to rise above or go beyond the limits of something, which perfectly fits the context of a skill set that includes but also surpasses simple talent.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>replicates</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>characterizes</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>transcends</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>restrains</p>"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Phillip Hayes Dean’s award-winning play <em>The Sty of the Blind Pig</em> was produced in 1971 by the groundbreaking Negro Ensemble Company (NEC). NEC cofounder Douglas Turner Ward, who worked as an actor, director, and playwright, had met actor and producer Robert Hooks while they were performing in a 1960 touring production of Lorraine Hansberry’s play <em>A Raisin in the Sun</em>. Together, they envisioned a theater company that would nurture and showcase the work of Black theater professionals. <u>Since NEC’s founding in 1967, its workshops and performances have given Black playwrights, including Dean, a forum for their compelling stories.</u></p>",
+      "content": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+      "correct_answer": "C",
+      "explanation": "To determine the function of the underlined sentence, we must look at how it relates to the rest of the passage. The text begins by mentioning a specific play (*The Sty of the Blind Pig*) produced by the Negro Ensemble Company (NEC). It then shifts to the history of the company, explaining how the founders met and their shared vision of creating a space for Black theater professionals. The final (underlined) sentence transitions from the historical vision to the actual impact: since its founding in 1967, the NEC has successfully provided a forum for Black playwrights. By describing the company's activities over many years and its role in launching the careers of playwrights like Phillip Hayes Dean, the sentence serves to emphasize the ongoing significance and success of the NEC.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>It provides additional information about a person mentioned in the text.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>It explains the circumstances that led to the formation of the theater company discussed in the text.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>It emphasizes the ongoing significance of the theater company discussed in the text.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>It illustrates the widespread influence of a play discussed earlier in the text.</p>"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p class=\"source-note\">The following text is from Rachel Heng’s 2023 novel <em>The Great Reclamation</em>. Ah Boon is fishing off the coast of Singapore.</p><blockquote><p>When he pulled up the nets, they contained only one kind of fish—<u>black pomfrets</u>, the flat diamonds of their bodies slick in the morning light. This uniformity did not surprise him; over the years, he’d learned that the waters here were temperamental. They could be relied upon for a good catch, but from time to time threw up only <u>prawns or squid</u>, and other times <u>colorful varieties of fish</u> that weren’t even supposed to be found in this region. He’d grown to accept the unpredictability, embracing it as a game to be played, like the reading of tea leaves or the grooves of a palm.</p></blockquote>",
+      "content": "<p>Taken together, the three underlined portions most clearly serve which function in the text as a whole?</p>",
+      "correct_answer": "A",
+      "explanation": "To determine the function of the underlined portions, we must examine the context surrounding them. The text describes the waters where Ah Boon fishes as 'temperamental' and later notes that he has 'grown to accept the unpredictability.' The first underlined portion, 'black pomfrets,' represents a specific instance of a uniform catch on a particular day. The second and third portions, 'prawns or squid' and 'colorful varieties of fish,' describe alternative catches that occur 'from time to time' or on other occasions. Collectively, these examples serve as concrete evidence of the erratic and fluctuating results of fishing in these waters. This directly illustrates the 'changeable nature' of the fishing grounds, making Option A the correct choice.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>They illustrate the changeable nature of the fishing grounds where Ah Boon is.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>They underscore Ah Boon’s lack of surprise at seeing sea creatures that aren’t usually found in the region.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>They provide examples of what Ah Boon most frequently catches in the area.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>They emphasize the wide variety of sea creatures that Ah Boon has caught on this particular fishing trip.</p>"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>When a landscape with native megafaunal (large-bodied) mammalian herbivores experiences a substantial decline in those populations, it loses a functional component of plant ecology. Introducing non-native proxy species has been beneficial in some such cases, but the reasonable concern persists that ecosystems may be negatively affected by species that didn’t coevolve with local vegetation. <u>Scholarly analysis of findings from 221 studies revealed no evidence that nativeness mediates the ecological effects of megafauna, however, determining instead that other traits, such as diet selectivity, are more germane.</u></p>",
+      "content": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+      "correct_answer": "B",
+      "explanation": "The text begins by discussing the introduction of non-native proxy species to replace declining native megafauna. It mentions that while this can be beneficial, there is a \"reasonable concern\" that these non-native species might negatively affect ecosystems because they did not coevolve with local plants. The underlined portion provides the findings of a large-scale analysis of 221 studies, which \"revealed no evidence\" that nativeness actually determines ecological effects. By showing that other traits (like diet) are more important than nativeness, the underlined portion suggests that the previously mentioned concern, though acknowledged as sensible, is not supported by empirical data—meaning it is unsubstantiated.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>It outlines the reasoning behind the claim about a benefit that is presented in the previous sentence.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>It presents an insight suggesting that a concern acknowledged as sensible earlier in the text is unsubstantiated.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>It explains why data do not show the expected pattern described at the beginning of the text.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>It identifies an inconclusive finding that motivated a shift in the focus of an analysis discussed in the text.</p>"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Given the immense scope of space, the search for extraterrestrial life is almost necessarily concentrated on the exoplanets deemed to have the most plausible chance of success—typically, atmosphere-bearing terrestrial planets orbiting within a certain range of their stars (termed the habitable zone). Claiming that Earth experienced a long transition from single-lid to plate tectonics that accelerated the emergence and evolution of complex organisms, researchers Robert J. Stern and Taras V. Gerya hold that consideration of tectonics, an often overlooked factor, could help further narrow the search for advanced extraterrestrial species.</p>",
+      "content": "<p>Based on the text, what do Stern and Gerya most likely believe about the development of complex life on exoplanets?</p>",
+      "correct_answer": "C",
+      "explanation": "The passage states that the current search for extraterrestrial life focuses on terrestrial planets with atmospheres in the habitable zone. Researchers Robert J. Stern and Taras V. Gerya argue that Earth's transition to plate tectonics \"accelerated the emergence and evolution of complex organisms.\" Based on this, they suggest that considering tectonics could \"further narrow the search for advanced extraterrestrial species.\" This implies that among planets already considered candidates (those in the habitable zone with atmospheres), those that also exhibit plate tectonics are more likely to support complex life than those that do not.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>It is more likely to occur if habitable zone planets with atmospheres transition from single-lid to plate tectonics late in their history than if they transition early in their history.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>It is probably more dependent on the presence of plate tectonics than on orbital distance from a host star or the presence of an atmosphere.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>It is more likely to occur on habitable zone planets with atmospheres and plate tectonics than on otherwise similar planets that lack plate tectonics.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>It is unlikely unless the transition from single-lid to plate tectonics occurs before the acquisition of a lasting atmosphere.</p>"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Quality assessments of concrete typically focus almost exclusively on compressive strength as a measure of durability, overlooking other potentially relevant factors. Lisa Ptacek et al. therefore investigated the potential of gas permeability (vulnerability to incursion by gases), which is caused in part by excessive porosity, as a durability indicator. Their measurements and observations revealed that quality of conditions during the concrete curing phase negatively correlates with gas permeability and that high gas permeability values are associated with increased deterioration as concrete surfaces age.</p>",
+      "content": "<p>Information in the text best supports which statement about Ptacek et al.'s findings?</p>",
+      "correct_answer": "D",
+      "explanation": "The passage states that traditional quality assessments of concrete focus 'almost exclusively' on compressive strength, which leads them to 'overlook other potentially relevant factors.' Lisa Ptacek et al. conducted research into one of these factors: gas permeability. Their findings demonstrated two things: first, that gas permeability is linked to the quality of curing conditions, and second, that high gas permeability is associated with increased deterioration over time. Because gas permeability provides measurable insights into the durability and deterioration of concrete that compressive strength assessments might miss, the study supports the idea that evaluating gas permeability is a valid and useful ('appropriate') addition to the assessment process.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>They suggest that gas permeability testing presents a more reliable indication of concrete durability than compressive strength testing does.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>They bolster the claim that concrete's susceptibility to damage decreases as its gas permeability increases.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>They call into question the idea that quality of curing conditions directly affects concrete gas permeability but is unrelated to compressive strength.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>They indicate that evaluation of gas permeability is an appropriate addition to concrete quality assessment procedures.</p>"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p><em>The Wonderful Wizard of Oz</em> is a 1900 novel by L. Frank Baum. In the novel, Dorothy, who is from Kansas, finds herself in an unfamiliar place called Oz. Kansas is presented as being less appealing than Oz, as is clear when ________</p>",
+      "content": "<p>Which quotation from <em>The Wonderful Wizard of Oz</em> most effectively illustrates the claim?</p>",
+      "correct_answer": "D",
+      "explanation": "The claim asserts that Kansas is presented as less appealing than its counterpart, Oz. To effectively illustrate this, a quotation must provide a comparative evaluation of both places. Choice D is the only option that directly contrasts the two locations: it characterizes Oz as a \"beautiful country\" and Kansas as a \"dry, gray place.\" By having a character express confusion as to why someone would leave the beauty of Oz for the dullness of Kansas, the text provides explicit evidence that Kansas is the less appealing location in the narrative context.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>the narrator states, ‘Once more they could see fences built beside the road; but these were painted green, and when they came to a small house, in which a farmer evidently lived, that also was painted green.’</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>a character says to others, ‘But it will take more than imagination to carry Dorothy back to Kansas, and I’m sure I don’t know how it can be done.’</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>the narrator states, ‘When Dorothy stood in the doorway and looked around, she could see nothing but the great gray prairie on every side.’</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>a character says to Dorothy, ‘I cannot understand why you should wish to leave this beautiful country and go back to the dry, gray place you call Kansas.’</p>"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Average Hours Worked per Person per Year in 1950 and 2017</p><p>Calculations may be inexact due to rounding.</p><p>A student in an economics course is examining the decline since 1950 in average hours worked per person per year in various nations due to both increased productivity and the adoption of policies that limit working hours. The student</p><table><thead><tr><th>Country</th><th>1950</th><th>2017</th><th>Change in hours</th><th>Percent change in hours</th></tr></thead><tbody><tr><td>Norway</td><td>2,129</td><td>1,417</td><td>-712</td><td>-33%</td></tr><tr><td>Australia</td><td>2,178</td><td>1,731</td><td>-447</td><td>-21%</td></tr><tr><td>Colombia</td><td>2,323</td><td>1,998</td><td>-325</td><td>-14%</td></tr><tr><td>Mexico</td><td>2,432</td><td>2,255</td><td>-177</td><td>-7%</td></tr></tbody></table>",
+      "content": "<p>Which choice most effectively uses data from the table to complete the student's conclusion?</p>",
+      "correct_answer": "D",
+      "explanation": "The student is comparing the decline in average hours worked per person per year among four countries from 1950 to 2017. To evaluate the choices, we must look at the 'Change in hours' column in the table, which represents the total decline (expressed as a negative number).\n\n1.  <strong>Locate Australia's data:</strong> Australia's change in hours was <strong>-447</strong>. This means the number of hours declined by 447.\n2.  <strong>Compare Australia to Norway:</strong> Norway's change was <strong>-712</strong>. Since 447 is less than 712, Australia's decline was *less than* (not as great as) Norway's.\n3.  <strong>Compare Australia to Colombia and Mexico:</strong> Colombia's change was <strong>-325</strong> and Mexico's change was <strong>-177</strong>. Since 447 is greater than both 325 and 177, Australia's decline was *greater than* the decline in both Colombia and Mexico.\n\nOption D correctly synthesizes these comparisons: Australia's decline (447) was not as great as Norway's (712) but was greater than that of Colombia (325) and Mexico (177).",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>the percent decrease in hours worked was greater in Australia than it was in Norway, Colombia, or Mexico.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>though the decline in number of hours worked in Australia was less than that in Norway and Mexico, it was greater than that in Colombia.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>while the number of hours worked rose in Australia between 1950 and 2017, it declined in Norway, Colombia, and Mexico.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>though the decline in number of hours worked in Australia was not as great as that in Norway, it was greater than that in Colombia and Mexico.</p>"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Minimum and Maximum Depths of Stony Coral Species in Caribbean and Indo-Pacific Waters</p><table><thead><tr><th>Species</th><th>Location</th><th>Minimum depth (meters)</th><th>Maximum depth (meters)</th></tr></thead><tbody><tr><td><em>Acropora awi</em></td><td>Indo-Pacific</td><td>0</td><td>5</td></tr><tr><td><em>Indophyllia macassarensis</em></td><td>Indo-Pacific</td><td>20</td><td>25</td></tr><tr><td><em>Isophyllia rigida</em></td><td>Caribbean</td><td>3</td><td>20</td></tr><tr><td><em>Scolymia cubensis</em></td><td>Caribbean</td><td>10</td><td>92</td></tr></tbody></table><p>A marine biologist is researching four stony coral species in Caribbean and Indo-Pacific waters, focusing on sightings of these species in the shallow zone (less than 30 meters below sea level). The biologist claims that there are more stony coral species in Caribbean waters in the shallow zone than there are ______</p>",
+      "content": "Which choice most effectively uses data from the table to complete the statement?",
+      "correct_answer": "C",
+      "explanation": "The biologist's claim is based on comparing the number of stony coral species in different depth zones within Caribbean and Indo-Pacific waters. \r\n\r\n1.  <strong>Define the Zones</strong>: The passage defines the 'shallow zone' as depths less than 30 meters. By extension, the 'mesophotic zone' refers to depths of 30 meters or greater.\r\n2.  <strong>Analyze Caribbean Waters</strong>: \r\n    *   *Isophyllia rigida* (3–20 meters) is found entirely in the shallow zone.\r\n    *   *Scolymia cubensis* (10–92 meters) is found in both the shallow zone (10–29 meters) and the mesophotic zone (30–92 meters).\r\n    *   Total species in Caribbean shallow zone: <strong>2</strong> (*I. rigida*, *S. cubensis*).\r\n    *   Total species in Caribbean mesophotic zone: <strong>1</strong> (*S. cubensis*).\r\n3.  <strong>Evaluate the Comparison</strong>: The claim states there are *more* stony coral species in the Caribbean shallow zone (2) than there are in another category. Choice C, 'Caribbean waters in the mesophotic zone,' provides a count of 1 species. Since 2 is greater than 1, the statement effectively uses the table's data to support the biologist's claim.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Indo-Pacific waters in the mesophotic zone.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Caribbean waters in the shallow zone.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Caribbean waters in the mesophotic zone.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Indo-Pacific waters in the shallow zone.</p>"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "<p>Rafael Núñez and colleagues studied how members of the Yupno, an Indigenous group in Papua New Guinea, conceptualize time in both spoken language and gestures. The researchers recorded Yupno speakers explaining certain temporal words and phrases, such as <em>kalip bishap</em>, a past-oriented expression that translates to \"past times,\" and coded each speaker's manual gestures. Previous research has found a tendency in many cultures to make temporal distinctions along imagined linear axes: for instance, Spanish speakers often refer to the left/right axis to describe events in time. Some researchers believe this tendency is universal, but Núñez and colleagues claim this is not the case.</p>",
+      "content": "<p>Which finding, if true, would most directly support Núñez and colleagues' claim?</p>",
+      "correct_answer": "C",
+      "explanation": "The passage describes a study by Rafael Núñez and colleagues that challenges the idea that human cultures universally conceptualize time along a linear axis. The researchers specifically looked at the Yupno people to see if their temporal gestures follow the linear pattern seen in many other cultures (like the Spanish speakers' left/right axis). To support the claim that this tendency is <i>not</i> universal, evidence must show that Yupno speakers do not use a consistent linear arrangement when gesturing about time. Choice C provides this evidence: if future-oriented gestures do not point in the opposite linear direction of past-oriented gestures, it implies that the Yupno do not conceptualize time as a straight line with the past on one end and the future on the other. This directly contradicts the \"universal linear axis\" theory.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Yupno speakers typically use their left hand to make temporal gestures regardless of whether the gestures are past oriented or future oriented.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Some Yupno grammatical structures used when talking about time are also used in Spanish.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Future-oriented gestures used by Yupno speakers do not, on average, point in the opposite linear direction of past-oriented gestures.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Yupno speakers were observed making temporal gestures both indoors and outdoors, though with greater frequency when indoors.</p>"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>American fashion designer Patrick Kelly was known for his love of colorful buttons. Many of his signature dresses feature bold assortments of buttons throughout the garment. In a paper, a fashion design student claims that Kelly’s use of buttons as decoration was inspired by his childhood observations of the styles and actions of the women in his family.</p>",
+      "content": "<p>Which quotation from a work by a historian would be the most effective evidence for the student to include in support of this claim?</p>",
+      "correct_answer": "C",
+      "explanation": "Choice C is the best answer. This quotation draws a direct connection between the use of buttons and Kelly’s stylish female relatives. Choice A is incorrect. This choice mentions Kelly’s use of buttons, but it doesn’t connect that design choice to the influence of women in Kelly’s family. Choice B is incorrect. This choice discusses how other designers were inspired by Kelly, which doesn’t provide evidence that Kelly was inspired by his family. Choice D is incorrect. While this choice does refer to fashionable women in Kelly’s family, it doesn’t connect their influence to Kelly’s use of buttons.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "“Although some of the assortments of buttons appear to be mismatched pieces scattered randomly throughout Kelly’s dresses, his most famous designs feature carefully crafted patterns of matching buttons.”"
+        },
+        {
+          "option": "B",
+          "text": "“Many of Kelly’s contemporaries were inspired by his designs to incorporate buttons, as well as zippers and snaps, as decorative items in their work.”"
+        },
+        {
+          "option": "C",
+          "text": "“Kelly’s grandmother, who would repair clothing when he was a child, frequently added mismatched buttons to the clothes to draw attention away from any flaws in the garments.”"
+        },
+        {
+          "option": "D",
+          "text": "“Kelly was destined to be a designer from a young age: he learned how to sew clothing from his aunt Bertha, and his love of drawing was developed by his mother.”"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Studies have shown that when we listen to high-tempo music (songs with a high number of beats per minute, or bpm) during endurance exercise, we perceive our effort as lower than it actually is, which leads to an increased pace and a higher heart rate. Researchers recently designed a follow-up study in which participants jogged outdoors for 30 minutes while listening to Aerosmith’s “Livin’ on the Edge” (169 bpm) continuously. The next day, participants performed the same activity while listening to Ella Fitzgerald’s “From This Moment On” (93 bpm). As expected, listening to that song resulted in participants ________</p>",
+      "content": "<p>Which choice most logically completes the text?</p>",
+      "correct_answer": "D",
+      "explanation": "The passage establishes a direct relationship between the tempo of music (beats per minute) and physical performance during exercise. High-tempo music leads to a lower perception of effort, which in turn results in an increased pace and heart rate. In the study described, Day 1 involved a high-tempo song (169 bpm) and Day 2 involved a low-tempo song (93 bpm). Following the logic provided, the lower tempo on Day 2 should lead to a higher perception of effort, a lower pace, and a lower heart rate compared to Day 1. Because the participants jogged for the same amount of time (30 minutes), a lower pace on Day 2 would necessarily result in them covering a shorter distance than they did on Day 1.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>perceiving their effort as lower while jogging than they had the previous day.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>varying their jogging pace more than they had the previous day.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>exhibiting a higher average heart rate while jogging than they had the previous day.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>jogging a shorter distance in the 30 minutes than they had the previous day.</p>"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Cycads are palmlike plants with cones. ______ plants were abundant throughout the Mesozoic Era (66 to 252 million years ago).</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "D",
+      "explanation": "The sentence requires a demonstrative adjective that agrees in number with the plural noun \"plants.\" In Standard English, demonstratives must match the number of the noun they modify. Since \"plants\" is plural, the plural demonstrative \"these\" is the correct choice. It serves to refer back to the \"Cycads\" mentioned in the preceding sentence.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>This</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Each</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>That</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>These</p>"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>The theory of plate tectonics explains how large pieces of Earth's crust, called tectonic plates, move and interact. According to the theory, the movement of tectonic plates forms_______ creates volcanoes, and causes earthquakes.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "C",
+      "explanation": "The sentence provides a list of three effects of the movement of tectonic plates: it \"forms mountains,\" \"creates volcanoes,\" and \"causes earthquakes.\" In Standard English, when a sentence includes a series of three or more items, those items must be separated by commas. \r\n\r\n1. <strong>Identify the list items:</strong> \r\n   - Item 1: forms mountains\r\n   - Item 2: creates volcanoes\r\n   - Item 3: causes earthquakes\r\n2. <strong>Apply the rule:</strong> To separate the first item from the second, a comma is required after \"mountains.\"\r\n3. <strong>Result:</strong> \"...forms mountains, creates volcanoes, and causes earthquakes.\"",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>mountains.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>mountains</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>mountains,</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>mountains;</p>"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>While conducting an interview for her book <em>Latina Authors and Their Muses</em>, editor Mayra Calvani asked Reyna Grande, author of the novel <em>The Distance Between Us</em>, what ______ <em>The House on Mango Street</em> by Sandra Cisneros.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "D",
+      "explanation": "This sentence requires the correct formatting of an <strong>indirect question</strong>. An indirect question is a question that is embedded within a larger statement. Unlike direct questions (e.g., 'What was her favorite book?'), indirect questions should follow the word order of a standard statement—<strong>subject + verb</strong>—rather than the inverted word order of a question (verb + subject). <br><br>In this sentence, the subject is 'her favorite book' and the verb is 'was.' Therefore, the correct word order is 'her favorite book was.' Additionally, because the overall sentence is a declarative statement ('editor Mayra Calvani asked...'), it should end with a period rather than a question mark.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>her favorite book was?</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>was her favorite book?</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>was her favorite book!</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>her favorite book was.</p>"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Many folktales that originate in the Hindi language start with a phrase that roughly translates to “in one era.” Many tales that originate in English use “once upon a time.” Such phrases, known as story starters, ______ from language to language.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "D",
+      "explanation": "To solve this question, we must ensure that the verb agrees in number with its subject.\n\n1. <strong>Identify the subject</strong>: The sentence begins with the phrase \"Such phrases, known as story starters.\" The subject of the clause is the plural noun \"phrases.\"\n2. <strong>Ignore modifiers</strong>: The phrase \"known as story starters\" is a participial phrase placed between commas; it provides extra information about the phrases but does not change the number of the subject.\n3. <strong>Determine the verb form</strong>: Since the subject (\"phrases\") is plural, we need a plural verb form. In the present tense, plural verbs do not end in \"-s.\"\n4. <strong>Evaluate the choices</strong>:\n   - (A) \"has varied\" is singular.\n   - (B) \"is varying\" is singular.\n   - (C) \"varies\" is singular.\n   - (D) \"vary\" is plural, matching the plural subject \"phrases.\"",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>has varied</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>is varying</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>varies</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>vary</p>"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "<p>In the book <em>A Theory of Harmony</em> (1985), Swiss musicologist Ernst Levy argued that every chord has an opposite that can be substituted for it. For example, a pianist could replace the bvii6 chord for the II7 chord while ________ chord is a given chord's opposite can be determined using a music visualization tool called the circle of fifths.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "D",
+      "explanation": "The text contains two separate ideas that function as independent grammatical units. \n\n1. The first unit is a complete thought: \"For example, a pianist could replace the bvii6 chord for the II7 chord while improvising.\"\n2. The second unit is also an independent clause: \"Which chord is a given chord's opposite can be determined using a music visualization tool called the circle of fifths.\" In this sentence, the noun clause \"Which chord is a given chord's opposite\" serves as the subject of the verb phrase \"can be determined.\"\n\nAccording to the rules of Standard English conventions, two independent clauses must be separated by a terminal punctuation mark (like a period) or a semicolon. Choice D provides a period, correctly identifying the boundary between these two thoughts.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>improvising, which</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>improvising which</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>improvising and which</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>improvising. Which</p>"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>On a chilly spring morning in a Virginia park, as sunlight crested the treetops, Kathrin Swoboda raised her Nikon D500 camera and captured an image that would win the Grand Prize in the 2019 Audubon Photography Awards: a red-winged blackbird, exhaling what appeared to be rings of smoke. ______ the “smoke” was actually the blackbird’s breath hitting the cold morning air as the bird sang.</p>",
+      "content": "<p>Which choice completes the text with the most logical transition?</p>",
+      "correct_answer": "D",
+      "explanation": "The passage describes an image of a red-winged blackbird that seems to be breathing \"rings of smoke.\" The first sentence establishes the context: it is a \"chilly spring morning.\" The second sentence provides the scientific explanation for this visual phenomenon: the \"smoke\" is actually condensation from the bird's breath. The transition \"Of course\" is the most logical choice because it introduces a clarification that follows naturally from the previously mentioned details (the chilly temperature). It serves to acknowledge the appearance while clarifying the reality as a matter of fact.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Therefore,</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>For example,</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Furthermore,</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Of course,</p>"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Vanadium is one of a variety of potentially useful trace elements contained in the chemical-rich brine that remains after seawater is purified through desalination. However, routine extraction of vanadium and other such elements from brine is not yet technologically or economically feasible. ______ most trace elements have only been extracted from seawater on an experimental basis.</p>",
+      "content": "<p>Which choice completes the text with the most logical transition?</p>",
+      "correct_answer": "A",
+      "explanation": "The passage discusses the current status of extracting trace elements from desalination brine. Sentence 2 states that routine extraction of these elements is \"not yet\" technologically or economically feasible. Sentence 3 provides additional context regarding what has been achieved so far: extraction has only occurred on an experimental basis. \n\n1. <strong>Analyze the relationship:</strong> Sentence 2 establishes that something is not currently possible on a routine scale. Sentence 3 describes the current state of progress (experimental only). The transition needs to signal a timeframe or the current status.\n2. <strong>Evaluate \"To date\":</strong> This phrase means \"up to the present time.\" It perfectly introduces the current status of experimental extraction, aligning with the \"not yet\" in the previous sentence.\n3. <strong>Conclusion:</strong> \"To date\" provides a logical temporal link that summarizes the situation up to the current moment.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>To date,</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>In doing so,</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Finally,</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Similarly,</p>"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><p>A synthesis reaction is a type of chemical reaction.</p><p>In a synthesis reaction, two or more substances combine to form a new substance.</p><p>When sodium and chloride combine, they form a substance called sodium chloride.</p><p>This substance is more commonly known as table salt.</p>",
+      "content": "<p>The student wants to define the term \"synthesis reaction.\" Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "A",
+      "explanation": "To define the term \"synthesis reaction,\" we need to look for notes that explain what it is and what its characteristics are. \r\n\r\n1.  <strong>Analyze the notes</strong>: \r\n    *   Note 1: \"A synthesis reaction is a type of chemical reaction.\"\r\n    *   Note 2: \"In a synthesis reaction, two or more substances combine to form a new substance.\"\r\n    *   Notes 3 and 4: Provide a specific example of this process (sodium and chloride forming table salt).\r\n2.  <strong>Combine the relevant notes</strong>: A good definition should combine the category (chemical reaction) with the identifying characteristic (substances combining to form a new substance). \r\n3.  <strong>Evaluate Choice A</strong>: This choice states exactly what a synthesis reaction is by merging notes 1 and 2: \"A synthesis reaction is a chemical reaction [Note 1] in which two or more substances combine to form a new substance [Note 2].\" This effectively accomplishes the student's goal.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>A synthesis reaction is a chemical reaction in which two or more substances combine to form a new substance.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>A new substance is formed when a chemical reaction combines sodium and chloride.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>The substance sodium chloride, also known as table salt, is formed by a chemical reaction.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>When sodium and chloride combine, they form a substance commonly known as table salt.</p>"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Documentary TV programs in the slow TV genre consist of uninterrupted broadcasts of ordinary events in real time.</li><li><em>MORA: Zeichner</em> is a German slow TV program.</li><li>The 45-minute-long program documented an artist making a pencil drawing during a train journey.</li><li>It first aired in 2016.</li><li>Slow TV has been called “the world’s most boring television.”</li><li>American journalist Nathan Heller praises it, writing that “it affords a visceral kind of armchair tourism.”</li></ul>",
+      "content": "<p>The student wants to use a quotation to refute the claim that slow TV programs are boring. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "B",
+      "explanation": "The student’s goal is to refute the claim that slow TV is boring using a quotation. Choice B accomplishes this by explicitly setting up a contrast with the word \"boring\" (\"Far from boring\") and then using the quotation from Nathan Heller—who claims slow TV \"affords a visceral kind of armchair tourism\"—to provide a compelling, positive alternative to the idea that the programs are dull.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>With broadcasts of ordinary events, like artists at work, occurring in real time, slow TV might just be “the world’s most boring television.”</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Far from boring, slow TV programs can provide a “visceral kind of armchair tourism,” as Heller puts it, whereby viewers can watch artists at work in real time.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><em>MORA: Zeichner</em> can afford a “visceral kind of armchair tourism,” as Heller puts it.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>While some have praised slow TV for affording a “visceral kind of armchair tourism,” others have called it “the world’s most boring television.”</p>"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><p>The Great Salt Lake in Utah is one of the world's saltiest bodies of water.</p><p>The northern portion of the lake has a higher concentration of salt than the southern portion.</p><p>Aquatic insects called <em>Ephydra cinerea</em> live in the southern portion.</p><p>Bacteria called <em>Nodularia</em> live in the southern portion.</p>",
+      "content": "<p>The student wants to emphasize a difference between <em>Ephydra cinerea</em> and <em>Nodularia</em>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "D",
+      "explanation": "The student's goal is to emphasize a <b>difference</b> between <i>Ephydra cinerea</i> and <i>Nodularia</i> based on the provided notes. The notes mention that <i>Ephydra cinerea</i> are 'aquatic insects' and <i>Nodularia</i> are 'bacteria'. \n\nChoice D effectively accomplishes this goal by identifying both organisms and using the contrasting conjunction 'whereas' to highlight their different biological classifications (insects versus bacteria).",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><em>Ephydra cinerea</em> and <em>Nodularia</em> both live in the Great Salt Lake's southern portion.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>The northern portion of the Great Salt Lake has a higher concentration of salt than does the southern portion.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><em>Ephydra cinerea</em> are aquatic insects that live in the southern portion of the Great Salt Lake.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><em>Ephydra cinerea</em> and <em>Nodularia</em> are different types of organisms: <em>Ephydra cinerea</em> are aquatic insects, whereas <em>Nodularia</em> are bacteria.</p>"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><p>Extravehicular activities (EVAs) are activities performed outside a spacecraft by astronauts in outer space.</p><p>EVAs are also known as spacewalks.</p><p>Jerry Ross is a former US astronaut who has performed 9 spacewalks.</p><p>The total time of Ross's spacewalks was 58 hours and 32 minutes.</p><p>Francisco Rubio is a US astronaut who has performed 3 spacewalks.</p><p>The total time of Rubio's spacewalks was 21 hours and 24 minutes.</p>",
+      "content": "<p>The student wants to emphasize a similarity between the astronauts Ross and Rubio. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "B",
+      "explanation": "The student wants to emphasize a similarity between Jerry Ross and Francisco Rubio. To do this effectively, the choice must identify a shared characteristic or experience. Option B correctly identifies that both Ross and Rubio have performed 'multiple spacewalks' (Ross performed 9 and Rubio performed 3). By using the phrase 'Ross and Rubio have each...', the sentence focuses on their common experience rather than their differences.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Ross has performed spacewalks, but Rubio has performed EVAs.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Ross and Rubio have each performed multiple spacewalks.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Rubio has spent less time performing spacewalks than Ross has.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>EVAs, also known as spacewalks, are activities done by astronauts outside a spacecraft.</p>"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><p>• <em>Letters from a Peruvian Woman</em> (1747) is an epistolary novel by French author Fran&ccedil;oise de Graffigny.</p><p>• Epistolary novels are novels written primarily as a series of fictional documents.</p><p>• These documents can be letters, journal entries, newspaper clippings, and more.</p><p>• <em>Letters from a Peruvian Woman</em> consists primarily of letters.</p><p>• The letters are sent between a captured Incan princess and her fianc&eacute;.</p>",
+      "content": "<p>The student wants to provide an example of an epistolary novel. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "D",
+      "explanation": "To provide an example of an epistolary novel as the prompt requires, the sentence must both name a specific novel and identify it as belonging to that genre. Choice D accomplishes this most effectively: it identifies Françoise de Graffigny’s <i>Letters from a Peruvian Woman</i> as an 'epistolary novel' and provides supporting details (that it consists of letters between an Incan princess and her fiancé) that illustrate why it fits that category.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>An epistolary novel is a novel written primarily as a series of fictional documents, such as letters, journal entries, or newspaper clippings.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>It was Fran&ccedil;oise de Graffigny who published the novel <em>Letters from a Peruvian Woman</em> in 1747.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>In 1747, French author Fran&ccedil;oise de Graffigny published a novel of letters sent between a captured Incan princess and her fianc&eacute;.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Consisting primarily of letters sent between a captured Incan princess and her fianc&eacute;, Fran&ccedil;oise de Graffigny’s <em>Letters from a Peruvian Woman</em> is an epistolary novel.</p>"
+        }
+      ]
+    }
+  ],
+  "math_m1": [
+    {
+      "number": 1,
+      "question_type": "INPUT",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>The function <m>f</m> is defined by <m>f(x) = \\frac{x}{11} + \\frac{35}{11}</m>. What is the value of <m>f(x)</m> when <m>x = 9</m>?</p>",
+      "correct_answer": "4",
+      "explanation": "To find the value of $f(x)$ when <m>x = 9</m>, we substitute <m>9</m> for <m>x</m> in the given function equation.\n\n<strong>Step 1: Substitute the value of <m>x</m>.</strong>\nThe function is defined as <m>f(x) = \\frac{x}{11} + \\frac{35}{11}</m>. Replacing <m>x</m> with <m>9</m> gives:\n<m>f(9) = \\frac{9}{11} + \\frac{35}{11}</m>\n\n<strong>Step 2: Add the fractions.</strong>\nBecause the fractions have a common denominator of <m>11</m>, we can add the numerators directly:\n<m>f(9) = \\frac{9 + 35}{11} = \\frac{44}{11}</m>\n\n<strong>Step 3: Simplify the resulting fraction.</strong>\nDividing <m>44</m> by <m>11</m> results in <m>4</m>.\n\nTherefore, the value of $f(x)$ when <m>x = 9</m> is <m>4</m>."
+    },
+    {
+      "number": 2,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>On a certain day in June, the lowest recorded wind speed in a town was 9 miles per hour (mph) and the highest recorded wind speed was 20 mph. Which inequality is true for all values of <m>w</m>, where <m>w</m> represents any wind speed, in mph, recorded in the town on this day?</p>",
+      "correct_answer": "D",
+      "explanation": "To find the inequality that represents all possible wind speeds <m>w</m>, we need to identify the minimum and maximum values provided in the problem.\n\n1.  <strong>Identify the minimum value</strong>: The lowest recorded wind speed is given as 9 mph. This means any recorded speed <m>w</m> must be greater than or equal to 9, written as <m>w \\ge 9</m> or <m>9 \\le w</m>.\n2.  <strong>Identify the maximum value</strong>: The highest recorded wind speed is given as 20 mph. This means any recorded speed <m>w</m> must be less than or equal to 20, written as <m>w \\le 20</m>.\n3.  <strong>Combine the conditions</strong>: Since <m>w</m> represents any value between (and including) these two extremes, we combine the inequalities into a single compound inequality: <m>9 \\le w \\le 20</m>.\n\nThis inequality correctly indicates that the wind speed starts at 9, goes up to 20, and includes every value in between.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>w \\le 9</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>w \\le 11</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>w \\ge 20</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>9 \\le w \\le 20</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question_type": "INPUT",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>A triangle has a base length of 80 centimeters and a height of 40 centimeters. What is the area, in square centimeters, of the triangle?</p>",
+      "correct_answer": "1600",
+      "explanation": "To find the area of a triangle, you can use the formula:\n\n<M>\\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}</M>\n\nIn this problem, you are given the following values:\n- Base (<m>b</m>) = 80 centimeters\n- Height (<m>h</m>) = 40 centimeters\n\nSubstitute these values into the formula:\n\n<M>\\text{Area} = \\frac{1}{2} \\times 80 \\times 40</M>\n\nMultiply the base and the height:\n\n<M>80 \\times 40 = 3,200</M>\n\nThen, multiply by <m>\\frac{1}{2}</m> (which is the same as dividing by 2):\n\n<M>\\text{Area} = \\frac{3,200}{2} = 1,600</M>\n\nThe area of the triangle is 1,600 square centimeters."
+    },
+    {
+      "number": 4,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<M>y = 45</M><M>y = 5x^2</M><p>The graphs of the equations in the given system intersect at the point <m>(x, y)</m> in the <m>xy</m>-plane. What is a possible value of <m>x</m>?</p>",
+      "correct_answer": "A",
+      "explanation": "To find the intersection point $(x, y)$ of the two equations, we can use the substitution method. Since both equations are solved for <m>y</m>, we can set them equal to each other:\n\nStep 1: Set the expressions for <m>y</m> equal.\n<M>5x^2 = 45</M>\n\nStep 2: Isolate <m>x^2</m> by dividing both sides of the equation by 5.\n<M>x^2 = \\frac{45}{5}</M>\n<M>x^2 = 9</M>\n\nStep 3: Solve for <m>x</m> by taking the square root of both sides.\n<M>x = \\pm \\sqrt{9}</M>\n<M>x = 3 \\text{ or } x = -3</M>\n\nComparing these values to the given options, we find that 3 is a possible value for <m>x</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "3"
+        },
+        {
+          "option": "B",
+          "text": "5"
+        },
+        {
+          "option": "C",
+          "text": "9"
+        },
+        {
+          "option": "D",
+          "text": "45"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "<p>There were no jackrabbits in Australia before 1788 when 24 jackrabbits were introduced. By 1920 the population of jackrabbits had reached 10 billion. If the population had grown exponentially, this would correspond to a 16.2% increase, on average, in the population each year. Which of the following functions best models the population <m>p(t)</m> of jackrabbits <m>t</m> years after 1788?</p>",
+      "correct_answer": "C",
+      "explanation": "An exponential growth model has the form <m>p(t)=a(1+r)^t</m>, where <m>a</m> is the initial amount and <m>r</m> is the growth rate written as a decimal. The initial population is <m>24</m>, and a <m>16.2\\%</m> yearly increase gives growth factor <m>1+0.162=1.162</m>. Therefore the model is <m>p(t)=24\\cdot1.162^t</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>p(t)=1.162 \\cdot 24^{t}</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>p(t)=24 \\cdot 2^{1.162t}</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>p(t)=24 \\cdot 1.162^{t}</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>p(t)=( 24 \\cdot 1.162 )^{t}</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "question_type": "INPUT",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>Hector receives a gift card worth $70.00 to pay for movies online. He uses his gift card to buy 2 movies for $6.50 each. He will spend the rest of his gift card on renting movies for $1.50 each. How many movies can Hector rent?</p>",
+      "correct_answer": "38",
+      "explanation": "To find how many movies Hector can rent, we first need to determine the remaining balance on his gift card after his initial purchases.\n\n1. <strong>Calculate the cost of the bought movies:</strong> Hector buys 2 movies at <m>6.50 each. \n   Cost = $2 \\times 6.50 = 13.00</m>\n\n2. <strong>Calculate the remaining balance:</strong> Subtract the cost of the purchases from the initial gift card value. \n   Remaining Balance = <m>70.00 - 13.00 = 57.00</m>\n\n3. <strong>Calculate the number of rentals:</strong> Hector uses the remaining <m>57.00 to rent movies at $1.50 each. Divide the remaining balance by the rental cost per movie.\n   Number of rentals = $\\frac{57.00}{1.50}</m>\n   Number of rentals = <m>38</m>\n\nHector can rent 38 movies."
+    },
+    {
+      "number": 7,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>In <m>\\triangle JKL</m>, the measures of both <m>\\angle J</m> and <m>\\angle K</m> are equal and the measure of <m>\\angle L</m> is 138. What is the measure of <m>\\angle J</m>?</p>",
+      "correct_answer": "D",
+      "explanation": "To find the measure of <m>\\angle J</m>, follow these steps:\n\n1. <strong>Identify the triangle angle sum rule</strong>: The sum of the interior angles of any triangle is always <m>180^\\circ</m>. For <m>\\triangle JKL</m>, this means:\n   <M>m\\angle J + m\\angle K + m\\angle L = 180^\\circ</M>\n\n2. <strong>Set up an equation</strong>: We are given that <m>m\\angle J = m\\angle K</m> and <m>m\\angle L = 138^\\circ</m>. Let <m>x</m> represent the measure of <m>\\angle J</m>. Therefore, the measure of <m>\\angle K</m> is also <m>x</m>.\n   <M>x + x + 138 = 180</M>\n\n3. <strong>Solve for <m>x</m></strong>:\n   - Combine like terms: <m>2x + 138 = 180</m>\n   - Subtract 138 from both sides: <m>2x = 180 - 138</m>\n   - Simplify: <m>2x = 42</m>\n   - Divide by 2: <m>x = 21</m>\n\nThus, the measure of <m>\\angle J</m> is <m>21^\\circ</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>90</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>69</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>42</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>21</p>"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<M>50x + 49y = c</M><M>49x - 50y = c</M><p>In the given system of equations, <m>c</m> is a positive constant. Which of the following could be the point where the graphs of the equations in this system intersect in the <m>xy</m>-plane?</p>",
+      "correct_answer": "A",
+      "explanation": "To find the intersection point of the system of equations, we can use the substitution or elimination method. Given that both expressions are equal to <m>c</m>, we can set them equal to each other:\n\n1) <m>50x + 49y = 49x - 50y</m>\n\nNow, solve for the relationship between <m>x</m> and <m>y</m>:\n2) Subtract $49x$ from both sides: <m>x + 49y = -50y</m>\n3) Subtract $49y$ from both sides: <m>x = -99y</m>\n\nThis tells us that at the point of intersection, the <m>x</m>-coordinate must be <m>-99</m> times the <m>y</m>-coordinate. Let's test the options:\n\n*   <strong>Option A:</strong> <m>(10, -\\frac{10}{99})</m>. Here, <m>-99 \\times (-\\frac{10}{99}) = 10</m>. This matches <m>x = 10</m>.\n*   <strong>Option B:</strong> $(10, 990)$. Here, <m>-99 \\times 990 \\neq 10</m>.\n*   <strong>Option C:</strong> <m>(c, \\frac{c}{99})</m>. Here, <m>-99 \\times (\\frac{c}{99}) = -c</m>. Since <m>c</m> is a positive constant, <m>c \\neq -c</m>.\n*   <strong>Option D:</strong> $(c, 0)$. Here, <m>-99 \\times 0 = 0</m>. Since <m>c</m> is positive, <m>c \\neq 0</m>.\n\nFurthermore, for Option A, we can verify that <m>c</m> is positive: <m>c = 50(10) + 49(-\\frac{10}{99}) = 500 - \\frac{490}{99}</m>. Since <m>500 > \\frac{490}{99}</m>, <m>c</m> is indeed positive.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>(10, -\\frac{10}{99})</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>(10, 990)</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>(c, \\frac{c}{99})</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>(c, 0)</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>For the linear function <m>f</m>, the graph of <m>y = f(x)</m> in the <m>xy</m>-plane has a slope of 25 and passes through the point <m>(0, 0)</m>. Which equation defines <m>f</m>?</p>",
+      "correct_answer": "D",
+      "explanation": "To find the equation for the linear function <m>f</m>, we can use the slope-intercept form of a linear equation, which is <m>f(x) = mx + b</m>, where <m>m</m> represents the slope and <m>b</m> represents the <m>y</m>-intercept.\n\n1.  <strong>Identify the slope (<m>m</m>):</strong> The problem states the slope is 25. So, <m>m = 25</m>.\n2.  <strong>Identify the <m>y</m>-intercept (<m>b</m>):</strong> The problem states the graph passes through the point $(0, 0)$. Since the <m>y</m>-intercept is the value of <m>y</m> when <m>x = 0</m>, the <m>y</m>-intercept <m>b</m> is 0.\n3.  <strong>Substitute the values into the equation:</strong> <m>f(x) = 25x + 0</m>, which simplifies to <m>f(x) = 25x</m>.\n\nAlternatively, you can use the point-slope form: <m>y - y_1 = m(x - x_1)</m>.\nSubstituting <m>m = 25</m> and <m>(x_1, y_1) = (0, 0)</m> gives:\n<m>y - 0 = 25(x - 0)</m>\n<m>y = 25x</m>\n<m>f(x) = 25x</m>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>f(x) = -\\frac{1}{25}x</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>f(x) = -25x</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>f(x) = \\frac{1}{25}x</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>f(x) = 25x</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>At a convention center, there are a total of 375 visitors. Each visitor is located in either room A, room B, or room C. If one of these visitors is selected at random, the probability of selecting a visitor who is located in room A is 0.48, and the probability of selecting a visitor who is located in room B is 0.16. How many visitors are located in room C?</p>",
+      "correct_answer": "D",
+      "explanation": "To find the number of visitors in Room C, we first determine the probability of a visitor being in Room C and then multiply that probability by the total number of visitors.\n\n1.  <strong>Calculate the probability for Room C:</strong>\n    The total probability for all mutually exclusive outcomes (the visitor being in Room A, Room B, or Room C) must equal 1. \n    \\[ P(A) + P(B) + P(C) = 1 \\]\n    \\[ 0.48 + 0.16 + P(C) = 1 \\]\n    \\[ 0.64 + P(C) = 1 \\]\n    \\[ P(C) = 1 - 0.64 = 0.36 \\]\n\n2.  <strong>Calculate the number of visitors in Room C:</strong>\n    Multiply the probability of being in Room C by the total number of visitors (375):\n    \\[ \\text{Number in Room C} = 0.36 \\times 375 \\]\n    \\[ 0.36 \\times 375 = 135 \\]\n\nTherefore, there are 135 visitors in room C.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>29</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>36</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>120</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>135</p>"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>4, 4, 12, 25, 25</p><p>What is the range of the data set shown?</p>",
+      "correct_answer": "C",
+      "explanation": "To find the range of a data set, you subtract the smallest value from the largest value.\n\n1. <strong>Identify the minimum value</strong>: In the set {4, 4, 12, 25, 25}, the smallest number is 4.\n2. <strong>Identify the maximum value</strong>: In the set {4, 4, 12, 25, 25}, the largest number is 25.\n3. <strong>Calculate the range</strong>: Subtract the minimum from the maximum.\n   <M>\\text{Range} = 25 - 4 = 21</M>\n\nThe range of the data set is 21.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>12</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>14</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>21</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>70</p>"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<table><tr><td><m>x</m></td><td><m>y</m></td></tr><tr><td>1</td><td>16</td></tr><tr><td>2</td><td>28</td></tr><tr><td>3</td><td><m>a</m></td></tr></table><p>The table shows three values of <m>x</m> and their corresponding values of <m>y</m> for the equation <m>y = 6(2)^x + 4</m>. In the table, <m>a</m> is a constant. What is the value of <m>a</m>?</p>",
+      "correct_answer": "C",
+      "explanation": "To find the value of <m>a</m>, we must determine the value of <m>y</m> when <m>x = 3</m> using the provided equation <m>y = 6(2)^x + 4</m>.\n\n1. <strong>Identify the input value</strong>: From the table, we see that when <m>x = 3</m>, the value of <m>y</m> is <m>a</m>.\n2. <strong>Substitute <m>x = 3</m> into the equation</strong>:\n   <M>y = 6(2)^3 + 4</M>\n3. <strong>Evaluate the exponent</strong>:\n   <M>2^3 = 2 \\times 2 \\times 2 = 8</M>\n4. <strong>Multiply by the coefficient</strong>:\n   <M>6 \\times 8 = 48</M>\n5. <strong>Add the constant</strong>:\n   <M>48 + 4 = 52</M>\n\nTherefore, the value of <m>a</m> is 52.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "10"
+        },
+        {
+          "option": "B",
+          "text": "48"
+        },
+        {
+          "option": "C",
+          "text": "52"
+        },
+        {
+          "option": "D",
+          "text": "100"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>If <m>7(x - 3)^2 = 252</m>, what is the value of <m>x^2 - 6x</m>?</p>",
+      "correct_answer": "B",
+      "explanation": "To find the value of <m>x^2 - 6x</m> from the equation <m>7(x - 3)^2 = 252</m>, we can follow these steps:\n\n1.  <strong>Isolate the squared term</strong>: Divide both sides of the equation by <m>7</m>.\n    <M>\\frac{7(x - 3)^2}{7} = \\frac{252}{7}</M>\n    <M>(x - 3)^2 = 36</M>\n\n2.  <strong>Expand the squared term</strong>: Recall the algebraic identity <m>(a - b)^2 = a^2 - 2ab + b^2</m>. Applying this to <m>(x - 3)^2</m>, we get:\n    <M>x^2 - 2(x)(3) + 3^2 = 36</M>\n    <M>x^2 - 6x + 9 = 36</M>\n\n3.  <strong>Solve for the target expression</strong>: Notice that the left side of the equation now contains the expression <m>x^2 - 6x</m>, which is exactly what the question asks us to evaluate. Subtract <m>9</m> from both sides to isolate it:\n    <M>x^2 - 6x = 36 - 9</M>\n    <M>x^2 - 6x = 27</M>\n\nTherefore, the value of <m>x^2 - 6x</m> is <m>27</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>18</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>27</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>36</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>45</p>"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<M>x^2 - 5x + 2 = 0</M><p>What is one of the solutions to the given equation?</p>",
+      "correct_answer": "A",
+      "explanation": "To find the solutions to the quadratic equation <m>x^2 - 5x + 2 = 0</m>, we use the quadratic formula:\n\n<M>x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}</M>\n\n<strong>Step 1: Identify the coefficients.</strong>\nIn the given equation <m>x^2 - 5x + 2 = 0</m>, we have:\n- <m>a = 1</m>\n- <m>b = -5</m>\n- <m>c = 2</m>\n\n<strong>Step 2: Calculate the discriminant (<m>b^2 - 4ac</m>).</strong>\n<M>b^2 - 4ac = (-5)^2 - 4(1)(2)</M>\n<M>b^2 - 4ac = 25 - 8</M>\n<M>b^2 - 4ac = 17</M>\n\n<strong>Step 3: Substitute the values into the quadratic formula.</strong>\n<M>x = \\frac{-(-5) \\pm \\sqrt{17}}{2(1)}</M>\n<M>x = \\frac{5 \\pm \\sqrt{17}}{2}</M>\n\n<strong>Step 4: Determine the two solutions.</strong>\nThe two solutions are:\n1. <m>x = \\frac{5 + \\sqrt{17}}{2}</m>\n2. <m>x = \\frac{5 - \\sqrt{17}}{2}</m>\n\nLooking at the options, Choice A matches the first solution.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<m>\\frac{5 + \\sqrt{17}}{2}</m>"
+        },
+        {
+          "option": "B",
+          "text": "<m>\\frac{5 + \\sqrt{33}}{2}</m>"
+        },
+        {
+          "option": "C",
+          "text": "<m>\\frac{-5 + \\sqrt{17}}{2}</m>"
+        },
+        {
+          "option": "D",
+          "text": "<m>\\frac{-5 + \\sqrt{33}}{2}</m>"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>A circle in the <m>xy</m>-plane has its center at <m>(-7, 2)</m>, and the point <m>(1, -2)</m> lies on the circle. Which equation represents this circle?</p>",
+      "correct_answer": "A",
+      "explanation": "To find the equation of a circle, we use the standard form: <m>(x - h)^2 + (y - k)^2 = r^2</m>, where $(h, k)$ is the center and <m>r</m> is the radius.\n\n1.  <strong>Identify the center:</strong> The center is given as $(-7, 2)$. Thus, <m>h = -7</m> and <m>k = 2</m>. Substituting these into the standard form gives: \n    <m>(x - (-7))^2 + (y - 2)^2 = r^2</m> \n    <m>(x + 7)^2 + (y - 2)^2 = r^2</m>\n\n2.  <strong>Calculate the radius squared (<m>r^2</m>):</strong> Since the point $(1, -2)$ lies on the circle, the radius is the distance between the center $(-7, 2)$ and this point. We can find <m>r^2</m> directly using the squared distance formula:\n    <m>r^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2</m>\n    <m>r^2 = (1 - (-7))^2 + (-2 - 2)^2</m>\n    <m>r^2 = (8)^2 + (-4)^2</m>\n    <m>r^2 = 64 + 16 = 80</m>\n\n3.  <strong>Construct the final equation:</strong> Substitute <m>r^2 = 80</m> back into the equation from step 1:\n    <m>(x + 7)^2 + (y - 2)^2 = 80</m>",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<m>(x + 7)^2 + (y - 2)^2 = 80</m>"
+        },
+        {
+          "option": "B",
+          "text": "<m>(x + 7)^2 + (y - 2)^2 = 36</m>"
+        },
+        {
+          "option": "C",
+          "text": "<m>(x - 7)^2 + (y + 2)^2 = 80</m>"
+        },
+        {
+          "option": "D",
+          "text": "<m>(x - 7)^2 + (y + 2)^2 = 36</m>"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>A dance studio charges an introductory fee for the first 3 lessons and then charges a fixed fee for each additional lesson. One student took 4 lessons and was charged $60. Another student took 16 lessons and was charged $300. Which function <m>f</m> gives the total charge, in dollars, for any student who took <m>x</m> lessons, where <m>x > 2</m>?</p>",
+      "correct_answer": "D",
+      "explanation": "To find the function $f(x)$, we can treat the information provided as two points on a coordinate plane, where <m>x</m> represents the number of lessons and $f(x)$ represents the total charge.\n\n1.  <strong>Identify the points:</strong>\n    *   For 4 lessons, the charge is $60. This gives us the point $(4, 60)$.\n    *   For 16 lessons, the charge is $300. This gives us the point $(16, 300)$.\n\n2.  <strong>Calculate the slope (<m>m</m>):</strong>\n    The fixed fee for each additional lesson represents the slope of the linear function for <m>x \\ge 3</m>.\n    <M>m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{300 - 60}{16 - 4} = \\frac{240}{12} = 20</M>\n    This means the studio charges <m>20 for each lesson beyond the introductory period.\n\n3.  <strong>Determine the linear equation:</strong>\n    Using the point-slope formula <m>f(x) - y_1 = m(x - x_1)</m> with the point $(4, 60)</m>:\n    <M>f(x) - 60 = 20(x - 4)</M>\n    <M>f(x) - 60 = 20x - 80</M>\n    <M>f(x) = 20x - 20</M>\n\n4.  <strong>Verify the equation:</strong>\n    *   For <m>x = 4</m>: <m>f(4) = 20(4) - 20 = 80 - 20 = 60</m>. (Correct)\n    *   For <m>x = 16</m>: <m>f(16) = 20(16) - 20 = 320 - 20 = 300</m>. (Correct)\n\nThus, the function is <m>f(x) = 20x - 20</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>f(x) = 15x</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>f(x) = 15x + 60</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>f(x) = 20x</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>f(x) = 20x - 20</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "question_type": "INPUT",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>A car dealership has only sedans, SUVs, and minivans for sale. On Monday, 30% of the vehicles for sale were sedans and 50% were SUVs. If there were 57 sedans for sale at the dealership on Monday, how many minivans were for sale?</p>",
+      "correct_answer": "38",
+      "explanation": "To find the number of minivans for sale, we first determine the percentage of vehicles that are minivans and then calculate their quantity based on the known number of sedans.\n\n1.  <strong>Calculate the percentage of minivans:</strong>\n    Since the dealership only sells sedans, SUVs, and minivans, the total percentage must be 100%. \n    <M>\\text{Minivans\\%} = 100\\% - (\\text{Sedans\\%} + \\text{SUVs\\%})</M>\n    <M>\\text{Minivans\\%} = 100\\% - (30\\% + 50\\%) = 100\\% - 80\\% = 20\\%</M>\n\n2.  <strong>Calculate the total number of vehicles:</strong>\n    We are given that 30% of the vehicles are sedans and that there are 57 sedans. Let <m>T</m> represent the total number of vehicles:\n    <M>0.30 \\times T = 57</M>\n    <M>T = \\frac{57}{0.30} = 190</M>\n\n3.  <strong>Calculate the number of minivans:</strong>\n    Now, find 20% of the total number of vehicles (190):\n    <M>\\text{Minivans} = 0.20 \\times 190 = 38</M>\n\nAlternatively, you can use the ratio of the percentages:\n<M>\\frac{30\\%}{57} = \\frac{20\\%}{x}</M>\n<M>30x = 57 \\times 20</M>\n<M>30x = 1140</M>\n<M>x = 38</M>"
+    },
+    {
+      "number": 18,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>On January 1, there were 236 views of a video posted on a social media site. Every 3 days after January 1, the number of views of the video had increased by 60% of the number of views 3 days earlier. The function <m>f</m> gives the predicted number of views <m>x</m> days after January 1. Which equation defines <m>f</m>?</p>",
+      "correct_answer": "C",
+      "explanation": "To define the function $f(x)$, we need to identify the components of an exponential growth model, which typically follows the form <m>f(x) = a(b)^{\\frac{x}{k}}</m>.\n\n1.  <strong>Initial Value (<m>a</m>):</strong> The problem states that on January 1 (<m>x=0</m>), there were 236 views. Therefore, the initial value <m>a = 236</m>.\n2.  <strong>Growth Factor (<m>b</m>):</strong> The number of views increased by 60% every 3 days. A 60% increase means the new value is <m>100\\% + 60\\% = 160\\%</m> of the previous value. In decimal form, the growth factor is <m>1 + 0.60 = 1.60</m>.\n3.  <strong>Time Interval (<m>k</m>):</strong> The 60% increase occurs \"every 3 days.\" This means that for every 3-unit increase in <m>x</m>, the exponent should increase by 1. Therefore, the exponent is <m>\\frac{x}{3}</m>.\n\nPutting it all together, the function is <m>f(x) = 236(1.60)^{\\frac{x}{3}}</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>f(x) = 236(0.60)^{\\frac{x}{3}}</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>f(x) = 236(0.60)^{3x}</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>f(x) = 236(1.60)^{\\frac{x}{3}}</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>f(x) = 236(1.60)^{3x}</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "question_type": "INPUT",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<M>0.10x + 0.20y = 0.18(x + y)</M><p>The equation gives a volume <m>x</m>, in gallons, of a 10% saltwater solution that could be mixed with a volume <m>y</m>, in gallons, of a 20% saltwater solution to produce an 18% saltwater solution. According to this equation, what volume, in gallons, of the 20% saltwater solution could be mixed with 45.0 gallons of the 10% saltwater solution to produce an 18% saltwater solution? (Assume that the volume of the mixture is the sum of the volumes of the two solutions before they were mixed.)</p>",
+      "correct_answer": "180",
+      "explanation": "To find the volume y of the 20% saltwater solution that must be mixed with 45.0 gallons of the 10% saltwater solution, we utilize the given equation <m>0.10x + 0.20y = 0.18(x + y)</m>. The problem states that x represents the volume of the 10% solution, so we substitute <m>x = 45</m> into the equation: <m>0.10(45) + 0.20y = 0.18(45 + y)</m>. First, simplify the terms: <m>0.10 \\times 45 = 4.5</m>. Then, distribute the 0.18 on the right side of the equation: <m>0.18 \\times 45 + 0.18 \\times y = 8.1 + 0.18y</m>. Now the equation is <m>4.5 + 0.20y = 8.1 + 0.18y</m>. To solve for y, subtract $0.18y$ from both sides: <m>4.5 + 0.02y = 8.1</m>. Next, subtract 4.5 from both sides: <m>0.02y = 3.6</m>. Finally, divide by 0.02: <m>y = 3.6 / 0.02 = 180</m>. Thus, 180 gallons of the 20% saltwater solution are needed."
+    },
+    {
+      "number": 20,
+      "question_type": "INPUT",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<M>f(x) = x + 3</M><M>g(x) = 7x^2 - rx + 63</M><p>The functions <m>f</m> and <m>g</m> are given. In function <m>g</m>, <m>r</m> is a constant. If <m>f(x) ⋅ g(x) = 7x^3 + 189</m>, what is the value of <m>r</m>?</p>",
+      "correct_answer": "21",
+      "explanation": "To find the value of <m>r</m>, we need to multiply the given functions $f(x)$ and $g(x)$ and set the result equal to the provided expression <m>7x^3 + 189</m>.\n\n<strong>Step 1: Set up the multiplication.</strong>\n<m>f(x) \\cdot g(x) = (x + 3)(7x^2 - rx + 63)</m>\n\n<strong>Step 2: Expand the expression using the distributive property.</strong>\nMultiply each term in the first binomial by each term in the second trinomial:\n<m>x(7x^2 - rx + 63) + 3(7x^2 - rx + 63)</m>\n<m>= 7x^3 - rx^2 + 63x + 21x^2 - 3rx + 189</m>\n\n<strong>Step 3: Group like terms.</strong>\nGroup the <m>x^2</m> terms and the <m>x</m> terms:\n<m>7x^3 + (21 - r)x^2 + (63 - 3r)x + 189</m>\n\n<strong>Step 4: Compare the expanded expression to the given product.</strong>\nWe are told that <m>f(x) \\cdot g(x) = 7x^3 + 189</m>. This means the coefficients of the <m>x^2</m> and <m>x</m> terms in our expanded expression must be zero:\n- For the <m>x^2</m> term: <m>21 - r = 0</m>\n- For the <m>x</m> term: <m>63 - 3r = 0</m>\n\n<strong>Step 5: Solve for <m>r</m>.</strong>\nUsing <m>21 - r = 0</m>, we add <m>r</m> to both sides:\n<m>r = 21</m>\n\nUsing <m>63 - 3r = 0</m>, we add $3r$ to both sides:\n<m>63 = 3r</m>\n<m>r = 21</m>\n\nBoth equations confirm that the value of <m>r</m> is 21."
+    },
+    {
+      "number": 21,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p><m>y=-4x+40</m></p><p>Which table gives three values of <m>x</m> and their corresponding values of <m>y</m> for the given equation?</p>",
+      "correct_answer": "C",
+      "explanation": "Substitute each <m>x</m>-value into <m>y=-4x+40</m>. For <m>x=0</m>, <m>y=-4(0)+40=40</m>. For <m>x=1</m>, <m>y=-4(1)+40=36</m>. For <m>x=2</m>, <m>y=-4(2)+40=32</m>. The table in choice C lists exactly these ordered pairs.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "x: 0, 1, 2; y: 0, -4, -8"
+        },
+        {
+          "option": "B",
+          "text": "x: 0, 1, 2; y: 40, 44, 48"
+        },
+        {
+          "option": "C",
+          "text": "x: 0, 1, 2; y: 40, 36, 32"
+        },
+        {
+          "option": "D",
+          "text": "x: 0, 1, 2; y: 0, 4, 8"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "<M>\\frac{22x - 29 - m}{3} = k(x + 5)</M><p>In the given equation, <m>k</m> and <m>m</m> are constants. The equation has infinitely many solutions. What is the value of <m>m</m>?</p>",
+      "correct_answer": "D",
+      "explanation": "For the equation to have infinitely many solutions, the two sides must be identical for every value of <m>x</m>. Equating the coefficients and constants in <m>\\frac{22x - 29 - m}{3} = k(x + 5)</m> gives <m>m = -139</m>. Therefore the correct answer is <m>-139</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "39"
+        },
+        {
+          "option": "B",
+          "text": "-11"
+        },
+        {
+          "option": "C",
+          "text": "-26"
+        },
+        {
+          "option": "D",
+          "text": "-139"
+        }
+      ]
+    }
+  ],
+  "math_m2": [
+    {
+      "number": 1,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>Two participants solved a puzzle cube during timed competitions. The lists give the times, to the nearest second, that participant A and participant B took to solve the cube at various competitions.</p><p>Participant A: 23, 23, 25, 27</p><p>Participant B: 23, 23, 25, 27, 38</p><p>Which statement correctly compares the mean solve times, to the nearest second, of participant A and participant B at these competitions?</p>",
+      "correct_answer": "B",
+      "explanation": "To compare the mean solve times for participant A and participant B, we calculate the arithmetic mean (average) for each set of data.\n\n<strong>Step 1: Calculate the mean for Participant A.</strong>\nThe times are: 23, 23, 25, 27.\nSum of times = <m>23 + 23 + 25 + 27 = 98</m>\nNumber of competitions = 4\nMean A = <m>\\frac{98}{4} = 24.5</m> seconds.\n\n<strong>Step 2: Calculate the mean for Participant B.</strong>\nThe times are: 23, 23, 25, 27, 38.\nSum of times = <m>23 + 23 + 25 + 27 + 38 = 136</m>\nNumber of competitions = 5\nMean B = <m>\\frac{136}{5} = 27.2</m> seconds.\n\n<strong>Step 3: Compare the means.</strong>\nSince <m>24.5 < 27.2</m>, the mean solve time for participant A is less than the mean solve time for participant B.\n\n<strong>Logic Shortcut:</strong>\nNotice that participant B has all the same times as participant A, plus one additional time of 38 seconds. Since 38 is significantly higher than the average of the first four times (24.5), adding it to the set will necessarily increase the mean.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>The mean solve time of participant A is greater than the mean solve time of participant B.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>The mean solve time of participant A is less than the mean solve time of participant B.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>The mean solve time of participant A is equal to the mean solve time of participant B.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>There is not enough information to compare the mean solve times of participant A and participant B.</p>"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question_type": "INPUT",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>Line <m>j</m> is defined by <m>y = 4x + 9</m>. Line <m>k</m> is parallel to line <m>j</m> in the <m>xy</m>-plane. What is the slope of line <m>k</m>?</p>",
+      "correct_answer": "4",
+      "explanation": "To find the slope of line <m>k</m>, we start by identifying the slope of the given line <m>j</m>. The equation for line <m>j</m> is <m>y = 4x + 9</m>, which is written in slope-intercept form, <m>y = mx + b</m>, where <m>m</m> represents the slope and <m>b</m> represents the y-intercept. In this equation, the coefficient of <m>x</m> is 4, which means the slope of line <m>j</m> is 4. According to geometric principles, two lines in the $xy$-plane are parallel if and only if they have the same slope. Since line <m>k</m> is parallel to line <m>j</m>, the slope of line <m>k</m> must be identical to the slope of line <m>j</m>. Therefore, the slope of line <m>k</m> is 4."
+    },
+    {
+      "number": 3,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<table><tr><td><m>x</m></td><td><m>f(x)</m></td></tr><tr><td>0</td><td>3</td></tr><tr><td>1</td><td>5</td></tr><tr><td>2</td><td>7</td></tr></table><p>For a linear function <m>f</m>, the table shows three values of <m>x</m> and their corresponding values of <m>f(x)</m>. Which of the following could define <m>f</m>?</p>",
+      "correct_answer": "B",
+      "explanation": "To determine the equation of the linear function f, we can identify its slope and y-intercept from the provided table. A linear function can be written in the form f(x) = mx + b, where m is the slope and b is the y-intercept. 1. Identify the y-intercept: The y-intercept is the value of f(x) when x = 0. According to the table, f(0) = 3. Therefore, b = 3. 2. Calculate the slope: The slope m is the rate of change between any two points (x1, y1) and (x2, y2). Using the points (0, 3) and (1, 5), we calculate m = (5 - 3) / (1 - 0) = 2 / 1 = 2. 3. Construct the equation: Substituting m = 2 and b = 3 into the slope-intercept form gives f(x) = 2x + 3. We can verify this with the third point (2, 7): f(2) = 2(2) + 3 = 4 + 3 = 7, which matches the table.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>f(x) = 3x + 2</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>f(x) = 2x + 3</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>f(x) = x + 3</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>f(x) = 2x</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>The height of a right circular cylinder is 36 inches, and the circumference of its base is 360 inches. Which expression represents the total surface area, in square inches, of the cylinder?</p>",
+      "correct_answer": "A",
+      "explanation": "To find the total surface area of a right circular cylinder, we need to calculate the sum of the lateral surface area and the areas of the two circular bases.\n\n### 1. Identify the Formula\nThe total surface area ($SA$) of a cylinder is given by:\n<M>SA = \\text{Lateral Area} + 2 \\times \\text{Base Area}</M>\n<M>SA = 2\\pi rh + 2\\pi r^2</M>\n\n### 2. Find the Lateral Area\nThe lateral area is the circumference (<m>C</m>) of the base multiplied by the height (<m>h</m>).\nGiven:\n- <m>h = 36</m>\n- <m>C = 360</m>\n\n<M>\\text{Lateral Area} = C \\times h = (360)(36) = (36)(360)</M>\n\n### 3. Determine the Radius\nWe need the radius (<m>r</m>) to calculate the base area. The formula for circumference is <m>C = 2\\pi r</m>. Since <m>C = 360</m>:\n<M>360 = 2\\pi r</M>\n<M>r = \\frac{360}{2\\pi} = \\frac{180}{\\pi}</M>\n\n### 4. Find the Base Area\nThe area of one circular base is <m>\\pi r^2</m>:\n<M>\\text{Base Area} = \\pi\\left(\\frac{180}{\\pi}\\right)^2</M>\n\n### 5. Combine for Total Surface Area\nSince there are two bases, the total surface area is:\n<M>SA = \\text{Lateral Area} + 2(\\text{Base Area})</M>\n<M>SA = (36)(360) + 2\\pi\\left(\\frac{180}{\\pi}\\right)^2</M>\n\nThis matches option A.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>(36)(360) + 2\\pi\\left(\\frac{180}{\\pi}\\right)^2</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>(36)(360) + \\pi\\left(\\frac{180}{\\pi}\\right)^2</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>\\pi\\left(\\frac{180}{\\pi}\\right)^2(36)</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>(36)(360)</m></p>"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>A bookstore is giving away free books every day. The equation <m>f(x) = 162 - 9x</m> gives the number of free books, <m>f(x)</m>, that remain to be given away after <m>x</m> days. Which of the following is the best interpretation of <m>f(18) = 0</m> in this context?</p>",
+      "correct_answer": "C",
+      "explanation": "To interpret the equation <m>f(18) = 0</m> in the context of this problem, we must first identify what the input and output variables represent:\n\n1.  <strong>Identify the variables:</strong> The problem states that <m>x</m> represents the number of <strong>days</strong> and $f(x)$ represents the number of <strong>free books remaining</strong>.\n2.  <strong>Analyze the function notation:</strong> In the expression <m>f(18) = 0</m>, the value inside the parentheses (<m>18</m>) is the input <m>x</m>, and the value it equals (<m>0</m>) is the output $f(x)$.\n3.  <strong>Translate the values:</strong> \n    *   <m>x = 18</m> means <strong>18 days</strong> have passed.\n    *   <m>f(x) = 0</m> means <strong>0 books remain</strong> to be given away.\n4.  <strong>Formulate the interpretation:</strong> After 18 days, the number of books left is zero. This is equivalent to saying it takes 18 days to give away all the free books.\n\nMathematically, this confirms that when we plug 18 into the equation <m>f(x) = 162 - 9x</m>, we get <m>162 - 9(18) = 162 - 162 = 0</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>The bookstore has 18 free books to give away.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>The bookstore will give away 18 free books in 9 days.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>It will take 18 days to give away all the free books.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>It will take 162 days to give away 18 free books.</p>"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<M>2x + 5y = 260</M><br><M>-2x + 3y = 260</M><p>The solution to the given system of equations is <m>(x, y)</m>. What is the value of <m>8y</m>?</p>",
+      "correct_answer": "D",
+      "explanation": "To solve for the value of $8y$, we can use the elimination method on the given system of equations:\n\n1) <m>2x + 5y = 260</m>\n2) <m>-2x + 3y = 260</m>\n\nNotice that the coefficients of <m>x</m> are opposites (<m>2</m> and <m>-2</m>). By adding the two equations together, we can eliminate the <m>x</m> variable:\n\n<m>(2x - 2x) + (5y + 3y) = 260 + 260</m>\n<m>0 + 8y = 520</m>\n<m>8y = 520</m>\n\nThe question asks specifically for the value of $8y$. Since we have already isolated the expression $8y$ on one side of the equation, the value is <m>520</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "0"
+        },
+        {
+          "option": "B",
+          "text": "65"
+        },
+        {
+          "option": "C",
+          "text": "260"
+        },
+        {
+          "option": "D",
+          "text": "520"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<p>If <m>\\frac{9x}{2} - 11 = \\frac{45}{2} - 11</m>, what is the value of <m>9x</m>?</p>",
+      "correct_answer": "C",
+      "explanation": "To find the value of $9x$, we can simplify the given equation step by step.\n\n<strong>Step 1: Simplify the equation by removing common terms.</strong>\nThe equation is given as:\n<M>\\frac{9x}{2} - 11 = \\frac{45}{2} - 11</M>\nSince <m>-11</m> appears on both sides of the equation, we can add <m>11</m> to both sides to cancel it out:\n<M>\\frac{9x}{2} = \\frac{45}{2}</M>\n\n<strong>Step 2: Isolate the target expression.</strong>\nThe question asks for the value of $9x$. We can isolate $9x$ by multiplying both sides of the simplified equation by <m>2</m>:\n<M>2 \\cdot \\left(\\frac{9x}{2}\\right) = 2 \\cdot \\left(\\frac{45}{2}\\right)</M>\n<M>9x = 45</M>\n\nThus, the value of $9x$ is <m>45</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>5</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>10</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>45</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>54</p>"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>A right circular cylinder has a volume of <m>35,152\\text{π}</m> cubic inches. The height of the cylinder is 2 times its radius. What is the radius, in inches, of the cylinder?</p>",
+      "correct_answer": "A",
+      "explanation": "To find the radius of the right circular cylinder, we use the formula for the volume of a cylinder and the relationship between height and radius provided in the problem.\n\n1. <strong>Recall the volume formula:</strong> The volume (<m>V</m>) of a right circular cylinder is given by <m>V = \\pi r^2 h</m>, where <m>r</m> is the radius and <m>h</m> is the height.\n\n2. <strong>Identify the given values:</strong> \n   - Volume <m>V = 35,152\\pi</m> cubic inches.\n   - Relationship between height and radius: <m>h = 2r</m>.\n\n3. <strong>Substitute the height into the volume formula:</strong> \n   <m>V = \\pi r^2 (2r)</m>\n   <m>V = 2\\pi r^3</m>\n\n4. <strong>Solve for <m>r</m>:</strong>\n   Set the expression for volume equal to the given value:\n   <m>35,152\\pi = 2\\pi r^3</m>\n\n   Divide both sides by <m>2\\pi</m>:\n   <m>\\frac{35,152\\pi}{2\\pi} = r^3</m>\n   <m>17,576 = r^3</m>\n\n5. <strong>Calculate the cube root:</strong>\n   <m>r = \\sqrt[3]{17,576}</m>\n   <m>r = 26</m>\n\nThe radius of the cylinder is 26 inches.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>26</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>52</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>676</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>1,352</p>"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "",
+      "content": "<M>2x^2 = k</M><p>In the given equation, <m>k</m> is a constant. The equation has no real solution. Which of the following could be the value of <m>k</m>?</p>",
+      "correct_answer": "A",
+      "explanation": "To determine which value of <m>k</m> results in no real solution for the equation <m>2x^2 = k</m>, we can analyze the properties of squares in the real number system.\n\n1.  <strong>Isolate the squared term</strong>: Divide both sides of the equation by 2:\n    <M>x^2 = \\frac{k}{2}</M>\n\n2.  <strong>Understand real solutions</strong>: For any real number <m>x</m>, the square <m>x^2</m> must be greater than or equal to 0 (<m>x^2 \\ge 0</m>). Therefore, the equation <m>x^2 = \\text{constant}</m> has real solutions only if the constant is non-negative.\n\n3.  <strong>Condition for no real solution</strong>: If the constant <m>\\frac{k}{2}</m> is less than 0, there is no real number <m>x</m> that satisfies the equation. \n    <M>\\frac{k}{2} < 0 \\implies k < 0</M>\n\n4.  <strong>Evaluate the options</strong>:\n    *   (A) <m>-92</m>: This value is less than 0. Substituting gives <m>x^2 = -46</m>, which has no real solution.\n    *   (B) <m>0</m>: Substituting gives <m>x^2 = 0</m>, which has one real solution (<m>x = 0</m>).\n    *   (C) <m>48</m>: Substituting gives <m>x^2 = 24</m>, which has two real solutions (<m>x = \\pm\\sqrt{24}</m>).\n    *   (D) <m>55</m>: Substituting gives <m>x^2 = 27.5</m>, which has two real solutions (<m>x = \\pm\\sqrt{27.5}</m>).\n\nOnly option A provides a value for <m>k</m> that results in no real solution.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>-92</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>0</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>48</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>55</p>"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "Which expression is equivalent to <m>\\frac{7x(x-9)-2(x-9)}{3x-27}</m>, where <m>x > 9</m>?",
+      "correct_answer": "A",
+      "explanation": "To find the expression equivalent to the given rational expression, we can simplify it by factoring both the numerator and the denominator.\n\n### Step 1: Factor the numerator\nThe numerator is <m>7x(x-9) - 2(x-9)</m>. \nNotice that both terms share the common binomial factor <m>(x-9)</m>. We can factor this out:\n<M>7x(x-9) - 2(x-9) = (7x-2)(x-9)</M>\n\n### Step 2: Factor the denominator\nThe denominator is <m>3x - 27</m>. \nWe can factor out the greatest common factor, which is 3:\n<M>3x - 27 = 3(x-9)</M>\n\n### Step 3: Simplify the rational expression\nNow, substitute the factored forms back into the fraction:\n<M>\\frac{(7x-2)(x-9)}{3(x-9)}</M>\n\nSince the problem specifies <m>x > 9</m>, we know that <m>x - 9 \\neq 0</m>. This allows us to cancel the common factor <m>(x-9)</m> from the numerator and the denominator:\n<M>\\frac{7x-2}{3}</M>\n\nThis simplified expression matches choice A.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<m>\\frac{7x-2}{3}</m>"
+        },
+        {
+          "option": "B",
+          "text": "<m>\\frac{7x-2}{9}</m>"
+        },
+        {
+          "option": "C",
+          "text": "<m>\\frac{7x^2-65x+18}{3x-27}</m>"
+        },
+        {
+          "option": "D",
+          "text": "<m>\\frac{7x^2-65x-81}{3x-27}</m>"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "question_type": "INPUT",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>0.1242 is 0.09% of the number <m>b</m>. The number <m>b</m> is 25% of the number <m>c</m>. What is the value of <m>c</m>?</p>",
+      "correct_answer": "552",
+      "explanation": "To solve this problem, we need to translate the two descriptive statements into algebraic equations.\n\n<strong>Step 1: Find the value of <m>b</m>.</strong>\nThe question states that 0.1242 is 0.09% of the number <m>b</m>. To express a percentage as a decimal, we divide by 100: <m>0.09\\% = \\frac{0.09}{100} = 0.0009</m>.\nWe can write the equation as:\n<M>0.1242 = 0.0009 \\times b</M>\nTo solve for <m>b</m>, divide both sides by 0.0009:\n<M>b = \\frac{0.1242}{0.0009}</M>\n<M>b = 138</M>\n\n<strong>Step 2: Find the value of <m>c</m>.</strong>\nThe question states that the number <m>b</m> is 25% of the number <m>c</m>. We know <m>b = 138</m> and <m>25\\% = 0.25</m>.\nWe can write the equation as:\n<M>138 = 0.25 \\times c</M>\nTo solve for <m>c</m>, divide both sides by 0.25 (which is equivalent to multiplying by 4):\n<M>c = \\frac{138}{0.25}</M>\n<M>c = 138 \\times 4</M>\n<M>c = 552</M>\n\nThe value of <m>c</m> is 552."
+    },
+    {
+      "number": 12,
+      "question_type": "INPUT",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>The function <m>f</m> is defined by the equation <m>f(x) = 20^x + b</m>, where <m>b</m> is a constant. In the <m>xy</m>-plane, the graph of <m>y = f(x)</m> contains the points <m>(0, 36)</m> and <m>(2, p + 19)</m>, where <m>p</m> is a constant. What is the value of <m>p</m>?</p>",
+      "correct_answer": "416",
+      "explanation": "To find the value of <m>p</m>, we first need to determine the constant <m>b</m> using the given information about the point $(0, 36)$. \n\nStep 1: Determine the value of <m>b</m>. \nThe graph of <m>y = f(x)</m> contains the point $(0, 36)$, which means <m>f(0) = 36</m>. \nSubstituting <m>x = 0</m> into the function <m>f(x) = 20^x + b</m>: \n<m>20^0 + b = 36</m> \nSince <m>20^0 = 1</m>: \n<m>1 + b = 36</m> \nSubtracting 1 from both sides gives <m>b = 35</m>. \nNow the function is defined as <m>f(x) = 20^x + 35</m>. \n\nStep 2: Solve for <m>p</m> using the point <m>(2, p + 19)</m>. \nThe point <m>(2, p + 19)</m> lies on the graph, so <m>f(2) = p + 19</m>. \nSubstitute <m>x = 2</m> into our function: \n<m>f(2) = 20^2 + 35</m> \n<m>f(2) = 400 + 35 = 435</m> \n\nStep 3: Equate the two expressions for $f(2)$. \n<m>435 = p + 19</m> \nSubtract 19 from both sides to solve for <m>p</m>: \n<m>p = 435 - 19</m> \n<m>p = 416</m>."
+    },
+    {
+      "number": 13,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>A figure has an area of 3,744 square inches. What is the area, in square feet, of this figure? (1 foot = 12 inches)</p>",
+      "correct_answer": "A",
+      "explanation": "To convert square units, you must apply the conversion factor for the linear units twice (or square the linear conversion factor).\n\n1. <strong>Identify the linear conversion factor</strong>: \n   Given that 1 foot = 12 inches.\n\n2. <strong>Determine the area conversion factor</strong>: \n   To find the number of square inches in one square foot, square both sides of the linear conversion:\n   <M>(1\\text{ foot})^2 = (12\\text{ inches})^2</M>\n   <M>1\\text{ square foot (ft}^2) = 144\\text{ square inches (in}^2)</M>\n\n3. <strong>Convert the area</strong>: \n   Divide the total area in square inches by the conversion factor (<m>144\\text{ in}^2/\\text{ft}^2</m>):\n   <M>\\frac{3,744\\text{ in}^2}{144\\text{ in}^2/\\text{ft}^2} = 26\\text{ ft}^2</M>\n\nThe area of the figure is 26 square feet.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>26</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>61.2</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>312</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>734.8</p>"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "<M>f(x) = (x - a)(x - b)</M><p>The function <m>f</m> is defined by the given equation, where <m>a</m> and <m>b</m> are integer constants. If <m>f(39) > 0</m>, <m>f(42) < 0</m>, and <m>f(45) > 0</m>, which of the following could be the value of <m>a + b</m>?</p>",
+      "correct_answer": "D",
+      "explanation": "To solve this problem, we analyze the properties of the quadratic function <m>f(x) = (x - a)(x - b)</m>.\n\n1.  <strong>Analyze the Sign of the Function:</strong> Since the coefficient of the <m>x^2</m> term (the leading coefficient) is 1 (positive), the graph of $f(x)$ is a parabola that opens upward. Such a function is negative only between its roots (<m>a</m> and <m>b</m>) and positive outside its roots.\n\n2.  <strong>Determine the Position of the Roots:</strong>\n    *   Given <m>f(42) < 0</m>, the value 42 must be located strictly between the roots <m>a</m> and <m>b</m>. Assuming <m>a < b</m>, we have <m>a < 42 < b</m>.\n    *   Given <m>f(39) > 0</m>, the value 39 must be outside the interval $(a, b)$. Since <m>a < 42</m>, 39 must be less than <m>a</m>. Thus, <m>39 < a < 42</m>.\n    *   Given <m>f(45) > 0</m>, the value 45 must be outside the interval $(a, b)$. Since <m>b > 42</m>, 45 must be greater than <m>b</m>. Thus, <m>42 < b < 45</m>.\n\n3.  <strong>Identify Possible Integer Values:</strong>\n    *   Since <m>a</m> is an integer and <m>39 < a < 42</m>, <m>a</m> could be <strong>40</strong> or <strong>41</strong>.\n    *   Since <m>b</m> is an integer and <m>42 < b < 45</m>, <m>b</m> could be <strong>43</strong> or <strong>44</strong>.\n\n4.  <strong>Calculate Possible Sums (<m>a + b</m>):</strong>\n    *   If <m>a = 40</m> and <m>b = 43</m>, <m>a + b = 83</m>.\n    *   If <m>a = 40</m> and <m>b = 44</m>, <m>a + b = 84</m>.\n    *   If <m>a = 41</m> and <m>b = 43</m>, <m>a + b = 84</m>.\n    *   If <m>a = 41</m> and <m>b = 44</m>, <m>a + b = 85</m>.\n\nComparing these results to the options provided, only <strong>83</strong> appears.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "42"
+        },
+        {
+          "option": "B",
+          "text": "44"
+        },
+        {
+          "option": "C",
+          "text": "81"
+        },
+        {
+          "option": "D",
+          "text": "83"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "One of the factors of <m>8x^4 + 50x^2 + 63</m> is <m>ax^2 + b</m>, where <m>a</m> and <m>b</m> are positive constants. Which of the following is a possible value of <m>ab</m>?",
+      "correct_answer": "C",
+      "explanation": "To find the factors of the expression <m>8x^4 + 50x^2 + 63</m>, we can treat it as a quadratic-form trinomial. Let <m>u = x^2</m>. The expression then becomes a standard quadratic trinomial: \n\n<m>8u^2 + 50u + 63</m>\n\nTo factor this trinomial, we look for two numbers that multiply to <m>8 \\times 63 = 504</m> and add to <m>50</m>. These numbers are <m>14</m> and <m>36</m>. \n\nWe can rewrite the middle term and factor by grouping:\n<m>8u^2 + 14u + 36u + 63</m>\n<m>2u(4u + 7) + 9(4u + 7)</m>\n<m>(2u + 9)(4u + 7)</m>\n\nSubstituting <m>x^2</m> back in for <m>u</m>, the factors of the original expression are:\n<m>(2x^2 + 9)</m> and <m>(4x^2 + 7)</m>\n\nThe problem states that <m>ax^2 + b</m> is one of these factors. \n- If the factor is <m>2x^2 + 9</m>, then <m>a = 2</m> and <m>b = 9</m>. The product <m>ab = 2 \\times 9 = 18</m>.\n- If the factor is <m>4x^2 + 7</m>, then <m>a = 4</m> and <m>b = 7</m>. The product <m>ab = 4 \\times 7 = 28</m>.\n\nComparing these values to the given options, <m>18</m> is a possible value for $ab$.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>7</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>14</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>18</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>36</p>"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<M>N(t) = 1,000\\left(\\frac{3}{2}\\right)^{\\frac{t}{1.5}}</M><p>The function <m>N</m> gives the estimated number of bacteria in a growth medium <m>t</m> hours after a study began. According to the function, the number of bacteria is estimated to increase by 50% every <m>k</m> minutes. What is the value of <m>k</m>?</p>",
+      "correct_answer": "D",
+      "explanation": "The function <m>N(t) = 1,000\\left(\\frac{3}{2}\\right)^{\\frac{t}{1.5}}</m> is an exponential growth function in the form <m>N(t) = a(1 + r)^{\\frac{t}{d}}</m>, where <m>a</m> is the initial value, <m>r</m> is the growth rate per period, and <m>d</m> is the time period it takes to grow by factor $(1+r)$. \\n\\n1. <strong>Identify the growth rate:</strong> The base of the exponent is <m>\\frac{3}{2} = 1.5</m>. In the form $(1 + r)$, <m>r = 0.5</m>, which represents a 50% increase. \\n2. <strong>Identify the time period:</strong> The exponent is <m>\\frac{t}{1.5}</m>. This indicates that the 50% increase occurs every <m>1.5</m> units of <m>t</m>. Since <m>t</m> is defined in hours, the increase happens every <m>1.5</m> hours. \\n3. <strong>Convert to minutes:</strong> The question asks for the time <m>k</m> in minutes. Since 1 hour = 60 minutes, <m>1.5 \\text{ hours} = 1.5 \\times 60 = 90 \\text{ minutes}</m>. Thus, <m>k = 90</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "40"
+        },
+        {
+          "option": "B",
+          "text": "50"
+        },
+        {
+          "option": "C",
+          "text": "72"
+        },
+        {
+          "option": "D",
+          "text": "90"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>The equation <m>5|x - 6| = k</m>, where <m>k</m> is a constant, has exactly one solution. Which of the following could be the value of <m>\\frac{k}{5}</m>?</p>",
+      "correct_answer": "C",
+      "explanation": "To find the possible value for <m>\\frac{k}{5}</m>, we first analyze the structure of the absolute value equation given:\n\n1.  <strong>Isolate the absolute value term:</strong>\n    Starting with <m>5|x - 6| = k</m>, divide both sides of the equation by 5:\n    <m>|x - 6| = \\frac{k}{5}</m>\n\n2.  <strong>Determine the conditions for solutions:</strong>\n    An absolute value equation of the form <m>|A| = B</m> has a different number of solutions depending on the value of <m>B</m>:\n    *   If <m>B > 0</m>, there are <strong>two solutions</strong> (<m>A = B</m> and <m>A = -B</m>).\n    *   If <m>B < 0</m>, there are <strong>zero solutions</strong> (since an absolute value cannot be negative).\n    *   If <m>B = 0</m>, there is <strong>exactly one solution</strong> (<m>A = 0</m>).\n\n3.  <strong>Apply the condition to the problem:</strong>\n    The problem states that the equation has exactly one solution. Therefore, the expression on the right side must equal zero:\n    <m>\\frac{k}{5} = 0</m>\n\nThus, the only possible value for <m>\\frac{k}{5}</m> that results in exactly one solution is 0.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>6 or -6</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>-6 only</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>0 only</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>6 only</p>"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "question_type": "INPUT",
+      "difficulty": "MEDIUM",
+      "passage": "",
+      "content": "<p>The quadratic function <m>g</m> models the depth, in meters, below the surface of the water of a Weddell seal <m>t</m> minutes after the seal entered the water during a dive. The function estimates that the seal reached its maximum depth of <m>396.8</m> meters <m>8</m> minutes after it entered the water and then reached the surface of the water <m>16</m> minutes after it entered the water. Based on the function, what was the estimated depth, to the nearest meter, of the seal <m>11</m> minutes after it entered the water?</p>",
+      "correct_answer": "341",
+      "explanation": "The problem describes a quadratic relationship between time and depth. We can model this using the vertex form of a quadratic function:\r\n\r\n<M>g(t) = a(t - h)^2 + k</M>\r\n\r\nwhere $(h, k)$ represents the vertex (the maximum point in this context).\r\n\r\n1.  <strong>Identify the vertex:</strong> The seal reaches its maximum depth of <m>396.8</m> meters at <m>t = 8</m> minutes. Thus, the vertex is $(8, 396.8)$. Substituting these values into the vertex form, we get:\r\n    <M>g(t) = a(t - 8)^2 + 396.8</M>\r\n\r\n2.  <strong>Solve for <m>a</m>:</strong> We are told the seal reaches the surface (<m>0</m> meters) at <m>t = 16</m> minutes. This gives us the point $(16, 0)$. Plugging this into our equation:\r\n    <M>0 = a(16 - 8)^2 + 396.8</M>\r\n    <M>0 = a(8)^2 + 396.8</M>\r\n    <M>-396.8 = 64a</M>\r\n    <M>a = -\\frac{396.8}{64} = -6.2</M>\r\n\r\n3.  <strong>Define the complete function:</strong>\r\n    <M>g(t) = -6.2(t - 8)^2 + 396.8</M>\r\n\r\n4.  <strong>Calculate the depth at <m>t = 11</m>:</strong>\r\n    <M>g(11) = -6.2(11 - 8)^2 + 396.8</M>\r\n    <M>g(11) = -6.2(3)^2 + 396.8</M>\r\n    <M>g(11) = -6.2(9) + 396.8</M>\r\n    <M>g(11) = -55.8 + 396.8</M>\r\n    <M>g(11) = 341.0</M>\r\n\r\nRounding to the nearest meter, the depth is <strong>341</strong> meters."
+    },
+    {
+      "number": 19,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "<p style=\"text-align: left;\">In triangle <math alttext=\"upper X upper Y upper Z\"><mrow>\n\t<mi>X</mi>\n\t<mi>Y</mi>\n\t<mi>Z</mi>\n</mrow>\n</math>, angle <math alttext=\"upper Z\"><mi>Z</mi>\n</math> is a right angle and the length of <math alttext=\"line segment upper Y upper Z\"><mover><mrow><mi>Y</mi><mi>Z</mi></mrow><mo>&#175;</mo></mover></math> is <math alttext=\"24\"><mn>24</mn>\n</math> units. If <math alttext=\"tangent upper X equals StartFraction 12 Over 35 EndFraction\"><mi>tan</mi><mi>X</mi><mo>=</mo><mfrac>\n\t<mn>12</mn>\n\t<mn>35</mn>\n</mfrac>\n</math>, what is the perimeter, in units, of triangle <math alttext=\"upper X upper Y upper Z\"><mrow>\n\t<mi>X</mi>\n\t<mi>Y</mi>\n\t<mi>Z</mi>\n</mrow>\n</math>?</p>",
+      "correct_answer": "B",
+      "explanation": "Choice B is correct. It's given that angle Z in triangle X Y Z is a right angle. Thus, side Y Z is the leg opposite angle X and side X Z is the leg adjacent to angle X. The tangent of an acute angle in a right triangle is the ratio of the length of the leg opposite the angle to the length of the leg adjacent to the angle. It follows that tan X = Y Z X Z. It's given that tan X = 12 35 and the length of side Y Z is 24 units. Substituting 12 35 for tan X and 24 for Y Z in the equation tan X = Y Z X Z yields 12 35 = 24 X Z. Multiplying both sides of this equation by 35 X Z yields 12 X Z = 24 35, or 12 X Z = 840. Dividing both sides of this equation by 12 yields X Z = 70. The length X Y can be calculated using the Pythagorean theorem, which states that if a right triangle has legs with lengths of a and b and a hypotenuse with length c, then a 2 + b 2 = c 2. Substituting 70 for a and 24 for b in this equation yields 70 2 + 24 2 = c 2, or 5,476 = c 2. Taking the square root of both sides of this equation yields ± 74 = c. Since the length of the hypotenuse must be positive, 74 = c. Therefore, the length of X Y is 74 units. The perimeter of a triangle is the sum of the lengths of all sides. Thus, 74 + 70 + 24 units, or 168 units, is the perimeter of triangle X Y Z. Choice A is incorrect and may result from conceptual or calculation errors. Choice C is incorrect. This would be the perimeter, in units, for a right triangle where the length of side Y Z is 12 units, not 24 units. Choice D is incorrect and may result from conceptual or calculation errors.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "188"
+        },
+        {
+          "option": "B",
+          "text": "168"
+        },
+        {
+          "option": "C",
+          "text": "84"
+        },
+        {
+          "option": "D",
+          "text": "71"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "question_type": "INPUT",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "<M>x^2 + y^2 - 6x - 10y - 4n = 0</M><p>The given equation represents circle <m>A</m> in the <m>xy</m>-plane, where <m>n</m> is a constant. Point <m>(5, 7)</m> lies on circle <m>B</m>, which has the same center but twice the diameter as circle <m>A</m>. What is the value of <m>n</m>?</p>",
+      "correct_answer": "-8",
+      "explanation": "To solve for <m>n</m>, we need to analyze the properties of circles <m>A</m> and <m>B</m>.\n\n### Step 1: Find the center and radius of circle <m>A</m>\nThe equation of circle <m>A</m> is given by:\n<m>x^2 + y^2 - 6x - 10y - 4n = 0</m>\n\nTo find the center $(h, k)$ and the radius <m>r_A</m>, we complete the square for both <m>x</m> and <m>y</m>:\n<m>(x^2 - 6x) + (y^2 - 10y) = 4n</m>\n<m>(x^2 - 6x + 9) + (y^2 - 10y + 25) = 4n + 9 + 25</m>\n<m>(x - 3)^2 + (y - 5)^2 = 4n + 34</m>\n\nFrom this standard form, we identify:\n- The center of circle <m>A</m> is $(3, 5)$.\n- The square of the radius of circle <m>A</m> is <m>r_A^2 = 4n + 34</m>.\n\n### Step 2: Determine the radius of circle <m>B</m>\nCircle <m>B</m> has the same center as circle <m>A</m>, which is $(3, 5)$. We are told that the point $(5, 7)$ lies on circle <m>B</m>. The radius <m>r_B</m> is the distance between the center and any point on the circle:\n<m>r_B = \\sqrt{(5 - 3)^2 + (7 - 5)^2}</m>\n<m>r_B = \\sqrt{2^2 + 2^2} = \\sqrt{4 + 4} = \\sqrt{8}</m>\n<m>r_B^2 = 8</m>\n\n### Step 3: Use the relationship between the circles\nThe problem states that circle <m>B</m> has twice the diameter of circle <m>A</m>. Since the diameter is twice the radius (<m>d = 2r</m>), if the diameter is doubled, the radius is also doubled:\n<m>r_B = 2r_A</m>\n\nSquaring both sides gives the relationship between the squared radii:\n<m>r_B^2 = (2r_A)^2 = 4r_A^2</m>\n\n### Step 4: Solve for <m>n</m>\nSubstitute the expressions for <m>r_B^2</m> and <m>r_A^2</m> into the relationship:\n<m>8 = 4(4n + 34)</m>\n\nDivide both sides by 4:\n<m>2 = 4n + 34</m>\n\nSubtract 34 from both sides:\n<m>-32 = 4n</m>\n\nDivide by 4:\n<m>n = -8</m>"
+    },
+    {
+      "number": 21,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "<M>39(x - n) = 39y + 39n</M><p>One of the equations in a system of two linear equations is given, where <m>n</m> is a positive constant. The system has no solution. Which equation could be the second equation in this system?</p>",
+      "correct_answer": "D",
+      "explanation": "To determine which equation results in a system with no solution, we first simplify the given equation and identify its slope and constants.\n\n<strong>Step 1: Simplify the given equation.</strong>\nThe given equation is <m>39(x - n) = 39y + 39n</m>. \nDivide every term by 39:\n<m>x - n = y + n</m>\n\nRearrange to the standard form (<m>Ax + By = C</m>):\n<m>x - y = 2n</m>\n\n<strong>Step 2: Understand the condition for \"no solution\".</strong>\nA system of two linear equations has no solution if the lines are parallel but not identical. For equations in the form <m>Ax + By = C</m>:\n1. The coefficients of <m>x</m> and <m>y</m> must be proportional (resulting in the same slope).\n2. The constants must not follow that same proportion (resulting in different y-intercepts).\n\nFor the simplified equation <m>x - y = 2n</m>, the left side is <m>x - y</m>. We are looking for an equation where the left side can be simplified to <m>x - y</m> (or a multiple thereof), but the right side does *not* equal $2n$ (or the same multiple).\n\n<strong>Step 3: Evaluate the options.</strong>\n*   <strong>Option A:</strong> <m>4x - 4y = 8n</m>. Dividing by 4 gives <m>x - y = 2n</m>. This is identical to the first equation, meaning the system has infinitely many solutions.\n*   <strong>Option B:</strong> <m>4x + 4y = 4n</m>. Dividing by 4 gives <m>x + y = n</m>. Since the coefficients of <m>y</m> differ (<m>-1</m> vs $+1$), the lines have different slopes and will intersect at one point.\n*   <strong>Option C:</strong> <m>4x + 4y = 8n</m>. Dividing by 4 gives <m>x + y = 2n</m>. Like Option B, this results in one solution.\n*   <strong>Option D:</strong> <m>4x - 4y = 4n</m>. Dividing by 4 gives <m>x - y = n</m>.\n\nComparing <m>x - y = 2n</m> and <m>x - y = n</m>:\nBecause <m>n</m> is a <strong>positive constant</strong> (<m>n > 0</m>), $2n$ can never equal <m>n</m>. Therefore, these two lines have the same slope but different y-intercepts. They are parallel and distinct, resulting in <strong>no solution</strong>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<m>4x - 4y = 8n</m>"
+        },
+        {
+          "option": "B",
+          "text": "<m>4x + 4y = 4n</m>"
+        },
+        {
+          "option": "C",
+          "text": "<m>4x + 4y = 8n</m>"
+        },
+        {
+          "option": "D",
+          "text": "<m>4x - 4y = 4n</m>"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "",
+      "content": "In triangle <m>ABC</m>, the measure of angle <m>B</m> is <m>90^\\circ</m> and <m>\\overline{BD}</m> is an altitude of the triangle. The length of <m>\\overline{AB}</m> is 13 and the length of <m>\\overline{AC}</m> is 19 greater than the length of <m>\\overline{AB}</m>. What is the value of <m>\\frac{BC}{BD}</m>?",
+      "correct_answer": "D",
+      "explanation": "To find the value of <m>\\frac{BC}{BD}</m>, we can use the properties of similar triangles formed by the altitude of a right triangle.\n\n1.  <strong>Identify the lengths of the sides:</strong>\n    *   <m>AB = 13</m>\n    *   $AC$ is 19 greater than $AB$, so <m>AC = 13 + 19 = 32</m>.\n\n2.  <strong>Recognize similar triangles:</strong>\n    In a right triangle $ABC$ with altitude <m>\\overline{BD}</m> dropped from the right angle <m>B</m> to the hypotenuse $AC$, three similar triangles are formed: <m>\\triangle ABC \\sim \\triangle ADB \\sim \\triangle BDC</m>. Specifically, we compare <m>\\triangle ABC</m> and <m>\\triangle BDC</m> because they share the angle at vertex <m>C</m>.\n\n3.  <strong>Set up the ratios:</strong>\n    Because <m>\\triangle ABC \\sim \\triangle BDC</m>:\n    <M>\\frac{AB}{BD} = \\frac{BC}{DC} = \\frac{AC}{BC}</M>\n    Alternatively, looking at the trigonometric ratio for <m>\\angle C</m>:\n    In <m>\\triangle BDC</m>: <m>\\sin(C) = \\frac{\\text{opposite}}{\\text{hypotenuse}} = \\frac{BD}{BC}</m>\n    In <m>\\triangle ABC</m>: <m>\\sin(A) = \\frac{BC}{AC}</m>, but wait, let's use <m>\\sin(C)</m> in the big triangle too:\n    In <m>\\triangle ABC</m>: <m>\\sin(C) = \\frac{AB}{AC}</m>\n\n4.  <strong>Equate and solve:</strong>\n    Since both represent <m>\\sin(C)</m>:\n    <M>\\frac{BD}{BC} = \\frac{AB}{AC}</M>\n    Taking the reciprocal of both sides to find <m>\\frac{BC}{BD}</m>:\n    <M>\\frac{BC}{BD} = \\frac{AC}{AB}</M>\n    Substitute the known values:\n    <M>\\frac{BC}{BD} = \\frac{32}{13}</M>\n\nThus, the value of <m>\\frac{BC}{BD}</m> is <m>\\frac{32}{13}</m>.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p><m>\\frac{13}{32}</m></p>"
+        },
+        {
+          "option": "B",
+          "text": "<p><m>\\frac{13}{19}</m></p>"
+        },
+        {
+          "option": "C",
+          "text": "<p><m>\\frac{19}{13}</m></p>"
+        },
+        {
+          "option": "D",
+          "text": "<p><m>\\frac{32}{13}</m></p>"
+        }
+      ]
+    }
+  ],
+  "english_m2": [
+    {
+      "number": 1,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p class=\"source-note\">The following text is adapted from Jhumpa Lahiri’s 2003 novel <em>The Namesake</em>. Gogol is an elementary school student in Massachusetts.</p><blockquote><p>In art class, his favorite hour of the week, he carves his name with paper clips into the bottoms of clay cups and bowls. He pastes uncooked pasta to cardboard, and leaves his signature in fat brush strokes below paintings.</p></blockquote><p class=\"source-note\">©2003 by Jhumpa Lahiri</p>",
+      "content": "As used in the text, what does the word “leaves” most nearly mean?",
+      "correct_answer": "D",
+      "explanation": "The text describes Gogol's activities in his elementary school art class. The sentence states that he \"leaves his signature in fat brush strokes below paintings.\" In this context, \"leaves\" refers to the act of placing, creating, or inscribing his name on his artwork. Since he is using brush strokes to sign the painting, \"writes\" is the most accurate synonym for the action being performed.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "Lifts"
+        },
+        {
+          "option": "B",
+          "text": "Allows"
+        },
+        {
+          "option": "C",
+          "text": "Switches"
+        },
+        {
+          "option": "D",
+          "text": "Writes"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Several scholars of children’s literature recently ________ to discuss the work of Jerry Pinkney, illustrator of such lauded books as <em>The Talking Eggs: A Folktale from the American South</em>. Once together, they talked about his style, influences, and themes.</p>",
+      "content": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "correct_answer": "C",
+      "explanation": "The context of the passage indicates that a group of scholars met for the purpose of a discussion. The sentence follows up by stating that \"once together,\" they talked about specific aspects of Jerry Pinkney's work. The word \"convened\" means to come together or assemble for a meeting, which perfectly fits this context.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>cited</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>stipulated</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>convened</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>ascribed</p>"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p class=\"source-note\">The following text is from Thomas Hardy’s 1874 novel <em>Far from the Madding Crowd</em>. Bathsheba and Liddy are traveling down a road when Liddy points out a neighbor whom Bathsheba hasn’t met yet.</p><blockquote><p>Liddy looked. “That! That’s Farmer Boldwood—of course ’tis—the man you couldn’t see the other day when he called.”</p><p>“Oh, Farmer Boldwood,” murmured Bathsheba, and looked at him as he outstripped them. The farmer had never turned his head once, but with eyes fixed on the most advanced point along the road, passed as unconsciously and abstractedly as if Bathsheba and her charms were thin air.</p></blockquote>",
+      "content": "<p>As used in the text, what does the phrase “most advanced” most nearly mean?</p>",
+      "correct_answer": "D",
+      "explanation": "In this context, “most advanced” describes a physical location along a path. The passage states that Farmer Boldwood has his “eyes fixed on the most advanced point along the road” as he travels. This indicates he is looking as far ahead as possible in the direction he is moving, ignoring his immediate surroundings (Bathsheba and Liddy). Therefore, “farthest” is the most appropriate synonym for the spatial distance described.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Most developed</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Brightest</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Most novel</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Farthest</p>"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Though Vasily Grossman’s novel <em>Stalingrad</em> is not as beloved as his later work <em>Everything Flows</em>, some critics commend it despite its mangling by Soviet censors: Marcel Theroux in <em>The Guardian</em> called it “lucid and readable.” Several draft versions have been ______, and translators consulted those drafts when working on what they hoped would be a definitive English edition.</p>",
+      "content": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+      "correct_answer": "C",
+      "explanation": "The sentence indicates that translators were able to consult various draft versions of the novel <i>Stalingrad</i> while working on a new English edition. For the translators to have \"consulted\" these drafts, the drafts must have survived or been saved from the time they were written. Therefore, the word \"preserved\"—which means maintained in their original state or kept from decay or loss—is the most logical choice in this context.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>assigned</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>debunked</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>preserved</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>hypothesized</p>"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>How does the friction between different surfaces and a rolling object affect the speed of the object? One way to explore this question is to use the scientific method. This method involves forming a hypothesis, conducting an experiment, collecting data, and drawing a conclusion. Using the scientific method helps us understand how things work and helps us answer questions, such as the one about friction and a rolling object.</p>",
+      "content": "<p>Which choice best describes the main purpose of the text?</p>",
+      "correct_answer": "B",
+      "explanation": "The text begins by posing a specific scientific question: how friction affects the speed of a rolling object. It then explicitly identifies the scientific method as 'one way' to explore and answer that question, detailing the steps involved (hypothesis, experiment, data collection, conclusion). Therefore, the main purpose is to explain an approach for answering the initial inquiry.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>To criticize an experiment scientists conducted about friction and a rolling object</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>To explain one way to answer the question about friction and a rolling object</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>To summarize two sides of a scientific debate</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>To describe the career of a famous scientist</p>"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p><span role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p>\n<p>A team led by Bernardo Strassburg has found that rewilding farmland (returning the land to its natural state) could help preserve biodiversity and offset carbon emissions. The amount of farmland that would need to be restored, they found, is remarkably low. Rewilding a mere 15% of the world’s current farmland would prevent 60% of expected species extinctions and help absorb nearly 299 gigatons of carbon dioxide—a clear win in the fight against the biodiversity and climate crises.</p>\n<p> </p>\n<p><span role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p>\n<p>While Strassburg’s team’s findings certainly offer encouraging insight into the potential benefits of rewilding, it’s important to consider potential effects on global food supplies. The researchers suggest that to compensate for the loss of food-producing land, remaining farmland would need to produce even more food. Thus, policies focused on rewilding farmland must also address strategies for higher-yield farming.</p>",
+      "content": "<p>Which choice best describes a difference in how the author of Text 1 and the author of Text 2 view Strassburg’s team’s study?</p>",
+      "correct_answer": "A",
+      "explanation": "Choice A is the best answer. Text 1 is extremely positive about Strassburg’s team’s findings, calling the potential results \"a clear win in the fight against the biodiversity and climate crises.\" Text 2 is not as positive, arguing that while the findings point to \"potential benefits,\" we also need to consider the \"potential effects on global food supplies.\" Choice B is incorrect. This isn’t a difference between the two views. Text 1 does present the 15% number as enough to achieve meaningful results, but that’s not what Text 2 takes issue with: rather, Text 2 argues that we need to consider the effect that rewilding this much farmland would have on food supplies. Choice C is incorrect. This isn’t a difference between the two views. Neither text mentions the timeline for achieving the results described by Strassburg’s team. Choice D is incorrect. This isn’t a difference between the two views. Text 1 focuses on rewilding’s effects on both carbon emissions and biodiversity. Text 2 doesn’t focus on rewilding’s effect on carbon emissions at all. Instead, it focuses on a third factor: global food supplies.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "The author of Text 2 approaches the study’s findings with some caution, whereas the author of Text 1 is optimistic about the reported potential environmental benefits."
+        },
+        {
+          "option": "B",
+          "text": "The author of Text 2 claims that the percentage of farmland identified by Strassburg’s team is too low for rewilding to achieve meaningful results, whereas the author of Text 1 thinks the percentage is sufficient."
+        },
+        {
+          "option": "C",
+          "text": "The author of Text 2 believes that the results described by Strassburg’s team are achievable in the near future, whereas the author of Text 1 argues that they likely aren’t."
+        },
+        {
+          "option": "D",
+          "text": "The author of Text 2 focuses on rewilding’s effect on carbon emissions, whereas the author of Text 1 focuses on its effect on biodiversity."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>What is a city? The answer depends on where you live! Many countries define an area as a city based on how many people live there. However, not every country uses the same numbers. Greenland defines a city as an area with a population of at least 200, while Switzerland defines a city as having a minimum population of 10,000. Some countries even define cities using other factors, like if there is a local government.</p>",
+      "content": "<p>Which choice best states the main topic of the text?</p>",
+      "correct_answer": "C",
+      "explanation": "The main topic of a text is the primary subject that the author discusses throughout the passage. The text begins by asking \"What is a city?\" and immediately states that the answer varies depending on location. It then provides specific examples of how criteria for defining a city differ: Greenland requires a population of 200, Switzerland requires 10,000, and other countries use factors like the presence of a local government. Since all the information in the text serves to explain the different ways a city is defined globally, Choice C is the best description of the main topic.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>The number of small towns in Greenland</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>What some people enjoy about cities</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>How different countries define what a city is</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>The country of Switzerland</p>"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Animals use many objects as tools to achieve goals more easily. Such goals include grooming, finding food, and protecting themselves. For a long time, people thought tool use was unique to primates. Elephants and other animals, though, have busted the myth that tool use requires hands. Inventively, elephants use branches to scratch themselves. Woodpecker finches also get creative. They use cactus spines to pry insects from hiding places.</p>",
+      "content": "<p>Which choice best states the main idea of the text?</p>",
+      "correct_answer": "B",
+      "explanation": "The main idea of the passage is that the traditional view of tool use as a uniquely primate trait is incorrect. The text begins by stating that many animals use tools for goals like grooming and feeding. It then highlights that while people once thought tool use was unique to primates, animals like elephants and woodpecker finches have \"busted the myth\" by using branches and cactus spines as tools. Therefore, the passage's primary purpose is to show that various non-primate animals also utilize tools.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Unlike primates, elephants are exceptionally skillful at using different tools.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Contrary to long-held beliefs, primates aren't the only animals to use tools.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>There are many myths about tool use that researchers are starting to challenge.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Animals find it difficult to use objects as tools.</p>"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Researcher Shaochuang Liu and team presented updated measurements of the lengths of several rivers.</p><table><tr><th colspan=\"2\">River Lengths</th></tr><tr><th>River</th><th>Length (km)</th></tr><tr><td>Yangtze River</td><td>6,236</td></tr><tr><td>Ob River</td><td>5,525</td></tr><tr><td>Congo River</td><td>5,118</td></tr></table>",
+      "content": "<p>According to the table, which river is the longest?</p>",
+      "correct_answer": "D",
+      "explanation": "To identify the longest river, we must compare the numerical values provided in the 'Length (km)' column of the table. The table lists the following lengths: the Yangtze River at 6,236 km, the Ob River at 5,525 km, and the Congo River at 5,118 km. Comparing these three values, 6,236 is the greatest number, making the Yangtze River the longest among those listed.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Zambezi River</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Snake River</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Ob River</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Yangtze River</p>"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>In the table, the city with the lowest number of residents who often biked to work in 2016 is ____</p><table><tr><th colspan=\"2\">Number of City Residents Who Often Biked to Work in 2016</th></tr><tr><th>City</th><th>Number of residents</th></tr><tr><td>Phoenix, Arizona</td><td>4,709</td></tr><tr><td>Seattle, Washington</td><td>14,801</td></tr><tr><td>Madison, Wisconsin</td><td>7,186</td></tr><tr><td>Boulder, Colorado</td><td>5,314</td></tr></table>",
+      "content": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+      "correct_answer": "C",
+      "explanation": "The question asks to identify the city with the lowest number of residents who biked to work in 2016 based on the provided table. \r\n\r\n1.  <strong>Analyze the Data</strong>: The table lists four cities and their corresponding number of bike commuters:\r\n    *   Phoenix, Arizona: 4,709\r\n    *   Seattle, Washington: 14,801\r\n    *   Madison, Wisconsin: 7,186\r\n    *   Boulder, Colorado: 5,314\r\n\r\n2.  <strong>Compare the Values</strong>: We need to find the smallest number among 4,709, 14,801, 7,186, and 5,314. \r\n    *   4,709 < 5,314 < 7,186 < 14,801\r\n\r\n3.  <strong>Identify the City</strong>: The value 4,709 is the lowest in the list, and it corresponds to Phoenix, Arizona.\r\n\r\nTherefore, Phoenix, Arizona is the city with the lowest number of residents who often biked to work.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Madison, Wisconsin.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Seattle, Washington</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Phoenix, Arizona.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Boulder, Colorado.</p>"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>It may seem that works of art are best experienced in person. However, in an online collection from the Museo de Arte de Lima in Lima, Peru, people can zoom in on a high-quality image of the drawing <em>Drawing B...</em> by Gilda Mantilla. <u>A student argues that viewers usually can’t examine works of art in a museum as carefully as they can examine works in online collections.</u></p>",
+      "content": "<p>Which statement, if true, would most directly support the underlined argument?</p>",
+      "correct_answer": "B",
+      "explanation": "The student’s argument is that online collections allow for a more careful examination of artwork than is usually possible in a physical museum. To support this claim, we need a reason why physical museum visits might limit a viewer’s ability to see fine details. \r\n\r\n1.  <strong>Identify the argument:</strong> The student claims that viewers usually cannot examine art in person as carefully as they can online.\r\n2.  <strong>Identify the online advantage:</strong> The text mentions that in the online collection, people can \"zoom in on a high-quality image,\" which implies seeing tiny details very clearly.\r\n3.  <strong>Find the in-person disadvantage:</strong> If, as Choice B states, museums prevent visitors from getting close to the artwork (for security or preservation reasons), then viewers cannot see the details that a high-resolution zoom provides. This directly explains why the online experience would allow for more \"careful\" (detailed) examination than the in-person experience.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Most museums have signs that provide basic information about the works of art on display.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Most museums don’t allow visitors to get very close to the works of art on display.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Many museums have started adding images of works from their collections to their websites.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Museums don’t always put works by different artists together in one room.</p>"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Most bird species that are capable of flight weigh less than a kilogram (kg), which is not surprising considering the burden that extra body weight puts on a flying animal. But not all flying birds are so light, as we can see most clearly in the example of the ________</p><table><thead><tr><th>Common name</th><th>Average mass (kg)</th><th>Capable of flight?</th></tr></thead><tbody><tr><td>Great bustard</td><td>10.6</td><td>Yes</td></tr><tr><td>Trumpeter swan</td><td>12.7</td><td>Yes</td></tr><tr><td>Emperor penguin</td><td>31.5</td><td>No</td></tr><tr><td>Common ostrich</td><td>104.0</td><td>No</td></tr></tbody></table>",
+      "content": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+      "correct_answer": "B",
+      "explanation": "The passage argues that while most flying birds weigh less than 1 kg, some species are much heavier. To complete the example effectively, we need a bird from the table that meets two criteria: it must be capable of flight, and the data provided about it must be accurate according to the table.\n\n1.  <strong>Analyze the table data:</strong>\n    *   <strong>Great bustard:</strong> 10.6 kg, Capable of flight? <strong>Yes</strong>.\n    *   <strong>Trumpeter swan:</strong> 12.7 kg, Capable of flight? <strong>Yes</strong>.\n    *   <strong>Emperor penguin:</strong> 31.5 kg, Capable of flight? <strong>No</strong>.\n    *   <strong>Common ostrich:</strong> 104.0 kg, Capable of flight? <strong>No</strong>.\n\n2.  <strong>Evaluate the options:</strong>\n    *   Choice A mentions the common ostrich, but the ostrich is not capable of flight.\n    *   Choice B mentions the trumpeter swan, which is capable of flight, and correctly identifies its mass as 12.7 kg. This supports the passage's claim.\n    *   Choice C mentions the common ostrich, but again, the ostrich is not capable of flight.\n    *   Choice D mentions the great bustard but states its mass is \"below 10 kg,\" whereas the table shows it is 10.6 kg (which is above 10 kg).",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>common ostrich, which has a higher average mass than the emperor penguin.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>trumpeter swan, which has an average mass of 12.7 kg.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>common ostrich, which has an average mass of 104.0 kg.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>great bustard, which has an average mass below 10 kg.</p>"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>In a recent study, Antonia Olivia Dolan and colleagues investigated the relationship between people’s music preferences and their preferred listening volume. Participants listened to recordings—Led Zeppelin’s ‘Whole Lotta Love,’ Ludwig van Beethoven’s Symphony no. 5 in C Minor, and others—at their preferred volume and indicated their most and least favorite among the recordings. The researchers found that participants listened to recordings they liked most at a higher volume than recordings they liked least. And given that the frequencies in all the recordings were within the audible range of these participants (all of whom had clinically typical hearing), it is therefore likely that for a given participant, the ______</p>",
+      "content": "<p>Which choice most logically completes the text?</p>",
+      "correct_answer": "C",
+      "explanation": "The passage describes a study finding that listeners prefer a higher volume for recordings they like most compared to recordings they like least. The final sentence provides a crucial constraint: all recordings were within the audible frequency range, and all participants had typical hearing. This information is meant to rule out a confounding variable: the possibility that volume differences were caused by physical audibility issues. If the recordings were equally easy to hear from a physical standpoint, the difference in volume preference must be psychological (related to enjoyment) rather than physical (related to one recording being inherently 'harder to hear' than another).",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>relationship between the preferred volume of a recording and the participant’s attitude toward that recording cannot be attributed to its genre.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>fact that the preferred volume differed by recording cannot be attributed to the participant wanting to hear the favorite recording at a higher volume than the least favorite recording.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>difference between the preferred volumes of the favorite and least favorite recordings cannot be attributed to one recording being inherently harder to hear than the other.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>identification of one recording as the favorite and another recording as the least favorite cannot be attributed to the participant having prior familiarity with either recording.</p>"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "question_type": "MCQ",
+      "difficulty": "HARD",
+      "passage": "<p>Research such as the 2010 study of arthropods by Alvin Aaden Yim–Hol Chan and colleagues has shown that noise from human activity, like traffic on a busy highway, has various significant effects on animals, and many governments require studies of the potential noise effects on wildlife before approving highway construction projects. For one of these projects, a group of researchers suggested that, although there are both arthropods and birds in the area, taking actions to reduce the effects of noise on the arthropods will probably protect both types of animals because noise tends to affect arthropods more strongly than birds. Another group of researchers indicated that, although the effects are usually greater on arthropods, addressing ______</p>",
+      "content": "<p>Which choice most logically completes the text?</p>",
+      "correct_answer": "D",
+      "explanation": "The passage discusses two scientific perspectives on mitigating human-made noise for wildlife. The first group assumes a 'sensitivity hierarchy': because noise affects arthropods more severely than birds, any measures sufficient to protect arthropods will automatically protect birds as well. \r\n\r\nTo logically complete the text after 'Another group... indicated that, although the effects are usually greater on arthropods, addressing ______', we need a statement that provides a counterpoint or a complication to the first group's logic. \r\n\r\nOption D provides this complication by suggesting that the 'actions... taken to lessen the effects of noise on birds' (the less sensitive group) can actually 'harm arthropods' (the more sensitive group). This introduces a conflict where a bird-centric approach is not just insufficient but potentially detrimental to arthropods, countering the first group's assumption that protecting one group effectively covers the other without negative consequences.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>the species of birds in the area experience different negative effects from noise than the species of arthropods in the area do.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>the actions to reduce effects on the arthropods are significantly more robust than is needed to lessen the effects on the birds in the area.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>the effects of noise on birds have been more thoroughly studied than the effects on arthropods have.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>the types of actions that are usually taken to lessen the effects of noise on birds can sometimes harm arthropods.</p>"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Few stories in art history rival the gilded drama of James McNeill Whistler’s <em>Peacock Room</em>. This sumptuous dining space became the setting of a spectacular falling-out between Whistler, who transformed the somber room into a golden aviary, and shipping magnate Frederick Leyland, who commissioned the work but refused to pay for what he ______ as a tasteless, gaudy design.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "B",
+      "explanation": "The sentence describes historical events that occurred in the past, as indicated by the verbs \"became,\" \"transformed,\" \"commissioned,\" and \"refused.\" The blank appears within a dependent clause (\"what he ______ as a tasteless, gaudy design\") where \"he\" serves as the subject. To complete this clause, a finite verb is required to serve as the predicate. Choice B, \"viewed,\" is the past-tense finite form of the verb, which maintains the consistent tense of the passage and correctly completes the structure of the clause.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>having viewed</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>viewed</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>to view</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>viewing</p>"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>When searching for clues about how Neolithic peoples lived, British archaeologist Lisa-Marie Shillito starts by examining ______ trash. Buried trash deposits (known as middens) are a rich source of information for archaeologists like Shillito.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "B",
+      "explanation": "The sentence requires a possessive pronoun to modify the noun \"trash\" and refer back to the antecedent \"Neolithic peoples.\" \n\n1. <strong>Identify the antecedent</strong>: The pronoun refers to \"Neolithic peoples.\" In this context, \"peoples\" is the plural form of \"people\" (referring to distinct groups or populations). Therefore, the pronoun must be plural.\n2. <strong>Identify the function</strong>: The word needs to show that the trash belongs to the Neolithic peoples. This requires a possessive pronoun.\n3. <strong>Select the correct form</strong>: \"Their\" is the third-person plural possessive pronoun. \n\nChoices A and D are incorrect because they are contractions (\"they are\" and \"it is\"), not possessive pronouns. Choice C is incorrect because \"its\" is a singular possessive pronoun, which does not agree with the plural antecedent \"peoples.\"",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>they're</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>their</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>its</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>it's</p>"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>One example of public art (art that's readily accessible to the general public) ______ the work <em>Singing Ringing Tree</em>. This sculpture is installed on public land in Burnley, England.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "D",
+      "explanation": "The subject of the sentence is the noun phrase \"One example of public art (art that's readily accessible to the general public).\" Within this phrase, the head noun is the singular word \"example.\" According to the rules of subject-verb agreement in Standard English, a singular subject requires a singular verb. \"Is\" is the singular, present-tense form of the verb \"to be,\" which correctly agrees with the singular subject \"One example.\" Choosing \"is\" completes a grammatically sound, independent clause.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>were</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>being</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>are</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>is</p>"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Many ranching terms come from Spanish. For example, the word “rodeo” (a roundup) comes from the Spanish word <em>rodear</em>, and “cinch” (a belt) ________ from <em>cincho</em>. This is because the first Anglo, African, and Native American cattle ranchers in the southwestern US learned the trade from Spanish-speaking Mexican <em>vaqueros</em>, or cowboys.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "D",
+      "explanation": "The passage establishes a pattern of using the simple present tense to state general facts about word origins (etymology). \r\n\r\n1.  <strong>Analyze the context:</strong> The first sentence uses the present tense (\"Many ranching terms <strong>come</strong>...\"). \r\n2.  <strong>Identify parallelism:</strong> In the second sentence, the text uses a compound structure joined by the conjunction \"and.\" The first part of this sentence is \"the word 'rodeo' (a roundup) <strong>comes</strong> from the Spanish word *rodear*.\" \r\n3.  <strong>Apply consistency:</strong> To maintain grammatical parallelism and tense consistency, the second part of the sentence (\"'cinch' (a belt) ________ from *cincho* \") must also use the simple present tense. \r\n4.  <strong>Match the subject:</strong> Since the subject \"'cinch' (a belt)\" is singular, the correct verb form is \"comes.\"",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>will be coming</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>will come</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>had come</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>comes</p>"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Many places in the United States share a name with a foreign city or country. When founding the town of Edinburgh, Indiana, residents decided to name ______ after the Scottish city of Edinburgh.</p>",
+      "content": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "correct_answer": "A",
+      "explanation": "The sentence requires a pronoun that correctly refers back to its antecedent, \"the town of Edinburgh, Indiana.\" \n\n1. <strong>Identify the antecedent</strong>: The residents are naming \"the town of Edinburgh, Indiana.\"\n2. <strong>Determine number</strong>: \"Town\" is a singular, inanimate noun.\n3. <strong>Select the matching pronoun</strong>: The third-person singular pronoun for an inanimate object is \"it.\"\n\nTherefore, the sentence should read: \"...residents decided to name <strong>it</strong> after the Scottish city of Edinburgh.\"",
+      "choices": [
+        {
+          "option": "A",
+          "text": "it"
+        },
+        {
+          "option": "B",
+          "text": "that"
+        },
+        {
+          "option": "C",
+          "text": "them"
+        },
+        {
+          "option": "D",
+          "text": "us"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Many folktales that originate in the Persian language start with a phrase that roughly translates to “someday, sometime.” Many tales that originate in English use “once upon a time.” Such phrases, known as story starters, ______ from language to language.</p>",
+      "content": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+      "correct_answer": "D",
+      "explanation": "The sentence requires a verb that agrees with its subject. Identifying the subject of the clause is the first step:\n\n1.  <strong>Identify the subject:</strong> The subject of the verb is \"Such phrases.\" \n2.  <strong>Determine number:</strong> \"Phrases\" is a plural noun.\n3.  <strong>Account for modifiers:</strong> The phrase \"known as story starters\" is an appositive phrase (a non-essential element set off by commas) that describes the phrases but does not change the plural nature of the subject.\n4.  <strong>Match with plural verb:</strong> Because the subject is plural, the verb must also be plural. \"Vary\" is the plural form of the verb, while \"varies,\" \"has varied,\" and \"is varying\" are all singular forms.\n\nTherefore, \"vary\" is the correct choice to complete the sentence.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>varies</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>has varied</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>is varying</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>vary</p>"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>As anthropologist Cristina Grasseni explains, many artisanal cheeses in Italy, such as Castelmagno from Piedmont and Quartirolo Lombardo from Lombardy, are highly valued for their regional authenticity; ________ they are prized for being made using local ingredients and methods typical of their respective geographic regions.</p>",
+      "content": "<p>Which choice completes the text with the most logical transition?</p>",
+      "correct_answer": "D",
+      "explanation": "The passage describes why certain artisanal Italian cheeses are highly valued. The first clause mentions they are valued for their 'regional authenticity.' The second clause clarifies this by stating they are 'prized for being made using local ingredients and methods typical of their respective geographic regions.' Because the second clause defines or explains the term 'regional authenticity' from the first clause, a transition that introduces a clarification or restatement is needed. 'That is' serves this purpose perfectly.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>still,</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>rather,</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>then,</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>that is,</p>"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>Thousands of years ago, the Olmec civilization's reign over parts of eastern Mexico ended. ______ the Olmecs' massive stone statues of human heads remain. Two of these statues, known as Monument 4 and Monument 3, weigh over 5 tons!</p>",
+      "content": "<p>Which choice completes the text with the most logical transition?</p>",
+      "correct_answer": "A",
+      "explanation": "The first sentence states that the Olmec civilization's reign ended thousands of years ago. The second sentence notes that their massive stone statues still exist today. The relationship between these two ideas is one of contrast: even though the civilization itself has vanished, its physical artifacts have persisted. The transition 'Still' is used to introduce a statement that contrasts with or exists despite what was just mentioned.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Still,</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Previously,</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Secondly,</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Therefore,</p>"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "question_type": "MCQ",
+      "difficulty": "MEDIUM",
+      "passage": "<p>Unlike the sprawling, permanent mural installations of Aurora Reyes Flores and other contemporaries of the Muralismo Mexicano movement, the easily reproducible block print posters that Alberto Beltrán and Jean Charlot created as part of the printmaking collective Taller de Gráfica Popular (TGP) were highly portable. ________ the prints were a boon to the TGP’s goal of spreading their artwork throughout Mexico and the world beyond.</p>",
+      "content": "<p>Which choice completes the text with the most logical transition?</p>",
+      "correct_answer": "D",
+      "explanation": "The first sentence characterizes the block print posters created by Beltrán and Charlot as \"easily reproducible\" and \"highly portable,\" contrasting them with the \"permanent mural installations\" of other artists. The second sentence describes how these qualities helped the Taller de Gráfica Popular (TGP) achieve its goal of distributing artwork widely throughout Mexico and internationally. Therefore, the second sentence describes a logical consequence or result of the prints' portability mentioned in the first sentence. The transition \"As such\" is used to indicate that what follows is a result or a consequence of the previously stated information.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>For instance,</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Despite this,</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>To be exact.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>As such,</p>"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>The Vistula River is in Europe.</li><li>It is the eighth longest river in Europe.</li><li>It crosses the countries Belarus and Poland.</li><li>It ranks No. 133 among the longest rivers in the world.</li><li>It is 1,213 kilometers long.</li></ul>",
+      "content": "<p>The student wants to specify how many kilometers long the Vistula River is. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "B",
+      "explanation": "To determine the correct choice, identify the student's specific goal: to specify how many <strong>kilometers long</strong> the Vistula River is. \n\nLooking at the notes provided:\n1. Location (Europe)\n2. European rank (8th longest)\n3. Countries (Belarus and Poland)\n4. World rank (No. 133)\n5. <strong>Length (1,213 kilometers long)</strong>\n\nChoice B is the only option that includes the specific information requested (the length of the river in kilometers).",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>The Vistula River crosses both Belarus and Poland in Europe.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>The Vistula River in Europe is 1,213 kilometers long.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>Among the longest rivers in the world, the Vistula River ranks No. 133.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>The eighth longest river in Europe, the Vistula River crosses both Belarus and Poland.</p>"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><p>• Chapantongo is a municipality in the state of Hidalgo, Mexico.<br>• It had a population of 12,967 in 2020.<br>• Chapulhuacán is a municipality in Hidalgo.<br>• It had a population of 22,903 in 2020.<br>• Municipalities are governmental regions responsible for providing many public services to their residents.<br>• Hidalgo is divided into 84 municipalities.</p>",
+      "content": "<p>The student wants to emphasize a similarity between Chapantongo and Chapulhuacán. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "D",
+      "explanation": "The student's goal is to emphasize a similarity between Chapantongo and Chapulhuacán. To do this, the sentence must mention both entities and identify a common characteristic they share. According to the notes, both are municipalities located in the state of Hidalgo, Mexico. Choice D effectively accomplishes this by stating that 'Both' are municipalities in Hidalgo, Mexico, thereby highlighting their shared status and location.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Chapantongo is one of 84 governmental regions, known as municipalities, in Hidalgo, Mexico.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>As of 2020, Chapantongo was not as populous as Chapulhuacán.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>As a municipality of Hidalgo, Chapulhuacán is responsible for providing many public services.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Both Chapantongo and Chapulhuacán are municipalities in Hidalgo, Mexico.</p>"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><p>Sodium is a chemical element.</p><p>When the electrons of a chemical element change energy states, certain wavelengths of light are released.</p><p>This unique collection of wavelengths is known as the emission spectrum of the element.</p><p>Sodium's emission spectrum includes the 589.5 nanometer (nm) wavelength of light.</p><p>Wavelengths of 570-590 nm make up the yellow portion of the visible spectrum.</p>",
+      "content": "<p>The student wants to indicate one of the wavelengths of light in sodium's emission spectrum. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "C",
+      "explanation": "To identify which choice effectively indicates one of the wavelengths of light in sodium's emission spectrum, we must evaluate which option directly addresses the student's specific goal using the provided notes.\n\n1.  <strong>Identify the Goal:</strong> The student wants to name a specific wavelength that belongs to sodium's emission spectrum.\n2.  <strong>Locate Relevant Info:</strong> The notes state: \"Sodium's emission spectrum includes the 589.5 nanometer (nm) wavelength of light.\"\n3.  <strong>Evaluate Options:</strong> Option C states, \"One of the wavelengths in sodium's emission spectrum is the 589.5 nm wavelength.\" This directly fulfills the goal by naming the specific wavelength (589.5 nm) mentioned in the notes as being part of sodium's spectrum.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>Sodium's emission spectrum consists of a unique collection of wavelengths.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>When sodium's electrons change energy states, certain wavelengths of light are released.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>One of the wavelengths in sodium's emission spectrum is the 589.5 nm wavelength.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>If a chemical element releases a wavelength of light between 570-590 nm, that wavelength would be part of the yellow portion of the visible spectrum.</p>"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "question_type": "MCQ",
+      "difficulty": "EASY",
+      "passage": "<p>While researching a topic, a student has taken the following notes:</p><p>Ukiyo-e woodblock prints were a popular artistic form in Japan from the 1600s through the 1800s.</p><p>Ukiyo-e prints were produced by teams of artisans that included artists, wood-carvers, printers, and publishers.</p><p>Sōsaku-hanga was a popular Japanese printmaking movement that emerged in the early 1900s.</p><p>Sōsaku-hanga prioritized individual artistic expression.</p><p>An artist working in this style typically handled all aspects of print creation, from drawing to wood carving to printing.</p>",
+      "content": "<p>The student wants to contrast ukiyo-e and sōsaku-hanga production methods. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+      "correct_answer": "D",
+      "explanation": "The student's goal is to contrast the <strong>production methods</strong> of ukiyo-e and sōsaku-hanga woodblock prints. \n\n1.  <strong>Identify the production methods in the notes:</strong> The notes specify that ukiyo-e prints were produced by \"teams of artisans\" (including artists, wood-carvers, printers, and publishers), while sōsaku-hanga artists typically \"handled all aspects of print creation\" themselves.\n2.  <strong>Evaluate the options for this specific contrast:</strong> Option D explicitly states that teams of artisans produced ukiyo-e whereas individual artists produced sōsaku-hanga. This directly fulfills the student's goal of highlighting the difference in how the two styles were manufactured.\n3.  <strong>Confirm the other options fail the goal:</strong> While other options provide accurate information or different types of contrasts (like time periods or artistic philosophy), only Option D focuses specifically on the *method of production* as requested.",
+      "choices": [
+        {
+          "option": "A",
+          "text": "<p>In contrast to ukiyo-e prints, sōsaku-hanga prints were produced using methods such as drawing and wood carving.</p>"
+        },
+        {
+          "option": "B",
+          "text": "<p>Ukiyo-e prints were popular in Japan from the 1600s through the 1800s, while sōsaku-hanga prints emerged later, in the early 1900s.</p>"
+        },
+        {
+          "option": "C",
+          "text": "<p>One notable distinction between ukiyo-e and sōsaku-hanga prints is sōsaku-hanga's emphasis on individual artistic expression.</p>"
+        },
+        {
+          "option": "D",
+          "text": "<p>Teams of artisans produced ukiyo-e prints, whereas individual artists typically handled all aspects of sōsaku-hanga printmaking themselves.</p>"
+        }
+      ]
+    }
+  ]
+}

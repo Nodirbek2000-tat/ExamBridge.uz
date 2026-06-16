@@ -1,15 +1,12 @@
+version: '3.9'
+
 # ─── Backend services for exambridge.uz ─────────────────────────────────────
 # Domain: nodir.exambridge.uz (proxied by sat_front nginx)
 # Network: joins shared exambridge_net (created by sat_front compose)
 #
 # Start order:
 #   1. First run sat_front (creates exambridge_net + owns 80/443)
-#   2. Then run this (docker compose up -d --build)
-#
-# ⚠️ MA'LUMOT XAVFSIZLIGI:
-#   • postgres_data volume restart/rebuild da O'CHMAYDI
-#   • HECH QACHON `docker compose down -v` qilmang (-v volume'larni o'chiradi)
-#   • db-backup servisi har kuni ./backups ga SQL nusxa oladi (7 kun saqlanadi)
+#   2. Then run this (docker-compose up -d --build)
 # ─────────────────────────────────────────────────────────────────────────────
 
 services:
@@ -21,45 +18,16 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data   # ← data NEVER deleted on restart
     environment:
-      # ⚠️ Bu qiymatlar .env bilan MOS bo'lishi shart. Default yo'q —
-      # .env noto'g'ri bo'lsa qasddan ishlamaydi (jim mos kelmagan baza yaratmaslik uchun).
-      POSTGRES_DB: ${DB_NAME:?DB_NAME .env da bo lishi shart}
-      POSTGRES_USER: ${DB_USER:?DB_USER .env da bo lishi shart}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD .env da bo lishi shart}
+      POSTGRES_DB: ${DB_NAME:-satdb}
+      POSTGRES_USER: ${DB_USER:-satuser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     networks:
       - exambridge_net
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-satuser} -d ${DB_NAME:-satdb}"]
       interval: 10s
       timeout: 5s
       retries: 5
-
-  # ── Kunlik DB backup (ma'lumot himoyasi) ──────────────────────────────────────
-  # Har 24 soatda pg_dump → ./backups (host disk). Volume o'chsa ham nusxa qoladi.
-  # 7 kundan eski nusxalar avto-o'chadi. Bu servis yiqilsa ham asosiy app ishlayveradi.
-  db-backup:
-    image: postgres:15-alpine
-    restart: unless-stopped
-    depends_on:
-      db:
-        condition: service_healthy
-    volumes:
-      - ./backups:/backups
-    environment:
-      PGPASSWORD: ${DB_PASSWORD}
-      DB_USER: ${DB_USER}
-      DB_NAME: ${DB_NAME}
-    networks:
-      - exambridge_net
-    entrypoint: ["/bin/sh", "-c"]
-    command:
-      - |
-        while true; do
-          pg_dump -h db -U "$$DB_USER" "$$DB_NAME" | gzip > "/backups/db_$$(date +%Y%m%d_%H%M%S).sql.gz" \
-            && echo "[backup] OK $$(date)" || echo "[backup] FAILED $$(date)"
-          find /backups -name 'db_*.sql.gz' -mtime +7 -delete 2>/dev/null
-          sleep 86400
-        done
 
   # ── Redis ────────────────────────────────────────────────────────────────────
   redis:

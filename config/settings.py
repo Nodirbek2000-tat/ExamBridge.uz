@@ -341,8 +341,8 @@ STRIPE_SECRET_KEY      = config('STRIPE_SECRET_KEY', default='')
 STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY', default='')
 STRIPE_WEBHOOK_SECRET  = config('STRIPE_WEBHOOK_SECRET', default='')
 FRONTEND_URL           = config('FRONTEND_URL', default='http://localhost:5173')
-STRIPE_PRICE_1MONTH    = config('STRIPE_PRICE_1MONTH', default=799, cast=int)   # USD cents
-STRIPE_PRICE_3MONTH    = config('STRIPE_PRICE_3MONTH', default=1599, cast=int)  # USD cents
+STRIPE_PRICE_1MONTH    = config('STRIPE_PRICE_1MONTH', default=699, cast=int)   # USD cents
+STRIPE_PRICE_3MONTH    = config('STRIPE_PRICE_3MONTH', default=1469, cast=int)  # USD cents
 STRIPE_PRICE_6MONTH    = config('STRIPE_PRICE_6MONTH', default=2899, cast=int)  # USD cents
 
 # ─── GOOGLE ANALYTICS ─────────────────────────────────────────────────────────

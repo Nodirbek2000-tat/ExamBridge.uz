@@ -1190,6 +1190,8 @@ def admin_user_list(request):
             'tests_taken': TestAttempt.objects.filter(user=u, status='COMPLETED').count(),
             'joined': u.created_at.isoformat(),
             'premium_until': u.premium_until.isoformat() if u.premium_until else None,
+            'premium_source': u.premium_source,
+            'premium_forever': bool(u.is_premium and u.premium_until is None),
             'sat_exam_date': exam_date,
         })
     return Response(result)
@@ -1225,10 +1227,10 @@ def admin_set_user_exam_date(request, user_id):
 @permission_classes([IsAdminUser])
 def admin_toggle_premium(request, user_id):
     """
-    Grant or revoke premium.
-    Body: { "action": "grant", "days": 30 | 90 }
+    Grant or revoke MANUAL premium (admin-granted, separate from Stripe).
+    Body: { "action": "grant", "days": 30 | 90 | 180 | 365 }
+           { "action": "grant", "forever": true }
            { "action": "revoke" }
-    If action is omitted, it toggles (legacy behaviour, always 30 days).
     """
     from accounts.models import User
     from django.utils import timezone
@@ -1240,24 +1242,32 @@ def admin_toggle_premium(request, user_id):
         return Response({'error': 'Not found'}, status=404)
 
     action = request.data.get('action')
-    days   = int(request.data.get('days', 30))
-    if days not in (30, 90):
+    forever = bool(request.data.get('forever', False))
+    days = int(request.data.get('days', 30) or 30)
+    if days not in (30, 90, 180, 365):
         days = 30
 
     if action == 'grant' or (action is None and not user.is_premium):
-        # Extend from existing expiry if still premium, otherwise from now
-        base = user.premium_until if (user.is_premium and user.premium_until and user.premium_until > timezone.now()) else timezone.now()
-        user.is_premium     = True
-        user.premium_until  = base + timedelta(days=days)
+        user.is_premium = True
+        user.premium_source = 'manual'
+        if forever:
+            user.premium_until = None   # None = forever (never expires)
+        else:
+            # Extend from existing expiry if still premium, otherwise from now
+            base = user.premium_until if (user.premium_until and user.premium_until > timezone.now()) else timezone.now()
+            user.premium_until = base + timedelta(days=days)
     else:
-        # revoke (action=='revoke' or toggle-off)
-        user.is_premium    = False
+        # revoke
+        user.is_premium = False
         user.premium_until = None
+        user.premium_source = ''
 
-    user.save(update_fields=['is_premium', 'premium_until'])
+    user.save(update_fields=['is_premium', 'premium_until', 'premium_source'])
     return Response({
-        'is_premium':    user.is_premium,
-        'premium_until': user.premium_until.isoformat() if user.premium_until else None,
+        'is_premium':     user.is_premium,
+        'premium_until':  user.premium_until.isoformat() if user.premium_until else None,
+        'premium_source': user.premium_source,
+        'forever':        user.is_premium and user.premium_until is None,
     })
 
 
@@ -1357,6 +1367,8 @@ def admin_user_detail(request, user_id):
         'is_premium': user.is_premium,
         'is_staff': user.is_staff,
         'premium_until': user.premium_until.isoformat() if user.premium_until else None,
+        'premium_source': user.premium_source,
+        'premium_forever': bool(user.is_premium and user.premium_until is None),
         'joined': user.created_at.isoformat(),
         # Counts
         'sat_taken': sat_completed.count(),
@@ -1629,12 +1641,18 @@ def admin_ielts_speaking_list(request):
     return Response(result)
 
 
-@api_view(['DELETE'])
+@api_view(['DELETE', 'PATCH'])
 @permission_classes([IsAdminUser])
 def admin_ielts_speaking_delete(request, pk):
     from ielts.models import SpeakingTask
     from django.shortcuts import get_object_or_404
-    get_object_or_404(SpeakingTask, id=pk).delete()
+    task = get_object_or_404(SpeakingTask, id=pk)
+    if request.method == 'PATCH':
+        if 'is_premium' in request.data:
+            task.is_premium = bool(request.data.get('is_premium'))
+            task.save(update_fields=['is_premium'])
+        return Response({'id': task.id, 'is_premium': task.is_premium})
+    task.delete()
     return Response(status=204)
 
 
@@ -1657,12 +1675,18 @@ def admin_ielts_writing_list(request):
     } for t in items])
 
 
-@api_view(['DELETE'])
+@api_view(['DELETE', 'PATCH'])
 @permission_classes([IsAdminUser])
 def admin_ielts_writing_delete(request, pk):
     from ielts.models import WritingTask
     from django.shortcuts import get_object_or_404
-    get_object_or_404(WritingTask, id=pk).delete()
+    task = get_object_or_404(WritingTask, id=pk)
+    if request.method == 'PATCH':
+        if 'is_premium' in request.data:
+            task.is_premium = bool(request.data.get('is_premium'))
+            task.save(update_fields=['is_premium'])
+        return Response({'id': task.id, 'is_premium': task.is_premium})
+    task.delete()
     return Response(status=204)
 
 

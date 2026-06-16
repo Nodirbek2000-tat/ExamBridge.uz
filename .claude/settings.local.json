@@ -68,7 +68,18 @@
       "Bash(curl -s -X POST https://api.satstation.io/api/v1/attempts/2271/answers -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNDE0IiwiZXhwIjoxNzgwNTg0Njc0LCJpYXQiOjE3Nzc5OTI2NzQsInR5cGUiOiJhY2Nlc3MiLCJyb2xlIjoic3R1ZGVudCJ9.tW0I54Svfwk_lEWuz0-Y0SokwPPphQx2jh1su7YJgEk' -H 'Content-Type: application/json' -d '{\"question_id\":9644,\"answer\":\"A\"}')",
       "Bash(curl -s -X POST https://api.satstation.io/api/v1/attempts/2271/submit-answer -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNDE0IiwiZXhwIjoxNzgwNTg0Njc0LCJpYXQiOjE3Nzc5OTI2NzQsInR5cGUiOiJhY2Nlc3MiLCJyb2xlIjoic3R1ZGVudCJ9.tW0I54Svfwk_lEWuz0-Y0SokwPPphQx2jh1su7YJgEk' -H 'Content-Type: application/json' -d '{\"question_id\":9644,\"selected_option\":\"A\"}')",
       "WebFetch(domain:ieltsnation.uz)",
-      "Bash(python3 -c \"import json; d=json.load\\(open\\('E:/SAT_plus/sat/data/satstation_bank_progress.json',encoding='utf-8'\\)\\); print\\(f'Progress: {len\\(d[\\\\\"done_ids\\\\\"]\\)}/9601 qilingan, {d[\\\\\"imported_total\\\\\"]} import'\\)\")"
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('E:/SAT_plus/sat/data/satstation_bank_progress.json',encoding='utf-8'\\)\\); print\\(f'Progress: {len\\(d[\\\\\"done_ids\\\\\"]\\)}/9601 qilingan, {d[\\\\\"imported_total\\\\\"]} import'\\)\")",
+      "WebFetch(domain:app.satstation.io)",
+      "Bash(curl *)",
+      "WebFetch(domain:scoreup.uz)",
+      "WebFetch(domain:api.scoreup.uz)",
+      "WebFetch(domain:backend.scoreup.uz)",
+      "WebFetch(domain:www.oneprep.co)",
+      "PowerShell(Get-Content \"E:\\\\SAT_plus\\\\scraped_data\\\\ielts_explore\\\\03_reading_list.html\" | Select-String -Pattern \"href|test|passage|reading|class=\" | Select-Object -First 30 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(180, $_.Line.Length\\)\\) })",
+      "PowerShell(Get-Content \"E:\\\\SAT_plus\\\\scraped_data\\\\ielts_explore\\\\reading_elements.json\" | ConvertFrom-Json | Where-Object { $_.href -ne \"\" } | Select-Object -First 20 | ForEach-Object { \"$\\($_.tag\\) | $\\($_.text.Substring\\(0, [Math]::Min\\(60,$_.text.Length\\)\\)\\) | $\\($_.href\\)\" })",
+      "PowerShell(Get-Content \"E:\\\\SAT_plus\\\\scraped_data\\\\ielts_explore\\\\api_requests.json\" | ConvertFrom-Json | ForEach-Object { \"$\\($_.method\\) $\\($_.url\\)\" })",
+      "PowerShell($data = Get-Content \"E:\\\\SAT_plus\\\\scraped_data\\\\ielts_explore\\\\api_requests.json\" | ConvertFrom-Json; $data | Where-Object { $_.headers.authorization } | Select-Object -First 1 | ForEach-Object { $_.headers.authorization })",
+      "WebFetch(domain:realprep.plus)"
     ]
   }
 }

@@ -16,6 +16,7 @@ class User(AbstractUser):
     # Premium system
     is_premium = models.BooleanField(default=False)
     premium_until = models.DateTimeField(null=True, blank=True)
+    premium_source = models.CharField(max_length=20, blank=True, default='', help_text="'manual' (admin-granted) | 'stripe' (purchased)")
     stripe_customer_id = models.CharField(max_length=120, blank=True, default='')
     stripe_subscription_id = models.CharField(max_length=120, blank=True, default='')
 
@@ -72,12 +73,13 @@ class User(AbstractUser):
         return f"{self.first_name} {self.last_name}".strip() or self.email.split('@')[0]
 
     def check_premium(self):
-        """Check and update premium status."""
+        """Check and update premium status. premium_until=None means forever (never expires)."""
         if self.is_premium and self.premium_until:
             if timezone.now() > self.premium_until:
                 self.is_premium = False
                 self.premium_until = None
-                self.save(update_fields=['is_premium', 'premium_until'])
+                self.premium_source = ''
+                self.save(update_fields=['is_premium', 'premium_until', 'premium_source'])
         return self.is_premium
 
     def is_locked(self):

@@ -1,4 +1,5 @@
 import json
+import logging
 import urllib.request
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -16,6 +17,8 @@ from ielts.models import (
     BookmarkedQuestion,
 )
 from cefr.models import CEFRReadingQuestion, CEFRListeningQuestion, CEFRQuestion
+
+logger = logging.getLogger(__name__)
 
 
 # ── HELPERS ──────────────────────────────────────────────────────────────────
@@ -530,7 +533,8 @@ def speaking_tasks(request):
     part_filter = request.query_params.get('part')
     if part_filter:
         tasks = tasks.filter(part=int(part_filter))
-    completed_ids = set(
+    from collections import Counter
+    attempt_counts = Counter(
         SpeakingResponse.objects.filter(attempt__user=request.user)
         .values_list('task_id', flat=True)
     )
@@ -549,7 +553,8 @@ def speaking_tasks(request):
             'parts_data': t.parts_data,
             'is_premium': t.is_premium,
             'created_at': str(t.created_at)[:10],
-            'attempted': t.id in completed_ids,
+            'attempted': t.id in attempt_counts,
+            'attempts_count': attempt_counts.get(t.id, 0),
         })
     return Response(result)
 
@@ -570,7 +575,7 @@ def speaking_tts(request):
         return Response({'error': 'OpenAI API key not configured'}, status=503)
 
     payload = json.dumps({
-        'model': 'tts-1',
+        'model': 'tts-1-hd',
         'input': text[:4096],
         'voice': voice,
         'speed': max(0.25, min(4.0, speed)),
@@ -704,7 +709,7 @@ INSTRUCTIONS:
 2. Only list errors you can actually QUOTE from the text. If you cannot quote an error, it does not exist — do not invent problems
 3. Fewer quoted errors = higher band. No quoted errors = Band 8.5 or 9
 4. Pronunciation: evaluated from text; focus on what is visible; give general tips
-5. For answer_corrections: one entry per answer. Rewrite as fluent, natural English. If already excellent, still provide a polished version. Keep originals short (max 2 sentences).
+5. For answer_corrections: one entry per answer. UPGRADE the answer to a higher CEFR level — if the original is around B1/B2, rewrite it at C1 level: richer and more precise vocabulary, more varied and complex sentence structures, natural collocations and idiomatic phrasing, smooth linking — while keeping the SAME ideas and meaning the candidate expressed. Fix every grammar and word-choice error. If already C1+, still provide a polished, model version. Keep originals short (max 2 sentences).
 
 Return this exact JSON:
 {{
@@ -743,8 +748,8 @@ Return this exact JSON:
     {{
       "q_index": <1-based index matching the Q number>,
       "original": "<exact text the candidate said — keep it short, max 2 sentences>",
-      "corrected": "<improved/corrected version of the same answer — natural, fluent English>",
-      "note": "<1 short sentence explaining the key improvement: grammar, vocabulary, or fluency>"
+      "corrected": "<the SAME answer rewritten at C1 level — upgraded vocabulary, more complex grammar, natural idiomatic English, all errors fixed, same ideas>",
+      "note": "<1 short sentence naming the CEFR upgrade and key improvement, e.g. 'Upgraded B2 → C1: richer vocabulary and a complex clause'>"
     }}
   ]
 }}"""
@@ -881,14 +886,16 @@ def writing_tasks(request):
         tasks = tasks.filter(task_type=task_type)
     if difficulty:
         tasks = tasks.filter(difficulty=difficulty.upper())
-    completed_ids = set(
+    from collections import Counter
+    attempt_counts = Counter(
         WritingResponse.objects.filter(attempt__user=request.user)
         .values_list('task_id', flat=True)
     )
     result = []
     for t in tasks:
         d = _serialize_writing_task(t, request)
-        d['attempted'] = t.id in completed_ids
+        d['attempted'] = t.id in attempt_counts
+        d['attempts_count'] = attempt_counts.get(t.id, 0)
         result.append(d)
     return Response(result)
 
@@ -940,6 +947,36 @@ def writing_submit(request, attempt_id):
 @permission_classes([IsAuthenticated])
 def writing_result(request, response_id):
     response = get_object_or_404(WritingResponse, id=response_id, attempt__user=request.user)
+
+    # ── Zaxira: Celery ishlamasa ham baholashni shu yerda sinxron bajaramiz ──────
+    # ai_feedback bo'sh = hali baholanmagan. Cache lock takror baholashni to'sadi
+    # (frontend har 3 soniyada poll qiladi).
+    if not response.ai_feedback and response.response_text:
+        from django.core.cache import cache
+        lock_key = f'writing_eval_lock:{response.id}'
+        if cache.add(lock_key, '1', timeout=120):  # faqat birinchi so'rov ishlaydi
+            try:
+                task = response.task
+                result = run_writing_ai(
+                    text=response.response_text,
+                    task_type=task.task_type if task else 2,
+                    prompt_txt=task.prompt if task else '',
+                    word_count=response.word_count,
+                )
+                keys = ('task_achievement', 'coherence_cohesion', 'lexical_resource', 'grammatical_range')
+                criteria = {k: result.get(k) or {} for k in keys}
+                fb = ' '.join(
+                    f"{criteria[k].get('label', k)}: {criteria[k]['feedback']}"
+                    for k in keys if isinstance(criteria[k], dict) and criteria[k].get('feedback')
+                )
+                response.ai_feedback = fb or 'Evaluated.'
+                response.ai_band = result.get('overall_band') or 0
+                response.ai_criteria = criteria
+                response.save(update_fields=['ai_feedback', 'ai_band', 'ai_criteria'])
+            except Exception as e:
+                cache.delete(lock_key)  # xato bo'lsa keyingi poll qayta urinadi
+                logger.error('Sync writing eval failed for %s: %s', response.id, e)
+
     return Response({
         'id': response.id,
         'task_id': response.task_id,
@@ -949,7 +986,9 @@ def writing_result(request, response_id):
         'response_text': response.response_text,
         'word_count': response.word_count,
         'ai_feedback': response.ai_feedback,
-        'ai_band': str(response.ai_band) if response.ai_band else None,
+        # DIQQAT: band 0 ham haqiqiy natija (masalan bo'sh/befarq matn) — `is not None`
+        # tekshiruvi shart, aks holda 0 ball "natija yo'q" deb qabul qilinib qotib qoladi.
+        'ai_band': str(response.ai_band) if response.ai_band is not None else None,
         'ai_criteria': response.ai_criteria,
         'status': 'ready' if response.ai_feedback else 'processing',
     })
@@ -980,23 +1019,18 @@ def writing_history(request):
 
 # ── WRITING AI ANALYSIS ───────────────────────────────────────────────────────
 
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def writing_ai_analyze(request):
-    """Call OpenAI to score an IELTS writing response on 4 criteria."""
-    text       = request.data.get('text', '').strip()
-    task_type  = request.data.get('task_type', 2)
-    prompt_txt = request.data.get('prompt', '')
-    word_count = request.data.get('word_count', len(text.split()))
-    own_title  = request.data.get('own_title', '')
+def run_writing_ai(text, task_type=2, prompt_txt='', word_count=None, own_title=''):
+    """
+    OpenAI bilan IELTS writing'ni 4 mezon bo'yicha baholaydi.
+    To'liq dict qaytaradi: {overall_band, task_achievement: {band,label,feedback,...}, ...}
+    Xato bo'lsa exception ko'taradi (view ham Celery task ham shu funksiyani ishlatadi).
+    """
+    word_count = word_count or len(text.split())
     min_words  = 150 if task_type == 1 else 250
-
-    if not text:
-        return Response({'error': 'text is required'}, status=400)
 
     api_key = getattr(settings, 'OPENAI_API_KEY', '')
     if not api_key or api_key == 'your-openai-api-key-here':
-        return Response({'error': 'OpenAI API key is not configured'}, status=503)
+        raise RuntimeError('OpenAI API key is not configured')
 
     task_label = 'Task 1 (Academic – Graph/Chart Description)' if task_type == 1 else 'Task 2 (Essay)'
     ta_label   = 'Task Achievement' if task_type == 1 else 'Task Response'
@@ -1118,12 +1152,30 @@ Return this exact JSON (no extra fields):
         method='POST',
     )
 
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        data = json.loads(resp.read().decode('utf-8'))
+    content = data['choices'][0]['message']['content']
+    return json.loads(content)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def writing_ai_analyze(request):
+    """Call OpenAI to score an IELTS writing response on 4 criteria."""
+    text       = request.data.get('text', '').strip()
+    task_type  = request.data.get('task_type', 2)
+    prompt_txt = request.data.get('prompt', '')
+    word_count = request.data.get('word_count', len(text.split()))
+    own_title  = request.data.get('own_title', '')
+
+    if not text:
+        return Response({'error': 'text is required'}, status=400)
+
     try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-        content = data['choices'][0]['message']['content']
-        result  = json.loads(content)
+        result = run_writing_ai(text, task_type, prompt_txt, word_count, own_title)
         return Response(result)
+    except RuntimeError as e:
+        return Response({'error': str(e)}, status=503)
     except urllib.error.HTTPError as e:
         body = e.read().decode('utf-8', errors='ignore')
         try:
@@ -1355,6 +1407,12 @@ def listening_attempt_review(request, attempt_id):
     else:
         sections = []
 
+    # Unified mock audio lives on the test, not the sections
+    test_audio_url = None
+    if attempt.test_id:
+        t = attempt.test
+        test_audio_url = getattr(t, 'audio_url', None) or (t.audio_file.url if getattr(t, 'audio_file', None) else None)
+
     user_answers = {la.question_id: la for la in attempt.listening_answers.all()}
     sections_data = []
 
@@ -1382,6 +1440,7 @@ def listening_attempt_review(request, attempt_id):
             'section_number': section.section_number,
             'title': section.title,
             'audio_url': section.audio_url or (section.audio_file.url if section.audio_file else None),
+            'test_audio_url': test_audio_url,
             'transcript': section.transcript,
             'questions': questions_data,
         })
