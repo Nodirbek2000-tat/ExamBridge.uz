@@ -1,7 +1,8 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve as static_serve
 
 # ── API imports ──────────────────────────────────────────────────────────────
 from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
@@ -260,6 +261,11 @@ urlpatterns = [
     path('api/import/cefr/', import_cefr_test),
 ]
 
+# Serve uploaded media (recorded speaking audio, listening audio, images) in
+# production too — nginx proxies /media/ to Django, so Django must serve it.
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', static_serve, {'document_root': settings.MEDIA_ROOT}),
+]
+
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
