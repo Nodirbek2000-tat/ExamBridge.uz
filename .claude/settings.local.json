@@ -79,7 +79,8 @@
       "PowerShell(Get-Content \"E:\\\\SAT_plus\\\\scraped_data\\\\ielts_explore\\\\reading_elements.json\" | ConvertFrom-Json | Where-Object { $_.href -ne \"\" } | Select-Object -First 20 | ForEach-Object { \"$\\($_.tag\\) | $\\($_.text.Substring\\(0, [Math]::Min\\(60,$_.text.Length\\)\\)\\) | $\\($_.href\\)\" })",
       "PowerShell(Get-Content \"E:\\\\SAT_plus\\\\scraped_data\\\\ielts_explore\\\\api_requests.json\" | ConvertFrom-Json | ForEach-Object { \"$\\($_.method\\) $\\($_.url\\)\" })",
       "PowerShell($data = Get-Content \"E:\\\\SAT_plus\\\\scraped_data\\\\ielts_explore\\\\api_requests.json\" | ConvertFrom-Json; $data | Where-Object { $_.headers.authorization } | Select-Object -First 1 | ForEach-Object { $_.headers.authorization })",
-      "WebFetch(domain:realprep.plus)"
+      "WebFetch(domain:realprep.plus)",
+      "PowerShell(Get-ChildItem -Path \"E:\\\\SAT_plus\\\\sat\" -Exclude \"venv\" | ForEach-Object { $_.Name })"
     ]
   }
 }
