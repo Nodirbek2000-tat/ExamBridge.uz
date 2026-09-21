@@ -74,6 +74,72 @@ def evaluate_writing(self, response_id):
 
 
 @shared_task
+def purge_old_speaking_audio(days=None):
+    """Eski speaking ovoz yozuvlarini o'chiradi.
+
+    NIMA O'CHADI: faqat ovoz faylining o'zi (diskdagi .webm).
+    NIMA QOLADI:  transkript, AI izohi, ball, mezonlar — ya'ni o'quvchi
+                  o'z natijasini va tahlilini istalgan vaqt ko'raveradi,
+                  faqat o'z ovozini qayta eshita olmaydi.
+
+    Nega kerak: ovoz yozuvlari hech qachon o'chmasdi va disk to'lib borardi.
+    Bitta to'liq speaking urinishi ~3-4 MB; 4000 kunlik faol o'quvchida bu
+    kuniga bir necha GB degani.
+
+    Muddat .env dagi SPEAKING_AUDIO_RETENTION_DAYS bilan boshqariladi
+    (standart: 120 kun).
+    """
+    from datetime import timedelta
+
+    from django.conf import settings
+    from django.utils import timezone
+    from ielts.models import SpeakingResponse
+
+    days = int(days or getattr(settings, 'SPEAKING_AUDIO_RETENTION_DAYS', 120))
+    cutoff = timezone.now() - timedelta(days=days)
+
+    # Avval ID larni olamiz: yozuvlarni o'zgartirib turib, ayni paytda
+    # o'sha jadvalni varaqlash ishonchsiz
+    ids = list(
+        SpeakingResponse.objects
+        .filter(created_at__lt=cutoff)
+        .exclude(audio_file='')
+        .exclude(audio_file__isnull=True)
+        .values_list('id', flat=True)
+    )
+
+    deleted, freed_bytes, failed = 0, 0, 0
+    for start in range(0, len(ids), 500):
+        chunk = ids[start:start + 500]
+        for r in SpeakingResponse.objects.filter(id__in=chunk):
+            if not r.audio_file:
+                continue
+            try:
+                size = r.audio_file.size
+            except Exception:
+                size = 0            # fayl allaqachon yo'q — hajmi noma'lum
+            try:
+                # save=False: maydonni o'zimiz tozalab, bir marta saqlaymiz
+                r.audio_file.delete(save=False)
+                r.audio_file = None
+                r.save(update_fields=['audio_file'])
+            except Exception as exc:
+                failed += 1
+                logger.warning('Speaking audio %s o\'chmadi: %s', r.id, exc)
+                continue
+            deleted += 1
+            freed_bytes += size
+
+    logger.info(
+        'Speaking audio tozalandi: %s ta o\'chdi, %.1f MB bo\'shadi, '
+        '%s ta xato (muddat: %s kun)',
+        deleted, freed_bytes / 1024 / 1024, failed, days,
+    )
+    return {'deleted': deleted, 'freed_mb': round(freed_bytes / 1024 / 1024, 1),
+            'failed': failed, 'days': days}
+
+
+@shared_task
 def update_user_stats(user_id):
     """Update user's overall stats after completing a test."""
     try:

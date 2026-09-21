@@ -68,6 +68,20 @@ from api.import_views import (
     admin_bank_question_choice_image,
     admin_sat_question_choice_image,
 )
+from games.views import (
+    shadowing_texts, shadowing_text_detail, shadowing_submit,
+)
+from study.views import (
+    article_list, article_detail, admin_article_list, admin_article_detail,
+    writing_sample_list, writing_sample_detail, writing_sample_note,
+    admin_writing_sample_list, admin_writing_sample_detail,
+    podcast_list, podcast_detail, podcast_position,
+    admin_podcast_list, admin_podcast_detail,
+)
+from api.export_views import (
+    export_ielts_reading, export_ielts_listening, export_ielts_test,
+    export_cefr_reading, export_cefr_listening, export_cefr_test,
+)
 
 # ── URL patterns ──────────────────────────────────────────────────────────────
 urlpatterns = [
@@ -157,6 +171,25 @@ urlpatterns = [
     path('api/ielts/writing/<int:attempt_id>/submit/', writing_submit),
     path('api/ielts/writing/result/<int:response_id>/', writing_result),
     path('api/ielts/writing/analyze/', writing_ai_analyze),
+    # Games — Shadowing
+    path('api/games/shadowing/texts/', shadowing_texts),
+    path('api/games/shadowing/texts/<int:pk>/', shadowing_text_detail),
+    path('api/games/shadowing/<int:pk>/submit/', shadowing_submit),
+    # Study Tools — Articles
+    path('api/study/articles/', article_list),
+    path('api/study/articles/<int:pk>/', article_detail),
+    path('api/admin/study/articles/', admin_article_list),
+    path('api/admin/study/articles/<int:pk>/', admin_article_detail),
+    path('api/study/writing-samples/', writing_sample_list),
+    path('api/study/writing-samples/<int:pk>/', writing_sample_detail),
+    path('api/study/writing-samples/<int:pk>/note/', writing_sample_note),
+    path('api/admin/study/writing-samples/', admin_writing_sample_list),
+    path('api/admin/study/writing-samples/<int:pk>/', admin_writing_sample_detail),
+    path('api/study/podcasts/', podcast_list),
+    path('api/study/podcasts/<int:pk>/', podcast_detail),
+    path('api/study/podcasts/<int:pk>/position/', podcast_position),
+    path('api/admin/study/podcasts/', admin_podcast_list),
+    path('api/admin/study/podcasts/<int:pk>/', admin_podcast_detail),
     # Bookmarks
     path('api/ielts/bookmarks/', bookmark_list),
     path('api/ielts/bookmarks/toggle/', bookmark_toggle),
@@ -247,6 +280,15 @@ urlpatterns = [
     path('api/admin/sat/bank-questions/<int:pk>/', admin_bank_question_detail),
     path('api/admin/sat/bank-questions/<int:pk>/image/<str:letter>/', admin_bank_question_choice_image),
     path('api/admin/sat/questions/<int:pk>/choice-image/<str:letter>/', admin_sat_question_choice_image),
+
+    # ── EXPORT (admin panel: JSON nusxa olish) ────────────────────────────────
+    # Import formatining aynan o'zini qaytaradi — nusxani qayta import qilsa bo'ladi
+    path('api/admin/export/ielts/reading/<int:pk>/', export_ielts_reading),
+    path('api/admin/export/ielts/listening/<int:pk>/', export_ielts_listening),
+    path('api/admin/export/ielts/test/<int:pk>/', export_ielts_test),
+    path('api/admin/export/cefr/reading/<int:pk>/', export_cefr_reading),
+    path('api/admin/export/cefr/listening/<int:pk>/', export_cefr_listening),
+    path('api/admin/export/cefr/test/<int:pk>/', export_cefr_test),
 
     # ── IMPORT ENDPOINTS ──────────────────────────────────────────────────────
     path('api/import/sat/test/', import_sat_test),

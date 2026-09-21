@@ -3,6 +3,8 @@ SAT Platform - Production-ready settings
 Optimized for 200,000-300,000 users
 """
 from pathlib import Path
+
+from celery.schedules import crontab
 from decouple import config, Csv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,6 +48,8 @@ LOCAL_APPS = [
     'panel',
     'ai_chat',
     'centers',
+    'games',
+    'study',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -142,7 +146,10 @@ except Exception:
     }
 
 # ─── SESSION ──────────────────────────────────────────────────────────────────
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+# `cached_db`: o'qish Redis dan (tez), yozish Redis + DB ga. Redis xotirasi
+# to'lib kalitni o'chirsa yoki Redis qayta ishga tushsa — sessiya DB dan
+# tiklanadi. Toza `cache` da esa user to'satdan logout bo'lardi.
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 SESSION_CACHE_ALIAS = 'default'
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30  # 30 days
 SESSION_COOKIE_HTTPONLY = True
@@ -205,6 +212,23 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Tashkent'
 CELERY_TASK_ALWAYS_EAGER = DEBUG
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+
+# ─── SPEAKING OVOZ YOZUVLARINI SAQLASH MUDDATI ────────────────────────────────
+# Shu kundan eski ovoz fayllari avtomatik o'chiriladi.
+# Transkript, AI izohi va ball QOLADI — o'quvchi natijasini keyin ham ko'radi,
+# faqat o'z ovozini qayta eshita olmaydi.
+#
+# Nega kerak: bitta speaking urinishi ~3-4 MB. Tozalashsiz disk to'lib boradi
+# (4000 kunlik faol o'quvchida taxminan 4-12 oyda 600 GB tugaydi).
+SPEAKING_AUDIO_RETENTION_DAYS = config('SPEAKING_AUDIO_RETENTION_DAYS', default=120, cast=int)
+
+# Har kuni kechasi soat 04:00 da (Toshkent) — trafik eng kam paytda
+CELERY_BEAT_SCHEDULE = {
+    'purge-old-speaking-audio': {
+        'task': 'api.tasks.purge_old_speaking_audio',
+        'schedule': crontab(hour=4, minute=0),
+    },
+}
 
 # ─── INTERNATIONALIZATION ─────────────────────────────────────────────────────
 LANGUAGE_CODE = 'en-us'

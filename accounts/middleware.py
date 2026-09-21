@@ -258,6 +258,9 @@ class SecurityHeadersMiddleware:
         response['X-XSS-Protection'] = '1; mode=block'
         response['Referrer-Policy'] = 'strict-origin-when-cross-origin'
         response['Permissions-Policy'] = 'geolocation=(), microphone=(), camera=()'
-        response['X-Frame-Options'] = 'DENY'
+        # Uploaded media (article PDFs, images) is embedded in our own pages via
+        # <iframe>/<embed>, so it must allow same-origin framing. Everything else
+        # stays DENY.
+        response['X-Frame-Options'] = 'SAMEORIGIN' if request.path.startswith('/media/') else 'DENY'
         response['Server'] = 'SAT+'
         return response

@@ -5,10 +5,12 @@ WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
+# ffmpeg is required to split podcast audio that exceeds Whisper's 25 MB limit
 RUN apt-get update && apt-get install -y \
     gcc \
     libpq-dev \
     curl \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
@@ -22,9 +24,5 @@ RUN chmod +x /entrypoint.sh
 EXPOSE 8000
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["gunicorn", "config.wsgi:application", \
-     "--bind", "0.0.0.0:8000", \
-     "--workers", "4", \
-     "--timeout", "120", \
-     "--log-level", "info", \
-     "--access-logfile", "-"]
+# Sozlamalar gunicorn.conf.py da (worker soni, thread, timeout — .env orqali)
+CMD ["gunicorn", "config.wsgi:application", "--config", "/app/gunicorn.conf.py"]

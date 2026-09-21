@@ -15,6 +15,12 @@ services:
   db:
     image: postgres:15-alpine
     restart: unless-stopped
+    # max_connections: gunicorn endi ko'p oqimli (workers × threads), har bir oqim
+    # o'ziga ulanish oladi. Standart 100 yetmaydi — 300 ga oshirildi.
+    command: >
+      postgres
+      -c max_connections=${DB_MAX_CONNECTIONS:-300}
+      -c shared_buffers=${DB_SHARED_BUFFERS:-256MB}
     volumes:
       - postgres_data:/var/lib/postgresql/data   # ← data NEVER deleted on restart
     environment:
@@ -33,7 +39,10 @@ services:
   redis:
     image: redis:7-alpine
     restart: unless-stopped
-    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    # 256mb juda kam edi — cache to'lganda Redis eski kalitlarni o'chirib
+    # tashlardi. Sessiyalar endi `cached_db` (settings.py) — Redis o'chirsa ham
+    # DB dan tiklanadi, ya'ni user logout bo'lib qolmaydi.
+    command: redis-server --maxmemory ${REDIS_MAXMEMORY:-1gb} --maxmemory-policy allkeys-lru
     networks:
       - exambridge_net
 
@@ -58,9 +67,29 @@ services:
   celery:
     build: .
     restart: unless-stopped
-    command: celery -A config worker -l info --concurrency 2
+    # Writing AI baholash shu yerda ishlaydi (evaluate_writing.delay).
+    # 2 ta juda kam edi — bir vaqtda 2 tadan ko'p essay yuborilsa navbat yig'ilardi.
+    command: celery -A config worker -l info --concurrency ${CELERY_CONCURRENCY:-6}
     volumes:
       - media_volume:/app/media
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - exambridge_net
+
+  # ── Celery Beat (jadval bo'yicha ishlaydigan vazifalar) ─────────────────────
+  # Har kuni 04:00 da eski speaking ovoz yozuvlarini o'chiradi.
+  # Bu ALOHIDA jarayon — worker o'zi jadvalni bajarmaydi, shuning uchun
+  # bu konteynersiz avtomatik tozalash umuman ishlamaydi.
+  # Diqqat: faqat BITTA nusxada ishlashi kerak (aks holda vazifa takrorlanadi).
+  celery-beat:
+    build: .
+    restart: unless-stopped
+    command: celery -A config beat -l info --schedule /tmp/celerybeat-schedule
     env_file: .env
     depends_on:
       db:
