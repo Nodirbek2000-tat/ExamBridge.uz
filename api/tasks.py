@@ -39,37 +39,21 @@ def evaluate_writing(self, response_id):
     ai_criteria shakli (frontend IELTSWritingResult shuni kutadi):
       {task_achievement: {band, label, feedback, strengths, errors}, ...}
     """
+    from ielts.models import WritingResponse
+    from api.ielts_views import evaluate_writing_response
+
     try:
-        from ielts.models import WritingResponse
-        from api.ielts_views import run_writing_ai
+        response = WritingResponse.objects.select_related('task').get(id=response_id)
+    except WritingResponse.DoesNotExist:
+        # Deleted before we got to it — retrying cannot help
+        logger.warning('Writing response %s no longer exists', response_id)
+        return
 
-        response = WritingResponse.objects.get(id=response_id)
-        task = response.task
-
-        result = run_writing_ai(
-            text=response.response_text,
-            task_type=task.task_type if task else 2,
-            prompt_txt=task.prompt if task else '',
-            word_count=response.word_count,
-        )
-
-        criteria_keys = ('task_achievement', 'coherence_cohesion', 'lexical_resource', 'grammatical_range')
-        criteria = {k: result.get(k) or {} for k in criteria_keys}
-
-        # ai_feedback — "ready" flag sifatida ishlatiladi; mezon fikrlarini birlashtirib saqlaymiz
-        feedback_parts = []
-        for k in criteria_keys:
-            c = criteria[k]
-            if isinstance(c, dict) and c.get('feedback'):
-                feedback_parts.append(f"{c.get('label', k)}: {c['feedback']}")
-        response.ai_feedback = ' '.join(feedback_parts) or 'Evaluated.'
-        response.ai_band = result.get('overall_band') or 0
-        response.ai_criteria = criteria
-        response.save(update_fields=['ai_feedback', 'ai_band', 'ai_criteria'])
-        logger.info(f"Writing response {response_id} evaluated by AI: band={response.ai_band}")
-
+    try:
+        if evaluate_writing_response(response):
+            logger.info('Writing response %s evaluated by AI: band=%s', response_id, response.ai_band)
     except Exception as exc:
-        logger.error(f"Writing evaluation failed: {exc}")
+        logger.error('Writing evaluation failed for %s: %s', response_id, exc)
         raise self.retry(exc=exc, countdown=30)
 
 

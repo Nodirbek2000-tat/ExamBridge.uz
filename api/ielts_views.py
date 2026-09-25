@@ -9,6 +9,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.conf import settings
+from django.core.cache import cache
+from django.utils import timezone
 from django.http import HttpResponse
 from django.db.models import Count
 from ielts.models import (
@@ -989,6 +991,58 @@ def writing_start(request, task_id):
     }, status=201)
 
 
+# Longer than run_writing_ai's 60 s OpenAI timeout, so the lock never expires
+# while a scorer is still working.
+WRITING_EVAL_LOCK_TTL = 180
+# Celery normally finishes in 10–30 s. Only after this long does the result
+# endpoint assume the worker is down and score the essay itself.
+WRITING_FALLBACK_AFTER = 90
+
+
+def evaluate_writing_response(response):
+    """
+    Score one essay with AI and save it.
+
+    Used by both the Celery task and the request-side fallback. The cache lock
+    guarantees only one of them runs at a time — without it every essay was
+    scored twice (two OpenAI bills, two possibly different bands).
+
+    Returns True if this call did the scoring, False if skipped because the
+    essay is already scored or someone else holds the lock. Re-raises AI
+    failures after releasing the lock so a retry can run.
+    """
+    if response.ai_feedback:
+        return False
+
+    lock_key = f'writing_eval_lock:{response.id}'
+    if not cache.add(lock_key, '1', timeout=WRITING_EVAL_LOCK_TTL):
+        return False
+
+    try:
+        task = response.task
+        result = run_writing_ai(
+            text=response.response_text,
+            task_type=task.task_type if task else 2,
+            prompt_txt=task.prompt if task else '',
+            word_count=response.word_count,
+        )
+        keys = ('task_achievement', 'coherence_cohesion', 'lexical_resource', 'grammatical_range')
+        criteria = {k: result.get(k) or {} for k in keys}
+        # ai_feedback doubles as the "ready" flag the frontend polls for
+        fb = ' '.join(
+            f"{criteria[k].get('label', k)}: {criteria[k]['feedback']}"
+            for k in keys if isinstance(criteria[k], dict) and criteria[k].get('feedback')
+        )
+        response.ai_feedback = fb or 'Evaluated.'
+        response.ai_band = result.get('overall_band') or 0
+        response.ai_criteria = criteria
+        response.save(update_fields=['ai_feedback', 'ai_band', 'ai_criteria'])
+        return True
+    except Exception:
+        cache.delete(lock_key)
+        raise
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def writing_submit(request, attempt_id):
@@ -1012,34 +1066,17 @@ def writing_submit(request, attempt_id):
 def writing_result(request, response_id):
     response = get_object_or_404(WritingResponse, id=response_id, attempt__user=request.user)
 
-    # ── Zaxira: Celery ishlamasa ham baholashni shu yerda sinxron bajaramiz ──────
-    # ai_feedback bo'sh = hali baholanmagan. Cache lock takror baholashni to'sadi
-    # (frontend har 3 soniyada poll qiladi).
+    # Celery owns scoring. Stepping in straight away (the old behaviour) meant
+    # the first poll, 3 s after submit, scored the essay again inside a web
+    # thread while Celery was still working on it. Only fall back once Celery
+    # has clearly had its chance.
     if not response.ai_feedback and response.response_text:
-        from django.core.cache import cache
-        lock_key = f'writing_eval_lock:{response.id}'
-        if cache.add(lock_key, '1', timeout=120):  # faqat birinchi so'rov ishlaydi
+        waited = (timezone.now() - response.created_at).total_seconds()
+        if waited >= WRITING_FALLBACK_AFTER:
             try:
-                task = response.task
-                result = run_writing_ai(
-                    text=response.response_text,
-                    task_type=task.task_type if task else 2,
-                    prompt_txt=task.prompt if task else '',
-                    word_count=response.word_count,
-                )
-                keys = ('task_achievement', 'coherence_cohesion', 'lexical_resource', 'grammatical_range')
-                criteria = {k: result.get(k) or {} for k in keys}
-                fb = ' '.join(
-                    f"{criteria[k].get('label', k)}: {criteria[k]['feedback']}"
-                    for k in keys if isinstance(criteria[k], dict) and criteria[k].get('feedback')
-                )
-                response.ai_feedback = fb or 'Evaluated.'
-                response.ai_band = result.get('overall_band') or 0
-                response.ai_criteria = criteria
-                response.save(update_fields=['ai_feedback', 'ai_band', 'ai_criteria'])
+                evaluate_writing_response(response)
             except Exception as e:
-                cache.delete(lock_key)  # xato bo'lsa keyingi poll qayta urinadi
-                logger.error('Sync writing eval failed for %s: %s', response.id, e)
+                logger.error('Fallback writing eval failed for %s: %s', response.id, e)
 
     return Response({
         'id': response.id,
