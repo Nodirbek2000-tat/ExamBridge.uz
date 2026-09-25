@@ -1,5 +1,8 @@
+import hashlib
 import json
 import logging
+import os
+import tempfile
 import urllib.request
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -559,26 +562,88 @@ def speaking_tasks(request):
     return Response(result)
 
 
+TTS_MODEL = 'tts-1-hd'
+TTS_VOICES = {'alloy', 'echo', 'fable', 'onyx', 'nova', 'shimmer'}
+
+
+def _tts_cache_path(text, voice, speed):
+    """
+    Disk location for one synthesized clip.
+
+    Examiner lines are the same for every learner, so each unique
+    (model, voice, speed, text) is generated once and then served from disk.
+    The model is part of the key so switching models never serves stale audio.
+    """
+    key = f'{TTS_MODEL}|{voice}|{speed:.2f}|{text}'
+    digest = hashlib.sha256(key.encode('utf-8')).hexdigest()
+    # Two-level fan-out keeps any single directory small
+    return os.path.join(settings.MEDIA_ROOT, 'tts_cache', digest[:2], f'{digest}.mp3')
+
+
+def _write_file_atomic(path, data):
+    """Write via temp file + rename so a concurrent reader never sees half a file."""
+    tmp_path = None
+    try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        fd, tmp_path = tempfile.mkstemp(dir=os.path.dirname(path), suffix='.tmp')
+        with os.fdopen(fd, 'wb') as f:
+            f.write(data)
+        os.replace(tmp_path, path)
+    except OSError:
+        # The cache is only an optimisation — a failed write must never break playback
+        logger.warning('TTS cache write failed: %s', path, exc_info=True)
+        if tmp_path:
+            try:
+                os.remove(tmp_path)
+            except OSError:
+                pass
+
+
+def _tts_audio_response(audio_data, cache_status):
+    http_resp = HttpResponse(audio_data, content_type='audio/mpeg')
+    http_resp['Cache-Control'] = 'private, max-age=3600'
+    http_resp['Content-Length'] = str(len(audio_data))
+    http_resp['X-TTS-Cache'] = cache_status
+    return http_resp
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def speaking_tts(request):
-    """Generate TTS audio via OpenAI for examiner voices."""
-    text = request.data.get('text', '').strip()
-    voice = request.data.get('voice', 'nova')  # alloy, echo, fable, onyx, nova, shimmer
-    speed = float(request.data.get('speed', 0.92))
+    """Generate TTS audio via OpenAI for examiner voices, cached on disk."""
+    text = (request.data.get('text') or '').strip()[:4096]
+    voice = request.data.get('voice', 'nova')
+    if voice not in TTS_VOICES:
+        voice = 'nova'
+    try:
+        speed = float(request.data.get('speed', 0.92))
+    except (TypeError, ValueError):
+        speed = 0.92
+    speed = max(0.25, min(4.0, speed))
 
     if not text:
         return Response({'error': 'text required'}, status=400)
+
+    # Served from disk: no OpenAI round-trip, so the worker thread is freed in
+    # milliseconds instead of being held for 1–3 s per line.
+    cache_path = _tts_cache_path(text, voice, speed)
+    try:
+        with open(cache_path, 'rb') as f:
+            cached = f.read()
+        if cached:
+            return _tts_audio_response(cached, 'HIT')
+    except OSError:
+        pass
 
     api_key = getattr(settings, 'OPENAI_API_KEY', '')
     if not api_key or api_key == 'your-openai-api-key-here':
         return Response({'error': 'OpenAI API key not configured'}, status=503)
 
     payload = json.dumps({
-        'model': 'tts-1-hd',
-        'input': text[:4096],
+        'model': TTS_MODEL,
+        'input': text,
         'voice': voice,
-        'speed': max(0.25, min(4.0, speed)),
+        'speed': speed,
     }).encode('utf-8')
 
     req = urllib.request.Request(
@@ -594,10 +659,9 @@ def speaking_tts(request):
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             audio_data = resp.read()
-        http_resp = HttpResponse(audio_data, content_type='audio/mpeg')
-        http_resp['Cache-Control'] = 'private, max-age=3600'
-        http_resp['Content-Length'] = str(len(audio_data))
-        return http_resp
+        if audio_data:  # never cache an empty body
+            _write_file_atomic(cache_path, audio_data)
+        return _tts_audio_response(audio_data, 'MISS')
     except urllib.error.HTTPError as e:
         body = e.read().decode('utf-8', errors='ignore')
         try:
