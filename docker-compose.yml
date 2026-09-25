@@ -42,7 +42,13 @@ services:
     # 256mb juda kam edi — cache to'lganda Redis eski kalitlarni o'chirib
     # tashlardi. Sessiyalar endi `cached_db` (settings.py) — Redis o'chirsa ham
     # DB dan tiklanadi, ya'ni user logout bo'lib qolmaydi.
-    command: redis-server --maxmemory ${REDIS_MAXMEMORY:-1gb} --maxmemory-policy allkeys-lru
+    #
+    # volatile-lru (allkeys-lru emas): bu Redis bir vaqtda Django kesh, Celery
+    # navbati va Celery natijalari. allkeys-lru xotira to'lganda navbatdagi
+    # AI vazifalarini ham o'chirib yuborishi mumkin edi. volatile-lru faqat
+    # muddati (TTL) bor kalitlarni o'chiradi — Django kesh (TIMEOUT 300) va
+    # sessiyalar TTL'li, Celery navbati TTL'siz, ya'ni u himoyalangan.
+    command: redis-server --maxmemory ${REDIS_MAXMEMORY:-1gb} --maxmemory-policy volatile-lru
     networks:
       - exambridge_net
 
