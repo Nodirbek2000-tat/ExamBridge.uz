@@ -212,6 +212,9 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Tashkent'
 CELERY_TASK_ALWAYS_EAGER = DEBUG
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+# api/ is a plain package, not an installed app, so autodiscover_tasks() never
+# finds api/tasks.py — the worker rejected every task as "unregistered".
+CELERY_IMPORTS = ('api.tasks',)
 
 # ─── SPEAKING OVOZ YOZUVLARINI SAQLASH MUDDATI ────────────────────────────────
 # Shu kundan eski ovoz fayllari avtomatik o'chiriladi.

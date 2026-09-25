@@ -1074,7 +1074,9 @@ def writing_result(request, response_id):
         waited = (timezone.now() - response.created_at).total_seconds()
         if waited >= WRITING_FALLBACK_AFTER:
             try:
-                evaluate_writing_response(response)
+                if evaluate_writing_response(response):
+                    # Should be rare — if this shows up, Celery is not doing its job
+                    logger.warning('Fallback scored writing %s after %ds (Celery did not)', response.id, waited)
             except Exception as e:
                 logger.error('Fallback writing eval failed for %s: %s', response.id, e)
 
