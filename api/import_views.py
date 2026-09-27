@@ -2,6 +2,7 @@
 JSON Import endpoints for SAT, IELTS, CEFR questions
 """
 import json
+import re
 from rest_framework.decorators import api_view, permission_classes, parser_classes
 from rest_framework.permissions import IsAdminUser
 from rest_framework.parsers import MultiPartParser, JSONParser
@@ -56,6 +57,36 @@ def _normalize_qt(qt):
     if not qt:
         return 'MCQ'
     return _QT_ALIASES.get(qt.upper(), qt.upper())
+
+
+_GAP_MARKER_RE = re.compile(r'\[(\d+)\]')
+
+
+def _check_passage_gaps(content, questions, where):
+    """
+    CEFR Part 1 (PGAP): the passage text holds [N] markers and each PGAP
+    question supplies the answer for one of them. Both sides must match —
+    otherwise a learner sees a gap they cannot answer, or an answer is scored
+    for a gap that is never shown. Returns an error message or None.
+    """
+    gap_numbers = set()
+    for q in questions:
+        if _normalize_qt(q.get('question_type', '')) == 'PGAP':
+            try:
+                gap_numbers.add(int(q.get('number')))
+            except (TypeError, ValueError):
+                return f"{where}: PGAP savolida 'number' noto'g'ri — {q.get('number')!r}"
+    if not gap_numbers:
+        return None
+
+    markers = {int(n) for n in _GAP_MARKER_RE.findall(content or '')}
+    missing = sorted(gap_numbers - markers)
+    extra = sorted(markers - gap_numbers)
+    if missing:
+        return f"{where}: matnda {', '.join(f'[{n}]' for n in missing)} belgisi yo'q, lekin shu raqamli PGAP savol bor."
+    if extra:
+        return f"{where}: matnda {', '.join(f'[{n}]' for n in extra)} belgisi bor, lekin shu raqamli PGAP savol yo'q."
+    return None
 
 
 # ── SAT IMPORT ───────────────────────────────────────────────────────────────
@@ -915,6 +946,13 @@ def import_cefr_test(request):
         ]
     }
 
+    Reading Part 1 (PGAP) — gaps live inside the passage as [1]..[N]; the
+    questions carry only the answers. Import is rejected if markers and
+    question numbers don't match one-to-one.
+        "passage": {"title": "Sea turtles", "content": "Sea [1] have lived ...", "passage_number": 1},
+        "questions": [{"number": 1, "question_type": "PGAP", "correct_answer": "turtles",
+                       "answer_review": "Sea turtles are amazing animals."}]
+
     TYPE: listening — Listening section with questions
     {
         "type": "listening",
@@ -962,6 +1000,14 @@ def import_cefr_test(request):
                 parts_data = data['parts']
                 if not parts_data:
                     return Response({'error': 'No parts provided.'}, status=400)
+                # Validate every part before creating anything
+                for idx, part in enumerate(parts_data, start=1):
+                    err = _check_passage_gaps(
+                        part.get('content', ''), part.get('questions', []),
+                        f"Part {part.get('passage_number', idx)}",
+                    )
+                    if err:
+                        return Response({'error': err}, status=400)
                 created_passages = []
                 with transaction.atomic():
                     # Create one CEFRTest to group all parts as a full mock
@@ -1013,6 +1059,10 @@ def import_cefr_test(request):
             standalone = passage_data.get('is_standalone')
             if standalone is None:
                 standalone = data.get('is_standalone', True)
+
+            err = _check_passage_gaps(content, data.get('questions', []), 'Matn')
+            if err:
+                return Response({'error': err}, status=400)
 
             with transaction.atomic():
                 passage = CEFRReadingPassage.objects.create(

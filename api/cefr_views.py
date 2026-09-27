@@ -45,7 +45,15 @@ def _cefr_level(score):
 
 # ── HELPERS ──────────────────────────────────────────────────────────────────
 
+def _normalize_word(s):
+    return ' '.join(str(s).split()).upper()
+
+
 def _check_answer_cefr(question, user_answer_raw):
+    if question.question_type == 'PGAP':
+        # "colour|color" — any listed spelling counts; case and spacing don't
+        user = _normalize_word(user_answer_raw)
+        return bool(user) and user in {_normalize_word(a) for a in question.correct_answer.split('|') if a.strip()}
     if question.question_type == 'MULTI':
         correct_list = sorted([a.strip().upper() for a in question.correct_answer.split('|') if a.strip()])
         user_list = sorted([a.strip().upper() for a in user_answer_raw.split('|') if a.strip()])
