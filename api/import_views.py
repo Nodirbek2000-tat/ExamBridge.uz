@@ -89,6 +89,38 @@ def _check_passage_gaps(content, questions, where):
     return None
 
 
+def _question_choices(q_data, shared_options):
+    """
+    CEFR Parts 2–3 (TMATCH): the A–J list is written once as `options` on the
+    passage/part and copied to every TMATCH question. A question may still
+    carry its own `choices`, which win.
+    """
+    if q_data.get('choices'):
+        return q_data['choices']
+    if _normalize_qt(q_data.get('question_type', '')) == 'TMATCH':
+        return shared_options or []
+    return []
+
+
+def _check_text_match(questions, shared_options, where):
+    """Every TMATCH question needs text, an option list, and an answer that is one of the options."""
+    for q in questions:
+        if _normalize_qt(q.get('question_type', '')) != 'TMATCH':
+            continue
+        n = q.get('number')
+        opts = _question_choices(q, shared_options)
+        letters = [str(c.get('option', '')).strip().upper() for c in opts]
+        if not opts:
+            return f"{where}: {n}-savol (TMATCH) uchun variantlar yo'q — 'options' ro'yxatini qo'shing."
+        if len(set(letters)) != len(letters) or '' in letters:
+            return f"{where}: variant harflari takrorlangan yoki bo'sh."
+        if not str(q.get('content') or '').strip():
+            return f"{where}: {n}-savol (TMATCH) matni ('content') bo'sh."
+        if str(q.get('correct_answer', '')).strip().upper() not in letters:
+            return f"{where}: {n}-savol javobi {q.get('correct_answer')!r} variantlar ichida yo'q ({', '.join(letters)})."
+    return None
+
+
 # ── SAT IMPORT ───────────────────────────────────────────────────────────────
 
 @api_view(['POST'])
@@ -1008,6 +1040,12 @@ def import_cefr_test(request):
                     )
                     if err:
                         return Response({'error': err}, status=400)
+                    err = _check_text_match(
+                        part.get('questions', []), part.get('options', []),
+                        f"Part {part.get('passage_number', idx)}",
+                    )
+                    if err:
+                        return Response({'error': err}, status=400)
                 created_passages = []
                 with transaction.atomic():
                     # Create one CEFRTest to group all parts as a full mock
@@ -1045,7 +1083,7 @@ def import_cefr_test(request):
                                 word_bank=q_data.get('word_bank', []) or [],
                                 answer_review=q_data.get('answer_review', ''),
                             )
-                            for c in q_data.get('choices', []):
+                            for c in _question_choices(q_data, part.get('options', [])):
                                 CEFRReadingChoice.objects.create(question=q, option=c['option'], text=c['text'])
                         created_passages.append({'id': passage.id, 'title': passage.title, 'questions': passage.questions.count()})
                 return Response({'test_id': mock_test.id, 'part_count': len(parts_data), 'passages': created_passages})
@@ -1061,6 +1099,11 @@ def import_cefr_test(request):
                 standalone = data.get('is_standalone', True)
 
             err = _check_passage_gaps(content, data.get('questions', []), 'Matn')
+            if err:
+                return Response({'error': err}, status=400)
+            # `options` may sit at the top level or inside "passage"
+            shared_options = data.get('options') or passage_data.get('options') or []
+            err = _check_text_match(data.get('questions', []), shared_options, 'Matn')
             if err:
                 return Response({'error': err}, status=400)
 
@@ -1089,7 +1132,7 @@ def import_cefr_test(request):
                         word_bank=q_data.get('word_bank', []) or [],
                         answer_review=q_data.get('answer_review', ''),
                     )
-                    for c in q_data.get('choices', []):
+                    for c in _question_choices(q_data, shared_options):
                         CEFRReadingChoice.objects.create(question=q, option=c['option'], text=c['text'])
             return Response({'id': passage.id, 'title': passage.title, 'questions': passage.questions.count()})
 

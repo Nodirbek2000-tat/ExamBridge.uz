@@ -69,6 +69,9 @@ class CEFRReadingQuestion(models.Model):
         # CEFR multilevel Part 1: the passage itself holds [1]..[N] gap markers.
         # These questions carry no text of their own — only the answer.
         PASSAGE_GAP   = 'PGAP',  'Gap in the text'
+        # CEFR multilevel Parts 2–3: one shared list of options (A–J / headings)
+        # shown once on top; each question is a text matched to one option.
+        TEXT_MATCH    = 'TMATCH', 'Match text to option'
         MCQ           = 'MCQ',   'Multiple Choice'
         TRUE_FALSE_NG = 'TFNG',  'True/False/Not Given'
         YES_NO_NG     = 'YNNG',  'Yes/No/Not Given'
