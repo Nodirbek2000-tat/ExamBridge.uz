@@ -49,8 +49,12 @@ def _normalize_word(s):
     return ' '.join(str(s).split()).upper()
 
 
+# Written-answer types: "colour|color" style alternatives, case and spacing ignored
+_TEXT_ANSWER_TYPES = {'PGAP', 'NOTE', 'SUMM', 'GAP', 'SENT', 'SHORT', 'TABLE', 'FLOW'}
+
+
 def _check_answer_cefr(question, user_answer_raw):
-    if question.question_type == 'PGAP':
+    if question.question_type in _TEXT_ANSWER_TYPES:
         # "colour|color" — any listed spelling counts; case and spacing don't
         user = _normalize_word(user_answer_raw)
         return bool(user) and user in {_normalize_word(a) for a in question.correct_answer.split('|') if a.strip()}
@@ -498,6 +502,7 @@ def cefr_reading_submit(request, passage_id):
         attempt.complete()
         cefr_score = cefr_score_all
         cefr_level = cefr_level_all
+        score_percent = score_percent_all  # whole mock, not just the last part
         correct = total_correct_all
         total = total_all
 

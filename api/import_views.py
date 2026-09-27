@@ -89,6 +89,50 @@ def _check_passage_gaps(content, questions, where):
     return None
 
 
+def _check_summary_gaps(questions, where):
+    """
+    CEFR Part 5 summary (NOTE): the summary text lives in group_instruction with
+    [N] markers. Each NOTE question must have its [N] somewhere in the
+    instructions of its group — otherwise its box is never shown.
+    """
+    markers = set()
+    for q in questions:
+        markers |= {int(n) for n in _GAP_MARKER_RE.findall(q.get('group_instruction') or '')}
+    for q in questions:
+        if _normalize_qt(q.get('question_type', '')) != 'NOTE':
+            continue
+        try:
+            n = int(q.get('number'))
+        except (TypeError, ValueError):
+            return f"{where}: NOTE savolida 'number' noto'g'ri — {q.get('number')!r}"
+        if n not in markers:
+            return f"{where}: {n}-savol (NOTE) uchun summary matnida [{n}] belgisi yo'q (group_instruction ichida bo'lishi kerak)."
+    return None
+
+
+_FIXED_ANSWERS = {
+    'TFNG': {'TRUE', 'FALSE', 'NOT GIVEN'},
+    'YNNG': {'YES', 'NO', 'NOT GIVEN'},
+}
+
+
+def _check_answer_keys(questions, where):
+    """MCQ answer must be one of its choices; T/F/NG and Y/N/NG must use their fixed words."""
+    for q in questions:
+        qt = _normalize_qt(q.get('question_type', ''))
+        n = q.get('number')
+        ans = str(q.get('correct_answer', '')).strip().upper()
+        if qt == 'MCQ':
+            letters = {str(c.get('option', '')).strip().upper() for c in q.get('choices') or []}
+            if not letters:
+                return f"{where}: {n}-savol (MCQ) uchun 'choices' yo'q."
+            if ans not in letters:
+                return f"{where}: {n}-savol javobi {q.get('correct_answer')!r} variantlar ichida yo'q ({', '.join(sorted(letters))})."
+        elif qt in _FIXED_ANSWERS and ans not in _FIXED_ANSWERS[qt]:
+            return f"{where}: {n}-savol ({qt}) javobi {' / '.join(sorted(_FIXED_ANSWERS[qt]))} dan biri bo'lishi kerak, {q.get('correct_answer')!r} emas."
+    return None
+
+
 def _question_choices(q_data, shared_options):
     """
     CEFR Parts 2–3 (TMATCH): the A–J list is written once as `options` on the
@@ -1043,7 +1087,8 @@ def import_cefr_test(request):
                     err = _check_text_match(
                         part.get('questions', []), part.get('options', []),
                         f"Part {part.get('passage_number', idx)}",
-                    )
+                    ) or _check_summary_gaps(part.get('questions', []), f"Part {part.get('passage_number', idx)}") \
+                      or _check_answer_keys(part.get('questions', []), f"Part {part.get('passage_number', idx)}")
                     if err:
                         return Response({'error': err}, status=400)
                 created_passages = []
@@ -1103,7 +1148,9 @@ def import_cefr_test(request):
                 return Response({'error': err}, status=400)
             # `options` may sit at the top level or inside "passage"
             shared_options = data.get('options') or passage_data.get('options') or []
-            err = _check_text_match(data.get('questions', []), shared_options, 'Matn')
+            err = (_check_text_match(data.get('questions', []), shared_options, 'Matn')
+                   or _check_summary_gaps(data.get('questions', []), 'Matn')
+                   or _check_answer_keys(data.get('questions', []), 'Matn'))
             if err:
                 return Response({'error': err}, status=400)
 
