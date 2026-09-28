@@ -161,6 +161,8 @@ class CEFRListeningQuestion(models.Model):
         MATCHING_FEAT = 'MFEAT', 'Matching Features'
         MATCHING_END  = 'MEND',  'Matching Sentence Endings'
         SHORT_ANSWER  = 'SHORT', 'Short Answer'
+        # Part 3: one shared A–H list, each speaker picks a letter (like Reading 2–3)
+        TEXT_MATCH    = 'TMATCH', 'Match speaker to option'
 
     section = models.ForeignKey(CEFRListeningSection, on_delete=models.CASCADE, related_name='questions')
     number = models.PositiveSmallIntegerField()

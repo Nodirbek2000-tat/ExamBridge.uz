@@ -1193,7 +1193,8 @@ def import_cefr_test(request):
                 for sec in sections_data:
                     where = f"Part {sec.get('section_number', '?')}"
                     qs = sec.get('questions', [])
-                    err = _check_summary_gaps(qs, where) or _check_answer_keys(qs, where)
+                    err = (_check_text_match(qs, sec.get('options') or [], where)
+                           or _check_summary_gaps(qs, where) or _check_answer_keys(qs, where))
                     if err:
                         return Response({'error': err}, status=400)
                 created_sections = []
@@ -1224,7 +1225,8 @@ def import_cefr_test(request):
                                 word_bank=q_data.get('word_bank', []) or [],
                                 answer_review=q_data.get('answer_review', ''),
                             )
-                            for c in q_data.get('choices', []):
+                            # Part 3 (TMATCH): the part's shared `options` go to every speaker
+                            for c in _question_choices(q_data, sec.get('options') or []):
                                 CEFRListeningChoice.objects.create(question=q, option=c['option'], text=c['text'])
                         created_sections.append({'id': section.id, 'title': section.title, 'questions': section.questions.count()})
                 return Response({'section_count': len(sections_data), 'sections': created_sections})
@@ -1241,7 +1243,10 @@ def import_cefr_test(request):
                 standalone = data.get('is_standalone', True)
 
             qs = data.get('questions', [])
-            err = _check_summary_gaps(qs, f'Part {section_num}') or _check_answer_keys(qs, f'Part {section_num}')
+            shared_options = data.get('options') or section_data.get('options') or []
+            where = f'Part {section_num}'
+            err = (_check_text_match(qs, shared_options, where)
+                   or _check_summary_gaps(qs, where) or _check_answer_keys(qs, where))
             if err:
                 return Response({'error': err}, status=400)
 
@@ -1273,7 +1278,7 @@ def import_cefr_test(request):
                         word_bank=q_data.get('word_bank', []) or [],
                         answer_review=q_data.get('answer_review', ''),
                     )
-                    for c in q_data.get('choices', []):
+                    for c in _question_choices(q_data, shared_options):
                         CEFRListeningChoice.objects.create(question=q, option=c['option'], text=c['text'])
             return Response({'id': section.id, 'title': section.title, 'questions': section.questions.count()})
 
