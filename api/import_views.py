@@ -140,10 +140,14 @@ def _question_choices(q_data, shared_options):
     carry its own `choices`, which win.
     """
     if q_data.get('choices'):
-        return q_data['choices']
-    if _normalize_qt(q_data.get('question_type', '')) == 'TMATCH':
-        return shared_options or []
-    return []
+        opts = q_data['choices']
+    elif _normalize_qt(q_data.get('question_type', '')) == 'TMATCH':
+        opts = shared_options or []
+    else:
+        return []
+    # Map labels may be bare letters: "options": ["A", "B", ...] → text ''
+    return [{'option': str(c).strip(), 'text': ''} if not isinstance(c, dict)
+            else {'option': c.get('option', ''), 'text': c.get('text') or ''} for c in opts]
 
 
 def _check_text_match(questions, shared_options, where):
@@ -2094,6 +2098,7 @@ def admin_cefr_listening_list(request):
         'is_standalone': s.is_standalone, 'is_mock': s.is_mock, 'is_premium': s.is_premium,
         'audio_file': s.audio_file.url if s.audio_file else None,
         'has_audio': bool(s.audio_file or s.audio_url),
+        'image': s.image.url if s.image else None,
         'question_count': s.q_count,
         'test_id': s.test_id,
         'test_title': s.test.title if s.test else None,
@@ -2136,6 +2141,39 @@ def admin_cefr_listening_audio(request, pk):
     s.audio_file = audio
     s.save(update_fields=['audio_file'])
     return Response({'id': s.id, 'audio_url': s.audio_file.url if s.audio_file else None})
+
+
+@api_view(['POST', 'DELETE'])
+@permission_classes([IsAdminUser])
+@parser_classes([MultiPartParser])
+def admin_cefr_listening_image(request, pk):
+    """Listening Part 4 map/picture: POST uploads (replaces), DELETE removes."""
+    from cefr.models import CEFRListeningSection
+    from django.shortcuts import get_object_or_404
+    from PIL import Image
+    s = get_object_or_404(CEFRListeningSection, id=pk)
+    if request.method == 'DELETE':
+        if s.image:
+            s.image.delete(save=False)
+        s.image = None
+        s.save(update_fields=['image'])
+        return Response({'id': s.id, 'image': None})
+
+    image = request.FILES.get('image')
+    if not image:
+        return Response({'error': 'Rasm fayli yuborilmadi.'}, status=400)
+    if image.size > 5 * 1024 * 1024:
+        return Response({'error': "Rasm 5 MB dan katta bo'lmasin."}, status=400)
+    try:
+        Image.open(image).verify()  # a real image, not a renamed file
+    except Exception:
+        return Response({'error': "Fayl rasm emas (PNG, JPG yoki WEBP yuklang)."}, status=400)
+    image.seek(0)
+    if s.image:
+        s.image.delete(save=False)
+    s.image = image
+    s.save(update_fields=['image'])
+    return Response({'id': s.id, 'image': s.image.url})
 
 
 # ══════════════════════════════════════════════════════════════════
