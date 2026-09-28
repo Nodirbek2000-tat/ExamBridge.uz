@@ -521,23 +521,71 @@ def cefr_reading_submit(request, passage_id):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def cefr_listening_list(request):
+    from cefr.models import CEFRTest
+    from django.db.models import Count
     level = request.query_params.get('level')
-    qs = CEFRListeningSection.objects.all()
+    result = []
+
+    # Full mocks: one card per CEFRTest (LISTENING) that has parts linked
+    mock_qs = (CEFRTest.objects.filter(test_type='LISTENING', is_active=True)
+               .annotate(part_count=Count('listening_sections', distinct=True),
+                         q_count=Count('listening_sections__questions')))
+    if level:
+        mock_qs = mock_qs.filter(level=level)
+    for test in mock_qs:
+        if not test.part_count:
+            continue
+        result.append({
+            'id': test.id,
+            'title': test.title,
+            'level': test.level,
+            'item_type': 'full_mock',
+            'part_count': test.part_count,
+            'question_count': test.q_count,
+            'time_limit': test.time_limit,
+            'is_premium': test.is_premium,
+            'is_mock': True,
+        })
+
+    # Single parts that don't belong to a mock
+    qs = CEFRListeningSection.objects.filter(test__isnull=True).annotate(q_count=Count('questions'))
     if level:
         qs = qs.filter(level=level)
+    for s in qs:
+        result.append({
+            'id': s.id,
+            'title': s.title,
+            'level': s.level,
+            'item_type': 'section',
+            'section_number': s.section_number,
+            'question_count': s.q_count,
+            'time_limit': s.time_limit,
+            'has_audio': bool(s.audio_file or s.audio_url),
+            'is_premium': s.is_premium,
+            'is_mock': s.is_mock,
+            'is_standalone': s.is_standalone,
+        })
+    return Response(result)
 
-    return Response([{
-        'id': s.id,
-        'title': s.title,
-        'level': s.level,
-        'section_number': s.section_number,
-        'question_count': s.questions.count(),
-        'time_limit': s.time_limit,
-        'has_audio': bool(s.audio_file or s.audio_url),
-        'is_premium': s.is_premium,
-        'is_mock': s.is_mock,
-        'is_standalone': s.is_standalone,
-    } for s in qs])
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def cefr_listening_full_mock_start(request, test_id):
+    """Start (or resume) a full listening mock — all parts of one CEFRTest."""
+    from cefr.models import CEFRTest
+    test = get_object_or_404(CEFRTest, id=test_id, test_type='LISTENING', is_active=True)
+    sections = list(test.listening_sections.order_by('section_number'))
+    if not sections:
+        return Response({'error': 'No parts found for this mock test.'}, status=400)
+
+    existing = CEFRAttempt.objects.filter(
+        user=request.user, test=test, attempt_type='LISTENING', status='IN_PROGRESS'
+    ).first()
+    if existing:
+        return Response({'attempt_id': existing.id, 'section_ids': [s.id for s in sections], 'resumed': True})
+
+    attempt = CEFRAttempt.objects.create(user=request.user, test=test, attempt_type='LISTENING')
+    return Response({'attempt_id': attempt.id, 'section_ids': [s.id for s in sections], 'resumed': False}, status=201)
 
 
 @api_view(['GET'])
@@ -588,6 +636,9 @@ def cefr_listening_submit(request, section_id):
     attempt = get_object_or_404(CEFRAttempt, id=attempt_id, user=request.user)
     answers = request.data.get('answers', {})
 
+    # partial=True: one part of a mock, the attempt is completed with the last part
+    partial = request.data.get('partial', False)
+
     section = get_object_or_404(CEFRListeningSection, id=section_id)
     questions = list(section.questions.prefetch_related('choices').all())
 
@@ -613,13 +664,20 @@ def cefr_listening_submit(request, section_id):
             'explanation': q.explanation,
         })
 
+    if not partial:
+        # Last (or only) part: totals over every part answered in this attempt
+        all_answers = CEFRListeningAnswer.objects.filter(attempt=attempt)
+        correct = all_answers.filter(is_correct=True).count()
+        total = all_answers.count()
+
     score_percent = (correct / total * 100) if total else 0
     cefr_score = _calc_cefr_score(correct, LISTENING_SCORE_MAP)
     cefr_level = _cefr_level(cefr_score)
-    attempt.score_percent = score_percent
-    attempt.correct_count = correct
-    attempt.total_count = total
-    attempt.complete()
+    if not partial:
+        attempt.score_percent = score_percent
+        attempt.correct_count = correct
+        attempt.total_count = total
+        attempt.complete()
 
     return Response({
         'correct': correct, 'total': total,
@@ -627,6 +685,7 @@ def cefr_listening_submit(request, section_id):
         'cefr_score': cefr_score,
         'cefr_level': cefr_level,
         'results': results,
+        'partial': partial,
     })
 
 

@@ -1203,8 +1203,18 @@ def import_cefr_test(request):
                         return Response({'error': err}, status=400)
                 created_sections = []
                 with transaction.atomic():
+                    # One CEFRTest holds the parts, so admin and learners see one mock
+                    mock_test = CEFRTest.objects.create(
+                        title=data.get('title', 'CEFR Listening Full Mock'),
+                        level=data.get('level', 'B2'),
+                        test_type='LISTENING',
+                        time_limit=data.get('time_limit', 40),
+                        is_premium=data.get('is_premium', False),
+                        is_active=True,
+                    )
                     for sec in sections_data:
                         section = CEFRListeningSection(
+                            test=mock_test,
                             title=sec.get('title', data.get('title', '')),
                             section_number=sec.get('section_number', 1),
                             audio_url=sec.get('audio_url', ''),
@@ -1233,7 +1243,7 @@ def import_cefr_test(request):
                             for c in _question_choices(q_data, sec.get('options') or []):
                                 CEFRListeningChoice.objects.create(question=q, option=c['option'], text=c['text'])
                         created_sections.append({'id': section.id, 'title': section.title, 'questions': section.questions.count()})
-                return Response({'section_count': len(sections_data), 'sections': created_sections})
+                return Response({'test_id': mock_test.id, 'section_count': len(sections_data), 'sections': created_sections})
 
             # Single section — support flat format (fields at top level) and nested (section: {...})
             section_data = data.get('section', {})

@@ -32,6 +32,7 @@ from api.cefr_views import (
     cefr_test_list, cefr_test_detail, cefr_start_attempt,
     cefr_submit_attempt, cefr_security_event, cefr_attempt_review,
     cefr_reading_list, cefr_reading_detail, cefr_reading_start, cefr_reading_submit, cefr_reading_full_mock_start,
+    cefr_listening_full_mock_start,
     cefr_listening_list, cefr_listening_detail, cefr_listening_start, cefr_listening_submit,
     cefr_history, cefr_analysis,
 )
@@ -209,6 +210,7 @@ urlpatterns = [
     path('api/cefr/reading/', cefr_reading_list),
     path('api/cefr/reading/<int:passage_id>/', cefr_reading_detail),
     path('api/cefr/reading/full-mock/<int:test_id>/start/', cefr_reading_full_mock_start),
+    path('api/cefr/listening/full-mock/<int:test_id>/start/', cefr_listening_full_mock_start),
     path('api/cefr/reading/<int:passage_id>/start/', cefr_reading_start),
     path('api/cefr/reading/<int:passage_id>/submit/', cefr_reading_submit),
     # CEFR Listening
