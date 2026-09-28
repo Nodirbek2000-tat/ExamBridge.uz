@@ -1189,6 +1189,13 @@ def import_cefr_test(request):
                 sections_data = data['sections']
                 if not sections_data:
                     return Response({'error': 'No sections provided.'}, status=400)
+                # Check every part first — one bad part rejects the whole mock
+                for sec in sections_data:
+                    where = f"Part {sec.get('section_number', '?')}"
+                    qs = sec.get('questions', [])
+                    err = _check_summary_gaps(qs, where) or _check_answer_keys(qs, where)
+                    if err:
+                        return Response({'error': err}, status=400)
                 created_sections = []
                 with transaction.atomic():
                     for sec in sections_data:
@@ -1232,6 +1239,11 @@ def import_cefr_test(request):
             standalone   = section_data.get('is_standalone')
             if standalone is None:
                 standalone = data.get('is_standalone', True)
+
+            qs = data.get('questions', [])
+            err = _check_summary_gaps(qs, f'Part {section_num}') or _check_answer_keys(qs, f'Part {section_num}')
+            if err:
+                return Response({'error': err}, status=400)
 
             with transaction.atomic():
                 section = CEFRListeningSection(
