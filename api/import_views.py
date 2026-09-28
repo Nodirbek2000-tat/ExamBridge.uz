@@ -2028,13 +2028,19 @@ def admin_ielts_test_detail(request, pk):
 @permission_classes([IsAdminUser])
 def admin_cefr_reading_list(request):
     from cefr.models import CEFRReadingPassage
-    items = CEFRReadingPassage.objects.order_by('-created_at')
+    from django.db.models import Count
+    items = (CEFRReadingPassage.objects.select_related('test')
+             .annotate(q_count=Count('questions')).order_by('-created_at'))
     return Response([{
         'id': p.id, 'title': p.title, 'level': p.level,
         'passage_number': p.passage_number, 'difficulty': p.difficulty,
         'time_limit': p.time_limit, 'is_standalone': p.is_standalone,
         'is_mock': p.is_mock, 'is_premium': p.is_premium,
-        'question_count': p.questions.count(),
+        'question_count': p.q_count,
+        # mock parts are grouped under their test in the admin list
+        'test_id': p.test_id,
+        'test_title': p.test.title if p.test else None,
+        'test_is_premium': p.test.is_premium if p.test else False,
     } for p in items])
 
 
@@ -2062,14 +2068,19 @@ def admin_cefr_reading_detail(request, pk):
 @permission_classes([IsAdminUser])
 def admin_cefr_listening_list(request):
     from cefr.models import CEFRListeningSection
-    items = CEFRListeningSection.objects.order_by('-created_at')
+    from django.db.models import Count
+    items = (CEFRListeningSection.objects.select_related('test')
+             .annotate(q_count=Count('questions')).order_by('-created_at'))
     return Response([{
         'id': s.id, 'title': s.title, 'level': s.level,
         'section_number': s.section_number, 'time_limit': s.time_limit,
         'is_standalone': s.is_standalone, 'is_mock': s.is_mock, 'is_premium': s.is_premium,
         'audio_file': s.audio_file.url if s.audio_file else None,
         'has_audio': bool(s.audio_file or s.audio_url),
-        'question_count': s.questions.count(),
+        'question_count': s.q_count,
+        'test_id': s.test_id,
+        'test_title': s.test.title if s.test else None,
+        'test_is_premium': s.test.is_premium if s.test else False,
     } for s in items])
 
 
