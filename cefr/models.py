@@ -27,6 +27,9 @@ class CEFRTest(models.Model):
     is_premium = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    # Listening mock: one recording for every part (optional — parts may have their own)
+    audio_file = models.FileField(upload_to='cefr/audio/', blank=True)
+    audio_url = models.URLField(max_length=500, blank=True)
 
     class Meta:
         ordering = ['level', '-created_at']

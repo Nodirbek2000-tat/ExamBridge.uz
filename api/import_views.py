@@ -1211,6 +1211,7 @@ def import_cefr_test(request):
                         time_limit=data.get('time_limit', 40),
                         is_premium=data.get('is_premium', False),
                         is_active=True,
+                        audio_url=data.get('audio_url', '') or '',  # one recording for all parts
                     )
                     for sec in sections_data:
                         section = CEFRListeningSection(
@@ -2113,6 +2114,7 @@ def admin_cefr_listening_list(request):
         'test_id': s.test_id,
         'test_title': s.test.title if s.test else None,
         'test_is_premium': s.test.is_premium if s.test else False,
+        'test_has_audio': bool(s.test and (s.test.audio_file or s.test.audio_url)),
     } for s in items])
 
 
@@ -2151,6 +2153,33 @@ def admin_cefr_listening_audio(request, pk):
     s.audio_file = audio
     s.save(update_fields=['audio_file'])
     return Response({'id': s.id, 'audio_url': s.audio_file.url if s.audio_file else None})
+
+
+@api_view(['POST', 'DELETE'])
+@permission_classes([IsAdminUser])
+@parser_classes([MultiPartParser])
+def admin_cefr_test_audio(request, pk):
+    """Listening mock: one recording for all parts. POST uploads (replaces), DELETE removes."""
+    from cefr.models import CEFRTest
+    from django.shortcuts import get_object_or_404
+    t = get_object_or_404(CEFRTest, id=pk, test_type='LISTENING')
+    if request.method == 'DELETE':
+        if t.audio_file:
+            t.audio_file.delete(save=False)
+        t.audio_file = None
+        t.audio_url = ''
+        t.save(update_fields=['audio_file', 'audio_url'])
+        return Response({'id': t.id, 'audio_url': None})
+    audio = request.FILES.get('audio')
+    if not audio:
+        return Response({'error': 'Audio fayl yuborilmadi.'}, status=400)
+    if not (getattr(audio, 'content_type', '') or '').startswith('audio/'):
+        return Response({'error': "Fayl audio emas (MP3, WAV, M4A yuklang)."}, status=400)
+    if t.audio_file:
+        t.audio_file.delete(save=False)
+    t.audio_file = audio
+    t.save(update_fields=['audio_file'])
+    return Response({'id': t.id, 'audio_url': t.audio_file.url})
 
 
 @api_view(['POST', 'DELETE'])

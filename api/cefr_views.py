@@ -608,6 +608,8 @@ def cefr_listening_detail(request, section_id):
         'level': s.level, 'time_limit': s.time_limit,
         'section_number': s.section_number,
         'audio_url': s.audio_url or (s.audio_file.url if s.audio_file else None),
+        # A mock may have one recording for all parts — it then replaces the parts' audio
+        'mock_audio_url': (s.test.audio_url or (s.test.audio_file.url if s.test.audio_file else None)) if s.test else None,
         'transcript': s.transcript,
         'image': s.image.url if s.image else None,
         'questions': questions,
