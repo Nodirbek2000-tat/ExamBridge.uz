@@ -6,6 +6,7 @@ from django.views.static import serve as static_serve
 
 # ── API imports ──────────────────────────────────────────────────────────────
 from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
+from api.sat_analytics import sat_analytics, sat_analytics_ai
 from api.sat_views import (
     sat_test_list, sat_start_test, sat_attempt_detail,
     sat_submit_answer, sat_submit_module, sat_security_event, sat_stats, sat_result_detail, sat_result_delete,
@@ -118,6 +119,8 @@ urlpatterns = [
     path('api/sat/attempt/<int:attempt_id>/security/', sat_security_event),
     path('api/sat/attempt/<int:attempt_id>/force-finish/', sat_force_finish),
     path('api/sat/stats/', sat_stats),
+    path('api/sat/analytics/', sat_analytics),
+    path('api/sat/analytics/ai/', sat_analytics_ai),
     path('api/sat/exam-date/', sat_exam_date),
     path('api/sat/ranking/', sat_ranking),
     path('api/sat/result/<int:result_id>/', sat_result_detail),
