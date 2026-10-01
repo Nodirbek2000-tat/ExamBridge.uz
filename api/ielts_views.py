@@ -733,6 +733,30 @@ def speaking_ai_analyze(request):
     if not transcripts:
         return Response({'error': 'transcripts required'}, status=400)
 
+    def said(item):
+        # the attempt pages store "(no transcript)" when nothing was recognised
+        text = str(item.get('transcript') or '').strip() if isinstance(item, dict) else ''
+        return '' if text.lower() == '(no transcript)' else text
+
+    if not any(said(t) for t in transcripts):
+        empty = {'band': 0, 'feedback': 'No speech was recorded, so this criterion could not be assessed.',
+                 'strengths': [], 'errors': []}
+        result = {
+            'overall_band': 0,
+            'fluency_coherence': {**empty, 'label': 'Fluency & Coherence'},
+            'lexical_resource': {**empty, 'label': 'Lexical Resource'},
+            'grammatical_range': {**empty, 'label': 'Grammatical Range & Accuracy'},
+            'pronunciation': {**empty, 'label': 'Pronunciation'},
+            'answer_corrections': [], 'good_phrases': [],
+        }
+        response_id = request.data.get('response_id')
+        if response_id:
+            SpeakingResponse.objects.filter(id=response_id, attempt__user=request.user).update(
+                ai_band=0, ai_feedback=empty['feedback'],
+                ai_criteria={k: result[k] for k in ('fluency_coherence', 'lexical_resource', 'grammatical_range',
+                                                    'pronunciation', 'answer_corrections', 'good_phrases')})
+        return Response(result)
+
     api_key = getattr(settings, 'OPENAI_API_KEY', '')
     if not api_key or api_key == 'your-openai-api-key-here':
         return Response({'error': 'OpenAI API key is not configured'}, status=503)
@@ -740,8 +764,8 @@ def speaking_ai_analyze(request):
     # Format transcript for the prompt
     transcript_text = ''
     for i, item in enumerate(transcripts, 1):
-        q = item.get('question', f'Question {i}')
-        a = item.get('transcript', '').strip()
+        q = item.get('question', f'Question {i}') if isinstance(item, dict) else f'Question {i}'
+        a = said(item)
         transcript_text += f'Q{i}: {q}\nA{i}: {a if a else "(no answer recorded)"}\n\n'
 
     system_msg = """You are an experienced, fair-minded IELTS Speaking examiner. You are having a good day and you score exactly what you hear — no more, no less.
@@ -776,10 +800,12 @@ Evaluate the candidate's spoken English based on these transcripts.
 
 INSTRUCTIONS:
 1. Read every answer. If they are fluent, varied, and error-free → give 8.5 or 9 per criterion, not 8
-2. Only list errors you can actually QUOTE from the text. If you cannot quote an error, it does not exist — do not invent problems
+2. Only list errors you can actually QUOTE from the text. If you cannot quote an error, it does not exist — do not invent problems.
+   Copy every "quote" WORD FOR WORD from the transcript (2-8 words, no "...") — it is highlighted in the student's text. At most 3 errors per criterion, the most important first.
 3. Fewer quoted errors = higher band. No quoted errors = Band 8.5 or 9
 4. Pronunciation: evaluated from text; focus on what is visible; give general tips
-5. For answer_corrections: one entry per answer. UPGRADE the answer to a higher CEFR level — if the original is around B1/B2, rewrite it at C1 level: richer and more precise vocabulary, more varied and complex sentence structures, natural collocations and idiomatic phrasing, smooth linking — while keeping the SAME ideas and meaning the candidate expressed. Fix every grammar and word-choice error. If already C1+, still provide a polished, model version. Keep originals short (max 2 sentences).
+5. good_phrases: up to 5 short phrases (2-6 words, copied word for word) the candidate used WELL — precise vocabulary, natural collocations, good linking. Empty list if there are none.
+6. For answer_corrections: one entry per recorded answer (skip "(no answer recorded)" — never invent an answer). UPGRADE the answer to a higher CEFR level — if the original is around B1/B2, rewrite it at C1 level: richer and more precise vocabulary, more varied and complex sentence structures, natural collocations and idiomatic phrasing, smooth linking — while keeping the SAME ideas and meaning the candidate expressed. Fix every grammar and word-choice error. If already C1+, still provide a polished, model version. Keep originals short (max 2 sentences).
 
 Return this exact JSON:
 {{
@@ -787,7 +813,7 @@ Return this exact JSON:
   "fluency_coherence": {{
     "band": <0-9>,
     "label": "Fluency & Coherence",
-    "feedback": "<3 sentences on response length, connected speech, coherence, fillers>",
+    "feedback": "<2 sentences on response length, connected speech, coherence, fillers>",
     "strengths": ["<strength 1>", "<strength 2>"],
     "errors": [
       {{"quote": "<exact text from transcript>", "issue": "<problem>", "suggestion": "<how to improve>"}}
@@ -796,14 +822,14 @@ Return this exact JSON:
   "lexical_resource": {{
     "band": <0-9>,
     "label": "Lexical Resource",
-    "feedback": "<3 sentences on vocabulary range, topic-specific words, collocations>",
+    "feedback": "<2 sentences on vocabulary range, topic-specific words, collocations>",
     "strengths": ["<strength>"],
     "errors": [{{"quote": "<exact text>", "issue": "<problem>", "suggestion": "<better word/phrase>"}}]
   }},
   "grammatical_range": {{
     "band": <0-9>,
     "label": "Grammatical Range & Accuracy",
-    "feedback": "<3 sentences on sentence structures, tenses, accuracy>",
+    "feedback": "<2 sentences on sentence structures, tenses, accuracy>",
     "strengths": ["<strength>"],
     "errors": [{{"quote": "<exact text>", "issue": "<grammar error>", "suggestion": "<correction>"}}]
   }},
@@ -814,6 +840,7 @@ Return this exact JSON:
     "strengths": ["<general strength>"],
     "errors": [{{"quote": "<text feature suggesting pronunciation issue>", "issue": "<likely issue>", "suggestion": "<tip>"}}]
   }},
+  "good_phrases": ["<exact strong phrase from the transcript>"],
   "answer_corrections": [
     {{
       "q_index": <1-based index matching the Q number>,
@@ -861,6 +888,7 @@ Return this exact JSON:
                 saved_criteria = {k: result[k] for k in criteria_keys if k in result}
                 if 'answer_corrections' in result:
                     saved_criteria['answer_corrections'] = result['answer_corrections']
+                saved_criteria['good_phrases'] = [str(x)[:120] for x in (result.get('good_phrases') or []) if isinstance(x, str)][:5]
                 sr.ai_criteria = saved_criteria
                 sr.ai_feedback = result.get('fluency_coherence', {}).get('feedback', '')
                 sr.save(update_fields=['ai_band', 'ai_criteria', 'ai_feedback'])
@@ -919,7 +947,7 @@ def speaking_review(request, response_id):
         'task_source': sr.task.source,
         'transcripts': sr.transcripts,
         'ai_feedback': sr.ai_feedback,
-        'ai_band': str(sr.ai_band) if sr.ai_band else None,
+        'ai_band': str(sr.ai_band) if sr.ai_band is not None else None,
         'ai_criteria': sr.ai_criteria,
         'created_at': str(sr.created_at),
     })
@@ -1032,6 +1060,8 @@ def evaluate_writing_response(response):
         )
         keys = ('task_achievement', 'coherence_cohesion', 'lexical_resource', 'grammatical_range')
         criteria = {k: result.get(k) or {} for k in keys}
+        # strong phrases are highlighted green on the result page
+        criteria['good_phrases'] = [str(x)[:140] for x in (result.get('good_phrases') or []) if isinstance(x, str)][:5]
         # ai_feedback doubles as the "ready" flag the frontend polls for
         fb = ' '.join(
             f"{criteria[k].get('label', k)}: {criteria[k]['feedback']}"
@@ -1189,9 +1219,11 @@ Minimum words: {min_words} | Actual words: {word_count}{word_penalty}
 INSTRUCTIONS:
 1. Read the response carefully. Score each criterion against the band anchors — not against an imaginary "perfect" standard
 2. If the response fully addresses the task with clear ideas and very few/no real errors → give 8.5 or 9, not 8
-3. For EACH criterion: note genuine strengths, then list only REAL errors you actually found in the text with exact quotes
+3. For EACH criterion: note genuine strengths, then list only REAL errors you actually found in the text with exact quotes.
+   Copy every "quote" WORD FOR WORD from the essay (2-10 words, no "...") — it is highlighted in the student's text. At most 3 errors per criterion, most important first.
 4. If you cannot find meaningful errors for a criterion, that criterion is Band 8.5 or 9
 5. Never say "there are some errors" if you cannot quote them — honesty means awarding the score the text deserves
+6. good_phrases: up to 5 short phrases (2-8 words, copied word for word) the writer used WELL — precise vocabulary, natural collocations, effective linking. Empty list if there are none.
 
 Return this exact JSON (no extra fields):
 {{
@@ -1235,7 +1267,8 @@ Return this exact JSON (no extra fields):
       {{"quote": "<exact grammatically wrong sentence or phrase>", "issue": "<grammar rule violated>", "suggestion": "<corrected version>"}},
       {{"quote": "<exact phrase>", "issue": "<problem>", "suggestion": "<corrected version>"}}
     ]
-  }}
+  }},
+  "good_phrases": ["<exact strong phrase from the essay>"]
 }}"""
 
     payload = json.dumps({
