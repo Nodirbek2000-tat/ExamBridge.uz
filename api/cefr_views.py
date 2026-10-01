@@ -54,6 +54,9 @@ _TEXT_ANSWER_TYPES = {'PGAP', 'NOTE', 'SUMM', 'GAP', 'SENT', 'SHORT', 'TABLE', '
 
 
 def _check_answer_cefr(question, user_answer_raw):
+    # An empty answer is never right (blank vs a blank key used to count as correct)
+    if not str(user_answer_raw or '').strip() or not str(question.correct_answer or '').strip():
+        return False
     if question.question_type in _TEXT_ANSWER_TYPES:
         # "colour|color" — any listed spelling counts; case and spacing don't
         user = _normalize_word(user_answer_raw)

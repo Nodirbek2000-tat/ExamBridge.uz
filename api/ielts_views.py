@@ -103,6 +103,10 @@ def _check_answer(question, user_answer_raw):
     Handles MULTI_SELECT (pipe-separated), case-insensitive.
     """
     correct_list = question.correct_answers_list()
+    # An empty answer is never right — and a question without an answer key can't
+    # be scored (blank used to "match" a blank key and count as correct)
+    if not str(user_answer_raw or '').strip() or not correct_list:
+        return False
 
     if question.question_type == 'MULTI':
         user_list = sorted([a.strip().upper() for a in user_answer_raw.split('|') if a.strip()])

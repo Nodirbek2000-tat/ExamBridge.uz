@@ -1338,35 +1338,89 @@ def import_cefr_test(request):
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
 def admin_user_list(request):
-    from accounts.models import User
-    search = request.query_params.get('q', '')
-    users = User.objects.all().order_by('-created_at')
-    if search:
-        users = users.filter(email__icontains=search) | users.filter(first_name__icontains=search)
+    """
+    GET /api/admin/users/?q=&plan=all|premium|manual|free&page=1&page_size=50
 
-    from tests_app.models import TestAttempt
-    from accounts.models import UserStats
+    One page of users plus real counts. Counts come from the database, never
+    from the page — the old version sliced 100 users and the page counted those.
+    """
+    from django.db.models import Count, Q
+    from django.utils import timezone
+    from accounts.models import User
+
+    now = timezone.now()
+    # premium_until in the past = expired (the flag is only cleared lazily)
+    active_premium = Q(is_premium=True) & (Q(premium_until__isnull=True) | Q(premium_until__gt=now))
+
+    search = (request.query_params.get('q') or '').strip()
+    base = User.objects.all()
+    if search:
+        base = base.filter(Q(email__icontains=search) | Q(first_name__icontains=search) | Q(last_name__icontains=search))
+
+    counts = base.aggregate(
+        all=Count('id'),
+        premium=Count('id', filter=active_premium),
+        manual=Count('id', filter=active_premium & Q(premium_source='manual')),
+    )
+    counts['free'] = counts['all'] - counts['premium']
+
+    today_start = timezone.localtime(now).replace(hour=0, minute=0, second=0, microsecond=0)
+    stats = User.objects.aggregate(
+        total=Count('id'),
+        premium=Count('id', filter=active_premium),
+        new_today=Count('id', filter=Q(created_at__gte=today_start)),
+    )
+
+    plan = request.query_params.get('plan', 'all')
+    users = base
+    if plan == 'premium':
+        users = users.filter(active_premium)
+    elif plan == 'manual':
+        users = users.filter(active_premium & Q(premium_source='manual'))
+    elif plan == 'free':
+        users = users.exclude(active_premium)
+
+    try:
+        page = max(1, int(request.query_params.get('page', 1)))
+        page_size = min(200, max(1, int(request.query_params.get('page_size', 50))))
+    except (TypeError, ValueError):
+        page, page_size = 1, 50
+    total = users.count()
+    offset = (page - 1) * page_size
+
+    rows = (
+        users.select_related('stats')
+        .annotate(completed_tests=Count('attempts', filter=Q(attempts__status='COMPLETED'), distinct=True))
+        .order_by('-created_at', '-id')[offset:offset + page_size]
+    )
     result = []
-    for u in users[:100]:
-        try:
-            exam_date = u.stats.sat_exam_date.isoformat() if u.stats.sat_exam_date else None
-        except UserStats.DoesNotExist:
-            exam_date = None
+    for u in rows:
+        stats_obj = getattr(u, 'stats', None) if hasattr(u, 'stats') else None
+        exam = getattr(stats_obj, 'sat_exam_date', None)
+        premium_now = bool(u.is_premium and (u.premium_until is None or u.premium_until > now))
         result.append({
             'id': u.id,
             'email': u.email,
             'full_name': u.full_name,
             'first_name': u.first_name,
-            'is_premium': u.is_premium,
+            'is_premium': premium_now,
             'is_staff': u.is_staff,
-            'tests_taken': TestAttempt.objects.filter(user=u, status='COMPLETED').count(),
+            'tests_taken': u.completed_tests,
             'joined': u.created_at.isoformat(),
             'premium_until': u.premium_until.isoformat() if u.premium_until else None,
             'premium_source': u.premium_source,
-            'premium_forever': bool(u.is_premium and u.premium_until is None),
-            'sat_exam_date': exam_date,
+            'premium_forever': bool(premium_now and u.premium_until is None),
+            'sat_exam_date': exam.isoformat() if exam else None,
         })
-    return Response(result)
+    return Response({
+        'results': result,
+        'count': total,
+        'page': page,
+        'page_size': page_size,
+        'has_more': offset + len(result) < total,
+        'counts': counts,
+        'stats': stats,
+    })
 
 
 @api_view(['POST'])

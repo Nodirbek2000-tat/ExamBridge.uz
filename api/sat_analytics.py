@@ -5,17 +5,12 @@ Two sources are merged into one list of "events" (one answered question each):
   • test answers     (tests_app.Answer)            — full tests and single modules, with time spent
   • question bank    (tests_app.SavedBankQuestion) — practice, no timing
 
-The AI analysis is given the SAME aggregated numbers and is told to use only
-them, so its text can never disagree with the charts.
+The AI analysis (api/analytics_ai.py) is given the SAME aggregated numbers
+via _ai_facts and is told to use only them, so its text cannot disagree with the charts.
 """
-import hashlib
-import json
-import re
 from collections import defaultdict
 from datetime import timedelta
 
-from django.conf import settings
-from django.core.cache import cache
 from django.db.models import Q
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
@@ -29,11 +24,8 @@ MAX_Q_SECONDS = 600          # an idle tab must not count as 40 minutes on one q
 SESSION_GAP = 30 * 60        # a pause longer than this starts a new sitting
 MIN_SKILL_ATTEMPTS = 3       # fewer tries than this is noise, not a weak skill
 HEATMAP_DAYS = 153           # ~5 months
-AI_MIN_QUESTIONS = 10
 AI_RELIABLE_ATTEMPTS = 5     # below this an accuracy is an anecdote — the model is told so
 STRONG_ACCURACY = 70         # a 'strongest skill' must actually be good
-AI_DAILY_LIMIT = 6
-AI_CACHE_SECONDS = 7 * 24 * 3600
 
 # Domain keys differ between test questions and bank questions — one label for both
 DOMAINS = {
@@ -327,7 +319,8 @@ def sat_analytics(request):
 def _ai_facts(data):
     """The compact, exact numbers the model is allowed to talk about."""
     def row(name_key, name, correct, attempts, accuracy, **extra):
-        r = {name_key: name, 'correct': correct, 'attempts': attempts, 'accuracy_pct': accuracy, **extra}
+        r = {name_key: name, 'result': f'{correct}/{attempts} ({accuracy}%)', 'correct': correct, 'attempts': attempts,
+             'accuracy_pct': accuracy, **extra}
         if attempts < AI_RELIABLE_ATTEMPTS:
             r['too_few_attempts_to_judge'] = True
         return r
@@ -357,101 +350,3 @@ def _ai_facts(data):
             for sec, rows in data['difficulty'].items()
         },
     }
-
-
-AI_SYSTEM = """You are an experienced Digital SAT coach. You are given one student's exact practice statistics as JSON.
-Write a short, specific analysis of their results and mistakes.
-
-Accuracy rules (the student will compare your text with the charts beside it):
-- Use ONLY numbers that appear in the JSON. Never invent, estimate, re-calculate or round differently.
-- Whenever you mention an accuracy, give the count with it in the form "10/24 (42%)".
-- Anything marked "too_few_attempts_to_judge" is NOT a strength and NOT a weakness. At most say there is not enough data on it yet and it needs more practice to measure. Never praise a 100% that comes from 1-4 questions.
-- "strengths" may only contain items with 5 or more attempts and accuracy of 70% or higher. If there are none, return an empty list - do not invent praise.
-- "weaknesses" come from weakest_skills, domains and difficulty rows with 5+ attempts first; an item with 3-4 attempts may be listed only with the words "only N attempts so far".
-- If a fact is not in the data, do not mention it.
-
-Advice rules:
-- Name the exact skill and give a concrete Digital SAT technique for it, not generic advice like "practise more" or "read more".
-  Examples of the expected level: Words in Context -> cover the options, predict your own word from the sentence, then match; Punctuation -> check whether each side of the mark is a complete sentence before choosing comma / semicolon / colon; Linear equations -> write the equation from the words first, then isolate the variable and plug the answer back in.
-- The plan must be doable on this platform: "Practice" (question bank filtered by topic), single-module practice, Full-Length Tests, Saved Questions for reviewing mistakes. Give numbers: how many questions, of which topic, on which days.
-- Order everything by impact: the skill with many attempts and low accuracy comes first.
-- Tone: honest, calm and constructive. Do not call the results "very low" or "bad"; state the number and what to do next.
-- Do not number the plan items yourself.
-
-Reply as JSON with exactly these keys:
-{"headline": "one sentence verdict with the overall numbers",
- "summary": "2-3 sentences: overall level per section, with counts",
- "strengths": ["up to 3 short points, or empty"],
- "weaknesses": [{"skill": "name", "evidence": "the count and % in the form 10/24 (42%), plus a few words in the answer language", "fix": "the concrete technique and what to practise"}],
- "time": "1-2 sentences about pace using avg seconds by difficulty, or empty string if there is no timing data",
- "plan": ["3 to 5 concrete steps for the next 7 days, most important first"]}
-Give at most 4 weaknesses. Write everything in {language}; keep skill and domain names in English exactly as given."""
-
-
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def sat_analytics_ai(request):
-    """POST /api/sat/analytics/ai/  {range, lang: 'uz'|'en', refresh?} → AI analysis of the same numbers."""
-    range_key = request.data.get('range', '30d')
-    lang = 'en' if request.data.get('lang') == 'en' else 'uz'
-    data = build_analytics(request.user, range_key)
-
-    if data['totals']['attempted'] < AI_MIN_QUESTIONS:
-        return Response({'insufficient': True, 'needed': AI_MIN_QUESTIONS, 'attempted': data['totals']['attempted']})
-
-    facts = _ai_facts(data)
-    digest = hashlib.sha256(json.dumps(facts, sort_keys=True).encode()).hexdigest()[:16]
-    cache_key = f'sat_ai:{request.user.id}:{lang}:{digest}'
-    cached = cache.get(cache_key)
-    if cached and not request.data.get('refresh'):
-        return Response({'analysis': cached, 'cached': True})
-    # The page asks this on load: show an earlier analysis of the same numbers, never start a new one
-    if request.data.get('cached_only'):
-        return Response({'analysis': None, 'cached': False})
-
-    if not settings.OPENAI_API_KEY:
-        return Response({'error': 'AI tahlil hozircha sozlanmagan.'}, status=503)
-
-    # Same numbers → same cached text; this only limits brand-new generations
-    day_key = f'sat_ai_count:{request.user.id}:{timezone.localdate().isoformat()}'
-    used = cache.get(day_key, 0)
-    if used >= AI_DAILY_LIMIT:
-        if cached:
-            return Response({'analysis': cached, 'cached': True})
-        return Response({'error': f'Bugun AI tahlil limiti tugadi ({AI_DAILY_LIMIT} marta). Ertaga qayta urinib ko\'ring.'}, status=429)
-
-    from openai import OpenAI
-    try:
-        client = OpenAI(api_key=settings.OPENAI_API_KEY, timeout=45)
-        resp = client.chat.completions.create(
-            model='gpt-4o',
-            temperature=0.2,
-            max_tokens=1100,
-            response_format={'type': 'json_object'},
-            messages=[
-                {'role': 'system', 'content': AI_SYSTEM.replace('{language}', 'Uzbek (Latin script)' if lang == 'uz' else 'English')},
-                {'role': 'user', 'content': json.dumps(facts, ensure_ascii=False)},
-            ],
-        )
-        analysis = json.loads(resp.choices[0].message.content or '{}')
-    except Exception:
-        import logging
-        logging.getLogger(__name__).exception('SAT AI analysis failed')
-        return Response({'error': "AI tahlilni hozir olib bo'lmadi. Birozdan keyin qayta urinib ko'ring."}, status=502)
-
-    # Never trust the shape of model output
-    clean = {
-        'headline': str(analysis.get('headline') or '')[:300],
-        'summary': str(analysis.get('summary') or '')[:1200],
-        'strengths': [str(x)[:300] for x in (analysis.get('strengths') or []) if isinstance(x, str)][:3],
-        'weaknesses': [
-            {'skill': str(w.get('skill') or '')[:120], 'evidence': str(w.get('evidence') or '')[:300], 'fix': str(w.get('fix') or '')[:500]}
-            for w in (analysis.get('weaknesses') or []) if isinstance(w, dict)
-        ][:4],
-        'time': str(analysis.get('time') or '')[:500],
-        # the page numbers the steps itself
-        'plan': [re.sub(r'^\s*(?:\d+[.)]|[-•])\s*', '', str(x))[:400] for x in (analysis.get('plan') or []) if isinstance(x, str)][:5],
-    }
-    cache.set(cache_key, clean, AI_CACHE_SECONDS)
-    cache.set(day_key, used + 1, 36 * 3600)
-    return Response({'analysis': clean, 'cached': False})
