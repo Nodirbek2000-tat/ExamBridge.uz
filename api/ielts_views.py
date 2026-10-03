@@ -605,6 +605,36 @@ def _write_file_atomic(path, data):
                 pass
 
 
+def tts_audio(text, voice, speed):
+    """
+    One examiner line as MP3 bytes → (bytes, 'HIT' | 'MISS').
+    Served from the disk cache when it exists — no OpenAI call, the worker is
+    freed in milliseconds; otherwise synthesized once and cached for everyone.
+    Raises urllib errors when OpenAI fails.
+    """
+    cache_path = _tts_cache_path(text, voice, speed)
+    try:
+        with open(cache_path, 'rb') as f:
+            cached = f.read()
+        if cached:
+            return cached, 'HIT'
+    except OSError:
+        pass
+
+    payload = json.dumps({'model': TTS_MODEL, 'input': text, 'voice': voice, 'speed': speed}).encode('utf-8')
+    req = urllib.request.Request(
+        'https://api.openai.com/v1/audio/speech',
+        data=payload,
+        headers={'Content-Type': 'application/json', 'Authorization': f'Bearer {settings.OPENAI_API_KEY}'},
+        method='POST',
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        audio_data = resp.read()
+    if audio_data:  # never cache an empty body
+        _write_file_atomic(cache_path, audio_data)
+    return audio_data, 'MISS'
+
+
 def _tts_audio_response(audio_data, cache_status):
     http_resp = HttpResponse(audio_data, content_type='audio/mpeg')
     http_resp['Cache-Control'] = 'private, max-age=3600'
@@ -630,44 +660,13 @@ def speaking_tts(request):
     if not text:
         return Response({'error': 'text required'}, status=400)
 
-    # Served from disk: no OpenAI round-trip, so the worker thread is freed in
-    # milliseconds instead of being held for 1–3 s per line.
-    cache_path = _tts_cache_path(text, voice, speed)
-    try:
-        with open(cache_path, 'rb') as f:
-            cached = f.read()
-        if cached:
-            return _tts_audio_response(cached, 'HIT')
-    except OSError:
-        pass
-
     api_key = getattr(settings, 'OPENAI_API_KEY', '')
-    if not api_key or api_key == 'your-openai-api-key-here':
+    if (not api_key or api_key == 'your-openai-api-key-here') and not os.path.exists(_tts_cache_path(text, voice, speed)):
         return Response({'error': 'OpenAI API key not configured'}, status=503)
 
-    payload = json.dumps({
-        'model': TTS_MODEL,
-        'input': text,
-        'voice': voice,
-        'speed': speed,
-    }).encode('utf-8')
-
-    req = urllib.request.Request(
-        'https://api.openai.com/v1/audio/speech',
-        data=payload,
-        headers={
-            'Content-Type': 'application/json',
-            'Authorization': f'Bearer {api_key}',
-        },
-        method='POST',
-    )
-
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            audio_data = resp.read()
-        if audio_data:  # never cache an empty body
-            _write_file_atomic(cache_path, audio_data)
-        return _tts_audio_response(audio_data, 'MISS')
+        audio_data, status = tts_audio(text, voice, speed)
+        return _tts_audio_response(audio_data, status)
     except urllib.error.HTTPError as e:
         body = e.read().decode('utf-8', errors='ignore')
         try:

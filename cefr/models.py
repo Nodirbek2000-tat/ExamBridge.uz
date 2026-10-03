@@ -307,3 +307,119 @@ class CEFRListeningAnswer(models.Model):
 
     class Meta:
         unique_together = ['attempt', 'question']
+
+
+# ── WRITING (multilevel format) ─────────────────────────────────────────────
+
+class CEFRWritingTest(models.Model):
+    """
+    One CEFR multilevel writing paper. Part 1 is Task 1.1 (informal letter)
+    and Task 1.2 (formal letter) on one shared situation; Part 2 is an essay.
+    A full test has all three tasks, a part test only its own.
+    """
+    class Kind(models.TextChoices):
+        FULL = 'FULL', 'Full test (1.1 + 1.2 + Part 2)'
+        PART1 = 'PART1', 'Part 1 (Task 1.1 + 1.2)'
+        PART2 = 'PART2', 'Part 2 (essay)'
+
+    title = models.CharField(max_length=200)
+    kind = models.CharField(max_length=5, choices=Kind.choices, default=Kind.FULL)
+    situation = models.TextField(blank=True, help_text='Part 1 context shared by Task 1.1 and 1.2')
+    task11 = models.TextField(blank=True, help_text='Task 1.1 — informal letter')
+    task12 = models.TextField(blank=True, help_text='Task 1.2 — formal letter')
+    task2 = models.TextField(blank=True, help_text='Part 2 — essay')
+    time_limit = models.PositiveSmallIntegerField(default=60, help_text='Minutes')
+    is_premium = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'CEFR Writing test'
+
+    def __str__(self):
+        return f'{self.title} ({self.kind})'
+
+
+class CEFRWritingResponse(models.Model):
+    """A student's answers to one writing test and the AI score (0–75)."""
+    class Status(models.TextChoices):
+        IN_PROGRESS = 'IN_PROGRESS', 'In progress'
+        SCORING = 'SCORING', 'Being scored'
+        READY = 'READY', 'Scored'
+        FAILED = 'FAILED', 'Scoring failed'
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='cefr_writing_responses')
+    test = models.ForeignKey(CEFRWritingTest, on_delete=models.CASCADE, related_name='responses')
+    answers = models.JSONField(default=dict, blank=True, help_text='{"1.1": text, "1.2": text, "2": text}')
+    status = models.CharField(max_length=12, choices=Status.choices, default=Status.IN_PROGRESS)
+    score = models.PositiveSmallIntegerField(null=True, blank=True, help_text='0–75 (part tests scaled to 75)')
+    level = models.CharField(max_length=8, blank=True, help_text='C1 / B2 / B1 / BELOW')
+    result = models.JSONField(default=dict, blank=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    submitted_at = models.DateTimeField(null=True, blank=True)
+    scored_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-started_at']
+        indexes = [models.Index(fields=['user', 'status'])]
+
+    def __str__(self):
+        return f'{self.user} · {self.test} · {self.status}'
+
+
+# ── SPEAKING (multilevel format) ────────────────────────────────────────────
+
+class CEFRSpeakingTest(models.Model):
+    """
+    One CEFR multilevel speaking paper: Part 1.1 (questions about yourself),
+    1.2 (two pictures + questions), Part 2 (picture/topic, long turn) and
+    Part 3 (a statement with arguments for and against). Any part may be
+    missing — a test with all four is a full test.
+    """
+    title = models.CharField(max_length=200)
+    part11 = models.JSONField(default=list, blank=True, help_text='["question", ...]')
+    part12 = models.JSONField(default=list, blank=True, help_text='["question", ...] about the two pictures')
+    part12_image1 = models.ImageField(upload_to='cefr/speaking/', blank=True)
+    part12_image2 = models.ImageField(upload_to='cefr/speaking/', blank=True)
+    part2 = models.JSONField(default=dict, blank=True, help_text='{"prompt": "...", "questions": [...]}')
+    part2_image = models.ImageField(upload_to='cefr/speaking/', blank=True)
+    part3 = models.JSONField(default=dict, blank=True, help_text='{"topic": "...", "for": [...], "against": [...]}')
+    is_premium = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'CEFR Speaking test'
+
+    def __str__(self):
+        return self.title
+
+
+class CEFRSpeakingResponse(models.Model):
+    """A student's recorded answers to one speaking test and the AI score (0–75)."""
+    class Status(models.TextChoices):
+        IN_PROGRESS = 'IN_PROGRESS', 'In progress'
+        SCORING = 'SCORING', 'Being scored'
+        READY = 'READY', 'Scored'
+        FAILED = 'FAILED', 'Scoring failed'
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='cefr_speaking_responses')
+    test = models.ForeignKey(CEFRSpeakingTest, on_delete=models.CASCADE, related_name='responses')
+    answers = models.JSONField(default=list, blank=True,
+                               help_text='[{"part", "q", "question", "transcript", "audio", "seconds"}]')
+    status = models.CharField(max_length=12, choices=Status.choices, default=Status.IN_PROGRESS)
+    score = models.PositiveSmallIntegerField(null=True, blank=True, help_text='0–75 (part tests scaled to 75)')
+    level = models.CharField(max_length=8, blank=True, help_text='C1 / B2 / B1 / BELOW')
+    result = models.JSONField(default=dict, blank=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    submitted_at = models.DateTimeField(null=True, blank=True)
+    scored_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-started_at']
+        indexes = [models.Index(fields=['user', 'status'])]
+
+    def __str__(self):
+        return f'{self.user} · {self.test} · {self.status}'

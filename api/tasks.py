@@ -57,6 +57,64 @@ def evaluate_writing(self, response_id):
         raise self.retry(exc=exc, countdown=30)
 
 
+@shared_task(bind=True, max_retries=3)
+def evaluate_cefr_writing(self, response_id):
+    """AI scoring of a CEFR multilevel writing response (0–75)."""
+    from cefr.models import CEFRWritingResponse
+    from api.cefr_writing import evaluate_response
+
+    try:
+        response = CEFRWritingResponse.objects.select_related('test').get(id=response_id)
+    except CEFRWritingResponse.DoesNotExist:
+        logger.warning('CEFR writing response %s no longer exists', response_id)
+        return
+
+    try:
+        if evaluate_response(response):
+            logger.info('CEFR writing response %s scored: %s/75', response_id, response.score)
+    except Exception as exc:
+        logger.error('CEFR writing scoring failed for %s: %s', response_id, exc)
+        if self.request.retries >= self.max_retries:
+            # give the student a clear "try again" instead of an endless spinner
+            CEFRWritingResponse.objects.filter(id=response_id, status='SCORING').update(status='FAILED')
+            return
+        raise self.retry(exc=exc, countdown=30)
+
+
+@shared_task(bind=True, max_retries=3)
+def evaluate_cefr_speaking(self, response_id):
+    """AI scoring of a CEFR multilevel speaking response (0–75)."""
+    from cefr.models import CEFRSpeakingResponse
+    from api.cefr_speaking import evaluate_response
+
+    try:
+        response = CEFRSpeakingResponse.objects.select_related('test').get(id=response_id)
+    except CEFRSpeakingResponse.DoesNotExist:
+        logger.warning('CEFR speaking response %s no longer exists', response_id)
+        return
+
+    try:
+        if evaluate_response(response):
+            logger.info('CEFR speaking response %s scored: %s/75', response_id, response.score)
+    except Exception as exc:
+        logger.error('CEFR speaking scoring failed for %s: %s', response_id, exc)
+        if self.request.retries >= self.max_retries:
+            CEFRSpeakingResponse.objects.filter(id=response_id, status='SCORING').update(status='FAILED')
+            return
+        raise self.retry(exc=exc, countdown=30)
+
+
+@shared_task
+def warm_cefr_speaking_tts(test_id):
+    """Synthesize every examiner line of a new speaking test once, so students never wait for it."""
+    from cefr.models import CEFRSpeakingTest
+    from api.cefr_speaking import warm_tts
+
+    test = CEFRSpeakingTest.objects.filter(id=test_id).first()
+    if test:
+        logger.info('CEFR speaking test %s: %s examiner lines synthesized', test_id, warm_tts(test))
+
+
 @shared_task
 def purge_old_speaking_audio(days=None):
     """Eski speaking ovoz yozuvlarini o'chiradi.
@@ -113,6 +171,30 @@ def purge_old_speaking_audio(days=None):
                 continue
             deleted += 1
             freed_bytes += size
+
+    # CEFR multilevel speaking: one recording per answer, paths inside `answers`
+    from django.core.files.storage import default_storage
+    from cefr.models import CEFRSpeakingResponse
+    for r in CEFRSpeakingResponse.objects.filter(submitted_at__lt=cutoff).only('id', 'answers').iterator():
+        changed = False
+        answers = list(r.answers or [])
+        for a in answers:
+            path = a.get('audio') if isinstance(a, dict) else None
+            if not path:
+                continue
+            try:
+                size = default_storage.size(path) if default_storage.exists(path) else 0
+                default_storage.delete(path)
+            except Exception as exc:
+                failed += 1
+                logger.warning('CEFR speaking audio %s o\'chmadi: %s', path, exc)
+                continue
+            a['audio'] = ''
+            changed = True
+            deleted += 1
+            freed_bytes += size
+        if changed:
+            CEFRSpeakingResponse.objects.filter(id=r.id).update(answers=answers)
 
     logger.info(
         'Speaking audio tozalandi: %s ta o\'chdi, %.1f MB bo\'shadi, '

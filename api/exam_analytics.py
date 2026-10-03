@@ -74,6 +74,44 @@ def _band_of(value):
     return v if v > 0 else None
 
 
+def _cefr_productive(scored, link_base, skill):
+    """CEFR multilevel writing or speaking (0–75): averages, criteria (0–5) and points per task / part."""
+    from api.cefr_writing import level_for
+    if skill == 'writing':
+        from cefr.models import CEFRWritingResponse as Model
+        from api.cefr_writing import CRITERIA, TASKS, TASK_ORDER
+        bucket = 'tasks'
+    else:
+        from cefr.models import CEFRSpeakingResponse as Model
+        from api.cefr_speaking import CRITERIA, PARTS as TASKS, PART_ORDER as TASK_ORDER
+        bucket = 'parts'
+
+    rows = list(scored(Model.objects.filter(status='READY'), 'submitted_at', 'user')
+                .order_by('submitted_at').values('score', 'result', 'submitted_at'))
+    scores = [r['score'] for r in rows if r['score'] is not None]
+    avg = round(sum(scores) / len(scores)) if scores else None
+    crit = {c: [] for c, _ in CRITERIA}
+    tasks = {k: [] for k in TASK_ORDER}
+    for r in rows:
+        for k, t in ((r['result'] or {}).get(bucket) or {}).items():
+            if k in tasks and isinstance(t, dict):
+                tasks[k].append(float(t.get('points') or 0))
+                for c in crit:
+                    if isinstance(t.get(c), dict) and t[c].get('score') is not None:
+                        crit[c].append(float(t[c]['score']))
+    return {
+        'scale': 'cefr', 'count': len(rows), 'scored': len(scores), 'avg_band': None,
+        'avg_score': avg, 'level': level_for(avg) if avg is not None else '',
+        'criteria': [{'key': c, 'label': label, 'avg': round(sum(crit[c]) / len(crit[c]), 1) if crit[c] else None,
+                      'count': len(crit[c])} for c, label in CRITERIA],
+        'by_task': [{'task': k, 'label': TASKS[k]['label'], 'max': TASKS[k]['points'], 'count': len(v),
+                     'avg_points': round(sum(v) / len(v), 1) if v else None} for k, v in tasks.items()],
+        'trend': [{'date': timezone.localtime(r['submitted_at']).date().isoformat(), 'score': r['score']}
+                  for r in rows if r['score'] is not None][-20:],
+        'link': link_base + skill,
+    }
+
+
 def _criteria_avg(rows, spec):
     out = []
     for key, label, aliases in spec:
@@ -168,8 +206,8 @@ def build_exam_analytics(user, exam, range_key='30d'):
     # ── writing & speaking (AI-scored) ──
     from ielts.models import WritingResponse, SpeakingResponse
 
-    def scored(qs, date_field='created_at'):
-        qs = qs.filter(attempt__user=user)
+    def scored(qs, date_field='created_at', owner='attempt__user'):
+        qs = qs.filter(**{owner: user})
         for d in qs.values_list(date_field, flat=True):
             ld = timezone.localtime(d).date()
             activity_days.add(ld)
@@ -193,16 +231,22 @@ def build_exam_analytics(user, exam, range_key='30d'):
                        'task': r['task__task_type']} for r in rows if r['ai_band']][-20:],
             'link': link_base + 'writing',
         }
-    rows = list(scored(SpeakingResponse.objects.filter(task__source=exam)).order_by('created_at')
-                .values('ai_band', 'ai_criteria', 'created_at', 'task__part'))
-    bands = [float(r['ai_band']) for r in rows if r['ai_band']]
-    speaking = {
-        'count': len(rows), 'scored': len(bands), 'avg_band': round(sum(bands) / len(bands), 1) if bands else None,
-        'criteria': _criteria_avg([r['ai_criteria'] for r in rows], SPEAKING_CRITERIA),
-        'trend': [{'date': timezone.localtime(r['created_at']).date().isoformat(), 'band': float(r['ai_band'])}
-                  for r in rows if r['ai_band']][-20:],
-        'link': link_base + 'speaking',
-    }
+    else:
+        writing = _cefr_productive(scored, link_base, 'writing')
+    if exam == 'CEFR':
+        # the multilevel format (0–75); older IELTS-style CEFR practice is not mixed into it
+        speaking = _cefr_productive(scored, link_base, 'speaking')
+    else:
+        rows = list(scored(SpeakingResponse.objects.filter(task__source=exam)).order_by('created_at')
+                    .values('ai_band', 'ai_criteria', 'created_at', 'task__part'))
+        bands = [float(r['ai_band']) for r in rows if r['ai_band']]
+        speaking = {
+            'count': len(rows), 'scored': len(bands), 'avg_band': round(sum(bands) / len(bands), 1) if bands else None,
+            'criteria': _criteria_avg([r['ai_criteria'] for r in rows], SPEAKING_CRITERIA),
+            'trend': [{'date': timezone.localtime(r['created_at']).date().isoformat(), 'band': float(r['ai_band'])}
+                      for r in rows if r['ai_band']][-20:],
+            'link': link_base + 'speaking',
+        }
 
     # ── finished tests and their scores ──
     history = []
@@ -259,7 +303,9 @@ def build_exam_analytics(user, exam, range_key='30d'):
             'tests_completed': tests_completed,
             'writing_count': writing['count'] if writing else 0,
             'writing_band': writing['avg_band'] if writing else None,
+            'writing_score': writing.get('avg_score') if writing else None,     # CEFR, out of 75
             'speaking_count': speaking['count'], 'speaking_band': speaking['avg_band'],
+            'speaking_score': speaking.get('avg_score'),                         # CEFR, out of 75
             'streak': _streak(activity_days, today),
             'active_days': sum(1 for d in daily if d['reading'] or d['listening']),
         },
@@ -311,6 +357,17 @@ def ai_facts(data):
     }
     for name in ('writing', 'speaking'):
         w = data.get(name)
+        if w and w['count'] and w.get('scale') == 'cefr':
+            facts[name] = {
+                'responses': w['count'], 'scale': 'CEFR multilevel score out of 75 (65+ C1, 51-64 B2, 38-50 B1)',
+                'avg_score_out_of_75': w['avg_score'], 'level': w['level'],
+                'criteria_avg_out_of_5': {c['label']: c['avg'] for c in w['criteria'] if c['avg'] is not None},
+                'avg_points_by_task': {f"{t['label']} (max {t['max']})": t['avg_points'] for t in w['by_task'] if t['count']},
+            }
+            if w.get('trend'):
+                facts[name]['first_score'] = w['trend'][0]['score']
+                facts[name]['latest_score'] = w['trend'][-1]['score']
+            continue
         if w and w['count']:
             facts[name] = {'responses': w['count'], 'avg_band': w['avg_band'],
                            'criteria_avg_band': {c['label']: c['avg'] for c in w['criteria'] if c['avg'] is not None}}

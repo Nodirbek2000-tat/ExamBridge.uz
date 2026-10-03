@@ -72,7 +72,7 @@ Accuracy rules (the student sees the charts next to your text):
 - Use ONLY numbers that appear in the JSON. Never invent, estimate, add up or recalculate anything.
 - Whenever you state a result, copy its "result" string exactly as given (e.g. "0/22 (0%)") — never build the fraction yourself.
 - Items marked "too_few_attempts_to_judge" are neither strengths nor weaknesses — at most say there is not enough data yet.
-- A strength needs 5+ attempts and 70%+ accuracy (or an average band of 6.5+ from 2+ responses). If there is none, say so in one line — no invented praise.
+- A strength needs 5+ attempts and 70%+ accuracy (or, for writing/speaking, an average of band 6.5+ or 51+/75 from 2+ responses). If there is none, say so in one line — no invented praise.
 - "left_blank" means the question was left empty (usually time pressure) — treat it separately from wrong answers.
   If most answers are blank, the first fix is answering every question (a guess costs nothing) and managing time, before any technique.
 - If something is not in the data, do not mention it.

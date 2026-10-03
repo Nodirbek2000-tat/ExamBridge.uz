@@ -8,6 +8,7 @@ from django.views.static import serve as static_serve
 from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
 from api.sat_analytics import sat_analytics
 from api.analytics_ai import analytics_ai, exam_analytics
+from api import cefr_writing, cefr_speaking
 from api.sat_views import (
     sat_test_list, sat_start_test, sat_attempt_detail,
     sat_submit_answer, sat_submit_module, sat_security_event, sat_stats, sat_result_detail, sat_result_delete,
@@ -216,6 +217,16 @@ urlpatterns = [
     path('api/cefr/reading/<int:passage_id>/', cefr_reading_detail),
     path('api/cefr/reading/full-mock/<int:test_id>/start/', cefr_reading_full_mock_start),
     path('api/cefr/listening/full-mock/<int:test_id>/start/', cefr_listening_full_mock_start),
+    path('api/cefr/writing/', cefr_writing.writing_tests),
+    path('api/cefr/writing/<int:test_id>/start/', cefr_writing.writing_start),
+    path('api/cefr/writing/responses/<int:response_id>/', cefr_writing.writing_response),
+    path('api/cefr/writing/responses/<int:response_id>/submit/', cefr_writing.writing_submit),
+    path('api/cefr/writing/responses/<int:response_id>/retry/', cefr_writing.writing_retry),
+    path('api/cefr/speaking/', cefr_speaking.speaking_tests),
+    path('api/cefr/speaking/<int:test_id>/start/', cefr_speaking.speaking_start),
+    path('api/cefr/speaking/responses/<int:response_id>/', cefr_speaking.speaking_response),
+    path('api/cefr/speaking/responses/<int:response_id>/submit/', cefr_speaking.speaking_submit),
+    path('api/cefr/speaking/responses/<int:response_id>/retry/', cefr_speaking.speaking_retry),
     path('api/cefr/reading/<int:passage_id>/start/', cefr_reading_start),
     path('api/cefr/reading/<int:passage_id>/submit/', cefr_reading_submit),
     # CEFR Listening
@@ -311,6 +322,13 @@ urlpatterns = [
     path('api/import/ielts/speaking/', import_ielts_speaking),
     path('api/import/ielts/writing/', import_ielts_writing),
     path('api/import/cefr/', import_cefr_test),
+    path('api/import/cefr/writing/', cefr_writing.import_writing),
+    path('api/admin/cefr/writing/', cefr_writing.admin_writing_list),
+    path('api/admin/cefr/writing/<int:pk>/', cefr_writing.admin_writing_delete),
+    path('api/import/cefr/speaking/', cefr_speaking.import_speaking),
+    path('api/admin/cefr/speaking/', cefr_speaking.admin_speaking_list),
+    path('api/admin/cefr/speaking/<int:pk>/', cefr_speaking.admin_speaking_delete),
+    path('api/admin/cefr/speaking/<int:pk>/image/', cefr_speaking.admin_speaking_image),
 ]
 
 # Serve uploaded media (recorded speaking audio, listening audio, images) in
