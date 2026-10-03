@@ -330,6 +330,33 @@ def score_answers(test, answers, ai=None):
                    'judged_level': judged if judged in LEVEL_MAX else '', 'capped': capped}
 
 
+def fill_missing_transcripts(response):
+    """
+    Answers the browser could not turn into text (Safari, Firefox, Yandex Browser,
+    a blocked speech service) but that were recorded: transcribe them on the
+    server with Whisper once, so the student is scored on what they really said.
+    """
+    from api.stt import whisper_transcribe
+    answers, changed = list(response.answers or []), False
+    for a in answers:
+        if not isinstance(a, dict) or _spoken(a.get('transcript')) or not a.get('audio') or a.get('stt') == 'whisper':
+            continue
+        try:
+            with default_storage.open(a['audio'], 'rb') as fh:
+                data = fh.read()
+            if not data or len(data) > MAX_AUDIO_BYTES:
+                continue
+            a['transcript'] = whisper_transcribe(data, a.get('mime') or 'audio/webm', timeout=60)[:MAX_TRANSCRIPT]
+            a['stt'] = 'whisper'
+            changed = True
+        except Exception:
+            log.warning('Whisper fallback failed for CEFR speaking %s (%s)', response.id, a.get('audio'), exc_info=True)
+    if changed:
+        response.answers = answers
+        response.save(update_fields=['answers'])
+    return changed
+
+
 def evaluate_response(response):
     """Score a submitted response once (Celery and the fallback share the lock)."""
     if response.status != CEFRSpeakingResponse.Status.SCORING:
@@ -338,6 +365,7 @@ def evaluate_response(response):
     if not cache.add(lock, '1', timeout=EVAL_LOCK_TTL):
         return False
     try:
+        fill_missing_transcripts(response)
         score, result = score_answers(response.test, response.answers or [])
         response.score, response.level, response.result = score, level_for(score), result
         response.status = CEFRSpeakingResponse.Status.READY
@@ -401,6 +429,7 @@ def _answers_out(answers, request):
     for a in answers or []:
         a = dict(a)
         path = a.pop('audio', '')
+        a.pop('mime', None)
         a['audio_url'] = request.build_absolute_uri(default_storage.url(path)) if path else None
         out.append(a)
     return out
@@ -461,10 +490,13 @@ def speaking_submit(request, response_id):
                 'audio': ''}
         f = request.FILES.get(f'audio_{i}')
         if f and f.size <= MAX_AUDIO_BYTES and (f.content_type or '').startswith(('audio/', 'video/webm', 'application/octet-stream')):
-            path = f'cefr/speaking/answers/r{r.id}_{key[0].replace(".", "")}_{key[1]}.webm'
+            mime = (f.content_type or 'audio/webm').split(';')[0].strip().lower()
+            ext = 'm4a' if mime in ('audio/mp4', 'audio/x-m4a', 'audio/aac') else 'ogg' if mime == 'audio/ogg' else 'webm'
+            path = f'cefr/speaking/answers/r{r.id}_{key[0].replace(".", "")}_{key[1]}.{ext}'
             if default_storage.exists(path):
                 default_storage.delete(path)
             item['audio'] = default_storage.save(path, f)
+            item['mime'] = mime
         answers.append(item)
 
     with transaction.atomic():
@@ -472,7 +504,7 @@ def speaking_submit(request, response_id):
         if r.status != CEFRSpeakingResponse.Status.IN_PROGRESS:
             return Response({'id': r.id, 'status': r.status})
         r.answers, r.submitted_at = answers, timezone.now()
-        nothing = not any(_words(a['transcript']) for a in answers)
+        nothing = not any(_words(a['transcript']) or a['audio'] for a in answers)
         if nothing:
             r.score, r.result = score_answers(r.test, answers)
             r.level, r.status, r.scored_at = level_for(r.score), CEFRSpeakingResponse.Status.READY, timezone.now()

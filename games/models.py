@@ -58,3 +58,59 @@ class ShadowingAttempt(models.Model):
 
     def __str__(self):
         return f'{self.user} · {self.text} · {self.overall_score}/100'
+
+
+# ── Speak & Play (voice games) ──────────────────────────────────────────────
+# Games where the learner says a line and the character / car does it.
+# Speech is recognised in the browser; the server only keeps progress + runs.
+
+VOICE_GAME_CHOICES = [
+    ('tobys-day', "Toby's Day"),
+    ('voice-drive', 'Voice Drive'),
+]
+VOICE_GAME_SLUGS = frozenset(slug for slug, _ in VOICE_GAME_CHOICES)
+
+
+class VoiceGameProgress(models.Model):
+    """One row per (user, game): the game's own saved state + running totals."""
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='voice_game_progress')
+    slug = models.CharField(max_length=40, choices=VOICE_GAME_CHOICES)
+    data = models.JSONField(default=dict, blank=True, help_text='Free-form state the game stores (≤ 20 KB)')
+    best_score = models.PositiveIntegerField(default=0)
+    plays = models.PositiveIntegerField(default=0)
+    stars_total = models.PositiveIntegerField(default=0)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['user', 'slug'], name='uniq_voice_progress_user_slug'),
+        ]
+        verbose_name = 'Voice game progress'
+        verbose_name_plural = 'Voice game progress'
+
+    def __str__(self):
+        return f'{self.user} · {self.slug} · best {self.best_score}'
+
+
+class VoiceGameRun(models.Model):
+    """One finished play of a voice game — feeds the weekly leaderboard."""
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='voice_game_runs')
+    slug = models.CharField(max_length=40, choices=VOICE_GAME_CHOICES)
+    score = models.PositiveIntegerField(default=0)
+    stars = models.PositiveSmallIntegerField(default=0)
+    accuracy = models.FloatField(default=0)          # 0–1
+    level = models.CharField(max_length=40, blank=True, default='')
+    duration_sec = models.PositiveIntegerField(default=0)
+    lines_said = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['slug', 'created_at'], name='voice_run_slug_created_idx'),
+        ]
+
+    def __str__(self):
+        return f'{self.user} · {self.slug} · {self.score}'

@@ -76,6 +76,10 @@ from api.import_views import (
 from games.views import (
     shadowing_texts, shadowing_text_detail, shadowing_submit,
 )
+from games.stt_views import transcribe as voice_transcribe
+from games.voice_views import (
+    voice_progress, voice_run_create, voice_leaderboard, games_hub,
+)
 from study.views import (
     article_list, article_detail, admin_article_list, admin_article_detail,
     writing_sample_list, writing_sample_detail, writing_sample_note,
@@ -183,6 +187,12 @@ urlpatterns = [
     path('api/games/shadowing/texts/', shadowing_texts),
     path('api/games/shadowing/texts/<int:pk>/', shadowing_text_detail),
     path('api/games/shadowing/<int:pk>/submit/', shadowing_submit),
+    # Games — Speak & Play (voice games) + hub numbers
+    path('api/games/hub/', games_hub),
+    path('api/games/voice/transcribe/', voice_transcribe),
+    path('api/games/voice/<slug:slug>/progress/', voice_progress),
+    path('api/games/voice/<slug:slug>/runs/', voice_run_create),
+    path('api/games/voice/<slug:slug>/leaderboard/', voice_leaderboard),
     # Study Tools — Articles
     path('api/study/articles/', article_list),
     path('api/study/articles/<int:pk>/', article_detail),
