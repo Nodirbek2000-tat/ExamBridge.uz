@@ -77,6 +77,7 @@ from games.views import (
     shadowing_texts, shadowing_text_detail, shadowing_submit,
 )
 from games.stt_views import transcribe as voice_transcribe
+from games.tts_views import character_tts
 from games.voice_views import (
     voice_progress, voice_run_create, voice_leaderboard, games_hub,
 )
@@ -190,6 +191,12 @@ urlpatterns = [
     # Games — Speak & Play (voice games) + hub numbers
     path('api/games/hub/', games_hub),
     path('api/games/voice/transcribe/', voice_transcribe),
+    path('api/games/voice/tts/', character_tts),
+    path('api/games/stats/', include('gamestats.urls')),
+    path('api/games/speaking/', include('speaking.urls')),
+    path('api/games/words/', include('vocabulary.api_urls')),
+    path('api/games/runner/', include('games.runner_urls')),
+    path('api/games/word-battle/', include('wordbattle.urls')),
     path('api/games/voice/<slug:slug>/progress/', voice_progress),
     path('api/games/voice/<slug:slug>/runs/', voice_run_create),
     path('api/games/voice/<slug:slug>/leaderboard/', voice_leaderboard),

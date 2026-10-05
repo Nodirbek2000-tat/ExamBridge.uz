@@ -7,16 +7,13 @@ a game wants to keep (free-form `data`), each finished run, and totals.
     GET/PUT  /api/games/voice/<slug>/progress/
     POST     /api/games/voice/<slug>/runs/
     GET      /api/games/voice/<slug>/leaderboard/
-    GET      /api/games/hub/
+    GET      /api/games/hub/          (old shape, read from gamestats — the new hub is /api/games/stats/hub/)
 """
 import json
 import math
 from datetime import timedelta
 
-from django.core.cache import cache
-from django.db import transaction
-from django.db.models import Count, F, Max, Min, Value
-from django.db.models.functions import Greatest
+from django.db.models import Max, Min, Sum
 from django.http import Http404
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes, throttle_classes
@@ -24,15 +21,15 @@ from rest_framework.permissions import IsAuthenticated, SAFE_METHODS
 from rest_framework.response import Response
 from rest_framework.throttling import UserRateThrottle
 
-from .models import ShadowingAttempt, VoiceGameProgress, VoiceGameRun, VOICE_GAME_SLUGS
+from gamestats.models import GameDay
+from gamestats.services import count_play, hub_games
+
+from .models import VoiceGameProgress, VoiceGameRun, VOICE_GAME_SLUGS
+from .runs import record_run
 
 WEEK = timedelta(days=7)
 MAX_DATA_BYTES = 20 * 1024
 LEADERBOARD_SIZE = 10
-# Below this many players a week we show no number at all — never tiny or fake counts.
-MIN_PUBLIC_PLAYERS = 30
-HUB_CACHE_KEY = 'games:hub:players_week:v1'
-HUB_CACHE_SECONDS = 10 * 60
 
 
 class VoiceGameWriteThrottle(UserRateThrottle):
@@ -106,10 +103,6 @@ def _public_name(first, last):
     return given
 
 
-def _public_count(n):
-    return n if n >= MIN_PUBLIC_PLAYERS else None
-
-
 # ── endpoints ────────────────────────────────────────────────────────────────
 
 @api_view(['GET', 'PUT'])
@@ -159,32 +152,22 @@ def voice_run_create(request, slug):
     lines = _clamp_int(body.get('lines_said'), 0, 1000)
     level = str(body.get('level') or '').replace('\x00', '').strip()[:40]
 
-    with transaction.atomic():
-        run = VoiceGameRun.objects.create(
-            user=request.user, slug=slug, score=score, stars=stars, accuracy=accuracy,
-            level=level, duration_sec=duration, lines_said=lines,
-        )
-        progress, _ = VoiceGameProgress.objects.get_or_create(user=request.user, slug=slug)
-        # One UPDATE with F() — two runs finishing at once never lose a play or stars.
-        VoiceGameProgress.objects.filter(pk=progress.pk).update(
-            plays=F('plays') + 1,
-            stars_total=F('stars_total') + stars,
-            best_score=Greatest(F('best_score'), Value(score)),
-            updated_at=timezone.now(),
-        )
-        best = VoiceGameProgress.objects.filter(pk=progress.pk).values_list('best_score', flat=True).first()
+    run, best = record_run(request.user, slug, score=score, stars=stars, accuracy=accuracy, level=level,
+                           duration_sec=duration, lines_said=lines)
 
+    count_play(request.user, slug)          # admin → Games; never raises
     return Response({'id': run.id, 'best_score': best or 0}, status=201)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def voice_leaderboard(request, slug):
-    """This week's (last 7 days) top 10 — one row per user, by their best run."""
+    """This week's (last 7 days) top 10 — one row per user, by their best ranked run."""
     _check_slug(slug)
     since = timezone.now() - WEEK
 
-    week_runs = VoiceGameRun.objects.filter(slug=slug, created_at__gte=since)
+    # unranked runs (listen / card mode, plausibility flags) stay in the history, not on the board
+    week_runs = VoiceGameRun.objects.filter(slug=slug, created_at__gte=since, ranked=True)
 
     # GROUP BY user in the database; ties go to whoever started playing first.
     top_rows = (
@@ -214,38 +197,11 @@ def voice_leaderboard(request, slug):
     })
 
 
-def _players_week():
-    """Distinct players per game in the last 7 days, hidden (None) below MIN_PUBLIC_PLAYERS. Cached 10 min."""
-    cached = cache.get(HUB_CACHE_KEY)
-    if cached is not None:
-        return cached
-    since = timezone.now() - WEEK
-    counts = dict(
-        VoiceGameRun.objects
-        .filter(created_at__gte=since)
-        .values('slug')
-        .annotate(n=Count('user', distinct=True))
-        .values_list('slug', 'n')
-    )
-    counts['shadowing'] = (
-        ShadowingAttempt.objects.filter(created_at__gte=since)
-        .aggregate(n=Count('user', distinct=True))['n'] or 0
-    )
-    result = {
-        slug: {'players_week': _public_count(counts.get(slug, 0))}
-        for slug in ('tobys-day', 'voice-drive', 'shadowing')
-    }
-    cache.set(HUB_CACHE_KEY, result, HUB_CACHE_SECONDS)
-    return result
-
-
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def games_hub(request):
-    """{ games: { slug: { players_week } }, me: { plays_week } } — real numbers only."""
-    since = timezone.now() - WEEK
-    plays_week = (
-        VoiceGameRun.objects.filter(user=request.user, created_at__gte=since).count()
-        + ShadowingAttempt.objects.filter(user=request.user, created_at__gte=since).count()
-    )
-    return Response({'games': _players_week(), 'me': {'plays_week': plays_week}})
+    """Old shape, kept for older clients: { games: { slug: { players_week } }, me: { plays_week } }."""
+    since = timezone.localdate() - timedelta(days=6)
+    plays_week = GameDay.objects.filter(user=request.user, date__gte=since).aggregate(n=Sum('plays'))['n'] or 0
+    games = {g['slug']: {'players_week': g['players_week']} for g in hub_games()}
+    return Response({'games': games, 'me': {'plays_week': plays_week}})

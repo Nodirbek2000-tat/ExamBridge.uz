@@ -49,6 +49,9 @@ LOCAL_APPS = [
     'ai_chat',
     'centers',
     'games',
+    'gamestats',
+    'speaking',
+    'wordbattle',
     'study',
 ]
 
@@ -230,6 +233,16 @@ CELERY_BEAT_SCHEDULE = {
     'purge-old-speaking-audio': {
         'task': 'api.tasks.purge_old_speaking_audio',
         'schedule': crontab(hour=4, minute=0),
+    },
+    # Speaking game: learners' recordings are kept 30 days
+    'purge-speaking-game-audio': {
+        'task': 'speaking.tasks.purge_old_attempt_audio',
+        'schedule': crontab(hour=4, minute=20),
+    },
+    # Word bank: per-word "said / understood" totals and top mis-hears for the admin (Runner + Word Battle)
+    'rollup-word-stats': {
+        'task': 'vocabulary.tasks.rollup_item_stats',
+        'schedule': crontab(hour=3, minute=40),
     },
 }
 

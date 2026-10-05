@@ -67,6 +67,7 @@ class ShadowingAttempt(models.Model):
 VOICE_GAME_CHOICES = [
     ('tobys-day', "Toby's Day"),
     ('voice-drive', 'Voice Drive'),
+    ('runner', 'Toby Run'),
 ]
 VOICE_GAME_SLUGS = frozenset(slug for slug, _ in VOICE_GAME_CHOICES)
 
@@ -104,12 +105,20 @@ class VoiceGameRun(models.Model):
     level = models.CharField(max_length=40, blank=True, default='')
     duration_sec = models.PositiveIntegerField(default=0)
     lines_said = models.PositiveIntegerField(default=0)
+    # idempotency key from the client (Runner finish); '' = none. Unique per user when set.
+    ref = models.CharField(max_length=32, blank=True, default='')
+    # False = kept for the learner's history but left out of the leaderboard (listen / card mode, flags)
+    ranked = models.BooleanField(default=True)
+    meta = models.JSONField(default=dict, blank=True, help_text='Per-game details (mode, stt, flags…)')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created_at']
         indexes = [
             models.Index(fields=['slug', 'created_at'], name='voice_run_slug_created_idx'),
+        ]
+        constraints = [
+            models.UniqueConstraint(fields=['user', 'ref'], condition=~models.Q(ref=''), name='uniq_voice_run_user_ref'),
         ]
 
     def __str__(self):

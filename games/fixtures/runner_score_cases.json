@@ -1,0 +1,965 @@
+{
+ "about": "TOBY RUN score parity (RUNNER_PLAN \u00a7B7): games/runner_logic.score and runner/engine/score.js must both give `expected` for every case.",
+ "cases": [
+  {
+   "name": "empty run",
+   "args": {
+    "level": "A1",
+    "distance_m": 0,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [],
+   "expected": {
+    "points": 0,
+    "passes": 0,
+    "score": 0
+   }
+  },
+  {
+   "name": "distance only",
+   "args": {
+    "level": "A2",
+    "distance_m": 1234,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [],
+   "expected": {
+    "points": 0,
+    "passes": 0,
+    "score": 1357
+   }
+  },
+  {
+   "name": "one fast balloon (A1, browser)",
+   "args": {
+    "level": "A1",
+    "distance_m": 1000,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1320
+    }
+   ],
+   "expected": {
+    "points": 141,
+    "passes": 1,
+    "score": 1255
+   }
+  },
+  {
+   "name": "too fast to be real: no bonus",
+   "args": {
+    "level": "A1",
+    "distance_m": 500,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 250
+    }
+   ],
+   "expected": {
+    "points": 100,
+    "passes": 1,
+    "score": 660
+   }
+  },
+  {
+   "name": "300 ms is allowed",
+   "args": {
+    "level": "A1",
+    "distance_m": 500,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 300
+    }
+   ],
+   "expected": {
+    "points": 150,
+    "passes": 1,
+    "score": 715
+   }
+  },
+  {
+   "name": "600 ms: full bonus",
+   "args": {
+    "level": "B1",
+    "distance_m": 800,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 600
+    }
+   ],
+   "expected": {
+    "points": 150,
+    "passes": 1,
+    "score": 1254
+   }
+  },
+  {
+   "name": "end of the window: no bonus",
+   "args": {
+    "level": "A1",
+    "distance_m": 800,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 4485
+    }
+   ],
+   "expected": {
+    "points": 100,
+    "passes": 1,
+    "score": 990
+   }
+  },
+  {
+   "name": "no ms: no bonus",
+   "args": {
+    "level": "A2",
+    "distance_m": 800,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 100,
+    "passes": 1,
+    "score": 1089
+   }
+  },
+  {
+   "name": "two-word chunk window",
+   "args": {
+    "level": "A2",
+    "distance_m": 900,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 2,
+     "ms": 1800
+    }
+   ],
+   "expected": {
+    "points": 136,
+    "passes": 1,
+    "score": 1254
+   }
+  },
+  {
+   "name": "three-word chunk, C1",
+   "args": {
+    "level": "C1",
+    "distance_m": 2400,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 3,
+     "ms": 2100
+    }
+   ],
+   "expected": {
+    "points": 130,
+    "passes": 1,
+    "score": 4175
+   }
+  },
+  {
+   "name": "server stt: flat 25",
+   "args": {
+    "level": "A2",
+    "distance_m": 1500,
+    "stt": "server",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 5200
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 200
+    }
+   ],
+   "expected": {
+    "points": 250,
+    "passes": 2,
+    "score": 2310
+   }
+  },
+  {
+   "name": "close first try",
+   "args": {
+    "level": "A1",
+    "distance_m": 700,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "close",
+     "tries": 1,
+     "n": 1,
+     "ms": 900
+    }
+   ],
+   "expected": {
+    "points": 60,
+    "passes": 1,
+    "score": 836
+   }
+  },
+  {
+   "name": "echo retry pass",
+   "args": {
+    "level": "A1",
+    "distance_m": 700,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "miss",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 2,
+     "n": 1,
+     "ms": 900
+    }
+   ],
+   "expected": {
+    "points": 50,
+    "passes": 0,
+    "score": 750
+   }
+  },
+  {
+   "name": "retry close also 50",
+   "args": {
+    "level": "A2",
+    "distance_m": 700,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "close",
+     "tries": 2,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 50,
+    "passes": 0,
+    "score": 825
+   }
+  },
+  {
+   "name": "bekat lines",
+   "args": {
+    "level": "A2",
+    "distance_m": 1100,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "close",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 2,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "miss",
+     "tries": 1,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 400,
+    "passes": 2,
+    "score": 1980
+   }
+  },
+  {
+   "name": "twister",
+   "args": {
+    "level": "B1",
+    "distance_m": 1600,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "t",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 2000
+    },
+    {
+     "m": "t",
+     "v": "close",
+     "tries": 1,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 320,
+    "passes": 2,
+    "score": 2765
+   }
+  },
+  {
+   "name": "revive gives no points",
+   "args": {
+    "level": "A1",
+    "distance_m": 600,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "r",
+     "v": "ok",
+     "tries": 2,
+     "n": 1,
+     "ms": 900
+    }
+   ],
+   "expected": {
+    "points": 0,
+    "passes": 0,
+    "score": 600
+   }
+  },
+  {
+   "name": "skips and misses",
+   "args": {
+    "level": "A1",
+    "distance_m": 640,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "skip",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "b",
+     "v": "miss",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "skip",
+     "tries": 1,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 0,
+    "passes": 0,
+    "score": 640
+   }
+  },
+  {
+   "name": "listen mode: no speed bonus",
+   "args": {
+    "level": "A1",
+    "distance_m": 900,
+    "stt": "browser",
+    "mode": "listen",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 700
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 900
+    }
+   ],
+   "expected": {
+    "points": 200,
+    "passes": 2,
+    "score": 1320
+   }
+  },
+  {
+   "name": "card mode keeps the bonus",
+   "args": {
+    "level": "A1",
+    "distance_m": 900,
+    "stt": "browser",
+    "mode": "card",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 700
+    }
+   ],
+   "expected": {
+    "points": 149,
+    "passes": 1,
+    "score": 1154
+   }
+  },
+  {
+   "name": "window scale 1.3",
+   "args": {
+    "level": "B2",
+    "distance_m": 1900,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.3
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1500
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 2,
+     "ms": 2600
+    }
+   ],
+   "expected": {
+    "points": 268,
+    "passes": 2,
+    "score": 3512
+   }
+  },
+  {
+   "name": "window scale 0.8",
+   "args": {
+    "level": "A1",
+    "distance_m": 1900,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 0.8
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1500
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 3100
+    }
+   ],
+   "expected": {
+    "points": 243,
+    "passes": 2,
+    "score": 2572
+   }
+  },
+  {
+   "name": "multiplier caps at 20 passes",
+   "args": {
+    "level": "C1",
+    "distance_m": 5400,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 600
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 697
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 794
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 891
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 988
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1085
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1182
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1279
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1376
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1473
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1570
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1667
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1764
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1861
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1958
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 2055
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 2152
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 2249
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "t",
+     "v": "close",
+     "tries": 1,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 3165,
+    "passes": 23,
+    "score": 38543
+   }
+  },
+  {
+   "name": "half-up rounding",
+   "args": {
+    "level": "A2",
+    "distance_m": 5,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [],
+   "expected": {
+    "points": 0,
+    "passes": 0,
+    "score": 6
+   }
+  },
+  {
+   "name": "half-up rounding 2",
+   "args": {
+    "level": "B2",
+    "distance_m": 1,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "close",
+     "tries": 2,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 50,
+    "passes": 0,
+    "score": 69
+   }
+  },
+  {
+   "name": "a typical 3-minute A2 run",
+   "args": {
+    "level": "A2",
+    "distance_m": 2140,
+    "stt": "browser",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1320
+    },
+    {
+     "m": "b",
+     "v": "close",
+     "tries": 1,
+     "n": 1,
+     "ms": 1900
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 980
+    },
+    {
+     "m": "b",
+     "v": "miss",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 2,
+     "n": 1
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 2,
+     "ms": 2600
+    },
+    {
+     "m": "b",
+     "v": "skip",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "close",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 1100
+    },
+    {
+     "m": "r",
+     "v": "ok",
+     "tries": 2,
+     "n": 1
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 760
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 3400
+    }
+   ],
+   "expected": {
+    "points": 1173,
+    "passes": 9,
+    "score": 6924
+   }
+  },
+  {
+   "name": "a server run, B1",
+   "args": {
+    "level": "B1",
+    "distance_m": 2650,
+    "stt": "server",
+    "mode": "voice",
+    "window_scale": 1.0
+   },
+   "outcomes": [
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 3100
+    },
+    {
+     "m": "b",
+     "v": "ok",
+     "tries": 1,
+     "n": 1,
+     "ms": 4200
+    },
+    {
+     "m": "b",
+     "v": "close",
+     "tries": 1,
+     "n": 1,
+     "ms": 3900
+    },
+    {
+     "m": "b",
+     "v": "miss",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "b",
+     "v": "close",
+     "tries": 2,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "s",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    },
+    {
+     "m": "t",
+     "v": "ok",
+     "tries": 1,
+     "n": 1
+    }
+   ],
+   "expected": {
+    "points": 860,
+    "passes": 6,
+    "score": 6739
+   }
+  }
+ ]
+}
