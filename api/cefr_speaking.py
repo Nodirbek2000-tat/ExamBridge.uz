@@ -22,6 +22,8 @@ Student API
   GET  /api/cefr/speaking/responses/<id>/            script, answers (audio URLs), status, result
   POST /api/cefr/speaking/responses/<id>/submit/     multipart: answers JSON + audio_<i> files
   POST /api/cefr/speaking/responses/<id>/retry/
+start and submit answer 429 {code: "speaking_daily_limit", ...} while the hidden daily speaking
+limit (api/speaking_limit.py, shared with IELTS speaking) has locked the user.
 Admin API
   POST   /api/import/cefr/speaking/
   GET    /api/admin/cefr/speaking/
@@ -42,6 +44,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
+from api import speaking_limit
 from api.cefr_writing import LEVEL_MAX, _clamp, _clean_errors, _clean_list, _norm_quote, level_for
 from cefr.models import CEFRSpeakingResponse, CEFRSpeakingTest
 
@@ -418,6 +421,10 @@ def speaking_start(request, test_id):
         return Response({'detail': 'This test is not ready yet.'}, status=409)
     if test.is_premium and not getattr(request.user, 'is_premium', False):
         return Response({'detail': 'Premium required.'}, status=403)
+    # hidden daily limit shared with IELTS speaking: a locked user does not record anything
+    refused = speaking_limit.refuse_if_locked(request.user)
+    if refused is not None:
+        return refused
     # a speaking test cannot be resumed half-way (the recordings live in the page), so every start is fresh
     CEFRSpeakingResponse.objects.filter(user=request.user, test=test, status='IN_PROGRESS').delete()
     r = CEFRSpeakingResponse.objects.create(user=request.user, test=test)
@@ -475,42 +482,51 @@ def speaking_submit(request, response_id):
     if not isinstance(raw, list):
         return Response({'error': 'answers must be a JSON list'}, status=400)
 
-    valid = {(p['key'], st['q']): st['question'] for p in script(r.test)['parts'] for st in p['steps']}
-    answers, seen = [], set()
-    for i, a in enumerate(raw):
-        if not isinstance(a, dict):
-            continue
-        key = (str(a.get('part')), a.get('q'))
-        if key not in valid or key in seen:
-            continue
-        seen.add(key)
-        item = {'part': key[0], 'q': key[1], 'question': valid[key],
-                'transcript': _spoken(a.get('transcript'))[:MAX_TRANSCRIPT],
-                'seconds': _seconds(a.get('seconds')),
-                'audio': ''}
-        f = request.FILES.get(f'audio_{i}')
-        if f and f.size <= MAX_AUDIO_BYTES and (f.content_type or '').startswith(('audio/', 'video/webm', 'application/octet-stream')):
-            mime = (f.content_type or 'audio/webm').split(';')[0].strip().lower()
-            ext = 'm4a' if mime in ('audio/mp4', 'audio/x-m4a', 'audio/aac') else 'ogg' if mime == 'audio/ogg' else 'webm'
-            path = f'cefr/speaking/answers/r{r.id}_{key[0].replace(".", "")}_{key[1]}.{ext}'
-            if default_storage.exists(path):
-                default_storage.delete(path)
-            item['audio'] = default_storage.save(path, f)
-            item['mime'] = mime
-        answers.append(item)
+    # the first submission counts towards the hidden daily speaking limit (shared with IELTS);
+    # a response is submitted once, so a repeated submit is free forever
+    refused, use_id = speaking_limit.claim(request.user, speaking_limit.CEFR, r.id, r.started_at, free_for=None)
+    if refused is not None:
+        return refused
+    try:
+        valid = {(p['key'], st['q']): st['question'] for p in script(r.test)['parts'] for st in p['steps']}
+        answers, seen = [], set()
+        for i, a in enumerate(raw):
+            if not isinstance(a, dict):
+                continue
+            key = (str(a.get('part')), a.get('q'))
+            if key not in valid or key in seen:
+                continue
+            seen.add(key)
+            item = {'part': key[0], 'q': key[1], 'question': valid[key],
+                    'transcript': _spoken(a.get('transcript'))[:MAX_TRANSCRIPT],
+                    'seconds': _seconds(a.get('seconds')),
+                    'audio': ''}
+            f = request.FILES.get(f'audio_{i}')
+            if f and f.size <= MAX_AUDIO_BYTES and (f.content_type or '').startswith(('audio/', 'video/webm', 'application/octet-stream')):
+                mime = (f.content_type or 'audio/webm').split(';')[0].strip().lower()
+                ext = 'm4a' if mime in ('audio/mp4', 'audio/x-m4a', 'audio/aac') else 'ogg' if mime == 'audio/ogg' else 'webm'
+                path = f'cefr/speaking/answers/r{r.id}_{key[0].replace(".", "")}_{key[1]}.{ext}'
+                if default_storage.exists(path):
+                    default_storage.delete(path)
+                item['audio'] = default_storage.save(path, f)
+                item['mime'] = mime
+            answers.append(item)
 
-    with transaction.atomic():
-        r = CEFRSpeakingResponse.objects.select_for_update().get(id=r.id)
-        if r.status != CEFRSpeakingResponse.Status.IN_PROGRESS:
-            return Response({'id': r.id, 'status': r.status})
-        r.answers, r.submitted_at = answers, timezone.now()
-        nothing = not any(_words(a['transcript']) or a['audio'] for a in answers)
-        if nothing:
-            r.score, r.result = score_answers(r.test, answers)
-            r.level, r.status, r.scored_at = level_for(r.score), CEFRSpeakingResponse.Status.READY, timezone.now()
-        else:
-            r.status = CEFRSpeakingResponse.Status.SCORING
-        r.save()
+        with transaction.atomic():
+            r = CEFRSpeakingResponse.objects.select_for_update().get(id=r.id)
+            if r.status != CEFRSpeakingResponse.Status.IN_PROGRESS:
+                return Response({'id': r.id, 'status': r.status})   # a parallel submit of it won; it is counted
+            r.answers, r.submitted_at = answers, timezone.now()
+            nothing = not any(_words(a['transcript']) or a['audio'] for a in answers)
+            if nothing:
+                r.score, r.result = score_answers(r.test, answers)
+                r.level, r.status, r.scored_at = level_for(r.score), CEFRSpeakingResponse.Status.READY, timezone.now()
+            else:
+                r.status = CEFRSpeakingResponse.Status.SCORING
+            r.save()
+    except Exception:
+        speaking_limit.release(use_id)          # a failed submission does not use up the allowance
+        raise
     if not nothing:
         from api.tasks import evaluate_cefr_speaking
         transaction.on_commit(lambda: evaluate_cefr_speaking.delay(r.id))

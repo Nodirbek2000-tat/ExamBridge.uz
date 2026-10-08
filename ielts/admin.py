@@ -8,6 +8,7 @@ from .models import (
     WritingTask,
     IELTSAttempt, ReadingAnswer, ListeningAnswer,
     SpeakingResponse, WritingResponse,
+    SpeakingUse,
 )
 
 
@@ -201,3 +202,13 @@ class WritingResponseAdmin(admin.ModelAdmin):
     list_filter = ('ai_band', 'task__task_type')
     readonly_fields = ('word_count', 'created_at')
     search_fields = ('attempt__user__email',)
+
+
+@admin.register(SpeakingUse)
+class SpeakingUseAdmin(admin.ModelAdmin):
+    """Counted speaking tests (hidden daily limit, api/speaking_limit.py). Delete a row to lift a lock."""
+    list_display = ('user', 'kind', 'ref_id', 'task_ref', 'used_at', 'locked_until')
+    list_filter = ('kind',)
+    search_fields = ('user__email', 'user__username')
+    raw_id_fields = ('user',)
+    date_hierarchy = 'used_at'

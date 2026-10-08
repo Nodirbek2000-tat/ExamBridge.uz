@@ -16,6 +16,11 @@ _BOT_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
+# The ExamBridge mobile app sends "ExamBridgeApp/<version> (<os>; ...)". Such a UA is never
+# matched against the patterns above: whatever follows the prefix (an Android device codename
+# such as "ruby", a library token) could collide with the short tokens and ban the user's IP.
+_APP_UA_PREFIX = 'ExamBridgeApp/'
+
 _API_PREFIX = '/api/'
 _ADMIN_PATHS = ('/admin/', '/api/admin/')
 
@@ -112,8 +117,8 @@ class BotBlockerMiddleware:
         if _is_exempt(path):
             return self.get_response(request)
 
-        # Block known bad bots
-        if ua and _BOT_PATTERNS.search(ua):
+        # Block known bad bots (our own mobile app is never one)
+        if ua and not ua.startswith(_APP_UA_PREFIX) and _BOT_PATTERNS.search(ua):
             _register_block(ip, f'bot_ua:{ua[:60]}', ua=ua, path=path, ttl=BOT_BLOCK_SECONDS)
             return _block_response(request, 'Access denied.', 403)
 

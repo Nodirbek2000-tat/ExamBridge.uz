@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.middleware.csrf import get_token
 from django.conf import settings
+from django.utils.dateparse import parse_date
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -188,7 +189,20 @@ def update_profile_view(request):
         user.target_band = str(data['target_band']).strip()
         fields.append('target_band')
     if 'exam_date' in data:
-        user.exam_date = data['exam_date'] or None
+        # parse here: a raw string on the model was saved fine, but user_data() then
+        # called .isoformat() on it (500), and a bad string made save() itself fail
+        raw = data['exam_date']
+        text = str(raw).strip() if raw else ''
+        if text:
+            try:
+                exam_date = parse_date(text)
+            except ValueError:                  # well formed but impossible, e.g. 2026-02-30
+                exam_date = None
+            if exam_date is None:
+                return Response({'detail': 'Invalid date format. Use YYYY-MM-DD.'}, status=400)
+        else:
+            exam_date = None
+        user.exam_date = exam_date
         fields.append('exam_date')
     if 'daily_study_minutes' in data:
         try:

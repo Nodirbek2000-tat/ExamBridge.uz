@@ -2,14 +2,17 @@ import hashlib
 import json
 import logging
 import os
+import re
 import tempfile
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, wait
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.conf import settings
 from django.core.cache import cache
+from django.core.files.storage import default_storage
 from django.utils import timezone
 from django.http import HttpResponse
 from django.db.models import Count
@@ -22,6 +25,9 @@ from ielts.models import (
     BookmarkedQuestion,
 )
 from cefr.models import CEFRReadingQuestion, CEFRListeningQuestion, CEFRQuestion
+from api import speaking_limit
+from api.stt import EXT_MIME, audio_ext, whisper_transcribe
+from speaking.views import sniff_audio
 
 logger = logging.getLogger(__name__)
 
@@ -678,10 +684,107 @@ def speaking_tts(request):
         return Response({'error': str(e)}, status=502)
 
 
+# Server speech-to-text for answers that arrive with a recording but no text: the phone app
+# has no Web Speech API, and Safari / Firefox often recognise nothing. Same idea as CEFR
+# speaking's fill_missing_transcripts; the whole step stays well under the 120 s
+# gunicorn / nginx timeout, and whatever is not transcribed in time stays empty.
+STT_MAX_BYTES = 10 * 1024 * 1024        # the CEFR speaking cap per answer
+STT_MAX_ANSWERS = 30                    # a full mock is ~15 answers
+STT_WORKERS = 4
+STT_BUDGET_SECONDS = 75
+STT_MAX_TRANSCRIPT = 4000
+
+
+def _said(item):
+    """The answer's text, '' when nothing was recognised (the attempt pages store "(no transcript)")."""
+    text = str(item.get('transcript') or '').strip() if isinstance(item, dict) else ''
+    return '' if text.lower() == '(no transcript)' else text
+
+
+# What Whisper writes for a silent clip (see speaking/tasks.py): never the learner's answer
+_SILENCE_TEXTS = {
+    'you', 'thank you', 'thanks', 'thank you very much', 'thank you so much', 'bye', 'bye bye',
+    'thanks for watching', 'thank you for watching', 'thank you so much for watching',
+}
+
+
+def _heard(text):
+    """Whisper's text, or '' for a silent clip: nothing, only punctuation, or a known silence phrase."""
+    text = str(text or '').strip()
+    words = ' '.join(re.findall(r'[^\W_]+', text.lower()))
+    return '' if not words or words in _SILENCE_TEXTS else text
+
+
+def _whisper_stored(path, mime):
+    """Whisper text of a stored recording; '' when it is silent, too big or the service fails."""
+    try:
+        with default_storage.open(path, 'rb') as fh:
+            data = fh.read(STT_MAX_BYTES + 1)
+        if not data or len(data) > STT_MAX_BYTES:
+            return ''
+        # the content decides what Whisper is told: the web page names every typeless Blob
+        # q<i>.webm, even when Safari recorded mp4
+        sniffed = sniff_audio(data[:16])
+        return _heard(whisper_transcribe(data, sniffed[0] if sniffed else mime, timeout=60))[:STT_MAX_TRANSCRIPT]
+    except Exception:
+        logger.warning('Whisper fallback failed for IELTS speaking %s', path, exc_info=True)
+        return ''
+
+
+def _fill_missing_transcripts(jobs):
+    """
+    jobs = [(answer, stored_path, mime)] for answers without text. Each one gets its Whisper
+    transcript (and stt='whisper'); a silent, failed or late clip keeps the transcript it came
+    with, so it is scored exactly like an empty answer. Never raises.
+    """
+    jobs = jobs[:STT_MAX_ANSWERS]
+    if not jobs:
+        return
+    pool = ThreadPoolExecutor(max_workers=min(STT_WORKERS, len(jobs)))
+    futures = {}
+    try:
+        for item, path, mime in jobs:
+            futures[pool.submit(_whisper_stored, path, mime)] = item
+        done, _ = wait(futures, timeout=STT_BUDGET_SECONDS)
+    except Exception:
+        logger.warning('Whisper fallback could not run for IELTS speaking', exc_info=True)
+        done = ()
+    finally:
+        pool.shutdown(wait=False, cancel_futures=True)
+    for fut in done:
+        text = fut.result()                 # _whisper_stored never raises
+        if text:
+            futures[fut]['transcript'] = text
+            futures[fut]['stt'] = 'whisper'
+
+
+def _earlier_transcript(previous, i, item):
+    """
+    What an earlier submission of this attempt stored for answer i — {transcript, stt} — when
+    it has text and is the same question; None otherwise. A retry reuses it instead of paying
+    Whisper again for a recording that was already transcribed.
+    """
+    if not isinstance(previous, list) or i >= len(previous) or not isinstance(previous[i], dict):
+        return None
+    old = previous[i]
+    same_question = str(old.get('question') or '') == str(item.get('question') or '')
+    if not same_question or not _said(old):
+        return None
+    return {'transcript': old['transcript'], **({'stt': old['stt']} if old.get('stt') else {})}
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def speaking_submit(request, attempt_id):
-    """Save speaking transcripts + per-question audio recordings."""
+    """
+    Save speaking transcripts + per-question audio recordings. A recording keeps its own
+    format (m4a from the phone app, webm/ogg from browsers). An answer that came without
+    text is transcribed from its recording here, before anything is scored — once: a
+    re-submission of the attempt reuses the text an earlier submission stored.
+    The first submission of an attempt (of a practice attempt: per task) counts towards the
+    hidden daily speaking limit (api/speaking_limit.py); while the user is locked it is
+    refused with 429.
+    """
     attempt = get_object_or_404(IELTSAttempt, id=attempt_id, user=request.user)
     task_id = request.data.get('task_id')
 
@@ -697,28 +800,56 @@ def speaking_submit(request, attempt_id):
 
     task = get_object_or_404(SpeakingTask, id=task_id)
 
-    # Save per-question audio files
-    from django.core.files.storage import default_storage
-    for i, item in enumerate(transcripts):
-        audio_key = f'audio_{i}'
-        if audio_key in request.FILES:
-            audio_file = request.FILES[audio_key]
-            path = f'ielts/speaking/attempt_{attempt_id}_q{i}.webm'
-            if default_storage.exists(path):
-                default_storage.delete(path)
-            saved_path = default_storage.save(path, audio_file)
-            item['audio_url'] = request.build_absolute_uri(default_storage.url(saved_path))
+    # a practice attempt (no IELTSTest) is handed to every practice task opened before its first
+    # submit (two tabs), so each task on it is its own test; a full-test attempt counts once
+    refused, use_id = speaking_limit.claim(request.user, speaking_limit.IELTS, attempt.id, attempt.started_at,
+                                           task_ref=None if attempt.test_id else task.id)
+    if refused is not None:
+        return refused
+    try:
+        previous = (SpeakingResponse.objects.filter(attempt=attempt, task=task)
+                    .values_list('transcripts', flat=True).first())
 
-    response_obj, _ = SpeakingResponse.objects.update_or_create(
-        attempt=attempt,
-        task=task,
-        defaults={'transcripts': transcripts}
-    )
+        # Save per-question audio files
+        stt_jobs = []
+        for i, item in enumerate(transcripts):
+            audio_key = f'audio_{i}'
+            if audio_key in request.FILES:
+                audio_file = request.FILES[audio_key]
+                ext = audio_ext(audio_file.content_type, audio_file.name)
+                path = f'ielts/speaking/attempt_{attempt_id}_q{i}.{ext}'
+                if default_storage.exists(path):
+                    default_storage.delete(path)
+                saved_path = default_storage.save(path, audio_file)
+                item['audio_url'] = request.build_absolute_uri(default_storage.url(saved_path))
+                if not _said(item):
+                    earlier = _earlier_transcript(previous, i, item)
+                    if earlier:
+                        item.update(earlier)
+                    else:
+                        stt_jobs.append((item, saved_path, EXT_MIME[ext]))
+        _fill_missing_transcripts(stt_jobs)
 
-    attempt.status = 'COMPLETED'
-    attempt.save(update_fields=['status'])
+        response_obj, _ = SpeakingResponse.objects.update_or_create(
+            attempt=attempt,
+            task=task,
+            defaults={'transcripts': transcripts}
+        )
+
+        attempt.status = 'COMPLETED'
+        attempt.save(update_fields=['status'])
+    except Exception:
+        speaking_limit.release(use_id)          # a failed submission does not use up the allowance
+        raise
 
     return Response({'id': response_obj.id, 'status': 'saved', 'transcripts': transcripts}, status=201)
+
+
+def _own_response(user, response_id):
+    try:
+        return bool(response_id) and SpeakingResponse.objects.filter(id=int(response_id), attempt__user=user).exists()
+    except (TypeError, ValueError):
+        return False
 
 
 @api_view(['POST'])
@@ -732,12 +863,7 @@ def speaking_ai_analyze(request):
     if not transcripts:
         return Response({'error': 'transcripts required'}, status=400)
 
-    def said(item):
-        # the attempt pages store "(no transcript)" when nothing was recognised
-        text = str(item.get('transcript') or '').strip() if isinstance(item, dict) else ''
-        return '' if text.lower() == '(no transcript)' else text
-
-    if not any(said(t) for t in transcripts):
+    if not any(_said(t) for t in transcripts):
         empty = {'band': 0, 'feedback': 'No speech was recorded, so this criterion could not be assessed.',
                  'strengths': [], 'errors': []}
         result = {
@@ -756,6 +882,14 @@ def speaking_ai_analyze(request):
                                                     'pronunciation', 'answer_corrections', 'good_phrases')})
         return Response(result)
 
+    # Scoring answers that were never submitted (the web's no-attempt fallback) is a speaking
+    # test the limit has not counted: refused while the user is locked. A saved response
+    # (counted when it was submitted) can always be scored.
+    if not _own_response(request.user, request.data.get('response_id')):
+        refused = speaking_limit.refuse_if_locked(request.user)
+        if refused is not None:
+            return refused
+
     api_key = getattr(settings, 'OPENAI_API_KEY', '')
     if not api_key or api_key == 'your-openai-api-key-here':
         return Response({'error': 'OpenAI API key is not configured'}, status=503)
@@ -764,7 +898,7 @@ def speaking_ai_analyze(request):
     transcript_text = ''
     for i, item in enumerate(transcripts, 1):
         q = item.get('question', f'Question {i}') if isinstance(item, dict) else f'Question {i}'
-        a = said(item)
+        a = _said(item)
         transcript_text += f'Q{i}: {q}\nA{i}: {a if a else "(no answer recorded)"}\n\n'
 
     system_msg = """You are an experienced, fair-minded IELTS Speaking examiner. You are having a good day and you score exactly what you hear — no more, no less.
@@ -1333,6 +1467,12 @@ def writing_ai_analyze(request):
 def ielts_start_attempt(request):
     test_id = request.data.get('test_id')
     test = get_object_or_404(IELTSTest, id=test_id) if test_id else None
+
+    if request.data.get('task_type') == 'speaking':
+        # a locked user is stopped before recording anything (hidden daily limit)
+        refused = speaking_limit.refuse_if_locked(request.user)
+        if refused is not None:
+            return refused
 
     existing = IELTSAttempt.objects.filter(
         user=request.user, test=test, status='IN_PROGRESS'

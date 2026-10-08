@@ -353,6 +353,41 @@ class SpeakingResponse(models.Model):
     ai_criteria = models.JSONField(default=dict, blank=True)
 
 
+class SpeakingUse(models.Model):
+    """
+    One counted IELTS or CEFR speaking test for the hidden daily limit (api/speaking_limit.py).
+    Written at the first successful submission of an IELTS attempt (legacy CEFR practice tasks run
+    on IELTS attempts too; a practice attempt counts once per task, `task_ref`) or of a CEFR
+    multilevel speaking response. `locked_until` is set on the use that reached the limit. There
+    is no foreign key to the attempt on purpose: deleting a result never gives the allowance
+    back. Deleting rows here (Django admin) lifts a lock.
+    """
+    class Kind(models.TextChoices):
+        IELTS = 'ielts', 'IELTS speaking attempt'
+        CEFR = 'cefr', 'CEFR speaking response'
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='speaking_uses')
+    kind = models.CharField(max_length=8, choices=Kind.choices)
+    ref_id = models.PositiveBigIntegerField(help_text='IELTSAttempt.id or CEFRSpeakingResponse.id')
+    task_ref = models.PositiveBigIntegerField(
+        null=True, blank=True,
+        help_text='SpeakingTask.id for an IELTS practice attempt (each task is its own test); '
+                  'empty for a full-test attempt and for CEFR')
+    used_at = models.DateTimeField()
+    locked_until = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-used_at']
+        indexes = [
+            models.Index(fields=['user', 'used_at'], name='speaking_use_user_time'),
+            models.Index(fields=['user', 'locked_until'], name='speaking_use_user_lock'),
+            models.Index(fields=['kind', 'ref_id'], name='speaking_use_ref'),
+        ]
+
+    def __str__(self):
+        return f'{self.user} · {self.kind} #{self.ref_id} · {self.used_at:%Y-%m-%d %H:%M}'
+
+
 class WritingResponse(models.Model):
     attempt = models.ForeignKey(IELTSAttempt, on_delete=models.CASCADE, related_name='writing_responses')
     task = models.ForeignKey(WritingTask, on_delete=models.CASCADE)
