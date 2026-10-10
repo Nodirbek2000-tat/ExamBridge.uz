@@ -616,6 +616,7 @@ def import_ielts_reading(request):
         "is_standalone": true,
         "difficulty": "MEDIUM",
         "is_premium": false,
+        "is_cambridge": false,
         "questions": [
             {"number": 1, "question_type": "TFNG", "content": "...", "correct_answer": "TRUE", "explanation": "..."},
             {"number": 2, "question_type": "MCQ", "content": "...", "correct_answer": "A",
@@ -629,6 +630,7 @@ def import_ielts_reading(request):
         "test_type": "FULL_MOCK",
         "difficulty": "MEDIUM",
         "is_premium": false,
+        "is_cambridge": false,
         "parts": [
             {
                 "passage_number": 1,
@@ -666,6 +668,7 @@ def import_ielts_reading(request):
                     test_type=data.get('test_type', 'FULL_MOCK'),
                     description=data.get('description', ''),
                     is_premium=data.get('is_premium', False),
+                    is_cambridge=bool(data.get('is_cambridge', False)),
                 )
                 created_passages = []
                 for part in parts_data:
@@ -679,6 +682,7 @@ def import_ielts_reading(request):
                         difficulty=data.get('difficulty', 'MEDIUM'),
                         is_standalone=False,
                         is_premium=data.get('is_premium', False),
+                        is_cambridge=bool(data.get('is_cambridge', False)),
                     )
                     for q_data in part.get('questions', []):
                         q = ReadingQuestion.objects.create(
@@ -714,6 +718,7 @@ def import_ielts_reading(request):
                 difficulty=data.get('difficulty', 'MEDIUM'),
                 is_standalone=data.get('is_standalone', True),
                 is_premium=data.get('is_premium', False),
+                is_cambridge=bool(data.get('is_cambridge', False)),
             )
             for q_data in data.get('questions', []):
                 q = ReadingQuestion.objects.create(
@@ -751,6 +756,7 @@ def import_ielts_listening(request):
         "is_standalone": true,
         "difficulty": "EASY",
         "is_premium": false,
+        "is_cambridge": false,
         "transcript": "Optional transcript text...",
         "questions": [
             {"number": 1, "question_type": "GAP", "content": "The caller's name is ___.", "correct_answer": "John Smith"},
@@ -765,6 +771,7 @@ def import_ielts_listening(request):
         "title": "IELTS Listening Mock Test 1",
         "difficulty": "MEDIUM",
         "is_premium": false,
+        "is_cambridge": false,
         "sections": [
             {
                 "section_number": 1,
@@ -802,6 +809,7 @@ def import_ielts_listening(request):
                     test_type='FULL_MOCK',
                     description=data.get('description', ''),
                     is_premium=data.get('is_premium', False),
+                    is_cambridge=bool(data.get('is_cambridge', False)),
                 )
                 created_sections = []
                 for sec in sections_data:
@@ -813,6 +821,7 @@ def import_ielts_listening(request):
                         difficulty=data.get('difficulty', 'MEDIUM'),
                         is_standalone=False,
                         is_premium=data.get('is_premium', False),
+                        is_cambridge=bool(data.get('is_cambridge', False)),
                     )
                     for q_data in sec.get('questions', []):
                         q = ListeningQuestion.objects.create(
@@ -849,6 +858,7 @@ def import_ielts_listening(request):
                 difficulty=data.get('difficulty', 'MEDIUM'),
                 is_standalone=data.get('is_standalone', True),
                 is_premium=data.get('is_premium', False),
+                is_cambridge=bool(data.get('is_cambridge', False)),
             )
             if audio_file:
                 section.audio_file = audio_file
@@ -1706,11 +1716,11 @@ def admin_ielts_reading_update(request, pk):
     from ielts.models import ReadingPassage
     from django.shortcuts import get_object_or_404
     p = get_object_or_404(ReadingPassage, id=pk)
-    for field in ['title', 'difficulty', 'is_premium', 'is_standalone', 'time_limit']:
+    for field in ['title', 'difficulty', 'is_premium', 'is_standalone', 'time_limit', 'is_cambridge']:
         if field in request.data:
             setattr(p, field, request.data[field])
     p.save()
-    return Response({'id': p.id, 'title': p.title, 'difficulty': p.difficulty, 'is_premium': p.is_premium})
+    return Response({'id': p.id, 'title': p.title, 'difficulty': p.difficulty, 'is_premium': p.is_premium, 'is_cambridge': p.is_cambridge})
 
 
 @api_view(['PATCH'])
@@ -1719,11 +1729,11 @@ def admin_ielts_listening_update(request, pk):
     from ielts.models import ListeningSection
     from django.shortcuts import get_object_or_404
     s = get_object_or_404(ListeningSection, id=pk)
-    for field in ['title', 'difficulty', 'is_premium', 'is_standalone', 'transcript']:
+    for field in ['title', 'difficulty', 'is_premium', 'is_standalone', 'transcript', 'is_cambridge']:
         if field in request.data:
             setattr(s, field, request.data[field])
     s.save()
-    return Response({'id': s.id, 'title': s.title, 'difficulty': s.difficulty, 'is_premium': s.is_premium})
+    return Response({'id': s.id, 'title': s.title, 'difficulty': s.difficulty, 'is_premium': s.is_premium, 'is_cambridge': s.is_cambridge})
 
 
 @api_view(['POST'])
@@ -1770,7 +1780,7 @@ def admin_ielts_reading_list(request):
     test_map = {}
     for t in IELTSTest.objects.prefetch_related('passages').all():
         for p in t.passages.all():
-            test_map[p.id] = {'test_id': t.id, 'test_title': t.title, 'test_is_premium': t.is_premium}
+            test_map[p.id] = {'test_id': t.id, 'test_title': t.title, 'test_is_premium': t.is_premium, 'test_is_cambridge': t.is_cambridge}
     return Response([{
         'id': p.id, 'title': p.title,
         'passage_number': p.passage_number,
@@ -1778,10 +1788,12 @@ def admin_ielts_reading_list(request):
         'difficulty': p.difficulty,
         'is_standalone': p.is_standalone,
         'is_premium': p.is_premium,
+        'is_cambridge': p.is_cambridge,
         'question_count': p.questions.count(),
         'test_id': test_map.get(p.id, {}).get('test_id'),
         'test_title': test_map.get(p.id, {}).get('test_title'),
         'test_is_premium': test_map.get(p.id, {}).get('test_is_premium', False),
+        'test_is_cambridge': test_map.get(p.id, {}).get('test_is_cambridge', False),
     } for p in items])
 
 
@@ -1813,19 +1825,21 @@ def admin_ielts_listening_list(request):
     for t in IELTSTest.objects.prefetch_related('listening_sections').all():
         for s in t.listening_sections.all():
             test_audio = t.audio_url or (t.audio_file.url if t.audio_file else None)
-            test_map[s.id] = {'test_id': t.id, 'test_title': t.title, 'test_audio_url': test_audio, 'test_is_premium': t.is_premium}
+            test_map[s.id] = {'test_id': t.id, 'test_title': t.title, 'test_audio_url': test_audio, 'test_is_premium': t.is_premium, 'test_is_cambridge': t.is_cambridge}
     return Response([{
         'id': s.id, 'title': s.title,
         'section_number': s.section_number,
         'difficulty': s.difficulty,
         'is_standalone': s.is_standalone,
         'is_premium': s.is_premium,
+        'is_cambridge': s.is_cambridge,
         'question_count': s.questions.count(),
         'audio_file': s.audio_file.url if s.audio_file else None,
         'test_id': test_map.get(s.id, {}).get('test_id'),
         'test_title': test_map.get(s.id, {}).get('test_title'),
         'test_audio_url': test_map.get(s.id, {}).get('test_audio_url'),
         'test_is_premium': test_map.get(s.id, {}).get('test_is_premium', False),
+        'test_is_cambridge': test_map.get(s.id, {}).get('test_is_cambridge', False),
     } for s in items])
 
 
@@ -2060,7 +2074,7 @@ def admin_ielts_tests_list(request):
     tests = IELTSTest.objects.all().order_by('-created_at')
     return Response([{
         'id': t.id, 'title': t.title, 'test_type': t.test_type,
-        'is_premium': t.is_premium, 'is_active': t.is_active,
+        'is_premium': t.is_premium, 'is_cambridge': t.is_cambridge, 'is_active': t.is_active,
         'created_at': str(t.created_at)[:10],
         'passage_count': t.passages.count(),
         'section_count': t.listening_sections.count(),
@@ -2070,16 +2084,26 @@ def admin_ielts_tests_list(request):
 @api_view(['PATCH'])
 @permission_classes([IsAdminUser])
 def admin_ielts_test_premium(request, pk):
-    """Toggle or set is_premium on an IELTSTest (mock test)."""
+    """Set is_premium and/or is_cambridge on an IELTSTest (mock test).
+
+    An empty body toggles is_premium (old behaviour). The Cambridge flag is
+    copied to the test's passages/sections so every list agrees with it.
+    """
     from ielts.models import IELTSTest
     from django.shortcuts import get_object_or_404
     test = get_object_or_404(IELTSTest, id=pk)
-    is_premium = request.data.get('is_premium')
-    if is_premium is None:
-        is_premium = not test.is_premium  # toggle
-    test.is_premium = bool(is_premium)
-    test.save(update_fields=['is_premium'])
-    return Response({'id': test.id, 'is_premium': test.is_premium})
+    fields = []
+    if 'is_cambridge' in request.data:
+        test.is_cambridge = bool(request.data['is_cambridge'])
+        fields.append('is_cambridge')
+        test.passages.update(is_cambridge=test.is_cambridge)
+        test.listening_sections.update(is_cambridge=test.is_cambridge)
+    if 'is_premium' in request.data or not fields:
+        is_premium = request.data.get('is_premium')
+        test.is_premium = (not test.is_premium) if is_premium is None else bool(is_premium)
+        fields.append('is_premium')
+    test.save(update_fields=fields)
+    return Response({'id': test.id, 'is_premium': test.is_premium, 'is_cambridge': test.is_cambridge})
 
 
 @api_view(['GET', 'DELETE'])

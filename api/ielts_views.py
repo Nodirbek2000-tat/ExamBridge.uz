@@ -171,6 +171,7 @@ def reading_passages(request):
         'time_limit': p.time_limit,
         'difficulty': p.difficulty,
         'is_premium': p.is_premium,
+        'is_cambridge': p.is_cambridge,
         'question_count': p.questions.count(),
         'attempted': p.id in practice_completed_ids,
     } for p in standalones]
@@ -198,6 +199,7 @@ def reading_passages(request):
             'test_type': test.test_type,
             'difficulty': passages.first().difficulty,
             'is_premium': test.is_premium,
+            'is_cambridge': test.is_cambridge,
             'part_count': passages.count(),
             'time_limit': passages.count() * 20,
             'total_questions': total_questions,
@@ -234,6 +236,7 @@ def reading_passage_detail(request, passage_id):
     return Response({
         'id': p.id,
         'title': p.title,
+        'passage_number': p.passage_number,
         'content': p.content,
         'image': p.image.url if p.image else None,
         'time_limit': p.time_limit,
@@ -374,6 +377,7 @@ def listening_sections(request):
         'audio_url': s.audio_url or (s.audio_file.url if s.audio_file else None),
         'difficulty': s.difficulty,
         'is_premium': s.is_premium,
+        'is_cambridge': s.is_cambridge,
         'question_count': s.questions.count(),
         'attempted': s.id in practice_completed_ids,
     } for s in standalones]
@@ -400,6 +404,7 @@ def listening_sections(request):
             'title': test.title,
             'test_type': test.test_type,
             'is_premium': test.is_premium,
+            'is_cambridge': test.is_cambridge,
             'section_count': sections.count(),
             'time_limit': 40,
             'total_questions': total_questions,

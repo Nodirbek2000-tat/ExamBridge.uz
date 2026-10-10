@@ -13,6 +13,7 @@ class IELTSTest(models.Model):
     test_type = models.CharField(max_length=20, choices=TestType.choices, default=TestType.ACADEMIC)
     description = models.TextField(blank=True)
     is_premium = models.BooleanField(default=False)
+    is_cambridge = models.BooleanField(default=False, help_text='Cambridge IELTS material (shown under the Cambridge filter)')
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     # Unified audio for full mock tests (all sections use this single audio track)
@@ -44,6 +45,7 @@ class ReadingPassage(models.Model):
     difficulty = models.CharField(max_length=10, choices=Difficulty.choices, default=Difficulty.MEDIUM)
     is_standalone = models.BooleanField(default=False, help_text='Practice passage (not part of full test)')
     is_premium = models.BooleanField(default=False)
+    is_cambridge = models.BooleanField(default=False, help_text='Cambridge IELTS material (shown under the Cambridge filter)')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -139,6 +141,7 @@ class ListeningSection(models.Model):
     difficulty = models.CharField(max_length=10, choices=Difficulty.choices, default=Difficulty.MEDIUM)
     is_standalone = models.BooleanField(default=False)
     is_premium = models.BooleanField(default=False)
+    is_cambridge = models.BooleanField(default=False, help_text='Cambridge IELTS material (shown under the Cambridge filter)')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

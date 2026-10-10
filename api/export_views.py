@@ -74,6 +74,7 @@ def export_ielts_reading(request, pk):
         'difficulty': p.difficulty,
         'is_standalone': p.is_standalone,
         'is_premium': p.is_premium,
+        'is_cambridge': p.is_cambridge,
         'questions': _questions(p.questions),
     }
     return Response({'filename': _filename(p.title, 'reading'), 'data': data})
@@ -98,6 +99,7 @@ def export_ielts_listening(request, pk):
         'difficulty': s.difficulty,
         'is_standalone': s.is_standalone,
         'is_premium': s.is_premium,
+        'is_cambridge': s.is_cambridge,
         'transcript': s.transcript or '',
         'questions': _questions(s.questions),
     }
@@ -128,6 +130,7 @@ def export_ielts_test(request, pk):
             'test_type': t.test_type,
             'description': t.description or '',
             'is_premium': t.is_premium,
+            'is_cambridge': t.is_cambridge,
             'difficulty': passages[0].difficulty if passages else 'MEDIUM',
             'parts': [{
                 'passage_number': p.passage_number,
@@ -142,6 +145,7 @@ def export_ielts_test(request, pk):
         'title': t.title,
         'description': t.description or '',
         'is_premium': t.is_premium,
+        'is_cambridge': t.is_cambridge,
         'difficulty': sections[0].difficulty if sections else 'MEDIUM',
         'sections': [{
             'section_number': s.section_number,
