@@ -29,6 +29,11 @@ _QT_ALIASES = {
     'HEADINGS': 'MATCH',
     'HEADING_MATCH': 'MATCH',
     'HEADINGS_MATCHING': 'MATCH',
+    # headings dragged into [[N]] slots inside the passage text
+    'MHEAD': 'MHEAD',
+    'HEADING_DRAG': 'MHEAD',
+    'HEADINGS_DRAG': 'MHEAD',
+    'DRAG_HEADINGS': 'MHEAD',
     'MATCHING_FEATURES': 'MFEAT',
     'M.FEAT': 'MFEAT',
     'MFEAT': 'MFEAT',
@@ -60,6 +65,34 @@ def _normalize_qt(qt):
 
 
 _GAP_MARKER_RE = re.compile(r'\[(\d+)\]')
+_HEADING_SLOT_RE = re.compile(r'^\s*\[\[(\d+)\]\]\s*$', re.M)
+
+
+def _check_heading_slots(content, questions, where):
+    """
+    IELTS MHEAD: each question's heading is dropped into a [[N]] line inside
+    the passage. A question without its slot cannot be answered, and a slot
+    without a question shows an empty box. Returns an error message or None.
+    """
+    numbers = set()
+    for q in questions:
+        if _normalize_qt(q.get('question_type', '')) == 'MHEAD':
+            try:
+                numbers.add(int(q.get('number')))
+            except (TypeError, ValueError):
+                return f"{where}: MHEAD savolida 'number' noto'g'ri — {q.get('number')!r}"
+    slots = {int(n) for n in _HEADING_SLOT_RE.findall(content or '')}
+    if not numbers and not slots:
+        return None
+    missing = sorted(numbers - slots)
+    extra = sorted(slots - numbers)
+    if missing:
+        return f"{where}: matnda {', '.join(f'[[{n}]]' for n in missing)} qatori yo'q, lekin shu raqamli MHEAD savol bor."
+    if extra:
+        return f"{where}: matnda {', '.join(f'[[{n}]]' for n in extra)} bor, lekin shu raqamli MHEAD savol yo'q."
+    if not any(q.get('choices') for q in questions if _normalize_qt(q.get('question_type', '')) == 'MHEAD'):
+        return f"{where}: MHEAD savollari uchun sarlavhalar ro'yxati (choices) berilmagan."
+    return None
 
 
 def _check_passage_gaps(content, questions, where):
@@ -661,6 +694,11 @@ def import_ielts_reading(request):
             parts_data = data['parts']
             if not parts_data:
                 return Response({'error': 'No parts provided.'}, status=400)
+            for idx, part in enumerate(parts_data, 1):
+                err = _check_heading_slots(part.get('content'), part.get('questions', []),
+                                           f"Part {part.get('passage_number', idx)}")
+                if err:
+                    return Response({'error': err}, status=400)
 
             with transaction.atomic():
                 test = IELTSTest.objects.create(
@@ -709,6 +747,9 @@ def import_ielts_reading(request):
             })
 
         # Single passage import (backward compatible)
+        err = _check_heading_slots(data.get('content'), data.get('questions', []), 'Passage')
+        if err:
+            return Response({'error': err}, status=400)
         with transaction.atomic():
             passage = ReadingPassage.objects.create(
                 title=data['title'],

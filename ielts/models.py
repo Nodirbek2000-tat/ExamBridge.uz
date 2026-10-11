@@ -62,6 +62,7 @@ class ReadingQuestion(models.Model):
         YES_NO_NG        = 'YNNG',  'Yes/No/Not Given'
         GAP_FILL         = 'GAP',   'Gap Filling'
         MATCHING         = 'MATCH', 'Matching Headings'
+        HEADINGS_DRAG    = 'MHEAD', 'Matching Headings (drag into passage)'
         MATCHING_INFO    = 'MINFO', 'Matching Information'
         MATCHING_FEAT    = 'MFEAT', 'Matching Features'
         MATCHING_END     = 'MEND',  'Matching Sentence Endings'
