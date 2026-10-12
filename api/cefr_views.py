@@ -354,6 +354,8 @@ def cefr_reading_list(request):
             'level': test.level,
             'item_type': 'full_mock',
             'part_count': len(passages),
+            # a one-part "mock" is listed under that Part, not under Full Mock
+            'part_numbers': sorted(p.passage_number for p in passages),
             'question_count': sum(p.questions.count() for p in passages),
             'time_limit': test.time_limit,
             'is_premium': test.is_premium,
@@ -532,7 +534,8 @@ def cefr_listening_list(request):
     # Full mocks: one card per CEFRTest (LISTENING) that has parts linked
     mock_qs = (CEFRTest.objects.filter(test_type='LISTENING', is_active=True)
                .annotate(part_count=Count('listening_sections', distinct=True),
-                         q_count=Count('listening_sections__questions')))
+                         q_count=Count('listening_sections__questions'))
+               .prefetch_related('listening_sections'))
     if level:
         mock_qs = mock_qs.filter(level=level)
     for test in mock_qs:
@@ -544,6 +547,7 @@ def cefr_listening_list(request):
             'level': test.level,
             'item_type': 'full_mock',
             'part_count': test.part_count,
+            'part_numbers': sorted(s.section_number for s in test.listening_sections.all()),
             'question_count': test.q_count,
             'time_limit': test.time_limit,
             'is_premium': test.is_premium,

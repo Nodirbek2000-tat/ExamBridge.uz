@@ -65,6 +65,44 @@ def _normalize_qt(qt):
 
 
 _GAP_MARKER_RE = re.compile(r'\[(\d+)\]')
+
+# CEFR multilevel: reading has Parts 1-5, listening Parts 1-6
+CEFR_PART_MAX = {'reading': 5, 'listening': 6}
+
+
+def _cefr_part_number(value, kind, where):
+    """Part number (1..5 reading, 1..6 listening) or an error message."""
+    top = CEFR_PART_MAX[kind]
+    try:
+        n = int(value)
+    except (TypeError, ValueError):
+        return None, f"{where}: part raqami noto'g'ri — {value!r} (1–{top} bo'lishi kerak)"
+    if not 1 <= n <= top:
+        return None, f"{where}: part raqami {n} — CEFR {kind} da faqat 1–{top} part bor"
+    return n, None
+
+
+def _cefr_part_numbers(items, key, kind, top_level=None):
+    """
+    Part numbers for the entries of a "parts"/"sections" import. Each entry should
+    carry its own passage_number/section_number; a one-entry list may take it from
+    the top level. Numbers must be 1..max and unique, since the learner's list
+    files each item under Full Mock or Part N by them. Returns (numbers, error).
+    """
+    numbers = []
+    for idx, item in enumerate(items, start=1):
+        raw = item.get(key)
+        if raw in (None, '') and len(items) == 1 and top_level not in (None, ''):
+            raw = top_level
+        if raw in (None, ''):
+            raw = idx
+        n, err = _cefr_part_number(raw, kind, f"{idx}-element")
+        if err:
+            return None, err
+        if n in numbers:
+            return None, f"Part {n} ikki marta berilgan — har partda {key} boshqacha bo'lishi kerak"
+        numbers.append(n)
+    return numbers, None
 _HEADING_SLOT_RE = re.compile(r'^\s*\[\[(\d+)\]\]\s*$', re.M)
 
 
@@ -1131,6 +1169,9 @@ def import_cefr_test(request):
                 parts_data = data['parts']
                 if not parts_data:
                     return Response({'error': 'No parts provided.'}, status=400)
+                part_numbers, err = _cefr_part_numbers(parts_data, 'passage_number', 'reading', data.get('passage_number'))
+                if err:
+                    return Response({'error': err}, status=400)
                 # Validate every part before creating anything
                 for idx, part in enumerate(parts_data, start=1):
                     err = _check_passage_gaps(
@@ -1162,7 +1203,7 @@ def import_cefr_test(request):
                             test=mock_test,
                             title=part.get('title', data.get('title', '')),
                             content=part.get('content', ''),
-                            passage_number=part.get('passage_number', idx),
+                            passage_number=part_numbers[idx - 1],
                             is_standalone=False,
                             level=data.get('level', ''),
                             time_limit=part.get('time_limit', data.get('time_limit', 20)),
@@ -1198,6 +1239,9 @@ def import_cefr_test(request):
             if standalone is None:
                 standalone = data.get('is_standalone', True)
 
+            pnum, err = _cefr_part_number(pnum, 'reading', 'Matn')
+            if err:
+                return Response({'error': err}, status=400)
             err = _check_passage_gaps(content, data.get('questions', []), 'Matn')
             if err:
                 return Response({'error': err}, status=400)
@@ -1244,6 +1288,9 @@ def import_cefr_test(request):
                 sections_data = data['sections']
                 if not sections_data:
                     return Response({'error': 'No sections provided.'}, status=400)
+                section_numbers, err = _cefr_part_numbers(sections_data, 'section_number', 'listening', data.get('section_number'))
+                if err:
+                    return Response({'error': err}, status=400)
                 # Check every part first — one bad part rejects the whole mock
                 for sec in sections_data:
                     where = f"Part {sec.get('section_number', '?')}"
@@ -1264,11 +1311,11 @@ def import_cefr_test(request):
                         is_active=True,
                         audio_url=data.get('audio_url', '') or '',  # one recording for all parts
                     )
-                    for sec in sections_data:
+                    for sec, section_no in zip(sections_data, section_numbers):
                         section = CEFRListeningSection(
                             test=mock_test,
                             title=sec.get('title', data.get('title', '')),
-                            section_number=sec.get('section_number', 1),
+                            section_number=section_no,
                             audio_url=sec.get('audio_url', ''),
                             transcript=sec.get('transcript', ''),
                             is_standalone=sec.get('is_standalone', False),
@@ -1308,6 +1355,9 @@ def import_cefr_test(request):
             if standalone is None:
                 standalone = data.get('is_standalone', True)
 
+            section_num, err = _cefr_part_number(section_num, 'listening', 'Section')
+            if err:
+                return Response({'error': err}, status=400)
             qs = data.get('questions', [])
             shared_options = data.get('options') or section_data.get('options') or []
             where = f'Part {section_num}'
