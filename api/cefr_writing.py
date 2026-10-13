@@ -67,6 +67,8 @@ CRITERIA = (
     ('grammar', 'Grammar'),
 )
 DEFAULT_TIME = {'FULL': 60, 'PART1': 25, 'PART2': 35}
+# a Part 1 test may hold one letter only
+SINGLE_TASK_TIME = {'task11': 10, 'task12': 20}
 
 
 def level_for(score):
@@ -436,16 +438,25 @@ def _parse_test(item, n):
                 raise ValueError(f'{where}: "{k}" matn (string) bo\'lishi kerak.')
             fields[FIELD_ALIASES[k]] = v.strip()
     has1 = bool(fields['task11']) or bool(fields['task12'])
-    if has1 and not (fields['task11'] and fields['task12']):
-        raise ValueError(f'{where}: Part 1 uchun "task_1_1" va "task_1_2" ikkalasi ham kerak.')
     if not has1 and not fields['task2']:
-        raise ValueError(f'{where}: hech bo\'lmasa Part 1 ("task_1_1" + "task_1_2") yoki "part_2" bo\'lishi kerak.')
-    kind = 'FULL' if has1 and fields['task2'] else 'PART1' if has1 else 'PART2'
+        raise ValueError(f'{where}: hech bo\'lmasa bitta task kerak: "task_1_1", "task_1_2" yoki "part_2".')
+    # FULL = the whole paper (both letters + essay); anything less is a part test,
+    # including a single letter (Task 1.1 or 1.2 on its own)
+    full = bool(fields['task11'] and fields['task12'] and fields['task2'])
+    if full:
+        kind = 'FULL'
+    elif has1 and fields['task2']:
+        raise ValueError(f'{where}: Part 2 bilan birga ikkala xat ham bo\'lsin ("task_1_1" + "task_1_2") '
+                         f'yoki ularni alohida test qilib yozing.')
+    else:
+        kind = 'PART1' if has1 else 'PART2'
     situation = str(item.get('situation') or '').strip()
     if has1 and not situation:
         raise ValueError(f'{where}: Part 1 uchun "situation" (umumiy vaziyat matni) kerak.')
+    one_letter = [f for f in ('task11', 'task12') if fields[f]] if kind == 'PART1' else []
+    default_time = SINGLE_TASK_TIME[one_letter[0]] if len(one_letter) == 1 else DEFAULT_TIME[kind]
     try:
-        time_limit = int(item.get('time_limit') or DEFAULT_TIME[kind])
+        time_limit = int(item.get('time_limit') or default_time)
     except (TypeError, ValueError):
         raise ValueError(f'{where}: "time_limit" daqiqada son bo\'lishi kerak.')
     if not 5 <= time_limit <= 180:
