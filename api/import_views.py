@@ -1685,6 +1685,8 @@ def admin_user_detail(request, user_id):
         return Response({'error': 'Not found'}, status=404)
 
     if request.method == 'DELETE':
+        if user.is_superuser and not request.user.is_superuser:
+            return Response({'error': 'Cannot delete the owner account.'}, status=403)
         user.delete()
         return Response({'deleted': True})
 
@@ -1744,6 +1746,9 @@ def admin_user_detail(request, user_id):
         'last_name': user.last_name,
         'is_premium': user.is_premium,
         'is_staff': user.is_staff,
+        'is_superuser': user.is_superuser,
+        'admin_level': user.admin_level,
+        'admin_tier': user.admin_tier,
         'premium_until': user.premium_until.isoformat() if user.premium_until else None,
         'premium_source': user.premium_source,
         'premium_forever': bool(user.is_premium and user.premium_until is None),

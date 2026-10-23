@@ -211,6 +211,25 @@ class TierAccessTest(TestCase):
         self.assertFalse(self.l3.is_staff)
         self.assertIsNone(self.l3.admin_tier)
 
+    def test_user_detail_shows_saved_level(self):
+        # The panel's level picker reads these fields from the detail view.
+        self.as_(self.owner)
+        self.client.post(
+            f'/api/admin/users/{self.victim.id}/admin-level/',
+            data={'level': 2}, content_type='application/json', **HEADERS
+        )
+        res = self.client.get(f'/api/admin/users/{self.victim.id}/', **HEADERS)
+        self.assertEqual(res.status_code, 200, res.content)
+        self.assertEqual(res.json()['admin_level'], 2)
+        self.assertEqual(res.json()['admin_tier'], 2)
+        self.assertFalse(res.json()['is_superuser'])
+
+    def test_level1_cannot_delete_owner(self):
+        self.as_(self.l1)
+        res = self.client.delete(f'/api/admin/users/{self.owner.id}/', **HEADERS)
+        self.assertEqual(res.status_code, 403)
+        self.assertTrue(User.objects.filter(id=self.owner.id).exists())
+
 
 class DjangoAdminTest(TestCase):
     """Django admin is the owner's alone."""
