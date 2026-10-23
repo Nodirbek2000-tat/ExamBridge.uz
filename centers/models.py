@@ -120,6 +120,30 @@ class GroupMembership(models.Model):
         return f"{self.student.email} in {self.group.name}"
 
 
+class Lesson(models.Model):
+    """One teacher's lesson: a topic and the tasks that go with it.
+
+    A lesson goes to a whole group or to one student; every test in it is an
+    `Assignment` (``lesson.tasks``) so completion works per task.
+    """
+    center = models.ForeignKey(LearningCenter, on_delete=models.CASCADE, related_name='lessons')
+    teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='center_lessons')
+    group = models.ForeignKey('Group', on_delete=models.CASCADE, null=True, blank=True, related_name='lessons')
+    student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True,
+                                related_name='personal_lessons')
+    topic = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    date = models.DateField(default=timezone.localdate, help_text='The day this lesson is for')
+    deadline = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date', '-created_at']
+
+    def __str__(self):
+        return f'{self.date} · {self.topic}'
+
+
 class Assignment(models.Model):
     """Task assigned by teacher/director to student or group."""
     SAT_MOCK = 'sat_mock'
@@ -168,6 +192,7 @@ class Assignment(models.Model):
         null=True, blank=True,
         related_name='assignments'
     )
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, null=True, blank=True, related_name='tasks')
     task_type = models.CharField(max_length=30, choices=TASK_TYPE_CHOICES)
     task_title = models.CharField(max_length=200)
     task_ref_id = models.IntegerField(null=True, blank=True)

@@ -32,6 +32,7 @@ class CenterTestBase(TestCase):
         cache.clear()
         self.center = LearningCenter.objects.create(name='Test center')
         self.director = self.member('dir@t.uz', 'director')
+        self.admin = self.member('adm@t.uz', 'admin')
         self.teacher = self.member('t1@t.uz', 'teacher')
         self.other_teacher = self.member('t2@t.uz', 'teacher')
         self.student = self.member('s1@t.uz', 'student')
@@ -82,25 +83,44 @@ class AssignTest(CenterTestBase):
                           student_id=self.other_student.id)
         self.assertEqual(res.status_code, 403)
 
-    def test_director_assigns_anyone(self):
-        res = self.assign(self.director, 'ielts_writing', self.task.id, 'task',
-                          student_id=self.other_student.id)
-        self.assertEqual(res.status_code, 201, res.content)
+    def test_director_and_admin_do_not_give_tasks(self):
+        for who in (self.director, self.admin):
+            res = self.assign(who, 'ielts_writing', self.task.id, 'task', group_id=self.group.id)
+            self.assertEqual(res.status_code, 403)
 
     def test_unknown_type_refused(self):
-        res = self.assign(self.director, 'hack', 1, 'task', group_id=self.group.id)
+        res = self.assign(self.teacher, 'hack', 1, 'task', group_id=self.group.id)
         self.assertEqual(res.status_code, 400)
 
-    def test_teacher_cannot_add_to_other_group(self):
-        self.client.force_login(self.teacher)
-        res = self.client.post(self.url(f'groups/{self.other_group.id}/students/'),
-                               data={'student_id': self.student.id},
+    def test_only_admin_changes_group_members(self):
+        for who in (self.teacher, self.director):
+            self.client.force_login(who)
+            res = self.client.post(self.url(f'groups/{self.group.id}/students/'),
+                                   data={'student_id': self.other_student.id},
+                                   content_type='application/json', **HEADERS)
+            self.assertEqual(res.status_code, 403)
+            res = self.client.delete(self.url(f'groups/{self.group.id}/students/{self.student.id}/remove/'),
+                                     **HEADERS)
+            self.assertEqual(res.status_code, 403)
+        self.client.force_login(self.admin)
+        res = self.client.post(self.url(f'groups/{self.group.id}/students/'),
+                               data={'student_id': self.other_student.id},
                                content_type='application/json', **HEADERS)
-        self.assertEqual(res.status_code, 403)
+        self.assertEqual(res.status_code, 200)
+
+    def test_member_roles(self):
+        cases = ((self.teacher, 'student', 403), (self.director, 'student', 403),
+                 (self.director, 'teacher', 201), (self.admin, 'student', 201), (self.admin, 'admin', 403))
+        for i, (who, role, code) in enumerate(cases):
+            self.client.force_login(who)
+            res = self.client.post(self.url('members/add/'), data={
+                'email': f'new{i}@t.uz', 'password': 'Strong-pass-1', 'role': role,
+            }, content_type='application/json', **HEADERS)
+            self.assertEqual(res.status_code, code, (who.email, role))
 
     def test_new_group_member_gets_open_tasks(self):
         self.assign(self.teacher, 'ielts_writing', self.task.id, 'task', group_id=self.group.id)
-        self.client.force_login(self.teacher)
+        self.client.force_login(self.admin)
         newcomer = self.member('s3@t.uz', 'student')
         res = self.client.post(self.url(f'groups/{self.group.id}/students/'),
                                data={'student_id': newcomer.id},
@@ -205,13 +225,15 @@ class MonitoringTest(CenterTestBase):
         self.assertEqual(res.status_code, 200, res.content)
         data = res.json()
         self.assertEqual([s['email'] for s in data['students']], ['s1@t.uz'])
-        self.assertEqual(data['teachers'], [])
+        self.assertNotIn('teachers', data)
 
     def test_director_sees_center(self):
         data = self.monitoring(self.director).json()
         self.assertEqual(data['kpis']['students'], 2)
-        self.assertEqual(data['kpis']['total'], 2)
+        self.assertEqual(data['kpis']['tasks'], 2)
         self.assertEqual(len(data['teachers']), 2)
+        self.assertEqual(len(data['daily']), 14)
+        self.assertEqual(data['to_fix']['students_without_group'], [])
 
     def test_student_is_refused(self):
         self.assertEqual(self.monitoring(self.student).status_code, 403)
@@ -221,3 +243,67 @@ class MonitoringTest(CenterTestBase):
         staff.is_staff = True
         staff.save()
         self.assertEqual(self.monitoring(staff).status_code, 200)
+
+
+class LessonTest(CenterTestBase):
+    def setUp(self):
+        super().setUp()
+        self.wt = WritingTask.objects.create(title='Essay', task_type=2, prompt='Write')
+        self.cw = CEFRWritingTest.objects.create(title='Letter', kind='FULL', task11='a', task12='b', task2='c')
+
+    def give(self, who, group=None, **extra):
+        self.client.force_login(who)
+        return self.client.post(self.url('lessons/'), data={
+            'topic': 'Past tenses', 'group_id': (group or self.group).id, 'tasks': [
+                {'task_type': 'ielts_writing', 'task_ref_id': self.wt.id, 'task_ref_kind': 'task',
+                 'task_title': 'Essay'},
+                {'task_type': 'cefr_writing', 'task_ref_id': self.cw.id, 'task_ref_kind': 'test',
+                 'task_title': 'Letter'},
+            ], **extra,
+        }, content_type='application/json', **HEADERS)
+
+    def test_teacher_gives_lesson_with_several_tasks(self):
+        res = self.give(self.teacher)
+        self.assertEqual(res.status_code, 201, res.content)
+        tasks = self.my_tasks(self.student)
+        self.assertEqual(len(tasks), 2)
+        self.assertEqual({t['lesson']['topic'] for t in tasks}, {'Past tenses'})
+
+    def test_only_teachers_give_lessons(self):
+        for who in (self.director, self.admin):
+            self.assertEqual(self.give(who).status_code, 403)
+        self.assertEqual(self.give(self.teacher, group=self.other_group).status_code, 403)
+
+    def test_only_owner_deletes(self):
+        lesson_id = self.give(self.teacher).json()['id']
+        for who in (self.other_teacher, self.director, self.admin):
+            self.client.force_login(who)
+            self.assertEqual(self.client.delete(self.url(f'lessons/{lesson_id}/'), **HEADERS).status_code, 403)
+        self.client.force_login(self.teacher)
+        task_id = Assignment.objects.filter(lesson_id=lesson_id).first().id
+        self.assertEqual(self.client.delete(self.url(f'assignments/{task_id}/'), **HEADERS).status_code, 200)
+        self.assertEqual(len(self.my_tasks(self.student)), 1)
+        self.client.force_login(self.teacher)
+        self.assertEqual(self.client.delete(self.url(f'lessons/{lesson_id}/'), **HEADERS).status_code, 200)
+        self.assertEqual(self.my_tasks(self.student), [])
+
+    def test_journal_and_progress(self):
+        self.give(self.teacher)
+        CEFRWritingResponse.objects.create(user=self.student, test=self.cw, status='READY', score=50,
+                                           level='B2', submitted_at=timezone.now())
+        cache.clear()
+        self.client.force_login(self.teacher)
+        res = self.client.get(self.url(f'groups/{self.group.id}/journal/'), **HEADERS)
+        self.assertEqual(res.status_code, 200, res.content)
+        row = res.json()['students'][0]
+        self.assertEqual(row['done'], 1)
+        self.assertEqual(list(row['cells'].values()), ['partial'])
+        self.assertFalse(res.json()['can_manage_members'])
+
+        self.client.force_login(self.other_teacher)
+        self.assertEqual(self.client.get(self.url(f'groups/{self.group.id}/journal/'), **HEADERS).status_code, 403)
+
+        self.client.force_login(self.student)
+        res = self.client.get('/api/centers/my-progress/', **HEADERS)
+        self.assertEqual(res.status_code, 200, res.content)
+        self.assertEqual(res.json()['lessons']['partial'], 1)

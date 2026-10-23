@@ -40,6 +40,17 @@ def has_role(user, center, *roles):
     return center_role(user, center) in roles or bool(getattr(user, 'can_write_admin', False))
 
 
+def can_manage_roles(user, center):
+    """Which member roles this user may add or remove.
+
+    The director hires admins and teachers; the admin runs the day-to-day:
+    teachers, students and groups. Teachers only teach.
+    """
+    if getattr(user, 'can_write_admin', False):
+        return ('director', 'admin', 'teacher', 'student')
+    return {'director': ('admin', 'teacher'), 'admin': ('teacher', 'student')}.get(center_role(user, center), ())
+
+
 def teacher_student_ids(teacher, center):
     """Students in the groups this teacher teaches."""
     return set(GroupMembership.objects.filter(
@@ -279,17 +290,14 @@ def center_member_add(request, center_id):
     except LearningCenter.DoesNotExist:
         return Response({'error': 'Not found'}, status=404)
 
-    my_role = center_role(request.user, center)
-    if not has_role(request.user, center, 'director', 'admin', 'teacher'):
+    if not can_manage_roles(request.user, center):
         return Response({'error': 'Forbidden'}, status=403)
 
     d = request.data
     target_role = d.get('role', 'student')
 
-    if my_role == 'teacher' and target_role != 'student':
-        return Response({'error': 'Teachers can only add students'}, status=403)
-    if my_role == 'admin' and target_role not in ('teacher', 'student'):
-        return Response({'error': 'Admins can add teachers and students only'}, status=403)
+    if target_role not in can_manage_roles(request.user, center):
+        return Response({'error': f'You cannot add a {target_role}'}, status=403)
 
     email = d.get('email', '').strip()
     password = d.get('password', '').strip()
@@ -340,7 +348,7 @@ def center_member_remove(request, center_id, user_id):
     except (LearningCenter.DoesNotExist, CenterMembership.DoesNotExist):
         return Response({'error': 'Not found'}, status=404)
 
-    if not has_role(request.user, center, 'director', 'admin'):
+    if m.role not in can_manage_roles(request.user, center):
         return Response({'error': 'Forbidden'}, status=403)
 
     m.is_active = False
@@ -378,6 +386,8 @@ def center_groups(request, center_id):
             })
         return Response(result)
 
+    if not has_role(request.user, center, 'admin'):
+        return Response({'error': 'Only the admin creates groups'}, status=403)
     name = request.data.get('name', '').strip()
     if not name:
         return Response({'error': 'Group name required'}, status=400)
@@ -395,17 +405,34 @@ def center_groups(request, center_id):
     return Response({'id': group.id, 'name': group.name, 'student_count': 0, 'students': []}, status=201)
 
 
-@api_view(['DELETE'])
+@api_view(['PATCH', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def group_delete(request, center_id, group_id):
+    """Admin: rename a group / change its teacher (PATCH) or delete it."""
     try:
         center = LearningCenter.objects.get(id=center_id)
         group = Group.objects.get(id=group_id, center=center)
     except (LearningCenter.DoesNotExist, Group.DoesNotExist):
         return Response({'error': 'Not found'}, status=404)
 
-    if not has_role(request.user, center, 'director', 'admin'):
-        return Response({'error': 'Forbidden'}, status=403)
+    if not has_role(request.user, center, 'admin'):
+        return Response({'error': 'Only the admin manages groups'}, status=403)
+
+    if request.method == 'PATCH':
+        d = request.data
+        if 'name' in d and d['name'].strip():
+            group.name = d['name'].strip()
+        if 'teacher_id' in d:
+            if d['teacher_id']:
+                tm = CenterMembership.objects.filter(center=center, user_id=d['teacher_id'],
+                                                     role='teacher', is_active=True).first()
+                if not tm:
+                    return Response({'error': 'Teacher not found'}, status=400)
+                group.teacher = tm.user
+            else:
+                group.teacher = None
+        group.save()
+        return Response({'id': group.id, 'name': group.name, 'teacher_id': group.teacher_id})
 
     group.delete()
     return Response({'deleted': True})
@@ -420,10 +447,8 @@ def group_add_student(request, center_id, group_id):
     except (LearningCenter.DoesNotExist, Group.DoesNotExist):
         return Response({'error': 'Not found'}, status=404)
 
-    if not has_role(request.user, center, 'director', 'admin', 'teacher'):
-        return Response({'error': 'Forbidden'}, status=403)
-    if center_role(request.user, center) == 'teacher' and group.teacher_id != request.user.id:
-        return Response({'error': 'You can only change your own groups'}, status=403)
+    if not has_role(request.user, center, 'admin'):
+        return Response({'error': 'Only the admin adds or removes students'}, status=403)
 
     student_id = request.data.get('student_id')
     if not student_id:
@@ -452,10 +477,8 @@ def group_remove_student(request, center_id, group_id, student_id):
     except (LearningCenter.DoesNotExist, Group.DoesNotExist):
         return Response({'error': 'Not found'}, status=404)
 
-    if not has_role(request.user, center, 'director', 'admin', 'teacher'):
-        return Response({'error': 'Forbidden'}, status=403)
-    if center_role(request.user, center) == 'teacher' and group.teacher_id != request.user.id:
-        return Response({'error': 'You can only change your own groups'}, status=403)
+    if not has_role(request.user, center, 'admin'):
+        return Response({'error': 'Only the admin adds or removes students'}, status=403)
 
     GroupMembership.objects.filter(group=group, student_id=student_id).delete()
     return Response({'removed': True})
@@ -501,7 +524,9 @@ def center_assignments(request, center_id):
             })
         return Response(result)
 
-    # POST
+    # POST — only teachers give tasks (plus ExamBridge support)
+    if my_role != 'teacher' and not getattr(request.user, 'can_write_admin', False):
+        return Response({'error': 'Only teachers give tasks'}, status=403)
     d = request.data
     task_type = d.get('task_type')
     task_title = d.get('task_title', '').strip()
@@ -572,7 +597,7 @@ def center_assignments(request, center_id):
     return Response({'id': assignment.id, 'task_title': assignment.task_title}, status=201)
 
 
-@api_view(['GET'])
+@api_view(['GET', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def assignment_detail(request, center_id, assignment_id):
     try:
@@ -580,6 +605,15 @@ def assignment_detail(request, center_id, assignment_id):
         assignment = Assignment.objects.get(id=assignment_id, center=center)
     except (LearningCenter.DoesNotExist, Assignment.DoesNotExist):
         return Response({'error': 'Not found'}, status=404)
+
+    if request.method == 'DELETE':
+        if assignment.assigned_by_id != request.user.id and not getattr(request.user, 'can_write_admin', False):
+            return Response({'error': 'Only the teacher who gave it can delete it'}, status=403)
+        lesson = assignment.lesson
+        assignment.delete()
+        if lesson and not lesson.tasks.exists():
+            lesson.delete()
+        return Response({'deleted': True})
 
     if not has_role(request.user, center, 'director', 'admin', 'teacher'):
         return Response({'error': 'Forbidden'}, status=403)
@@ -620,7 +654,8 @@ def my_assignments(request):
     """All assignments for logged-in student."""
     mine = AssignmentSubmission.objects.filter(student=request.user)
     sync_submissions(mine)
-    subs = mine.select_related('assignment', 'assignment__center', 'assignment__assigned_by').order_by('assignment__deadline')
+    subs = mine.select_related('assignment', 'assignment__center', 'assignment__assigned_by',
+                               'assignment__lesson').order_by('assignment__deadline')
 
     now = timezone.now()
     result = []
@@ -645,6 +680,13 @@ def my_assignments(request):
             'center': {'id': a.center.id, 'name': a.center.name},
             'submitted_at': sub.submitted_at.isoformat() if sub.submitted_at else None,
             'attempt_ref_id': sub.attempt_ref_id,
+            'is_late': bool(sub.status == 'completed' and a.deadline and sub.submitted_at
+                            and sub.submitted_at > a.deadline),
+            'created_at': a.created_at.isoformat(),
+            'lesson': {
+                'id': a.lesson_id, 'topic': a.lesson.topic, 'description': a.lesson.description,
+                'date': a.lesson.date.isoformat(),
+            } if a.lesson_id else None,
         })
     return Response(result)
 
@@ -1154,173 +1196,4 @@ def member_profile(request, center_id, user_id):
         **user_to_dict(user, membership.role),
         'password': membership.member_password,
         'joined_at': membership.joined_at.isoformat(),
-    })
-
-
-# ── Monitoring (director / admin / teacher / platform staff) ──────────────────
-
-def _name(u):
-    return f"{u.first_name} {u.last_name}".strip() or u.email
-
-
-def _rate(done, total):
-    return round(done / total * 100) if total else None
-
-
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def center_monitoring(request, center_id):
-    """One-screen overview of how students are doing on their tasks.
-
-    Director, admin and platform staff see the whole center (plus a row per
-    teacher); a teacher sees only the students in the groups they teach.
-    """
-    from datetime import timedelta
-    try:
-        center = LearningCenter.objects.get(id=center_id)
-    except LearningCenter.DoesNotExist:
-        return Response({'error': 'Not found'}, status=404)
-
-    my_role = center_role(request.user, center)
-    if my_role not in ('director', 'admin', 'teacher') and not request.user.is_staff:
-        return Response({'error': 'Forbidden'}, status=403)
-    is_teacher = my_role == 'teacher'
-
-    sync_center(center)
-    now = timezone.now()
-    week_ago = now - timedelta(days=7)
-
-    groups = center.groups.select_related('teacher')
-    if is_teacher:
-        groups = groups.filter(teacher=request.user)
-    groups = list(groups)
-
-    student_groups = {}     # student id -> names of their groups (for display)
-    group_students = {}     # group id -> student ids
-    for gm in GroupMembership.objects.filter(group__in=groups).select_related('group'):
-        student_groups.setdefault(gm.student_id, []).append(gm.group.name)
-        group_students.setdefault(gm.group_id, set()).add(gm.student_id)
-
-    if is_teacher:
-        student_ids = set(student_groups)
-    else:
-        student_ids = set(center.memberships.filter(
-            role='student', is_active=True).values_list('user_id', flat=True))
-    students = list(User.objects.filter(id__in=student_ids))
-
-    subs = list(AssignmentSubmission.objects.filter(
-        assignment__center=center, student_id__in=student_ids,
-    ).select_related('assignment', 'assignment__assigned_by'))
-    if is_teacher:
-        subs = [s for s in subs if s.assignment.assigned_by_id == request.user.id
-                or s.assignment.group_id in {g.id for g in groups}]
-
-    per_student = {}
-    for s in subs:
-        per_student.setdefault(s.student_id, []).append(s)
-
-    def counts(items):
-        done = sum(1 for s in items if s.status == 'completed')
-        overdue = sum(1 for s in items if s.status == 'overdue')
-        return done, overdue, len(items)
-
-    student_rows = []
-    for u in students:
-        items = per_student.get(u.id, [])
-        done, overdue, total = counts(items)
-        finished = [s for s in items if s.status == 'completed' and s.submitted_at]
-        last = max(finished, key=lambda s: s.submitted_at, default=None)
-        seen = max([d for d in (u.last_login, last.submitted_at if last else None) if d], default=None)
-        student_rows.append({
-            'id': u.id,
-            'name': _name(u),
-            'email': u.email,
-            'groups': student_groups.get(u.id, []),
-            'done': done, 'overdue': overdue, 'total': total,
-            'pending': total - done - overdue,
-            'rate': _rate(done, total),
-            'last_seen': seen.isoformat() if seen else None,
-            'inactive': not seen or seen < week_ago,
-            'last_result': {
-                'title': last.assignment.task_title,
-                'type': last.assignment.task_type,
-                'detail': last.score_detail,
-                'at': last.submitted_at.isoformat(),
-            } if last else None,
-            'tasks': [
-                {
-                    'title': s.assignment.task_title,
-                    'type': s.assignment.task_type,
-                    'status': s.status,
-                    'detail': s.score_detail,
-                    'deadline': s.assignment.deadline.isoformat() if s.assignment.deadline else None,
-                    'at': s.submitted_at.isoformat() if s.submitted_at else None,
-                }
-                for s in sorted(items, key=lambda s: s.assignment.created_at, reverse=True)[:10]
-            ],
-        })
-    student_rows.sort(key=lambda r: (-r['overdue'], r['rate'] if r['rate'] is not None else 101, r['name']))
-
-    group_rows = []
-    for g in groups:
-        members = group_students.get(g.id, set())
-        items = [s for s in subs if s.student_id in members]
-        done, overdue, total = counts(items)
-        group_rows.append({
-            'id': g.id, 'name': g.name,
-            'teacher': _name(g.teacher) if g.teacher else None,
-            'students': len(members), 'done': done, 'overdue': overdue, 'total': total,
-            'rate': _rate(done, total),
-        })
-
-    teacher_rows = []
-    if not is_teacher:
-        for m in center.memberships.filter(role='teacher', is_active=True).select_related('user'):
-            t = m.user
-            items = [s for s in subs if s.assignment.assigned_by_id == t.id]
-            done, overdue, total = counts(items)
-            t_groups = [g for g in groups if g.teacher_id == t.id]
-            teacher_rows.append({
-                'id': t.id, 'name': _name(t),
-                'groups': len(t_groups),
-                'students': len(set().union(*(group_students.get(g.id, set()) for g in t_groups))),
-                'tasks': len({s.assignment_id for s in items}),
-                'done': done, 'overdue': overdue, 'total': total,
-                'rate': _rate(done, total),
-                'last_seen': t.last_login.isoformat() if t.last_login else None,
-            })
-        teacher_rows.sort(key=lambda r: r['name'])
-
-    recent = sorted((s for s in subs if s.status == 'completed' and s.submitted_at),
-                    key=lambda s: s.submitted_at, reverse=True)[:12]
-    names = {u.id: _name(u) for u in students}
-    done, overdue, total = counts(subs)
-
-    return Response({
-        'center': {'id': center.id, 'name': center.name},
-        'my_role': my_role or ('staff' if request.user.is_staff else None),
-        'kpis': {
-            'students': len(students),
-            'active_7d': sum(1 for r in student_rows if not r['inactive']),
-            'tasks': len({s.assignment_id for s in subs}),
-            'done': done, 'overdue': overdue, 'total': total,
-            'pending': total - done - overdue,
-            'rate': _rate(done, total),
-            'results_7d': sum(1 for s in subs if s.status == 'completed'
-                              and s.submitted_at and s.submitted_at >= week_ago),
-        },
-        'teachers': teacher_rows,
-        'groups': group_rows,
-        'students': student_rows,
-        'recent_results': [
-            {
-                'student': names.get(s.student_id, ''),
-                'student_id': s.student_id,
-                'title': s.assignment.task_title,
-                'type': s.assignment.task_type,
-                'detail': s.score_detail,
-                'at': s.submitted_at.isoformat(),
-            }
-            for s in recent
-        ],
     })

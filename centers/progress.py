@@ -35,8 +35,9 @@ TASK_KINDS = {
 }
 
 
-def _found(attempt_id, score=None, detail='', scored=True):
-    return {'attempt_id': attempt_id, 'score': score, 'detail': detail, 'scored': scored}
+def _found(attempt_id, score=None, detail='', scored=True, at=None):
+    # `at` = when the student finished, so a late finish shows as late.
+    return {'attempt_id': attempt_id, 'score': score, 'detail': detail, 'scored': scored, 'at': at}
 
 
 def _band(value):
@@ -54,9 +55,10 @@ def _sat_mock(user, ref, kind, since):
         return None
     result = getattr(a, 'result', None)
     if result is None:
-        return _found(a.id)
+        return _found(a.id, at=a.finished_at)
     return _found(a.id, result.total_score,
-                  f'{result.total_score} (R&W {result.english_score} · Math {result.math_score})')
+                  f'{result.total_score} (R&W {result.english_score} · Math {result.math_score})',
+                  at=a.finished_at)
 
 
 def _sat_section(section_type):
@@ -70,7 +72,8 @@ def _sat_section(section_type):
             return None
         total = a.answers.count()
         correct = a.answers.filter(is_correct=True).count()
-        return _found(a.id, round(correct / total * 100) if total else None, f'{correct}/{total} correct')
+        return _found(a.id, round(correct / total * 100) if total else None, f'{correct}/{total} correct',
+                      at=a.finished_at)
     return resolve
 
 
@@ -93,7 +96,7 @@ def _ielts_reading(user, ref, kind, since):
     if not a:
         return None
     band = _band(a.reading_band)
-    return _found(a.id, band, f'Band {band}')
+    return _found(a.id, band, f'Band {band}', at=a.finished_at)
 
 
 def _ielts_listening(user, ref, kind, since):
@@ -111,7 +114,7 @@ def _ielts_listening(user, ref, kind, since):
     if not a:
         return None
     band = _band(a.listening_band)
-    return _found(a.id, band, f'Band {band}')
+    return _found(a.id, band, f'Band {band}', at=a.finished_at)
 
 
 def _ielts_writing(user, ref, kind, since):
@@ -122,9 +125,9 @@ def _ielts_writing(user, ref, kind, since):
     if not r:
         return None
     if r.ai_band is None:
-        return _found(r.attempt_id, None, 'Being scored', scored=False)
+        return _found(r.attempt_id, None, 'Being scored', scored=False, at=r.created_at)
     band = _band(r.ai_band)
-    return _found(r.attempt_id, band, f'Band {band}')
+    return _found(r.attempt_id, band, f'Band {band}', at=r.created_at)
 
 
 def _ielts_speaking(user, ref, kind, since):
@@ -135,9 +138,9 @@ def _ielts_speaking(user, ref, kind, since):
     if not r:
         return None
     if r.ai_band is None:
-        return _found(r.attempt_id, None, 'Being scored', scored=False)
+        return _found(r.attempt_id, None, 'Being scored', scored=False, at=r.created_at)
     band = _band(r.ai_band)
-    return _found(r.attempt_id, band, f'Band {band}')
+    return _found(r.attempt_id, band, f'Band {band}', at=r.created_at)
 
 
 # ── CEFR ─────────────────────────────────────────────────────────────────────
@@ -155,7 +158,7 @@ def _cefr_attempt(field_for_kind):
         if a.level_achieved:
             detail += f' · {a.level_achieved}'
         score = round(a.score_percent) if a.score_percent is not None else None
-        return _found(a.id, score, detail)
+        return _found(a.id, score, detail, at=a.finished_at)
     return resolve
 
 
@@ -170,9 +173,9 @@ def _cefr_scored_response(model_name):
         if not r:
             return None
         if r.status != 'READY' or r.score is None:
-            return _found(r.id, None, 'Being scored', scored=False)
+            return _found(r.id, None, 'Being scored', scored=False, at=r.submitted_at)
         level = f' · {r.level}' if r.level and r.level != 'BELOW' else ''
-        return _found(r.id, r.score, f'{r.score}/75{level}')
+        return _found(r.id, r.score, f'{r.score}/75{level}', at=r.submitted_at)
     return resolve
 
 
@@ -234,7 +237,7 @@ def sync_submissions(qs):
         sub.score = found['score']
         sub.score_detail = found['detail']
         if newly_done:
-            sub.submitted_at = timezone.now()
+            sub.submitted_at = found['at'] or timezone.now()
         sub.save(update_fields=['status', 'attempt_ref_id', 'score', 'score_detail', 'submitted_at'])
         changed += 1
 

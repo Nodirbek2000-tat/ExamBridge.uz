@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import insights, lessons, views
 
 urlpatterns = [
     # ── Super Admin ──────────────────────────────────────────────────────────
@@ -12,7 +12,7 @@ urlpatterns = [
 
     # ── Center dashboard ──────────────────────────────────────────────────────
     path('<int:center_id>/dashboard/', views.center_dashboard),
-    path('<int:center_id>/monitoring/', views.center_monitoring),
+    path('<int:center_id>/monitoring/', insights.center_monitoring),
 
     # ── Members ───────────────────────────────────────────────────────────────
     path('<int:center_id>/members/', views.center_members_list),
@@ -27,6 +27,7 @@ urlpatterns = [
     # ── Groups ────────────────────────────────────────────────────────────────
     path('<int:center_id>/groups/', views.center_groups),
     path('<int:center_id>/groups/<int:group_id>/delete/', views.group_delete),
+    path('<int:center_id>/groups/<int:group_id>/journal/', insights.group_journal),
     path('<int:center_id>/groups/<int:group_id>/students/', views.group_add_student),
     path('<int:center_id>/groups/<int:group_id>/students/<int:student_id>/remove/', views.group_remove_student),
 
@@ -37,8 +38,13 @@ urlpatterns = [
     # ── Available tasks (for assignment creation) ─────────────────────────────
     path('<int:center_id>/available-tasks/', views.available_tasks),
 
+    # ── Lessons (a topic + several tasks) ─────────────────────────────────────
+    path('<int:center_id>/lessons/', lessons.lessons),
+    path('<int:center_id>/lessons/<int:lesson_id>/', lessons.lesson_detail),
+
     # ── Student: my assignments ───────────────────────────────────────────────
     path('my-assignments/', views.my_assignments),
+    path('my-progress/', insights.my_progress),
     path('submissions/<int:submission_id>/submit/', views.submit_assignment),
 
     # ── Notifications ─────────────────────────────────────────────────────────
