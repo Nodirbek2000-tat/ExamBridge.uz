@@ -132,6 +132,8 @@ class Assignment(models.Model):
     CEFR_TEST = 'cefr_test'
     CEFR_READING = 'cefr_reading'
     CEFR_LISTENING = 'cefr_listening'
+    CEFR_WRITING = 'cefr_writing'
+    CEFR_SPEAKING = 'cefr_speaking'
 
     TASK_TYPE_CHOICES = [
         (SAT_MOCK, 'SAT Full Mock'),
@@ -144,6 +146,8 @@ class Assignment(models.Model):
         (CEFR_TEST, 'CEFR Full Test'),
         (CEFR_READING, 'CEFR Reading'),
         (CEFR_LISTENING, 'CEFR Listening'),
+        (CEFR_WRITING, 'CEFR Writing'),
+        (CEFR_SPEAKING, 'CEFR Speaking'),
     ]
 
     center = models.ForeignKey(LearningCenter, on_delete=models.CASCADE, related_name='assignments')

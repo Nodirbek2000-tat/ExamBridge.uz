@@ -2,6 +2,8 @@
 Learning Center API Views.
 Role-based access: superadmin > director > admin > teacher > student
 """
+import logging
+
 from django.utils import timezone
 from django.db import transaction
 from django.db.models import Q
@@ -16,8 +18,10 @@ from .models import (
     LearningCenter, CenterMembership, Group, GroupMembership,
     Assignment, AssignmentSubmission, CenterNotification
 )
+from .progress import TASK_KINDS, sync_submissions, overdue_cutoff
 
 User = get_user_model()
+logger = logging.getLogger(__name__)
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -31,7 +35,28 @@ def center_role(user, center):
 
 
 def has_role(user, center, *roles):
-    return center_role(user, center) in roles or user.is_staff
+    # ExamBridge admins may act in any center, but only the owner and
+    # level-1 admins; levels 2 and 3 only watch (center_monitoring).
+    return center_role(user, center) in roles or bool(getattr(user, 'can_write_admin', False))
+
+
+def teacher_student_ids(teacher, center):
+    """Students in the groups this teacher teaches."""
+    return set(GroupMembership.objects.filter(
+        group__center=center, group__teacher=teacher
+    ).values_list('student_id', flat=True))
+
+
+def sync_center(center):
+    """Bring a center's open submissions up to date, at most once a minute."""
+    from django.core.cache import cache
+    key = f'centers:sync:{center.id}'
+    if cache.get(key):
+        return
+    cache.set(key, 1, 60)
+    subs = AssignmentSubmission.objects.filter(assignment__center=center)
+    overdue_cutoff(subs)
+    sync_submissions(subs)
 
 
 def user_to_dict(user, role=None):
@@ -397,6 +422,8 @@ def group_add_student(request, center_id, group_id):
 
     if not has_role(request.user, center, 'director', 'admin', 'teacher'):
         return Response({'error': 'Forbidden'}, status=403)
+    if center_role(request.user, center) == 'teacher' and group.teacher_id != request.user.id:
+        return Response({'error': 'You can only change your own groups'}, status=403)
 
     student_id = request.data.get('student_id')
     if not student_id:
@@ -407,7 +434,12 @@ def group_add_student(request, center_id, group_id):
     except CenterMembership.DoesNotExist:
         return Response({'error': 'Student not in center'}, status=400)
 
-    GroupMembership.objects.get_or_create(group=group, student=sm.user)
+    _, joined = GroupMembership.objects.get_or_create(group=group, student=sm.user)
+    if joined:
+        # A new member gets the group's tasks that are still open.
+        now = timezone.now()
+        for a in group.assignments.filter(Q(deadline__isnull=True) | Q(deadline__gt=now)):
+            AssignmentSubmission.objects.get_or_create(assignment=a, student=sm.user)
     return Response({'added': True})
 
 
@@ -422,6 +454,8 @@ def group_remove_student(request, center_id, group_id, student_id):
 
     if not has_role(request.user, center, 'director', 'admin', 'teacher'):
         return Response({'error': 'Forbidden'}, status=403)
+    if center_role(request.user, center) == 'teacher' and group.teacher_id != request.user.id:
+        return Response({'error': 'You can only change your own groups'}, status=403)
 
     GroupMembership.objects.filter(group=group, student_id=student_id).delete()
     return Response({'removed': True})
@@ -442,6 +476,7 @@ def center_assignments(request, center_id):
         return Response({'error': 'Forbidden'}, status=403)
 
     if request.method == 'GET':
+        sync_center(center)
         qs = center.assignments.select_related('assigned_by', 'student', 'group')
         if my_role == 'teacher':
             qs = qs.filter(assigned_by=request.user)
@@ -472,11 +507,23 @@ def center_assignments(request, center_id):
     task_title = d.get('task_title', '').strip()
     if not task_type or not task_title:
         return Response({'error': 'task_type and task_title required'}, status=400)
+    if task_type not in TASK_KINDS:
+        return Response({'error': 'Unknown task type'}, status=400)
+    task_ref_kind = d.get('task_ref_kind', '') or ''
+    if d.get('task_ref_id') and task_ref_kind not in TASK_KINDS[task_type]:
+        return Response({'error': 'Unknown test kind'}, status=400)
 
     student_id = d.get('student_id')
     group_id = d.get('group_id')
     if not student_id and not group_id:
         return Response({'error': 'student_id or group_id required'}, status=400)
+
+    # Teachers assign only to their own groups and the students in them.
+    if my_role == 'teacher':
+        if group_id and not center.groups.filter(id=group_id, teacher=request.user).exists():
+            return Response({'error': 'You can only assign to your own groups'}, status=403)
+        if student_id and str(student_id) not in {str(i) for i in teacher_student_ids(request.user, center)}:
+            return Response({'error': 'You can only assign to your own students'}, status=403)
 
     deadline_raw = parse_datetime(d['deadline']) if d.get('deadline') else None
     if deadline_raw and timezone.is_naive(deadline_raw):
@@ -491,7 +538,7 @@ def center_assignments(request, center_id):
             task_type=task_type,
             task_title=task_title,
             task_ref_id=d.get('task_ref_id'),
-            task_ref_kind=d.get('task_ref_kind', '') or '',
+            task_ref_kind=task_ref_kind,
             description=d.get('description', ''),
             deadline=deadline,
         )
@@ -536,7 +583,10 @@ def assignment_detail(request, center_id, assignment_id):
 
     if not has_role(request.user, center, 'director', 'admin', 'teacher'):
         return Response({'error': 'Forbidden'}, status=403)
+    if center_role(request.user, center) == 'teacher' and assignment.assigned_by_id != request.user.id:
+        return Response({'error': 'Forbidden'}, status=403)
 
+    sync_center(center)
     subs = assignment.submissions.select_related('student').all()
     return Response({
         'id': assignment.id,
@@ -568,9 +618,9 @@ def assignment_detail(request, center_id, assignment_id):
 @permission_classes([IsAuthenticated])
 def my_assignments(request):
     """All assignments for logged-in student."""
-    subs = AssignmentSubmission.objects.filter(
-        student=request.user
-    ).select_related('assignment', 'assignment__center', 'assignment__assigned_by').order_by('assignment__deadline')
+    mine = AssignmentSubmission.objects.filter(student=request.user)
+    sync_submissions(mine)
+    subs = mine.select_related('assignment', 'assignment__center', 'assignment__assigned_by').order_by('assignment__deadline')
 
     now = timezone.now()
     result = []
@@ -594,6 +644,7 @@ def my_assignments(request):
             'assigned_by': user_to_dict(a.assigned_by),
             'center': {'id': a.center.id, 'name': a.center.name},
             'submitted_at': sub.submitted_at.isoformat() if sub.submitted_at else None,
+            'attempt_ref_id': sub.attempt_ref_id,
         })
     return Response(result)
 
@@ -609,69 +660,23 @@ def submit_assignment(request, submission_id):
     if sub.status == 'completed':
         return Response({'error': 'Already submitted'}, status=400)
 
-    d = request.data
-    sub.status = 'completed'
-    sub.attempt_ref_id = d.get('attempt_ref_id')
-    sub.score = d.get('score')
-    sub.score_detail = d.get('score_detail', '')
-    sub.result_data = d.get('result_data')
-    sub.submitted_at = timezone.now()
-    sub.save()
-
-    a = sub.assignment
-    notify(
-        a.assigned_by, a.center, 'submission',
-        f"{request.user.get_full_name() or request.user.email} completed: {a.task_title}",
-        f"Score: {sub.score_detail or sub.score or 'N/A'}",
-        assignment=a, submission=sub,
-    )
-    return Response({'submitted': True, 'status': sub.status})
+    # The score always comes from the exam result itself, never from the
+    # client: this only re-checks whether the assigned test is done.
+    sync_submissions(AssignmentSubmission.objects.filter(id=sub.id))
+    sub.refresh_from_db()
+    return Response({'submitted': sub.status == 'completed', 'status': sub.status})
 
 
-def auto_complete_assignments(user, task_type, task_ref_id, *, score=None,
-                              score_detail='', result_data=None, attempt_ref_id=None):
-    """Automatically mark a student's matching assignment(s) complete.
+def auto_complete_assignments(user, task_type, task_ref_id=None, **_ignored):
+    """Complete the student's open tasks of this type whose test is done.
 
-    Called from the exam-submission flow (e.g. IELTS reading submit) when a
-    student finishes the EXACT test they were assigned. Matches by
-    (student, task_type, task_ref_id) on any still-open submission so the
-    student never has to press a manual "Done" button.
-
-    Returns the number of submissions completed.
+    Called right after an exam is submitted so the task flips without
+    waiting for the next page load. The result itself is looked up in the
+    exam tables (centers/progress.py), so a mock only completes once every
+    part is answered.
     """
-    if task_ref_id is None:
-        return 0
-    try:
-        subs = AssignmentSubmission.objects.filter(
-            student=user,
-            assignment__task_type=task_type,
-            assignment__task_ref_id=task_ref_id,
-            status__in=['pending', 'overdue'],
-        ).select_related('assignment', 'assignment__center', 'assignment__assigned_by')
-    except Exception:
-        return 0
-
-    count = 0
-    for sub in subs:
-        sub.status = 'completed'
-        sub.score = score
-        sub.score_detail = score_detail or ''
-        sub.result_data = result_data
-        sub.attempt_ref_id = attempt_ref_id
-        sub.submitted_at = timezone.now()
-        sub.save()
-        a = sub.assignment
-        try:
-            notify(
-                a.assigned_by, a.center, 'submission',
-                f"{user.get_full_name() or user.email} completed: {a.task_title}",
-                f"Score: {score_detail or score or 'N/A'}",
-                assignment=a, submission=sub,
-            )
-        except Exception:
-            pass
-        count += 1
-    return count
+    return sync_submissions(AssignmentSubmission.objects.filter(
+        student=user, assignment__task_type=task_type))
 
 
 # ── Notifications ─────────────────────────────────────────────────────────────
@@ -835,50 +840,88 @@ def available_tasks(request, center_id):
         return Response({'error': 'Forbidden'}, status=403)
 
     task_type = request.query_params.get('type', 'sat_mock')
-    results = []
-
     try:
-        if task_type in ('sat_mock', 'sat_english', 'sat_math'):
-            from tests_app.models import Test
-            tests = Test.objects.filter(is_active=True).order_by('-year', '-month')
-            results = [{'id': t.id, 'title': f"SAT {t.year}/{t.month} — Form {t.form}"} for t in tests]
-
-        elif task_type == 'ielts_reading':
-            # Full mock reading tests (IELTSTest with passages attached)
-            from ielts.models import IELTSTest, ReadingPassage
-            mock_tests = IELTSTest.objects.filter(
-                is_active=True, passages__isnull=False
-            ).distinct().order_by('title')
-            results = [{'id': t.id, 'title': t.title, 'kind': 'mock'} for t in mock_tests]
-            # Standalone practice passages
-            standalones = ReadingPassage.objects.filter(is_standalone=True).order_by('passage_number')
-            results += [{'id': p.id, 'title': p.title, 'kind': 'passage'} for p in standalones]
-
-        elif task_type == 'ielts_listening':
-            from ielts.models import IELTSTest, ListeningSection
-            mock_tests = IELTSTest.objects.filter(
-                is_active=True, listening_sections__isnull=False
-            ).distinct().order_by('title')
-            results = [{'id': t.id, 'title': t.title, 'kind': 'mock'} for t in mock_tests]
-            standalones = ListeningSection.objects.filter(is_standalone=True).order_by('section_number')
-            results += [{'id': s.id, 'title': s.title, 'kind': 'section'} for s in standalones]
-
-        elif task_type == 'cefr_test':
-            from cefr.models import CEFRTest
-            results = [{'id': t.id, 'title': t.title} for t in CEFRTest.objects.filter(is_active=True).order_by('title')]
-
-        elif task_type == 'cefr_reading':
-            from cefr.models import CEFRReadingPassage
-            results = [{'id': p.id, 'title': p.title} for p in CEFRReadingPassage.objects.all().order_by('title')]
-
-        elif task_type == 'cefr_listening':
-            from cefr.models import CEFRListeningSection
-            results = [{'id': s.id, 'title': s.title} for s in CEFRListeningSection.objects.all().order_by('title')]
-
-    except Exception as e:
+        results = _available(task_type)
+    except Exception:
+        logger.exception('available_tasks failed for %s', task_type)
         results = []
-
     return Response(results)
+
+
+def _available(task_type):
+    """Tests a teacher can assign, in the same lists students pick from.
+
+    `kind` tells the student's Start button which runner to open; `meta` is a
+    short hint shown under the title (part, level, task number).
+    """
+    if task_type in ('sat_mock', 'sat_english', 'sat_math'):
+        from tests_app.models import Test
+        return [{'id': t.id, 'title': f"SAT {t.year}/{t.month} — Form {t.form}", 'kind': 'test'}
+                for t in Test.objects.filter(is_active=True).order_by('-year', '-month')]
+
+    if task_type == 'ielts_reading':
+        from ielts.models import IELTSTest, ReadingPassage
+        mocks = IELTSTest.objects.filter(is_active=True, passages__isnull=False).distinct().order_by('title')
+        parts = ReadingPassage.objects.filter(is_standalone=True).order_by('passage_number', 'title')
+        return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': 'Full mock'} for t in mocks] +
+                [{'id': p.id, 'title': p.title, 'kind': 'passage', 'meta': f'Passage {p.passage_number}'}
+                 for p in parts])
+
+    if task_type == 'ielts_listening':
+        from ielts.models import IELTSTest, ListeningSection
+        mocks = IELTSTest.objects.filter(is_active=True, listening_sections__isnull=False).distinct().order_by('title')
+        parts = ListeningSection.objects.filter(is_standalone=True).order_by('section_number', 'title')
+        return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': 'Full mock'} for t in mocks] +
+                [{'id': x.id, 'title': x.title, 'kind': 'section', 'meta': f'Part {x.section_number}'}
+                 for x in parts])
+
+    if task_type == 'ielts_writing':
+        from ielts.models import WritingTask
+        return [{'id': t.id, 'title': t.title, 'kind': 'task',
+                 'meta': f'Task {t.task_type} · {t.get_test_type_display()}'}
+                for t in WritingTask.objects.all().order_by('task_type', 'title')]
+
+    if task_type == 'ielts_speaking':
+        from ielts.models import SpeakingTask
+        return [{'id': t.id, 'title': t.title, 'kind': 'task',
+                 'meta': 'Full mock' if t.test_type == 'MOCK' else f'Part {t.part}'}
+                for t in SpeakingTask.objects.filter(source='IELTS').order_by('part', 'title')]
+
+    if task_type == 'cefr_reading':
+        from cefr.models import CEFRTest, CEFRReadingPassage
+        mocks = CEFRTest.objects.filter(test_type='READING', is_active=True,
+                                        reading_passages__isnull=False).distinct().order_by('title')
+        parts = CEFRReadingPassage.objects.filter(test__isnull=True).order_by('passage_number', 'title')
+        return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': f'Full mock · {t.level}'} for t in mocks] +
+                [{'id': p.id, 'title': p.title, 'kind': 'passage', 'meta': f'Part {p.passage_number}'}
+                 for p in parts])
+
+    if task_type == 'cefr_listening':
+        from cefr.models import CEFRTest, CEFRListeningSection
+        mocks = CEFRTest.objects.filter(test_type='LISTENING', is_active=True,
+                                        listening_sections__isnull=False).distinct().order_by('title')
+        parts = CEFRListeningSection.objects.filter(test__isnull=True).order_by('title')
+        return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': f'Full mock · {t.level}'} for t in mocks] +
+                [{'id': x.id, 'title': x.title, 'kind': 'section', 'meta': 'Part'} for x in parts])
+
+    if task_type == 'cefr_writing':
+        from cefr.models import CEFRWritingTest
+        return [{'id': t.id, 'title': t.title, 'kind': 'test', 'meta': t.get_kind_display()}
+                for t in CEFRWritingTest.objects.filter(is_active=True).order_by('title')]
+
+    if task_type == 'cefr_speaking':
+        from cefr.models import CEFRSpeakingTest
+        from ielts.models import SpeakingTask
+        from api.cefr_speaking import is_ready, parts_of
+        tests = [t for t in CEFRSpeakingTest.objects.filter(is_active=True).order_by('title')
+                 if is_ready(t) and parts_of(t)]
+        return ([{'id': t.id, 'title': t.title, 'kind': 'test',
+                  'meta': 'Full test' if len(parts_of(t)) >= 4 else 'Parts ' + ', '.join(parts_of(t))}
+                 for t in tests] +
+                [{'id': t.id, 'title': t.title, 'kind': 'task', 'meta': f'Practice · Part {t.part}'}
+                 for t in SpeakingTask.objects.filter(source='CEFR').order_by('part', 'title')])
+
+    return []
 
 
 # ── Analytics: Teacher & Group detail (director/admin only) ───────────────────
@@ -1111,4 +1154,173 @@ def member_profile(request, center_id, user_id):
         **user_to_dict(user, membership.role),
         'password': membership.member_password,
         'joined_at': membership.joined_at.isoformat(),
+    })
+
+
+# ── Monitoring (director / admin / teacher / platform staff) ──────────────────
+
+def _name(u):
+    return f"{u.first_name} {u.last_name}".strip() or u.email
+
+
+def _rate(done, total):
+    return round(done / total * 100) if total else None
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def center_monitoring(request, center_id):
+    """One-screen overview of how students are doing on their tasks.
+
+    Director, admin and platform staff see the whole center (plus a row per
+    teacher); a teacher sees only the students in the groups they teach.
+    """
+    from datetime import timedelta
+    try:
+        center = LearningCenter.objects.get(id=center_id)
+    except LearningCenter.DoesNotExist:
+        return Response({'error': 'Not found'}, status=404)
+
+    my_role = center_role(request.user, center)
+    if my_role not in ('director', 'admin', 'teacher') and not request.user.is_staff:
+        return Response({'error': 'Forbidden'}, status=403)
+    is_teacher = my_role == 'teacher'
+
+    sync_center(center)
+    now = timezone.now()
+    week_ago = now - timedelta(days=7)
+
+    groups = center.groups.select_related('teacher')
+    if is_teacher:
+        groups = groups.filter(teacher=request.user)
+    groups = list(groups)
+
+    student_groups = {}     # student id -> names of their groups (for display)
+    group_students = {}     # group id -> student ids
+    for gm in GroupMembership.objects.filter(group__in=groups).select_related('group'):
+        student_groups.setdefault(gm.student_id, []).append(gm.group.name)
+        group_students.setdefault(gm.group_id, set()).add(gm.student_id)
+
+    if is_teacher:
+        student_ids = set(student_groups)
+    else:
+        student_ids = set(center.memberships.filter(
+            role='student', is_active=True).values_list('user_id', flat=True))
+    students = list(User.objects.filter(id__in=student_ids))
+
+    subs = list(AssignmentSubmission.objects.filter(
+        assignment__center=center, student_id__in=student_ids,
+    ).select_related('assignment', 'assignment__assigned_by'))
+    if is_teacher:
+        subs = [s for s in subs if s.assignment.assigned_by_id == request.user.id
+                or s.assignment.group_id in {g.id for g in groups}]
+
+    per_student = {}
+    for s in subs:
+        per_student.setdefault(s.student_id, []).append(s)
+
+    def counts(items):
+        done = sum(1 for s in items if s.status == 'completed')
+        overdue = sum(1 for s in items if s.status == 'overdue')
+        return done, overdue, len(items)
+
+    student_rows = []
+    for u in students:
+        items = per_student.get(u.id, [])
+        done, overdue, total = counts(items)
+        finished = [s for s in items if s.status == 'completed' and s.submitted_at]
+        last = max(finished, key=lambda s: s.submitted_at, default=None)
+        seen = max([d for d in (u.last_login, last.submitted_at if last else None) if d], default=None)
+        student_rows.append({
+            'id': u.id,
+            'name': _name(u),
+            'email': u.email,
+            'groups': student_groups.get(u.id, []),
+            'done': done, 'overdue': overdue, 'total': total,
+            'pending': total - done - overdue,
+            'rate': _rate(done, total),
+            'last_seen': seen.isoformat() if seen else None,
+            'inactive': not seen or seen < week_ago,
+            'last_result': {
+                'title': last.assignment.task_title,
+                'type': last.assignment.task_type,
+                'detail': last.score_detail,
+                'at': last.submitted_at.isoformat(),
+            } if last else None,
+            'tasks': [
+                {
+                    'title': s.assignment.task_title,
+                    'type': s.assignment.task_type,
+                    'status': s.status,
+                    'detail': s.score_detail,
+                    'deadline': s.assignment.deadline.isoformat() if s.assignment.deadline else None,
+                    'at': s.submitted_at.isoformat() if s.submitted_at else None,
+                }
+                for s in sorted(items, key=lambda s: s.assignment.created_at, reverse=True)[:10]
+            ],
+        })
+    student_rows.sort(key=lambda r: (-r['overdue'], r['rate'] if r['rate'] is not None else 101, r['name']))
+
+    group_rows = []
+    for g in groups:
+        members = group_students.get(g.id, set())
+        items = [s for s in subs if s.student_id in members]
+        done, overdue, total = counts(items)
+        group_rows.append({
+            'id': g.id, 'name': g.name,
+            'teacher': _name(g.teacher) if g.teacher else None,
+            'students': len(members), 'done': done, 'overdue': overdue, 'total': total,
+            'rate': _rate(done, total),
+        })
+
+    teacher_rows = []
+    if not is_teacher:
+        for m in center.memberships.filter(role='teacher', is_active=True).select_related('user'):
+            t = m.user
+            items = [s for s in subs if s.assignment.assigned_by_id == t.id]
+            done, overdue, total = counts(items)
+            t_groups = [g for g in groups if g.teacher_id == t.id]
+            teacher_rows.append({
+                'id': t.id, 'name': _name(t),
+                'groups': len(t_groups),
+                'students': len(set().union(*(group_students.get(g.id, set()) for g in t_groups))),
+                'tasks': len({s.assignment_id for s in items}),
+                'done': done, 'overdue': overdue, 'total': total,
+                'rate': _rate(done, total),
+                'last_seen': t.last_login.isoformat() if t.last_login else None,
+            })
+        teacher_rows.sort(key=lambda r: r['name'])
+
+    recent = sorted((s for s in subs if s.status == 'completed' and s.submitted_at),
+                    key=lambda s: s.submitted_at, reverse=True)[:12]
+    names = {u.id: _name(u) for u in students}
+    done, overdue, total = counts(subs)
+
+    return Response({
+        'center': {'id': center.id, 'name': center.name},
+        'my_role': my_role or ('staff' if request.user.is_staff else None),
+        'kpis': {
+            'students': len(students),
+            'active_7d': sum(1 for r in student_rows if not r['inactive']),
+            'tasks': len({s.assignment_id for s in subs}),
+            'done': done, 'overdue': overdue, 'total': total,
+            'pending': total - done - overdue,
+            'rate': _rate(done, total),
+            'results_7d': sum(1 for s in subs if s.status == 'completed'
+                              and s.submitted_at and s.submitted_at >= week_ago),
+        },
+        'teachers': teacher_rows,
+        'groups': group_rows,
+        'students': student_rows,
+        'recent_results': [
+            {
+                'student': names.get(s.student_id, ''),
+                'student_id': s.student_id,
+                'title': s.assignment.task_title,
+                'type': s.assignment.task_type,
+                'detail': s.score_detail,
+                'at': s.submitted_at.isoformat(),
+            }
+            for s in recent
+        ],
     })

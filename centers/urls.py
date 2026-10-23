@@ -12,6 +12,7 @@ urlpatterns = [
 
     # ── Center dashboard ──────────────────────────────────────────────────────
     path('<int:center_id>/dashboard/', views.center_dashboard),
+    path('<int:center_id>/monitoring/', views.center_monitoring),
 
     # ── Members ───────────────────────────────────────────────────────────────
     path('<int:center_id>/members/', views.center_members_list),
