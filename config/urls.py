@@ -4,6 +4,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve as static_serve
 
+# Django admin belongs to the owner alone. Level 1-3 admins work in the React
+# panel only — is_staff is what opens that panel, and Django's default check is
+# exactly is_staff, so it has to be narrowed here.
+admin.site.has_permission = lambda request: bool(
+    request.user.is_active and request.user.is_superuser
+)
+
 # ── API imports ──────────────────────────────────────────────────────────────
 from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
 from api.sat_analytics import sat_analytics
@@ -52,7 +59,8 @@ from api.import_views import (
     admin_sat_question_detail,
     import_ielts_reading, import_ielts_listening, import_ielts_speaking, import_ielts_writing,
     import_cefr_test,
-    admin_user_list, admin_toggle_premium, admin_toggle_staff, admin_user_detail, admin_set_user_exam_date,
+    admin_user_list, admin_toggle_premium, admin_toggle_staff, admin_set_admin_level,
+    admin_user_detail, admin_set_user_exam_date,
     admin_sat_tests, admin_sat_test_update, admin_sat_questions,
     admin_ielts_content,
     admin_ielts_reading_list, admin_ielts_reading_delete, admin_ielts_reading_update,
@@ -273,6 +281,7 @@ urlpatterns = [
     path('api/admin/users/', admin_user_list),
     path('api/admin/users/<int:user_id>/toggle-premium/', admin_toggle_premium),
     path('api/admin/users/<int:user_id>/toggle-staff/', admin_toggle_staff),
+    path('api/admin/users/<int:user_id>/admin-level/', admin_set_admin_level),
     path('api/admin/leaderboard/', admin_leaderboard),
     path('api/admin/users/<int:user_id>/exam-date/', admin_set_user_exam_date),
     path('api/admin/users/<int:user_id>/', admin_user_detail),

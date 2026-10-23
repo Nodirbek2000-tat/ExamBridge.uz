@@ -1506,6 +1506,8 @@ def admin_user_list(request):
             'first_name': u.first_name,
             'is_premium': premium_now,
             'is_staff': u.is_staff,
+            'admin_level': u.admin_level,
+            'admin_tier': u.admin_tier,
             'tests_taken': u.completed_tests,
             'joined': u.created_at.isoformat(),
             'premium_until': u.premium_until.isoformat() if u.premium_until else None,
@@ -1620,6 +1622,55 @@ def admin_toggle_staff(request, user_id):
         else:
             remove_from_admin_whitelist(admin_ip)
     return Response({'is_staff': user.is_staff, 'ip_added': bool(admin_ip and user.is_staff)})
+
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def admin_set_admin_level(request, user_id):
+    """Set a user's admin panel tier: 0 = remove admin, 1 / 2 / 3 = levels.
+
+    Only the owner (superuser) and level-1 admins may call this — the tier
+    middleware already blocks levels 2 and 3 from any write on this path.
+    Nobody can create a superuser here, and only the owner may touch one.
+    """
+    from accounts.models import User
+    from accounts.middleware import add_to_admin_whitelist, remove_from_admin_whitelist
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return Response({'error': 'Not found'}, status=404)
+
+    if user.is_superuser and not request.user.is_superuser:
+        return Response({'error': 'Cannot modify the owner account.'}, status=403)
+    if user.id == request.user.id and not request.user.is_superuser:
+        return Response({'error': 'You cannot change your own admin level.'}, status=403)
+
+    try:
+        level = int(request.data.get('level'))
+    except (TypeError, ValueError):
+        return Response({'error': 'level must be 0, 1, 2 or 3'}, status=400)
+    if level not in (0, 1, 2, 3):
+        return Response({'error': 'level must be 0, 1, 2 or 3'}, status=400)
+
+    user.is_staff = level > 0
+    user.admin_level = level
+    user.save(update_fields=['is_staff', 'admin_level'])
+
+    admin_ip = (request.data.get('admin_ip') or '').strip()
+    if admin_ip:
+        if user.is_staff:
+            add_to_admin_whitelist(admin_ip)
+        else:
+            remove_from_admin_whitelist(admin_ip)
+
+    return Response({
+        'id': user.id,
+        'is_staff': user.is_staff,
+        'admin_level': user.admin_level,
+        'admin_tier': user.admin_tier,
+        'ip_added': bool(admin_ip and user.is_staff),
+    })
 
 
 @api_view(['GET', 'DELETE'])

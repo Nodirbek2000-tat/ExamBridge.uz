@@ -78,6 +78,9 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
     'accounts.middleware.PremiumCheckMiddleware',
     'accounts.middleware.SecurityHeadersMiddleware',
+    # Admin panel tiers (1/2/3) — blocks sections and write actions the
+    # acting admin's level may not use. See accounts/admin_access.py.
+    'accounts.admin_access.AdminLevelMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'

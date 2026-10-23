@@ -20,6 +20,9 @@ def user_data(user):
         'is_premium': user.is_premium,
         'is_staff': user.is_staff,
         'is_superuser': user.is_superuser,
+        # Admin panel tier: 'super', 1, 2, 3 or null. The panel hides whole
+        # menu sections based on this (see adminAccess.js).
+        'admin_tier': user.admin_tier,
         'avatar': user.avatar.url if user.avatar else None,
         'target_band': user.target_band or '',
         'exam_date': user.exam_date.isoformat() if user.exam_date else None,

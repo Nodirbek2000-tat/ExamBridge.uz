@@ -50,6 +50,30 @@ class User(AbstractUser):
     # External identifier on the partner platform (e.g. testmakon user UUID)
     platform_uid = models.CharField(max_length=64, blank=True, default='')
 
+    # ── Admin panel access level ──────────────────────────────────────────────
+    # Super admin = is_superuser (the owner). Below that, three tiers:
+    #   1 — full access to the admin panel (add/edit/delete), no Django admin
+    #   2 — read-only, most sections (no AI Structures, no imports)
+    #   3 — read-only, only Users / Learning Centers / Reports
+    # 0 means "not an admin panel user" (is_staff is what opens the panel).
+    # Sections a level may not see are hidden from the menu entirely, and the
+    # matching API paths are blocked server-side (accounts/admin_access.py).
+    ADMIN_LEVEL_NONE = 0
+    ADMIN_LEVEL_FULL = 1
+    ADMIN_LEVEL_VIEWER = 2
+    ADMIN_LEVEL_LIMITED = 3
+    ADMIN_LEVEL_CHOICES = [
+        (ADMIN_LEVEL_NONE, 'Not an admin'),
+        (ADMIN_LEVEL_FULL, '1 — Full access'),
+        (ADMIN_LEVEL_VIEWER, '2 — View only'),
+        (ADMIN_LEVEL_LIMITED, '3 — View only (limited)'),
+    ]
+    admin_level = models.PositiveSmallIntegerField(
+        default=ADMIN_LEVEL_NONE,
+        choices=ADMIN_LEVEL_CHOICES,
+        help_text='Admin panel tier. Ignored unless is_staff is on; superusers always have full access.',
+    )
+
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -71,6 +95,25 @@ class User(AbstractUser):
     @property
     def full_name(self):
         return f"{self.first_name} {self.last_name}".strip() or self.email.split('@')[0]
+
+    @property
+    def admin_tier(self):
+        """Effective admin panel tier: 'super', 1, 2, 3 or None.
+
+        Superusers outrank every level. A staff account whose admin_level was
+        never set is treated as level 1 so existing admins keep working after
+        this field was added.
+        """
+        if self.is_superuser:
+            return 'super'
+        if not self.is_staff:
+            return None
+        return self.admin_level or self.ADMIN_LEVEL_FULL
+
+    @property
+    def can_write_admin(self):
+        """May this account create/modify/delete through the admin panel?"""
+        return self.admin_tier in ('super', self.ADMIN_LEVEL_FULL)
 
     def check_premium(self):
         """Check and update premium status. premium_until=None means forever (never expires)."""
