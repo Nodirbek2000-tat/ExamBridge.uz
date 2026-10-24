@@ -7,6 +7,7 @@ import tempfile
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, wait
 from rest_framework.decorators import api_view, permission_classes
+from centers.content import visible
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
@@ -143,7 +144,7 @@ def _serialize_question(q, bookmarked_ids=None):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def ielts_test_list(request):
-    tests = IELTSTest.objects.filter(is_active=True)
+    tests = visible(request.user, IELTSTest).filter(is_active=True)
     return Response([{
         'id': t.id,
         'title': t.title,
@@ -158,7 +159,7 @@ def ielts_test_list(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def reading_passages(request):
-    standalones = ReadingPassage.objects.filter(is_standalone=True).order_by('passage_number')
+    standalones = visible(request.user, ReadingPassage).filter(is_standalone=True).order_by('passage_number')
     practice_completed_ids = set(
         IELTSAttempt.objects.filter(
             user=request.user, status='COMPLETED', reading_passage__isnull=False
@@ -176,7 +177,7 @@ def reading_passages(request):
         'attempted': p.id in practice_completed_ids,
     } for p in standalones]
 
-    mock_tests = IELTSTest.objects.filter(
+    mock_tests = visible(request.user, IELTSTest).filter(
         is_active=True,
         passages__isnull=False
     ).prefetch_related('passages').distinct()
@@ -219,7 +220,7 @@ def reading_passages(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def reading_passage_detail(request, passage_id):
-    p = get_object_or_404(ReadingPassage, id=passage_id)
+    p = get_object_or_404(visible(request.user, ReadingPassage), id=passage_id)
 
     bookmarked_ids = set(
         BookmarkedQuestion.objects.filter(
@@ -248,7 +249,7 @@ def reading_passage_detail(request, passage_id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def reading_start(request, passage_id):
-    passage = get_object_or_404(ReadingPassage, id=passage_id)
+    passage = get_object_or_404(visible(request.user, ReadingPassage), id=passage_id)
     existing = IELTSAttempt.objects.filter(
         user=request.user, reading_passage=passage, status='IN_PROGRESS'
     ).first()
@@ -261,7 +262,7 @@ def reading_start(request, passage_id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def reading_mock_start(request, test_id):
-    test = get_object_or_404(IELTSTest, id=test_id, is_active=True)
+    test = get_object_or_404(visible(request.user, IELTSTest), id=test_id, is_active=True)
     passages = test.passages.order_by('passage_number')
     passages_data = [
         {'id': p.id, 'passage_number': p.passage_number, 'title': p.title}
@@ -288,7 +289,7 @@ def reading_submit(request, passage_id):
     attempt = get_object_or_404(IELTSAttempt, id=attempt_id, user=request.user)
     answers = request.data.get('answers', {})
 
-    passage = get_object_or_404(ReadingPassage, id=passage_id)
+    passage = get_object_or_404(visible(request.user, ReadingPassage), id=passage_id)
     questions = list(passage.questions.prefetch_related('choices').all())
 
     correct = 0
@@ -363,7 +364,7 @@ def reading_submit(request, passage_id):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def listening_sections(request):
-    standalones = ListeningSection.objects.filter(is_standalone=True).order_by('section_number')
+    standalones = visible(request.user, ListeningSection).filter(is_standalone=True).order_by('section_number')
     practice_completed_ids = set(
         IELTSAttempt.objects.filter(
             user=request.user, status='COMPLETED', listening_section__isnull=False
@@ -382,7 +383,7 @@ def listening_sections(request):
         'attempted': s.id in practice_completed_ids,
     } for s in standalones]
 
-    mock_tests = IELTSTest.objects.filter(
+    mock_tests = visible(request.user, IELTSTest).filter(
         is_active=True,
         listening_sections__isnull=False
     ).prefetch_related('listening_sections').distinct()
@@ -424,7 +425,7 @@ def listening_sections(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def listening_section_detail(request, section_id):
-    s = get_object_or_404(ListeningSection, id=section_id)
+    s = get_object_or_404(visible(request.user, ListeningSection), id=section_id)
 
     bookmarked_ids = set(
         BookmarkedQuestion.objects.filter(
@@ -460,7 +461,7 @@ def listening_section_detail(request, section_id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def listening_start(request, section_id):
-    section = get_object_or_404(ListeningSection, id=section_id)
+    section = get_object_or_404(visible(request.user, ListeningSection), id=section_id)
     existing = IELTSAttempt.objects.filter(
         user=request.user, listening_section=section, status='IN_PROGRESS'
     ).first()
@@ -473,7 +474,7 @@ def listening_start(request, section_id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def listening_mock_start(request, test_id):
-    test = get_object_or_404(IELTSTest, id=test_id, is_active=True)
+    test = get_object_or_404(visible(request.user, IELTSTest), id=test_id, is_active=True)
     existing = IELTSAttempt.objects.filter(
         user=request.user, test=test, status='IN_PROGRESS'
     ).first()
@@ -495,7 +496,7 @@ def listening_submit(request, section_id):
     attempt = get_object_or_404(IELTSAttempt, id=attempt_id, user=request.user)
     answers = request.data.get('answers', {})
 
-    section = get_object_or_404(ListeningSection, id=section_id)
+    section = get_object_or_404(visible(request.user, ListeningSection), id=section_id)
     questions = list(section.questions.prefetch_related('choices').all())
 
     correct = 0
@@ -549,7 +550,7 @@ def listening_submit(request, section_id):
 def speaking_tasks(request):
     """List all speaking tasks."""
     source = request.query_params.get('source', 'IELTS')
-    tasks = SpeakingTask.objects.filter(source=source)
+    tasks = visible(request.user, SpeakingTask).filter(source=source)
     part_filter = request.query_params.get('part')
     if part_filter:
         tasks = tasks.filter(part=int(part_filter))
@@ -803,7 +804,7 @@ def speaking_submit(request, attempt_id):
     else:
         transcripts = list(transcripts_raw)
 
-    task = get_object_or_404(SpeakingTask, id=task_id)
+    task = get_object_or_404(visible(request.user, SpeakingTask), id=task_id)
 
     # a practice attempt (no IELTSTest) is handed to every practice task opened before its first
     # submit (two tabs), so each task on it is its own test; a full-test attempt counts once
@@ -1117,7 +1118,7 @@ def _serialize_writing_task(t, request=None):
 def writing_tasks(request):
     task_type  = request.query_params.get('task_type')
     difficulty = request.query_params.get('difficulty')
-    tasks = WritingTask.objects.all()
+    tasks = visible(request.user, WritingTask)
     if task_type:
         tasks = tasks.filter(task_type=task_type)
     if difficulty:
@@ -1140,7 +1141,7 @@ def writing_tasks(request):
 @permission_classes([IsAuthenticated])
 def writing_start(request, task_id):
     """Start (or resume) a writing attempt for a given task."""
-    task = get_object_or_404(WritingTask, id=task_id)
+    task = get_object_or_404(visible(request.user, WritingTask), id=task_id)
     existing = WritingResponse.objects.filter(
         attempt__user=request.user,
         task=task,
@@ -1221,7 +1222,7 @@ def writing_submit(request, attempt_id):
     attempt = get_object_or_404(IELTSAttempt, id=attempt_id, user=request.user)
     task_id = request.data.get('task_id')
     text = request.data.get('text', '')
-    task = get_object_or_404(WritingTask, id=task_id)
+    task = get_object_or_404(visible(request.user, WritingTask), id=task_id)
 
     response = WritingResponse.objects.create(
         attempt=attempt,
@@ -1471,7 +1472,7 @@ def writing_ai_analyze(request):
 @permission_classes([IsAuthenticated])
 def ielts_start_attempt(request):
     test_id = request.data.get('test_id')
-    test = get_object_or_404(IELTSTest, id=test_id) if test_id else None
+    test = get_object_or_404(visible(request.user, IELTSTest), id=test_id) if test_id else None
 
     if request.data.get('task_type') == 'speaking':
         # a locked user is stopped before recording anything (hidden daily limit)

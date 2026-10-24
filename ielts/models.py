@@ -15,6 +15,10 @@ class IELTSTest(models.Model):
     is_premium = models.BooleanField(default=False)
     is_cambridge = models.BooleanField(default=False, help_text='Cambridge IELTS material (shown under the Cambridge filter)')
     is_active = models.BooleanField(default=True)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
     # Unified audio for full mock tests (all sections use this single audio track)
     audio_file = models.FileField(upload_to='ielts/audio/tests/', blank=True)
@@ -46,6 +50,10 @@ class ReadingPassage(models.Model):
     is_standalone = models.BooleanField(default=False, help_text='Practice passage (not part of full test)')
     is_premium = models.BooleanField(default=False)
     is_cambridge = models.BooleanField(default=False, help_text='Cambridge IELTS material (shown under the Cambridge filter)')
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -143,6 +151,10 @@ class ListeningSection(models.Model):
     is_standalone = models.BooleanField(default=False)
     is_premium = models.BooleanField(default=False)
     is_cambridge = models.BooleanField(default=False, help_text='Cambridge IELTS material (shown under the Cambridge filter)')
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -227,6 +239,10 @@ class SpeakingTask(models.Model):
     prep_time = models.PositiveSmallIntegerField(default=60, help_text='Prep time in seconds (Part 2 only)')
     speak_time = models.PositiveSmallIntegerField(default=120, help_text='Speaking time limit in seconds')
     is_premium = models.BooleanField(default=False)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
     # Extended fields
     test_type = models.CharField(max_length=10, choices=[('PART', 'Single Part'), ('MOCK', 'Full Mock')], default='PART')
@@ -272,6 +288,10 @@ class WritingTask(models.Model):
     time_limit   = models.PositiveSmallIntegerField(default=20, help_text='Minutes')
     sample_answer= models.TextField(blank=True)
     is_premium   = models.BooleanField(default=False)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at   = models.DateTimeField(auto_now_add=True)
 
     class Meta:

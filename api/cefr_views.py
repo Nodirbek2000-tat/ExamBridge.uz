@@ -1,5 +1,6 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
+from centers.content import visible
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from cefr.models import (
@@ -92,7 +93,7 @@ def _serialize_cefr_question(q, bookmarked_ids=None):
 def cefr_test_list(request):
     level = request.query_params.get('level')
     test_type = request.query_params.get('test_type')
-    tests = CEFRTest.objects.filter(is_active=True)
+    tests = visible(request.user, CEFRTest).filter(is_active=True)
     if level:
         tests = tests.filter(level=level)
     if test_type:
@@ -119,7 +120,7 @@ def cefr_test_list(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def cefr_test_detail(request, test_id):
-    test = get_object_or_404(CEFRTest, id=test_id, is_active=True)
+    test = get_object_or_404(visible(request.user, CEFRTest), id=test_id, is_active=True)
 
     bookmarked_ids = set(
         BookmarkedQuestion.objects.filter(
@@ -149,7 +150,7 @@ def cefr_test_detail(request, test_id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def cefr_start_attempt(request, test_id):
-    test = get_object_or_404(CEFRTest, id=test_id, is_active=True)
+    test = get_object_or_404(visible(request.user, CEFRTest), id=test_id, is_active=True)
     if test.is_premium and not getattr(request.user, 'is_premium', False):
         return Response({'detail': 'Premium required.'}, status=403)
 
@@ -341,7 +342,7 @@ def cefr_reading_list(request):
     result = []
 
     # Full mocks: CEFRTest with test_type=READING that has passages linked
-    mock_qs = CEFRTest.objects.filter(test_type='READING', is_active=True).prefetch_related('reading_passages')
+    mock_qs = visible(request.user, CEFRTest).filter(test_type='READING', is_active=True).prefetch_related('reading_passages')
     if level:
         mock_qs = mock_qs.filter(level=level)
     for test in mock_qs:
@@ -363,7 +364,7 @@ def cefr_reading_list(request):
         })
 
     # Standalone passages (not linked to any CEFRTest)
-    qs = CEFRReadingPassage.objects.filter(test__isnull=True)
+    qs = visible(request.user, CEFRReadingPassage).filter(test__isnull=True)
     if level:
         qs = qs.filter(level=level)
     for p in qs:
@@ -389,7 +390,7 @@ def cefr_reading_list(request):
 def cefr_reading_full_mock_start(request, test_id):
     """Start a full mock reading test (multiple passages grouped under one CEFRTest)."""
     from cefr.models import CEFRTest
-    test = get_object_or_404(CEFRTest, id=test_id, test_type='READING', is_active=True)
+    test = get_object_or_404(visible(request.user, CEFRTest), id=test_id, test_type='READING', is_active=True)
     passages = list(test.reading_passages.order_by('passage_number'))
     if not passages:
         return Response({'error': 'No passages found for this mock test.'}, status=400)
@@ -419,7 +420,7 @@ def cefr_reading_full_mock_start(request, test_id):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def cefr_reading_detail(request, passage_id):
-    p = get_object_or_404(CEFRReadingPassage, id=passage_id)
+    p = get_object_or_404(visible(request.user, CEFRReadingPassage), id=passage_id)
 
     bookmarked_ids = set(
         BookmarkedQuestion.objects.filter(
@@ -443,7 +444,7 @@ def cefr_reading_detail(request, passage_id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def cefr_reading_start(request, passage_id):
-    passage = get_object_or_404(CEFRReadingPassage, id=passage_id)
+    passage = get_object_or_404(visible(request.user, CEFRReadingPassage), id=passage_id)
     existing = CEFRAttempt.objects.filter(
         user=request.user, reading_passage=passage, status='IN_PROGRESS'
     ).first()
@@ -464,7 +465,7 @@ def cefr_reading_submit(request, passage_id):
     # partial=True means this is not the final passage – don't complete the attempt yet
     partial = request.data.get('partial', False)
 
-    passage = get_object_or_404(CEFRReadingPassage, id=passage_id)
+    passage = get_object_or_404(visible(request.user, CEFRReadingPassage), id=passage_id)
     questions = list(passage.questions.prefetch_related('choices').all())
 
     correct = 0
@@ -532,7 +533,7 @@ def cefr_listening_list(request):
     result = []
 
     # Full mocks: one card per CEFRTest (LISTENING) that has parts linked
-    mock_qs = (CEFRTest.objects.filter(test_type='LISTENING', is_active=True)
+    mock_qs = (visible(request.user, CEFRTest).filter(test_type='LISTENING', is_active=True)
                .annotate(part_count=Count('listening_sections', distinct=True),
                          q_count=Count('listening_sections__questions'))
                .prefetch_related('listening_sections'))
@@ -555,7 +556,7 @@ def cefr_listening_list(request):
         })
 
     # Single parts that don't belong to a mock
-    qs = CEFRListeningSection.objects.filter(test__isnull=True).annotate(q_count=Count('questions'))
+    qs = visible(request.user, CEFRListeningSection).filter(test__isnull=True).annotate(q_count=Count('questions'))
     if level:
         qs = qs.filter(level=level)
     for s in qs:
@@ -580,7 +581,7 @@ def cefr_listening_list(request):
 def cefr_listening_full_mock_start(request, test_id):
     """Start (or resume) a full listening mock — all parts of one CEFRTest."""
     from cefr.models import CEFRTest
-    test = get_object_or_404(CEFRTest, id=test_id, test_type='LISTENING', is_active=True)
+    test = get_object_or_404(visible(request.user, CEFRTest), id=test_id, test_type='LISTENING', is_active=True)
     sections = list(test.listening_sections.order_by('section_number'))
     if not sections:
         return Response({'error': 'No parts found for this mock test.'}, status=400)
@@ -598,7 +599,7 @@ def cefr_listening_full_mock_start(request, test_id):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def cefr_listening_detail(request, section_id):
-    s = get_object_or_404(CEFRListeningSection, id=section_id)
+    s = get_object_or_404(visible(request.user, CEFRListeningSection), id=section_id)
 
     bookmarked_ids = set(
         BookmarkedQuestion.objects.filter(
@@ -626,7 +627,7 @@ def cefr_listening_detail(request, section_id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def cefr_listening_start(request, section_id):
-    section = get_object_or_404(CEFRListeningSection, id=section_id)
+    section = get_object_or_404(visible(request.user, CEFRListeningSection), id=section_id)
     existing = CEFRAttempt.objects.filter(
         user=request.user, listening_section=section, status='IN_PROGRESS'
     ).first()
@@ -648,7 +649,7 @@ def cefr_listening_submit(request, section_id):
     # partial=True: one part of a mock, the attempt is completed with the last part
     partial = request.data.get('partial', False)
 
-    section = get_object_or_404(CEFRListeningSection, id=section_id)
+    section = get_object_or_404(visible(request.user, CEFRListeningSection), id=section_id)
     questions = list(section.questions.prefetch_related('choices').all())
 
     correct = 0

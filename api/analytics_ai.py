@@ -62,7 +62,11 @@ def _skill_exam(user, exam, range_key):
                  'Example techniques: Part 1 gaps -> the missing word appears elsewhere in the text, check grammar around the gap; '
                  'text/speaker matching -> underline the key idea of each text, eliminate used options; T/F/NG -> look for a direct '
                  'contradiction; note completion -> predict the word class and respect the word limit.')
-    return ai_facts(data), data['totals']['answered'] + data['totals']['writing_count'] + data['totals']['speaking_count'], links, hints
+    t = data['totals']
+    # One scored essay or speaking test is a whole test's worth of evidence —
+    # enough to analyse, even with fewer than MIN_QUESTIONS reading/listening answers.
+    volume = t['answered'] + (MIN_QUESTIONS if t['writing_count'] + t['speaking_count'] else 0)
+    return ai_facts(data), volume, links, hints
 
 
 PROMPT = """You are an experienced {exam} coach. You are given one student's exact practice statistics as JSON{mistakes_note}.

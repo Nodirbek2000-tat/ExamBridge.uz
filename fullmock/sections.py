@@ -66,7 +66,7 @@ def options(exam, key):
         from ielts.models import IELTSTest, SpeakingTask, WritingTask
         if key == 'listening':
             out = []
-            for t in IELTSTest.objects.filter(listening_sections__isnull=False).distinct().prefetch_related(
+            for t in IELTSTest.objects.filter(center__isnull=True, listening_sections__isnull=False).distinct().prefetch_related(
                     'listening_sections').order_by('-created_at'):
                 secs = list(t.listening_sections.all())
                 issues = _listening_issues(t, secs)
@@ -75,14 +75,14 @@ def options(exam, key):
                 out.append({'id': t.id, 'title': t.title, 'meta': f'{len(secs)} parts', 'issues': issues})
             return out
         if key == 'reading':
-            rows = (IELTSTest.objects.filter(passages__isnull=False)
+            rows = (IELTSTest.objects.filter(center__isnull=True, passages__isnull=False)
                     .annotate(n=Count('passages', distinct=True)).order_by('-created_at'))
             return [{'id': t.id, 'title': t.title, 'meta': f'{t.n} passages',
                      'issues': [] if t.n == 3 else [f'{t.n} passages (a real test has 3)']} for t in rows]
         if key in ('writing1', 'writing2'):
             n = 1 if key == 'writing1' else 2
             out = []
-            for t in WritingTask.objects.filter(task_type=n).order_by('-created_at'):
+            for t in WritingTask.objects.filter(center__isnull=True, task_type=n).order_by('-created_at'):
                 issues = []
                 if n == 1 and t.test_type == 'ACADEMIC' and not t.image:
                     issues.append('No chart image')
@@ -93,29 +93,29 @@ def options(exam, key):
             return [{'id': t.id, 'title': t.title,
                      'meta': 'Parts 1, 2 & 3' if t.test_type == 'MOCK' else f'Part {t.part} only',
                      'issues': [] if t.test_type == 'MOCK' else ['Only one part (a real test has 3)']}
-                    for t in SpeakingTask.objects.filter(source='IELTS').order_by('test_type', '-created_at')]
+                    for t in SpeakingTask.objects.filter(center__isnull=True, source='IELTS').order_by('test_type', '-created_at')]
     if exam == 'cefr':
         from cefr.models import CEFRSpeakingTest, CEFRTest, CEFRWritingTest
         if key == 'listening':
             out = []
-            for t in CEFRTest.objects.filter(test_type='LISTENING', listening_sections__isnull=False).distinct() \
+            for t in CEFRTest.objects.filter(center__isnull=True, test_type='LISTENING', listening_sections__isnull=False).distinct() \
                     .prefetch_related('listening_sections').order_by('-created_at'):
                 secs = list(t.listening_sections.all())
                 out.append({'id': t.id, 'title': t.title, 'meta': f'{len(secs)} parts · {t.level}',
                             'issues': _listening_issues(t, secs)})
             return out
         if key == 'reading':
-            rows = (CEFRTest.objects.filter(test_type='READING', reading_passages__isnull=False)
+            rows = (CEFRTest.objects.filter(center__isnull=True, test_type='READING', reading_passages__isnull=False)
                     .annotate(n=Count('reading_passages', distinct=True)).order_by('-created_at'))
             return [{'id': t.id, 'title': t.title, 'meta': f'{t.n} parts · {t.level}', 'issues': []} for t in rows]
         if key == 'writing':
             return [{'id': t.id, 'title': t.title, 'meta': t.get_kind_display(),
                      'issues': [] if t.kind == 'FULL' else ['Not the full paper (1.1 + 1.2 + Part 2)']}
-                    for t in CEFRWritingTest.objects.filter(is_active=True).order_by('-created_at')]
+                    for t in CEFRWritingTest.objects.filter(center__isnull=True, is_active=True).order_by('-created_at')]
         if key == 'speaking':
             from api.cefr_speaking import is_ready, parts_of
             out = []
-            for t in CEFRSpeakingTest.objects.filter(is_active=True).order_by('-created_at'):
+            for t in CEFRSpeakingTest.objects.filter(center__isnull=True, is_active=True).order_by('-created_at'):
                 parts = parts_of(t)
                 issues = [] if is_ready(t) else ['Part 1.2 pictures missing']
                 if len(parts) < 4:

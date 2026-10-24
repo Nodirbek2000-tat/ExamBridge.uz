@@ -18,6 +18,7 @@ from .models import (
     LearningCenter, CenterMembership, Group, GroupMembership,
     Assignment, AssignmentSubmission, CenterNotification
 )
+from .content import center_visible_q
 from .progress import TASK_KINDS, sync_submissions, overdue_cutoff
 
 User = get_user_model()
@@ -91,6 +92,7 @@ def center_to_dict(center, include_director=True):
         'phone': center.phone,
         'address': center.address,
         'is_active': center.is_active,
+        'show_site_mocks': center.show_site_mocks,
         'student_count': center.student_count,
         'teacher_count': center.teacher_count,
         'admin_count': center.admin_count,
@@ -883,14 +885,14 @@ def available_tasks(request, center_id):
 
     task_type = request.query_params.get('type', 'sat_mock')
     try:
-        results = _available(task_type)
+        results = _available(task_type, center)
     except Exception:
         logger.exception('available_tasks failed for %s', task_type)
         results = []
     return Response(results)
 
 
-def _available(task_type):
+def _available(task_type, center):
     """Tests a teacher can assign, in the same lists students pick from.
 
     `kind` tells the student's Start button which runner to open; `meta` is a
@@ -903,16 +905,16 @@ def _available(task_type):
 
     if task_type == 'ielts_reading':
         from ielts.models import IELTSTest, ReadingPassage
-        mocks = IELTSTest.objects.filter(is_active=True, passages__isnull=False).distinct().order_by('title')
-        parts = ReadingPassage.objects.filter(is_standalone=True).order_by('passage_number', 'title')
+        mocks = IELTSTest.objects.filter(center_visible_q(center), is_active=True, passages__isnull=False).distinct().order_by('title')
+        parts = ReadingPassage.objects.filter(center_visible_q(center), is_standalone=True).order_by('passage_number', 'title')
         return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': 'Full mock'} for t in mocks] +
                 [{'id': p.id, 'title': p.title, 'kind': 'passage', 'meta': f'Passage {p.passage_number}'}
                  for p in parts])
 
     if task_type == 'ielts_listening':
         from ielts.models import IELTSTest, ListeningSection
-        mocks = IELTSTest.objects.filter(is_active=True, listening_sections__isnull=False).distinct().order_by('title')
-        parts = ListeningSection.objects.filter(is_standalone=True).order_by('section_number', 'title')
+        mocks = IELTSTest.objects.filter(center_visible_q(center), is_active=True, listening_sections__isnull=False).distinct().order_by('title')
+        parts = ListeningSection.objects.filter(center_visible_q(center), is_standalone=True).order_by('section_number', 'title')
         return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': 'Full mock'} for t in mocks] +
                 [{'id': x.id, 'title': x.title, 'kind': 'section', 'meta': f'Part {x.section_number}'}
                  for x in parts])
@@ -921,47 +923,47 @@ def _available(task_type):
         from ielts.models import WritingTask
         return [{'id': t.id, 'title': t.title, 'kind': 'task',
                  'meta': f'Task {t.task_type} · {t.get_test_type_display()}'}
-                for t in WritingTask.objects.all().order_by('task_type', 'title')]
+                for t in WritingTask.objects.filter(center_visible_q(center)).order_by('task_type', 'title')]
 
     if task_type == 'ielts_speaking':
         from ielts.models import SpeakingTask
         return [{'id': t.id, 'title': t.title, 'kind': 'task',
                  'meta': 'Full mock' if t.test_type == 'MOCK' else f'Part {t.part}'}
-                for t in SpeakingTask.objects.filter(source='IELTS').order_by('part', 'title')]
+                for t in SpeakingTask.objects.filter(center_visible_q(center), source='IELTS').order_by('part', 'title')]
 
     if task_type == 'cefr_reading':
         from cefr.models import CEFRTest, CEFRReadingPassage
-        mocks = CEFRTest.objects.filter(test_type='READING', is_active=True,
+        mocks = CEFRTest.objects.filter(center_visible_q(center), test_type='READING', is_active=True,
                                         reading_passages__isnull=False).distinct().order_by('title')
-        parts = CEFRReadingPassage.objects.filter(test__isnull=True).order_by('passage_number', 'title')
+        parts = CEFRReadingPassage.objects.filter(center_visible_q(center), test__isnull=True).order_by('passage_number', 'title')
         return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': f'Full mock · {t.level}'} for t in mocks] +
                 [{'id': p.id, 'title': p.title, 'kind': 'passage', 'meta': f'Part {p.passage_number}'}
                  for p in parts])
 
     if task_type == 'cefr_listening':
         from cefr.models import CEFRTest, CEFRListeningSection
-        mocks = CEFRTest.objects.filter(test_type='LISTENING', is_active=True,
+        mocks = CEFRTest.objects.filter(center_visible_q(center), test_type='LISTENING', is_active=True,
                                         listening_sections__isnull=False).distinct().order_by('title')
-        parts = CEFRListeningSection.objects.filter(test__isnull=True).order_by('title')
+        parts = CEFRListeningSection.objects.filter(center_visible_q(center), test__isnull=True).order_by('title')
         return ([{'id': t.id, 'title': t.title, 'kind': 'mock', 'meta': f'Full mock · {t.level}'} for t in mocks] +
                 [{'id': x.id, 'title': x.title, 'kind': 'section', 'meta': 'Part'} for x in parts])
 
     if task_type == 'cefr_writing':
         from cefr.models import CEFRWritingTest
         return [{'id': t.id, 'title': t.title, 'kind': 'test', 'meta': t.get_kind_display()}
-                for t in CEFRWritingTest.objects.filter(is_active=True).order_by('title')]
+                for t in CEFRWritingTest.objects.filter(center_visible_q(center), is_active=True).order_by('title')]
 
     if task_type == 'cefr_speaking':
         from cefr.models import CEFRSpeakingTest
         from ielts.models import SpeakingTask
         from api.cefr_speaking import is_ready, parts_of
-        tests = [t for t in CEFRSpeakingTest.objects.filter(is_active=True).order_by('title')
+        tests = [t for t in CEFRSpeakingTest.objects.filter(center_visible_q(center), is_active=True).order_by('title')
                  if is_ready(t) and parts_of(t)]
         return ([{'id': t.id, 'title': t.title, 'kind': 'test',
                   'meta': 'Full test' if len(parts_of(t)) >= 4 else 'Parts ' + ', '.join(parts_of(t))}
                  for t in tests] +
                 [{'id': t.id, 'title': t.title, 'kind': 'task', 'meta': f'Practice · Part {t.part}'}
-                 for t in SpeakingTask.objects.filter(source='CEFR').order_by('part', 'title')])
+                 for t in SpeakingTask.objects.filter(center_visible_q(center), source='CEFR').order_by('part', 'title')])
 
     return []
 

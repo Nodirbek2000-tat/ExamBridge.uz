@@ -41,6 +41,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
+from centers.content import visible
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
@@ -399,7 +400,7 @@ def _summary(test):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def speaking_tests(request):
-    tests = [t for t in CEFRSpeakingTest.objects.filter(is_active=True) if is_ready(t) and parts_of(t)]
+    tests = [t for t in visible(request.user, CEFRSpeakingTest).filter(is_active=True) if is_ready(t) and parts_of(t)]
     latest = {}
     for r in (CEFRSpeakingResponse.objects.filter(user=request.user, test__in=tests)
               .only('id', 'test_id', 'status', 'score', 'level', 'started_at', 'submitted_at')):
@@ -416,7 +417,7 @@ def speaking_tests(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def speaking_start(request, test_id):
-    test = get_object_or_404(CEFRSpeakingTest, id=test_id, is_active=True)
+    test = get_object_or_404(visible(request.user, CEFRSpeakingTest), id=test_id, is_active=True)
     if not is_ready(test):
         return Response({'detail': 'This test is not ready yet.'}, status=409)
     if test.is_premium and not getattr(request.user, 'is_premium', False):
@@ -626,7 +627,7 @@ def _admin_row(t, request):
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
 def admin_speaking_list(request):
-    rows = CEFRSpeakingTest.objects.annotate(n=Count('responses')).order_by('-created_at')
+    rows = CEFRSpeakingTest.objects.filter(center__isnull=True).annotate(n=Count('responses')).order_by('-created_at')
     return Response([_admin_row(t, request) for t in rows])
 
 

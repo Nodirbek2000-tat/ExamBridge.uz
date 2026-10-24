@@ -1923,9 +1923,9 @@ def admin_ielts_test_audio(request, pk):
 @permission_classes([IsAdminUser])
 def admin_ielts_reading_list(request):
     from ielts.models import ReadingPassage, IELTSTest
-    items = ReadingPassage.objects.order_by('passage_number', '-created_at')
+    items = ReadingPassage.objects.filter(center__isnull=True).order_by('passage_number', '-created_at')
     test_map = {}
-    for t in IELTSTest.objects.prefetch_related('passages').all():
+    for t in IELTSTest.objects.filter(center__isnull=True).prefetch_related('passages').all():
         for p in t.passages.all():
             test_map[p.id] = {'test_id': t.id, 'test_title': t.title, 'test_is_premium': t.is_premium, 'test_is_cambridge': t.is_cambridge}
     return Response([{
@@ -1957,9 +1957,9 @@ def admin_ielts_reading_delete(request, pk):
 @permission_classes([IsAdminUser])
 def admin_ielts_reading_delete_all(request):
     from ielts.models import ReadingPassage, IELTSTest
-    count, _ = ReadingPassage.objects.all().delete()
+    count, _ = ReadingPassage.objects.filter(center__isnull=True).delete()
     # Also clean up orphaned IELTSTest records (no passages left)
-    IELTSTest.objects.filter(passages__isnull=True).delete()
+    IELTSTest.objects.filter(center__isnull=True, passages__isnull=True).delete()
     return Response({'deleted': count})
 
 
@@ -1967,9 +1967,9 @@ def admin_ielts_reading_delete_all(request):
 @permission_classes([IsAdminUser])
 def admin_ielts_listening_list(request):
     from ielts.models import ListeningSection, IELTSTest
-    items = ListeningSection.objects.select_related().order_by('section_number', '-created_at')
+    items = ListeningSection.objects.filter(center__isnull=True).select_related().order_by('section_number', '-created_at')
     test_map = {}
-    for t in IELTSTest.objects.prefetch_related('listening_sections').all():
+    for t in IELTSTest.objects.filter(center__isnull=True).prefetch_related('listening_sections').all():
         for s in t.listening_sections.all():
             test_audio = t.audio_url or (t.audio_file.url if t.audio_file else None)
             test_map[s.id] = {'test_id': t.id, 'test_title': t.title, 'test_audio_url': test_audio, 'test_is_premium': t.is_premium, 'test_is_cambridge': t.is_cambridge}
@@ -2003,7 +2003,7 @@ def admin_ielts_listening_delete(request, pk):
 @permission_classes([IsAdminUser])
 def admin_ielts_listening_delete_all(request):
     from ielts.models import ListeningSection
-    count, _ = ListeningSection.objects.all().delete()
+    count, _ = ListeningSection.objects.filter(center__isnull=True).delete()
     return Response({'deleted': count})
 
 
@@ -2011,7 +2011,7 @@ def admin_ielts_listening_delete_all(request):
 @permission_classes([IsAdminUser])
 def admin_ielts_speaking_list(request):
     from ielts.models import SpeakingTask
-    tasks = SpeakingTask.objects.all().order_by('-created_at')
+    tasks = SpeakingTask.objects.filter(center__isnull=True).order_by('-created_at')
     result = []
     for t in tasks:
         result.append({
@@ -2047,7 +2047,7 @@ def admin_ielts_speaking_delete(request, pk):
 @permission_classes([IsAdminUser])
 def admin_ielts_writing_list(request):
     from ielts.models import WritingTask
-    items = WritingTask.objects.order_by('-created_at')
+    items = WritingTask.objects.filter(center__isnull=True).order_by('-created_at')
     return Response([{
         'id': t.id,
         'title': t.title,
@@ -2098,10 +2098,10 @@ def admin_ielts_writing_upload_image(request, pk):
 def admin_ielts_content(request):
     from ielts.models import ReadingPassage, ListeningSection, SpeakingTask, WritingTask
     return Response({
-        'reading': ReadingPassage.objects.count(),
-        'listening': ListeningSection.objects.count(),
-        'speaking': SpeakingTask.objects.count(),
-        'writing': WritingTask.objects.count(),
+        'reading': ReadingPassage.objects.filter(center__isnull=True).count(),
+        'listening': ListeningSection.objects.filter(center__isnull=True).count(),
+        'speaking': SpeakingTask.objects.filter(center__isnull=True).count(),
+        'writing': WritingTask.objects.filter(center__isnull=True).count(),
     })
 
 
@@ -2110,7 +2110,7 @@ def admin_ielts_content(request):
 def admin_cefr_tests(request):
     from cefr.models import CEFRTest
     level = request.query_params.get('level')
-    tests = CEFRTest.objects.all().order_by('level', '-created_at')
+    tests = CEFRTest.objects.filter(center__isnull=True).order_by('level', '-created_at')
     if level:
         tests = tests.filter(level=level)
     return Response([{
@@ -2146,7 +2146,7 @@ def admin_cefr_reading_delete(request, pk):
 @permission_classes([IsAdminUser])
 def admin_cefr_reading_delete_all(request):
     from cefr.models import CEFRReadingPassage
-    count, _ = CEFRReadingPassage.objects.all().delete()
+    count, _ = CEFRReadingPassage.objects.filter(center__isnull=True).delete()
     return Response({'deleted': count})
 
 
@@ -2163,7 +2163,7 @@ def admin_cefr_listening_delete(request, pk):
 @permission_classes([IsAdminUser])
 def admin_cefr_listening_delete_all(request):
     from cefr.models import CEFRListeningSection
-    count, _ = CEFRListeningSection.objects.all().delete()
+    count, _ = CEFRListeningSection.objects.filter(center__isnull=True).delete()
     return Response({'deleted': count})
 
 
@@ -2218,7 +2218,7 @@ def admin_ielts_listening_detail(request, pk):
 @permission_classes([IsAdminUser])
 def admin_ielts_tests_list(request):
     from ielts.models import IELTSTest
-    tests = IELTSTest.objects.all().order_by('-created_at')
+    tests = IELTSTest.objects.filter(center__isnull=True).order_by('-created_at')
     return Response([{
         'id': t.id, 'title': t.title, 'test_type': t.test_type,
         'is_premium': t.is_premium, 'is_cambridge': t.is_cambridge, 'is_active': t.is_active,
@@ -2286,7 +2286,7 @@ def admin_ielts_test_detail(request, pk):
 def admin_cefr_reading_list(request):
     from cefr.models import CEFRReadingPassage
     from django.db.models import Count
-    items = (CEFRReadingPassage.objects.select_related('test')
+    items = (CEFRReadingPassage.objects.filter(center__isnull=True).select_related('test')
              .annotate(q_count=Count('questions')).order_by('-created_at'))
     return Response([{
         'id': p.id, 'title': p.title, 'level': p.level,
@@ -2326,7 +2326,7 @@ def admin_cefr_reading_detail(request, pk):
 def admin_cefr_listening_list(request):
     from cefr.models import CEFRListeningSection
     from django.db.models import Count
-    items = (CEFRListeningSection.objects.select_related('test')
+    items = (CEFRListeningSection.objects.filter(center__isnull=True).select_related('test')
              .annotate(q_count=Count('questions')).order_by('-created_at'))
     return Response([{
         'id': s.id, 'title': s.title, 'level': s.level,

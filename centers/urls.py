@@ -1,5 +1,5 @@
 from django.urls import path
-from . import insights, lessons, views
+from . import content_views, insights, lessons, views
 
 urlpatterns = [
     # ── Super Admin ──────────────────────────────────────────────────────────
@@ -41,6 +41,13 @@ urlpatterns = [
     # ── Lessons (a topic + several tasks) ─────────────────────────────────────
     path('<int:center_id>/lessons/', lessons.lessons),
     path('<int:center_id>/lessons/<int:lesson_id>/', lessons.lesson_detail),
+
+    # ── The center's own tests (IELTS / CEFR) ────────────────────────────────
+    path('<int:center_id>/content/', content_views.content_list),
+    path('<int:center_id>/content/import/<str:kind>/', content_views.content_import),
+    path('<int:center_id>/content/<str:type_key>/<int:pk>/', content_views.content_delete),
+    path('<int:center_id>/content/<str:type_key>/<int:pk>/media/', content_views.content_media),
+    path('<int:center_id>/settings/', content_views.content_settings),
 
     # ── Student: my assignments ───────────────────────────────────────────────
     path('my-assignments/', views.my_assignments),

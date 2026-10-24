@@ -13,6 +13,9 @@ class LearningCenter(models.Model):
     phone = models.CharField(max_length=20, blank=True)
     address = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
+    # Director's switch: when off, the center's students see only the
+    # center's own tests, not ExamBridge's.
+    show_site_mocks = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

@@ -37,6 +37,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
+from centers.content import visible
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
@@ -328,7 +329,7 @@ def evaluate_response(response):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def writing_tests(request):
-    tests = list(CEFRWritingTest.objects.filter(is_active=True))
+    tests = list(visible(request.user, CEFRWritingTest).filter(is_active=True))
     latest = {}
     for r in (CEFRWritingResponse.objects.filter(user=request.user, test__in=tests)
               .only('id', 'test_id', 'status', 'score', 'level', 'started_at', 'submitted_at')):
@@ -339,7 +340,7 @@ def writing_tests(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def writing_start(request, test_id):
-    test = get_object_or_404(CEFRWritingTest, id=test_id, is_active=True)
+    test = get_object_or_404(visible(request.user, CEFRWritingTest), id=test_id, is_active=True)
     if test.is_premium and not getattr(request.user, 'is_premium', False):
         return Response({'detail': 'Premium required.'}, status=403)
     existing = CEFRWritingResponse.objects.filter(
@@ -492,7 +493,7 @@ def import_writing(request):
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
 def admin_writing_list(request):
-    rows = CEFRWritingTest.objects.annotate(n=Count('responses')).order_by('-created_at')
+    rows = CEFRWritingTest.objects.filter(center__isnull=True).annotate(n=Count('responses')).order_by('-created_at')
     return Response([{**_test_summary(t), 'situation': t.situation, 'task11': t.task11, 'task12': t.task12,
                       'task2': t.task2, 'responses': t.n, 'is_active': t.is_active,
                       'created_at': t.created_at} for t in rows])

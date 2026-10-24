@@ -149,6 +149,9 @@ def _attempt_summary(a):
 def student_mocks(request, exam):
     if (bad := _bad_exam(exam)):
         return bad
+    from centers.content import scope
+    if not scope(request.user)[0]:
+        return Response([])       # this student's center shows only its own tests
     mocks = [m for m in FullMock.objects.filter(exam=exam, is_published=True) if not missing_sections(m)]
     mine = {}
     for a in FullMockAttempt.objects.filter(user=request.user, mock__in=mocks).order_by('-started_at'):

@@ -26,6 +26,10 @@ class CEFRTest(models.Model):
     time_limit = models.PositiveSmallIntegerField(default=60, help_text='Minutes')
     is_premium = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
     # Listening mock: one recording for every part (optional — parts may have their own)
     audio_file = models.FileField(upload_to='cefr/audio/', blank=True)
@@ -58,6 +62,10 @@ class CEFRReadingPassage(models.Model):
     is_standalone = models.BooleanField(default=True)
     is_premium = models.BooleanField(default=False)
     is_mock = models.BooleanField(default=False)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -139,6 +147,10 @@ class CEFRListeningSection(models.Model):
     is_standalone = models.BooleanField(default=True)
     is_mock = models.BooleanField(default=False)
     is_premium = models.BooleanField(default=False)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -331,6 +343,10 @@ class CEFRWritingTest(models.Model):
     time_limit = models.PositiveSmallIntegerField(default=60, help_text='Minutes')
     is_premium = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -387,6 +403,10 @@ class CEFRSpeakingTest(models.Model):
     part3 = models.JSONField(default=dict, blank=True, help_text='{"topic": "...", "for": [...], "against": [...]}')
     is_premium = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
+    # Owned by a learning center (its own test) — None = an ExamBridge test.
+    # Center tests are seen only by that center's people (centers/content.py).
+    center = models.ForeignKey('centers.LearningCenter', on_delete=models.CASCADE, null=True, blank=True,
+                               related_name='+', db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
