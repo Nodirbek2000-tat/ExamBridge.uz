@@ -112,6 +112,7 @@ urlpatterns = [
 
     # ── CENTERS API ───────────────────────────────────────────────────────────
     path('api/centers/', include('centers.urls')),
+    path('', include('fullmock.urls')),
 
     # ── AUTH API ──────────────────────────────────────────────────────────────
     path('api/auth/csrf/', csrf_token),
