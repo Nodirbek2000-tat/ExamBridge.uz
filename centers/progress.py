@@ -32,6 +32,8 @@ TASK_KINDS = {
     'cefr_writing': ('test',),
     'cefr_speaking': ('test', 'task'),
     'cefr_test': ('test',),
+    'ielts_full_mock': ('full',),
+    'cefr_full_mock': ('full',),
 }
 
 
@@ -185,6 +187,23 @@ def _cefr_speaking(user, ref, kind, since):
     return _cefr_scored_response('CEFRSpeakingResponse')(user, ref, kind, since)
 
 
+def _full_mock(user, ref, kind, since):
+    """A full mock (all four sections); its overall result once everything is scored."""
+    from fullmock.models import FullMockAttempt
+    from fullmock.views import _attempt_payload
+    a = (FullMockAttempt.objects.filter(user=user, mock_id=ref, started_at__gte=since)
+         .select_related('mock').order_by('-started_at').first())
+    if not a:
+        return None
+    data = _attempt_payload(a)        # also brings the cached result up to date
+    if data['status'] != 'COMPLETED':
+        return None
+    result = data['result']
+    if not result.get('complete'):
+        return _found(a.id, None, 'Being scored', scored=False, at=a.finished_at)
+    return _found(a.id, result['overall'], result['label'], at=a.finished_at)
+
+
 RESOLVERS = {
     'sat_mock': _sat_mock,
     'sat_english': _sat_section('ENGLISH'),
@@ -198,6 +217,8 @@ RESOLVERS = {
     'cefr_test': _cefr_attempt({}),
     'cefr_writing': _cefr_scored_response('CEFRWritingResponse'),
     'cefr_speaking': _cefr_speaking,
+    'ielts_full_mock': _full_mock,
+    'cefr_full_mock': _full_mock,
 }
 
 

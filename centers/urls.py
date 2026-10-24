@@ -1,5 +1,5 @@
 from django.urls import path
-from . import content_views, insights, lessons, views
+from . import content_views, insights, lessons, olympiads, views
 
 urlpatterns = [
     # ── Super Admin ──────────────────────────────────────────────────────────
@@ -48,6 +48,16 @@ urlpatterns = [
     path('<int:center_id>/content/<str:type_key>/<int:pk>/', content_views.content_delete),
     path('<int:center_id>/content/<str:type_key>/<int:pk>/media/', content_views.content_media),
     path('<int:center_id>/settings/', content_views.content_settings),
+
+    # ── Classes and olympiads ────────────────────────────────────────────────
+    path('<int:center_id>/classes/', views.center_classes),
+    path('<int:center_id>/members/<int:user_id>/class/', views.member_class),
+    path('<int:center_id>/olympiads/', olympiads.olympiads),
+    path('<int:center_id>/olympiads/<int:olympiad_id>/', olympiads.olympiad_detail),
+    path('my-olympiads/', olympiads.my_olympiads),
+    path('olympiads/<int:olympiad_id>/', olympiads.my_olympiad),
+    path('olympiads/<int:olympiad_id>/enter/', olympiads.enter_olympiad),
+    path('olympiads/<int:olympiad_id>/begin/', olympiads.begin_olympiad),
 
     # ── Student: my assignments ───────────────────────────────────────────────
     path('my-assignments/', views.my_assignments),

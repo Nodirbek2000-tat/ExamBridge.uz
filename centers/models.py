@@ -1,6 +1,8 @@
 """
 Learning Center (O'quv Markaz) models.
 """
+from datetime import timedelta
+
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
@@ -70,6 +72,9 @@ class CenterMembership(models.Model):
     # Plaintext password set by the admin who created this account, so the
     # super-admin can retrieve/hand it over later. Admin-only visibility.
     member_password = models.CharField(max_length=128, blank=True)
+    # School class of a student — grade 1–11 and a letter: 5 + "A" = 5A
+    grade = models.PositiveSmallIntegerField(null=True, blank=True)
+    class_letter = models.CharField(max_length=2, blank=True)
     joined_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -79,6 +84,10 @@ class CenterMembership(models.Model):
 
     def __str__(self):
         return f"{self.user.email} – {self.role} @ {self.center.name}"
+
+    @property
+    def school_class(self):
+        return f'{self.grade}{self.class_letter}' if self.grade else ''
 
 
 class Group(models.Model):
@@ -175,6 +184,8 @@ class Assignment(models.Model):
         (CEFR_LISTENING, 'CEFR Listening'),
         (CEFR_WRITING, 'CEFR Writing'),
         (CEFR_SPEAKING, 'CEFR Speaking'),
+        ('ielts_full_mock', 'IELTS Full Mock'),
+        ('cefr_full_mock', 'CEFR Full Mock'),
     ]
 
     center = models.ForeignKey(LearningCenter, on_delete=models.CASCADE, related_name='assignments')
@@ -264,12 +275,14 @@ class CenterNotification(models.Model):
     SUBMISSION = 'submission'
     INVITE = 'invite'
     GENERAL = 'general'
+    OLYMPIAD = 'olympiad'
 
     TYPE_CHOICES = [
         (ASSIGNMENT, 'New Assignment'),
         (SUBMISSION, 'Task Submitted'),
         (INVITE, 'Center Invite'),
         (GENERAL, 'General'),
+        (OLYMPIAD, 'Olympiad'),
     ]
 
     recipient = models.ForeignKey(
@@ -295,3 +308,53 @@ class CenterNotification(models.Model):
 
     def __str__(self):
         return f"[{self.notification_type}] {self.title} → {self.recipient.email}"
+
+
+class Olympiad(models.Model):
+    """A timed competition: every participant starts the same test at the same moment.
+
+    The test is any task type a teacher can assign (IELTS / CEFR / SAT, a
+    single part or a full mock). Participants are fixed when it is created —
+    all students, chosen classes or chosen groups. The ranking comes from each
+    participant's own result (centers/olympiads.py).
+    """
+    center = models.ForeignKey(LearningCenter, on_delete=models.CASCADE, related_name='olympiads')
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='+')
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    starts_at = models.DateTimeField()
+    duration_minutes = models.PositiveSmallIntegerField(default=60)
+    task_type = models.CharField(max_length=30)
+    task_ref_id = models.IntegerField()
+    task_ref_kind = models.CharField(max_length=20, blank=True)
+    task_title = models.CharField(max_length=200)
+    # who was invited, for display: {"all": true} | {"classes": ["5A"]} | {"groups": [3, 4]}
+    audience = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-starts_at']
+
+    def __str__(self):
+        return f'{self.title} @ {self.starts_at:%Y-%m-%d %H:%M}'
+
+    @property
+    def ends_at(self):
+        return self.starts_at + timedelta(minutes=self.duration_minutes)
+
+
+class OlympiadParticipant(models.Model):
+    olympiad = models.ForeignKey(Olympiad, on_delete=models.CASCADE, related_name='participants')
+    student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='olympiad_entries')
+    entered_at = models.DateTimeField(null=True, blank=True)    # opened the waiting room
+    started_at = models.DateTimeField(null=True, blank=True)    # opened the test
+    finished_at = models.DateTimeField(null=True, blank=True)   # result found
+    score = models.FloatField(null=True, blank=True)
+    score_detail = models.CharField(max_length=200, blank=True)
+    scored = models.BooleanField(default=False)                  # False while AI is still scoring
+
+    class Meta:
+        unique_together = ('olympiad', 'student')
+
+    def __str__(self):
+        return f'{self.student} · {self.olympiad}'

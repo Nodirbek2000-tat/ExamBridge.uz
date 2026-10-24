@@ -71,6 +71,22 @@ def sync_center(center):
     sync_submissions(subs)
 
 
+def parse_class(grade, letter):
+    """('5', 'a') -> (5, 'A'); blank -> (None, ''). Raises ValueError when invalid."""
+    if grade in (None, '', 0, '0'):
+        return None, ''
+    grade = int(grade)
+    letter = (letter or '').strip().upper()[:2]
+    if not 1 <= grade <= 11 or (letter and not letter.isalpha()):
+        raise ValueError('Class must be 1–11 and a letter, e.g. 5A')
+    return grade, letter
+
+
+def member_to_dict(m):
+    return {**user_to_dict(m.user, m.role), 'grade': m.grade, 'class_letter': m.class_letter,
+            'school_class': m.school_class}
+
+
 def user_to_dict(user, role=None):
     return {
         'id': user.id,
@@ -281,7 +297,7 @@ def center_members_list(request, center_id):
     if role_filter:
         qs = qs.filter(role=role_filter)
 
-    return Response([user_to_dict(m.user, m.role) for m in qs])
+    return Response([member_to_dict(m) for m in qs.order_by('grade', 'class_letter', 'user__first_name')])
 
 
 @api_view(['POST'])
@@ -305,6 +321,10 @@ def center_member_add(request, center_id):
     password = d.get('password', '').strip()
     if not email or not password:
         return Response({'error': 'Email and password required'}, status=400)
+    try:
+        grade, letter = parse_class(d.get('grade'), d.get('class_letter')) if target_role == 'student' else (None, '')
+    except (TypeError, ValueError) as e:
+        return Response({'error': str(e)}, status=400)
 
     with transaction.atomic():
         user, created = User.objects.get_or_create(
@@ -331,11 +351,13 @@ def center_member_add(request, center_id):
             existing.is_active = True
             existing.role = target_role
             existing.member_password = password
+            existing.grade, existing.class_letter = grade, letter
             existing.save()
             return Response(user_to_dict(user, target_role))
 
         CenterMembership.objects.create(
             center=center, user=user, role=target_role, member_password=password,
+            grade=grade, class_letter=letter,
         )
 
     return Response(user_to_dict(user, target_role), status=201)
@@ -898,6 +920,16 @@ def _available(task_type, center):
     `kind` tells the student's Start button which runner to open; `meta` is a
     short hint shown under the title (part, level, task number).
     """
+    if task_type in ('ielts_full_mock', 'cefr_full_mock'):
+        # ExamBridge's full mocks — only while the center shows ExamBridge tests
+        if not center.show_site_mocks:
+            return []
+        from fullmock.models import FullMock
+        from fullmock.sections import missing_sections
+        exam = task_type.split('_')[0]
+        return [{'id': m.id, 'title': m.title, 'kind': 'full', 'meta': 'All four sections'}
+                for m in FullMock.objects.filter(exam=exam, is_published=True) if not missing_sections(m)]
+
     if task_type in ('sat_mock', 'sat_english', 'sat_math'):
         from tests_app.models import Test
         return [{'id': t.id, 'title': f"SAT {t.year}/{t.month} — Form {t.form}", 'kind': 'test'}
@@ -1199,3 +1231,40 @@ def member_profile(request, center_id, user_id):
         'password': membership.member_password,
         'joined_at': membership.joined_at.isoformat(),
     })
+
+
+# ── School classes (5A, 9B…) ──────────────────────────────────────────────────
+
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def member_class(request, center_id, user_id):
+    """Admin: put a student in a class (or clear it)."""
+    center = LearningCenter.objects.filter(id=center_id).first()
+    m = center and CenterMembership.objects.filter(center=center, user_id=user_id, role='student',
+                                                   is_active=True).select_related('user').first()
+    if not m:
+        return Response({'error': 'Not found'}, status=404)
+    if not has_role(request.user, center, 'admin'):
+        return Response({'error': 'Only the admin changes classes'}, status=403)
+    try:
+        m.grade, m.class_letter = parse_class(request.data.get('grade'), request.data.get('class_letter'))
+    except (TypeError, ValueError) as e:
+        return Response({'error': str(e)}, status=400)
+    m.save(update_fields=['grade', 'class_letter'])
+    return Response(member_to_dict(m))
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def center_classes(request, center_id):
+    """The classes that have students, with how many students each."""
+    center = LearningCenter.objects.filter(id=center_id).first()
+    if not center:
+        return Response({'error': 'Not found'}, status=404)
+    if not has_role(request.user, center, 'director', 'admin', 'teacher'):
+        return Response({'error': 'Forbidden'}, status=403)
+    from django.db.models import Count
+    rows = (center.memberships.filter(role='student', is_active=True, grade__isnull=False)
+            .values('grade', 'class_letter').annotate(n=Count('id')).order_by('grade', 'class_letter'))
+    return Response([{'label': f"{r['grade']}{r['class_letter']}", 'grade': r['grade'],
+                      'class_letter': r['class_letter'], 'students': r['n']} for r in rows])
