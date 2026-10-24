@@ -911,6 +911,9 @@ def available_tasks(request, center_id):
     except Exception:
         logger.exception('available_tasks failed for %s', task_type)
         results = []
+    from .durations import minutes_for
+    for r in results:
+        r['minutes'] = minutes_for(task_type, r['id'], r.get('kind', ''))
     return Response(results)
 
 

@@ -86,6 +86,18 @@ class OlympiadTest(TestCase):
         self.assertEqual(res.status_code, 201, res.content)
         self.assertEqual(res.json()['participants'], 1)
 
+    def test_teacher_sees_olympiads_of_own_students(self):
+        # the admin organised it, the teacher's student took part → the teacher sees it and its results
+        self.create(self.admin, {'all': True})
+        o = Olympiad.objects.get()
+        stranger = self.member('t2@t.uz', 'teacher')
+        self.client.force_login(self.teacher)
+        self.assertEqual([x['id'] for x in self.client.get(self.url('olympiads/'), **HEADERS).json()], [o.id])
+        self.assertEqual(self.client.get(self.url(f'olympiads/{o.id}/'), **HEADERS).status_code, 200)
+        self.client.force_login(stranger)
+        self.assertEqual(self.client.get(self.url('olympiads/'), **HEADERS).json(), [])
+        self.assertEqual(self.client.get(self.url(f'olympiads/{o.id}/'), **HEADERS).status_code, 404)
+
     def test_students_cannot_create(self):
         self.assertEqual(self.create(self.s5a1, {'all': True}).status_code, 403)
 
@@ -120,6 +132,32 @@ class OlympiadTest(TestCase):
         self.client.force_login(self.s5a1)
         me = self.client.get(f'/api/centers/olympiads/{o.id}/', **HEADERS).json()['me']
         self.assertEqual(me['rank'], 3)
+
+    def test_time_comes_from_the_test(self):
+        from ielts.models import IELTSTest, ReadingPassage, WritingTask
+        mock = IELTSTest.objects.create(title='R')
+        for n in (1, 2, 3):
+            ReadingPassage.objects.create(test=mock, title=f'P{n}', content='x', passage_number=n)
+        single = ReadingPassage.objects.create(title='One', content='x', is_standalone=True)
+        WritingTask.objects.create(title='Essay', task_type=2, prompt='p', time_limit=40)
+        self.client.force_login(self.teacher)
+
+        def minutes(task_type):
+            rows = self.client.get(self.url(f'available-tasks/?type={task_type}'), **HEADERS).json()
+            return {r['title']: r['minutes'] for r in rows}
+        self.assertEqual(minutes('ielts_reading'), {'R': 60, 'One': 20})
+        self.assertEqual(minutes('ielts_writing')['Essay'], 40)
+        self.assertEqual(minutes('cefr_writing')['Letter'], 60)
+        self.assertEqual(minutes('ielts_full_mock'), {})
+        self.assertEqual(minutes('sat_mock'), {})
+
+        # no duration sent → the olympiad takes the test's own time
+        self.client.force_login(self.admin)
+        res = self.client.post(self.url('olympiads/'), data={
+            'title': 'Auto time', 'starts_at': (timezone.now() + timedelta(hours=1)).isoformat(),
+            'task_type': 'ielts_reading', 'task_ref_id': single.id, 'task_ref_kind': 'passage',
+            'task_title': 'One', 'audience': {'all': True}}, content_type='application/json', **HEADERS)
+        self.assertEqual(res.json()['duration_minutes'], 20)
 
     def test_full_mock_is_a_task_type(self):
         self.client.force_login(self.teacher)

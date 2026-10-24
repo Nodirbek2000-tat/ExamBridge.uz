@@ -134,6 +134,12 @@ def _staff_center(request, center_id):
     return center, role, None
 
 
+def _teacher_q(center, teacher):
+    """A teacher sees the olympiads they organised and those their own students took part in."""
+    from .views import teacher_student_ids
+    return Q(created_by=teacher) | Q(participants__student_id__in=teacher_student_ids(teacher, center))
+
+
 def _invitees(center, role, user, audience):
     """Student ids for an audience, or an error string."""
     students = CenterMembership.objects.filter(center=center, role='student', is_active=True)
@@ -169,7 +175,7 @@ def olympiads(request, center_id):
     if request.method == 'GET':
         qs = center.olympiads.select_related('created_by')
         if role == 'teacher':
-            qs = qs.filter(created_by=request.user)
+            qs = qs.filter(_teacher_q(center, request.user)).distinct()
         now = timezone.now()
         return Response([_summary(o, now) for o in qs[:100]])
 
@@ -181,7 +187,10 @@ def olympiads(request, center_id):
     if starts_at and timezone.is_naive(starts_at):
         starts_at = timezone.make_aware(starts_at)
     try:
-        duration = int(d.get('duration_minutes') or 60)
+        # no time given → the test's own length (centers/durations.py)
+        from .durations import minutes_for
+        duration = int(d.get('duration_minutes') or minutes_for(d.get('task_type'), d.get('task_ref_id'),
+                                                                 d.get('task_ref_kind') or '') or 60)
     except (TypeError, ValueError):
         duration = 0
     task_type, kind = d.get('task_type'), d.get('task_ref_kind') or ''
@@ -218,8 +227,11 @@ def olympiad_detail(request, center_id, olympiad_id):
     center, role, err = _staff_center(request, center_id)
     if err:
         return err
-    o = center.olympiads.select_related('created_by').filter(id=olympiad_id).first()
-    if not o or (role == 'teacher' and o.created_by_id != request.user.id):
+    qs = center.olympiads.select_related('created_by').filter(id=olympiad_id)
+    if role == 'teacher':
+        qs = qs.filter(_teacher_q(center, request.user)).distinct()
+    o = qs.first()
+    if not o:
         return Response({'error': 'Not found'}, status=404)
     if request.method == 'DELETE':
         if o.created_by_id != request.user.id and not has_role(request.user, center, 'admin'):
