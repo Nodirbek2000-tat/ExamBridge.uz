@@ -5,7 +5,9 @@ remembering to put the right permission class on ~115 separate views.
 
 Tiers (see User.admin_tier):
     'super'  — the owner (is_superuser). Everything, including Django admin.
-    1        — everything in the React admin panel, but NOT Django admin.
+    1        — everything in the React admin panel, but NOT Django admin,
+               and it may not delete SAT / IELTS / CEFR tests or copy their
+               JSON (both stay with the owner).
     2        — read-only; most sections, no AI Structures, no imports.
     3        — read-only; only Users / Learning Centers / Reports.
 
@@ -69,6 +71,11 @@ READABLE_BY_LEVEL = {
 
 SAFE_METHODS = frozenset({'GET', 'HEAD', 'OPTIONS'})
 
+# Test content only the owner may delete, and test JSON only the owner may
+# copy out (an export is the whole test, answers included).
+OWNER_ONLY_DELETE = frozenset({SAT, IELTS, CEFR})
+EXPORT_PREFIX = '/api/admin/export/'
+
 
 def area_for_path(path):
     """Return the admin area a request path belongs to, or None."""
@@ -102,6 +109,11 @@ def check(user, path, method):
         return 'This section is not available for your admin level.'
     if method not in SAFE_METHODS and not may_write(user, area):
         return 'Your admin level is view-only.'
+    owner = user.admin_tier == 'super'
+    if path.startswith(EXPORT_PREFIX) and not owner:
+        return 'Only the owner can copy test JSON.'
+    if method == 'DELETE' and area in OWNER_ONLY_DELETE and not owner:
+        return 'Only the owner can delete tests.'
     return None
 
 

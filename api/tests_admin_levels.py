@@ -152,6 +152,39 @@ class TierAccessTest(TestCase):
         )
         self.assertEqual(res.status_code, 200, res.content)
 
+    # ── Tests: only the owner deletes them or copies their JSON ──────────────
+    def test_level1_cannot_delete_tests(self):
+        from ielts.models import IELTSTest, ReadingPassage
+        test = IELTSTest.objects.create(title='Mock')
+        passage = ReadingPassage.objects.create(test=test, title='P', content='x')
+        self.as_(self.l1)
+        for url in (f'/api/admin/ielts/reading/{passage.id}/', '/api/admin/ielts/reading/all/',
+                    f'/api/admin/ielts/tests/{test.id}/', '/api/admin/cefr/reading/all/',
+                    '/api/admin/sat/tests/1/', '/api/admin/sat/questions/1/'):
+            res = self.client.delete(url, **HEADERS)
+            self.assertEqual(res.status_code, 403, url)
+        self.assertTrue(ReadingPassage.objects.filter(id=passage.id).exists())
+
+    def test_level1_cannot_copy_test_json(self):
+        self.as_(self.l1)
+        for url in ('/api/admin/export/ielts/reading/1/', '/api/admin/export/cefr/test/1/'):
+            self.assertEqual(self.client.get(url, **HEADERS).status_code, 403, url)
+
+    def test_owner_deletes_and_exports(self):
+        from ielts.models import ReadingPassage
+        passage = ReadingPassage.objects.create(title='P', content='x', is_standalone=True)
+        self.as_(self.owner)
+        self.assertEqual(self.client.get(f'/api/admin/export/ielts/reading/{passage.id}/', **HEADERS).status_code, 200)
+        self.assertIn(self.client.delete(f'/api/admin/ielts/reading/{passage.id}/', **HEADERS).status_code, (200, 204))
+        self.assertFalse(ReadingPassage.objects.filter(id=passage.id).exists())
+
+    def test_level1_still_edits_tests(self):
+        # Editing and importing stay open for level 1 — only deleting is the owner's.
+        self.as_(self.l1)
+        res = self.client.post('/api/import/ielts/writing/', data={'title': 'T', 'task_type': 2, 'prompt': 'p'},
+                               content_type='application/json', **HEADERS)
+        self.assertEqual(res.status_code, 200, res.content)
+
     # ── Granting levels ──────────────────────────────────────────────────────
     def test_owner_can_set_level(self):
         self.as_(self.owner)
