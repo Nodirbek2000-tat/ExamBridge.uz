@@ -34,6 +34,7 @@ TASK_KINDS = {
     'cefr_test': ('test',),
     'ielts_full_mock': ('full',),
     'cefr_full_mock': ('full',),
+    'center_quiz': ('quiz',),
 }
 
 
@@ -204,6 +205,21 @@ def _full_mock(user, ref, kind, since):
     return _found(a.id, result['overall'], result['label'], at=a.finished_at)
 
 
+def _center_quiz(user, ref, kind, since):
+    """A center's own A/B/C/D test."""
+    from .models import QuizAttempt
+    from .quizzes import finish
+    for a in QuizAttempt.objects.filter(student=user, quiz_id=ref, finished_at__isnull=True,
+                                        started_at__gte=since).select_related('quiz'):
+        if timezone.now() > a.deadline:
+            finish(a, a.deadline)
+    a = (QuizAttempt.objects.filter(student=user, quiz_id=ref, finished_at__isnull=False, started_at__gte=since)
+         .order_by('-finished_at').first())
+    if not a:
+        return None
+    return _found(a.id, a.percent, f'{a.correct}/{a.total} · {a.percent}%', at=a.finished_at)
+
+
 RESOLVERS = {
     'sat_mock': _sat_mock,
     'sat_english': _sat_section('ENGLISH'),
@@ -219,6 +235,7 @@ RESOLVERS = {
     'cefr_speaking': _cefr_speaking,
     'ielts_full_mock': _full_mock,
     'cefr_full_mock': _full_mock,
+    'center_quiz': _center_quiz,
 }
 
 

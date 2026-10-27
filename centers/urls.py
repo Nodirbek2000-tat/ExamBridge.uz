@@ -1,5 +1,5 @@
 from django.urls import path
-from . import content_views, insights, lessons, olympiads, views
+from . import content_views, insights, lessons, olympiads, quizzes, views
 
 urlpatterns = [
     # ── Super Admin ──────────────────────────────────────────────────────────
@@ -58,6 +58,19 @@ urlpatterns = [
     path('olympiads/<int:olympiad_id>/', olympiads.my_olympiad),
     path('olympiads/<int:olympiad_id>/enter/', olympiads.enter_olympiad),
     path('olympiads/<int:olympiad_id>/begin/', olympiads.begin_olympiad),
+
+    # ── The center's own A/B/C/D tests ───────────────────────────────────────
+    path('<int:center_id>/quizzes/', quizzes.quizzes),
+    path('<int:center_id>/quizzes/<int:quiz_id>/', quizzes.quiz_detail),
+    path('<int:center_id>/quizzes/<int:quiz_id>/import/', quizzes.quiz_import),
+    path('<int:center_id>/quizzes/<int:quiz_id>/questions/', quizzes.quiz_add_question),
+    path('<int:center_id>/quizzes/<int:quiz_id>/questions/<int:question_id>/', quizzes.quiz_question),
+    path('<int:center_id>/quizzes/<int:quiz_id>/results/', quizzes.quiz_results),
+    path('my-quizzes/', quizzes.my_quizzes),
+    path('quizzes/<int:quiz_id>/start/', quizzes.quiz_start),
+    path('quiz-attempts/<int:attempt_id>/', quizzes.quiz_attempt),
+    path('quiz-attempts/<int:attempt_id>/answer/', quizzes.quiz_answer),
+    path('quiz-attempts/<int:attempt_id>/submit/', quizzes.quiz_submit),
 
     # ── Student: my assignments ───────────────────────────────────────────────
     path('my-assignments/', views.my_assignments),

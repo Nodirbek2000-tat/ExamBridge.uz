@@ -63,6 +63,9 @@ def _minutes(task_type, ref_id, kind):
         return 32
     if task_type == 'sat_math':
         return 35
+    if task_type == 'center_quiz':
+        from .models import Quiz
+        return Quiz.objects.get(id=ref_id).time_minutes
     if task_type in ('ielts_full_mock', 'cefr_full_mock'):
         from fullmock.sections import steps_for
         return sum(s['minutes'] for s in steps_for(task_type.split('_')[0]))

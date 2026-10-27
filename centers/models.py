@@ -186,6 +186,7 @@ class Assignment(models.Model):
         (CEFR_SPEAKING, 'CEFR Speaking'),
         ('ielts_full_mock', 'IELTS Full Mock'),
         ('cefr_full_mock', 'CEFR Full Mock'),
+        ('center_quiz', "Center's own test"),
     ]
 
     center = models.ForeignKey(LearningCenter, on_delete=models.CASCADE, related_name='assignments')
@@ -358,3 +359,66 @@ class OlympiadParticipant(models.Model):
 
     def __str__(self):
         return f'{self.student} · {self.olympiad}'
+
+
+class Quiz(models.Model):
+    """A center's own multiple-choice test (A/B/C/D, 2–4 options per question).
+
+    Questions form a bank; every attempt draws `pick_count` of them — the same
+    set for everyone, or a different set per student that spreads the whole
+    bank evenly (centers/quizzes.py).
+    """
+    center = models.ForeignKey(LearningCenter, on_delete=models.CASCADE, related_name='quizzes')
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='+')
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    time_minutes = models.PositiveSmallIntegerField(default=20)
+    pick_count = models.PositiveSmallIntegerField(null=True, blank=True, help_text='Questions per attempt; empty = all')
+    same_for_all = models.BooleanField(default=True)
+    shuffle_options = models.BooleanField(default=False)
+    show_answers = models.BooleanField(default=True, help_text='Show the right answers after finishing')
+    is_active = models.BooleanField(default=False, help_text="Students see it in their Tests section")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.title
+
+
+class QuizQuestion(models.Model):
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='questions')
+    order = models.PositiveIntegerField(default=0)
+    text = models.TextField()
+    options = models.JSONField(default=list)              # 2–4 strings
+    correct = models.PositiveSmallIntegerField(default=0)  # index into options
+    explanation = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ['order', 'id']
+
+
+class QuizAttempt(models.Model):
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='attempts')
+    student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='quiz_attempts')
+    question_ids = models.JSONField(default=list)          # the drawn questions, in order
+    option_orders = models.JSONField(default=dict)         # {question id: [original option indexes]}
+    answers = models.JSONField(default=dict)               # {question id: original option index}
+    started_at = models.DateTimeField(auto_now_add=True)
+    finished_at = models.DateTimeField(null=True, blank=True)
+    correct = models.PositiveSmallIntegerField(default=0)
+    total = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['-started_at']
+        indexes = [models.Index(fields=['quiz', 'student'])]
+
+    @property
+    def percent(self):
+        return round(self.correct / self.total * 100) if self.total else 0
+
+    @property
+    def deadline(self):
+        return self.started_at + timedelta(minutes=self.quiz.time_minutes)

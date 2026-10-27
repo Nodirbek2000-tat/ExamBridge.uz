@@ -923,6 +923,13 @@ def _available(task_type, center):
     `kind` tells the student's Start button which runner to open; `meta` is a
     short hint shown under the title (part, level, task number).
     """
+    if task_type == 'center_quiz':
+        from django.db.models import Count
+        from .models import Quiz
+        return [{'id': q.id, 'title': q.title, 'kind': 'quiz',
+                 'meta': f"{min(q.pick_count or q.n, q.n)} questions" + ('' if q.is_active else ' · not active')}
+                for q in center.quizzes.annotate(n=Count('questions')).filter(n__gt=0)]
+
     if task_type in ('ielts_full_mock', 'cefr_full_mock'):
         # ExamBridge's full mocks — only while the center shows ExamBridge tests
         if not center.show_site_mocks:
