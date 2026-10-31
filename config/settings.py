@@ -82,6 +82,8 @@ MIDDLEWARE = [
     # Admin panel tiers (1/2/3) — blocks sections and write actions the
     # acting admin's level may not use. See accounts/admin_access.py.
     'accounts.admin_access.AdminLevelMiddleware',
+    # Records who is on the site, for the admin dashboard. See accounts/presence.py.
+    'accounts.presence.LastSeenMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'

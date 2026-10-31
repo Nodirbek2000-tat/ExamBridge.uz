@@ -159,7 +159,7 @@ def platform_stats(request):
     from datetime import timedelta
 
     now = timezone.now()
-    today = now.date()
+    today = timezone.localdate()
     week_ago = now - timedelta(days=7)
     month_ago = now - timedelta(days=30)
 

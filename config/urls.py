@@ -12,7 +12,7 @@ admin.site.has_permission = lambda request: bool(
 )
 
 # ── API imports ──────────────────────────────────────────────────────────────
-from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
+from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, ping_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
 from api.sat_analytics import sat_analytics
 from api.analytics_ai import analytics_ai, exam_analytics
 from api import cefr_writing, cefr_speaking
@@ -49,6 +49,9 @@ from api.cefr_views import (
 from api.system_views import (
     system_health, celery_tasks, platform_stats, admin_leaderboard,
     security_blocked_list, security_unblock, security_whitelist, security_whitelist_remove,
+)
+from api.stats_views import (
+    live_stats, analytics_stats, mock_stats, mock_attempts, visitor_stats,
 )
 from api.ai_views import (
     ai_chat, ai_conversations, ai_conversation_detail,
@@ -120,6 +123,7 @@ urlpatterns = [
     path('api/auth/register/', register_view),
     path('api/auth/logout/', logout_view),
     path('api/auth/me/', me_view),
+    path('api/auth/ping/', ping_view),
     path('api/auth/google/', google_login_view),
     path('api/auth/refresh/', token_refresh_view),
     path('api/auth/platform-bridge/', platform_bridge_auth),  # testmakon → SAT+ JWT
@@ -272,6 +276,11 @@ urlpatterns = [
     path('api/system/health/', system_health),
     path('api/system/tasks/', celery_tasks),
     path('api/system/stats/', platform_stats),
+    path('api/system/live/', live_stats),
+    path('api/system/analytics/', analytics_stats),
+    path('api/system/mocks/', mock_stats),
+    path('api/system/mocks/<str:section>/<int:mock_id>/', mock_attempts),
+    path('api/system/visitors/', visitor_stats),
     # ── Security ──────────────────────────────────────────────────────────────
     path('api/admin/security/blocked/', security_blocked_list),
     path('api/admin/security/unblock/', security_unblock),

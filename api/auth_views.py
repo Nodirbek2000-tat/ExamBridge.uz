@@ -3,7 +3,7 @@ from django.middleware.csrf import get_token
 from django.conf import settings
 from django.utils.dateparse import parse_date
 from rest_framework import status
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, throttle_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -174,6 +174,14 @@ def logout_view(request):
 @permission_classes([IsAuthenticated])
 def me_view(request):
     return Response(user_data(request.user))
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+@throttle_classes([])
+def ping_view(request):
+    """Heartbeat from an open tab; LastSeenMiddleware does the recording."""
+    return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['PATCH'])

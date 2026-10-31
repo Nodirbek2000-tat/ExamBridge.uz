@@ -34,6 +34,9 @@ class User(AbstractUser):
     locked_until = models.DateTimeField(null=True, blank=True)
     last_ip = models.GenericIPAddressField(null=True, blank=True)
 
+    # Last authenticated API request (accounts/presence.py) — "who is online"
+    last_seen_at = models.DateTimeField(null=True, blank=True, db_index=True)
+
     # Platform source — which site this user belongs to
     PLATFORM_EXAMBRIDGE = 'exambridge'
     PLATFORM_TESTMAKON = 'testmakon'
@@ -141,6 +144,22 @@ class User(AbstractUser):
             self.failed_login_attempts = 0
             self.locked_until = None
             self.save(update_fields=['failed_login_attempts', 'locked_until'])
+
+
+class UserDailyVisit(models.Model):
+    """One row per (user, day) they came to the site: daily/monthly active users."""
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='daily_visits')
+    date = models.DateField()
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['user', 'date'], name='uniq_dailyvisit_user_date'),
+        ]
+        indexes = [models.Index(fields=['date'], name='dailyvisit_date_idx')]
+
+    def __str__(self):
+        return f'{self.user_id} · {self.date}'
 
 
 class UserStats(models.Model):
