@@ -50,6 +50,7 @@ PREFIX_AREAS = (
     ('/api/admin/study/', STUDY),
     ('/api/admin/games/', GAMES),
     ('/api/admin/ai/', AI),
+    ('/api/admin/ai-lessons/', AI),
     ('/api/admin/reports/', REPORTS),
     ('/api/admin/security/', SYSTEM),
     ('/api/system/', SYSTEM),

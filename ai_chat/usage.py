@@ -44,6 +44,11 @@ FEATURES = {
     'speaking_game_stt': ('Games', 'Speaking game transcription'),
     'shadowing_stt': ('Study Tools', 'Shadowing transcription'),
     'podcast_stt': ('Study Tools', 'Podcast transcription'),
+    'lesson_plan': ('AI Lessons', 'Lesson planning'),
+    'lesson_section': ('AI Lessons', 'Lesson script'),
+    'lesson_questions': ('AI Lessons', 'Lesson questions'),
+    'lesson_review': ('AI Lessons', 'Lesson review'),
+    'lesson_voice': ('AI Lessons', 'Lesson voice'),
 }
 
 

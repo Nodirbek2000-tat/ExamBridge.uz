@@ -64,6 +64,29 @@ services:
     networks:
       - internal
 
+  # ── Celery: AI darslar ──────────────────────────────────────────────────────
+  # Dars tayyorlash daqiqalab davom etadi, shuning uchun alohida navbat va worker.
+  # Bir vaqtda bitta ish: writing baholash navbatini kutdirmaydi, server yuklanmaydi.
+  celery-lessons:
+    build: .
+    restart: unless-stopped
+    command: celery -A config worker -Q lessons -n lessons@%h -l info --concurrency 1 --prefetch-multiplier 1 --max-tasks-per-child 20
+    mem_limit: 768m
+    cpus: 1.0
+    # A redeploy waits this long for the current step to finish; anything cut off
+    # is released after 30 minutes and continues from its last saved stage.
+    stop_grace_period: 2m
+    volumes:
+      - media_volume:/app/media
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - internal
+
   nginx:
     image: nginx:1.25-alpine
     restart: unless-stopped

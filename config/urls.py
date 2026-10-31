@@ -115,6 +115,8 @@ urlpatterns = [
 
     # ── CENTERS API ───────────────────────────────────────────────────────────
     path('api/centers/', include('centers.urls')),
+    path('api/admin/ai-lessons/', include('ai_lessons.urls')),
+    path('api/ai-lessons/', include('ai_lessons.student_urls')),
     path('', include('fullmock.urls')),
 
     # ── AUTH API ──────────────────────────────────────────────────────────────

@@ -54,6 +54,7 @@ LOCAL_APPS = [
     'wordbattle',
     'study',
     'fullmock',
+    'ai_lessons',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -224,6 +225,14 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 # api/ is a plain package, not an installed app, so autodiscover_tasks() never
 # finds api/tasks.py — the worker rejected every task as "unregistered".
 CELERY_IMPORTS = ('api.tasks',)
+# AI lessons take minutes, so they get their own queue and worker (docker-compose:
+# celery-lessons) and can never hold up writing grading in the main queue.
+CELERY_TASK_ROUTES = {'ai_lessons.tasks.*': {'queue': 'lessons'}}
+
+# ─── AI LESSONS ───────────────────────────────────────────────────────────────
+# 'openai' spends money; 'fake' writes canned lessons that can never be published.
+AI_LESSON_PROVIDER = config('AI_LESSON_PROVIDER', default='openai')
+AI_LESSON_MODEL = config('AI_LESSON_MODEL', default='gpt-4.1')
 
 # ─── SPEAKING OVOZ YOZUVLARINI SAQLASH MUDDATI ────────────────────────────────
 # Shu kundan eski ovoz fayllari avtomatik o'chiriladi.
