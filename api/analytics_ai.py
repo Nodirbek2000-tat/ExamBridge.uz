@@ -170,20 +170,25 @@ def analytics_ai(request):
 
     def generate():
         from openai import OpenAI
+        from ai_chat.usage import record_chat
         yield sse({'type': 'meta', 'cached': False})
         text = ''
         try:
             client = OpenAI(api_key=settings.OPENAI_API_KEY, timeout=60)
             stream = client.chat.completions.create(
                 model=MODEL, temperature=0.2, max_tokens=1300, stream=True,
+                stream_options={'include_usage': True},
                 messages=[{'role': 'system', 'content': system},
                           {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False, default=str)}],
             )
+            usage = None
             for chunk in stream:
+                usage = chunk.usage or usage
                 delta = chunk.choices[0].delta.content if chunk.choices else None
                 if delta:
                     text += delta
                     yield sse({'type': 'delta', 'text': delta})
+            record_chat(f'analysis_{exam}', MODEL, usage)
         except Exception:
             log.exception('analytics AI failed (%s)', exam)
             yield sse({'type': 'error', 'message': "AI tahlilni hozir olib bo'lmadi. Birozdan keyin qayta urinib ko'ring."})

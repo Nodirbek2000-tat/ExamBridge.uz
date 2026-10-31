@@ -468,10 +468,15 @@ class WhisperReuseTests(SpeakingLimitBase):
 
     def test_only_answers_with_stored_text_are_reused(self):
         attempt = IELTSAttempt.objects.create(user=self.user)
-        self.whisper.side_effect = ['', 'Second answer.']          # the first clip was silent the first time
+        # the first clip was silent the first time; clips run in parallel, so reply by clip, not by call order
+        silent, spoken = M4A + b'\x01', M4A + b'\x02'
+        self.whisper.side_effect = lambda data, *args, **kwargs: {silent: '', spoken: 'Second answer.'}[data]
         answers = [{'question': 'Where are you from?', 'transcript': ''},
                    {'question': 'Do you like it?', 'transcript': ''}]
-        self.ielts_submit(attempt.id, answers, {'audio_0': m4a(0), 'audio_1': m4a(1)})
+        self.ielts_submit(attempt.id, answers, {
+            'audio_0': SimpleUploadedFile('answer_0.m4a', silent, content_type='audio/mp4'),
+            'audio_1': SimpleUploadedFile('answer_1.m4a', spoken, content_type='audio/mp4'),
+        })
         self.assertEqual(self.whisper.call_count, 2)
 
         self.whisper.side_effect = ['Now it is heard.']

@@ -18,6 +18,8 @@ from celery import shared_task
 from django.conf import settings
 from django.utils import timezone
 
+from ai_chat.usage import record
+
 from .models import SpeakingAttempt
 from .scoring import score_reading
 
@@ -52,7 +54,9 @@ def whisper_words(data, mime='audio/webm', timeout=120):
     if resp.status_code in (400, 413, 415):
         raise BadAudio(resp.text[:300])
     resp.raise_for_status()
-    return resp.json()
+    body = resp.json()
+    record('speaking_game_stt', 'whisper-1', seconds=float(body.get('duration') or 0))
+    return body
 
 
 def _fail(attempt_id, error):

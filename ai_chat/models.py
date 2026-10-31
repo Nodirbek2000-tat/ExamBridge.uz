@@ -62,3 +62,24 @@ class AIMessage(models.Model):
 
     def __str__(self):
         return f"{self.role}: {self.content[:60]}"
+
+
+class AIUsage(models.Model):
+    """One billed call to an AI provider; cost_usd comes from ai_chat/usage.py at call time."""
+
+    feature = models.CharField(max_length=40)
+    model = models.CharField(max_length=40)
+    input_tokens = models.PositiveIntegerField(default=0)
+    cached_tokens = models.PositiveIntegerField(default=0)
+    output_tokens = models.PositiveIntegerField(default=0)
+    audio_seconds = models.FloatField(default=0)
+    characters = models.PositiveIntegerField(default=0)
+    cost_usd = models.DecimalField(max_digits=10, decimal_places=6, default=0)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        indexes = [models.Index(fields=['feature', 'created_at'], name='aiusage_feature_created_idx')]
+
+    def __str__(self):
+        return f'{self.feature} · {self.model} · ${self.cost_usd}'

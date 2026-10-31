@@ -21,6 +21,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
+from ai_chat.usage import record
 from api.ielts_views import _write_file_atomic
 
 log = logging.getLogger(__name__)
@@ -72,6 +73,7 @@ def character_audio(voice_key, text):
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
         data = resp.read()
+    record('games_tts', MODEL, characters=len(text))
     if data:                                   # never cache an empty body
         _write_file_atomic(path, data)
     return data, 'MISS'

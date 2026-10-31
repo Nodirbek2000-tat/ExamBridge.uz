@@ -13,6 +13,8 @@ from rest_framework.response import Response
 import requests
 from django.conf import settings
 
+from ai_chat.usage import record
+
 from .models import (
     Article, ArticleView, WritingSample, WritingSampleRead, Podcast, PodcastListen,
 )
@@ -276,6 +278,7 @@ def _whisper_call(filename, payload, api_key):
         )
         resp.raise_for_status()
         data = resp.json()
+        record('podcast_stt', 'whisper-1', seconds=float(data.get('duration') or 0))
     except requests.HTTPError as e:
         try:
             detail = e.response.json().get('error', {}).get('message', '')

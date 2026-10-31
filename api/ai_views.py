@@ -6,6 +6,7 @@ import base64
 from openai import OpenAI
 from django.conf import settings
 from django.http import StreamingHttpResponse
+from ai_chat.usage import record_chat
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view, permission_classes, parser_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
@@ -256,12 +257,18 @@ def ai_chat(request):
                 max_tokens=2048,
                 messages=openai_messages,
                 stream=True,
+                stream_options={'include_usage': True},
             )
+            usage = None
             for chunk in stream:
+                usage = chunk.usage or usage
+                if not chunk.choices:            # the closing chunk only carries usage
+                    continue
                 text = chunk.choices[0].delta.content
                 if text:
                     full_response += text
                     yield f"data: {json.dumps({'type': 'delta', 'text': text})}\n\n"
+            record_chat('ai_tutor', 'gpt-4o', usage)
 
             # Save assistant message
             AIMessage.objects.create(

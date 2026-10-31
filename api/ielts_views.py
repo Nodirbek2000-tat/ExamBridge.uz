@@ -27,6 +27,7 @@ from ielts.models import (
 )
 from cefr.models import CEFRReadingQuestion, CEFRListeningQuestion, CEFRQuestion
 from api import speaking_limit
+from ai_chat.usage import record, record_chat
 from api.stt import EXT_MIME, audio_ext, whisper_transcribe
 from speaking.views import sniff_audio
 
@@ -617,7 +618,7 @@ def _write_file_atomic(path, data):
                 pass
 
 
-def tts_audio(text, voice, speed):
+def tts_audio(text, voice, speed, feature='ielts_tts'):
     """
     One examiner line as MP3 bytes → (bytes, 'HIT' | 'MISS').
     Served from the disk cache when it exists — no OpenAI call, the worker is
@@ -642,6 +643,7 @@ def tts_audio(text, voice, speed):
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
         audio_data = resp.read()
+    record(feature, TTS_MODEL, characters=len(text))
     if audio_data:  # never cache an empty body
         _write_file_atomic(cache_path, audio_data)
     return audio_data, 'MISS'
@@ -731,7 +733,8 @@ def _whisper_stored(path, mime):
         # the content decides what Whisper is told: the web page names every typeless Blob
         # q<i>.webm, even when Safari recorded mp4
         sniffed = sniff_audio(data[:16])
-        return _heard(whisper_transcribe(data, sniffed[0] if sniffed else mime, timeout=60))[:STT_MAX_TRANSCRIPT]
+        text = whisper_transcribe(data, sniffed[0] if sniffed else mime, timeout=60, feature='ielts_speaking_stt')
+        return _heard(text)[:STT_MAX_TRANSCRIPT]
     except Exception:
         logger.warning('Whisper fallback failed for IELTS speaking %s', path, exc_info=True)
         return ''
@@ -1014,6 +1017,7 @@ Return this exact JSON:
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
             data = json.loads(resp.read().decode('utf-8'))
+        record_chat('ielts_speaking_grade', 'gpt-4.1', data.get('usage'))
         content = data['choices'][0]['message']['content']
         result = json.loads(content)
 
@@ -1433,6 +1437,7 @@ Return this exact JSON (no extra fields):
 
     with urllib.request.urlopen(req, timeout=60) as resp:
         data = json.loads(resp.read().decode('utf-8'))
+    record_chat('ielts_writing_grade', 'gpt-4.1', data.get('usage'))
     content = data['choices'][0]['message']['content']
     return json.loads(content)
 

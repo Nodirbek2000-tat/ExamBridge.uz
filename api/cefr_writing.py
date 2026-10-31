@@ -274,6 +274,7 @@ def _build_prompt(test, keys, answers):
 
 def _call_ai(test, keys, answers):
     from openai import OpenAI
+    from ai_chat.usage import record_chat
     if not getattr(settings, 'OPENAI_API_KEY', ''):
         raise RuntimeError('OpenAI API key is not configured')
     client = OpenAI(api_key=settings.OPENAI_API_KEY, timeout=120)
@@ -282,6 +283,7 @@ def _call_ai(test, keys, answers):
         messages=[{'role': 'system', 'content': SYSTEM},
                   {'role': 'user', 'content': _build_prompt(test, keys, answers)}],
     )
+    record_chat('cefr_writing_grade', MODEL, reply.usage)
     return json.loads(reply.choices[0].message.content or '{}')
 
 

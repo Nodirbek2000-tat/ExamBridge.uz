@@ -9,6 +9,8 @@ from django.utils import timezone
 from rest_framework_simplejwt.tokens import AccessToken
 
 from accounts.models import UserDailyVisit
+from ai_chat.models import AIUsage
+from ai_chat.usage import cost_of, record, record_chat
 from cefr.models import CEFRAttempt
 from ielts.models import IELTSAttempt, IELTSTest
 from tests_app.models import Test, TestAttempt, TestResult
@@ -185,6 +187,59 @@ class MockStatsTest(StatsBase):
         self.assertEqual(data['count'], 1)
         self.assertEqual(data['results'][0]['score'], 1250)
         self.assertEqual(data['results'][0]['user']['email'], 'student@test.uz')
+
+
+class AIUsageTest(StatsBase):
+    def test_chat_cost_bills_cached_tokens_at_their_own_price(self):
+        cost = cost_of('gpt-4.1', input_tokens=1_000_000, cached_tokens=400_000, output_tokens=100_000)
+        self.assertEqual(float(cost), 0.6 * 2 + 0.4 * 0.5 + 0.1 * 8)
+
+    def test_whisper_and_tts_costs(self):
+        self.assertEqual(float(cost_of('whisper-1', seconds=120)), 0.012)
+        self.assertEqual(float(cost_of('tts-1-hd', characters=1000)), 0.03)
+
+    def test_unknown_model_costs_nothing_but_is_saved(self):
+        record('ai_tutor', 'gpt-next', input_tokens=500)
+        self.assertEqual(AIUsage.objects.get().cost_usd, 0)
+
+    def test_record_chat_reads_the_raw_json_usage_block(self):
+        record_chat('ielts_writing_grade', 'gpt-4.1', {
+            'prompt_tokens': 1000, 'completion_tokens': 200,
+            'prompt_tokens_details': {'cached_tokens': 100},
+        })
+        row = AIUsage.objects.get()
+        self.assertEqual((row.input_tokens, row.cached_tokens, row.output_tokens), (1000, 100, 200))
+
+    def test_record_chat_with_no_usage_saves_nothing(self):
+        record_chat('ai_tutor', 'gpt-4o', None)
+        self.assertFalse(AIUsage.objects.exists())
+
+    def test_a_broken_usage_block_never_raises(self):
+        record_chat('ai_tutor', 'gpt-4o', 'not a usage block')
+        self.assertFalse(AIUsage.objects.exists())
+
+    def test_costs_split_by_section_feature_and_day(self):
+        record('ielts_writing_grade', 'gpt-4.1', output_tokens=1_000_000)
+        record('ielts_speaking_stt', 'whisper-1', seconds=60)
+        record('games_tts', 'gpt-4o-mini-tts', characters=1000)
+        record('cefr_writing_grade', 'gpt-4.1', output_tokens=1_000_000)
+        AIUsage.objects.filter(feature='cefr_writing_grade').update(
+            created_at=timezone.now() - timedelta(days=3),
+        )
+
+        data = self.client.get('/api/system/ai-costs/?days=7', **auth(self.admin)).json()
+
+        self.assertAlmostEqual(data['totals']['today'], 8.0227, places=3)
+        self.assertAlmostEqual(data['totals']['week'], 16.0227, places=3)
+        self.assertEqual(data['groups'][0]['group'], 'IELTS')
+        self.assertEqual(data['features'][0]['total'], 8)
+        self.assertEqual(len(data['trend']), 7)
+        self.assertAlmostEqual(data['trend'][-1]['cost'], 8.0227, places=3)
+        self.assertEqual(data['trend'][3]['cost'], 8)
+
+    def test_students_are_refused(self):
+        res = self.client.get('/api/system/ai-costs/', **auth(self.student))
+        self.assertEqual(res.status_code, 403)
 
 
 class VisitorStatsTest(StatsBase):

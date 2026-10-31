@@ -75,7 +75,7 @@ def _clip(text, voice):
         return os.path.exists(_cache_path(voice, text)), lambda: character_audio(voice, text)
     from api.ielts_views import _tts_cache_path, tts_audio
     name, speed = DEFAULT_VOICE
-    return os.path.exists(_tts_cache_path(text, name, speed)), lambda: tts_audio(text, name, speed)
+    return os.path.exists(_tts_cache_path(text, name, speed)), lambda: tts_audio(text, name, speed, feature='games_tts')
 
 
 @shared_task(ignore_result=True)

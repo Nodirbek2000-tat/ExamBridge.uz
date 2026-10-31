@@ -138,7 +138,7 @@ class SpeakingSubmitTests(TestCase):
         self.assertEqual(self.whisper.call_count, 1)
         args, kwargs = self.whisper.call_args
         self.assertEqual(args, (M4A, 'audio/mp4'))
-        self.assertEqual(kwargs, {'timeout': 60})
+        self.assertEqual(kwargs, {'timeout': 60, 'feature': 'ielts_speaking_stt'})
         answer = body['transcripts'][0]
         self.assertEqual((answer['transcript'], answer['stt']), ('I am from Tashkent, the capital.', 'whisper'))
         stored = SpeakingResponse.objects.get(attempt=self.attempt, task=self.task).transcripts[0]
@@ -168,7 +168,7 @@ class SpeakingSubmitTests(TestCase):
 
     def test_each_answer_gets_its_own_transcript(self):
         clips = [M4A + bytes([i]) * 10 for i in range(5)]
-        self.whisper.side_effect = lambda data, mime, timeout: f'answer {clips.index(data)}'
+        self.whisper.side_effect = lambda data, mime, timeout, feature: f'answer {clips.index(data)}'
         body = self.submit([{'question': f'Q{i}', 'transcript': ''} for i in range(5)],
                            {f'audio_{i}': m4a(i, clips[i]) for i in range(5)}, headers=PHONE)
         self.assertEqual(self.whisper.call_count, 5)

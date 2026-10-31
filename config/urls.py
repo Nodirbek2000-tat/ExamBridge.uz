@@ -51,7 +51,7 @@ from api.system_views import (
     security_blocked_list, security_unblock, security_whitelist, security_whitelist_remove,
 )
 from api.stats_views import (
-    live_stats, analytics_stats, mock_stats, mock_attempts, visitor_stats,
+    live_stats, analytics_stats, ai_cost_stats, mock_stats, mock_attempts, visitor_stats,
 )
 from api.ai_views import (
     ai_chat, ai_conversations, ai_conversation_detail,
@@ -278,6 +278,7 @@ urlpatterns = [
     path('api/system/stats/', platform_stats),
     path('api/system/live/', live_stats),
     path('api/system/analytics/', analytics_stats),
+    path('api/system/ai-costs/', ai_cost_stats),
     path('api/system/mocks/', mock_stats),
     path('api/system/mocks/<str:section>/<int:mock_id>/', mock_attempts),
     path('api/system/visitors/', visitor_stats),

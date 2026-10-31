@@ -12,7 +12,7 @@ from datetime import timedelta
 
 from django.core.cache import cache
 from django.core.paginator import Paginator
-from django.db.models import Avg, Count, F, Max, Q
+from django.db.models import Avg, Count, F, Max, Q, Sum
 from django.db.models.functions import Coalesce, ExtractHour, Lower, TruncDate
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
@@ -21,6 +21,8 @@ from rest_framework.response import Response
 
 from accounts.models import User, UserDailyVisit
 from accounts.presence import ONLINE_WINDOW, online_since
+from ai_chat.models import AIUsage
+from ai_chat.usage import FEATURES
 from cefr.models import CEFRAttempt, CEFRTest
 from fullmock.models import FullMock, FullMockAttempt
 from ielts.models import IELTSAttempt, IELTSTest
@@ -294,18 +296,118 @@ def _build_analytics(days):
     }
 
 
+def _days_param(request):
+    try:
+        days = int(request.query_params.get('days', 30))
+    except ValueError:
+        return 30
+    return days if days in ALLOWED_DAYS else 30
+
+
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
 def analytics_stats(request):
     """Totals, per-section numbers and the daily trend for the last ?days=7|30|90."""
-    try:
-        days = int(request.query_params.get('days', 30))
-    except ValueError:
-        days = 30
-    if days not in ALLOWED_DAYS:
-        days = 30
+    days = _days_param(request)
     return Response(cache.get_or_set(
         f'admin:analytics:{days}', lambda: _build_analytics(days), ANALYTICS_CACHE_SECONDS,
+    ))
+
+
+# ── AI costs ──────────────────────────────────────────────────────────────────
+
+def _money(value):
+    return round(float(value or 0), 4)
+
+
+def _build_ai_costs(days):
+    today = timezone.localdate()
+    today_start = timezone.localtime().replace(hour=0, minute=0, second=0, microsecond=0)
+    yesterday_start = today_start - timedelta(days=1)
+    week_start = today_start - timedelta(days=6)
+    month_start = today_start - timedelta(days=29)
+    calendar_start = today_start.replace(day=1)
+    range_start = today_start - timedelta(days=days - 1)
+
+    def spent(since):
+        return Sum('cost_usd', filter=Q(created_at__gte=since))
+
+    totals = AIUsage.objects.aggregate(
+        all=Sum('cost_usd'),
+        today=spent(today_start),
+        yesterday=Sum('cost_usd', filter=Q(created_at__gte=yesterday_start, created_at__lt=today_start)),
+        week=spent(week_start),
+        month=spent(month_start),
+        calendar_month=spent(calendar_start),
+    )
+
+    rows = AIUsage.objects.values('feature').annotate(
+        calls=Count('id'),
+        calls_today=Count('id', filter=Q(created_at__gte=today_start)),
+        total=Sum('cost_usd'),
+        today=spent(today_start),
+        week=spent(week_start),
+        month=spent(month_start),
+    )
+    features, groups = [], {}
+    for r in rows:
+        group, label = FEATURES.get(r['feature'], ('Other', r['feature']))
+        features.append({
+            'feature': r['feature'],
+            'group': group,
+            'label': label,
+            'calls': r['calls'],
+            'calls_today': r['calls_today'],
+            'total': _money(r['total']),
+            'today': _money(r['today']),
+            'week': _money(r['week']),
+            'month': _money(r['month']),
+            'per_call': _money(r['total'] / r['calls']),
+        })
+        entry = groups.setdefault(group, {'group': group, 'total': 0, 'today': 0, 'month': 0, 'calls': 0})
+        entry['total'] += float(r['total'] or 0)
+        entry['today'] += float(r['today'] or 0)
+        entry['month'] += float(r['month'] or 0)
+        entry['calls'] += r['calls']
+
+    daily = {
+        r['day']: r['cost']
+        for r in AIUsage.objects.filter(created_at__gte=range_start)
+        .annotate(day=TruncDate('created_at')).values('day').annotate(cost=Sum('cost_usd'))
+    }
+    first = AIUsage.objects.order_by('created_at').values_list('created_at', flat=True).first()
+
+    return {
+        'days': days,
+        'totals': {key: _money(value) for key, value in totals.items()},
+        'tracking_since': timezone.localdate(first).isoformat() if first else None,
+        'groups': [
+            {**g, 'total': _money(g['total']), 'today': _money(g['today']), 'month': _money(g['month'])}
+            for g in sorted(groups.values(), key=lambda g: -g['total'])
+        ],
+        'features': sorted(features, key=lambda f: -f['total']),
+        'models': [
+            {'model': r['model'], 'calls': r['calls'], 'total': _money(r['total'])}
+            for r in AIUsage.objects.values('model')
+            .annotate(calls=Count('id'), total=Sum('cost_usd')).order_by('-total')
+        ],
+        'trend': [
+            {
+                'date': (today - timedelta(days=offset)).isoformat(),
+                'cost': _money(daily.get(today - timedelta(days=offset))),
+            }
+            for offset in range(days - 1, -1, -1)
+        ],
+    }
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def ai_cost_stats(request):
+    """What the AI services cost, by section and feature, with ?days=7|30|90 of daily totals."""
+    days = _days_param(request)
+    return Response(cache.get_or_set(
+        f'admin:ai-costs:{days}', lambda: _build_ai_costs(days), ANALYTICS_CACHE_SECONDS,
     ))
 
 

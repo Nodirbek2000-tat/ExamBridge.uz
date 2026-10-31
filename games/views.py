@@ -9,6 +9,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 
+from ai_chat.usage import record
+
 from .models import ShadowingText, ShadowingAttempt
 
 
@@ -32,11 +34,13 @@ def _transcribe(audio_file):
             'https://api.openai.com/v1/audio/transcriptions',
             headers={'Authorization': f'Bearer {api_key}'},
             files={'file': ('shadowing.webm', audio_file.read(), audio_file.content_type or 'audio/webm')},
-            data={'model': 'whisper-1', 'language': 'en'},
+            data={'model': 'whisper-1', 'language': 'en', 'response_format': 'verbose_json'},
             timeout=45,
         )
         resp.raise_for_status()
-        return resp.json().get('text', '')
+        body = resp.json()
+        record('shadowing_stt', 'whisper-1', seconds=float(body.get('duration') or 0))
+        return body.get('text', '')
     except Exception:
         return ''
 

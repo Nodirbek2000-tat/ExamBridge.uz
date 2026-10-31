@@ -158,7 +158,7 @@ def warm_tts(test):
     made = 0
     for line in tts_lines(test):
         try:
-            _, status = tts_audio(line, VOICE, SPEED)
+            _, status = tts_audio(line, VOICE, SPEED, feature='cefr_tts')
             made += status == 'MISS'
         except Exception:
             log.warning('TTS warm-up failed for test %s: %.60s', test.id, line, exc_info=True)
@@ -282,6 +282,7 @@ def _build_prompt(test, keys, answers_by_part):
 
 def _call_ai(test, keys, answers_by_part):
     from openai import OpenAI
+    from ai_chat.usage import record_chat
     if not getattr(settings, 'OPENAI_API_KEY', ''):
         raise RuntimeError('OpenAI API key is not configured')
     client = OpenAI(api_key=settings.OPENAI_API_KEY, timeout=120)
@@ -290,6 +291,7 @@ def _call_ai(test, keys, answers_by_part):
         messages=[{'role': 'system', 'content': SYSTEM},
                   {'role': 'user', 'content': _build_prompt(test, keys, answers_by_part)}],
     )
+    record_chat('cefr_speaking_grade', MODEL, reply.usage)
     return json.loads(reply.choices[0].message.content or '{}')
 
 
@@ -350,7 +352,9 @@ def fill_missing_transcripts(response):
                 data = fh.read()
             if not data or len(data) > MAX_AUDIO_BYTES:
                 continue
-            a['transcript'] = whisper_transcribe(data, a.get('mime') or 'audio/webm', timeout=60)[:MAX_TRANSCRIPT]
+            a['transcript'] = whisper_transcribe(
+                data, a.get('mime') or 'audio/webm', timeout=60, feature='cefr_speaking_stt',
+            )[:MAX_TRANSCRIPT]
             a['stt'] = 'whisper'
             changed = True
         except Exception:

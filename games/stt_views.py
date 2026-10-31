@@ -136,7 +136,7 @@ def _transcribe(request, clip, ctype):
         _incr(g_key)
 
     try:
-        text = whisper_transcribe(clip.read(), ctype or 'audio/webm', timeout=20)
+        text = whisper_transcribe(clip.read(), ctype or 'audio/webm', timeout=20, feature='games_stt')
     except Exception:
         log.warning('Voice game transcription failed for user %s', request.user.id, exc_info=True)
         # a failed call does not use up the allowance (nor the day's totals)

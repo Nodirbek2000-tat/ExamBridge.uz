@@ -11,6 +11,8 @@ import os
 import requests
 from django.conf import settings
 
+from ai_chat.usage import record
+
 log = logging.getLogger(__name__)
 
 EXT = {
@@ -34,8 +36,11 @@ def audio_ext(content_type='', name=''):
     return NAME_EXT.get(os.path.splitext(name or '')[1].lstrip('.').lower(), 'webm')
 
 
-def whisper_transcribe(data, content_type='audio/webm', timeout=30):
-    """bytes → text ('' when nothing was said). Raises on a service / configuration failure."""
+def whisper_transcribe(data, content_type='audio/webm', timeout=30, *, feature):
+    """
+    bytes → text ('' when nothing was said). Raises on a service / configuration failure.
+    `feature` is the ai_chat/usage.py key the bill goes under.
+    """
     api_key = getattr(settings, 'OPENAI_API_KEY', '')
     if not api_key:
         raise RuntimeError('OpenAI API key is not configured')
@@ -44,8 +49,11 @@ def whisper_transcribe(data, content_type='audio/webm', timeout=30):
         'https://api.openai.com/v1/audio/transcriptions',
         headers={'Authorization': f'Bearer {api_key}'},
         files={'file': (f'clip.{EXT.get(base, "webm")}', data, base)},
-        data={'model': 'whisper-1', 'language': 'en', 'temperature': '0'},
+        # verbose_json: the only format that reports the duration we are billed for
+        data={'model': 'whisper-1', 'language': 'en', 'temperature': '0', 'response_format': 'verbose_json'},
         timeout=timeout,
     )
     resp.raise_for_status()
-    return str(resp.json().get('text') or '').strip()
+    body = resp.json()
+    record(feature, 'whisper-1', seconds=float(body.get('duration') or 0))
+    return str(body.get('text') or '').strip()
