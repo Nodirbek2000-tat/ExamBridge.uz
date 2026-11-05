@@ -273,3 +273,111 @@ class VisitorStatsTest(StatsBase):
 
         data = self.client.get('/api/system/visitors/?q=STUDENT', **auth(self.admin)).json()
         self.assertEqual([r['email'] for r in data['results']], ['student@test.uz'])
+
+
+class EngagementTest(StatsBase):
+    URL = '/api/system/engagement/'
+
+    def visit(self, user, *days_ago):
+        today = timezone.localdate()
+        for ago in days_ago:
+            UserDailyVisit.objects.get_or_create(user=user, date=today - timedelta(days=ago))
+
+    def joined(self, user, days_ago):
+        User.objects.filter(pk=user.pk).update(created_at=timezone.now() - timedelta(days=days_ago))
+
+    def get(self, days=30):
+        return self.client.get(f'{self.URL}?days={days}', **auth(self.admin)).json()
+
+    def test_returning_and_one_time_visitors(self):
+        other = make_user('other@test.uz')
+        self.visit(self.student, 0, 3)
+        self.visit(other, 1)
+
+        data = self.get()
+
+        self.assertEqual((data['visitors'], data['returning'], data['one_time']), (2, 1, 1))
+        self.assertEqual(data['users_total'], 3)
+
+    def test_the_range_decides_what_counts(self):
+        self.visit(self.student, 0, 20)
+        self.assertEqual(self.get(days=7)['returning'], 0)
+        cache.clear()
+        self.assertEqual(self.get(days=30)['returning'], 1)
+
+    def test_next_day_return_only_judges_days_that_are_over(self):
+        other = make_user('other@test.uz')
+        self.visit(self.student, 3, 2, 1, 0)
+        self.visit(other, 3)
+
+        data = self.get()
+
+        # 3 days ago: 2 active, 1 back; 2 days ago: 1 active, 1 back; yesterday → today is not over.
+        self.assertEqual(data['next_day'], {'active': 3, 'returned': 2})
+        self.assertEqual([d['returned'] for d in data['daily_return']], [1, 1])
+
+    def test_new_users_coming_back_the_next_day_and_within_a_week(self):
+        back, gone, fresh, weekly = (make_user(f'{n}@test.uz') for n in ('back', 'gone', 'fresh', 'weekly'))
+        for user, ago in ((back, 3), (gone, 3), (fresh, 1), (weekly, 10)):
+            self.joined(user, ago)
+            self.visit(user, ago)
+        self.visit(back, 2)
+        self.visit(weekly, 5)
+
+        cohort = self.get()['signups']
+
+        # fresh joined yesterday: its next day is today, not over yet.
+        self.assertEqual((cohort['total'], cohort['next_day']), (3, 1))
+        self.assertEqual((cohort['week_total'], cohort['within_week']), (1, 1))
+
+    def test_sign_ups_before_tracking_began_are_not_judged(self):
+        old = make_user('old@test.uz')
+        self.joined(old, 20)
+        self.visit(self.student, 2)
+
+        self.assertEqual(self.get()['signups']['total'], 0)
+
+    def test_most_active_users_come_first_with_their_tests(self):
+        other = make_user('other@test.uz')
+        self.visit(self.student, 0, 1, 2)
+        self.visit(other, 0)
+        test = Test.objects.create(year=2024, month=11, form='A')
+        TestAttempt.objects.create(user=self.student, test=test, status='COMPLETED', finished_at=timezone.now())
+        old = TestAttempt.objects.create(user=self.student, test=test, status='COMPLETED')
+        TestAttempt.objects.filter(pk=old.pk).update(started_at=timezone.now() - timedelta(days=60))
+
+        rows = self.get()['most_active']
+
+        self.assertEqual([r['email'] for r in rows], ['student@test.uz', 'other@test.uz'])
+        self.assertEqual((rows[0]['visit_days'], rows[0]['tests_completed']), (3, 1))
+
+    def test_no_visits_yet(self):
+        data = self.get()
+        self.assertEqual((data['visitors'], data['tracking_since'], data['daily_return']), (0, None, []))
+        self.assertEqual(data['signups']['total'], 0)
+
+    def test_students_are_refused(self):
+        self.assertEqual(self.client.get(self.URL, **auth(self.student)).status_code, 403)
+
+
+class MockTodayTest(StatsBase):
+    def test_today_counts_starts_and_finishes(self):
+        test = Test.objects.create(year=2024, month=11, form='A')
+        now = timezone.now()
+        TestAttempt.objects.create(user=self.student, test=test, status='COMPLETED', finished_at=now)
+        earlier = TestAttempt.objects.create(user=self.student, test=test, status='COMPLETED', finished_at=now)
+        silent = TestAttempt.objects.create(user=self.student, test=test, status='COMPLETED')
+        TestAttempt.objects.filter(pk__in=[earlier.pk, silent.pk]).update(started_at=now - timedelta(days=2))
+
+        row = self.client.get('/api/system/mocks/?section=SAT', **auth(self.admin)).json()['results'][0]
+
+        self.assertEqual((row['started'], row['completed']), (3, 3))
+        self.assertEqual((row['started_today'], row['completed_today']), (1, 2))
+
+    def test_all_sections_in_one_list(self):
+        Test.objects.create(year=2024, month=11, form='A')
+        IELTSTest.objects.create(title='IELTS 1')
+
+        rows = self.client.get('/api/system/mocks/?section=all', **auth(self.admin)).json()['results']
+
+        self.assertEqual(sorted(r['section'] for r in rows), ['IELTS', 'SAT'])

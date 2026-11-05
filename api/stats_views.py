@@ -7,8 +7,8 @@ listening section. The two are always counted apart.
 
 Lives under /api/system/, so accounts/admin_access.py gives it the SYSTEM area.
 """
-from collections import Counter
-from datetime import timedelta
+from collections import Counter, defaultdict
+from datetime import datetime, time, timedelta
 
 from django.core.cache import cache
 from django.core.paginator import Paginator
@@ -68,6 +68,15 @@ MOCK_SECTIONS = {
              'only': Q(), 'attempts_filter': Q(),
              'avg': None, 'related': ['user']},
 }
+
+
+def _today_start():
+    return timezone.localtime().replace(hour=0, minute=0, second=0, microsecond=0)
+
+
+def _midnight(day):
+    """The first moment of a Tashkent calendar day."""
+    return timezone.make_aware(datetime.combine(day, time.min))
 
 
 def _user_row(user):
@@ -219,7 +228,7 @@ def _funnel():
 
 def _build_analytics(days):
     today = timezone.localdate()
-    today_start = timezone.localtime().replace(hour=0, minute=0, second=0, microsecond=0)
+    today_start = _today_start()
     week_start = today_start - timedelta(days=6)
     month_start = today_start - timedelta(days=29)
     range_start = today_start - timedelta(days=days - 1)
@@ -322,7 +331,7 @@ def _money(value):
 
 def _build_ai_costs(days):
     today = timezone.localdate()
-    today_start = timezone.localtime().replace(hour=0, minute=0, second=0, microsecond=0)
+    today_start = _today_start()
     yesterday_start = today_start - timedelta(days=1)
     week_start = today_start - timedelta(days=6)
     month_start = today_start - timedelta(days=29)
@@ -413,20 +422,24 @@ def ai_cost_stats(request):
 
 # ── Mocks ─────────────────────────────────────────────────────────────────────
 
-@api_view(['GET'])
-@permission_classes([IsAdminUser])
-def mock_stats(request):
-    """Every mock of ?section=SAT|IELTS|CEFR|FULL: how many took it, how it went."""
-    section = request.query_params.get('section', 'SAT').upper()
-    conf = MOCK_SECTIONS.get(section)
-    if conf is None:
-        return Response({'detail': 'Unknown section.'}, status=400)
+ALL_SECTIONS = 'ALL'
 
+
+def _mock_rows(section, today_start):
+    """Every mock of one section, with totals and today's numbers."""
+    conf = MOCK_SECTIONS[section]
     only = conf['only']
     done = only & Q(attempts__status=COMPLETED)
+    # Like DONE_AT: an attempt completed without finished_at counts on the day it started.
+    done_today = done & (
+        Q(attempts__finished_at__gte=today_start)
+        | Q(attempts__finished_at__isnull=True, attempts__started_at__gte=today_start)
+    )
     annotations = {
         'started_count': Count('attempts', filter=only),
         'completed_count': Count('attempts', filter=done),
+        'started_today': Count('attempts', filter=only & Q(attempts__started_at__gte=today_start)),
+        'completed_today': Count('attempts', filter=done_today),
         'unique_users': Count('attempts__user', filter=only, distinct=True),
         'completed_users': Count('attempts__user', filter=done, distinct=True),
         'last_taken': Max('attempts__started_at', filter=only),
@@ -434,21 +447,38 @@ def mock_stats(request):
     if conf['avg']:
         annotations['avg_score'] = Avg(conf['avg'], filter=done)
 
-    mocks = conf['mock'].objects.annotate(**annotations).order_by('-unique_users', '-started_count', '-id')
-    results = []
-    for m in mocks:
+    rows = []
+    for m in conf['mock'].objects.annotate(**annotations):
         avg = getattr(m, 'avg_score', None)
-        results.append({
+        rows.append({
             'id': m.id,
+            'section': section,
             'label': _mock_label(section, m),
             'type': getattr(m, 'test_type', '') or getattr(m, 'level', '') or '',
             'unique_users': m.unique_users,
             'completed_users': m.completed_users,
             'started': m.started_count,
             'completed': m.completed_count,
+            'started_today': m.started_today,
+            'completed_today': m.completed_today,
             'last_taken': m.last_taken,
             'avg_score': round(float(avg), 1) if avg is not None else None,
         })
+    return rows
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def mock_stats(request):
+    """Every mock of ?section=SAT|IELTS|CEFR|FULL, or ALL of them together: who took it, how often, today."""
+    section = request.query_params.get('section', 'SAT').upper()
+    if section != ALL_SECTIONS and section not in MOCK_SECTIONS:
+        return Response({'detail': 'Unknown section.'}, status=400)
+
+    today_start = _today_start()
+    sections = MOCK_SECTIONS if section == ALL_SECTIONS else [section]
+    results = [row for name in sections for row in _mock_rows(name, today_start)]
+    results.sort(key=lambda r: (-r['unique_users'], -r['started'], -r['id']))
     return Response({'section': section, 'results': results})
 
 
@@ -481,6 +511,113 @@ def mock_attempts(request, section, mock_id):
             for a in attempts[:MOCK_ATTEMPTS_LIMIT]
         ],
     })
+
+
+# ── Engagement ────────────────────────────────────────────────────────────────
+
+MOST_ACTIVE_LIMIT = 20
+RETURN_WINDOW_DAYS = 7
+
+
+def _completed_since(user_ids, since):
+    """{user id: tests completed since this moment}, across every section."""
+    finished = Counter()
+    for src in SOURCES:
+        rows = (
+            src['model'].objects
+            .filter(user_id__in=user_ids, status=COMPLETED)
+            .annotate(done_at=DONE_AT).filter(done_at__gte=since)
+            .values('user_id').annotate(n=Count('id'))
+        )
+        for r in rows:
+            finished[r['user_id']] += r['n']
+    return finished
+
+
+def _build_engagement(days):
+    """
+    Who comes back. A day counts only once it is over: today is still running, so a
+    "came back the next day" that lands on today is not judged yet.
+    """
+    today = timezone.localdate()
+    start = today - timedelta(days=days - 1)
+    last_judged = today - timedelta(days=1)          # the latest day that is over
+
+    visits = set(UserDailyVisit.objects.filter(date__gte=start).values_list('user_id', 'date'))
+    by_user = Counter(user for user, _ in visits)
+    by_day = defaultdict(set)
+    for user, day in visits:
+        by_day[day].add(user)
+    first_visit = UserDailyVisit.objects.order_by('date').values_list('date', flat=True).first()
+
+    # Active on a day → active again on the next one.
+    daily = []
+    day = start
+    while day + timedelta(days=1) <= last_judged:
+        active = by_day.get(day, set())
+        if first_visit and day >= first_visit:
+            back = active & by_day.get(day + timedelta(days=1), set())
+            daily.append({'date': day.isoformat(), 'active': len(active), 'returned': len(back)})
+        day += timedelta(days=1)
+
+    # New sign-ups: did they come back the day after, or within the week?
+    cohort = {'total': 0, 'next_day': 0, 'week_total': 0, 'within_week': 0}
+    if first_visit:
+        signups = User.objects.filter(created_at__gte=_midnight(max(start, first_visit - timedelta(days=1))))
+        for user_id, created_at in signups.values_list('id', 'created_at'):
+            joined = timezone.localdate(created_at)
+            if joined + timedelta(days=1) > last_judged:
+                continue
+            cohort['total'] += 1
+            cohort['next_day'] += (user_id, joined + timedelta(days=1)) in visits
+            if joined + timedelta(days=RETURN_WINDOW_DAYS) <= last_judged:
+                cohort['week_total'] += 1
+                cohort['within_week'] += any(
+                    (user_id, joined + timedelta(days=k)) in visits for k in range(1, RETURN_WINDOW_DAYS + 1)
+                )
+
+    most_active = list(
+        User.objects
+        .annotate(visit_days=Count('daily_visits', filter=Q(daily_visits__date__gte=start)))
+        .filter(visit_days__gt=0)
+        .order_by('-visit_days', F('last_seen_at').desc(nulls_last=True), 'id')[:MOST_ACTIVE_LIMIT]
+    )
+    finished = _completed_since([u.id for u in most_active], _midnight(start))
+
+    return {
+        'days': days,
+        'tracking_since': first_visit.isoformat() if first_visit else None,
+        'users_total': User.objects.count(),
+        'visitors': len(by_user),
+        'returning': sum(1 for n in by_user.values() if n >= 2),
+        'one_time': sum(1 for n in by_user.values() if n == 1),
+        'next_day': {
+            'active': sum(d['active'] for d in daily),
+            'returned': sum(d['returned'] for d in daily),
+        },
+        'signups': cohort,
+        'daily_return': daily,
+        'most_active': [
+            {
+                **_user_row(u),
+                'visit_days': u.visit_days,
+                'tests_completed': finished[u.id],
+                'last_seen': u.last_seen_at,
+                'joined': u.created_at,
+            }
+            for u in most_active
+        ],
+    }
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def engagement_stats(request):
+    """Returning and one-time visitors, next-day return, and the most active users, over ?days=7|30|90."""
+    days = _days_param(request)
+    return Response(cache.get_or_set(
+        f'admin:engagement:{days}', lambda: _build_engagement(days), ANALYTICS_CACHE_SECONDS,
+    ))
 
 
 # ── Visitors ──────────────────────────────────────────────────────────────────
