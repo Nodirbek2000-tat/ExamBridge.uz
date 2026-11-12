@@ -360,11 +360,17 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.UserRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'anon': '60/hour',       # Anonim foydalanuvchilar: soatiga 60 ta
+        # Anonymous limits count per network address, and a learning centre puts a
+        # whole class behind one address. Wrong passwords are limited per account
+        # instead (accounts.models.LOGIN_FAILURES_BEFORE_LOCK).
+        'anon': '600/hour',
         'user': '2000/hour',     # Login bo'lgan: soatiga 2000 ta
-        'login': '10/hour',      # Login endpoint: soatiga 10 ta urinish
-        'register': '5/hour',    # Register: soatiga 5 ta
+        'login': '300/hour',     # a class signing in, more than once
+        'register': '100/hour',  # a class registering in one lesson
     },
+    # One proxy (nginx) in front: the client is the last X-Forwarded-For entry, the
+    # one nginx adds. The first entry is written by the browser and can be faked.
+    'NUM_PROXIES': 1,
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
     ],

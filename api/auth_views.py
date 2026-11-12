@@ -6,8 +6,18 @@ from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes, throttle_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.throttling import AnonRateThrottle
 from rest_framework_simplejwt.tokens import RefreshToken
-from accounts.models import User
+from accounts.models import LOGIN_LOCK_MINUTES, User
+
+
+# Per address, so set for a classroom behind one network rather than one person.
+class LoginRateThrottle(AnonRateThrottle):
+    scope = 'login'
+
+
+class RegisterRateThrottle(AnonRateThrottle):
+    scope = 'register'
 
 
 def user_data(user):
@@ -43,20 +53,31 @@ def get_tokens(user):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
+@throttle_classes([])
 def csrf_token(request):
     return Response({'csrfToken': get_token(request)})
 
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
+@throttle_classes([LoginRateThrottle])
 def login_view(request):
     email = request.data.get('email', '').lower().strip()
     password = request.data.get('password', '')
+
+    # Wrong passwords count against the account, so one student who keeps
+    # guessing cannot lock out everyone else on the same network.
+    account = User.objects.filter(email=email).first() if email else None
+    if account and account.is_locked():
+        return Response(
+            {'detail': f'Too many wrong passwords for this account. Try again in {LOGIN_LOCK_MINUTES} minutes.'},
+            status=status.HTTP_403_FORBIDDEN,
+        )
     user = authenticate(request, username=email, password=password)
     if user is None:
+        if account:
+            account.record_failed_login()
         return Response({'detail': 'Invalid email or password.'}, status=status.HTTP_401_UNAUTHORIZED)
-    if user.is_locked():
-        return Response({'detail': 'Account locked. Try again later.'}, status=status.HTTP_403_FORBIDDEN)
     user.reset_login_attempts()
     tokens = get_tokens(user)
     return Response({'user': user_data(user), **tokens})
@@ -64,6 +85,7 @@ def login_view(request):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
+@throttle_classes([RegisterRateThrottle])
 def register_view(request):
     data = request.data
     email = data.get('email', '').lower().strip()
@@ -91,6 +113,7 @@ def register_view(request):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
+@throttle_classes([LoginRateThrottle])
 def google_login_view(request):
     """
     Verify Google ID token from frontend (@react-oauth/google),
@@ -140,6 +163,7 @@ def google_login_view(request):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
+@throttle_classes([])                  # needs a valid refresh token anyway
 def token_refresh_view(request):
     """Refresh JWT access token using refresh token."""
     from rest_framework_simplejwt.tokens import RefreshToken

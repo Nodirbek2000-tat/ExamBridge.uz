@@ -108,7 +108,8 @@ class BotBlockerThroughTheStackTests(SimpleTestCase):
         self.addCleanup(self._forget)
 
     def _forget(self):
-        for key in (f'{BLOCKED_LOG_PREFIX}127.0.0.1', BLOCKED_SET_KEY, 'api_rate:127.0.0.1', 'brute_block:127.0.0.1'):
+        for key in (f'{BLOCKED_LOG_PREFIX}127.0.0.1', BLOCKED_SET_KEY, 'api_rate:127.0.0.1:anon',
+                    'api_rate:127.0.0.1:user', 'login_block:127.0.0.1'):
             cache.delete(key)
 
     def get(self, path, ua, accept='application/json'):

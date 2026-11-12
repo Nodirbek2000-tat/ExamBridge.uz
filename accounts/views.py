@@ -5,15 +5,13 @@ from django.contrib import messages
 from django.views.decorators.http import require_http_methods
 from django_ratelimit.decorators import ratelimit
 
-from .models import User, UserStats
+from .middleware import _get_client_ip
+from .models import LOGIN_LOCK_MINUTES, User, UserStats
 from .forms import LoginForm, RegisterForm, CompleteProfileForm
 
 
 def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        return x_forwarded_for.split(',')[0].strip()
-    return request.META.get('REMOTE_ADDR')
+    return _get_client_ip(request)
 
 
 @ratelimit(key='ip', rate='10/m', method='POST', block=True)
@@ -30,7 +28,10 @@ def login_view(request):
         try:
             user_obj = User.objects.get(email=email)
             if user_obj.is_locked():
-                messages.error(request, 'Account locked due to too many failed attempts. Try again in 30 minutes.')
+                messages.error(
+                    request,
+                    f'Account locked due to too many failed attempts. Try again in {LOGIN_LOCK_MINUTES} minutes.',
+                )
                 return render(request, 'accounts/login.html', {'form': form})
         except User.DoesNotExist:
             user_obj = None

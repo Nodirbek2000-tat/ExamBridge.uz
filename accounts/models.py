@@ -4,6 +4,10 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
+LOGIN_FAILURES_BEFORE_LOCK = 10
+LOGIN_LOCK_MINUTES = 15
+
+
 class User(AbstractUser):
     """Extended user model for SAT Platform."""
 
@@ -134,9 +138,11 @@ class User(AbstractUser):
         return False
 
     def record_failed_login(self):
+        """One more wrong password. Too many lock this account only, for a short while."""
         self.failed_login_attempts += 1
-        if self.failed_login_attempts >= 5:
-            self.locked_until = timezone.now() + timezone.timedelta(minutes=30)
+        if self.failed_login_attempts >= LOGIN_FAILURES_BEFORE_LOCK:
+            self.locked_until = timezone.now() + timezone.timedelta(minutes=LOGIN_LOCK_MINUTES)
+            self.failed_login_attempts = 0
         self.save(update_fields=['failed_login_attempts', 'locked_until'])
 
     def reset_login_attempts(self):

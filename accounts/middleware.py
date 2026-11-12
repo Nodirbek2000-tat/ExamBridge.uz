@@ -36,15 +36,25 @@ def _is_exempt(path):
 BLOCKED_SET_KEY = 'sec:blocked_ips'
 BLOCKED_LOG_PREFIX = 'sec:log:'
 BLOCK_SECONDS = 3600        # 1 soat
+LOGIN_BLOCK_PREFIX = 'login_block:'
+LOGIN_PATH = '/api/auth/login/'
 BRUTE_BLOCK_SECONDS = 3600
 BOT_BLOCK_SECONDS = 86400   # botlar 24 soat
 SET_TTL = 86400 * 7         # set 7 kun saqlanadi
 
 
 def _get_client_ip(request):
+    """
+    The visitor's address. nginx is the only way in and writes X-Real-IP itself,
+    so it cannot be faked. The first X-Forwarded-For entry can: the browser sends
+    it, and trusting it let anyone get another network blocked.
+    """
+    real = request.META.get('HTTP_X_REAL_IP', '').strip()
+    if real:
+        return real
     forwarded = request.META.get('HTTP_X_FORWARDED_FOR', '')
     if forwarded:
-        return forwarded.split(',')[0].strip()
+        return forwarded.split(',')[-1].strip()      # the entry our own proxy added
     return request.META.get('REMOTE_ADDR', '')
 
 
@@ -81,7 +91,7 @@ def _register_block(ip, reason, ua='', path='', ttl=BLOCK_SECONDS):
 
 def _unregister_block(ip):
     cache.delete(f'{BLOCKED_LOG_PREFIX}{ip}')
-    cache.delete(f'brute_block:{ip}')
+    cache.delete(f'{LOGIN_BLOCK_PREFIX}{ip}')
     blocked = cache.get(BLOCKED_SET_KEY) or set()
     blocked.discard(ip)
     cache.set(BLOCKED_SET_KEY, blocked, SET_TTL)
@@ -138,26 +148,39 @@ class BotBlockerMiddleware:
 
 
 # ── 2. Brute Force / Rate Limit Middleware ────────────────────────────────────
+def _count(key, window):
+    """Add one to a counter that lives `window` seconds from its first hit; return it."""
+    if cache.add(key, 1, window):
+        return 1
+    try:
+        return cache.incr(key)
+    except ValueError:                 # expired between add and incr
+        cache.set(key, 1, window)
+        return 1
+
+
 class BruteForceProtectionMiddleware:
-    MAX_FAILURES = 10
+    """
+    A school or a learning centre puts a whole class behind one address, so the
+    address is only ever stopped for traffic no classroom produces, and even then
+    only the login is closed, never the site. A student who keeps typing a wrong
+    password locks just their own account (api/auth_views.login_view).
+    """
+    MAX_FAILURES = 100                 # wrong passwords from one address in WINDOW_SECONDS
     WINDOW_SECONDS = 600
-    BLOCK_SECONDS = 3600
-    API_RATE_LIMIT = 300
+    BLOCK_SECONDS = 900                # the login closes for this long; everything else keeps working
+    API_RATE_LIMIT = 300               # API requests a minute from one address, not signed in
+    API_RATE_LIMIT_SIGNED_IN = 3000    # signed in: about a hundred students working at once
     API_RATE_WINDOW = 60
 
     def __init__(self, get_response):
         self.get_response = get_response
 
-    def _ip_blocked(self, ip):
-        return bool(cache.get(f'brute_block:{ip}'))
-
-    def _check_api_rate(self, ip):
-        key = f'api_rate:{ip}'
-        count = cache.get(key, 0)
-        if count >= self.API_RATE_LIMIT:
-            return True
-        cache.set(key, count + 1, self.API_RATE_WINDOW)
-        return False
+    def _over_rate(self, ip, request):
+        signed_in = request.META.get('HTTP_AUTHORIZATION', '').startswith('Bearer ')
+        limit = self.API_RATE_LIMIT_SIGNED_IN if signed_in else self.API_RATE_LIMIT
+        key = f'api_rate:{ip}:{"user" if signed_in else "anon"}'
+        return _count(key, self.API_RATE_WINDOW) > limit
 
     def __call__(self, request):
         ip = _get_client_ip(request)
@@ -168,22 +191,22 @@ class BruteForceProtectionMiddleware:
         if _is_exempt(path):
             return self.get_response(request)
 
-        if self._ip_blocked(ip):
-            return _block_response(request, 'Too many failed attempts. Try again later.', 429)
+        if path == LOGIN_PATH and cache.get(f'{LOGIN_BLOCK_PREFIX}{ip}'):
+            return _block_response(
+                request, 'Too many failed sign-ins from this network. Try again in 15 minutes.', 429,
+            )
 
-        if path.startswith(_API_PREFIX) and self._check_api_rate(ip):
-            _register_block(ip, 'rate_limit_exceeded', ua=ua, path=path, ttl=300)
-            return _block_response(request, 'Rate limit exceeded. Slow down.', 429)
+        # Only this request is refused: the address is not blocked for anyone else.
+        if path.startswith(_API_PREFIX) and self._over_rate(ip, request):
+            return _block_response(request, 'Too many requests. Slow down.', 429)
 
         response = self.get_response(request)
 
-        if path == '/api/auth/login/' and response.status_code == 401:
-            fail_key = f'brute_fail:{ip}'
-            failures = cache.get(fail_key, 0) + 1
-            cache.set(fail_key, failures, self.WINDOW_SECONDS)
+        if path == LOGIN_PATH and response.status_code == 401:
+            failures = _count(f'login_fail:{ip}', self.WINDOW_SECONDS)
             if failures >= self.MAX_FAILURES:
-                cache.set(f'brute_block:{ip}', True, self.BLOCK_SECONDS)
-                cache.delete(fail_key)
+                cache.set(f'{LOGIN_BLOCK_PREFIX}{ip}', True, self.BLOCK_SECONDS)
+                cache.delete(f'login_fail:{ip}')
                 _register_block(
                     ip,
                     f'brute_force:{failures}_failed_logins',
