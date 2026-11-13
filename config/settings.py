@@ -55,6 +55,7 @@ LOCAL_APPS = [
     'study',
     'fullmock',
     'ai_lessons',
+    'tgbot',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -405,6 +406,16 @@ FRONTEND_URL           = config('FRONTEND_URL', default='http://localhost:5173')
 STRIPE_PRICE_1MONTH    = config('STRIPE_PRICE_1MONTH', default=699, cast=int)   # USD cents
 STRIPE_PRICE_3MONTH    = config('STRIPE_PRICE_3MONTH', default=1469, cast=int)  # USD cents
 STRIPE_PRICE_6MONTH    = config('STRIPE_PRICE_6MONTH', default=2899, cast=int)  # USD cents
+
+# ─── TELEGRAM BOT (karta orqali to'lov va bot orqali ro'yxatdan o'tish) ──────
+# Bot bilan bir xil token. Bo'sh bo'lsa sayt Telegramga hech narsa yubormaydi.
+TELEGRAM_BOT_TOKEN        = config('TELEGRAM_BOT_TOKEN', default='')
+TELEGRAM_BOT_USERNAME     = config('TELEGRAM_BOT_USERNAME', default='')   # @ siz, masalan exambridge_bot
+# Bot /api/bot/ ga shu maxfiy kalit bilan murojaat qiladi (bot .env da ham xuddi shu).
+TELEGRAM_BOT_API_SECRET   = config('TELEGRAM_BOT_API_SECRET', default='')
+# Cheklar tushadigan kanal: @username yoki -100... id. Bot u yerda admin bo'lishi shart.
+TELEGRAM_PAYMENTS_CHAT    = config('TELEGRAM_PAYMENTS_CHAT', default='@exambridgemoney')
+TELEGRAM_SUPPORT_USERNAME = config('TELEGRAM_SUPPORT_USERNAME', default='nodirbek_shukurov1')
 
 # ─── GOOGLE ANALYTICS ─────────────────────────────────────────────────────────
 GA_TRACKING_ID = config('GA_TRACKING_ID', default='')

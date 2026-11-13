@@ -26,7 +26,8 @@ _ADMIN_PATHS = ('/admin/', '/api/admin/')
 
 # Tashqi servislar (Stripe webhook va h.k.) — security tekshiruvlardan ozod.
 # Bu yo'llar Accept/User-Agent header yubormasligi mumkin va imzo bilan himoyalangan.
-_EXEMPT_PATHS = ('/api/payments/webhook/',)
+# /api/bot/ — o'zimizning Telegram botimiz, X-Bot-Secret kaliti bilan himoyalangan.
+_EXEMPT_PATHS = ('/api/payments/webhook/', '/api/bot/')
 
 
 def _is_exempt(path):

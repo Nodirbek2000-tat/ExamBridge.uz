@@ -34,11 +34,13 @@ REPORTS = 'reports'
 SYSTEM = 'system'
 AI = 'ai'
 IMPORT = 'import'
+PAYMENTS = 'payments'
 
 # Path prefix → area. Checked in order, so longer/more specific prefixes come
 # first. Anything not matched here is not an admin path and is left alone.
 PREFIX_AREAS = (
     ('/api/admin/users/', USERS),
+    ('/api/admin/payments/', PAYMENTS),
     ('/api/admin/testmakon/', TESTMAKON),
     ('/api/admin/leaderboard/', LEADERBOARD),
     ('/api/admin/export/ielts/', IELTS),

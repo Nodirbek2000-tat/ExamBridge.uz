@@ -12,6 +12,7 @@ admin.site.has_permission = lambda request: bool(
 )
 
 # ── API imports ──────────────────────────────────────────────────────────────
+from tgbot.site_views import telegram_login
 from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, ping_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
 from api.sat_analytics import sat_analytics
 from api.analytics_ai import analytics_ai, exam_analytics
@@ -112,6 +113,9 @@ urlpatterns = [
 
     # ── PAYMENTS / STRIPE ─────────────────────────────────────────────────────
     path('api/payments/', include('pricing.urls')),
+    path('api/bot/', include('tgbot.urls')),                 # Telegram bot only (X-Bot-Secret)
+    path('api/auth/telegram/', telegram_login),              # one-time sign-in link from the bot
+    path('api/admin/payments/', include('pricing.admin_urls')),
 
     # ── CENTERS API ───────────────────────────────────────────────────────────
     path('api/centers/', include('centers.urls')),
