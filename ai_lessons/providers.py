@@ -143,12 +143,14 @@ class FakeProvider:
                     {'type': 'text', 'text': 'Sinov matni: **muhim** fikr', 'at': 0.3},
                     {'type': 'math', 'tex': 'a^2 + b^2 = c^2', 'at': 0.6},
                 ],
+                'think': 3,
             },
             {
                 'say': "Endi shu fikrni qisqacha takrorlaymiz. Keyingi qismga o'tamiz.",
                 'board': [
                     {'type': 'list', 'items': ['Birinchi fikr', 'Ikkinchi fikr'], 'at': 0},
-                    {'type': 'note', 'text': 'Sinov eslatmasi', 'at': 0.6},
+                    {'type': 'fix', 'wrong': 'He go', 'right': 'He goes', 'at': 0.4},
+                    {'type': 'secret', 'text': 'Sinov siri', 'at': 0.7},
                 ],
             },
         ]}
@@ -166,6 +168,12 @@ class FakeProvider:
         return {'questions': [
             {**choice, 'after_step': 0},
             {**written, 'after_step': min(1, context['steps'] - 1)},
+            {'kind': 'GAP', 'is_quiz': True, 'prompt': 'Sinov: 5 + 5 = ___', 'accepted': ['10'],
+             'explanation': "5 va 5 ni qo'shsak 10."},
+            {'kind': 'TRUE_FALSE', 'is_quiz': True, 'prompt': 'Sinov: 2 + 2 = 5', 'correct': False,
+             'explanation': '2 + 2 = 4.'},
+            {'kind': 'MISTAKE', 'is_quiz': True, 'prompt': 'Sinov: xatoni toping.',
+             'options': ['He', 'go', 'home.'], 'correct': 1, 'explanation': 'He goes home.'},
             {**choice, 'is_homework': True, 'prompt': 'Uy vazifasi: 3 + 3 nechaga teng?',
              'options': ['5', '6'], 'correct': 1},
             {**written, 'is_homework': True},

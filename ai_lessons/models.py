@@ -122,6 +122,8 @@ class LessonStep(models.Model):
     board = models.JSONField(default=list, blank=True, help_text='What is drawn on the board, in order')
     audio = models.FileField(upload_to=step_audio_path, blank=True)
     audio_seconds = models.FloatField(default=0)
+    # The step ends with a question to the student: the lesson waits this long before the answer.
+    think = models.PositiveSmallIntegerField(default=0, help_text='Seconds to think after this step')
 
     class Meta:
         ordering = ['order', 'id']
@@ -134,10 +136,16 @@ class LessonStep(models.Model):
 
 
 class LessonQuestion(models.Model):
-    """A question inside the lesson (step set) or in its homework (is_homework)."""
+    """
+    A question after a step of the lesson (step set), in the final test at the end
+    of the lesson (is_quiz), or in its homework (is_homework).
+    """
 
     class Kind(models.TextChoices):
         CHOICE = 'CHOICE', 'Multiple choice'
+        TRUE_FALSE = 'TRUE_FALSE', 'True or false'
+        GAP = 'GAP', 'Fill in the gap'
+        MISTAKE = 'MISTAKE', 'Find the mistake'
         WRITTEN = 'WRITTEN', 'Written answer'
 
     class Origin(models.TextChoices):
@@ -152,12 +160,15 @@ class LessonQuestion(models.Model):
     lesson = models.ForeignKey(AILesson, on_delete=models.CASCADE, related_name='questions')
     step = models.ForeignKey(LessonStep, on_delete=models.SET_NULL, null=True, blank=True, related_name='questions')
     is_homework = models.BooleanField(default=False)
+    is_quiz = models.BooleanField(default=False, help_text='Part of the final test at the end of the lesson')
     order = models.PositiveSmallIntegerField(default=0)
 
-    kind = models.CharField(max_length=7, choices=Kind.choices, default=Kind.CHOICE)
+    kind = models.CharField(max_length=10, choices=Kind.choices, default=Kind.CHOICE)
     prompt = models.TextField()
+    # CHOICE: the options; TRUE_FALSE: True, False; MISTAKE: the parts, one of them wrong
     options = models.JSONField(default=list, blank=True)
     correct = models.PositiveSmallIntegerField(null=True, blank=True, help_text='Index into options')
+    accepted = models.JSONField(default=list, blank=True, help_text='GAP: every answer that counts as right')
     rubric = models.TextField(blank=True, help_text='How a written answer is judged')
     explanation = models.TextField(blank=True)
 

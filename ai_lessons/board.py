@@ -12,6 +12,11 @@ length the recorded voice turns out to be.
     {"type": "note", "text": "..."}
     {"type": "diagram", "width": 400, "height": 300, "shapes": [...]}
     {"type": "icon", "name": "scale", "label": "Balance", "color": "green"}
+    {"type": "secret", "text": "..."}                 an exam secret: a trap or a shortcut
+    {"type": "fix", "wrong": "He don't", "right": "He doesn't"}   a mistake crossed out, then fixed
+
+A step may also have `think`: seconds of quiet for the student after a step that
+ends with a question to them (0 = none, at most MAX_THINK).
 
 Text may use **bold** and inline math \\( x^2 \\). Diagram shapes are drawn in order:
 
@@ -49,6 +54,8 @@ MAX_SHAPES = 40
 MAX_PATH = 2000
 MAX_CANVAS = 2000
 MAX_SAY = 4000
+MAX_FIX = 200
+MAX_THINK = 8
 
 PATH_DATA = re.compile(r'^[MLHVCSQTAZmlhvcsqtaz0-9\s,.\-]+$')
 
@@ -135,8 +142,14 @@ def _clean_element(raw):
         return {'type': kind, 'text': _text(raw.get('text'), 'Heading')}
     if kind == 'text':
         return {'type': kind, 'text': _text(raw.get('text'), 'Text'), 'color': _color(raw)}
-    if kind == 'note':
-        return {'type': kind, 'text': _text(raw.get('text'), 'Note')}
+    if kind in ('note', 'secret'):
+        return {'type': kind, 'text': _text(raw.get('text'), kind.capitalize())}
+    if kind == 'fix':
+        return {
+            'type': kind,
+            'wrong': _text(raw.get('wrong'), 'The wrong version', MAX_FIX),
+            'right': _text(raw.get('right'), 'The right version', MAX_FIX),
+        }
     if kind == 'math':
         return {'type': kind, 'tex': _text(raw.get('tex'), 'Formula', MAX_TEX)}
     if kind == 'list':
@@ -192,7 +205,7 @@ def _mend(item):
     item = dict(item)
     if 'color' in item and item['color'] not in COLORS:
         item.pop('color')
-    for key, limit in (('text', MAX_TEXT), ('label', 40)):
+    for key, limit in (('text', MAX_TEXT), ('label', 40), ('wrong', MAX_FIX), ('right', MAX_FIX)):
         if key in item:
             item[key] = _short(item[key], limit)
     if isinstance(item.get('items'), list):
@@ -213,6 +226,10 @@ def repair_step(raw):
     """
     if not isinstance(raw, dict):
         return raw
+    think = raw.get('think')
+    if isinstance(think, bool) or not isinstance(think, (int, float)) or not math.isfinite(think):
+        think = 0
+    raw = {**raw, 'think': min(MAX_THINK, max(0, round(think)))}
     board = raw.get('board')
     if not isinstance(board, list):
         return {**raw, 'board': []}
@@ -238,10 +255,15 @@ def repair_step(raw):
 
 
 def clean_step(step):
-    """A safe {say, board} copy of one step. Raises BoardError when it breaks the rules."""
+    """A safe {say, board, think} copy of one step. Raises BoardError when it breaks the rules."""
     if not isinstance(step, dict):
         raise BoardError('A step must be an object.')
-    return {'say': _text(step.get('say'), 'Step text', MAX_SAY), 'board': clean_board(step.get('board', []))}
+    think = step.get('think') or 0
+    return {
+        'say': _text(step.get('say'), 'Step text', MAX_SAY),
+        'board': clean_board(step.get('board', [])),
+        'think': round(_number(think, 'Think time', 0, MAX_THINK)),
+    }
 
 
 def replace_steps(lesson, steps):

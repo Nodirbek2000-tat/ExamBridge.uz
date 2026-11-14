@@ -127,9 +127,16 @@ class GenerateTest(PipelineBase):
         self.assertEqual((self.lesson.status, self.lesson.ai_provider), ('REVIEW', 'fake'))
         self.assertEqual(self.lesson.steps.count(), 10)            # 5 sections of 2 steps
         self.assertEqual(self.job().status, 'DONE')
+        places = [
+            'homework' if q.is_homework else 'quiz' if q.is_quiz else 'check' for q in self.lesson.questions.all()
+        ]
+        self.assertEqual(sorted(places), ['check', 'check', 'homework', 'homework', 'quiz', 'quiz', 'quiz'])
         self.assertEqual(
-            sorted(self.lesson.questions.values_list('is_homework', flat=True)), [False, False, True, True],
+            set(self.lesson.questions.values_list('kind', flat=True)),
+            {'CHOICE', 'WRITTEN', 'GAP', 'TRUE_FALSE', 'MISTAKE'},
         )
+        self.assertFalse(self.lesson.questions.filter(is_quiz=True, step__isnull=False).exists())
+        self.assertEqual(self.lesson.steps.first().think, 3)
         for question in self.lesson.questions.all():
             self.assertEqual((question.origin, question.ai_verdict), ('AI', 'GOOD'))
 
@@ -435,7 +442,7 @@ class TeacherQuestionsTest(PipelineBase):
     def test_writing_again_replaces_the_ais_questions_only(self):
         self.generate()
         self.generate()
-        self.assertEqual(self.lesson.questions.filter(origin='AI').count(), 4)
+        self.assertEqual(self.lesson.questions.filter(origin='AI').count(), 7)
         self.assertEqual(self.lesson.questions.filter(origin='ADMIN').count(), 2)
 
 
@@ -722,24 +729,38 @@ class PromptTest(SimpleTestCase):
         self.lesson.language = 'en'
         self.assertIn('English', prompts.role(self.lesson))
 
-    def test_only_the_first_section_greets_and_only_the_last_summarises(self):
-        outline = [{'title': 'a', 'minutes': 2}, {'title': 'b', 'minutes': 2}]
-        first = prompts.section(self.lesson, outline, 0, '', '')
-        last = prompts.section(self.lesson, outline, 1, '', '')
-        self.assertIn('Open the lesson', first)
-        self.assertIn('Do not summarise', first)
-        self.assertIn('Do not greet', last)
-        self.assertIn('Close the lesson', last)
+    def test_each_section_gets_its_part_of_the_teaching_arc(self):
+        self.assertEqual(prompts.section_roles(3), ['opening', 'core', 'wrapup'])
+        self.assertEqual(prompts.section_roles(5), ['opening', 'core', 'core', 'secrets', 'wrapup'])
+
+        outline = [{'title': t, 'minutes': 2} for t in 'abcde']
+        texts = [prompts.section(self.lesson, outline, i, '', '') for i in range(5)]
+        self.assertIn('This section opens the lesson', texts[0])
+        self.assertIn('Worked example', texts[0])
+        self.assertIn('"think": 5', texts[1])
+        self.assertIn('"fix" element', texts[2])
+        self.assertIn('Exam secrets', texts[3])
+        self.assertNotIn('Worked example', texts[3])
+        self.assertIn('announcing the final test', texts[4])
+        self.assertNotIn('Start with one or two exam secrets', texts[4])
+
+    def test_a_short_lesson_keeps_its_secrets_in_the_wrap_up(self):
+        outline = [{'title': t, 'minutes': 2} for t in 'abc']
+        self.assertIn('Start with one or two exam secrets', prompts.section(self.lesson, outline, 2, '', ''))
+        self.assertIn('exam secrets first', prompts.plan(self.lesson, '', '', 3))
 
     def test_step_length_follows_the_section_length(self):
         outline = [{'title': 'a', 'minutes': 2}]
         self.assertIn('about 290 spoken words', prompts.section(self.lesson, outline, 0, '', ''))
 
-    def test_every_section_ends_with_a_check_question(self):
-        sections = [[{'say': 'a'}, {'say': 'b'}], [{'say': 'c'}], [{'say': 'd'}, {'say': 'e'}]]
+    def test_every_teaching_section_ends_with_a_check_and_a_final_test_follows(self):
+        sections = [[{'say': 'a'}, {'say': 'b'}], [{'say': 'c'}], [{'say': 'd'}], [{'say': 'e'}], [{'say': 'f'}]]
+        self.lesson.duration_minutes = 10
         text = prompts.questions(self.lesson, sections, [])
-        self.assertIn('answers 3 questions during the lesson', text)
-        self.assertIn('after_step: 1, 2, 4', text)
+        self.assertIn('after_step: 1, 2, 3)', text)            # not after the secrets or the wrap-up
+        self.assertIn('The final test: 6 questions', text)
+        for kind in ('CHOICE', 'TRUE_FALSE', 'GAP', 'MISTAKE', 'WRITTEN'):
+            self.assertIn(f'"kind": "{kind}"', text)
 
     def test_language_lessons_get_language_board_tips(self):
         outline = [{'title': 'a', 'minutes': 2}]

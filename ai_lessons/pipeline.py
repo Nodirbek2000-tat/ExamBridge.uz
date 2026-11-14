@@ -1,8 +1,9 @@
 """
 Builds a lesson in stages, saving after each one.
 
-    GENERATE: plan → one section at a time → questions → the AI's own review → saved
-              as steps and questions for an admin to read (status REVIEW)
+    GENERATE: plan → one section at a time → questions (checks, final test, homework)
+              → the AI's own review, which also fixes the questions it finds wrong
+              → saved as steps and questions for an admin to read (status REVIEW)
     VOICE:    only after an admin approves, because the voice is the expensive part
 
 Every finished stage is kept in LessonJob.data, so a job that stops (no credit, a
@@ -25,7 +26,7 @@ from .source_text import lesson_context, teaching_structures
 
 logger = logging.getLogger(__name__)
 
-MAX_TOKENS = {'plan': 1200, 'section': 3500, 'questions': 3500, 'review': 2000}
+MAX_TOKENS = {'plan': 1500, 'section': 5000, 'questions': 8000, 'review': 6000}
 ATTEMPTS = 3                       # more tries, each told what was wrong with the reply before
 MAX_STEPS = 60
 MAX_SECTION_MINUTES = 30
@@ -79,13 +80,15 @@ def _check_section(reply):
 
 
 def _place(raw, steps_count):
-    """(after_step, is_homework) of a question the AI wrote."""
+    """Where a question the AI wrote goes: {after_step, is_homework, is_quiz}."""
     if raw.get('is_homework'):
-        return None, True
+        return {'after_step': None, 'is_homework': True, 'is_quiz': False}
+    if raw.get('is_quiz'):
+        return {'after_step': None, 'is_homework': False, 'is_quiz': True}
     after = raw.get('after_step')
     if isinstance(after, bool) or not isinstance(after, int) or not 0 <= after < steps_count:
-        raise BadReply('after_step must point at a step, or set is_homework.')
-    return after, False
+        raise BadReply('after_step must point at a step, or set is_quiz or is_homework.')
+    return {'after_step': after, 'is_homework': False, 'is_quiz': False}
 
 
 def _check_questions(reply, steps_count):
@@ -95,8 +98,7 @@ def _check_questions(reply, steps_count):
     checked, refused = [], []
     for raw in raw_questions:
         try:
-            after, is_homework = _place(raw, steps_count)
-            checked.append({**clean_content(raw), 'after_step': after, 'is_homework': is_homework})
+            checked.append({**clean_content(raw), **_place(raw, steps_count)})
         except (BadReply, QuestionError, AttributeError, TypeError) as error:
             refused.append(str(error))
     # A few broken questions are left out; a reply that is mostly broken is asked again.
@@ -107,15 +109,30 @@ def _check_questions(reply, steps_count):
     return checked
 
 
+def _fixed_question(item):
+    """The reviewer's corrected version of a question it found wrong, if it is a valid question."""
+    if item.get('verdict') != LessonQuestion.Verdict.BAD or not isinstance(item.get('fix'), dict):
+        return None
+    try:
+        return clean_content(item['fix'])
+    except QuestionError:
+        return None
+
+
 def _check_review(reply, questions_count):
     verdict = reply['verdict']
     if verdict not in VERDICTS:
         raise BadReply('verdict must be GOOD or BAD.')
     notes = {}
     for item in reply.get('questions') or []:
+        if not isinstance(item, dict):
+            continue
         index = item.get('index')
         if isinstance(index, int) and 0 <= index < questions_count and item.get('verdict') in VERDICTS:
             notes[str(index)] = {'verdict': item['verdict'], 'note': str(item.get('note') or '')[:1000]}
+            fix = _fixed_question(item)
+            if fix:
+                notes[str(index)]['fix'] = fix
     return {
         'verdict': verdict,
         'summary': str(reply.get('summary') or '')[:1000],
@@ -236,7 +253,7 @@ def _generate(job, provider):
     # The teacher's own questions and homework are checked along with the AI's.
     reviewed = [*data['questions'], *[
         {'kind': q.kind, 'prompt': q.prompt, 'options': q.options, 'correct': q.correct,
-         'rubric': q.rubric, 'explanation': q.explanation}
+         'accepted': q.accepted, 'rubric': q.rubric, 'explanation': q.explanation}
         for q in kept
     ]]
     if 'review' not in data:
@@ -266,11 +283,19 @@ def _save_lesson(job, provider, steps, data, kept):
         for order, raw in enumerate(ai_questions):
             note = notes.get(str(order), {})
             fields = {k: v for k, v in raw.items() if k != 'after_step'}
+            verdict = note.get('verdict', LessonQuestion.Verdict.PENDING)
+            ai_note = note.get('note', '')
+            if note.get('fix'):
+                # the reviewer's corrected question takes its place; the admin still sees why
+                fields.update(note['fix'])
+                verdict = LessonQuestion.Verdict.GOOD
+                ai_note = f'Fixed by the AI check: {ai_note}'.strip()
+            after = raw['after_step']
             LessonQuestion.objects.create(
                 lesson=lesson, order=order, origin=LessonQuestion.Origin.AI,
-                step=None if raw['is_homework'] else new_steps[raw['after_step']],
-                ai_verdict=note.get('verdict', LessonQuestion.Verdict.PENDING),
-                ai_note=note.get('note', ''),
+                step=new_steps[after] if after is not None else None,
+                ai_verdict=verdict,
+                ai_note=ai_note[:2000],
                 **fields,
             )
 

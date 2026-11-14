@@ -4,7 +4,7 @@ What students may do with lessons. Only PUBLISHED lessons exist here.
 Correct answers and explanations leave the server only inside an answer the
 student has already given, so they cannot be read from the page beforehand.
 """
-from django.db.models import Count, Q
+from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
@@ -13,8 +13,8 @@ from rest_framework.response import Response
 
 from .marking import mark_written
 from .models import AILesson, LessonAnswer, LessonProgress, LessonQuestion
+from .play import answer_data, asked_in_lesson, lesson_play_data, question_data, visible_questions
 from .questions import QuestionError, mark
-from .views import lesson_play_data
 
 
 def _published():
@@ -27,30 +27,6 @@ def _progress_data(progress, steps_count):
     completed = progress.completed_at is not None
     percent = 100 if completed else round(progress.last_step / steps_count * 100) if steps_count else 0
     return {'last_step': progress.last_step, 'percent': percent, 'completed': completed}
-
-
-def _answer_data(answer, question):
-    return {
-        'choice': answer.choice,
-        'text': answer.text,
-        'is_correct': answer.is_correct,
-        'verdict': answer.verdict,          # written answers: correct | partly | wrong | '' (not marked)
-        'feedback': answer.feedback,
-        'correct': question.correct,
-        'explanation': question.explanation,
-    }
-
-
-def _question_data(question, answers):
-    answer = answers.get(question.id)
-    return {
-        'id': question.id,
-        'step': question.step_id,
-        'kind': question.kind,
-        'prompt': question.prompt,
-        'options': question.options,
-        'answer': _answer_data(answer, question) if answer else None,
-    }
 
 
 @api_view(['GET'])
@@ -85,22 +61,22 @@ def lesson_detail(request, pk):
     progress = LessonProgress.objects.filter(user=request.user, lesson=lesson).first()
     completed = bool(progress and progress.completed_at)
 
-    questions = list(lesson.questions.filter(Q(is_homework=True) | Q(step__isnull=False)))
+    questions = list(visible_questions(lesson.questions))
     answers = {
         a.question_id: a
         for a in LessonAnswer.objects.filter(user=request.user, question__lesson=lesson)
     }
-    in_lesson = [q for q in questions if not q.is_homework]
+    data = lesson_play_data(lesson, request)
+    last = data['steps'][-1]['id'] if data['steps'] else None
     homework = [q for q in questions if q.is_homework]
 
-    data = lesson_play_data(lesson, request)
     return Response({
         **data,
         'progress': _progress_data(progress, len(data['steps'])),
-        'questions': [_question_data(q, answers) for q in in_lesson],
+        'questions': [question_data(q, answers.get(q.id), last) for q in asked_in_lesson(questions, last)],
         'homework_count': len(homework),
         # The homework opens once the lesson has been watched to the end.
-        'homework': [_question_data(q, answers) for q in homework] if completed else None,
+        'homework': [question_data(q, answers.get(q.id)) for q in homework] if completed else None,
     })
 
 
@@ -130,7 +106,7 @@ def lesson_progress(request, pk):
 def question_answer(request, pk):
     """One answer per question: sending it again returns the first one unchanged."""
     question = get_object_or_404(
-        LessonQuestion.objects.select_related('lesson').filter(Q(is_homework=True) | Q(step__isnull=False)),
+        visible_questions(LessonQuestion.objects).select_related('lesson'),
         pk=pk, lesson__status=AILesson.Status.PUBLISHED,
     )
     if question.is_homework:
@@ -142,7 +118,7 @@ def question_answer(request, pk):
 
     existing = LessonAnswer.objects.filter(user=request.user, question=question).first()
     if existing:
-        return Response(_answer_data(existing, question))
+        return Response(answer_data(existing, question))
 
     try:
         choice, text, is_correct = mark(question, request.data.get('choice'), request.data.get('text'))
@@ -155,4 +131,4 @@ def question_answer(request, pk):
     )
     if created and question.kind == LessonQuestion.Kind.WRITTEN:
         mark_written(answer)            # a few seconds; the answer is saved either way
-    return Response(_answer_data(answer, question), status=201 if created else 200)
+    return Response(answer_data(answer, question), status=201 if created else 200)

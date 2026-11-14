@@ -18,10 +18,12 @@ from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 
 from .board import BoardError, clean_step
-from .models import AILesson, LessonJob, LessonQuestion, LessonSource, LessonStep
+from .marking import mark_written
+from .models import AILesson, LessonAnswer, LessonJob, LessonQuestion, LessonSource, LessonStep
 from .pipeline import JobBusy, expire_stale_jobs, latest_job, start_job
+from .play import answer_data, asked_in_lesson, lesson_play_data, question_data
 from .providers import FakeProvider, LessonAIError
-from .questions import QuestionError, clean_question
+from .questions import QuestionError, clean_question, mark
 
 MAX_TITLE = 200
 MAX_TEXT_CHARS = 200_000          # one pasted source; a whole book does not fit in a prompt
@@ -70,9 +72,11 @@ def _question_data(q):
         'kind': q.kind,
         'step': q.step_id,
         'is_homework': q.is_homework,
+        'is_quiz': q.is_quiz,
         'prompt': q.prompt,
         'options': q.options,
         'correct': q.correct,
+        'accepted': q.accepted,
         'rubric': q.rubric,
         'explanation': q.explanation,
         'origin': q.origin,
@@ -84,10 +88,12 @@ def _question_data(q):
 
 
 def _questions_with_counts(lesson):
+    # In the order a student meets them: after each step, the final test, the homework.
+    # (A counting query ignores Meta.ordering, so it is spelled out.)
     return lesson.questions.annotate(
         answers_count=Count('answers'),
         right_count=Count('answers', filter=Q(answers__is_correct=True)),
-    )
+    ).order_by('is_homework', 'is_quiz', 'step__order', 'order', 'id')
 
 
 def _lesson_data(lesson, request=None, full=False):
@@ -110,7 +116,7 @@ def _lesson_data(lesson, request=None, full=False):
         steps = list(lesson.steps.all())
         data['sources'] = [_source_data(s, request) for s in lesson.sources.all()]
         data['steps'] = [
-            {'id': s.id, 'order': s.order, 'say': s.say, 'board': s.board, 'voiced': bool(s.audio)}
+            {'id': s.id, 'order': s.order, 'say': s.say, 'board': s.board, 'think': s.think, 'voiced': bool(s.audio)}
             for s in steps
         ]
         data['steps_count'] = len(steps)
@@ -298,6 +304,7 @@ def admin_step_detail(request, pk):
         step.audio_seconds = 0
     step.say = fields['say']
     step.board = fields['board']
+    step.think = fields['think']
     step.save()
     return Response(_lesson_data(lesson, request, full=True))
 
@@ -338,33 +345,30 @@ def admin_question_detail(request, pk):
     return Response(_lesson_data(lesson, request, full=True))
 
 
-def lesson_play_data(lesson, request):
-    """Everything the board player needs for one lesson."""
-    return {
-        'id': lesson.id,
-        'title': lesson.title,
-        'subject': lesson.subject,
-        'section': lesson.section,
-        'language': lesson.language,
-        'level': lesson.level,
-        'steps': [
-            {
-                'id': s.id,
-                'say': s.say,
-                'board': s.board,
-                'audio': request.build_absolute_uri(s.audio.url) if s.audio else None,
-                'audio_seconds': s.audio_seconds,
-            }
-            for s in lesson.steps.all()
-        ],
-    }
-
-
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
 def admin_lesson_play(request, pk):
-    """An admin previews a lesson in the player, whatever its status."""
-    return Response(lesson_play_data(get_object_or_404(AILesson, pk=pk), request))
+    """An admin previews a lesson in the player, whatever its status, questions and final test included."""
+    lesson = get_object_or_404(AILesson, pk=pk)
+    data = lesson_play_data(lesson, request)
+    last = data['steps'][-1]['id'] if data['steps'] else None
+    asked = asked_in_lesson(lesson.questions.filter(is_homework=False), last)
+    return Response({**data, 'questions': [question_data(q, None, last) for q in asked]})
+
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def admin_question_try(request, pk):
+    """An admin answers a question in the preview: marked as a student's would be, but kept nowhere."""
+    question = get_object_or_404(LessonQuestion.objects.select_related('lesson'), pk=pk)
+    try:
+        choice, text, is_correct = mark(question, request.data.get('choice'), request.data.get('text'))
+    except QuestionError as error:
+        return Response({'error': str(error)}, status=400)
+    answer = LessonAnswer(question=question, choice=choice, text=text, is_correct=is_correct)
+    if question.kind == LessonQuestion.Kind.WRITTEN:
+        mark_written(answer, save=False)
+    return Response(answer_data(answer, question))
 
 
 def _clean_source(request):

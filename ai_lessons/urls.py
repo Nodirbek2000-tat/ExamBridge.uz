@@ -14,5 +14,6 @@ urlpatterns = [
     path('<int:pk>/questions/', views.admin_lesson_questions),
     path('sources/<int:pk>/', views.admin_source_detail),
     path('questions/<int:pk>/', views.admin_question_detail),
+    path('questions/<int:pk>/try/', views.admin_question_try),
     path('steps/<int:pk>/', views.admin_step_detail),
 ]

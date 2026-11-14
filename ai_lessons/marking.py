@@ -19,8 +19,11 @@ MAX_TOKENS = 500
 VERDICTS = {'CORRECT': 'correct', 'PARTLY': 'partly', 'WRONG': 'wrong'}
 
 
-def mark_written(answer):
-    """Fill in verdict, feedback and is_correct. Returns True when the answer was marked."""
+def mark_written(answer, save=True):
+    """
+    Fill in verdict, feedback and is_correct, and store them unless `save` is False
+    (an admin trying the lesson). Returns True when the answer was marked.
+    """
     question = answer.question
     try:
         provider = get_provider()
@@ -44,6 +47,8 @@ def mark_written(answer):
     answer.verdict = verdict
     answer.feedback = feedback
     answer.is_correct = verdict == 'correct'
+    if not save:
+        return True
     LessonAnswer.objects.filter(pk=answer.pk).update(
         verdict=answer.verdict, feedback=answer.feedback, is_correct=answer.is_correct,
     )

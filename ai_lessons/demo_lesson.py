@@ -65,6 +65,26 @@ STEPS = [
         ],
     },
     {
+        'say': "Your turn! Look at this equation: y equals three x minus four. What is the slope, and where "
+               "does the line cross the y axis? Take a few seconds and think...",
+        'board': [
+            {'type': 'icon', 'name': 'question', 'label': 'Your turn', 'color': 'pink', 'at': 0},
+            {'type': 'math', 'tex': 'y = 3x - 4', 'at': 0.3},
+            {'type': 'text', 'text': 'm = ?   and   b = ?', 'color': 'pink', 'at': 0.6},
+        ],
+        'think': 5,
+    },
+    {
+        'say': "The slope is three: the number in front of x. And b is minus four, not four! Students drop that "
+               "minus sign all the time, so keep the sign with the number. Did you get both? Brilliant!",
+        'board': [
+            {'type': 'text', 'text': '**m = 3**', 'color': 'sky', 'at': 0},
+            {'type': 'text', 'text': '**b = -4**', 'color': 'green', 'at': 0.25},
+            {'type': 'fix', 'wrong': 'b = 4', 'right': 'b = -4', 'at': 0.45},
+            {'type': 'note', 'text': 'The sign belongs to the number.', 'at': 0.8},
+        ],
+    },
+    {
         'say': "Given two points, we find the slope with this formula: the difference in y divided by the "
                "difference in x. Remember: keep the same order of points on top and on the bottom.",
         'board': [
@@ -111,9 +131,20 @@ STEPS = [
         ],
     },
     {
+        'say': "Now, two exam secrets most students never notice. First: if a line goes down from left to right, "
+               "its slope is negative, so you can cross out every positive answer before you calculate anything. "
+               "Second: in word problems, the number next to per, each or every is almost always the slope.",
+        'board': [
+            {'type': 'heading', 'text': 'Exam secrets', 'at': 0},
+            {'type': 'secret', 'text': 'Line goes **down**: the slope is **negative**. Cross out the positive answers first.',
+             'at': 0.1},
+            {'type': 'secret', 'text': '**per**, **each**, **every**: that number is \\(m\\).', 'at': 0.6},
+        ],
+    },
+    {
         'say': "Let's sum up. m is the rate of change, b is the starting value. On a graph, pick two points, "
                "find the slope, then read where the line crosses the y axis. In a word problem, separate what "
-               "repeats from what you pay once. You've got this!",
+               "repeats from what you pay once. Now, a quick final test to lock it all in. You've got this!",
         'board': [
             {'type': 'heading', 'text': 'Summary', 'at': 0},
             {'type': 'icon', 'name': 'trophy', 'label': 'You got it!', 'color': 'yellow', 'at': 0.12},
@@ -127,10 +158,10 @@ STEPS = [
     },
 ]
 
-# after_step is the index in STEPS; without it the question is homework.
+# after_step is the index in STEPS; is_quiz puts it in the final test, is_homework in the homework.
 QUESTIONS = [
     {
-        'after_step': 2,
+        'after_step': 4,
         'kind': 'CHOICE',
         'prompt': 'A line passes through \\((1, 3)\\) and \\((3, 7)\\). What is its slope?',
         'options': ['1', '2', '4', '\\(\\frac{1}{2}\\)'],
@@ -138,11 +169,54 @@ QUESTIONS = [
         'explanation': '\\(m = \\frac{7 - 3}{3 - 1} = \\frac{4}{2} = 2\\)',
     },
     {
-        'after_step': 4,
+        'after_step': 6,
         'kind': 'WRITTEN',
-        'prompt': 'In \\(y = 3x - 1\\), what are \\(m\\) and \\(b\\)?',
-        'rubric': 'Both m = 3 and b = -1 must be correct.',
-        'explanation': 'The number in front of \\(x\\) is \\(m = 3\\); the number on its own is \\(b = -1\\).',
+        'prompt': 'A line crosses the \\(y\\)-axis at 3 and goes up 2 for every 1 step to the right. '
+                  'Write its equation.',
+        'rubric': 'The equation y = 2x + 3 (or the same line written another way) must be there.',
+        'explanation': 'Up 2 for every 1 to the right: \\(m = 2\\). It crosses at 3: \\(b = 3\\). So \\(y = 2x + 3\\).',
+    },
+    {
+        'is_quiz': True,
+        'kind': 'TRUE_FALSE',
+        'prompt': 'The line \\(y = -2x + 5\\) goes down from left to right.',
+        'correct': True,
+        'explanation': 'The slope is \\(-2\\), a negative number, so the line goes down.',
+    },
+    {
+        'is_quiz': True,
+        'kind': 'GAP',
+        'prompt': 'In \\(y = 4x - 7\\), the slope is ___.',
+        'accepted': ['4'],
+        'explanation': 'The slope is the number in front of \\(x\\): 4. The \\(-7\\) is \\(b\\).',
+    },
+    {
+        'is_quiz': True,
+        'kind': 'GAP',
+        'prompt': 'A line passes through \\((0, 1)\\) and \\((2, 7)\\). Its slope is ___.',
+        'accepted': ['3'],
+        'explanation': '\\(m = \\frac{7 - 1}{2 - 0} = \\frac{6}{2} = 3\\)',
+    },
+    {
+        'is_quiz': True,
+        'kind': 'MISTAKE',
+        'prompt': 'Find the mistake in this solution.',
+        'options': [
+            'Points: \\((1, 2)\\) and \\((3, 8)\\)',
+            '\\(m = \\frac{8 - 2}{1 - 3}\\)',
+            'so \\(m = -3\\)',
+        ],
+        'correct': 1,
+        'explanation': 'The order flipped at the bottom. It must be \\(\\frac{8 - 2}{3 - 1} = \\frac{6}{2} = 3\\).',
+    },
+    {
+        'is_quiz': True,
+        'kind': 'CHOICE',
+        'prompt': 'A phone plan costs **10 dollars** a month plus **0.05 dollars** per text. '
+                  'Which equation gives the monthly cost \\(y\\) for \\(x\\) texts?',
+        'options': ['\\(y = 10x + 0.05\\)', '\\(y = 0.05x + 10\\)', '\\(y = 10.05x\\)', '\\(y = 0.05x - 10\\)'],
+        'correct': 1,
+        'explanation': '"Per text" repeats, so \\(m = 0.05\\); the monthly fee is paid once, so \\(b = 10\\).',
     },
     {
         'is_homework': True,
