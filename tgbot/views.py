@@ -214,6 +214,23 @@ def user_login_link(request):
     })
 
 
+@bot_api(['GET'])
+def user_ids(request):
+    """Who a /admin broadcast goes to: ?audience=all | premium | free."""
+    now = timezone.now()
+    premium = Q(user__is_premium=True) & (Q(user__premium_until__isnull=True) | Q(user__premium_until__gt=now))
+    everyone = TelegramAccount.objects.filter(user__is_active=True)
+    groups = {'all': everyone, 'premium': everyone.filter(premium), 'free': everyone.exclude(premium)}
+    audience = request.query_params.get('audience', 'all')
+    if audience not in groups:
+        return _error('bad_request', 'audience must be all, premium or free.')
+    return Response({
+        'audience': audience,
+        'ids': list(groups[audience].order_by('id').values_list('telegram_id', flat=True)),
+        'counts': {k: qs.count() for k, qs in groups.items()},
+    })
+
+
 # ── Payments ──────────────────────────────────────────────────────────────────
 
 @bot_api(['GET'])

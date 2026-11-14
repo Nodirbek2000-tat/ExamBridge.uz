@@ -500,3 +500,23 @@ class TelegramAccountOnSiteTest(BotTestCase):
         # Search finds Telegram students by @username and phone.
         self.assertEqual(self.client.get('/api/admin/users/?q=@tg_student', **auth).json()['count'], 1)
         self.assertEqual(self.client.get('/api/admin/users/?q=901234567', **auth).json()['count'], 1)
+
+
+class BroadcastAudienceTest(BotTestCase):
+    def test_ids_by_audience(self):
+        self.register(tid=11)
+        self.register(tid=22)
+        self.register(tid=33)
+        User.objects.filter(email=bot_email(22)).update(is_premium=True, premium_until=None)
+        User.objects.filter(email=bot_email(33)).update(
+            is_premium=True, premium_until=timezone.now() - timedelta(days=1),   # ran out
+        )
+        User.objects.filter(email=bot_email(11)).update(is_active=False)         # never messaged
+
+        everyone = self.bot_get('users/ids/').json()
+        self.assertEqual(sorted(everyone['ids']), [22, 33])
+        self.assertEqual(everyone['counts'], {'all': 2, 'premium': 1, 'free': 1})
+        self.assertEqual(self.bot_get('users/ids/?audience=premium').json()['ids'], [22])
+        self.assertEqual(self.bot_get('users/ids/?audience=free').json()['ids'], [33])
+        self.assertEqual(self.client.get('/api/bot/users/ids/?audience=vip', **BOT).status_code, 400)
+        self.assertEqual(self.client.get('/api/bot/users/ids/', **BROWSER).status_code, 403)
