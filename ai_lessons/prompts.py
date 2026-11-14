@@ -193,7 +193,7 @@ PLAN_ROLES = {
 }
 
 
-def plan(lesson, material, structures, sections):
+def plan(lesson, material, structures, sections, topics=()):
     roles = section_roles(sections)
     if 'secrets' not in roles:
         roles_text = '\n'.join(f'{i + 1}. {PLAN_ROLES[r]}' for i, r in enumerate(roles))
@@ -213,7 +213,9 @@ The lesson has exactly {sections} sections, in this order:
 {roles_text}
 Share the ideas the brief asks for between the teaching sections, in the order that builds understanding,
 so each idea gets real time. Give each section a clear title and its goal: what the student can do after it.
-Return {{"sections": [{{"title": "...", "goal": "what the student can do after it", "minutes": 2}}]}}
+Also name 1 to 5 exam skills the lesson trains, copied from this list when one fits, else a short name of your own:
+{json.dumps(list(topics), ensure_ascii=False)}
+Return {{"sections": [{{"title": "...", "goal": "what the student can do after it", "minutes": 2}}], "topics": ["..."]}}
 The minutes must add up to {lesson.duration_minutes}; the teaching sections get the most time."""
 
 

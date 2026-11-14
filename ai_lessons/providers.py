@@ -129,7 +129,7 @@ class FakeProvider:
         return {'sections': [
             {'title': f"{i + 1}-bo'lim", 'goal': f"{context['title']}: {i + 1}-qadam", 'minutes': 2}
             for i in range(count)
-        ]}
+        ], 'topics': [context['title']]}
 
     @staticmethod
     def _section(context):

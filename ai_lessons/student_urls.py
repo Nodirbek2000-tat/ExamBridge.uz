@@ -5,6 +5,7 @@ from . import student_views
 
 urlpatterns = [
     path('', student_views.lesson_list),
+    path('recommended/', student_views.lesson_recommended),
     path('<int:pk>/', student_views.lesson_detail),
     path('<int:pk>/progress/', student_views.lesson_progress),
     path('questions/<int:pk>/answer/', student_views.question_answer),

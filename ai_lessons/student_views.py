@@ -15,6 +15,7 @@ from .marking import mark_written
 from .models import AILesson, LessonAnswer, LessonProgress, LessonQuestion
 from .play import answer_data, asked_in_lesson, lesson_play_data, question_data, visible_questions
 from .questions import QuestionError, mark
+from .recommend import recommendations
 
 
 def _published():
@@ -29,6 +30,25 @@ def _progress_data(progress, steps_count):
     return {'last_step': progress.last_step, 'percent': percent, 'completed': completed}
 
 
+def _lesson_card(lesson, progress, steps_count):
+    return {
+        'id': lesson.id,
+        'title': lesson.title,
+        'subject': lesson.subject,
+        'section': lesson.section,
+        'level': lesson.level,
+        'duration_minutes': lesson.duration_minutes,
+        'progress': _progress_data(progress, steps_count),
+    }
+
+
+def _my_progress(user):
+    return {
+        p.lesson_id: p
+        for p in LessonProgress.objects.filter(user=user, lesson__status=AILesson.Status.PUBLISHED)
+    }
+
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def lesson_list(request):
@@ -36,22 +56,33 @@ def lesson_list(request):
     subject = request.query_params.get('subject', '').upper()
     if subject:
         lessons = lessons.filter(subject__in=[subject, AILesson.Subject.GENERAL])
-    mine = {
-        p.lesson_id: p
-        for p in LessonProgress.objects.filter(user=request.user, lesson__status=AILesson.Status.PUBLISHED)
-    }
-    return Response([
-        {
-            'id': lesson.id,
-            'title': lesson.title,
-            'subject': lesson.subject,
-            'section': lesson.section,
-            'level': lesson.level,
-            'duration_minutes': lesson.duration_minutes,
-            'progress': _progress_data(mine.get(lesson.id), lesson.steps_count),
-        }
-        for lesson in lessons
-    ])
+    mine = _my_progress(request.user)
+    return Response([_lesson_card(lesson, mine.get(lesson.id), lesson.steps_count) for lesson in lessons])
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def lesson_recommended(request):
+    """
+    ?exam=sat|ielts|cefr (or none for all): the student's weak spots and the
+    lessons that teach them, each with the spots it covers.
+    """
+    exam = request.query_params.get('exam', '').lower() or None
+    found = recommendations(request.user, exam)
+    mine = _my_progress(request.user)
+    counts = dict(
+        _published().filter(pk__in=[lesson.id for lesson, _ in found['lessons']])
+        .annotate(n=Count('steps')).values_list('id', 'n')
+    )
+    public = ('name', 'area', 'result')
+    return Response({
+        'spots': [{k: s[k] for k in public} for s in found['spots']],
+        'lessons': [
+            {**_lesson_card(lesson, mine.get(lesson.id), counts.get(lesson.id, 0)),
+             'covers': [{k: s[k] for k in public} for s in covers]}
+            for lesson, covers in found['lessons']
+        ],
+    })
 
 
 @api_view(['GET'])

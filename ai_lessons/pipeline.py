@@ -22,6 +22,7 @@ from .board import BoardError, clean_step, repair_step, replace_steps
 from .models import AILesson, LessonJob, LessonQuestion
 from .providers import BadReply, LessonAIError, get_provider
 from .questions import QuestionError, clean_content
+from .recommend import clean_topics, known_topics
 from .source_text import lesson_context, teaching_structures
 
 logger = logging.getLogger(__name__)
@@ -217,11 +218,12 @@ def _generate(job, provider):
     count = section_count(lesson)
     if 'plan' not in data:
         _progress(job, stage=LessonJob.Stage.PLAN, done=0, total=count)
-        data['plan'] = _ask(
-            provider, 'plan', lesson, prompts.plan(lesson, material, structures, count),
+        planned = _ask(
+            provider, 'plan', lesson, prompts.plan(lesson, material, structures, count, known_topics(lesson)),
             {'title': lesson.title, 'sections': count},
-            lambda reply: _check_plan(reply, count),
+            lambda reply: {'sections': _check_plan(reply, count), 'topics': clean_topics(reply.get('topics'))},
         )
+        data['plan'], data['topics'] = planned['sections'], planned['topics']
         _progress(job, data=data)
 
     outline = data['plan']
@@ -311,7 +313,11 @@ def _save_lesson(job, provider, steps, data, kept):
 
         lesson.status = AILesson.Status.REVIEW
         lesson.ai_provider = provider.name
-        lesson.save(update_fields=['status', 'ai_provider', 'updated_at'])
+        fields = ['status', 'ai_provider', 'updated_at']
+        if data.get('topics') and not lesson.topics:      # an admin's own topics are kept
+            lesson.topics = data['topics']
+            fields.append('topics')
+        lesson.save(update_fields=fields)
         _finish(job)
 
 

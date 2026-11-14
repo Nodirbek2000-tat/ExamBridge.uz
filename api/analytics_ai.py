@@ -84,6 +84,7 @@ Accuracy rules (the student sees the charts next to your text):
 Advice rules:
 - Name the exact question type / skill / criterion and give a concrete technique. Context: {hints}
 - {mistake_rule}
+- If recommended_lessons is in the JSON, the first plan step is watching the lesson that best fits the biggest weakness (its "AI lesson" link).
 - The plan must be doable on this platform. Every plan step ends with ONE markdown link chosen from ALLOWED_LINKS (copy the url exactly), e.g. [Practise reading](/app/ielts/skills?tab=reading). Never use any other url.
 - Order by impact: many attempts + low accuracy first. Calm, constructive tone; never call the results "bad" or "very low".
 
@@ -104,8 +105,18 @@ MISTAKES_SECTION = "## Mistake patterns\n2-4 bullets about patterns in recent_mi
 
 def _facts(user, exam, range_key):
     if exam == 'sat':
-        return _sat(user, range_key)
-    return _skill_exam(user, exam, range_key)
+        facts, volume, links, hints = _sat(user, range_key)
+    else:
+        facts, volume, links, hints = _skill_exam(user, exam, range_key)
+    # AI lessons that teach this student's weak spots: the plan may send them there.
+    from ai_lessons.recommend import recommendations
+    lessons = recommendations(user, exam)['lessons']
+    if lessons:
+        facts['recommended_lessons'] = [
+            {'title': lesson.title, 'teaches': [c['name'] for c in covers]} for lesson, covers in lessons
+        ]
+        links += [{'label': f'AI lesson: {lesson.title}', 'url': f'/app/lessons/{lesson.id}'} for lesson, _ in lessons]
+    return facts, volume, links, hints
 
 
 @api_view(['POST'])

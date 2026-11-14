@@ -24,6 +24,7 @@ from .pipeline import JobBusy, expire_stale_jobs, latest_job, start_job
 from .play import answer_data, asked_in_lesson, lesson_play_data, question_data
 from .providers import FakeProvider, LessonAIError
 from .questions import QuestionError, clean_question, mark
+from .recommend import clean_topics
 
 MAX_TITLE = 200
 MAX_TEXT_CHARS = 200_000          # one pasted source; a whole book does not fit in a prompt
@@ -105,6 +106,7 @@ def _lesson_data(lesson, request=None, full=False):
         'language': lesson.language,
         'duration_minutes': lesson.duration_minutes,
         'level': lesson.level,
+        'topics': lesson.topics,
         'voice': lesson.voice,
         'brief': lesson.brief,
         'status': lesson.status,
@@ -168,6 +170,7 @@ def _clean_lesson(data, lesson=None):
         'language': language,
         'duration_minutes': duration,
         'level': str(value('level', '')).strip()[:30],
+        'topics': clean_topics(value('topics', [])),
         'voice': voice,
         'brief': str(value('brief', '')).strip(),
     }, None
