@@ -47,7 +47,7 @@ class ScriptedProvider(FakeProvider):
         self.fail_on = fail_on or {}
         self.replies = replies or {}
 
-    def complete(self, task, system, user, context, max_tokens):
+    def complete(self, task, system, user, context, max_tokens, model=None):
         self.calls.append((task, user))
         number = len(self.calls)
         if number in self.fail_on:
@@ -55,13 +55,13 @@ class ScriptedProvider(FakeProvider):
         queue = self.replies.get(task)
         if queue:
             return queue.pop(0)
-        return super().complete(task, system, user, context, max_tokens)
+        return super().complete(task, system, user, context, max_tokens, model)
 
-    def speak(self, text, voice):
+    def speak(self, text, voice, language='uz'):
         self.spoken.append((text, voice))
         if number := self.fail_on.get(f'speak{len(self.spoken)}'):
             raise number
-        return super().speak(text, voice)
+        return super().speak(text, voice, language)
 
     def tasks(self):
         return [task for task, _ in self.calls]
@@ -757,10 +757,10 @@ class RecoveryTest(PipelineBase):
         LessonQuestion.objects.create(lesson=self.lesson, is_homework=True, kind='WRITTEN', prompt='Meniki')
 
         class DeletesDuringReview(ScriptedProvider):
-            def complete(self, task, system, user, context, max_tokens):
+            def complete(self, task, system, user, context, max_tokens, model=None):
                 if task == 'review':
                     LessonQuestion.objects.filter(origin='ADMIN').delete()
-                return super().complete(task, system, user, context, max_tokens)
+                return super().complete(task, system, user, context, max_tokens, model)
 
         self.use(DeletesDuringReview())
         self.generate()
@@ -787,3 +787,76 @@ class RecoveryTest(PipelineBase):
 
         self.assertEqual(provider.tasks()[:2], ['plan', 'plan'])
         self.assertEqual(self.job().status, 'DONE')
+
+
+class SpokenTextTest(SimpleTestCase):
+    def test_board_markup_is_not_read_aloud(self):
+        from .providers import speakable
+        self.assertEqual(speakable('Bu **muhim**: \( x + 1 \) → javob'), 'Bu muhim: x + 1, javob')
+        self.assertEqual(speakable('• Birinchi  fikr'), 'Birinchi fikr')
+
+    def test_uzbek_lessons_get_the_uzbek_style_and_spoken_rules(self):
+        from . import prompts
+        uz = AILesson(title='T', language='uz')
+        en = AILesson(title='T', language='en')
+        self.assertIn('Tashkent', prompts.role(uz))
+        self.assertNotIn('Tashkent', prompts.role(en))
+        self.assertIn('iks kvadrat', prompts.spoken_rules(uz))
+        self.assertIn('x squared', prompts.spoken_rules(en))
+
+
+@override_settings(OPENAI_API_KEY='sk-test', AI_LESSON_TTS_ENGINE='openai', AI_LESSON_TTS_MODEL='gpt-4o-mini-tts')
+class OpenAIVoiceTest(SimpleTestCase):
+    def test_uzbek_pronunciation_instructions_go_with_the_text(self):
+        from unittest import mock
+        from .providers import OpenAIProvider, SILENT_FRAME
+        provider = OpenAIProvider()
+        client = mock.MagicMock()
+        client.audio.speech.create.return_value.content = SILENT_FRAME * 40
+        with mock.patch.object(provider, '_client', return_value=client), \
+                mock.patch('ai_lessons.providers.record') as record:
+            provider.speak('Salom, **aziz** o\'quvchilar', 'coral', 'uz')
+        kwargs = client.audio.speech.create.call_args.kwargs
+        self.assertEqual((kwargs['model'], kwargs['voice']), ('gpt-4o-mini-tts', 'coral'))
+        self.assertEqual(kwargs['input'], "Salom, aziz o'quvchilar")
+        self.assertIn('Uzbek', kwargs['instructions'])
+        record.assert_called_once()
+
+    @override_settings(AI_LESSON_TTS_MODEL='tts-1-hd')
+    def test_old_tts_models_get_no_instructions(self):
+        from unittest import mock
+        from .providers import OpenAIProvider, SILENT_FRAME
+        provider = OpenAIProvider()
+        client = mock.MagicMock()
+        client.audio.speech.create.return_value.content = SILENT_FRAME * 40
+        with mock.patch.object(provider, '_client', return_value=client), mock.patch('ai_lessons.providers.record'):
+            provider.speak('Salom', 'nova', 'uz')
+        self.assertNotIn('instructions', client.audio.speech.create.call_args.kwargs)
+
+    @override_settings(AI_LESSON_TTS_ENGINE='azure', AZURE_SPEECH_KEY='az-key', AZURE_SPEECH_REGION='westeurope')
+    def test_azure_speaks_uzbek_with_a_native_voice(self):
+        from unittest import mock
+        from .providers import OpenAIProvider, SILENT_FRAME
+        response = mock.MagicMock(status_code=200, content=SILENT_FRAME * 40)
+        with mock.patch('requests.post', return_value=response) as post, mock.patch('ai_lessons.providers.record'):
+            OpenAIProvider().speak("Bu <muhim> & oson", 'onyx', 'uz')
+        body = post.call_args.kwargs['data'].decode()
+        self.assertIn('uz-UZ-SardorNeural', body)
+        self.assertIn('Bu &lt;muhim&gt; &amp; oson', body)
+        self.assertIn('westeurope', post.call_args.args[0])
+
+
+@override_settings(MEDIA_ROOT=MEDIA, AI_LESSON_PROVIDER='fake')
+class TryCommandTest(TestCase):
+    def test_makes_a_whole_lesson_and_reports_it(self):
+        from django.core.management import call_command
+        out = io.StringIO()
+        call_command('ai_lesson_try', 'Kvadrat tenglamalar', '--subject', 'SAT', '--section', 'math',
+                     '--with-voice', stdout=out)
+        text = out.getvalue()
+        lesson = AILesson.objects.get(title='Kvadrat tenglamalar')
+        self.assertEqual(lesson.status, AILesson.Status.APPROVED)
+        self.assertTrue(all(step.audio for step in lesson.steps.all()))
+        self.assertIn('AI tekshiruvi: GOOD', text)
+        self.assertIn('JAMI', text)
+        self.assertIn(f'/admin-panel/ai-lessons/{lesson.id}/preview', text)

@@ -60,6 +60,9 @@ class AILesson(models.Model):
         SHIMMER = 'shimmer', 'Shimmer (ayol)'
         ONYX = 'onyx', 'Onyx (erkak)'
         ECHO = 'echo', 'Echo (erkak)'
+        CORAL = 'coral', 'Coral (ayol)'
+        SAGE = 'sage', 'Sage (ayol)'
+        ASH = 'ash', 'Ash (erkak)'
 
     DURATIONS = (10, 15, 20)
 
@@ -69,7 +72,7 @@ class AILesson(models.Model):
     language = models.CharField(max_length=2, choices=Language.choices, default=Language.UZBEK)
     duration_minutes = models.PositiveSmallIntegerField(default=10)
     level = models.CharField(max_length=30, blank=True, help_text='Who it is for, e.g. B2 or Band 6+')
-    voice = models.CharField(max_length=20, choices=Voice.choices, default=Voice.NOVA)
+    voice = models.CharField(max_length=20, choices=Voice.choices, default=Voice.CORAL)
     brief = models.TextField(blank=True, help_text='What the lesson must cover and how to teach it')
 
     status = models.CharField(max_length=12, choices=Status.choices, default=Status.DRAFT, db_index=True)
@@ -245,6 +248,9 @@ class LessonAnswer(models.Model):
     choice = models.PositiveSmallIntegerField(null=True, blank=True)
     text = models.TextField(blank=True)
     is_correct = models.BooleanField(null=True, blank=True, help_text='Empty until a written answer is marked')
+    # Written answers: the AI teacher's verdict and comment ('' until marked).
+    verdict = models.CharField(max_length=8, blank=True, default='', help_text='correct, partly or wrong')
+    feedback = models.TextField(blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -234,6 +234,14 @@ CELERY_TASK_ROUTES = {'ai_lessons.tasks.*': {'queue': 'lessons'}}
 # 'openai' spends money; 'fake' writes canned lessons that can never be published.
 AI_LESSON_PROVIDER = config('AI_LESSON_PROVIDER', default='openai')
 AI_LESSON_MODEL = config('AI_LESSON_MODEL', default='gpt-4.1')
+# Checks students' written answers: many small calls, so a cheaper model.
+AI_LESSON_MARK_MODEL = config('AI_LESSON_MARK_MODEL', default='gpt-4.1-mini')
+# Lesson voice. 'openai' (gpt-4o-mini-tts, told how to pronounce Uzbek) or 'azure'
+# (native Uzbek voices uz-UZ-Madina / uz-UZ-Sardor; needs AZURE_SPEECH_KEY).
+AI_LESSON_TTS_ENGINE = config('AI_LESSON_TTS_ENGINE', default='openai')
+AI_LESSON_TTS_MODEL = config('AI_LESSON_TTS_MODEL', default='gpt-4o-mini-tts')
+AZURE_SPEECH_KEY = config('AZURE_SPEECH_KEY', default='')
+AZURE_SPEECH_REGION = config('AZURE_SPEECH_REGION', default='westeurope')
 
 # ─── SPEAKING OVOZ YOZUVLARINI SAQLASH MUDDATI ────────────────────────────────
 # Shu kundan eski ovoz fayllari avtomatik o'chiriladi.

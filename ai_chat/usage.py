@@ -19,11 +19,12 @@ MILLION = 1_000_000
 CHAT_PRICES = {
     'gpt-4o': {'input': 2.50, 'cached': 1.25, 'output': 10.00},
     'gpt-4.1': {'input': 2.00, 'cached': 0.50, 'output': 8.00},
+    'gpt-4.1-mini': {'input': 0.40, 'cached': 0.10, 'output': 1.60},
 }
 WHISPER_PER_MINUTE = {'whisper-1': 0.006}
 # $ per 1M characters. gpt-4o-mini-tts really bills audio tokens, which the speech
 # API does not report: about $0.015 a minute, at roughly 900 characters a minute.
-TTS_PER_MILLION_CHARS = {'tts-1-hd': 30.00, 'gpt-4o-mini-tts': 16.67}
+TTS_PER_MILLION_CHARS = {'tts-1-hd': 30.00, 'gpt-4o-mini-tts': 16.67, 'azure-neural-tts': 16.00}
 
 # feature → (dashboard group, what it is)
 FEATURES = {
@@ -49,6 +50,7 @@ FEATURES = {
     'lesson_questions': ('AI Lessons', 'Lesson questions'),
     'lesson_review': ('AI Lessons', 'Lesson review'),
     'lesson_voice': ('AI Lessons', 'Lesson voice'),
+    'lesson_mark': ('AI Lessons', 'Answer checking'),
 }
 
 

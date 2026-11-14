@@ -11,6 +11,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
+from .marking import mark_written
 from .models import AILesson, LessonAnswer, LessonProgress, LessonQuestion
 from .questions import QuestionError, mark
 from .views import lesson_play_data
@@ -33,6 +34,8 @@ def _answer_data(answer, question):
         'choice': answer.choice,
         'text': answer.text,
         'is_correct': answer.is_correct,
+        'verdict': answer.verdict,          # written answers: correct | partly | wrong | '' (not marked)
+        'feedback': answer.feedback,
         'correct': question.correct,
         'explanation': question.explanation,
     }
@@ -150,4 +153,6 @@ def question_answer(request, pk):
         user=request.user, question=question,
         defaults={'choice': choice, 'text': text, 'is_correct': is_correct},
     )
+    if created and question.kind == LessonQuestion.Kind.WRITTEN:
+        mark_written(answer)            # a few seconds; the answer is saved either way
     return Response(_answer_data(answer, question), status=201 if created else 200)

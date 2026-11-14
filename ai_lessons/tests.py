@@ -469,11 +469,30 @@ class StudentAnswerTest(StudentBase):
         self.assertEqual((res.json()['choice'], res.json()['is_correct']), (0, False))
         self.assertEqual(LessonAnswer.objects.count(), 1)
 
-    def test_a_written_answer_is_saved_unmarked(self):
+    @override_settings(AI_LESSON_PROVIDER='openai', OPENAI_API_KEY='')
+    def test_a_written_answer_is_kept_unmarked_when_the_ai_cannot_check_it(self):
         res = self.answer(self.written, text=' Chunki ')
         self.assertEqual(res.status_code, 201)
-        self.assertEqual((res.json()['text'], res.json()['is_correct']), ('Chunki', None))
+        self.assertEqual((res.json()['text'], res.json()['is_correct'], res.json()['verdict']), ('Chunki', None, ''))
         self.assertEqual(res.json()['explanation'], 'Namuna')
+
+    @override_settings(AI_LESSON_PROVIDER='fake')
+    def test_the_ai_teacher_marks_a_written_answer(self):
+        res = self.answer(self.written, text="Chunki ikki va ikki to'rtga teng bo'ladi")
+        self.assertEqual(res.status_code, 201)
+        data = res.json()
+        self.assertEqual((data['verdict'], data['is_correct']), ('correct', True))
+        self.assertTrue(data['feedback'])
+        saved = LessonAnswer.objects.get()
+        self.assertEqual((saved.verdict, saved.is_correct), ('correct', True))
+        # Sending it again returns the first answer and its mark; nothing is checked twice.
+        again = self.answer(self.written, text='boshqa')
+        self.assertEqual((again.status_code, again.json()['verdict']), (200, 'correct'))
+
+    @override_settings(AI_LESSON_PROVIDER='fake')
+    def test_a_partly_right_answer_is_not_counted_correct(self):
+        data = self.answer(self.written, text='Chunki teng').json()
+        self.assertEqual((data['verdict'], data['is_correct']), ('partly', False))
 
     def test_bad_answers_are_refused(self):
         for bad in ({}, {'choice': 5}, {'choice': -1}, {'choice': '1'}, {'choice': True}):

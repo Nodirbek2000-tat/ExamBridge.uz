@@ -291,7 +291,7 @@ def _voice(job, provider):
     _progress(job, stage=LessonJob.Stage.VOICE, done=len(steps) - len(waiting), total=len(steps))
 
     for step in waiting:
-        audio, seconds = provider.speak(step.say, lesson.voice)
+        audio, seconds = provider.speak(step.say, lesson.voice, lesson.language)
         step.audio.save('voice.mp3', ContentFile(audio), save=False)
         step.audio_seconds = seconds
         step.save(update_fields=['audio', 'audio_seconds'])
