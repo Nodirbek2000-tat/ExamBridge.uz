@@ -128,15 +128,9 @@ class RegisterTest(BotTestCase):
 
 
 class LinkAndLoginTest(BotTestCase):
-    def test_site_account_links_through_the_bot(self):
+    def test_an_old_link_from_the_site_still_links_through_the_bot(self):
         user = self.site_user()
-        res = self.client.post('/api/payments/telegram/', **self.as_user(user))
-        self.assertEqual(res.status_code, 200)
-        self.assertFalse(res.json()['linked'])
-        url = res.json()['url']
-        self.assertTrue(url.startswith('https://t.me/exambridge_test_bot?start=link_'))
-        token = url.split('link_', 1)[1]
-        self.assertLessEqual(len('link_' + token), 64)
+        token = TelegramToken.issue(user, TelegramToken.LINK).token
 
         linked = self.bot_post('users/link/', {'token': token, 'telegram_id': 2002, 'first_name': 'Vali'})
         self.assertEqual(linked.status_code, 200)
@@ -146,11 +140,6 @@ class LinkAndLoginTest(BotTestCase):
         # The token works once.
         again = self.bot_post('users/link/', {'token': token, 'telegram_id': 2002})
         self.assertEqual(again.json()['code'], 'bad_token')
-        # Once linked, the site opens the bot straight on the Premium menu.
-        self.assertEqual(
-            self.client.post('/api/payments/telegram/', **self.as_user(user)).json()['url'],
-            'https://t.me/exambridge_test_bot?start=premium',
-        )
 
     def test_a_telegram_linked_to_someone_else_is_not_taken_over(self):
         self.register(tid=3003)

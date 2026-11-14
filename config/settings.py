@@ -329,6 +329,11 @@ CORS_ALLOWED_ORIGINS = [
 # Shared secret for testmakon.uz ↔ SAT+ bridge auth
 TESTMAKON_API_KEY = config('TESTMAKON_API_KEY', default='change-me-in-production')
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Production da False, development da True
+# X-Device-Id: the browser's own id, so signing in again on it does not sign out another device
+from corsheaders.defaults import default_headers  # noqa: E402
+CORS_ALLOW_HEADERS = (*default_headers, 'x-device-id')
+# A student account works on this many devices at once; one more signs out the oldest.
+MAX_DEVICES = 2
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
@@ -358,7 +363,8 @@ ADMIN_IP_WHITELIST = config(
 # ─── REST FRAMEWORK ───────────────────────────────────────────────────────────
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # JWT, and the token's device must still be signed in (accounts/devices.py)
+        'accounts.devices.DeviceJWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',  # keeps Django admin working
     ],
     'DEFAULT_PERMISSION_CLASSES': [

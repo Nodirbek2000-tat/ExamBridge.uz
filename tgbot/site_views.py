@@ -24,14 +24,16 @@ def bot_url(start=None):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def telegram_open(request):
-    """The bot link for this account: links Telegram first if it is not linked yet."""
+    """
+    The bot link for paying for this account. The bot first shows which account
+    it is and asks to confirm, so the Premium never lands on another account —
+    say the student's Telegram already has an account of its own from the bot.
+    """
     if not bot_url():
         return Response({'detail': 'Telegram payments are not configured yet.'}, status=503)
     linked = TelegramAccount.objects.filter(user=request.user).exists()
-    if linked:
-        return Response({'url': bot_url('premium'), 'linked': True})
-    token = TelegramToken.issue(request.user, TelegramToken.LINK)
-    return Response({'url': bot_url(f'link_{token.token}'), 'linked': False})
+    token = TelegramToken.issue(request.user, TelegramToken.PAY)
+    return Response({'url': bot_url(f'pay_{token.token}'), 'linked': linked})
 
 
 @api_view(['POST'])
@@ -45,7 +47,7 @@ def telegram_login(request):
             {'detail': 'This sign-in link has expired or was already used. Open the bot and tap “Saytga kirish” again.'},
             status=400,
         )
-    return Response({'user': user_data(user), **get_tokens(user)})
+    return Response({'user': user_data(user), **get_tokens(user, request)})
 
 
 # ── "Continue with Telegram" (login and sign-up pages) ────────────────────────
@@ -85,4 +87,4 @@ def telegram_login_poll(request):
 
     user = row.user
     # Signed up in the bot during this very sign-in: the site sends them to onboarding.
-    return Response({'status': 'ok', 'user': user_data(user), **get_tokens(user), 'created': row.signed_up})
+    return Response({'status': 'ok', 'user': user_data(user), **get_tokens(user, request), 'created': row.signed_up})

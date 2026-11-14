@@ -52,11 +52,14 @@ class TelegramToken(models.Model):
     login — the bot gives it to a user; opening it on the site signs them in.
     link  — the site gives it to a signed-in user; opening the bot with it
             attaches their Telegram to that account.
+    pay   — "Pay via Telegram" on the site: the bot asks which account it is
+            for, and the Premium bought goes to that account (PaymentTarget).
     """
     LOGIN = 'login'
     LINK = 'link'
-    PURPOSES = [(LOGIN, 'Sign in on the site'), (LINK, 'Link Telegram to an account')]
-    LIFETIME = {LOGIN: timedelta(minutes=10), LINK: timedelta(minutes=30)}
+    PAY = 'pay'
+    PURPOSES = [(LOGIN, 'Sign in on the site'), (LINK, 'Link Telegram to an account'), (PAY, 'Pay for an account')]
+    LIFETIME = {LOGIN: timedelta(minutes=10), LINK: timedelta(minutes=30), PAY: timedelta(hours=24)}
 
     token = models.CharField(max_length=64, unique=True)
     purpose = models.CharField(max_length=8, choices=PURPOSES)
@@ -85,6 +88,18 @@ class TelegramToken(models.Model):
         )
 
     @classmethod
+    def peek(cls, token, purpose):
+        """The user a still-valid token belongs to, without using it up."""
+        if not token or len(token) > 64:
+            return None
+        row = (
+            cls.objects.select_related('user')
+            .filter(token=token, purpose=purpose, used_at__isnull=True, expires_at__gt=timezone.now())
+            .first()
+        )
+        return row.user if row and row.user.is_active else None
+
+    @classmethod
     def redeem(cls, token, purpose):
         """The user the token belongs to, or None. A token works once."""
         if not token or len(token) > 64:
@@ -101,6 +116,40 @@ class TelegramToken(models.Model):
             row.used_at = timezone.now()
             row.save(update_fields=['used_at'])
         return row.user if row.user.is_active else None
+
+
+class PaymentTarget(models.Model):
+    """
+    The site account a Telegram user is paying for, chosen through "Pay via
+    Telegram" and confirmed in the bot. Receipts sent from that Telegram go to
+    this account until it runs out, even when the Telegram is linked to a
+    different account of its own — the two accounts are never merged.
+    """
+    LIFETIME = timedelta(hours=2)
+
+    telegram_id = models.BigIntegerField(unique=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='+')
+    expires_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.telegram_id} pays for {self.user_id}'
+
+    @classmethod
+    def choose(cls, telegram_id, user):
+        cls.objects.update_or_create(
+            telegram_id=telegram_id, defaults={'user': user, 'expires_at': timezone.now() + cls.LIFETIME},
+        )
+
+    @classmethod
+    def user_for(cls, telegram_id):
+        """The account this Telegram is paying for right now, or None."""
+        row = (
+            cls.objects.select_related('user')
+            .filter(telegram_id=telegram_id, expires_at__gt=timezone.now(), user__is_active=True)
+            .first()
+        )
+        return row.user if row else None
 
 
 class BotChannel(models.Model):

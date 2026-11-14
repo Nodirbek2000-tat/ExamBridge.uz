@@ -9,8 +9,8 @@ from rest_framework.decorators import api_view, permission_classes, throttle_cla
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
-from rest_framework_simplejwt.tokens import RefreshToken
-from accounts.models import LOGIN_LOCK_MINUTES, User
+from accounts import devices
+from accounts.models import LOGIN_LOCK_MINUTES, User, UserSession
 
 
 # Per address, so set for a classroom behind one network rather than one person.
@@ -50,12 +50,9 @@ def user_data(user):
     }
 
 
-def get_tokens(user):
-    refresh = RefreshToken.for_user(user)
-    return {
-        'access': str(refresh.access_token),
-        'refresh': str(refresh),
-    }
+def get_tokens(user, request=None):
+    """The JWT pair for a sign-in on the device making `request` (see accounts/devices.py)."""
+    return devices.tokens_for(user, request)
 
 
 @api_view(['GET'])
@@ -86,7 +83,7 @@ def login_view(request):
             account.record_failed_login()
         return Response({'detail': 'Invalid email or password.'}, status=status.HTTP_401_UNAUTHORIZED)
     user.reset_login_attempts()
-    tokens = get_tokens(user)
+    tokens = get_tokens(user, request)
     return Response({'user': user_data(user), **tokens})
 
 
@@ -114,7 +111,7 @@ def register_view(request):
         first_name=first_name,
         last_name=last_name,
     )
-    tokens = get_tokens(user)
+    tokens = get_tokens(user, request)
     return Response({'user': user_data(user), **tokens}, status=201)
 
 
@@ -165,7 +162,7 @@ def google_login_view(request):
         user.set_unusable_password()
         user.save()
 
-    tokens = get_tokens(user)
+    tokens = get_tokens(user, request)
     return Response({'user': user_data(user), **tokens, 'created': created})
 
 
@@ -173,7 +170,7 @@ def google_login_view(request):
 @permission_classes([AllowAny])
 @throttle_classes([])                  # needs a valid refresh token anyway
 def token_refresh_view(request):
-    """Refresh JWT access token using refresh token."""
+    """A fresh access token, while the device's session is still live."""
     from rest_framework_simplejwt.tokens import RefreshToken
     from rest_framework_simplejwt.exceptions import TokenError
 
@@ -182,15 +179,32 @@ def token_refresh_view(request):
         return Response({'detail': 'Refresh token required.'}, status=400)
     try:
         token = RefreshToken(refresh_token)
-        return Response({'access': str(token.access_token), 'refresh': str(token)})
     except TokenError as e:
         return Response({'detail': str(e)}, status=401)
+
+    key = token.get('sid')
+    if key:
+        if not devices.is_live(key):
+            return Response(devices.signed_out_error(key), status=401)
+        devices.seen(key)
+        return Response({'access': str(token.access_token), 'refresh': str(token)})
+
+    # Signed in before devices were counted: this device gets its session now.
+    user = User.objects.filter(pk=token.get('user_id'), is_active=True).first()
+    if user is None:
+        return Response({'detail': 'User not found.'}, status=401)
+    if not devices.has_sessions(user):
+        return Response({'access': str(token.access_token), 'refresh': str(token)})
+    return Response(get_tokens(user, request))
 
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def logout_view(request):
-    # With JWT, client just deletes tokens. Optionally blacklist refresh token.
+    # This device stops counting towards the limit at once.
+    key = request.auth.get('sid') if request.auth is not None and hasattr(request.auth, 'get') else None
+    if key:
+        devices.revoke([key], UserSession.Reason.LOGOUT)
     refresh_token = request.data.get('refresh', '')
     if refresh_token:
         try:
@@ -200,6 +214,43 @@ def logout_view(request):
         except Exception:
             pass
     return Response({'detail': 'Logged out.'})
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def devices_view(request):
+    """This account's signed-in devices, the one asking first."""
+    current = request.auth.get('sid') if request.auth is not None and hasattr(request.auth, 'get') else None
+    rows = sorted(
+        devices.live_sessions(request.user).order_by('-last_seen_at'),
+        key=lambda s: s.key != current,
+    )
+    return Response({
+        'limit': devices.max_devices() if devices.is_limited(request.user) else None,
+        'devices': [
+            {
+                'id': s.id,
+                'name': s.device,
+                'mobile': devices.is_mobile(s.user_agent),
+                'ip': s.ip,
+                'signed_in_at': s.created_at,
+                'last_seen_at': s.last_seen_at,
+                'current': s.key == current,
+            }
+            for s in rows
+        ],
+    })
+
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def device_sign_out_view(request, pk):
+    """Sign one of this account's devices out."""
+    session = devices.live_sessions(request.user).filter(pk=pk).first()
+    if session is None:
+        return Response({'detail': 'Device not found.'}, status=404)
+    devices.revoke([session.key], UserSession.Reason.USER)
+    return Response(status=204)
 
 
 @api_view(['GET'])
@@ -354,7 +405,7 @@ def platform_bridge_auth(request):
     if changed:
         user.save(update_fields=changed)
 
-    tokens = get_tokens(user)
+    tokens = get_tokens(user, request)
     return Response({
         'access': tokens['access'],
         'refresh': tokens['refresh'],

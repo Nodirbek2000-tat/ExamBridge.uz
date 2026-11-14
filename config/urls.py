@@ -13,7 +13,7 @@ admin.site.has_permission = lambda request: bool(
 
 # ── API imports ──────────────────────────────────────────────────────────────
 from tgbot.site_views import telegram_login, telegram_login_poll, telegram_login_start
-from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, ping_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view
+from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, ping_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view, devices_view, device_sign_out_view
 from api.sat_analytics import sat_analytics
 from api.analytics_ai import analytics_ai, exam_analytics
 from api import cefr_writing, cefr_speaking
@@ -130,6 +130,8 @@ urlpatterns = [
     path('api/auth/login/', login_view),
     path('api/auth/register/', register_view),
     path('api/auth/logout/', logout_view),
+    path('api/auth/devices/', devices_view),                        # signed-in devices (at most 2)
+    path('api/auth/devices/<int:pk>/', device_sign_out_view),
     path('api/auth/me/', me_view),
     path('api/auth/ping/', ping_view),
     path('api/auth/google/', google_login_view),

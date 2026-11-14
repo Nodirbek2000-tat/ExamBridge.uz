@@ -199,6 +199,37 @@ class UserDailyVisit(models.Model):
         return f'{self.user_id} · {self.date}'
 
 
+class UserSession(models.Model):
+    """
+    One signed-in device. Every JWT pair carries the session's `key` (the `sid`
+    claim), so signing a device out takes effect at once. See accounts/devices.py.
+    """
+
+    class Reason(models.TextChoices):
+        LIMIT = 'limit', 'Signed in on another device'
+        USER = 'user', 'Signed out from another device'
+        LOGOUT = 'logout', 'Logged out'
+        REPLACED = 'replaced', 'Signed in again on this device'
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='device_sessions')
+    key = models.CharField(max_length=32, unique=True)
+    # The same browser or phone signing in again replaces its own session, not another one.
+    device_id = models.CharField(max_length=64, db_index=True)
+    device = models.CharField(max_length=80, help_text='e.g. Chrome on Windows')
+    user_agent = models.CharField(max_length=300, blank=True)
+    ip = models.GenericIPAddressField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_seen_at = models.DateTimeField(default=timezone.now)
+    revoked_at = models.DateTimeField(null=True, blank=True)
+    revoked_reason = models.CharField(max_length=10, choices=Reason.choices, blank=True)
+
+    class Meta:
+        indexes = [models.Index(fields=['user', 'revoked_at'], name='usersession_user_live_idx')]
+
+    def __str__(self):
+        return f'{self.user_id} · {self.device}'
+
+
 class UserStats(models.Model):
     """Track user performance statistics."""
 

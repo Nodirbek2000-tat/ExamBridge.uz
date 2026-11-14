@@ -15,7 +15,7 @@ from django.utils import timezone
 
 from accounts.models import User
 from tgbot import telegram
-from tgbot.models import TelegramAccount, TelegramToken, is_bot_email
+from tgbot.models import PaymentTarget, TelegramAccount, TelegramToken, is_bot_email
 
 from .models import CARD_PLANS, CardPayment, PaymentSettings, Plan, Subscription
 
@@ -111,6 +111,9 @@ def approve(payment_id, decided_by):
         payment.decided_at = timezone.now()
         payment.decided_by = decided_by[:120]
         payment.save(update_fields=['premium_until', 'status', 'decided_at', 'decided_by'])
+        # Paid for: the next receipt from that Telegram goes to its own account again.
+        if payment.telegram_id:
+            PaymentTarget.objects.filter(telegram_id=payment.telegram_id, user=user).delete()
         transaction.on_commit(lambda: _announce_decision(payment.pk))
     return payment
 
@@ -168,9 +171,19 @@ def _date(dt):
     return timezone.localtime(dt).strftime('%d.%m.%Y') if dt else 'muddatsiz'
 
 
+def account_label(user):
+    """'Ali Valiyev · ali@gmail.com' — the account a payment is for, as people know it."""
+    tg = TelegramAccount.objects.filter(user=user).first()
+    name = user.full_name if not is_bot_email(user.email) else (tg.display_name if tg else '')
+    return ' · '.join(x for x in (name, user.public_email) if x) or f'#{user.pk}'
+
+
 def _receipt_caption(payment):
     user = payment.user
-    tg = TelegramAccount.objects.filter(user=user).first()
+    # Who sent it: the Telegram the receipt came from, which may belong to another account.
+    tg = (
+        TelegramAccount.objects.filter(telegram_id=payment.telegram_id).first() if payment.telegram_id else None
+    ) or TelegramAccount.objects.filter(user=user).first()
     e = html.escape
     lines = [f"🧾 <b>Yangi to'lov #{payment.pk}</b>", '']
     lines.append(f'👤 {e(user.full_name if not is_bot_email(user.email) else (tg.display_name if tg else "—"))}')
@@ -181,6 +194,8 @@ def _receipt_caption(payment):
         lines.append(f'✈️ {handle}ID <code>{tg.telegram_id}</code>')
     if user.public_email:
         lines.append(f'📧 {e(user.public_email)}')
+    if tg and tg.user_id != user.id:
+        lines.append(f'ℹ️ Boshqa Telegram akkauntdan to\'langan — Premium shu akkauntga (ID {user.pk}) ochiladi')
     lines.append(f'💎 Tarif: <b>{PLAN_TITLES[payment.plan]}</b> — <b>{money(payment.amount)} so\'m</b>')
     lines.append(f'🕒 {_local(payment.created_at)}')
     return '\n'.join(lines)
@@ -231,15 +246,17 @@ def _announce_decision(payment_id):
                 _receipt_caption(payment) + _decision_line(payment),
             )
 
+        # The answer goes to whoever sent the receipt, which may not be the account's own Telegram.
         tg = TelegramAccount.objects.filter(user=payment.user).first()
-        chat_id = tg.telegram_id if tg else payment.telegram_id
+        chat_id = payment.telegram_id or (tg.telegram_id if tg else None)
         if not chat_id:
             return
         if payment.status == CardPayment.Status.APPROVED:
             text = (
                 "🎉 <b>To'lovingiz tasdiqlandi!</b>\n\n"
                 f"💎 Premium faollashtirildi — <b>{_date(payment.premium_until)}</b> gacha.\n"
-                "Barcha premium mock testlar va AI imkoniyatlari ochildi."
+                f"👤 Akkaunt: <b>{html.escape(account_label(payment.user))}</b>\n"
+                "Barcha premium mock testlar va AI imkoniyatlari shu akkauntda ochildi."
             )
             buttons = [[{'text': '🌐 Saytga kirish', 'url': site_login_url(payment.user)}]]
         else:

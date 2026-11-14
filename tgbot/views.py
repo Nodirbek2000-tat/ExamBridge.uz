@@ -23,7 +23,9 @@ from accounts.presence import online_since
 from pricing import card
 from pricing.models import PaymentSettings
 
-from .models import BotChannel, TelegramAccount, TelegramLogin, TelegramToken, bot_email, is_bot_email
+from .models import (
+    BotChannel, PaymentTarget, TelegramAccount, TelegramLogin, TelegramToken, bot_email, is_bot_email,
+)
 
 
 class IsBot(BasePermission):
@@ -84,6 +86,35 @@ def _account_payload(account):
 
 def _account(telegram_id):
     return TelegramAccount.objects.select_related('user').filter(telegram_id=telegram_id).first()
+
+
+def _user_summary(user):
+    """A site account as the bot shows it when asking who a payment is for."""
+    user.check_premium()
+    tg = TelegramAccount.objects.filter(user=user).first()
+    name = user.full_name if not is_bot_email(user.email) else (tg.display_name if tg else '')
+    return {
+        'user_id': user.id,
+        'full_name': name or user.public_email or f'#{user.id}',
+        'email': user.public_email or None,
+        'is_premium': user.is_premium,
+        'premium_until': timezone.localtime(user.premium_until).isoformat() if user.premium_until else None,
+    }
+
+
+def _payer(telegram_id):
+    """Whose Premium a receipt from this Telegram buys: the account chosen on the site, else its own."""
+    target = PaymentTarget.user_for(telegram_id)
+    if target is not None:
+        return target
+    account = _account(telegram_id)
+    return account.user if account else None
+
+
+def _relation(account, user):
+    if account is None:
+        return 'unlinked'
+    return 'same' if account.user_id == user.id else 'other'
 
 
 # ── Users ─────────────────────────────────────────────────────────────────────
@@ -176,6 +207,57 @@ def user_link(request):
 
 
 @bot_api(['POST'])
+def pay_check(request):
+    """/start pay_<token>: which account the student is about to pay for. Nothing changes yet."""
+    tid = _telegram_id(request.data.get('telegram_id'))
+    if not tid:
+        return _error('bad_request', 'telegram_id is required.')
+    user = TelegramToken.peek(_clean(request.data.get('token'), 64), TelegramToken.PAY)
+    if user is None:
+        return _error('bad_token', 'This link has expired or was already used.')
+    account = _account(tid)
+    relation = _relation(account, user)
+    return Response({
+        'account': _user_summary(user),
+        'relation': relation,                  # same | unlinked | other
+        'own_account': _user_summary(account.user) if relation == 'other' else None,
+        # confirming joins this Telegram to the account (it has no Telegram of its own yet)
+        'will_link': relation == 'unlinked' and not TelegramAccount.objects.filter(user=user).exists(),
+    })
+
+
+@bot_api(['POST'])
+def pay_confirm(request):
+    """
+    The student confirmed the account. A Telegram with no account of its own is
+    linked to it — one account from now on. One already linked elsewhere stays
+    as it is, and only this payment goes to the confirmed account.
+    """
+    tid = _telegram_id(request.data.get('telegram_id'))
+    if not tid:
+        return _error('bad_request', 'telegram_id is required.')
+    user = TelegramToken.redeem(_clean(request.data.get('token'), 64), TelegramToken.PAY)
+    if user is None:
+        return _error('bad_token', 'This link has expired or was already used.')
+
+    profile = _profile(request.data)
+    linked = False
+    with transaction.atomic():
+        account = TelegramAccount.objects.select_for_update().filter(telegram_id=tid).first()
+        relation = _relation(account, user)
+        if relation == 'unlinked' and not TelegramAccount.objects.filter(user=user).exists():
+            account = TelegramAccount.objects.create(user=user, telegram_id=tid, **profile)
+            linked = True
+        PaymentTarget.choose(tid, user)
+    return Response({
+        'account': _user_summary(user),
+        'relation': relation,
+        'linked': linked,
+        'telegram_account': _account_payload(account) if account else None,
+    })
+
+
+@bot_api(['POST'])
 def user_login_confirm(request):
     """The student tapped "✅ Ha, kiraman" for a "Continue with Telegram" request."""
     account = _account(_telegram_id(request.data.get('telegram_id')))
@@ -235,29 +317,34 @@ def user_ids(request):
 
 @bot_api(['GET'])
 def plans(request):
+    """The plans and the card. With ?telegram_id=, also the account the Premium would go to."""
     config = PaymentSettings.load()
+    tid = _telegram_id(request.query_params.get('telegram_id'))
+    payer = _payer(tid) if tid else None
     return Response({
         'accepting': bool(config.accepting and config.card_number),
         'card': {'number': config.card_number, 'holder': config.card_holder, 'label': config.card_label},
         'plans': card.plans_payload(config),
+        'for_account': _user_summary(payer) if payer else None,
     })
 
 
 @bot_api(['POST'])
 def payment_create(request):
-    account = _account(_telegram_id(request.data.get('telegram_id')))
-    if account is None:
+    tid = _telegram_id(request.data.get('telegram_id'))
+    user = _payer(tid) if tid else None
+    if user is None:
         return _error('not_registered', 'Register in the bot first.', 404)
     try:
         payment = card.create_payment(
-            account.user, request.data.get('plan'), request.FILES.get('receipt'),
-            telegram_id=account.telegram_id,
+            user, request.data.get('plan'), request.FILES.get('receipt'), telegram_id=tid,
         )
     except card.CardPaymentError as e:
         return _error(e.code, e.message, e.status)
     return Response({
         'id': payment.id, 'plan': payment.plan, 'months': payment.months,
         'amount': payment.amount, 'status': payment.status,
+        'account': _user_summary(user),
         # False: the payments channel did not get it — the bot sends it to the admins itself.
         'posted': bool(payment.channel_message_id),
     }, status=201)
