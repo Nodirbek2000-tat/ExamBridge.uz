@@ -69,7 +69,7 @@ class AILesson(models.Model):
     title = models.CharField(max_length=200)
     subject = models.CharField(max_length=10, choices=Subject.choices, default=Subject.SAT)
     section = models.CharField(max_length=20, choices=Section.choices, default=Section.GENERAL)
-    language = models.CharField(max_length=2, choices=Language.choices, default=Language.UZBEK)
+    language = models.CharField(max_length=2, choices=Language.choices, default=Language.ENGLISH)
     duration_minutes = models.PositiveSmallIntegerField(default=10)
     level = models.CharField(max_length=30, blank=True, help_text='Who it is for, e.g. B2 or Band 6+')
     voice = models.CharField(max_length=20, choices=Voice.choices, default=Voice.CORAL)

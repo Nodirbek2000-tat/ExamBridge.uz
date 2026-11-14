@@ -260,7 +260,8 @@ class StepsTest(LessonsBase):
 class DemoLessonTest(LessonsBase):
     def test_graph_line_passes_through_its_points(self):
         shapes = GRAPH['shapes']
-        line = next(s for s in shapes if s.get('color') == 'yellow')
+        # the one coloured, solid line that is not an axis
+        line = next(s for s in shapes if s['kind'] == 'line' and s.get('color') and not s.get('dashed'))
         (x1, y1), (x2, y2) = line['from'], line['to']
         for point in (s['center'] for s in shapes if s['kind'] == 'circle'):
             on_line = y1 + (point[0] - x1) * (y2 - y1) / (x2 - x1)

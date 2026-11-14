@@ -17,7 +17,7 @@ from django.db import IntegrityError, transaction
 from django.utils import timezone
 
 from . import prompts
-from .board import BoardError, clean_step, replace_steps
+from .board import BoardError, clean_step, repair_step, replace_steps
 from .models import AILesson, LessonJob, LessonQuestion
 from .providers import BadReply, LessonAIError, get_provider
 from .questions import QuestionError, clean_content
@@ -26,7 +26,7 @@ from .source_text import lesson_context, teaching_structures
 logger = logging.getLogger(__name__)
 
 MAX_TOKENS = {'plan': 1200, 'section': 3500, 'questions': 3500, 'review': 2000}
-ATTEMPTS = 2                       # one more try, told what was wrong with the first reply
+ATTEMPTS = 3                       # more tries, each told what was wrong with the reply before
 MAX_STEPS = 60
 MAX_SECTION_MINUTES = 30
 MIN_SECTIONS = 3
@@ -75,7 +75,7 @@ def _check_section(reply):
     steps = reply['steps']
     if not isinstance(steps, list) or not steps:
         raise BadReply('Return at least one step.')
-    return [clean_step(step) for step in steps]
+    return [clean_step(repair_step(step)) for step in steps]
 
 
 def _place(raw, steps_count):
@@ -92,10 +92,18 @@ def _check_questions(reply, steps_count):
     raw_questions = reply['questions']
     if not isinstance(raw_questions, list) or not raw_questions:
         raise BadReply('Return at least one question.')
-    checked = []
+    checked, refused = [], []
     for raw in raw_questions:
-        after, is_homework = _place(raw, steps_count)
-        checked.append({**clean_content(raw), 'after_step': after, 'is_homework': is_homework})
+        try:
+            after, is_homework = _place(raw, steps_count)
+            checked.append({**clean_content(raw), 'after_step': after, 'is_homework': is_homework})
+        except (BadReply, QuestionError, AttributeError, TypeError) as error:
+            refused.append(str(error))
+    # A few broken questions are left out; a reply that is mostly broken is asked again.
+    if not checked or len(refused) > len(checked):
+        raise BadReply('; '.join(refused) or 'Return at least one question.')
+    if refused:
+        logger.warning('%s questions left out: %s', len(refused), '; '.join(refused))
     return checked
 
 
@@ -220,7 +228,7 @@ def _generate(job, provider):
     if 'questions' not in data:
         _progress(job, stage=LessonJob.Stage.QUESTIONS, done=0, total=1)
         data['questions'] = _ask(
-            provider, 'questions', lesson, prompts.questions(lesson, steps, existing),
+            provider, 'questions', lesson, prompts.questions(lesson, written, existing),
             {'steps': len(steps)}, lambda reply: _check_questions(reply, len(steps)),
         )
         _progress(job, data=data, done=1)

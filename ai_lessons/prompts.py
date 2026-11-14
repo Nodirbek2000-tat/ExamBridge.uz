@@ -6,7 +6,9 @@ as material: text inside them can inform a lesson but can never instruct the AI.
 """
 import json
 
-WORDS_PER_MINUTE = 130             # calm teaching pace; a little slower than the player's estimate
+from .board import ICONS
+
+WORDS_PER_MINUTE = 145             # a lively teacher's pace, the way the voice reads it
 
 LANGUAGES = {'uz': "Uzbek (Latin script, with o' and g')", 'en': 'English'}
 
@@ -25,7 +27,20 @@ UZBEK_STYLE = """Language: modern literary Uzbek in Latin script, the way a good
 - Never translate English or Russian word for word. Do not use Russian words where a normal Uzbek word exists.
 - Exam terms that students meet in English stay in English (main idea, linear equation, Task 2), explained in Uzbek the first time."""
 
-ENGLISH_STYLE = """Language: clear, natural English for learners at the given level; short spoken sentences."""
+ENGLISH_STYLE = """Language: clear, natural English for exam students whose first language is not English.
+Sound like an energetic, enthusiastic teacher who loves the subject: lively, warm, encouraging.
+Short spoken sentences, everyday words, and a quick check-in now and then ("See it? Great.")."""
+
+# How the teacher talks, whatever the language: a conversation, not a lecture.
+TALK_RULES = """Teach as a conversation with one student, not a lecture:
+- the teacher does most of the talking: explain every idea fully, with two or three concrete examples from everyday life;
+- ask the student short questions while teaching ("So what happens to the verb here? ... Exactly, it takes an s!"),
+  leave a beat with "...", then answer them yourself;
+- point at the board ("Look at the green part"), name the typical mistake and show how to avoid it;
+- end most steps by linking to the next idea, so the lesson flows."""
+
+LANGUAGE_BOARD = """For a language topic, write the pattern on the board as a formula line (for example: Subject + verb + s),
+example sentences with the key part in **bold**, and wrong-right pairs in pink and green. Short timelines or tables as diagrams are welcome."""
 
 # The "say" text goes straight to a voice engine.
 SPOKEN_RULES = """The "say" text is read aloud by a voice engine, so write it exactly as a teacher would say it:
@@ -44,6 +59,7 @@ BOARD_RULES = """Board elements, written top to bottom. `at` is when an element 
 {"type": "list", "items": ["...", "..."], "at": 0.5}          at most 8 items
 {"type": "math", "tex": "y = mx + b", "at": 0.6}              LaTeX, no $ signs
 {"type": "note", "text": "...", "at": 0.8}                    a rule worth remembering
+{"type": "icon", "name": "scale", "label": "Balance", "color": "green", "at": 0.2}   a picture drawn on the board
 {"type": "diagram", "width": 400, "height": 300, "at": 0, "shapes": [
   {"kind": "line", "from": [0, 0], "to": [10, 10], "arrow": true, "dashed": false, "color": "yellow"},
   {"kind": "circle", "center": [5, 5], "r": 3, "filled": true},
@@ -51,7 +67,9 @@ BOARD_RULES = """Board elements, written top to bottom. `at` is when an element 
   {"kind": "label", "pos": [5, 5], "text": "A"}
 ]}
 Text may use **bold** and inline math as \\( x^2 \\). At most 12 elements in a step and 400 characters in one text. Coordinates grow right and down.
-Write on the board what a teacher would write: short key words and formulas, never the spoken sentences."""
+Write on the board what a teacher would write: short key words and formulas, never the spoken sentences.
+Make the board visual: most steps have an icon, a diagram or a formula, not only words. Use colours to link ideas.
+Icon names: {icons}."""
 
 
 def role(lesson):
@@ -98,25 +116,39 @@ This section: {json.dumps(current, ensure_ascii=False)}
 
 {_material(material, structures)}
 
-Write about {words} spoken words in total, split into steps of 40 to 90 words. Each step has what the teacher says and what appears on the board while saying it.
-{'Open the lesson with a short greeting.' if index == 0 else 'Do not greet again: the lesson is already running.'}
-{'Close the lesson with a short summary.' if index == len(outline) - 1 else 'Do not summarise the lesson yet.'}
+Write about {words} spoken words in total, split into steps of 50 to 100 words. Each step has what the teacher says and what appears on the board while saying it.
+{'Open the lesson with a short, upbeat greeting and say what the student will be able to do by the end.' if index == 0 else 'Do not greet again: the lesson is already running.'}
+{'Close the lesson with a short summary and a word of encouragement.' if index == len(outline) - 1 else 'Do not summarise the lesson yet.'}
 
+{TALK_RULES}
 {spoken_rules(lesson)}
-{BOARD_RULES}
+{BOARD_RULES.replace('{icons}', ', '.join(ICONS))}
+{LANGUAGE_BOARD if _is_language(lesson) else ''}
 
 Return {{"steps": [{{"say": "...", "board": [...]}}]}}"""
 
 
-def questions(lesson, steps, existing):
-    outline = [{'step': i, 'say': s['say'][:160]} for i, s in enumerate(steps)]
+def _is_language(lesson):
+    return lesson.subject in ('IELTS', 'CEFR') or lesson.section in ('grammar', 'writing', 'speaking', 'reading', 'listening')
+
+
+def questions(lesson, sections, existing):
+    """`sections` is the written lesson: a list of sections, each a list of steps."""
+    outline, ends, number = [], [], 0
+    for index, steps in enumerate(sections):
+        for step in steps:
+            outline.append({'step': number, 'section': index + 1, 'say': step['say'][:160]})
+            number += 1
+        ends.append(number - 1)
     return f"""The lesson "{lesson.title}" has these steps:
 {json.dumps(outline, ensure_ascii=False)}
 
 Questions already written by the teacher, do not repeat them:
 {json.dumps(existing, ensure_ascii=False)}
 
-Write 2 to 4 questions asked during the lesson, and 3 to 5 harder homework questions. Mix multiple choice and written answers.
+Write one quick check question at the end of every section, so the student answers {len(ends)} questions during the lesson:
+put each one after the last step of its section (after_step: {', '.join(map(str, ends))}), and make it test what that section just taught.
+Then write 3 to 5 harder homework questions. Mix multiple choice and written answers.
 Every multiple choice question has exactly one correct option, and plausible wrong options built from typical mistakes.
 Return {{"questions": [{{
   "after_step": 3,                  for a question during the lesson; omit for homework

@@ -11,6 +11,7 @@ length the recorded voice turns out to be.
     {"type": "math", "tex": "y = mx + b"}
     {"type": "note", "text": "..."}
     {"type": "diagram", "width": 400, "height": 300, "shapes": [...]}
+    {"type": "icon", "name": "scale", "label": "Balance", "color": "green"}
 
 Text may use **bold** and inline math \\( x^2 \\). Diagram shapes are drawn in order:
 
@@ -30,6 +31,15 @@ from django.db import transaction
 from .models import LessonStep
 
 COLORS = ('chalk', 'yellow', 'sky', 'pink', 'green')
+
+# Pictures the board can draw (the player has a drawing for each name).
+ICONS = (
+    'scale', 'calculator', 'lightbulb', 'target', 'clock', 'check', 'cross', 'warning', 'pencil',
+    'ruler', 'book', 'brain', 'puzzle', 'key', 'trophy', 'flag', 'users', 'globe', 'compass',
+    'chart-line', 'chart-bar', 'chart-pie', 'sigma', 'percent', 'divide', 'equal', 'arrow-right',
+    'repeat', 'search', 'message', 'mic', 'headphones', 'pen', 'layers', 'timer', 'star', 'zap',
+    'coins', 'cart', 'car', 'house', 'tree', 'sun', 'droplet', 'graduation', 'question',
+)
 
 MAX_ELEMENTS = 12
 MAX_TEXT = 400
@@ -138,6 +148,14 @@ def _clean_element(raw):
         return {'type': kind, 'items': [_text(i, 'List item') for i in items], 'color': _color(raw)}
     if kind == 'diagram':
         return {'type': kind, **_clean_diagram(raw)}
+    if kind == 'icon':
+        name = raw.get('name')
+        if name not in ICONS:
+            raise BoardError(f'Unknown icon: {name}. Use one of: {", ".join(ICONS)}.')
+        element = {'type': kind, 'name': name, 'color': _color(raw)}
+        if raw.get('label'):
+            element['label'] = _text(raw.get('label'), 'Icon label', 40)
+        return element
     raise BoardError(f'Unknown board element: {kind}.')
 
 
@@ -161,6 +179,62 @@ def clean_board(raw):
         previous = at
         board.append(element)
     return board
+
+
+def _short(value, limit):
+    if isinstance(value, str) and len(value.strip()) > limit:
+        return value.strip()[:limit - 1].rstrip() + '…'
+    return value
+
+
+def _mend(item):
+    """An element with the small slips the AI makes fixed: long text, unknown colour, long lists."""
+    item = dict(item)
+    if 'color' in item and item['color'] not in COLORS:
+        item.pop('color')
+    for key, limit in (('text', MAX_TEXT), ('label', 40)):
+        if key in item:
+            item[key] = _short(item[key], limit)
+    if isinstance(item.get('items'), list):
+        item['items'] = [_short(i, MAX_TEXT) for i in item['items'][:MAX_ITEMS]]
+    if item.get('type') == 'diagram' and isinstance(item.get('shapes'), list):
+        item['shapes'] = [
+            {k: v for k, v in s.items() if k != 'color' or v in COLORS} if isinstance(s, dict) else s
+            for s in item['shapes'][:MAX_SHAPES]
+        ]
+    return item
+
+
+def repair_step(raw):
+    """
+    What the AI wrote for a step, mended where that is safe, so one stray element does
+    not throw away a whole section: fixable slips are fixed, elements that still break
+    the rules are left out, and times are put in order. The spoken text is never changed.
+    """
+    if not isinstance(raw, dict):
+        return raw
+    board = raw.get('board')
+    if not isinstance(board, list):
+        return {**raw, 'board': []}
+
+    kept, previous = [], 0
+    for item in board:
+        if not isinstance(item, dict):
+            continue
+        item = _mend(item)
+        try:
+            _clean_element(item)
+        except BoardError:
+            continue
+        at = item.get('at')
+        if isinstance(at, bool) or not isinstance(at, (int, float)) or not math.isfinite(at):
+            at = previous
+        at = min(1, max(previous, at))
+        kept.append({**item, 'at': at})
+        previous = at
+        if len(kept) == MAX_ELEMENTS:
+            break
+    return {**raw, 'board': kept}
 
 
 def clean_step(step):

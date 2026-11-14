@@ -322,29 +322,61 @@ class BadRepliesTest(PipelineBase):
         self.assertIn('Return exactly 5 sections', provider.calls[1][1])
         self.assertEqual(self.job().status, 'DONE')
 
-    def test_two_bad_replies_fail_the_job_and_save_nothing(self):
-        bad = {'steps': [{'say': 'x', 'board': [{'type': 'video'}]}]}
-        provider = self.use(ScriptedProvider(replies={'section': [bad, dict(bad)]}))
+    def test_three_bad_replies_fail_the_job_and_save_nothing(self):
+        bad = {'steps': [{'say': '', 'board': []}]}
+        provider = self.use(ScriptedProvider(replies={'section': [bad, dict(bad), dict(bad)]}))
 
         with self.assertLogs('ai_lessons.pipeline', level='WARNING'):
             self.generate()
 
         self.assertEqual(self.job().status, 'FAILED')
         self.assertIn('valid section', self.job().error)
-        self.assertEqual(provider.tasks().count('section'), 2)
+        self.assertEqual(provider.tasks().count('section'), 3)
         self.assertFalse(self.lesson.steps.exists())
+
+    def test_small_board_slips_are_mended_instead_of_failing_the_section(self):
+        slips = {'steps': [{'say': 'Look at the board.', 'board': [
+            {'type': 'heading', 'text': 'Present simple', 'at': 0.5},
+            {'type': 'video', 'src': 'x'},
+            {'type': 'icon', 'name': 'unicorn'},
+            {'type': 'text', 'text': 'y' * 500, 'color': 'purple', 'at': 0.2},
+            *[{'type': 'text', 'text': f'{i}', 'at': 1.4} for i in range(20)],
+        ]}]}
+        provider = self.use(ScriptedProvider(replies={'section': [slips]}))
+
+        self.generate()
+
+        self.assertEqual(self.job().status, 'DONE')
+        self.assertEqual(provider.tasks().count('section'), 5)
+        board = self.lesson.steps.first().board
+        self.assertEqual(len(board), 12)
+        self.assertEqual([e['type'] for e in board[:2]], ['heading', 'text'])
+        self.assertEqual(board[1]['color'], 'chalk')
+        self.assertLessEqual(len(board[1]['text']), 400)
+        self.assertEqual([e['at'] for e in board[:3]], [0.5, 0.5, 1])
+
+    def test_a_few_broken_questions_are_left_out(self):
+        good = {'kind': 'WRITTEN', 'prompt': 'Why?', 'after_step': 0}
+        reply = {'questions': [good, {**good, 'prompt': 'And this?'}, {**good, 'after_step': 99}]}
+        self.use(ScriptedProvider(replies={'questions': [reply]}))
+
+        with self.assertLogs('ai_lessons.pipeline', level='WARNING'):
+            self.generate()
+
+        self.assertEqual(self.job().status, 'DONE')
+        self.assertEqual(self.lesson.questions.filter(origin='AI').count(), 2)
 
     def test_unusable_shapes_of_reply_are_refused_not_crashed_on(self):
         for bad in ({}, {'sections': 'x'}, {'sections': [1, 2, 3, 4, 5]}):
             self.lesson.jobs.all().delete()
-            self.use(ScriptedProvider(replies={'plan': [bad, bad]}))
+            self.use(ScriptedProvider(replies={'plan': [bad, bad, bad]}))
             with self.assertLogs('ai_lessons.pipeline', level='WARNING'):
                 self.generate(restart=True)
             self.assertEqual(self.job().status, 'FAILED', bad)
 
     def test_a_question_pointing_at_no_step_is_refused(self):
         bad = {'questions': [{'after_step': 99, 'kind': 'WRITTEN', 'prompt': 'Nega?'}]}
-        self.use(ScriptedProvider(replies={'questions': [bad, bad]}))
+        self.use(ScriptedProvider(replies={'questions': [bad, bad, bad]}))
         with self.assertLogs('ai_lessons.pipeline', level='WARNING'):
             self.generate()
         self.assertEqual(self.job().status, 'FAILED')
@@ -591,7 +623,9 @@ class OpenAIUsageTest(TestCase):
         client.audio.speech.create.return_value = SimpleNamespace(content=audio)
         provider._client = mock.Mock(return_value=client)
 
-        data, length = provider.speak('Salom', 'nova')
+        # Loudness levelling needs ffmpeg, which a test machine may or may not have.
+        with mock.patch('ai_lessons.providers.louder', side_effect=lambda mp3: mp3):
+            data, length = provider.speak('Salom', 'nova')
 
         self.assertEqual(data, audio)
         self.assertAlmostEqual(length, seconds, delta=seconds * 0.01)
@@ -699,7 +733,20 @@ class PromptTest(SimpleTestCase):
 
     def test_step_length_follows_the_section_length(self):
         outline = [{'title': 'a', 'minutes': 2}]
-        self.assertIn('about 260 spoken words', prompts.section(self.lesson, outline, 0, '', ''))
+        self.assertIn('about 290 spoken words', prompts.section(self.lesson, outline, 0, '', ''))
+
+    def test_every_section_ends_with_a_check_question(self):
+        sections = [[{'say': 'a'}, {'say': 'b'}], [{'say': 'c'}], [{'say': 'd'}, {'say': 'e'}]]
+        text = prompts.questions(self.lesson, sections, [])
+        self.assertIn('answers 3 questions during the lesson', text)
+        self.assertIn('after_step: 1, 2, 4', text)
+
+    def test_language_lessons_get_language_board_tips(self):
+        outline = [{'title': 'a', 'minutes': 2}]
+        self.lesson.subject, self.lesson.section = 'CEFR', 'grammar'
+        self.assertIn('Subject + verb + s', prompts.section(self.lesson, outline, 0, '', ''))
+        self.lesson.subject, self.lesson.section = 'SAT', 'math'
+        self.assertNotIn('Subject + verb + s', prompts.section(self.lesson, outline, 0, '', ''))
 
 
 class RecoveryTest(PipelineBase):
@@ -860,3 +907,34 @@ class TryCommandTest(TestCase):
         self.assertIn('AI tekshiruvi: GOOD', text)
         self.assertIn('JAMI', text)
         self.assertIn(f'/admin-panel/ai-lessons/{lesson.id}/preview', text)
+
+
+class IconElementTest(SimpleTestCase):
+    def test_known_icons_pass_and_unknown_ones_are_refused(self):
+        from .board import BoardError, clean_board
+        board = clean_board([{'type': 'icon', 'name': 'scale', 'label': 'Balance', 'color': 'green', 'at': 0}])
+        self.assertEqual(board, [{'type': 'icon', 'name': 'scale', 'color': 'green', 'label': 'Balance', 'at': 0}])
+        with self.assertRaises(BoardError):
+            clean_board([{'type': 'icon', 'name': '<script>', 'at': 0}])
+
+    def test_the_section_prompt_lists_the_icons(self):
+        from . import prompts
+        lesson = AILesson(title='Systems', language='en')
+        text = prompts.section(lesson, [{'title': 'A', 'goal': 'B', 'minutes': 2}], 0, '', '')
+        self.assertIn('chart-line', text)
+        self.assertNotIn('{icons}', text)
+        self.assertIn('energetic', prompts.role(lesson))
+
+
+class LoudnessTest(SimpleTestCase):
+    def test_without_ffmpeg_the_recording_is_kept(self):
+        from .providers import louder
+        with mock.patch('shutil.which', return_value=None):
+            self.assertEqual(louder(b'abc'), b'abc')
+
+    def test_a_failing_ffmpeg_keeps_the_recording(self):
+        import subprocess
+        from .providers import louder
+        with mock.patch('shutil.which', return_value='/usr/bin/ffmpeg'), \
+                mock.patch('subprocess.run', side_effect=subprocess.CalledProcessError(1, 'ffmpeg')):
+            self.assertEqual(louder(b'abc'), b'abc')

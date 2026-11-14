@@ -1,8 +1,8 @@
 """
 Make one real lesson from start to finish and see what it cost.
 
-    python manage.py ai_lesson_try "Kvadrat tenglamalar" --subject SAT --section math \\
-        --level "SAT 1200+" --brief "Diskriminant, ildizlar, SAT dagi tipik xatolar" --with-voice
+    python manage.py ai_lesson_try "Systems of linear equations" --subject SAT --section math \\
+        --level "SAT 1100-1300" --brief "Substitution, elimination, number of solutions" --with-voice
 
 Runs right here (not in the queue), so it prints the review, a sample of the text and
 the cost of every stage. The lesson is left in the admin panel for you to watch,
@@ -30,7 +30,7 @@ class Command(BaseCommand):
         parser.add_argument('--minutes', type=int, default=10, choices=AILesson.DURATIONS)
         parser.add_argument('--level', default='')
         parser.add_argument('--brief', default='')
-        parser.add_argument('--language', default='uz', choices=AILesson.Language.values)
+        parser.add_argument('--language', default='en', choices=AILesson.Language.values)
         parser.add_argument('--voice', default='coral', choices=AILesson.Voice.values)
         parser.add_argument('--with-voice', action='store_true', help='also record the voice (the expensive part)')
         parser.add_argument('--rate', type=int, default=12800, help="so'm per dollar, for the summary")

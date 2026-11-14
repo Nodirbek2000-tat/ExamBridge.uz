@@ -72,13 +72,33 @@ VOICE_INSTRUCTIONS = {
         "Pronounce every word with natural native Uzbek pronunciation and stress: o' and g' as in Uzbek, "
         "q as a deep q, x as kh, h softly. Do not sound like a foreigner reading Uzbek. "
         "English terms inside the text are said with clear English pronunciation. "
-        "Calm, steady classroom pace with short natural pauses at commas and full stops; friendly, never theatrical."
+        "Energetic, lively and warm, projecting clearly like in front of a classroom; brisk pace with short natural pauses."
     ),
     'en': (
-        "You are a warm, confident teacher explaining to exam students. Clear, natural pronunciation, "
-        "calm classroom pace with short pauses between ideas; friendly, never theatrical."
+        "You are an energetic, enthusiastic teacher who loves this subject, explaining it to exam students. "
+        "Speak with a bright, lively, upbeat voice full of energy and a smile, projecting clearly like in front "
+        "of a classroom. Brisk, engaging pace with natural emphasis on key words and short pauses between ideas. "
+        "Clear, natural American English pronunciation."
     ),
 }
+
+def louder(mp3):
+    """Even the recording out to a clear, broadcast-like loudness (-14 LUFS). Best effort."""
+    import shutil
+    import subprocess
+    if not shutil.which('ffmpeg'):
+        return mp3
+    try:
+        done = subprocess.run(
+            ['ffmpeg', '-hide_banner', '-loglevel', 'error', '-i', 'pipe:0',
+             '-af', 'loudnorm=I=-14:TP=-1.0:LRA=11', '-ar', '24000', '-ac', '1', '-b:a', '96k', '-f', 'mp3', 'pipe:1'],
+            input=mp3, capture_output=True, timeout=60, check=True,
+        )
+    except (OSError, subprocess.SubprocessError):
+        logger.warning('Could not even out the loudness of a lesson recording')
+        return mp3
+    return done.stdout or mp3
+
 
 # Azure's native Uzbek voices; the lesson's voice picks the gender.
 AZURE_VOICES = {'female': 'uz-UZ-MadinaNeural', 'male': 'uz-UZ-SardorNeural'}
@@ -235,8 +255,8 @@ class OpenAIProvider:
             )
         except openai.OpenAIError as error:
             raise self._translate(error) from error
-        data = reply.content
         record('lesson_voice', model, characters=len(text))
+        data = louder(reply.content)
         return data, mp3_seconds(data, text)
 
     def _speak_azure(self, text, voice, rate='-4%'):
@@ -267,7 +287,8 @@ class OpenAIProvider:
         if res.status_code != 200:
             raise LessonAIError(f'Azure Speech refused the request ({res.status_code}). Check the key and region.')
         record('lesson_voice', 'azure-neural-tts', characters=len(text))
-        return res.content, mp3_seconds(res.content, text)
+        data = louder(res.content)
+        return data, mp3_seconds(data, text)
 
 
 def mp3_seconds(data, text):
