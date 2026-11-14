@@ -195,6 +195,9 @@ def token_refresh_view(request):
         return Response({'detail': 'User not found.'}, status=401)
     if not devices.has_sessions(user):
         return Response({'access': str(token.access_token), 'refresh': str(token)})
+    if devices.over_limit(user):
+        # two devices signed in after this one: it is the oldest, so it is the one to go
+        return Response(devices.limit_error(), status=401)
     return Response(get_tokens(user, request))
 
 

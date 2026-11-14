@@ -86,6 +86,26 @@ class DevicesTest(TestCase):
         self.assertTrue(RefreshToken(res.json()['refresh']).get('sid'))
         self.assertEqual(UserSession.objects.get().device_id, 'device-legacy')
 
+    def test_a_computer_signed_in_from_before_is_out_once_two_phones_sign_in(self):
+        computer = RefreshToken.for_user(self.user)          # signed in before devices were counted
+        self.login('device-android')
+        self.assertEqual(self.me({'access': str(computer.access_token)}).status_code, 200)    # one phone: room left
+        self.login('device-iphone')
+
+        res = self.me({'access': str(computer.access_token)})
+        self.assertEqual((res.status_code, res.json()['code']), (401, 'session_revoked'))
+        self.assertIn('another device', res.json()['detail'])
+        res = self.refresh(str(computer))
+        self.assertEqual((res.status_code, res.json()['reason']), (401, 'limit'))
+        self.assertEqual(UserSession.objects.filter(revoked_at__isnull=True).count(), 2)     # both phones stay
+
+    def test_an_old_token_with_room_left_joins_without_signing_anyone_out(self):
+        phone = self.login('device-android')
+        old = RefreshToken.for_user(self.user)
+        self.assertEqual(self.refresh(str(old)).status_code, 200)
+        self.assertEqual(self.me(phone).status_code, 200)
+        self.assertEqual(UserSession.objects.filter(revoked_at__isnull=True).count(), 2)
+
     def test_the_device_list_and_signing_another_device_out(self):
         laptop = self.login('device-laptop')
         phone = self.login('device-phone', SAFARI_IPHONE)

@@ -174,6 +174,18 @@ def signed_out_error(key):
     return {'detail': SIGNED_OUT.get(reason, SIGNED_OUT_DEFAULT), 'code': 'session_revoked', 'reason': reason or ''}
 
 
+def over_limit(user):
+    """
+    A token from before sessions belongs to the oldest sign-in there is: once the
+    account is signed in on as many devices as it may be, that device is out.
+    """
+    return is_limited(user) and live_sessions(user).count() >= max_devices()
+
+
+def limit_error():
+    return {'detail': SIGNED_OUT[UserSession.Reason.LIMIT], 'code': 'session_revoked', 'reason': 'limit'}
+
+
 class DeviceJWTAuthentication(JWTAuthentication):
     """The usual JWT check, plus: the token's device session must still be live."""
 
@@ -183,4 +195,8 @@ class DeviceJWTAuthentication(JWTAuthentication):
             if not is_live(key):
                 raise AuthenticationFailed(signed_out_error(key))
             seen(key)
-        return super().get_user(validated_token)
+            return super().get_user(validated_token)
+        user = super().get_user(validated_token)
+        if over_limit(user):
+            raise AuthenticationFailed(limit_error())
+        return user
