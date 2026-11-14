@@ -23,7 +23,7 @@ from accounts.presence import online_since
 from pricing import card
 from pricing.models import PaymentSettings
 
-from .models import BotChannel, TelegramAccount, TelegramToken, bot_email, is_bot_email
+from .models import BotChannel, TelegramAccount, TelegramLogin, TelegramToken, bot_email, is_bot_email
 
 
 class IsBot(BasePermission):
@@ -172,6 +172,31 @@ def user_link(request):
                     setattr(account, k, v)
             account.save()
     return Response({'linked': True, 'account': _account_payload(account)})
+
+
+@bot_api(['POST'])
+def user_login_confirm(request):
+    """The student tapped "✅ Ha, kiraman" for a "Continue with Telegram" request."""
+    account = _account(_telegram_id(request.data.get('telegram_id')))
+    if account is None:
+        return _error('not_registered', 'Register in the bot first.', 404)
+    if not account.user.is_active:
+        return _error('inactive', 'This account is disabled.', 403)
+    now = timezone.now()
+    with transaction.atomic():
+        row = (
+            TelegramLogin.objects.select_for_update()
+            .filter(token=_clean(request.data.get('token'), 64), user__isnull=True,
+                    used_at__isnull=True, expires_at__gt=now)
+            .first()
+        )
+        if row is None:
+            return _error('bad_token', 'This sign-in request has expired.')
+        row.user = account.user
+        row.confirmed_at = now
+        row.signed_up = bool(request.data.get('signed_up'))
+        row.save(update_fields=['user', 'confirmed_at', 'signed_up'])
+    return Response({'confirmed': True})
 
 
 @bot_api(['POST'])

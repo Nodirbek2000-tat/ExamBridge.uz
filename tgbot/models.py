@@ -120,3 +120,34 @@ class BotChannel(models.Model):
     @property
     def url(self):
         return f'https://t.me/{self.username}' if self.username else self.invite_link
+
+
+class TelegramLogin(models.Model):
+    """"Continue with Telegram" on the site.
+
+    The browser starts a request and keeps asking about it; the student opens
+    the bot with the request's token and confirms; the next question from the
+    browser gets the JWT pair. The bot asks for an explicit tap, so a link
+    someone else sent you cannot sign them into your account.
+    """
+    LIFETIME = timedelta(minutes=5)
+    # After the bot confirms, the waiting browser has this long to pick it up.
+    PICKUP = timedelta(minutes=2)
+
+    token = models.CharField(max_length=64, unique=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.CASCADE, related_name='+')
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()
+    confirmed_at = models.DateTimeField(null=True, blank=True)
+    # The bot says so when the student created their account during this sign-in.
+    signed_up = models.BooleanField(default=False)
+    used_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return f'login request {self.pk}'
+
+    @classmethod
+    def start(cls):
+        now = timezone.now()
+        cls.objects.filter(expires_at__lt=now - timedelta(days=1)).delete()   # old requests
+        return cls.objects.create(token=secrets.token_urlsafe(24), expires_at=now + cls.LIFETIME)

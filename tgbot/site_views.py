@@ -3,13 +3,15 @@ Site side of the Telegram bot: open the bot linked to your account, and sign
 in with the one-time link the bot gives you.
 """
 from django.conf import settings
+from django.db import transaction
+from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes, throttle_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
 from api.auth_views import LoginRateThrottle, get_tokens, user_data
 
-from .models import TelegramAccount, TelegramToken
+from .models import TelegramAccount, TelegramLogin, TelegramToken
 
 
 def bot_url(start=None):
@@ -44,3 +46,43 @@ def telegram_login(request):
             status=400,
         )
     return Response({'user': user_data(user), **get_tokens(user)})
+
+
+# ── "Continue with Telegram" (login and sign-up pages) ────────────────────────
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+@throttle_classes([LoginRateThrottle])
+def telegram_login_start(request):
+    """Start a sign-in through the bot. The browser then asks telegram_login_poll."""
+    if not bot_url():
+        return Response({'detail': 'Telegram sign-in is not available right now.'}, status=503)
+    row = TelegramLogin.start()
+    return Response({
+        'token': row.token,
+        'url': bot_url(f'login_{row.token}'),
+        'expires_in': int(TelegramLogin.LIFETIME.total_seconds()),
+    })
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+@throttle_classes([])          # asked every few seconds; the 32-character token is the guard
+def telegram_login_poll(request):
+    """{'status': 'pending' | 'expired' | 'ok'}; 'ok' carries the JWT pair, once."""
+    token = str(request.data.get('token') or '').strip()[:64]
+    now = timezone.now()
+    with transaction.atomic():
+        row = TelegramLogin.objects.select_for_update().filter(token=token).first()
+        if row is None or row.used_at:
+            return Response({'status': 'expired'})
+        if row.user_id is None:
+            return Response({'status': 'pending' if row.expires_at > now else 'expired'})
+        if now > row.confirmed_at + TelegramLogin.PICKUP or not row.user.is_active:
+            return Response({'status': 'expired'})
+        row.used_at = now
+        row.save(update_fields=['used_at'])
+
+    user = row.user
+    # Signed up in the bot during this very sign-in: the site sends them to onboarding.
+    return Response({'status': 'ok', 'user': user_data(user), **get_tokens(user), 'created': row.signed_up})

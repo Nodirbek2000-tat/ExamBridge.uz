@@ -16,7 +16,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 from pricing import card
 from pricing.models import CardPayment, PaymentSettings, Subscription
 
-from .models import BotChannel, TelegramAccount, TelegramToken, bot_email
+from .models import BotChannel, TelegramAccount, TelegramLogin, TelegramToken, bot_email
 
 User = get_user_model()
 
@@ -367,3 +367,75 @@ class AdminPanelTest(BotTestCase):
         viewer = self.site_user('viewer@mail.uz', is_staff=True, admin_level=2)
         self.assertEqual(self.client.get('/api/admin/payments/', **self.as_user(viewer)).status_code, 403)
         self.assertEqual(self.client.get(f'/api/admin/payments/{self.pid}/receipt/', **self.as_user(viewer)).status_code, 403)
+
+
+class ContinueWithTelegramTest(BotTestCase):
+    def start(self):
+        res = self.client.post('/api/auth/telegram/start/', **BROWSER)
+        self.assertEqual(res.status_code, 200)
+        return res.json()
+
+    def poll(self, token):
+        return self.client.post('/api/auth/telegram/poll/', {'token': token},
+                                content_type='application/json', **BROWSER).json()
+
+    def test_new_student_signs_up_in_the_bot_and_lands_signed_in(self):
+        req = self.start()
+        self.assertTrue(req['url'].startswith('https://t.me/exambridge_test_bot?start=login_'))
+        self.assertLessEqual(len(req['url'].split('start=')[1]), 64)
+        self.assertEqual(self.poll(req['token'])['status'], 'pending')
+
+        self.register(tid=7007)
+        ok = self.bot_post('users/login-confirm/', {'telegram_id': 7007, 'token': req['token'], 'signed_up': True})
+        self.assertEqual(ok.status_code, 200)
+
+        res = self.poll(req['token'])
+        self.assertEqual(res['status'], 'ok')
+        self.assertIn('access', res)
+        self.assertTrue(res['created'])
+        self.assertEqual(res['user']['email'], bot_email(7007))
+        # The answer is handed out once.
+        self.assertEqual(self.poll(req['token'])['status'], 'expired')
+
+    def test_existing_account_is_not_sent_to_onboarding(self):
+        self.register(tid=8008)
+        req = self.start()
+        self.bot_post('users/login-confirm/', {'telegram_id': 8008, 'token': req['token']})
+        self.assertFalse(self.poll(req['token'])['created'])
+
+    def test_nothing_happens_without_the_bot(self):
+        self.assertEqual(self.poll('made-up-token')['status'], 'expired')
+        req = self.start()
+        for _ in range(3):
+            self.assertEqual(self.poll(req['token'])['status'], 'pending')
+
+    def test_a_request_is_confirmed_once_and_not_after_it_expires(self):
+        self.register(tid=1)
+        self.register(tid=2)
+        req = self.start()
+        self.bot_post('users/login-confirm/', {'telegram_id': 1, 'token': req['token']})
+        second = self.bot_post('users/login-confirm/', {'telegram_id': 2, 'token': req['token']})
+        self.assertEqual(second.json()['code'], 'bad_token')
+        self.assertEqual(self.poll(req['token'])['user']['email'], bot_email(1))
+
+        late = self.start()
+        TelegramLogin.objects.filter(token=late['token']).update(expires_at=timezone.now() - timedelta(seconds=1))
+        self.assertEqual(self.bot_post('users/login-confirm/', {'telegram_id': 1, 'token': late['token']}).status_code, 400)
+        self.assertEqual(self.poll(late['token'])['status'], 'expired')
+
+    def test_a_confirmation_left_unused_runs_out(self):
+        self.register(tid=3)
+        req = self.start()
+        self.bot_post('users/login-confirm/', {'telegram_id': 3, 'token': req['token']})
+        TelegramLogin.objects.filter(token=req['token']).update(
+            confirmed_at=timezone.now() - TelegramLogin.PICKUP - timedelta(seconds=1),
+        )
+        self.assertEqual(self.poll(req['token'])['status'], 'expired')
+
+    def test_confirm_needs_a_registered_telegram(self):
+        req = self.start()
+        self.assertEqual(self.bot_post('users/login-confirm/', {'telegram_id': 404, 'token': req['token']}).status_code, 404)
+
+    @override_settings(TELEGRAM_BOT_USERNAME='')
+    def test_off_when_the_bot_is_not_set_up(self):
+        self.assertEqual(self.client.post('/api/auth/telegram/start/', **BROWSER).status_code, 503)
