@@ -74,7 +74,7 @@ def _account_payload(account):
         'telegram_id': account.telegram_id,
         'user_id': user.id,
         'full_name': user.full_name if not is_bot_email(user.email) else account.display_name,
-        'email': None if is_bot_email(user.email) else user.email,
+        'email': user.public_email or None,
         'phone': account.phone,
         'is_premium': user.is_premium,
         'premium_until': timezone.localtime(user.premium_until).isoformat() if user.premium_until else None,
@@ -132,6 +132,7 @@ def user_register(request):
                     first_name=profile['first_name'] or 'Telegram',
                     last_name=profile['last_name'],
                     phone=f'+{digits}',
+                    signup_method=User.SIGNUP_TELEGRAM,
                 )
                 user.set_unusable_password()
                 user.save()

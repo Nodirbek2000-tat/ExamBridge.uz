@@ -90,10 +90,10 @@ def member_to_dict(m):
 def user_to_dict(user, role=None):
     return {
         'id': user.id,
-        'email': user.email,
+        'email': user.public_email,
         'first_name': user.first_name,
         'last_name': user.last_name,
-        'full_name': (f"{user.first_name} {user.last_name}".strip()) or user.email,
+        'full_name': user.full_name,
         'phone': getattr(user, 'phone', '') or '',
         'avatar': user.avatar.url if getattr(user, 'avatar', None) else None,
         'role': role,

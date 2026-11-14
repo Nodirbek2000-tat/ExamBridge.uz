@@ -42,7 +42,7 @@ def _aware(raw):
 
 
 def _name(u):
-    return f'{u.first_name} {u.last_name}'.strip() or u.email
+    return u.full_name
 
 
 def _lesson_dict(lesson, subs):

@@ -175,7 +175,7 @@ class LinkAndLoginTest(BotTestCase):
         res = self.client.post('/api/auth/telegram/', {'token': token}, content_type='application/json', **BROWSER)
         self.assertEqual(res.status_code, 200)
         self.assertIn('access', res.json())
-        self.assertEqual(res.json()['user']['email'], bot_email(1001))
+        self.assertEqual(res.json()['user']['id'], User.objects.get(email=bot_email(1001)).id)
 
         again = self.client.post('/api/auth/telegram/', {'token': token}, content_type='application/json', **BROWSER)
         self.assertEqual(again.status_code, 400)
@@ -393,7 +393,7 @@ class ContinueWithTelegramTest(BotTestCase):
         self.assertEqual(res['status'], 'ok')
         self.assertIn('access', res)
         self.assertTrue(res['created'])
-        self.assertEqual(res['user']['email'], bot_email(7007))
+        self.assertEqual(res['user']['id'], User.objects.get(email=bot_email(7007)).id)
         # The answer is handed out once.
         self.assertEqual(self.poll(req['token'])['status'], 'expired')
 
@@ -416,7 +416,7 @@ class ContinueWithTelegramTest(BotTestCase):
         self.bot_post('users/login-confirm/', {'telegram_id': 1, 'token': req['token']})
         second = self.bot_post('users/login-confirm/', {'telegram_id': 2, 'token': req['token']})
         self.assertEqual(second.json()['code'], 'bad_token')
-        self.assertEqual(self.poll(req['token'])['user']['email'], bot_email(1))
+        self.assertEqual(self.poll(req['token'])['user']['id'], User.objects.get(email=bot_email(1)).id)
 
         late = self.start()
         TelegramLogin.objects.filter(token=late['token']).update(expires_at=timezone.now() - timedelta(seconds=1))
@@ -439,3 +439,64 @@ class ContinueWithTelegramTest(BotTestCase):
     @override_settings(TELEGRAM_BOT_USERNAME='')
     def test_off_when_the_bot_is_not_set_up(self):
         self.assertEqual(self.client.post('/api/auth/telegram/start/', **BROWSER).status_code, 503)
+
+
+class TelegramAccountOnSiteTest(BotTestCase):
+    """A Telegram account never shows its placeholder e-mail and can add a real one."""
+
+    def test_profile_hides_the_placeholder_and_asks_for_an_email(self):
+        self.register(tid=5005)
+        user = User.objects.get(email=bot_email(5005))
+        self.assertEqual(user.signup_method, User.SIGNUP_TELEGRAM)
+
+        me = self.client.get('/api/auth/me/', **self.as_user(user)).json()
+        self.assertEqual(me['email'], '')
+        self.assertTrue(me['needs_email'])
+        self.assertFalse(me['has_password'])
+        self.assertEqual(me['phone'], '+998901234567')
+        self.assertNotIn('tg.exambridge.uz', str(me))
+
+        bad = self.client.patch('/api/auth/profile/', {'contact_email': 'not-an-email'},
+                                content_type='application/json', **self.as_user(user))
+        self.assertEqual(bad.status_code, 400)
+        ok = self.client.patch('/api/auth/profile/', {'contact_email': ' Ali@Gmail.com '},
+                               content_type='application/json', **self.as_user(user))
+        self.assertEqual(ok.status_code, 200)
+        self.assertEqual(ok.json()['email'], 'ali@gmail.com')
+        self.assertFalse(ok.json()['needs_email'])
+
+        user.refresh_from_db()
+        # Contact only: the sign-in address stays the internal one.
+        self.assertEqual(user.email, bot_email(5005))
+        self.assertEqual(user.contact_email, 'ali@gmail.com')
+
+    def test_an_email_account_cannot_change_its_sign_in_address_this_way(self):
+        user = self.site_user('real@mail.uz')
+        res = self.client.patch('/api/auth/profile/', {'contact_email': 'other@mail.uz'},
+                                content_type='application/json', **self.as_user(user))
+        self.assertEqual(res.status_code, 400)
+        me = self.client.get('/api/auth/me/', **self.as_user(user)).json()
+        self.assertEqual(me['email'], 'real@mail.uz')
+        self.assertFalse(me['needs_email'])
+
+    def test_admin_users_filter_by_how_they_signed_up(self):
+        self.register(tid=6006, username='tg_student')
+        self.site_user('site@mail.uz')
+        google = self.site_user('g@gmail.com')
+        User.objects.filter(pk=google.pk).update(signup_method=User.SIGNUP_GOOGLE)
+        owner = self.site_user('boss@mail.uz', is_staff=True, is_superuser=True)
+        auth = self.as_user(owner)
+
+        data = self.client.get('/api/admin/users/', **auth).json()
+        self.assertEqual(data['counts']['sources'], {'email': 2, 'google': 1, 'telegram': 1, 'testmakon': 0})
+
+        tg = self.client.get('/api/admin/users/?source=telegram', **auth).json()
+        self.assertEqual(tg['count'], 1)
+        row = tg['results'][0]
+        self.assertEqual(row['signup_method'], 'telegram')
+        self.assertEqual(row['email'], '')
+        self.assertEqual(row['telegram_username'], 'tg_student')
+        self.assertEqual(self.client.get('/api/admin/users/?source=google', **auth).json()['count'], 1)
+        # Search finds Telegram students by @username and phone.
+        self.assertEqual(self.client.get('/api/admin/users/?q=@tg_student', **auth).json()['count'], 1)
+        self.assertEqual(self.client.get('/api/admin/users/?q=901234567', **auth).json()['count'], 1)

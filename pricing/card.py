@@ -179,8 +179,8 @@ def _receipt_caption(payment):
     if tg:
         handle = f'@{e(tg.username)} · ' if tg.username else ''
         lines.append(f'✈️ {handle}ID <code>{tg.telegram_id}</code>')
-    if not is_bot_email(user.email):
-        lines.append(f'📧 {e(user.email)}')
+    if user.public_email:
+        lines.append(f'📧 {e(user.public_email)}')
     lines.append(f'💎 Tarif: <b>{PLAN_TITLES[payment.plan]}</b> — <b>{money(payment.amount)} so\'m</b>')
     lines.append(f'🕒 {_local(payment.created_at)}')
     return '\n'.join(lines)

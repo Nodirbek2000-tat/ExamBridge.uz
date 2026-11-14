@@ -12,6 +12,23 @@ class User(AbstractUser):
     """Extended user model for SAT Platform."""
 
     email = models.EmailField(_('email address'), unique=True)
+
+    # How the account was created. Telegram accounts sign in through the bot only:
+    # their `email` is an internal placeholder and is never shown — the address the
+    # student types on the site goes to `contact_email` (contact only, not a login).
+    SIGNUP_EMAIL = 'email'
+    SIGNUP_GOOGLE = 'google'
+    SIGNUP_TELEGRAM = 'telegram'
+    SIGNUP_TESTMAKON = 'testmakon'
+    SIGNUP_CHOICES = [
+        (SIGNUP_EMAIL, 'E-mail and password'),
+        (SIGNUP_GOOGLE, 'Google'),
+        (SIGNUP_TELEGRAM, 'Telegram bot'),
+        (SIGNUP_TESTMAKON, 'TestMakon'),
+    ]
+    signup_method = models.CharField(max_length=10, choices=SIGNUP_CHOICES, default=SIGNUP_EMAIL, db_index=True)
+    contact_email = models.EmailField(blank=True, default='')
+
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
     bio = models.TextField(max_length=500, blank=True)
     phone = models.CharField(max_length=20, blank=True)
@@ -101,7 +118,21 @@ class User(AbstractUser):
 
     @property
     def full_name(self):
-        return f"{self.first_name} {self.last_name}".strip() or self.email.split('@')[0]
+        name = f"{self.first_name} {self.last_name}".strip()
+        if name:
+            return name
+        return self.public_email.split('@')[0] if self.public_email else 'Student'
+
+    @property
+    def public_email(self):
+        """The e-mail to show people: never the internal placeholder of a Telegram account."""
+        if self.signup_method == self.SIGNUP_TELEGRAM:
+            return self.contact_email
+        return self.email
+
+    @property
+    def needs_contact_email(self):
+        return self.signup_method == self.SIGNUP_TELEGRAM and not self.contact_email
 
     @property
     def admin_tier(self):

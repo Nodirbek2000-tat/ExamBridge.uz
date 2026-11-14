@@ -2,6 +2,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.middleware.csrf import get_token
 from django.conf import settings
 from django.utils.dateparse import parse_date
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes, throttle_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -23,7 +25,12 @@ class RegisterRateThrottle(AnonRateThrottle):
 def user_data(user):
     return {
         'id': user.id,
-        'email': user.email,
+        # Telegram accounts: the address they gave us, or '' — never the placeholder.
+        'email': user.public_email,
+        'signup_method': user.signup_method,
+        'needs_email': user.needs_contact_email,
+        'has_password': user.has_usable_password(),
+        'phone': user.phone,
         'full_name': user.full_name,
         'first_name': user.first_name,
         'last_name': user.last_name,
@@ -151,6 +158,7 @@ def google_login_view(request):
             'first_name': first_name,
             'last_name': last_name,
             'is_active': True,
+            'signup_method': User.SIGNUP_GOOGLE,
         }
     )
     if created:
@@ -248,6 +256,18 @@ def update_profile_view(request):
     if 'email_newsletter' in data:
         user.email_newsletter = bool(data['email_newsletter'])
         fields.append('email_newsletter')
+    if 'contact_email' in data:
+        # Telegram accounts only: a contact address, not a login — nothing proves
+        # the student owns it, so it must never become `email`.
+        if user.signup_method != User.SIGNUP_TELEGRAM:
+            return Response({'detail': 'Your e-mail is your sign-in and cannot be changed here.'}, status=400)
+        address = str(data['contact_email'] or '').strip().lower()
+        try:
+            validate_email(address)
+        except ValidationError:
+            return Response({'contact_email': ['Enter a valid e-mail address.']}, status=400)
+        user.contact_email = address
+        fields.append('contact_email')
     if fields:
         user.save(update_fields=fields)
     return Response(user_data(user))
@@ -303,6 +323,7 @@ def platform_bridge_auth(request):
             defaults={
                 'username': f'tm_{platform_uid}',
                 'platform': 'testmakon',
+                'signup_method': User.SIGNUP_TESTMAKON,
                 'platform_uid': platform_uid,
                 'phone': phone,
                 'is_active': True,

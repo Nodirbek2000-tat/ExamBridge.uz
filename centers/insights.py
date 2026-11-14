@@ -23,7 +23,7 @@ User = get_user_model()
 
 
 def _name(u):
-    return f'{u.first_name} {u.last_name}'.strip() or u.email
+    return u.full_name
 
 
 def _iso(dt):
@@ -106,7 +106,7 @@ def center_monitoring(request, center_id):
         finished = [s for s in items if s.status == 'completed' and s.submitted_at]
         last = max(finished, key=lambda s: s.submitted_at, default=None)
         student_rows.append({
-            'id': u.id, 'name': _name(u), 'email': u.email,
+            'id': u.id, 'name': _name(u), 'email': u.public_email,
             'groups': student_groups.get(u.id, []),
             **summarize(items, len(days.get(u.id, ()))),
             'last_seen': _iso(seen),
@@ -263,7 +263,7 @@ def group_journal(request, center_id, group_id):
         items = per_student.get(u.id, [])
         seen = _last_seen(u, items, days.get(u.id))
         rows.append({
-            'id': u.id, 'name': _name(u), 'email': u.email,
+            'id': u.id, 'name': _name(u), 'email': u.public_email,
             **summarize(items, len(days.get(u.id, ()))),
             'last_seen': _iso(seen),
             'cells': {units[k]['key']: lesson_state(v) for k, v in states[u.id].items()},

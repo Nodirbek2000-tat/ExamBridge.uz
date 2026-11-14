@@ -1440,7 +1440,7 @@ def import_cefr_test(request):
 @permission_classes([IsAdminUser])
 def admin_user_list(request):
     """
-    GET /api/admin/users/?q=&plan=all|premium|manual|free&page=1&page_size=50
+    GET /api/admin/users/?q=&plan=all|premium|manual|free&source=all|email|google|telegram|testmakon&page=1&page_size=50
 
     One page of users plus real counts. Counts come from the database, never
     from the page — the old version sliced 100 users and the page counted those.
@@ -1456,7 +1456,17 @@ def admin_user_list(request):
     search = (request.query_params.get('q') or '').strip()
     base = User.objects.all()
     if search:
-        base = base.filter(Q(email__icontains=search) | Q(first_name__icontains=search) | Q(last_name__icontains=search))
+        base = base.filter(
+            Q(email__icontains=search) | Q(contact_email__icontains=search) | Q(phone__icontains=search)
+            | Q(first_name__icontains=search) | Q(last_name__icontains=search)
+            | Q(telegram__username__icontains=search.lstrip('@'))
+        )
+    # How the account was made (Telegram bot, Google, e-mail). Counted before this
+    # filter so every chip shows its own number.
+    source_counts = dict(base.order_by().values_list('signup_method').annotate(n=Count('id')))
+    source = request.query_params.get('source', 'all')
+    if source in dict(User.SIGNUP_CHOICES):
+        base = base.filter(signup_method=source)
 
     counts = base.aggregate(
         all=Count('id'),
@@ -1464,6 +1474,7 @@ def admin_user_list(request):
         manual=Count('id', filter=active_premium & Q(premium_source='manual')),
     )
     counts['free'] = counts['all'] - counts['premium']
+    counts['sources'] = {key: source_counts.get(key, 0) for key, _ in User.SIGNUP_CHOICES}
 
     today_start = timezone.localtime(now).replace(hour=0, minute=0, second=0, microsecond=0)
     stats = User.objects.aggregate(
@@ -1490,7 +1501,7 @@ def admin_user_list(request):
     offset = (page - 1) * page_size
 
     rows = (
-        users.select_related('stats')
+        users.select_related('stats', 'telegram')
         .annotate(completed_tests=Count('attempts', filter=Q(attempts__status='COMPLETED'), distinct=True))
         .order_by('-created_at', '-id')[offset:offset + page_size]
     )
@@ -1501,9 +1512,12 @@ def admin_user_list(request):
         premium_now = bool(u.is_premium and (u.premium_until is None or u.premium_until > now))
         result.append({
             'id': u.id,
-            'email': u.email,
+            'email': u.public_email,          # '' for a Telegram account with no e-mail yet
             'full_name': u.full_name,
             'first_name': u.first_name,
+            'signup_method': u.signup_method,
+            'phone': u.phone,
+            'telegram_username': getattr(getattr(u, 'telegram', None), 'username', '') or '',
             'is_premium': premium_now,
             'is_staff': u.is_staff,
             'admin_level': u.admin_level,
@@ -1740,7 +1754,9 @@ def admin_user_detail(request, user_id):
 
     return Response({
         'id': user.id,
-        'email': user.email,
+        'email': user.public_email,
+        'signup_method': user.signup_method,
+        'phone': user.phone,
         'full_name': user.full_name,
         'first_name': user.first_name,
         'last_name': user.last_name,

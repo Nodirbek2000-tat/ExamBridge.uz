@@ -83,7 +83,7 @@ def _user_row(user):
     return {
         'id': user.id,
         'name': user.get_full_name() or user.username,
-        'email': user.email,
+        'email': user.public_email,
         'is_premium': user.is_premium,
     }
 

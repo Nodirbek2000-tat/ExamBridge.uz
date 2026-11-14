@@ -96,7 +96,7 @@ def _payment_payload(p, accounts):
         'user': {
             'id': user.id,
             'name': (tg.display_name if tg and is_bot_email(user.email) else user.full_name),
-            'email': None if is_bot_email(user.email) else user.email,
+            'email': user.public_email or None,
             'phone': (tg.phone if tg else '') or user.phone,
             'is_premium': user.is_premium,
         },
