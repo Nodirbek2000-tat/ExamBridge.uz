@@ -325,8 +325,10 @@ def admin_leaderboard(request):
       SAT full mock completed  × 100 XP
       IELTS mock completed     × 80  XP
       CEFR mock completed      × 60  XP
-    Efficient: 3 aggregate queries, then Python sort.
+      AI lessons               the XP earned in them (ai_lessons/xp.py)
+    Efficient: a few aggregate queries, then Python sort.
     """
+    from ai_lessons.xp import by_user as lesson_xp_by_user
     from accounts.models import User
     from tests_app.models import TestAttempt
     from ielts.models import IELTSAttempt
@@ -364,7 +366,8 @@ def admin_leaderboard(request):
     )
 
     # All users who have at least 1 attempt
-    active_ids = set(sat_map) | set(sat_ind_map) | set(ielts_map) | set(cefr_map)
+    lesson_xp = lesson_xp_by_user()
+    active_ids = set(sat_map) | set(sat_ind_map) | set(ielts_map) | set(cefr_map) | set(lesson_xp)
     users = User.objects.filter(id__in=active_ids).values(
         'id', 'email', 'first_name', 'last_name', 'username', 'is_premium', 'is_staff'
     )
@@ -376,7 +379,8 @@ def admin_leaderboard(request):
         sat_ind  = sat_ind_map.get(uid, 0)
         ielts_c  = ielts_map.get(uid, 0)
         cefr_c   = cefr_map.get(uid, 0)
-        xp = sat_full * 100 + sat_ind * 30 + ielts_c * 80 + cefr_c * 60
+        lessons = lesson_xp.get(uid, 0)
+        xp = sat_full * 100 + sat_ind * 30 + ielts_c * 80 + cefr_c * 60 + lessons
         name = f"{u['first_name']} {u['last_name']}".strip() or u['username'] or u['email'].split('@')[0]
         rows.append({
             'user_id':        uid,
@@ -389,6 +393,7 @@ def admin_leaderboard(request):
             'sat_individual': sat_ind,
             'ielts':          ielts_c,
             'cefr':           cefr_c,
+            'ai_lessons_xp':  lessons,
         })
 
     rows.sort(key=lambda x: x['xp'], reverse=True)

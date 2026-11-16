@@ -16,6 +16,7 @@ from .models import AILesson, LessonAnswer, LessonProgress, LessonQuestion
 from .play import answer_data, asked_in_lesson, lesson_play_data, question_data, visible_questions
 from .questions import QuestionError, mark
 from .recommend import recommendations
+from . import xp
 
 
 def _published():
@@ -30,7 +31,7 @@ def _progress_data(progress, steps_count):
     return {'last_step': progress.last_step, 'percent': percent, 'completed': completed}
 
 
-def _lesson_card(lesson, progress, steps_count):
+def _lesson_card(lesson, progress, steps_count, earned=0):
     return {
         'id': lesson.id,
         'title': lesson.title,
@@ -39,6 +40,7 @@ def _lesson_card(lesson, progress, steps_count):
         'level': lesson.level,
         'duration_minutes': lesson.duration_minutes,
         'progress': _progress_data(progress, steps_count),
+        'xp': earned,
     }
 
 
@@ -57,7 +59,10 @@ def lesson_list(request):
     if subject:
         lessons = lessons.filter(subject__in=[subject, AILesson.Subject.GENERAL])
     mine = _my_progress(request.user)
-    return Response([_lesson_card(lesson, mine.get(lesson.id), lesson.steps_count) for lesson in lessons])
+    earned = xp.by_lesson(request.user)
+    return Response([
+        _lesson_card(lesson, mine.get(lesson.id), lesson.steps_count, earned.get(lesson.id, 0)) for lesson in lessons
+    ])
 
 
 @api_view(['GET'])
@@ -104,10 +109,12 @@ def lesson_detail(request, pk):
     return Response({
         **data,
         'progress': _progress_data(progress, len(data['steps'])),
-        'questions': [question_data(q, answers.get(q.id), last) for q in asked_in_lesson(questions, last)],
+        'xp': xp.by_lesson(request.user, [lesson.id]).get(lesson.id, 0),
+        'xp_for_finishing': xp.FINISH,
+        'questions': [question_data(q, answers.get(q.id), last, request) for q in asked_in_lesson(questions, last)],
         'homework_count': len(homework),
         # The homework opens once the lesson has been watched to the end.
-        'homework': [question_data(q, answers.get(q.id)) for q in homework] if completed else None,
+        'homework': [question_data(q, answers.get(q.id), None, request) for q in homework] if completed else None,
     })
 
 
@@ -149,7 +156,7 @@ def question_answer(request, pk):
 
     existing = LessonAnswer.objects.filter(user=request.user, question=question).first()
     if existing:
-        return Response(answer_data(existing, question))
+        return Response(answer_data(existing, question, request))
 
     try:
         choice, text, is_correct = mark(question, request.data.get('choice'), request.data.get('text'))
@@ -158,8 +165,10 @@ def question_answer(request, pk):
 
     answer, created = LessonAnswer.objects.get_or_create(
         user=request.user, question=question,
-        defaults={'choice': choice, 'text': text, 'is_correct': is_correct},
+        defaults={'choice': choice, 'text': text, 'is_correct': is_correct,
+                  # a hint opened first halves the XP; there is nothing to open on a question without one
+                  'hint_used': bool(question.hint) and request.data.get('hint_used') is True},
     )
     if created and question.kind == LessonQuestion.Kind.WRITTEN:
         mark_written(answer)            # a few seconds; the answer is saved either way
-    return Response(answer_data(answer, question), status=201 if created else 200)
+    return Response(answer_data(answer, question, request), status=201 if created else 200)

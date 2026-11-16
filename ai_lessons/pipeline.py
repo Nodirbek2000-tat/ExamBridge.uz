@@ -4,7 +4,9 @@ Builds a lesson in stages, saving after each one.
     GENERATE: plan → one section at a time → questions (checks, final test, homework)
               → the AI's own review, which also fixes the questions it finds wrong
               → saved as steps and questions for an admin to read (status REVIEW)
-    VOICE:    only after an admin approves, because the voice is the expensive part
+    VOICE:    only after an admin approves, because the voice is the expensive part:
+              the steps, what the teacher says to a wrong answer, and — once per
+              voice — the short praise for a right one
 
 Every finished stage is kept in LessonJob.data, so a job that stops (no credit, a
 crash, a restart) continues from where it was and pays for nothing twice. Nothing
@@ -17,7 +19,7 @@ from django.core.files.base import ContentFile
 from django.db import IntegrityError, transaction
 from django.utils import timezone
 
-from . import prompts
+from . import praise, prompts
 from .board import BoardError, clean_step, repair_step, replace_steps
 from .models import AILesson, LessonJob, LessonQuestion
 from .providers import BadReply, LessonAIError, get_provider
@@ -327,13 +329,30 @@ def _voice(job, provider):
     lesson = job.lesson
     steps = list(lesson.steps.all())
     waiting = [step for step in steps if not step.audio]
-    _progress(job, stage=LessonJob.Stage.VOICE, done=len(steps) - len(waiting), total=len(steps))
+    # homework is done on the page, after the lesson: only the lesson's own questions are spoken to
+    spoken = [q for q in lesson.questions.filter(is_homework=False).exclude(wrong_say='')]
+    unsaid = [q for q in spoken if not q.wrong_audio]
+    lines = praise.missing(lesson.language, lesson.voice)
+    total = len(steps) + len(spoken) + len(lines)
+    _progress(job, stage=LessonJob.Stage.VOICE, done=total - len(waiting) - len(unsaid) - len(lines), total=total)
 
     for step in waiting:
         audio, seconds = provider.speak(step.say, lesson.voice, lesson.language)
         step.audio.save('voice.mp3', ContentFile(audio), save=False)
         step.audio_seconds = seconds
         step.save(update_fields=['audio', 'audio_seconds'])
+        _progress(job, done=job.done + 1)
+
+    for question in unsaid:
+        audio, seconds = provider.speak(question.wrong_say, lesson.voice, lesson.language)
+        question.wrong_audio.save('voice.mp3', ContentFile(audio), save=False)
+        question.wrong_audio_seconds = seconds
+        question.save(update_fields=['wrong_audio', 'wrong_audio_seconds'])
+        _progress(job, done=job.done + 1)
+
+    for index, text in lines:
+        audio, _ = provider.speak(text, lesson.voice, lesson.language)
+        praise.save(lesson.language, lesson.voice, index, audio)
         _progress(job, done=job.done + 1)
 
     with transaction.atomic():

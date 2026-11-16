@@ -11,6 +11,10 @@ final test at the end of the lesson (`is_quiz`), or in the homework (`is_homewor
     WRITTEN     a free answer, checked by the AI teacher against the rubric
 
 Everything but WRITTEN is marked here at once.
+
+Any question may also have a `hint` (a nudge, never the answer) and `wrong_say`:
+what the teacher says aloud to a student who got it wrong (the AI also sends it
+as `say_if_wrong`). The voice job records it.
 """
 import re
 import unicodedata
@@ -31,6 +35,8 @@ MAX_GAP_ANSWER = 100
 MAX_NOTE = 2000
 MAX_ANSWER_TEXT = 2000
 MAX_GAP_TEXT = 200
+MAX_HINT = 300
+MAX_WRONG_SAY = 700
 
 TRUE_FALSE = ['True', 'False']
 GAP = re.compile(r'_{3,}')
@@ -118,6 +124,13 @@ def clean_content(data):
     elif kind == Kind.GAP:
         accepted = _accepted(data, prompt)
 
+    hint = str(data.get('hint') or '').strip()
+    if len(hint) > MAX_HINT:
+        raise QuestionError(f'A hint can be at most {MAX_HINT} characters.')
+    wrong_say = str(data.get('wrong_say') or data.get('say_if_wrong') or '').strip()
+    if len(wrong_say) > MAX_WRONG_SAY:
+        raise QuestionError(f'What the teacher says can be at most {MAX_WRONG_SAY} characters.')
+
     return {
         'kind': kind,
         'prompt': prompt,
@@ -126,6 +139,8 @@ def clean_content(data):
         'accepted': accepted,
         'rubric': _optional_text(data, 'rubric'),
         'explanation': _optional_text(data, 'explanation'),
+        'hint': hint,
+        'wrong_say': wrong_say,
     }
 
 

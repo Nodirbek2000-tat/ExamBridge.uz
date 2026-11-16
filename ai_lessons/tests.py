@@ -422,7 +422,7 @@ class StudentLessonTest(StudentBase):
         body = self.client.get(f'{STUDENT}{self.target.id}/', **self.s).json()
 
         for question in body['questions'] + body['homework']:
-            self.assertEqual(set(question), {'id', 'step', 'quiz', 'kind', 'prompt', 'options', 'answer'})
+            self.assertEqual(set(question), {'id', 'step', 'quiz', 'kind', 'prompt', 'options', 'hint', 'answer'})
             self.assertIsNone(question['answer'])
         self.assertNotIn('secret rubric', str(body))
 

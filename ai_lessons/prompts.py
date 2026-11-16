@@ -135,7 +135,13 @@ QUESTION_FORMATS = """Question types and their exact formats:
 {"kind": "WRITTEN", "prompt": "...", "rubric": "what a full answer must contain", "explanation": "a model answer"}
 Every question also says where it goes: "after_step": N, or "is_quiz": true, or "is_homework": true.
 Explanations teach: why the right answer is right and why the tempting wrong one is wrong.
-Text may use **bold** and inline math as \\( x^2 \\)."""
+Every question also has:
+"hint": one short nudge that points the student at the right idea or the step to take — never the answer, never an option to pick;
+"say_if_wrong" (checks and final test only): what the teacher says aloud, warmly, to a student who got it wrong —
+    2 or 3 short spoken sentences, 25 to 60 words: name the right answer, say why, and the trap that caught them
+    ("Not quite! The answer is goes. With he, she or it we add an s..."). It is read by a voice engine:
+    plain spoken words only, maths in words, no symbols, LaTeX, markdown or brackets.
+Text may use **bold** and inline math as \\( x^2 \\) (not in say_if_wrong)."""
 
 
 def section_roles(count):
@@ -315,6 +321,7 @@ Questions, numbered from 0:
 
 First solve every question yourself, then compare your answer with its key.
 Look for: wrong facts, grammar or maths; wrong answer keys; a GAP whose accepted answers miss a right form;
+a hint that gives the answer away; a say_if_wrong that is wrong, unkind or not speakable;
 a MISTAKE question with no wrong part or with two; unclear wording; gaps against the brief;
 exam secrets that are vague, obvious or untrue; a missing part of the arc (hook, worked examples,
 "your turn" questions with a think pause, typical mistakes, exam secrets, wrap-up);

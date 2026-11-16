@@ -167,6 +167,8 @@ QUESTIONS = [
         'options': ['1', '2', '4', '\\(\\frac{1}{2}\\)'],
         'correct': 1,
         'explanation': '\\(m = \\frac{7 - 3}{3 - 1} = \\frac{4}{2} = 2\\)',
+        'hint': 'Subtract the y values, then the x values, in the same order.',
+        'say_if_wrong': 'Not quite! The slope is two. Seven minus three is four, three minus one is two, and four divided by two is two. Keep the same order on top and on the bottom.',
     },
     {
         'after_step': 6,
@@ -175,6 +177,8 @@ QUESTIONS = [
                   'Write its equation.',
         'rubric': 'The equation y = 2x + 3 (or the same line written another way) must be there.',
         'explanation': 'Up 2 for every 1 to the right: \\(m = 2\\). It crosses at 3: \\(b = 3\\). So \\(y = 2x + 3\\).',
+        'hint': 'Up 2 for every 1 to the right is the slope. Where does it cross the y-axis?',
+        'say_if_wrong': "Let's fix it together. Going up two for every one step to the right means the slope is two, and crossing the y axis at three means b is three. So the line is y equals two x plus three.",
     },
     {
         'is_quiz': True,
@@ -182,6 +186,8 @@ QUESTIONS = [
         'prompt': 'The line \\(y = -2x + 5\\) goes down from left to right.',
         'correct': True,
         'explanation': 'The slope is \\(-2\\), a negative number, so the line goes down.',
+        'hint': 'Is the number in front of \\(x\\) positive or negative?',
+        'say_if_wrong': "It's true! The slope is minus two, a negative number, so the line goes down from left to right.",
     },
     {
         'is_quiz': True,
@@ -189,6 +195,8 @@ QUESTIONS = [
         'prompt': 'In \\(y = 4x - 7\\), the slope is ___.',
         'accepted': ['4'],
         'explanation': 'The slope is the number in front of \\(x\\): 4. The \\(-7\\) is \\(b\\).',
+        'hint': 'The slope is the number in front of \\(x\\).',
+        'say_if_wrong': 'Not quite. The slope is four, the number in front of x. The minus seven is b, where the line crosses the y axis.',
     },
     {
         'is_quiz': True,
@@ -196,6 +204,8 @@ QUESTIONS = [
         'prompt': 'A line passes through \\((0, 1)\\) and \\((2, 7)\\). Its slope is ___.',
         'accepted': ['3'],
         'explanation': '\\(m = \\frac{7 - 1}{2 - 0} = \\frac{6}{2} = 3\\)',
+        'hint': 'How much does \\(y\\) change, and how much does \\(x\\) change?',
+        'say_if_wrong': "The slope is three. Y goes from one to seven, that's six, and x goes from zero to two, that's two. Six divided by two is three.",
     },
     {
         'is_quiz': True,
@@ -208,6 +218,8 @@ QUESTIONS = [
         ],
         'correct': 1,
         'explanation': 'The order flipped at the bottom. It must be \\(\\frac{8 - 2}{3 - 1} = \\frac{6}{2} = 3\\).',
+        'hint': 'Check the bottom of the fraction: is the order the same as on top?',
+        'say_if_wrong': 'The mistake is in the second line. On top we did eight minus two, so on the bottom it must be three minus one, not one minus three. The slope is three, not minus three.',
     },
     {
         'is_quiz': True,
@@ -217,6 +229,8 @@ QUESTIONS = [
         'options': ['\\(y = 10x + 0.05\\)', '\\(y = 0.05x + 10\\)', '\\(y = 10.05x\\)', '\\(y = 0.05x - 10\\)'],
         'correct': 1,
         'explanation': '"Per text" repeats, so \\(m = 0.05\\); the monthly fee is paid once, so \\(b = 10\\).',
+        'hint': 'Which amount is paid again and again, and which only once?',
+        'say_if_wrong': 'Not quite. The five cents is paid per text, so it is the slope, and the ten dollars is paid once a month, so it is b. The equation is y equals zero point zero five x plus ten.',
     },
     {
         'is_homework': True,
@@ -225,6 +239,7 @@ QUESTIONS = [
         'options': ['\\(y = 2x - 2\\)', '\\(y = 2x + 2\\)', '\\(y = -2x - 2\\)', '\\(y = \\frac{1}{2}x - 2\\)'],
         'correct': 0,
         'explanation': '\\(m = \\frac{6 - (-2)}{4 - 0} = 2\\) and the line crosses the \\(y\\)-axis at \\(-2\\).',
+        'hint': 'Find the slope first, then read where the line crosses the \\(y\\)-axis.',
     },
     {
         'is_homework': True,
@@ -234,6 +249,7 @@ QUESTIONS = [
         'options': ['60', '75', '80', '95'],
         'correct': 2,
         'explanation': '\\(y = 4x + 20\\), so \\(y = 4 \\cdot 15 + 20 = 80\\).',
+        'hint': 'The 20 dollars is paid once; the 4 dollars is paid for every class.',
     },
     {
         'is_homework': True,
@@ -242,5 +258,6 @@ QUESTIONS = [
                   'Write the equation and find after how many days the money runs out.',
         'rubric': 'The equation y = -3x + 45 and the answer 15 days must both be there.',
         'explanation': '\\(y = -3x + 45\\). When \\(y = 0\\), \\(3x = 45\\), so \\(x = 15\\) days.',
+        'hint': 'The money left is 0 when the account runs out.',
     },
 ]

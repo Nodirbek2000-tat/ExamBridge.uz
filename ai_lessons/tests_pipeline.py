@@ -478,9 +478,12 @@ class VoiceTest(PipelineBase):
 
         provider.spoken.clear()
         provider.fail_on = {}
+        from . import praise
+        praise_left = len(praise.missing(self.lesson.language, self.lesson.voice))
         self.approve()
 
-        self.assertEqual(len(provider.spoken), 8)
+        # the 8 steps left, the in-lesson question's "wrong" line, and any praise not recorded yet
+        self.assertEqual(len(provider.spoken), 8 + 1 + praise_left)
         self.lesson.refresh_from_db()
         self.assertEqual(self.lesson.status, 'APPROVED')
 

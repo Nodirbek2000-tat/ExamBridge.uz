@@ -160,6 +160,8 @@ class FakeProvider:
         choice = {
             'kind': 'CHOICE', 'prompt': 'Sinov savoli: 2 + 2 nechaga teng?', 'options': ['3', '4', '5'],
             'correct': 1, 'explanation': '2 va 2 ni qo\'shsak 4 bo\'ladi.',
+            'hint': 'Ikkita olmaga yana ikkita olma qo\'shing.',
+            'say_if_wrong': "Afsus, javob to'rt. Ikki va ikkini qo'shsak to'rt bo'ladi.",
         }
         written = {
             'kind': 'WRITTEN', 'prompt': 'Sinov savoli: mavzuni bir gapda tushuntiring.',

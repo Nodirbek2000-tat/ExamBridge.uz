@@ -3,9 +3,12 @@ What the lesson player receives, the same for a student and for an admin's previ
 
 Questions asked while the lesson plays carry the id of the step they follow; the
 final test follows the last step, whichever step that is after editing. Correct
-answers only ever travel inside an answer that has been given.
+answers — and what the teacher says about a wrong one — only ever travel inside
+an answer that has been given.
 """
 from django.db.models import Q
+
+from . import praise, xp
 
 
 def lesson_play_data(lesson, request):
@@ -28,11 +31,14 @@ def lesson_play_data(lesson, request):
             }
             for s in lesson.steps.all()
         ],
+        # Toby's "Great job!" for a right answer, in this lesson's voice
+        'praise': praise.urls(lesson.language, lesson.voice, request),
     }
 
 
-def answer_data(answer, question):
-    return {
+def answer_data(answer, question, request=None):
+    right = answer.is_correct is True
+    data = {
         'choice': answer.choice,
         'text': answer.text,
         'is_correct': answer.is_correct,
@@ -41,10 +47,18 @@ def answer_data(answer, question):
         'correct': question.correct,
         'accepted': question.accepted,
         'explanation': question.explanation,
+        'hint_used': answer.hint_used,
+        'xp': xp.for_answer(answer),
+        # the teacher explains a wrong (or not yet marked) answer, aloud when it is recorded
+        'wrong_say': '' if right else question.wrong_say,
+        'wrong_audio': None,
     }
+    if not right and question.wrong_audio and request is not None:
+        data['wrong_audio'] = request.build_absolute_uri(question.wrong_audio.url)
+    return data
 
 
-def question_data(question, answer=None, last_step=None):
+def question_data(question, answer=None, last_step=None, request=None):
     return {
         'id': question.id,
         'step': last_step if question.is_quiz else question.step_id,
@@ -52,7 +66,8 @@ def question_data(question, answer=None, last_step=None):
         'kind': question.kind,
         'prompt': question.prompt,
         'options': question.options,
-        'answer': answer_data(answer, question) if answer else None,
+        'hint': question.hint,
+        'answer': answer_data(answer, question, request) if answer else None,
     }
 
 

@@ -25,6 +25,10 @@ def step_audio_path(instance, filename):
     return f'ai_lessons/audio/{instance.lesson_id}/{uuid.uuid4().hex}.mp3'
 
 
+def question_audio_path(instance, filename):
+    return f'ai_lessons/audio/{instance.lesson_id}/q-{uuid.uuid4().hex}.mp3'
+
+
 class AILesson(models.Model):
     class Subject(models.TextChoices):
         SAT = 'SAT', 'SAT'
@@ -173,6 +177,11 @@ class LessonQuestion(models.Model):
     accepted = models.JSONField(default=list, blank=True, help_text='GAP: every answer that counts as right')
     rubric = models.TextField(blank=True, help_text='How a written answer is judged')
     explanation = models.TextField(blank=True)
+    hint = models.TextField(blank=True, help_text='A nudge towards the answer, never the answer itself')
+    # What the teacher says, in the lesson's voice, to a student who got it wrong
+    wrong_say = models.TextField(blank=True)
+    wrong_audio = models.FileField(upload_to=question_audio_path, blank=True)
+    wrong_audio_seconds = models.FloatField(default=0)
 
     origin = models.CharField(max_length=5, choices=Origin.choices, default=Origin.ADMIN)
     ai_verdict = models.CharField(max_length=7, choices=Verdict.choices, default=Verdict.PENDING)
@@ -261,6 +270,7 @@ class LessonAnswer(models.Model):
     choice = models.PositiveSmallIntegerField(null=True, blank=True)
     text = models.TextField(blank=True)
     is_correct = models.BooleanField(null=True, blank=True, help_text='Empty until a written answer is marked')
+    hint_used = models.BooleanField(default=False)
     # Written answers: the AI teacher's verdict and comment ('' until marked).
     verdict = models.CharField(max_length=8, blank=True, default='', help_text='correct, partly or wrong')
     feedback = models.TextField(blank=True, default='')

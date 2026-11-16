@@ -80,6 +80,9 @@ def _question_data(q):
         'accepted': q.accepted,
         'rubric': q.rubric,
         'explanation': q.explanation,
+        'hint': q.hint,
+        'wrong_say': q.wrong_say,
+        'wrong_voiced': bool(q.wrong_audio),
         'origin': q.origin,
         'ai_verdict': q.ai_verdict,
         'ai_note': q.ai_note,
@@ -342,6 +345,10 @@ def admin_question_detail(request, pk):
         fields = clean_question(request.data, lesson)
     except QuestionError as error:
         return Response({'error': str(error)}, status=400)
+    if fields['wrong_say'] != question.wrong_say and question.wrong_audio:
+        # new words: the old recording no longer says them
+        question.wrong_audio.delete(save=False)
+        question.wrong_audio_seconds = 0
     for key, value in fields.items():
         setattr(question, key, value)
     question.save()
@@ -356,7 +363,7 @@ def admin_lesson_play(request, pk):
     data = lesson_play_data(lesson, request)
     last = data['steps'][-1]['id'] if data['steps'] else None
     asked = asked_in_lesson(lesson.questions.filter(is_homework=False), last)
-    return Response({**data, 'questions': [question_data(q, None, last) for q in asked]})
+    return Response({**data, 'questions': [question_data(q, None, last, request) for q in asked]})
 
 
 @api_view(['POST'])
@@ -368,10 +375,11 @@ def admin_question_try(request, pk):
         choice, text, is_correct = mark(question, request.data.get('choice'), request.data.get('text'))
     except QuestionError as error:
         return Response({'error': str(error)}, status=400)
-    answer = LessonAnswer(question=question, choice=choice, text=text, is_correct=is_correct)
+    answer = LessonAnswer(question=question, choice=choice, text=text, is_correct=is_correct,
+                          hint_used=bool(question.hint) and request.data.get('hint_used') is True)
     if question.kind == LessonQuestion.Kind.WRITTEN:
         mark_written(answer, save=False)
-    return Response(answer_data(answer, question))
+    return Response(answer_data(answer, question, request))
 
 
 def _clean_source(request):
