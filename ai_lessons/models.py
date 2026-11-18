@@ -78,6 +78,8 @@ class AILesson(models.Model):
     level = models.CharField(max_length=30, blank=True, help_text='Who it is for, e.g. B2 or Band 6+')
     # The exam skills it trains, in the analytics' own words: how it is found for a student's weak spots.
     topics = models.JSONField(default=list, blank=True)
+    # Times a student opened it (admins excluded); the different students are in LessonProgress
+    views = models.PositiveIntegerField(default=0)
     voice = models.CharField(max_length=20, choices=Voice.choices, default=Voice.CORAL)
     brief = models.TextField(blank=True, help_text='What the lesson must cover and how to teach it')
 

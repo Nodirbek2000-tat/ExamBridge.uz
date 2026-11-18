@@ -4,7 +4,8 @@ What students may do with lessons. Only PUBLISHED lessons exist here.
 Correct answers and explanations leave the server only inside an answer the
 student has already given, so they cannot be read from the page beforehand.
 """
-from django.db.models import Count
+from django.core.cache import cache
+from django.db.models import Count, F
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
@@ -17,6 +18,9 @@ from .play import answer_data, asked_in_lesson, lesson_play_data, question_data,
 from .questions import QuestionError, mark
 from .recommend import recommendations
 from . import xp
+
+
+VIEW_WINDOW = 30 * 60
 
 
 def _published():
@@ -94,6 +98,9 @@ def lesson_recommended(request):
 @permission_classes([IsAuthenticated])
 def lesson_detail(request, pk):
     lesson = get_object_or_404(_published(), pk=pk)
+    # an open counts once per student per half hour: reloading or finishing it is not a new view
+    if not request.user.is_staff and cache.add(f'ai-lesson-view:{lesson.pk}:{request.user.pk}', 1, VIEW_WINDOW):
+        AILesson.objects.filter(pk=lesson.pk).update(views=F('views') + 1)
     progress = LessonProgress.objects.filter(user=request.user, lesson=lesson).first()
     completed = bool(progress and progress.completed_at)
 

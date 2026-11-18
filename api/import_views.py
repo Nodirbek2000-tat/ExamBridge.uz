@@ -1939,7 +1939,9 @@ def admin_ielts_test_audio(request, pk):
 @permission_classes([IsAdminUser])
 def admin_ielts_reading_list(request):
     from ielts.models import ReadingPassage, IELTSTest
+    from api import admin_usage
     items = ReadingPassage.objects.filter(center__isnull=True).order_by('passage_number', '-created_at')
+    part_done, test_done = admin_usage.ielts('reading')
     test_map = {}
     for t in IELTSTest.objects.filter(center__isnull=True).prefetch_related('passages').all():
         for p in t.passages.all():
@@ -1957,6 +1959,8 @@ def admin_ielts_reading_list(request):
         'test_title': test_map.get(p.id, {}).get('test_title'),
         'test_is_premium': test_map.get(p.id, {}).get('test_is_premium', False),
         'test_is_cambridge': test_map.get(p.id, {}).get('test_is_cambridge', False),
+        'done': part_done.get(p.id, admin_usage.NONE),
+        'test_done': test_done.get(test_map.get(p.id, {}).get('test_id'), admin_usage.NONE),
     } for p in items])
 
 
@@ -1983,7 +1987,9 @@ def admin_ielts_reading_delete_all(request):
 @permission_classes([IsAdminUser])
 def admin_ielts_listening_list(request):
     from ielts.models import ListeningSection, IELTSTest
+    from api import admin_usage
     items = ListeningSection.objects.filter(center__isnull=True).select_related().order_by('section_number', '-created_at')
+    part_done, test_done = admin_usage.ielts('listening')
     test_map = {}
     for t in IELTSTest.objects.filter(center__isnull=True).prefetch_related('listening_sections').all():
         for s in t.listening_sections.all():
@@ -2003,6 +2009,8 @@ def admin_ielts_listening_list(request):
         'test_audio_url': test_map.get(s.id, {}).get('test_audio_url'),
         'test_is_premium': test_map.get(s.id, {}).get('test_is_premium', False),
         'test_is_cambridge': test_map.get(s.id, {}).get('test_is_cambridge', False),
+        'done': part_done.get(s.id, admin_usage.NONE),
+        'test_done': test_done.get(test_map.get(s.id, {}).get('test_id'), admin_usage.NONE),
     } for s in items])
 
 
@@ -2027,7 +2035,9 @@ def admin_ielts_listening_delete_all(request):
 @permission_classes([IsAdminUser])
 def admin_ielts_speaking_list(request):
     from ielts.models import SpeakingTask
+    from api import admin_usage
     tasks = SpeakingTask.objects.filter(center__isnull=True).order_by('-created_at')
+    done = admin_usage.ielts_tasks('speaking')
     result = []
     for t in tasks:
         result.append({
@@ -2040,6 +2050,7 @@ def admin_ielts_speaking_list(request):
             'question_count': len(t.questions) if t.questions else (len(t.parts_data) if t.parts_data else 0),
             'is_premium': t.is_premium,
             'created_at': str(t.created_at)[:10],
+            'done': done.get(t.id, admin_usage.NONE),
         })
     return Response(result)
 
@@ -2063,7 +2074,9 @@ def admin_ielts_speaking_delete(request, pk):
 @permission_classes([IsAdminUser])
 def admin_ielts_writing_list(request):
     from ielts.models import WritingTask
+    from api import admin_usage
     items = WritingTask.objects.filter(center__isnull=True).order_by('-created_at')
+    done = admin_usage.ielts_tasks('writing')
     return Response([{
         'id': t.id,
         'title': t.title,
@@ -2075,6 +2088,7 @@ def admin_ielts_writing_list(request):
         'is_premium': t.is_premium,
         'has_image': bool(t.image),
         'recommendations': t.recommendations or [],
+        'done': done.get(t.id, admin_usage.NONE),
     } for t in items])
 
 
@@ -2302,8 +2316,10 @@ def admin_ielts_test_detail(request, pk):
 def admin_cefr_reading_list(request):
     from cefr.models import CEFRReadingPassage
     from django.db.models import Count
+    from api import admin_usage
     items = (CEFRReadingPassage.objects.filter(center__isnull=True).select_related('test')
              .annotate(q_count=Count('questions')).order_by('-created_at'))
+    part_done, test_done = admin_usage.cefr('reading')
     return Response([{
         'id': p.id, 'title': p.title, 'level': p.level,
         'passage_number': p.passage_number, 'difficulty': p.difficulty,
@@ -2314,6 +2330,8 @@ def admin_cefr_reading_list(request):
         'test_id': p.test_id,
         'test_title': p.test.title if p.test else None,
         'test_is_premium': p.test.is_premium if p.test else False,
+        'done': part_done.get(p.id, admin_usage.NONE),
+        'test_done': test_done.get(p.test_id, admin_usage.NONE),
     } for p in items])
 
 
@@ -2342,8 +2360,10 @@ def admin_cefr_reading_detail(request, pk):
 def admin_cefr_listening_list(request):
     from cefr.models import CEFRListeningSection
     from django.db.models import Count
+    from api import admin_usage
     items = (CEFRListeningSection.objects.filter(center__isnull=True).select_related('test')
              .annotate(q_count=Count('questions')).order_by('-created_at'))
+    part_done, test_done = admin_usage.cefr('listening')
     return Response([{
         'id': s.id, 'title': s.title, 'level': s.level,
         'section_number': s.section_number, 'time_limit': s.time_limit,
@@ -2356,6 +2376,8 @@ def admin_cefr_listening_list(request):
         'test_title': s.test.title if s.test else None,
         'test_is_premium': s.test.is_premium if s.test else False,
         'test_has_audio': bool(s.test and (s.test.audio_file or s.test.audio_url)),
+        'done': part_done.get(s.id, admin_usage.NONE),
+        'test_done': test_done.get(s.test_id, admin_usage.NONE),
     } for s in items])
 
 

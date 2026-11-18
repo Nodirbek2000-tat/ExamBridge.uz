@@ -19,7 +19,7 @@ from rest_framework.response import Response
 
 from .board import BoardError, clean_step
 from .marking import mark_written
-from .models import AILesson, LessonAnswer, LessonJob, LessonQuestion, LessonSource, LessonStep
+from .models import AILesson, LessonAnswer, LessonJob, LessonProgress, LessonQuestion, LessonSource, LessonStep
 from .pipeline import JobBusy, expire_stale_jobs, latest_job, start_job
 from .play import answer_data, asked_in_lesson, lesson_play_data, question_data
 from .providers import FakeProvider, LessonAIError
@@ -100,6 +100,32 @@ def _questions_with_counts(lesson):
     ).order_by('is_homework', 'is_quiz', 'step__order', 'order', 'id')
 
 
+def _lesson_stats(lesson):
+    """How students used the lesson: opens, who started and finished it, and how they answered."""
+    progress = LessonProgress.objects.filter(lesson=lesson)
+    answers = LessonAnswer.objects.filter(question__lesson=lesson)
+    quiz = answers.filter(question__is_quiz=True)
+
+    def share(part, whole):
+        return round(part * 100 / whole) if whole else None
+
+    started = progress.count()
+    finished = progress.filter(completed_at__isnull=False).count()
+    answered, right = answers.count(), answers.filter(is_correct=True).count()
+    quiz_answered, quiz_right = quiz.count(), quiz.filter(is_correct=True).count()
+    return {
+        'views': lesson.views,
+        'students': started,
+        'finished': finished,
+        'finished_pct': share(finished, started),
+        'answers': answered,
+        'right_pct': share(right, answered),
+        'quiz_answers': quiz_answered,
+        'quiz_right_pct': share(quiz_right, quiz_answered),
+        'hints_used': answers.filter(hint_used=True).count(),
+    }
+
+
 def _lesson_data(lesson, request=None, full=False):
     data = {
         'id': lesson.id,
@@ -113,6 +139,7 @@ def _lesson_data(lesson, request=None, full=False):
         'voice': lesson.voice,
         'brief': lesson.brief,
         'status': lesson.status,
+        'views': lesson.views,
         'ai_provider': lesson.ai_provider,
         'created_at': lesson.created_at,
         'updated_at': lesson.updated_at,
@@ -128,6 +155,7 @@ def _lesson_data(lesson, request=None, full=False):
         data['job'] = _job_data(lesson)
         data['ai_mode'] = settings.AI_LESSON_PROVIDER
         data['questions'] = [_question_data(q) for q in _questions_with_counts(lesson)]
+        data['stats'] = _lesson_stats(lesson)
     else:
         data['sources_count'] = lesson.sources_count
         data['students'] = lesson.students
