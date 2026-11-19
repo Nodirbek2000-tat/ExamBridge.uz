@@ -83,3 +83,17 @@ class AIUsage(models.Model):
 
     def __str__(self):
         return f'{self.feature} · {self.model} · ${self.cost_usd}'
+
+
+class AIChatSent(models.Model):
+    """One message a student sent to the AI Tutor. Kept apart from AIMessage so that deleting a
+    chat does not give the free messages back."""
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='ai_chat_sent')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'{self.user_id} · {self.created_at:%Y-%m-%d %H:%M}'

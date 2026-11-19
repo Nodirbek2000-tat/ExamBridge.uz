@@ -13,7 +13,23 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.parsers import MultiPartParser, JSONParser
 from rest_framework.response import Response
 
+from ai_chat import quota
 from ai_chat.models import AIStructure, AIConversation, AIMessage
+
+FREE_MAX_TOKENS = 600       # a safety cap; the prompt itself asks for about 120 words
+FULL_MAX_TOKENS = 2048
+
+# Free accounts get short answers. They must still be right and useful, just without the extras.
+SHORT_ANSWERS = """
+## Answer length — free plan (this overrides any rule above about long or full answers)
+- Keep every answer short: about 120 words at most (5–8 lines).
+- Start with the direct answer in the first sentence. No introductions, no restating the question, no closing summary.
+- Then give only what matters most: the key reason, the 2–4 essential steps, or one short example.
+- For a math problem: the essential working and the final answer, nothing more.
+- For an essay or speaking sample: one short model paragraph or answer, plus the 2–3 most useful tips — never a full essay.
+- Use a little markdown (bold, a short list) only when it makes the answer clearer. Skip headers.
+- Accuracy comes first: a short answer must still be fully correct.
+"""
 
 # ── System prompt builder ──────────────────────────────────────────────────────
 
@@ -70,7 +86,7 @@ SUBJECT_CONTEXT = {
 }
 
 
-def _build_system_prompt(subject, section, user, structures):
+def _build_system_prompt(subject, section, user, structures, short=False):
     ctx = SUBJECT_CONTEXT.get(subject, SUBJECT_CONTEXT['SAT'])
     section_desc = ctx['sections'].get(section, ctx['sections'].get('general', ''))
 
@@ -122,6 +138,8 @@ Use these structures when explaining topics or answering questions in this area:
 - For math: use LaTeX notation \\( ... \\) for inline and \\[ ... \\] for block equations
 - Keep responses focused and actionable
 """
+    if short:
+        prompt += SHORT_ANSWERS
     return prompt
 
 
@@ -175,10 +193,18 @@ def ai_chat(request):
     if not message and not image_file:
         return Response({'error': 'message or image required'}, status=400)
 
-    # Get or create conversation
-    if conv_id:
-        conv = get_object_or_404(AIConversation, id=conv_id, user=request.user)
-    else:
+    conv = get_object_or_404(AIConversation, id=conv_id, user=request.user) if conv_id else None
+
+    # Free accounts: FREE_MESSAGES messages in total, across every chat
+    sent = quota.take(request.user)
+    if sent is False:
+        return Response({'error': 'premium_required', 'code': 'premium_required',
+                         'quota': quota.status(request.user)}, status=403)
+    free = sent is not None
+    left = quota.status(request.user)
+
+    # Start a new conversation
+    if conv is None:
         title = message[:80] if message else 'Image question'
         conv = AIConversation.objects.create(
             user=request.user,
@@ -201,7 +227,7 @@ def ai_chat(request):
     ).order_by('subject', 'section', 'title')
 
     # Build system prompt
-    system_prompt = _build_system_prompt(subject, section, request.user, structures)
+    system_prompt = _build_system_prompt(subject, section, request.user, structures, short=free)
 
     # Build message history (last 20 messages)
     history = conv.messages.order_by('-created_at')[:20]
@@ -248,13 +274,14 @@ def ai_chat(request):
 
         # Send conversation_id first
         yield f"data: {json.dumps({'type': 'conversation_id', 'id': conv.id, 'title': conv.title})}\n\n"
+        yield f"data: {json.dumps({'type': 'quota', **left})}\n\n"
 
         try:
             openai_messages = [{'role': 'system', 'content': system_prompt}] + anthropic_messages
 
             stream = client.chat.completions.create(
                 model='gpt-4o',
-                max_tokens=2048,
+                max_tokens=FREE_MAX_TOKENS if free else FULL_MAX_TOKENS,
                 messages=openai_messages,
                 stream=True,
                 stream_options={'include_usage': True},
@@ -281,6 +308,8 @@ def ai_chat(request):
             yield f"data: {json.dumps({'type': 'done', 'conversation_id': conv.id})}\n\n"
 
         except Exception as e:
+            if not full_response:
+                quota.give_back(sent)        # no answer came, so the message is not counted
             yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
 
     response = StreamingHttpResponse(stream_response(), content_type='text/event-stream')
@@ -290,6 +319,13 @@ def ai_chat(request):
 
 
 # ── Conversation management ────────────────────────────────────────────────────
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def ai_quota(request):
+    """How many free AI Tutor messages are left: {unlimited, limit, used, left}."""
+    return Response(quota.status(request.user))
+
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

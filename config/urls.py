@@ -55,7 +55,7 @@ from api.stats_views import (
     live_stats, analytics_stats, ai_cost_stats, engagement_stats, mock_stats, mock_attempts, visitor_stats,
 )
 from api.ai_views import (
-    ai_chat, ai_conversations, ai_conversation_detail,
+    ai_chat, ai_quota, ai_conversations, ai_conversation_detail,
     admin_ai_structures, admin_ai_structure_detail,
 )
 from api.import_views import (
@@ -277,6 +277,7 @@ urlpatterns = [
 
     # ── AI TUTOR API ──────────────────────────────────────────────────────────
     path('api/ai/chat/', ai_chat),
+    path('api/ai/quota/', ai_quota),
     path('api/ai/conversations/', ai_conversations),
     path('api/ai/conversations/<int:conv_id>/', ai_conversation_detail),
     path('api/admin/ai/structures/', admin_ai_structures),
