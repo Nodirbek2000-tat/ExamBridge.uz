@@ -7,6 +7,10 @@ device signing in again only replaces its own session. Every request checks its
 session is still live — one cache read — so a signed-out device stops at once.
 Students see their devices in the profile and can sign any of them out.
 
+Opening the site from the bot's buttons inside Telegram (a Mini App) signs in as
+the student's own Telegram: that session takes no device place and signs no other
+device out. An account has at most one of them; a new one replaces it.
+
 Admins (is_staff) are not limited. TestMakon students get their tokens from
 TestMakon's server rather than from a device, so they have no sessions at all.
 Tokens issued before sessions existed carry no `sid`: they keep working until
@@ -30,6 +34,8 @@ from .models import User, UserSession
 CACHE_SECONDS = 600            # how long "live or not" is remembered between requests
 SEEN_EVERY_SECONDS = 300       # last_seen_at is written at most this often
 DEVICE_ID = re.compile(r'^[A-Za-z0-9_-]{8,64}$')
+# Not a valid X-Device-Id (it has a colon), so no browser can claim it to get past the limit.
+TELEGRAM_APP = 'telegram:mini-app'
 
 SIGNED_OUT = {
     UserSession.Reason.LIMIT: 'You were signed out: this account was opened on another device.',
@@ -124,12 +130,17 @@ def revoke(keys, reason):
     cache.set_many({_cache_key(k): False for k in keys}, CACHE_SECONDS)
 
 
-def start(user, request=None):
+def counted(sessions):
+    """The sessions that take a device place (all but the Telegram Mini App)."""
+    return sessions.exclude(device_id=TELEGRAM_APP)
+
+
+def start(user, request=None, telegram=False):
     """A session for the device signing in. Returns its key, or None for an account without sessions."""
     if not has_sessions(user):
         return None
     agent = request.META.get('HTTP_USER_AGENT', '')[:300] if request is not None else ''
-    device = device_id(request)
+    device = TELEGRAM_APP if telegram else device_id(request)
     with transaction.atomic():
         # One sign-in at a time per account, so two at once cannot both slip under the limit.
         User.objects.select_for_update().filter(pk=user.pk).exists()
@@ -137,19 +148,19 @@ def start(user, request=None):
                UserSession.Reason.REPLACED)
         session = UserSession.objects.create(
             user=user, key=secrets.token_hex(16), device_id=device,
-            device=device_name(agent), user_agent=agent, ip=client_ip(request),
+            device='Telegram' if telegram else device_name(agent), user_agent=agent, ip=client_ip(request),
         )
-        if is_limited(user):
-            others = live_sessions(user).exclude(pk=session.pk).order_by('-last_seen_at', '-id')
+        if is_limited(user) and not telegram:
+            others = counted(live_sessions(user)).exclude(pk=session.pk).order_by('-last_seen_at', '-id')
             revoke(others.values_list('key', flat=True)[max_devices() - 1:], UserSession.Reason.LIMIT)
     cache.set(_cache_key(session.key), True, CACHE_SECONDS)
     return session.key
 
 
-def tokens_for(user, request=None):
+def tokens_for(user, request=None, telegram=False):
     """The JWT pair for a sign-in, tied to a new device session."""
     refresh = RefreshToken.for_user(user)
-    key = start(user, request)
+    key = start(user, request, telegram=telegram)
     if key:
         refresh['sid'] = key            # copied into every access token made from it
     return {'access': str(refresh.access_token), 'refresh': str(refresh)}
@@ -179,7 +190,7 @@ def over_limit(user):
     A token from before sessions belongs to the oldest sign-in there is: once the
     account is signed in on as many devices as it may be, that device is out.
     """
-    return is_limited(user) and live_sessions(user).count() >= max_devices()
+    return is_limited(user) and counted(live_sessions(user)).count() >= max_devices()
 
 
 def limit_error():

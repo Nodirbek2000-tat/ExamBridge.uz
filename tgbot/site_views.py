@@ -1,7 +1,14 @@
 """
-Site side of the Telegram bot: open the bot linked to your account, and sign
-in with the one-time link the bot gives you.
+Site side of the Telegram bot: open the bot linked to your account, sign in with
+the one-time link the bot gives you, or be signed in at once when the site is
+opened from a bot button inside Telegram (a Mini App).
 """
+import hashlib
+import hmac
+import json
+import time
+from urllib.parse import parse_qsl
+
 from django.conf import settings
 from django.db import transaction
 from django.utils import timezone
@@ -9,6 +16,7 @@ from rest_framework.decorators import api_view, permission_classes, throttle_cla
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 
+from accounts import devices
 from api.auth_views import LoginRateThrottle, get_tokens, user_data
 
 from .models import TelegramAccount, TelegramLogin, TelegramToken
@@ -48,6 +56,59 @@ def telegram_login(request):
             status=400,
         )
     return Response({'user': user_data(user), **get_tokens(user, request)})
+
+
+# ── Opened from a bot button inside Telegram (Mini App) ───────────────────────
+
+INIT_DATA_MAX_AGE = 24 * 3600     # Telegram makes a new one each time the Mini App opens
+
+
+def telegram_user(init_data, token, now=None):
+    """
+    The Telegram user a Mini App's initData speaks for, or None. Telegram signs it with the
+    bot's token (core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app),
+    so only Telegram can make one for our bot.
+    """
+    if not init_data or not token or len(init_data) > 4096:
+        return None
+    try:
+        fields = dict(parse_qsl(init_data, keep_blank_values=True, strict_parsing=True))
+    except ValueError:
+        return None
+    given = fields.pop('hash', '')
+    check = '\n'.join(f'{k}={v}' for k, v in sorted(fields.items()))
+    secret = hmac.new(b'WebAppData', token.encode(), hashlib.sha256).digest()
+    if not hmac.compare_digest(hmac.new(secret, check.encode(), hashlib.sha256).hexdigest(), given):
+        return None
+    try:
+        age = (now or time.time()) - int(fields.get('auth_date', 0))
+        user = json.loads(fields.get('user', ''))
+        telegram_id = int(user['id'])
+    except (TypeError, ValueError, KeyError):
+        return None
+    if not -300 <= age <= INIT_DATA_MAX_AGE:
+        return None
+    return {**user, 'id': telegram_id}
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+@throttle_classes([LoginRateThrottle])
+def telegram_webapp_login(request):
+    """
+    The site opened inside Telegram from a bot button signs in as that Telegram's account.
+    This session takes no device place and signs no other device out (accounts/devices.py).
+    """
+    tg = telegram_user(str(request.data.get('init_data') or ''), settings.TELEGRAM_BOT_TOKEN)
+    if tg is None:
+        return Response({'detail': 'Telegram could not confirm who you are.', 'code': 'bad_init_data'}, status=400)
+    account = (TelegramAccount.objects.select_related('user')
+               .filter(telegram_id=tg['id'], user__is_active=True).first())
+    if account is None:
+        return Response({'detail': 'This Telegram is not linked to an ExamBridge account yet. '
+                                   'Open the bot and press /start.', 'code': 'not_linked'}, status=404)
+    user = account.user
+    return Response({'user': user_data(user), **devices.tokens_for(user, request, telegram=True)})
 
 
 # ── "Continue with Telegram" (login and sign-up pages) ────────────────────────

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import BotChannel, TelegramAccount
+from .models import BotChannel, DailyPost, TelegramAccount
 
 
 @admin.register(TelegramAccount)
@@ -13,3 +13,12 @@ class TelegramAccountAdmin(admin.ModelAdmin):
 @admin.register(BotChannel)
 class BotChannelAdmin(admin.ModelAdmin):
     list_display = ('title', 'chat_id', 'username', 'created_at')
+
+
+@admin.register(DailyPost)
+class DailyPostAdmin(admin.ModelAdmin):
+    list_display = ('date', 'key', 'button', 'sent', 'gone', 'failed', 'total', 'finished_at')
+    readonly_fields = [f.name for f in DailyPost._meta.fields]
+
+    def has_add_permission(self, request):
+        return False

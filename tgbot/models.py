@@ -200,3 +200,26 @@ class TelegramLogin(models.Model):
         now = timezone.now()
         cls.objects.filter(expires_at__lt=now - timedelta(days=1)).delete()   # old requests
         return cls.objects.create(token=secrets.token_urlsafe(24), expires_at=now + cls.LIFETIME)
+
+
+class DailyPost(models.Model):
+    """The morning message the bot sends every student, one row per day (so it never goes twice)."""
+    date = models.DateField(unique=True)
+    key = models.CharField(max_length=40, help_text='Which message of tgbot/daily.py, e.g. speaking:3')
+    quote = models.PositiveSmallIntegerField(default=0)
+    text = models.TextField()
+    button = models.CharField(max_length=64)
+    url = models.URLField(max_length=300)
+    total = models.PositiveIntegerField(default=0)
+    sent = models.PositiveIntegerField(default=0)
+    gone = models.PositiveIntegerField(default=0, help_text='Blocked the bot or deleted their Telegram')
+    failed = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    finished_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-date']
+        verbose_name = 'Daily bot message'
+
+    def __str__(self):
+        return f'{self.date} {self.key}: {self.sent}/{self.total}'

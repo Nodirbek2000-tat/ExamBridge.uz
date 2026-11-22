@@ -268,6 +268,11 @@ CELERY_BEAT_SCHEDULE = {
         'task': 'vocabulary.tasks.rollup_item_stats',
         'schedule': crontab(hour=3, minute=40),
     },
+    # The bot's morning message to every student (tgbot/daily.py)
+    'bot-daily-message': {
+        'task': 'tgbot.tasks.send_daily_message',
+        'schedule': crontab(hour=8, minute=0),
+    },
 }
 
 # ─── INTERNATIONALIZATION ─────────────────────────────────────────────────────
