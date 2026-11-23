@@ -16,7 +16,7 @@ from tgbot.site_views import telegram_login, telegram_login_poll, telegram_login
 from api.auth_views import csrf_token, login_view, register_view, logout_view, me_view, ping_view, google_login_view, token_refresh_view, platform_bridge_auth, update_profile_view, change_password_view, devices_view, device_sign_out_view
 from api.sat_analytics import sat_analytics
 from api.analytics_ai import analytics_ai, exam_analytics
-from api import cefr_writing, cefr_speaking
+from api import cefr_premium, cefr_speaking, cefr_writing
 from api.sat_views import (
     sat_test_list, sat_start_test, sat_attempt_detail,
     sat_submit_answer, sat_submit_module, sat_security_event, sat_stats, sat_result_detail, sat_result_delete,
@@ -340,6 +340,7 @@ urlpatterns = [
     path('api/admin/cefr/listening/<int:pk>/audio/', admin_cefr_listening_audio),
     path('api/admin/cefr/listening/<int:pk>/image/', admin_cefr_listening_image),
     path('api/admin/cefr/tests/<int:pk>/audio/', admin_cefr_test_audio),
+    path('api/admin/cefr/premium/<str:kind>/<int:pk>/', cefr_premium.admin_cefr_premium),
     path('api/admin/ielts/reading/<int:pk>/detail/', admin_ielts_reading_detail),
     path('api/admin/ielts/listening/<int:pk>/detail/', admin_ielts_listening_detail),
     path('api/admin/ielts/tests/', admin_ielts_tests_list),

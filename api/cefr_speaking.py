@@ -41,6 +41,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
+from api import cefr_premium
 from centers.content import visible
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
@@ -424,8 +425,8 @@ def speaking_start(request, test_id):
     test = get_object_or_404(visible(request.user, CEFRSpeakingTest), id=test_id, is_active=True)
     if not is_ready(test):
         return Response({'detail': 'This test is not ready yet.'}, status=409)
-    if test.is_premium and not getattr(request.user, 'is_premium', False):
-        return Response({'detail': 'Premium required.'}, status=403)
+    if cefr_premium.locked(request.user, test):
+        return cefr_premium.refused()
     # hidden daily limit shared with IELTS speaking: a locked user does not record anything
     refused = speaking_limit.refuse_if_locked(request.user)
     if refused is not None:

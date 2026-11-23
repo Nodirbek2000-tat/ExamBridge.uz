@@ -1,6 +1,7 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from centers.content import visible
+from api import cefr_premium
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from cefr.models import (
@@ -151,8 +152,8 @@ def cefr_test_detail(request, test_id):
 @permission_classes([IsAuthenticated])
 def cefr_start_attempt(request, test_id):
     test = get_object_or_404(visible(request.user, CEFRTest), id=test_id, is_active=True)
-    if test.is_premium and not getattr(request.user, 'is_premium', False):
-        return Response({'detail': 'Premium required.'}, status=403)
+    if cefr_premium.locked(request.user, test):
+        return cefr_premium.refused()
 
     existing = CEFRAttempt.objects.filter(
         user=request.user, test=test, status='IN_PROGRESS'
@@ -391,6 +392,8 @@ def cefr_reading_full_mock_start(request, test_id):
     """Start a full mock reading test (multiple passages grouped under one CEFRTest)."""
     from cefr.models import CEFRTest
     test = get_object_or_404(visible(request.user, CEFRTest), id=test_id, test_type='READING', is_active=True)
+    if cefr_premium.locked(request.user, test):
+        return cefr_premium.refused()
     passages = list(test.reading_passages.order_by('passage_number'))
     if not passages:
         return Response({'error': 'No passages found for this mock test.'}, status=400)
@@ -445,6 +448,8 @@ def cefr_reading_detail(request, passage_id):
 @permission_classes([IsAuthenticated])
 def cefr_reading_start(request, passage_id):
     passage = get_object_or_404(visible(request.user, CEFRReadingPassage), id=passage_id)
+    if cefr_premium.locked(request.user, passage, passage.test):
+        return cefr_premium.refused()
     existing = CEFRAttempt.objects.filter(
         user=request.user, reading_passage=passage, status='IN_PROGRESS'
     ).first()
@@ -582,6 +587,8 @@ def cefr_listening_full_mock_start(request, test_id):
     """Start (or resume) a full listening mock — all parts of one CEFRTest."""
     from cefr.models import CEFRTest
     test = get_object_or_404(visible(request.user, CEFRTest), id=test_id, test_type='LISTENING', is_active=True)
+    if cefr_premium.locked(request.user, test):
+        return cefr_premium.refused()
     sections = list(test.listening_sections.order_by('section_number'))
     if not sections:
         return Response({'error': 'No parts found for this mock test.'}, status=400)
@@ -628,6 +635,8 @@ def cefr_listening_detail(request, section_id):
 @permission_classes([IsAuthenticated])
 def cefr_listening_start(request, section_id):
     section = get_object_or_404(visible(request.user, CEFRListeningSection), id=section_id)
+    if cefr_premium.locked(request.user, section, section.test):
+        return cefr_premium.refused()
     existing = CEFRAttempt.objects.filter(
         user=request.user, listening_section=section, status='IN_PROGRESS'
     ).first()
