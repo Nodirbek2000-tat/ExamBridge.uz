@@ -35,8 +35,10 @@ CEFR_SPEAKING = '/app/cefr/skills?tab=speaking'
 CEFR_WRITING = '/app/cefr/skills?tab=writing'
 CEFR_LISTENING = '/app/cefr/skills?tab=listening'
 CEFR_MOCK = '/app/cefr/skills?tab=mock'
+GAME_SPEAKING = '/games/speaking'
 
 SPEAK = '🎙 Speaking qilish'
+READ = "🎙 O'qib ko'rish"
 WRITE = '✍️ Writing yozish'
 LISTEN = '🎧 Listening'
 MOCK = '📝 Mock test'
@@ -47,6 +49,7 @@ LESSON = "🧑‍🏫 Darsni ko'rish"
 WEEK = ['speaking', 'writing', 'listening', 'partner', 'learn', 'mock', 'easy']
 
 # (text, button, page). In 'partner' messages {name} is filled in.
+# New messages go at the END of their theme: a sent day is stored as '<theme>:<index>'.
 MESSAGES = {
     'speaking': [
         ("☀️ Xayrli tong! Bugun — <b>speaking kuni</b> 🎙\n"
@@ -60,10 +63,18 @@ MESSAGES = {
          SPEAK, CEFR_SPEAKING),
         ("☕ Tongni speaking bilan boshlang!\n"
          "Bugun speaking o'yinida bitta matnni ovoz chiqarib o'qing — AI har bir so'zingizni tekshiradi.",
-         PLAY, '/games/speaking'),
+         READ, GAME_SPEAKING),
         ("🎙 Speaking'dan qo'rqmang!\n"
          "Xato qilish — o'rganishning bir qismi. Bugun 3 ta savolga javob bering, AI nimani yaxshilashni aytadi.",
          SPEAK, IELTS_SPEAKING),
+        ("🎙 Bugun talaffuzni tekshiramiz!\n"
+         "Bitta qisqa inglizcha matnni ovoz chiqarib o'qing. "
+         "AI har bir so'zingizni tekshiradi — qaysi tovush xato ekanini ko'rsatadi.",
+         READ, GAME_SPEAKING),
+        ("🟢 Bugun nechta so'zingiz yashil bo'ladi?\n"
+         "Speaking o'yinida bitta matnni o'qing: to'g'ri aytilgan so'zlar yashil, yaxshilash kerak bo'lganlari "
+         "sariq bo'lib chiqadi. Yana bir bor o'qing — va natijangiz o'sganini ko'ring!",
+         READ, GAME_SPEAKING),
     ],
     'writing': [
         ("✍️ Bugun — <b>writing kuni</b>!\n"
@@ -115,6 +126,12 @@ MESSAGES = {
         ("☀️ Xayrli tong! {name} siz bilan speaking mashq qilmoqchi.\n"
          "Ovoz chiqarib gapiring — bugun 5 daqiqa yetadi.",
          SPEAK, IELTS_SPEAKING),
+        ("📖 {name}: «Bugun bitta inglizcha matnni ovoz chiqarib o'qib ko'rasizmi?»\n"
+         "AI har bir so'zingizni tekshiradi — qaysi tovush xato ekanini ko'rsatadi.",
+         READ, GAME_SPEAKING),
+        ("🎙 {name} bugun siz bilan talaffuz mashq qilmoqchi!\n"
+         "Bitta qisqa matnni o'qing va qaysi so'zlaringiz yashil chiqqanini ko'ring. Tayyormisiz?",
+         READ, GAME_SPEAKING),
     ],
     'learn': [
         ("🧑‍🏫 Bugun Toby bilan dars!\n"
@@ -150,7 +167,7 @@ MESSAGES = {
     'easy': [
         ("🎮 Yakshanba — o'ynab o'rganamiz!\n"
          "Speaking o'yinida matnni ovoz chiqarib o'qing — AI har bir so'zingizni baholaydi.",
-         PLAY, '/games/speaking'),
+         READ, GAME_SPEAKING),
         ("🚗 Voice Drive'da poyga!\n"
          "Ingliz tilida gapiring va mashinani boshqaring. O'yin — lekin talaffuz o'sadi.",
          PLAY, '/games/voice-drive'),
@@ -160,6 +177,14 @@ MESSAGES = {
         ("🧠 Yakshanba — so'zlarni takrorlash kuni.\n"
          "Hafta davomida o'rgangan so'zlaringizni bir ko'rib chiqing.",
          "🧠 So'zlarni takrorlash", '/app/vocabulary'),
+        ("🎙 Yakshanba — talaffuz kuni!\n"
+         "Bitta qisqa matnni ovoz chiqarib o'qing. "
+         "AI har bir so'zingizni tekshiradi — qaysi tovush xato ekanini ko'rsatadi.",
+         READ, GAME_SPEAKING),
+        ("🌟 Bugun o'zingizni sinab ko'ring!\n"
+         "Speaking o'yinida bitta matnni o'qing va natijani ko'ring. "
+         "Keyin yana bir bor o'qing — har safar biroz yaxshiroq chiqadi.",
+         READ, GAME_SPEAKING),
     ],
 }
 

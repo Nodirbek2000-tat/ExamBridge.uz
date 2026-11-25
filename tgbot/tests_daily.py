@@ -70,11 +70,20 @@ class PickTest(TestCase):
             quotes.append(message['quote'])
         self.assertEqual(len(set(quotes)), len(daily.QUOTES))
 
-    def test_the_speaking_partner_day_has_a_name_and_opens_ielts_speaking(self):
+    def test_the_speaking_partner_day_has_a_name_and_opens_a_speaking_page(self):
         message = daily.pick(MONDAY + timedelta(days=3))
         self.assertNotIn('{name}', message['text'])
         self.assertTrue(any(name in message['text'] for name in daily.NAMES))
-        self.assertEqual(message['url'], 'https://exambridge.uz/app/ielts/skills?tab=speaking')
+        self.assertIn(message['url'], {'https://exambridge.uz/app/ielts/skills?tab=speaking',
+                                       'https://exambridge.uz/games/speaking'})
+
+    def test_the_speaking_game_comes_up_on_speaking_partner_and_easy_days(self):
+        for theme in ('speaking', 'partner', 'easy'):
+            game = [m for m in daily.MESSAGES[theme] if m[2] == daily.GAME_SPEAKING]
+            self.assertGreaterEqual(len(game), 2, theme)
+            self.assertTrue(all(button == daily.READ for _, button, _ in game), theme)
+        self.assertTrue(all('{name}' in text for text, _, page in daily.MESSAGES['partner']
+                            if page == daily.GAME_SPEAKING))
 
     @override_settings(FRONTEND_URL='http://localhost:5173')
     def test_the_button_always_opens_an_https_page(self):

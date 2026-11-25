@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from . import admin_views, views
 
 urlpatterns = [
     path('lessons/', views.lessons),
@@ -11,4 +11,5 @@ urlpatterns = [
     path('admin/import/', views.admin_import),
     path('admin/lessons/', views.admin_lessons),
     path('admin/lessons/<int:pk>/', views.admin_lesson),
+    path('admin/leaders/', admin_views.admin_leaders),
 ]

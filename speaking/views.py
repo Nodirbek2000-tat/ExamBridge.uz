@@ -220,6 +220,10 @@ def _attempt_payload(a, request):
         data.update({
             'accuracy': a.accuracy, 'fluency_wpm': a.fluency_wpm, 'transcript': a.transcript, 'words': a.words,
             'ok': a.ok_count, 'fix': a.fix_count, 'skip': a.skip_count,
+            # 'azure' = real pronunciation scores (per word and per sound); 'whisper' = the fallback,
+            # where the four scores below are null
+            'engine': a.engine, 'pron_score': a.pron_score, 'fluency_score': a.fluency_score,
+            'completeness_score': a.completeness_score, 'prosody_score': a.prosody_score,
             'next': _next_lesson(lesson, _premium(request.user)),
         })
     return data

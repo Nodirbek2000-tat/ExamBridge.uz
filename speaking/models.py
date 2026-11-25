@@ -1,6 +1,7 @@
 """
-Speaking game: the learner reads a short text aloud, Whisper writes down what
-it heard (with a time for every word), and every word of the text is scored.
+Speaking game: the learner reads a short text aloud and every word of the text is
+scored — by Azure Pronunciation Assessment (per word and per sound, speaking/azure.py)
+or, when Azure is off or fails, by what Whisper heard (speaking/scoring.py).
 
     SpeakingLesson   — a text to read (imported by staff from JSON)
     SpeakingAttempt  — one recording of one lesson and its word-by-word result
@@ -61,14 +62,30 @@ class SpeakingAttempt(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=PROCESSING, db_index=True)
     error = models.CharField(max_length=40, blank=True, help_text="Why it failed: 'no-speech', 'service', 'bad-audio'")
 
+    AZURE = 'azure'
+    WHISPER = 'whisper'
+    ENGINE_CHOICES = [(AZURE, 'Azure pronunciation assessment'), (WHISPER, 'Whisper transcription')]
+
     transcript = models.TextField(blank=True)
-    # [{i, word, say, score 0–100, status 'ok' | 'fix' | 'skip', heard, start, end}]
+    # [{i, word, say, score 0–100, status, heard, start, end}]
+    #   status: 'ok' (>= 80) | 'fix' (60–79) | 'bad' (said, < 60; Azure only) | 'skip' (not said)
+    # Azure adds: phonemes [{p: IPA phoneme, score 0–100}], error ('Mispronunciation' | 'Omission' |
+    #   'Insertion' | 'UnexpectedBreak' | 'MissingBreak' | 'Monotone' | ''), tip (the weakest
+    #   phoneme when it is below 60, else '')
     words = models.JSONField(default=list, blank=True)
-    accuracy = models.PositiveSmallIntegerField(default=0)        # mean word score, 0–100
+    # mean word score 0–100 (a word not said counts 0); with Azure: its word AccuracyScores
+    accuracy = models.PositiveSmallIntegerField(default=0)
     fluency_wpm = models.PositiveSmallIntegerField(default=0)
     ok_count = models.PositiveSmallIntegerField(default=0)
-    fix_count = models.PositiveSmallIntegerField(default=0)
+    fix_count = models.PositiveSmallIntegerField(default=0)       # 'fix' + 'bad'
     skip_count = models.PositiveSmallIntegerField(default=0)
+    # who scored it; rows from before Azure are 'whisper'
+    engine = models.CharField(max_length=10, choices=ENGINE_CHOICES, default=WHISPER)
+    # Azure Pronunciation Assessment, 0–100; null when unknown (Whisper)
+    pron_score = models.PositiveSmallIntegerField(null=True, blank=True)
+    fluency_score = models.PositiveSmallIntegerField(null=True, blank=True)
+    completeness_score = models.PositiveSmallIntegerField(null=True, blank=True)
+    prosody_score = models.PositiveSmallIntegerField(null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 

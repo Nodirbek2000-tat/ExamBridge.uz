@@ -9,6 +9,8 @@ rows keep the price they were saved with.
 import logging
 from decimal import Decimal
 
+from django.conf import settings
+
 from .models import AIUsage
 
 logger = logging.getLogger(__name__)
@@ -25,6 +27,8 @@ WHISPER_PER_MINUTE = {'whisper-1': 0.006}
 # $ per 1M characters. gpt-4o-mini-tts really bills audio tokens, which the speech
 # API does not report: about $0.015 a minute, at roughly 900 characters a minute.
 TTS_PER_MILLION_CHARS = {'tts-1-hd': 30.00, 'gpt-4o-mini-tts': 16.67, 'azure-neural-tts': 16.00}
+# $ per audio hour, read from settings at call time: 0 on Azure's free F0 tier.
+PER_HOUR_SETTING = {'azure-pronunciation': 'AZURE_SPEECH_PRICE_PER_HOUR'}
 
 # feature → (dashboard group, what it is)
 FEATURES = {
@@ -43,6 +47,7 @@ FEATURES = {
     'games_stt': ('Games', 'Voice game transcription'),
     'games_tts': ('Games', 'Character voices'),
     'speaking_game_stt': ('Games', 'Speaking game transcription'),
+    'speaking_game_pron': ('Games', 'Speaking game pronunciation'),
     'shadowing_stt': ('Study Tools', 'Shadowing transcription'),
     'podcast_stt': ('Study Tools', 'Podcast transcription'),
     'lesson_plan': ('AI Lessons', 'Lesson planning'),
@@ -65,6 +70,12 @@ def cost_of(model, input_tokens=0, cached_tokens=0, output_tokens=0, seconds=0, 
         total = seconds / 60 * WHISPER_PER_MINUTE[model]
     elif model in TTS_PER_MILLION_CHARS:
         total = characters * TTS_PER_MILLION_CHARS[model] / MILLION
+    elif model in PER_HOUR_SETTING:
+        try:
+            per_hour = float(getattr(settings, PER_HOUR_SETTING[model], 0) or 0)
+        except (TypeError, ValueError):
+            per_hour = 0.0
+        total = seconds / 3600 * per_hour
     else:
         logger.warning('No AI price for model %s', model)
         total = 0

@@ -242,6 +242,10 @@ AI_LESSON_TTS_ENGINE = config('AI_LESSON_TTS_ENGINE', default='openai')
 AI_LESSON_TTS_MODEL = config('AI_LESSON_TTS_MODEL', default='gpt-4o-mini-tts')
 AZURE_SPEECH_KEY = config('AZURE_SPEECH_KEY', default='')
 AZURE_SPEECH_REGION = config('AZURE_SPEECH_REGION', default='westeurope')
+# Speaking game pronunciation scoring (speaking/azure.py) uses the same key: empty = Whisper only.
+# $ per audio hour for the usage dashboard; 0 on the free F0 tier (5 h a month, then Azure
+# refuses until the next month and the game falls back to Whisper by itself).
+AZURE_SPEECH_PRICE_PER_HOUR = config('AZURE_SPEECH_PRICE_PER_HOUR', default=0.0, cast=float)
 
 # ─── SPEAKING OVOZ YOZUVLARINI SAQLASH MUDDATI ────────────────────────────────
 # Shu kundan eski ovoz fayllari avtomatik o'chiriladi.
